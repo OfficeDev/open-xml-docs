@@ -27,8 +27,7 @@ SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
 
 ---------------------------------------------------------------------------------
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the <span
 class="keyword">CalculationChain</span> (\<<span
 class="keyword">calcChain</span>\>) element.
