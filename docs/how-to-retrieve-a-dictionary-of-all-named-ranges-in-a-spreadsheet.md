@@ -21,8 +21,7 @@ and ranges of all defined names in an Microsoft Excel 2010 or Microsoft
 Excel 2013 workbook. It contains an example **GetDefinedNames** method
 to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -39,6 +38,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Packaging
     Imports DocumentFormat.OpenXml.Spreadsheet
@@ -57,10 +57,12 @@ specified workbook, which may be empty if there are no defined names.
     public static Dictionary<String, String>
         GetDefinedNames(String fileName)
 ```
+
 ```vb
     Public Function GetDefinedNames(
         ByVal fileName As String) As Dictionary(Of String, String)
 ```
+
 The method examines the workbook that you specify, looking for the part
 that contains defined names. If it exists, the code iterates through all
 the contents of the part, adding the name and value for each defined
@@ -81,6 +83,7 @@ and displays the key and value from each item.
     foreach (var dn in result)
         Console.WriteLine("{0} {1}", dn.Key, dn.Value);
 ```
+
 ```vb
     Dim result =
         GetDefinedNames("C:\Users\Public\Documents\definednames.xlsx")
@@ -101,6 +104,7 @@ exits.
         // Code removed here…
     return returnValue;
 ```
+
 ```vb
     ' Given a workbook name, return a dictionary of defined names.
     ' The pairs include the range name and a string representing the range.
@@ -108,6 +112,7 @@ exits.
         ' Code removed here…
     Return returnValue
 ```
+
 The code continues by opening the spreadsheet document, using the <span
 sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
@@ -129,6 +134,7 @@ main workbook part. The code stores this reference in a variable named
         // Code removed here.
     }
 ```
+
 ```vb
     ' Open the spreadsheet document for read-only access.
     Using document As SpreadsheetDocument =
@@ -167,6 +173,7 @@ and value (range description) to the dictionary for each defined name.
             returnValue.Add(dn.Name.Value, dn.Text);
     }
 ```
+
 ```vb
     ' Retrieve a reference to the defined names collection.
     Dim definedNames As DefinedNames = wbPart.Workbook.DefinedNames
@@ -213,6 +220,7 @@ Basic.
         return returnValue;
     }
 ```
+
 ```vb
     Public Function GetDefinedNames(
         ByVal fileName As String) As Dictionary(Of String, String)
@@ -246,5 +254,4 @@ Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

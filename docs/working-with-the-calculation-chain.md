@@ -20,9 +20,7 @@ target="T:DocumentFormat.OpenXml.Spreadsheet.CalculationChain"><span
 class="nolink">CalculationChain</span></span> class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
-SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
+SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
 ---------------------------------------------------------------------------------
@@ -98,8 +96,7 @@ cell (\<**si**\>) element that represents a
 cell that contains a formula.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **CalculationCell** (\<<span
-class="keyword">c</span>\>) element.
+introduces the **CalculationCell** (\<<span class="keyword">c</span>\>) element.
 
 Every c element represents a cell containing a formula. The first cell
 calculated appears first (top-tobottom), and so on. The reference
@@ -115,46 +112,27 @@ The following information from the ISO/IEC 29500 shows the XML for an
 example calculation chain after the application performs its first full
 calculation.
 
-\<calcChain xmlns="…"\>
-
-    \<c r="B2" i="1"/\>
-
-    \<c r="B3" s="1"/\>
-
-    \<c r="B4" s="1"/\>
-
-    \<c r="B5" s="1"/\>
-
-    \<c r="B6" s="1"/\>
-
-    \<c r="B7" s="1"/\>
-
-    \<c r="B8" s="1"/\>
-
-    \<c r="B9" s="1"/\>
-
-    \<c r="B10" s="1"/\>
-
-    \<c r="C10" s="1"/\>
-
-    \<c r="D10" s="1"/\>
-
-    \<c r="A2"/\>
-
-    \<c r="A3" s="1"/\>
-
-    \<c r="A4" s="1"/\>
-
-    \<c r="A5" s="1"/\>
-
-    \<c r="A6" s="1"/\>
-
-    \<c r="A7" s="1"/\>
-
-    \<c r="A8" s="1"/\>
-
-    \<c r="A9" s="1"/\>
-
-    \<c r="A10" s="1"/\>
-
+```xml
+<calcChain xmlns="…">
+    <c r="B2" i="1"/>
+    <c r="B3" s="1"/>
+    <c r="B4" s="1"/>
+    <c r="B5" s="1"/>
+    <c r="B6" s="1"/>
+    <c r="B7" s="1"/>
+    <c r="B8" s="1"/>
+    <c r="B9" s="1"/>
+    <c r="B10" s="1"/>
+    <c r="C10" s="1"/>
+    <c r="D10" s="1"/>
+    <c r="A2"/\>
+    <c r="A3" s="1"/>
+    <c r="A4" s="1"/>
+    <c r="A5" s="1"/>
+    <c r="A6" s="1"/>
+    <c r="A7" s="1"/>
+    <c r="A8" s="1"/>
+    <c r="A9" s="1"/>
+    <c r="A10" s="1"/>
 \</calcChain\>
+```

@@ -26,6 +26,7 @@ this topic.
     using System;
     using DocumentFormat.OpenXml.Packaging;
 ```
+
 ```vb
     Imports System
     Imports DocumentFormat.OpenXml.Packaging
@@ -66,12 +67,14 @@ should be opened in read/write mode.
           // Insert other code here.
     }
 ```
+
 ```vb
     ' Open a Wordprocessing document for editing.
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
         ' Insert other code here.
     End Using
 ```
+
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
@@ -116,6 +119,7 @@ sample code creates is shown in the following code example.
       </w:body>
     </w:document>
 ```
+
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to <span
 class="keyword">WordprocessingML</span> elements. You can find these
@@ -155,6 +159,7 @@ class="keyword">PresentationML</span> package.
       <w:characterSpacingControl w:val="dontCompress" />
     </w:settings>
 ```
+
 > The **settings** element contains all of the
 > settings for this document. In this case, the two settings applied are
 > automatic tab stop increments of 0.5" using the <span
@@ -182,6 +187,7 @@ part is removed from the package.
         mainPart.DeletePart(mainPart.DocumentSettingsPart);
     }
 ```
+
 ```vb
     Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
     If mainPart.DocumentSettingsPart IsNot Nothing Then
@@ -199,11 +205,12 @@ this example.
     string document = @"C:\Users\Public\Documents\MyPkg6.docx";
     RemovePart(document);
 ```
+
 ```vb
     Dim document As String = "C:\Users\Public\Documents\MyPkg6.docx"
     RemovePart(document)
 ```
-> ![](./media/alert_note.gif)**Note**  
+> [!NOTE]
 > Before running the program on the test file, &quot;MyPkg6.docs,&quot; for example, open the file by using the Open XML SDK 2.5 Productivity Tool for Microsoft Office and examine its structure. After running the program, examine the file again, and you will notice that the **DocumentSettingsPart** part was removed.
 
 Following is the complete code example in both C\# and Visual Basic.
@@ -222,6 +229,7 @@ Following is the complete code example in both C\# and Visual Basic.
       }
     }
 ```
+
 ```vb
     ' To remove a document part from a package.
     Public Sub RemovePart(ByVal document As String)
@@ -237,5 +245,4 @@ Following is the complete code example in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

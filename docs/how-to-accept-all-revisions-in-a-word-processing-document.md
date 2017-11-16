@@ -116,8 +116,7 @@ The element specifies that there was a revision to the paragraph properties at 0
 
 -----------------------------------------------------------------------------
 
-The following information from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the Deleted element (**del**).
 
 **del (Deleted Paragraph)**
@@ -158,8 +157,7 @@ and this deletion was tracked as a revision.
 
 -----------------------------------------------------------------------------
 
-The following information from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the Inserted element (**ins**).
 
 **ins (Inserted Table Row)**
@@ -265,6 +263,7 @@ accepting deletion changes.
         deletion.Remove();
     }
 ```
+
 ```vb
     ' Handle the deletions.
     Dim deletions As List(Of OpenXmlElement) = _
@@ -520,9 +519,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
 
-[Accepting Revisions in Open XML Word-Processing
-Documents](http://msdn.microsoft.com/en-us/library/ee836138.aspx)
+[Accepting Revisions in Open XML Word-Processing Documents](http://msdn.microsoft.com/en-us/library/ee836138.aspx)
 

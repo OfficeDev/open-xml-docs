@@ -27,6 +27,7 @@ this topic.
     using System.Text.RegularExpressions;
     using DocumentFormat.OpenXml.Packaging;
 ```
+
 ```vb
     Imports System.IO
     Imports System.Text.RegularExpressions
@@ -68,11 +69,13 @@ to **true** to enable editing the document.
         // Insert other code here.
     }
 ```
+
 ```vb
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
         ' Insert other code here.
     End Using
 ```
+
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
@@ -101,6 +104,7 @@ class="keyword">StreamReader</span> object.
         docText = sr.ReadToEnd();
     }
 ```
+
 ```vb
     Dim sr As StreamReader = New StreamReader(wordDoc.MainDocumentPart.GetStream)
 
@@ -108,6 +112,7 @@ class="keyword">StreamReader</span> object.
             docText = sr.ReadToEnd
         End using
 ```
+
 The code then creates a regular expression object that contains the
 string "Hello world!" It then replaces the text value with the text "Hi
 Everyone!." For more information about regular expressions, see [Regular
@@ -117,6 +122,7 @@ Expressions](http://msdn.microsoft.com/en-us/library/hs600312.aspx)
     Regex regexText = new Regex("Hello world!");
     docText = regexText.Replace(docText, "Hi Everyone!");
 ```
+
 ```vb
     Dim regexText As Regex = New Regex("Hello world!")
     docText = regexText.Replace(docText, "Hi Everyone!")
@@ -140,9 +146,11 @@ example.
 ```csharp
     SearchAndReplace(@"C:\Users\Public\Documents\MyPkg8.docx");
 ```
+
 ```vb
     SearchAndReplace("C:\Users\Public\Documents\MyPkg8.docx")
 ```
+
 After running the program, you can inspect the file to see the change in
 the text, "Hello world!"
 
@@ -170,6 +178,7 @@ The following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     ' To search and replace content in a document part. 
     Public Sub SearchAndReplace(ByVal document As String)
@@ -197,8 +206,6 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
 
-[Regular
-Expressions](http://msdn.microsoft.com/en-us/library/hs600312.aspx)
+[Regular Expressions](http://msdn.microsoft.com/en-us/library/hs600312.aspx)

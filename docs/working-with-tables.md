@@ -21,13 +21,12 @@ class="nolink">Table</span></span> class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
 overall structure of the parts and elements that make up a SpreadsheetML
 document, see <span sdata="link">[Structure of a SpreadsheetML document
-(Open XML SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
+(Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
 --------------------------------------------------------------------------------
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **table** (\<<span
 class="keyword">table</span>\>) element.
 
@@ -68,9 +67,7 @@ filtering, formatting and binding of data.
 Like other constructs in SpreadsheetML, a table in a worksheet is stored
 in a separate part inside the package. The table part does not contain
 any table data. The data is maintained in the worksheet cells. For more
-information about data is stored in the worksheet, see <span
-sdata="link">[Working with sheets (Open XML
-SDK)](working-with-sheets.htm)</span>.
+information about data is stored in the worksheet, see [Working with sheets (Open XML SDK)](working-with-sheets.md).
 
 The following table lists the common Open XML SDK 2.5 classes used when
 working with the **Table** class.
@@ -149,28 +146,22 @@ AutoFilter temporarily hides rows based on filter criteria, which is
 applied column by column to a table of data in the worksheet. This
 collection expresses AutoFilter settings.
 
-[Example: This example expresses a filter indicating to 'show only
+Example: This example expresses a filter indicating to 'show only
 values greater than 0.5'. The filter is being applied to the range
 B3:E8, and the criteria is being applied to values in the column whose
 colId='1' (zero based column numbering, from left to right). Therefore
 any rows must be hidden if the value in that particular column is less
 than or equal to 0.5.
 
-\<autoFilter ref="B3:E8"\>
-
-    \<filterColumn colId="1"\>
-
-        \<customFilters\>
-
-            \<customFilter operator="greaterThan" val="0.5"/\>
-
-        \</customFilters\>
-
-    \</filterColumn\>
-
-\</autoFilter\>
-
-end example]
+```xml
+<autoFilter ref="B3:E8">
+    <filterColumn colId="1">
+        <customFilters>
+            <customFilter operator="greaterThan" val="0.5"/>
+        </customFilters>
+    </filterColumn>
+</autoFilter>
+```
 
 © ISO/IEC29500: 2008.
 

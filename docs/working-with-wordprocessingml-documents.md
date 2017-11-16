@@ -21,10 +21,10 @@ WordprocessingML documents.
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [Working with paragraphs (Open XML SDK)](working-with-paragraphs.htm) </span>
+[Working with paragraphs (Open XML SDK)](working-with-paragraphs.md)  
 
-<span sdata="link"> [Working with runs (Open XML SDK)](working-with-runs.htm) </span>
+[Working with runs (Open XML SDK)](working-with-runs.md)  
 
-<span sdata="link"> [Working with WordprocessingML tables (Open XML SDK)](working-with-tables.htm) </span>
+[Working with WordprocessingML tables (Open XML SDK)](working-with-tables.md)  
 
-<span sdata="link"> [Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.htm) </span>
+[Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.md)  

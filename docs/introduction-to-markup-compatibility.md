@@ -35,8 +35,7 @@ understand and support a feature employed in a document produced by Word
 
 Open XML anticipates these scenarios. The Office Open XML File Formats
 specification describes facilities for achieving the above desired
-outcomes in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and
-Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip).
+outcomes in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip).
 
 The Open XML SDK 2.5 supports markup compatibility in a way that makes
 it easy for you to achieve the above desired outcomes for and Office
@@ -63,9 +62,7 @@ applications.
 
 --------------------------------------------------------------------------------
 
-Markup compatibility is discussed in [ECMA-376, Second Edition, Part 3 -
-Markup Compatibility and
-Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip),
+Markup compatibility is discussed in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip),
 which is recommended reading to understand markup compatibility. The
 specification defines XML attributes to express compatibility rules, and
 XML elements to specify alternate content. For example, the <span
@@ -181,8 +178,7 @@ contain only elements that are understood by the application version
 indicated in the **TargetFileFormatVersions**
 property.
 
-
-> ![](./media/alert_caution.gif)**Caution note**  
+> [!WARNING]
 > Preprocessing affects what gets saved. When you save a file, the only markup that is saved is that which remains after preprocessing.
 
 ---------------------------------------------------------------------------------

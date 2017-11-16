@@ -40,9 +40,7 @@ XML SDK 2.5 for Office in addition to known issues and limitations.
 --------------------------------------------------------------------------------
 
 The Open XML SDK 2.5 is a collection of classes that let you create and
-manipulate Open XML documents - documents that adhere to the [Office
-Open XML File Formats
-Standard](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463).
+manipulate Open XML documents - documents that adhere to the [Office Open XML File Formats Standard](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463).
 Because the SDK provides an application program interface that lets you
 manipulate Open XML documents directly, you can do so without the need
 for the Office client products themselves in both client and server
@@ -85,48 +83,20 @@ documentation in the left pane.
 
 **Table 1. DocumentFormat.OpenXml.Office15 classes**
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left"><p>Class</p></th>
-<th align="left"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>**DocumentFormat.OpenXml.Office15.Excel**</p></td>
-<td align="left"><p>Supports new PivotTable features, timeline, and the other new features of Excel</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>**DocumentFormat.OpenXml.Office15.Word**</p></td>
-<td align="left"><p>Supports new Comment features (e.g. Comments pane) and other new features of Word. For example, the **CommentEx</span> class reads the comments author; The <span class="keyword">WebVideoProperty** property is used to insert a video in a Word document</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>**DocumentFormat.OpenXml.Office15.PowerPoint, Theme**</p></td>
-<td align="left"><p>Supports comment hint, theme family, and the other new features of PowerPoint</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>**DocumentFormat.OpenXml.Office15.Drawing**</p></td>
-<td align="left"><p>Supports new Charts, PivotCharts, and other new Drawing and Chart features</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>**DocumentFormat.OpenXml.Office15.WebExtension, WebExtentionPane**</p></td>
-<td align="left"><p>Supports app for Office and Task Pane app for Office features. The classes are viable for inserting or modifying app for Office into Word and Excel document files</p></td>
-</tr>
-</tbody>
-</table>
+| Class | Description |
+|---|---|
+| **DocumentFormat.OpenXml.Office15.Excel** | Supports new PivotTable features, timeline, and the other new features of Excel |
+| **DocumentFormat.OpenXml.Office15.Word** | Supports new Comment features (e.g. Comments pane) and other new features of Word. For example, the **CommentEx** class reads the comments author; The **WebVideoProperty** property is used to insert a video in a Word document |
+| **DocumentFormat.OpenXml.Office15.PowerPoint, Theme** | Supports comment hint, theme family, and the other new features of PowerPoint |
+| **DocumentFormat.OpenXml.Office15.Drawing** | Supports new Charts, PivotCharts, and other new Drawing and Chart features |
+| **DocumentFormat.OpenXml.Office15.WebExtension, WebExtentionPane** | Supports app for Office and Task Pane app for Office features. The classes are viable for inserting or modifying app for Office into Word and Excel document files |
 
 For code samples demonstrating how to use these new classes, please
-refer to new articles posted to [Open XML Format SDK
-Forum](http://social.msdn.microsoft.com/Forums/en-US/oxmlsdk/threads) in
+refer to new articles posted to [Open XML Format SDK Forum](http://social.msdn.microsoft.com/Forums/en-US/oxmlsdk/threads) in
 the Microsoft Developer Network.
 
 
----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 The Open XML SDK 2.5 can read ISO/IEC 29500 Strict Format files. Its
 document contents are recognized as an Open XML Transitional Format file
@@ -157,75 +127,54 @@ element members.
 
 **ExtensionList:**
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks</span>
 
 -   **DocumentFormat.OpenXml.Drawing.Theme**
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeDrawingProperties</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeDrawingProperties</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.Charts.NumberReference</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.NumberReference</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.Charts.StringReference</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.StringReference</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualDrawingProperties</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualDrawingProperties</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualGroupShapeDrawingProperties</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualGroupShapeDrawingProperties</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Office2010.Excel.SlicerCacheDefinition</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Office2010.Excel.SlicerCacheDefinition</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.NonVisualGroupDrawingShapeProperties</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.NonVisualGroupDrawingShapeProperties</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Presentation.CommentAuthor</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Presentation.CommentAuthor</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeDrawingProperties</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeDrawingProperties</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Spreadsheet.PivotFilter</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Spreadsheet.PivotFilter</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Spreadsheet.QueryTable</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Spreadsheet.QueryTable</span>
 
 **ExtensionListWithModification:**
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Presentation.Comment</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Presentation.Comment</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Presentation.HandoutMaster</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Presentation.HandoutMaster</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Presentation.NotesMaster</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Presentation.NotesMaster</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Presentation.SlideLayout</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Presentation.SlideLayout</span>
 
--   <span
-    class="keyword">DocumentFormat.OpenXml.Presentation.SlideMaster</span>
+-   <span class="keyword">DocumentFormat.OpenXml.Presentation.SlideMaster</span>
 
 
----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 The following section discusses deprecated API members:
 
@@ -266,8 +215,7 @@ DocumentFormat.OpenXml.Wordprocessing:
 
 The Open XML SDK 2.0 classes for Office 2010 *beta only* Open XML tags
 are deprecated. For example, the beta only non-visual properties of
-<span
-class="keyword">DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing</span>,
+<span class="keyword">DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing</span>,
 **DocumentFormat.OpenXml.Office2010.Word**, and
 **DocumentFormat.OpenXml.Office2010.Drawing**
 have been removed from the Open XML SDK 2.5.

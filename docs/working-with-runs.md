@@ -119,6 +119,7 @@ formatting to the run.
         }
     }
 ```
+
 ```vb
     Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
         ' Open a WordprocessingDocument for editing using the filepath.
@@ -155,16 +156,10 @@ WordprocessingML document specified in the preceding code.
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-<span sdata="link"> [Working with paragraphs (Open XML
-SDK)](working-with-paragraphs.htm) </span>
+[Working with paragraphs (Open XML SDK)](working-with-paragraphs.md)  
 
-<span sdata="link"> [How to: Apply a style to a paragraph in a word
-processing document (Open XML
-SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.htm) </span>
+[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)  
 
-<span sdata="link"> [How to: Open and add text to a word processing
-document (Open XML SDK)](how-to-open-and-add-text-to-a-word-processing-document.htm)
-</span>
+[How to: Open and add text to a word processing document (Open XML SDK)](how-to-open-and-add-text-to-a-word-processing-document.md)  

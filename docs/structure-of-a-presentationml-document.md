@@ -62,8 +62,7 @@ Handout Master|<handoutMaster>|HandoutMaster|The root element of the Handout Mas
 Comments|<cmLst>|CommentList|The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see Working with comments (Open XML SDK).
 Comments Author|<cmAuthorLst>|CommentAuthorList|The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see Working with comments (Open XML SDK).
 
- Descriptions adapted from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+ Descriptions adapted from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification, © ISO/IEC29500: 2008.
 
 ### Presentation Part
@@ -83,8 +82,7 @@ out to an audience for future reference.)
 The root element of the Presentation Properties part is the
 \<presentationPr\> element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Presentation
 Properties part as follows:
 
@@ -95,30 +93,30 @@ A package shall contain exactly one Presentation Properties part, and
 that part shall be the target of an implicit relationship from the
 Presentation (§13.3.6) part.
 
-[Example: The following Presentation part-relationship item contains a
+Example: The following Presentation part-relationship item contains a
 relationship to the Presentation Properties part, which is stored in the
 ZIP item presProps.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId6"  
-        Type="http://…/presProps" Target="presProps.xml"/\>  
-\</Relationships\>
-
-end example]
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId6"  
+        Type="http://…/presProps" Target="presProps.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be
 presentationPr.
 
-[Example:
+Example:
 
-\<p:presentationPr xmlns:p="…" …\>  
-    \<p:clrMru\>  
+```xml
+<p:presentationPr xmlns:p="…" …>  
+    <p:clrMru>  
         …  
-    \</p:clrMru\>  
+    </p:clrMru>  
     …  
-\</p:presentationPr\>
-
-end example]
+</p:presentationPr>
+```
 
 A Presentation Properties part shall be located within the package
 containing the relationships part (expressed syntactically, the
@@ -133,8 +131,7 @@ relationships to any other part defined by ISO/IEC 29500.
 
 The root element of the Slide Master part is the \<sldMaster\> element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Slide Master part as
 follows:
 
@@ -149,30 +146,30 @@ Layout (§13.3.9) part where that slide layout is defined based on this
 slide master. Each can optionally be the target of a relationship in a
 Slide Layout (§13.3.9) part as well.
 
-[Example: The following Presentation part-relationship item contains a
+Example: The following Presentation part-relationship item contains a
 relationship to the Slide Master part, which is stored in the ZIP item
 slideMasters/slideMaster1.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId1"  
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId1"  
         Type="http://…/slideMaster"
-Target="slideMasters/slideMaster1.xml"/\>  
-\</Relationships\>
-
-end example]
+Target="slideMasters/slideMaster1.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be sldMaster.
 
-[Example:
+Example:
 
-\<p:sldMaster xmlns:p="…"\>  
-    \<p:cSld name=""\>  
+```xml
+<p:sldMaster xmlns:p="…">  
+    <p:cSld name="">  
         …  
-    \</p:cSld\>  
-    \<p:clrMap … /\>  
-\</p:sldMaster\>
-
-end example]
+    </p:cSld>  
+    <p:clrMap … />  
+</p:sldMaster>
+```
 
 A Slide Master part shall be located within the package containing the
 relationships part (expressed syntactically, the TargetMode attribute of
@@ -212,8 +209,7 @@ any other part defined by ISO/IEC 29500.
 
 The root element of the Slide Layout part is the \<sldLayout\> element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Slide Layout part as
 follows:
 
@@ -227,39 +223,40 @@ those parts shall be the target of an explicit relationship in the Slide
 Master (§13.3.10) part, as well as an implicit relationship from each of
 the Slide (§13.3.8) parts associated with this slide layout.
 
-[Example: The following Slide Master part-relationship item contains
+Example: The following Slide Master part-relationship item contains
 relationships to several Slide Layout parts, which are stored in the ZIP
 items ../slideLayouts/slideLayoutN.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId1"  
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId1"  
         Type="http://…/slideLayout"  
-        Target="../slideLayouts/slideLayout1.xml"/\>  
-    \<Relationship Id="rId2"  
+        Target="../slideLayouts/slideLayout1.xml"/>  
+    <Relationship Id="rId2"  
         Type="http://…/slideLayout"  
-        Target="../slideLayouts/slideLayout2.xml"/\>  
-    \<Relationship Id="rId3"  
+        Target="../slideLayouts/slideLayout2.xml"/>  
+    <Relationship Id="rId3"  
         Type="http://…/slideLayout"  
-        Target="../slideLayouts/slideLayout3.xml"/\>  
-\</Relationships\>
+        Target="../slideLayouts/slideLayout3.xml"/>  
+</Relationships>
+```
 
-end example]
 
 The root element for a part of this content type shall be sldLayout.
 
-[Example:
+Example:
 
-\<p:sldLayout xmlns:p="…" matchingName="" type="title" preserve="1"\>  
-    \<p:cSld name="Title Slide"\>  
+```xml
+<p:sldLayout xmlns:p="…" matchingName="" type="title" preserve="1">  
+    <p:cSld name="Title Slide">  
         …  
-    \</p:cSld\>  
-    \<p:clrMapOvr\>  
-        \<a:masterClrMapping/\>  
-    \</p:clrMapOvr\>  
-    \<p:timing/\>  
-\</p:sldLayout\>
-
-end example]
+    </p:cSld>  
+    <p:clrMapOvr>  
+        <a:masterClrMapping/>  
+    </p:clrMapOvr>  
+    <p:timing/>  
+</p:sldLayout>
+```
 
 A Slide Layout part is permitted to have implicit relationships to the
 following parts defined by ISO/IEC 29500:
@@ -301,8 +298,7 @@ A comment is an annotation intended for the person maintaining the
 presentation slide deck. A note is a reminder or piece of text intended
 for the presenter or the audience.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Slide part as
 follows:
 
@@ -312,42 +308,42 @@ A package shall contain one Slide part per slide, and each of those
 parts shall be the target of an explicit relationship from the
 Presentation (§13.3.6) part.
 
-[Example: Consider a PresentationML document having two slides. The
+Example: Consider a PresentationML document having two slides. The
 corresponding Presentation part relationship item contains two
 relationships to Slide parts, which are stored in the ZIP items
 slides/slide1.xml and slides/slide2.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId2"  
-        Type="http://…/slide" Target="slides/slide1.xml"/\>  
-    \<Relationship Id="rId3"  
-        Type="http://…/slide" Target="slides/slide2.xml"/\>  
-\</Relationships\>
-
-end example]
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId2"  
+        Type="http://…/slide" Target="slides/slide1.xml"/>  
+    <Relationship Id="rId3"  
+        Type="http://…/slide" Target="slides/slide2.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be sld.
 
-[Example: slides/slide1.xml contains:
+Example: slides/slide1.xml contains:
 
-\<p:sld xmlns:p="…"\>  
-    \<p:cSld name=""\>  
+```xml
+<p:sld xmlns:p="…">  
+    <p:cSld name="">  
         …  
-    \</p:cSld\>  
-    \<p:clrMapOvr\>  
+    </p:cSld>  
+    <p:clrMapOvr>  
         …  
-    \</p:clrMapOvr\>  
-    \<p:timing\>  
-        \<p:tnLst\>  
-            \<p:par\>  
-                \<p:cTn id="1" dur="indefinite" restart="never"
-nodeType="tmRoot"/\>  
-            \</p:par\>  
-        \</p:tnLst\>  
-    \</p:timing\>  
-\</p:sld\>
-
-end example]
+    </p:clrMapOvr>  
+    <p:timing>  
+        <p:tnLst>  
+            <p:par>  
+                <p:cTn id="1" dur="indefinite" restart="never"
+nodeType="tmRoot"/>  
+            </p:par>  
+        </p:tnLst>  
+    </p:timing>  
+</p:sld>
+```
 
 A Slide part shall be located within the package containing the
 relationships part (expressed syntactically, the TargetMode attribute of
@@ -391,8 +387,7 @@ other part defined by ISO/IEC 29500.
 
 The root element of the Theme part is the \<officeStyleSheet\> element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML DrawingML Theme part as follows:
 
 An instance of this part type contains information about a document's
@@ -412,40 +407,40 @@ package shall contain zero or one Theme part per Handout Master
 (§13.3.3), Notes Master (§13.3.4), Slide Master (§13.3.10) or
 Presentation (§13.3.6) part via an implicit relationship.
 
-[Example: The following WordprocessingML Main Document part-relationship
+Example: The following WordprocessingML Main Document part-relationship
 item contains a relationship to the Theme part, which is stored in the
 ZIP item theme/theme1.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId4"  
-        Type="http://…/theme" Target="theme/theme1.xml"/\>  
-    \</Relationships\>
-
-end example]
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId4"  
+        Type="http://…/theme" Target="theme/theme1.xml"/>  
+    </Relationships>
+```
 
 The root element for a part of this content type shall be
 officeStyleSheet.
 
-[Example: theme1.xml contains the following, where the name attributes
+Example: theme1.xml contains the following, where the name attributes
 of the clrScheme, fontScheme, and fmtScheme elements correspond to the
 document's color scheme, font scheme, and format scheme, respectively:
 
-\<a:officeStyleSheet xmlns:a="…"\>  
-    \<a:baseStyles\>  
-        \<a:clrScheme name="…"\>  
+```xml
+<a:officeStyleSheet xmlns:a="…">  
+    <a:baseStyles>  
+        <a:clrScheme name="…">  
             …  
-        \</a:clrScheme\>  
-        \<a:fontScheme name="…"\>  
+        </a:clrScheme>  
+        <a:fontScheme name="…">  
             …  
-        \</a:fontScheme\>  
-        \<a:fmtScheme name="…"\>  
+        </a:fontScheme>  
+        <a:fmtScheme name="…">  
             …  
-        \</a:fmtScheme\>  
-    \</a:baseStyles\>  
-    \<a:objectDefaults/\>  
-\</a:officeStyleSheet\>
-
-end example]  
+        </a:fmtScheme>  
+    </a:baseStyles>  
+    <a:objectDefaults/>  
+</a:officeStyleSheet>
+```
 
 A Theme part shall be located within the package containing the
 relationships part (expressed syntactically, the TargetMode attribute of
@@ -466,8 +461,7 @@ other parts defined by ISO/IEC 29500.
 The root element of the Notes Master part is the \<notesMaster\>
 element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Notes Master part as
 follows:
 
@@ -479,30 +473,30 @@ shall be the target of an implicit relationship from the Notes Slide
 (§13.3.5) part, as well as an explicit relationship from the
 Presentation (§13.3.6) part.
 
-[Example: The following Presentation part-relationship item contains a
+Example: The following Presentation part-relationship item contains a
 relationship to the Notes Master part, which is stored in the ZIP item
 notesMasters/notesMaster1.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId4"  
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId4"  
         Type="http://…/notesMaster"
-Target="notesMasters/notesMaster1.xml"/\>  
-\</Relationships\>
-
-end example]
+Target="notesMasters/notesMaster1.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be notesMaster.
 
-[Example:
+Example:
 
-\<p:notesMaster xmlns:p="…"\>  
-    \<p:cSld name=""\>  
+```xml
+<p:notesMaster xmlns:p="…">  
+    <p:cSld name="">  
         …  
-    \</p:cSld\>  
-    \<p:clrMap … /\>  
-\</p:notesMaster\>
-
-end example]
+    </p:cSld\>  
+    <p:clrMap … />  
+</p:notesMaster>
+```
 
 A Notes Master part shall be located within the package containing the
 relationships part (expressed syntactically, the TargetMode attribute of
@@ -541,8 +535,7 @@ to any other part defined by ISO/IEC 29500.
 
 The root element of the Notes Slide part is the \<notes\> element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Notes Slide part as
 follows:
 
@@ -552,32 +545,32 @@ A package shall contain one Notes Slide part for each slide that
 contains notes. If they exist, those parts shall each be the target of
 an implicit relationship from the Slide (§13.3.8) part.
 
-[Example: The following Slide part-relationship item contains a
+Example: The following Slide part-relationship item contains a
 relationship to a Notes Slide part, which is stored in the ZIP item
 ../notesSlides/notesSlide1.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId3"  
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId3"  
         Type="http://…/notesSlide"
-Target="../notesSlides/notesSlide1.xml"/\>  
-\</Relationships\>
-
-end example]
+Target="../notesSlides/notesSlide1.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be notes.
 
-[Example:
+Example:
 
-\<p:notes xmlns:p="…"\>  
-    \<p:cSld name=""\>  
+```xml
+<p:notes xmlns:p="…">  
+    <p:cSld name="">  
          …  
-    \</p:cSld\>  
-    \<p:clrMapOvr\>  
-        \<a:masterClrMapping/\>  
-    \</p:clrMapOvr\>  
-\</p:notes\>
-
-end example]
+    </p:cSld>  
+    <p:clrMapOvr>  
+        <a:masterClrMapping/>  
+    </p:clrMapOvr>  
+</p:notes>
+```
 
 A Notes Slide part shall be located within the package containing the
 relationships part (expressed syntactically, the TargetMode attribute of
@@ -618,8 +611,7 @@ to any other part defined by ISO/IEC 29500.
 The root element of the Handout Master part is the \<handoutMaster\>
 element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Handout Master part
 as follows:
 
@@ -631,30 +623,30 @@ A package shall contain at most one Handout Master part, and it shall be
 the target of an explicit relationship from the Presentation (§13.3.6)
 part.
 
-[Example: The following Presentation part-relationship item contains a
+Example: The following Presentation part-relationship item contains a
 relationship to the Handout Master part, which is stored in the ZIP item
 handoutMasters/handoutMaster1.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId5"  
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId5"  
         Type="http://…/handoutMaster"  
-        Target="handoutMasters/handoutMaster1.xml"/\>  
-\</Relationships\>
-
-end example]
+        Target="handoutMasters/handoutMaster1.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be handoutMaster.
 
-[Example:
+Example:
 
-\<p:handoutMaster xmlns:p="…"\>  
-    \<p:cSld name=""\>  
+```xml
+<p:handoutMaster xmlns:p="…">  
+    <p:cSld name="">  
         …  
-    \</p:cSld\>  
-    \<p:clrMap … /\>  
-\</p:handoutMaster\>
-
-end example]
+    </p:cSld\>  
+    <p:clrMap … >  
+</p:handoutMaster>
+```
 
 A Handout Master part shall be located within the package containing the
 relationships part (expressed syntactically, the TargetMode attribute of
@@ -693,8 +685,7 @@ to any other part defined by ISO/IEC 29500.
 
 The root element of the Comments part is the \<cmLst\> element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Comments part as
 follows:
 
@@ -706,41 +697,41 @@ A package shall contain one Comments part for each slide containing one
 or more comments, and each of those parts shall be the target of an
 implicit relationship from its corresponding Slide (§13.3.8) part.
 
-[Example: The following Slide part-relationship item contains a
+Example: The following Slide part-relationship item contains a
 relationship to a Comments part, which is stored in the ZIP item
 ../comments/comment2.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId4"  
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId4"  
         Type="http://…/comments"  
-        Target="../comments/comment2.xml"/\>  
-\</Relationships\>
-
-end example]
+        Target="../comments/comment2.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be cmLst.
 
-[Example: The Comments part contains three comments, two created by one
+Example: The Comments part contains three comments, two created by one
 author, and one created by another, all at the dates and times shown.
 The index numbers are assigned on a per-author basis, starting at 1 for
 an author's first comment:
 
-\<p:cmLst xmlns:p="…" …\>  
-    \<p:cm authorId="0" dt="2005-11-13T17:00:22.071" idx="1"\>  
-        \<p:pos x="4486" y="1342"/\>  
-        \<p:text\>Comment text goes here.\</p:text\>  
-    \</p:cm\>  
-    \<p:cm authorId="0" dt="2005-11-13T17:00:34.849" idx="2"\>  
-        \<p:pos x="3607" y="1867"/\>  
-        \<p:text\>Another comment's text goes here.\</p:text\>  
-    \</p:cm\>  
-    \<p:cm authorId="1" dt="2005-11-15T00:06:46.919" idx="1"\>  
-        \<p:pos x="1493" y="2927"/\>  
-        \<p:text\>comment …\</p:text\>  
-    \</p:cm\>  
-\</p:cmLst\>
-
-end example]
+```xml
+<p:cmLst xmlns:p="…" …>  
+    <p:cm authorId="0" dt="2005-11-13T17:00:22.071" idx="1">  
+        <p:pos x="4486" y="1342"/>  
+        <p:text>Comment text goes here.</p:text>  
+    </p:cm>  
+    <p:cm authorId="0" dt="2005-11-13T17:00:34.849" idx="2">  
+        <p:pos x="3607" y="1867"/>  
+        <p:text>Another comment's text goes here.</p:text>  
+    </p:cm>  
+    <p:cm authorId="1" dt="2005-11-15T00:06:46.919" idx="1">  
+        <p:pos x="1493" y="2927"/>  
+        <p:text>comment …</p:text>  
+    </p:cm>  
+</p:cmLst>
+```
 
 A Comments part shall be located within the package containing the
 relationships part (expressed syntactically, the TargetMode attribute of
@@ -756,8 +747,7 @@ other part defined by ISO/IEC 29500.
 The root element of the Comments Author part is the \<cmAuthorLst\>
 element.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Comments Author part
 as follows:
 
@@ -771,20 +761,20 @@ A package shall contain at most one Comment Authors part. If it exists,
 that part shall be the target of an implicit relationship from the
 Presentation (§13.3.6) part.
 
-[Example: The following Presentation part relationship item contains a
+Example: The following Presentation part relationship item contains a
 relationship to the Comment Authors part, which is stored in the ZIP
 item commentAuthors.xml:
 
-\<Relationships xmlns="…"\>  
-    \<Relationship Id="rId8"  
-        Type="http://…/commentAuthors" Target="commentAuthors.xml"/\>  
-\</Relationships\>
-
-end example]
+```xml
+<Relationships xmlns="…">  
+    <Relationship Id="rId8"  
+        Type="http://…/commentAuthors" Target="commentAuthors.xml"/>  
+</Relationships>
+```
 
 The root element for a part of this content type shall be cmAuthorLst.
 
-[Example: Two people have authored comments in this document: Mary Smith
+Example: Two people have authored comments in this document: Mary Smith
 and Peter Jones. Her initials are "mas", her author-ID is 0, and her
 comments' display color index is 0. Since Mary's last-comment-index-used
 value is 3, the next comment-index to be used for her is 4. His initials
@@ -792,14 +782,14 @@ are "pjj", his author-ID is 1, and his comments' display color index is
 1. Since Peter's last-comment-index-used value is 1, the next
 comment-index to be used for him is 2:
 
-\<p:cmAuthorLst xmlns:p="…" …\>  
-    \<p:cmAuthor id="0" name="Mary Smith" initials="mas" lastIdx="3"
-clrIdx="0"/\>  
-    \<p:cmAuthor id="1" name="Peter Jones" initials="pjj" lastIdx="1"
-clrIdx="1"/\>  
-\</p:cmAuthorLst\>
-
-end example]
+```xml
+<p:cmAuthorLst xmlns:p="…" …>  
+    <p:cmAuthor id="0" name="Mary Smith" initials="mas" lastIdx="3"
+clrIdx="0"/>  
+    <p:cmAuthor id="1" name="Peter Jones" initials="pjj" lastIdx="1"
+clrIdx="1"/>  
+</p:cmAuthorLst>
+```
 
 A Comment Authors part shall be located within the package containing
 the relationships part (expressed syntactically, the TargetMode
@@ -816,8 +806,7 @@ to any other part defined by ISO/IEC 29500.
 Now that you are familiar with the parts of a PresentationML document,
 consider how some of these parts are implemented and connected in an
 actual presentation file. As shown in the article <span
-sdata="link">[How to: Create a presentation document by providing a file
-name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.htm)</span>,
+sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span>,
 you can use the Open XML API to build up a minimum presentation file,
 part by part.
 
@@ -849,8 +838,7 @@ single slide.
 Figure 1. Minimum presentation folder structure
 
   
- ![Minimum presentation folder
-structure](./media/odc_oxml_ppt_documentstructure_fig01.jpg)
+ ![Minimum presentation folder structure](./media/odc_oxml_ppt_documentstructure_fig01.jpg)
 The presentation.xml file contains \<sld\> (Slide) elements that
 reference the slides in the presentation. Each slide is associated to
 the presentation by means of a slide ID and a relationship ID. The <span
@@ -858,9 +846,7 @@ class="keyword">slideID</span> is the identifier (ID) used within the
 package to identify a slide and must be unique within the presentation.
 The **id** attribute is the relationship ID
 that identifies the slide part definition associated with a slide. For
-more information about the slide part, see <span sdata="link">[Working
-with presentation slides (Open XML
-SDK)](working-with-presentation-slides.htm)</span>.
+more information about the slide part, see <span sdata="link">[Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md)</span>.
 
 The following XML code is the PresentationML that represents the
 presentation part of a presentation document that contains a single
@@ -969,26 +955,19 @@ presentation.
 Figure 2. Elements of a PresentationML file
 
   
- ![Elements of a PresentationML
-file](./media/odc_oxml_ppt_documentstructure_fig02.jpg)
+ ![Elements of a PresentationML file](./media/odc_oxml_ppt_documentstructure_fig02.jpg)
 
 
 --------------------------------------------------------------------------------
 
 #### Concepts
 
-<span sdata="link"> [How to: Create a presentation document by providing
-a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.htm)
-</span>
+[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-<span sdata="link"> [Working with presentations (Open XML
-SDK)](working-with-presentations.htm) </span>
+[Working with presentations (Open XML SDK)](working-with-presentations.md)  
 
-<span sdata="link"> [Working with presentation slides (Open XML
-SDK)](working-with-presentation-slides.htm) </span>
+[Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md)  
 
-<span sdata="link"> [Working with slide masters (Open XML
-SDK)](working-with-slide-masters.htm) </span>
+[Working with slide masters (Open XML SDK)](working-with-slide-masters.md)  
 
-<span sdata="link"> [Working with slide layouts (Open XML
-SDK)](working-with-slide-layouts.htm) </span>
+[Working with slide layouts (Open XML SDK)](working-with-slide-layouts.md)  

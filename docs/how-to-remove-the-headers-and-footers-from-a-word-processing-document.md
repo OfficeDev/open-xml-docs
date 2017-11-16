@@ -21,8 +21,7 @@ processing document. It contains an example <span
 class="keyword">RemoveHeadersAndFooters</span> method to illustrate this
 task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must then explicitly reference the following assemblies in your project.
 
 -   WindowsBase
@@ -39,6 +38,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Wordprocessing;
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml
     Imports DocumentFormat.OpenXml.Packaging
@@ -60,11 +60,13 @@ modify.
 ```csharp
     public static void RemoveHeadersAndFooters(string filename)
 ```
+
 ```vb
     Public Sub RemoveHeadersAndFooters(ByVal filename As String)
 ```
+
 The complete code listing for the method can be found in the [Sample
-Code](22f973f4-58d1-4dd4-943e-a15ac2571b7c.md#sampleCode) section.
+Code](how-to-remove-the-headers-and-footers-from-a-word-processing-document.md#sampleCode) section.
 
 
 --------------------------------------------------------------------------------
@@ -76,6 +78,7 @@ in the following code example.
 ```csharp
     RemoveHeadersAndFooters(@"C:\Users\Public\Documents\Headers.docx");
 ```
+
 ```vb
     RemoveHeadersAndFooters("C:\Users\Public\Documents\Headers.docx")
 ```
@@ -104,6 +107,7 @@ class="code">docPart</span>.
         // Code removed here...
     }
 ```
+
 ```vb
     ' Given a document name, remove all of the headers and footers
     ' from the document.
@@ -144,6 +148,7 @@ class="nolink">FooterPart</span></span> objects, respectively.
         // Code removed here...
     }
 ```
+
 ```vb
     ' Get a reference to the main document part.
     Dim docPart = doc.MainDocumentPart
@@ -174,6 +179,7 @@ write yourself.
     docPart.DeleteParts(docPart.HeaderParts);
     docPart.DeleteParts(docPart.FooterParts);
 ```
+
 ```vb
     ' Remove the header and footer parts.
     docPart.DeleteParts(docPart.HeaderParts)
@@ -199,6 +205,7 @@ shown in the section that follows the following code example.
     // Save the changes.
     document.Save();
 ```
+
 ```vb
     ' Get a reference to the root element of the main 
     ' document part.
@@ -251,6 +258,7 @@ the operation with the footer elements.
         footer.Remove();
     }
 ```
+
 ```vb
     ' Remove all references to the headers and footers.
         
@@ -332,6 +340,7 @@ Visual Basic.
         }
     }
 ```
+
 ```vb
     ' To remove all of the headers and footers in a document.
     Public Sub RemoveHeadersAndFooters(ByVal filename As String)
@@ -387,5 +396,4 @@ Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

@@ -21,13 +21,12 @@ class="nolink">Comment</span></span> class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a PresentationML
-Document](structure-of-a-presentationml-document.htm).
+Document](structure-of-a-presentationml-document.md).
 
 
 ---------------------------------------------------------------------------------
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Comments section of the Open XML
 PresentationML framework as follows:
 
@@ -42,8 +41,7 @@ their visual appearance.
 
 © ISO/IEC29500: 2008.
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<cm\> element used
 to represent comments in a PresentationML document as follows:
 
@@ -51,14 +49,13 @@ This element specifies a single comment attached to a slide. It contains
 the text of the comment, its position on the slide, and attributes
 referring to its author and date.
 
-[Example:
-
-\<p:cm authorId="0" dt="2006-08-28T17:26:44.129" idx="1"\>  
-   \<p:pos x="10" y="10"/\>  
-   \<p:text\>Add diagram to clarify.\</p:text\>  
-\</p:cm\>
-
-end example]
+Example:
+```xml
+<p:cm authorId="0" dt="2006-08-28T17:26:44.129" idx="1">  
+   <p:pos x="10" y="10"/>  
+   <p:text\>Add diagram to clarify.</p:text>  
+</p:cm>
+```
 
 © ISO/IEC29500: 2008.
 
@@ -68,17 +65,16 @@ correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-<extLst>|ExtensionListWithModification
-<pos>|Position
-<text>|Text
+\<extLst\>|ExtensionListWithModification
+\<pos\>|Position
+\<text\>|Text
 
-The following table from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<cm\> element.
 
 **Attributes**|**Description**
 ---|---
-authorId|This attribute specifies the author of the comment.It refers to the ID of an author in thecomment author list for the document.<br/>The possible values for this attribute are defined by the W3C XML Schema unsignedInt datatype.
+authorId|This attribute specifies the author of the comment.It refers to the ID of an author in the comment author list for the document.<br/>The possible values for this attribute are defined by the W3C XML Schema unsignedInt datatype.
 dt|This attribute specifies the date and time this comment was last modified.<br/>The possible values for this attribute are defined by the W3C XML Schema **datetime** datatype.
 idx|This attribute specifies an identifier for this comment that is unique within a list of all comments by this author in this document. An author's first comment in a document has index 1.<br/>[Note: Because the index is unique only for the comment author, a document can contain multiple comments with the same index created by different authors. end note]<br/>The possible values for this attribute are defined by the ST_Index simple type (§19.7.3).
 
@@ -101,8 +97,7 @@ class="keyword">Comment</span> class are shown in the following list.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -112,16 +107,16 @@ extend the storage capabilities of the PresentationML framework. This
 allows for various new kinds of data to be stored natively within the
 framework.
 
-[Note: Using this extLst element allows the generating application to
-store whether this extension property has been modified. end note]
+> [!NOTE]
+> Using this extLst element allows the generating application to
+store whether this extension property has been modified. end note
 
 © ISO/IEC29500: 2008.
 
 ### Position Class
 
 The **Position** class corresponds to the
-\<pos\>element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<pos\>element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<pos\> element:
 
 This element specifies the positioning information for the placement of
@@ -147,8 +142,7 @@ application chooses to display comments. end note]
 ### Text class
 
 The **Text** class corresponds to the
-\<text\>element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<text\>element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<text\> element:
 
 This element specifies the content of a comment. This is the text with
@@ -212,7 +206,7 @@ the comment.
 
 The following code segment from the article <span sdata="link">[How to:
 Add a comment to a slide in a presentation (Open XML
-SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.htm)</span> adds a new
+SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)</span> adds a new
 comments part to an existing slide in a presentation (if the slide does
 not already contain comments) and creates an instance of an Open XML SDK
 2.0 **Comment** class in the slide comments
@@ -268,6 +262,7 @@ article.
                 new Position() { X = 100, Y = 200 },
                 new Text() { Text = text });
 ```
+
 ```vb
      ' Declare a comments part.
           Dim commentsPart As SlideCommentsPart
@@ -311,11 +306,12 @@ article.
                {.X = 100, .Y = 200}, New Text() With {.Text = text})
 
 ```
+
 ---------------------------------------------------------------------------------
 
 When the Open XML SDK 2.5 code in <span sdata="link">[How to: Add a
 comment to a slide in a presentation (Open XML
-SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.htm)</span> is run, including
+SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)</span> is run, including
 the segment shown in this article, the following XML is written to a new
 CommentAuthors.xml part in the existing PresentationML document
 referenced in the code, assuming that the document contained no comments
@@ -331,6 +327,7 @@ or comment authors before the code was run.
                   clrIdx="0" />
     </p:cmAuthorLst>
 ```
+
 In addition, the following XML is written to a new Comments.xml part in
 the existing PresentationML document referenced in the code in the
 article.
@@ -346,21 +343,16 @@ article.
         <p:text>commentText</p:text>
       </p:cm>
     </p:cmLst>
-
 ```
+
 --------------------------------------------------------------------------------
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-[How to: Create a Presentation by Providing a File
-Name](how-to-create-a-presentation-document-by-providing-a-file-name.htm)
+[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 
-<span sdata="link"> [How to: Add a comment to a slide in a presentation
-(Open XML SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.htm) </span>
+[How to: Add a comment to a slide in a presentation (Open XML SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)  
 
-<span sdata="link"> [How to: Delete all the comments by an author from
-all the slides in a presentation (Open XML
-SDK)](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.htm) </span>
+[How to: Delete all the comments by an author from all the slides in a presentation (Open XML SDK)](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md)  

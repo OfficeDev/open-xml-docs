@@ -21,14 +21,12 @@ class="nolink">PivotTableDefinition</span></span> class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
 make up a SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
+SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
 --------------------------------------------------------------------------------
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the <span
 class="keyword">PivotTableDefinition</span> (\<<span
 class="keyword">pivotTableDefinition</span>\>) element.

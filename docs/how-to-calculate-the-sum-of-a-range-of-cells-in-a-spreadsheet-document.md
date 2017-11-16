@@ -336,7 +336,7 @@ the worksheet.
 
             worksheetPart.Worksheet.Save()
         End Using
-    End Subxxxxxxx
+    End Sub
 ```
 
 To get the row index the code passes a parameter that represents the

@@ -22,7 +22,7 @@ Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
 SpreadsheetML document, see <span sdata="link">[Structure of a
 SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
+SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
 --------------------------------------------------------------------------------
@@ -49,8 +49,7 @@ class="keyword">CellValue</span> class, see <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue"><span
 class="nolink">CellValue</span></span>.
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **cellFormula**
 (\<**f**\>) element.
 

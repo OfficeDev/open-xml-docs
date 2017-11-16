@@ -27,6 +27,7 @@ this topic.
     using DocumentFormat.OpenXml.Validation;
     using DocumentFormat.OpenXml.Wordprocessing;
 ```
+
 ```vb
     Imports System
     Imports DocumentFormat.OpenXml.Packaging
@@ -69,6 +70,7 @@ following example that validates a file named "Word18.docx.".
     Console.WriteLine("All done! Press a key.");
     Console.ReadKey();
 ```
+
 ```vb
     Dim filepath As String = "C:\Users\Public\Documents\Word18.docx"
     ValidateWordDocument(filepath)
@@ -159,6 +161,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     Public Sub ValidateWordDocument(ByVal filepath As String)
         Using wordprocessingDocument__1 As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
@@ -221,5 +224,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

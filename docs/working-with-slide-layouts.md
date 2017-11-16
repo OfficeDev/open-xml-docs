@@ -23,8 +23,7 @@ Open XML File Format PresentationML schema.
 
 ---------------------------------------------------------------------------------
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<sldLayout\>
 element used to represent slide layouts in a PresentationML document as
 follows:
@@ -39,8 +38,7 @@ content should be mapped to the new slide layout.
 The \<sldLayout\> element is the root element of the PresentationML
 Slide Layout part. For more information about the overall structure of
 the parts and elements that make up a PresentationML document, see
-[Structure of a PresentationML
-Document](structure-of-a-presentationml-document.htm).
+[Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 The following table lists the child elements of the \<sldLayout\>
 element used when working with slide layouts and the Open XML SDK 2.5
@@ -48,15 +46,14 @@ classes that correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-<clrMapOvr>|ColorMapOverride
-<cSld>|CommonSlideData
-<extLst>|ExtensionListWithModification
-<hf>|HeaderFooter
-<timing>|Timing
-<transition>|Transition
+\<clrMapOvr\>|ColorMapOverride
+\<cSld\>|CommonSlideData
+\<extLst\>|ExtensionListWithModification
+\<hf\>|HeaderFooter
+\<timing\>|Timing
+\<transition\>|Transition
 
-The following table from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<sldLayout\> element.
 
 **Attributes**|**Description**
@@ -87,8 +84,7 @@ list.
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -103,8 +99,7 @@ slide, presentation slide, or slide layout.
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -124,8 +119,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -143,8 +137,7 @@ store whether this extension property has been modified. end note]
 ### HeaderFooter Class
 
 The **HeaderFooter** class corresponds to the
-\<hf\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<hf\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<hf\> element:
 
 This element specifies the header and footer information for a slide.
@@ -157,8 +150,7 @@ slide numbering, and custom header and footer text.
 ### Timing Class
 
 The **Timing** class corresponds to the
-\<timing\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<timing\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<timing\> element:
 
 This element specifies the timing information for handling all
@@ -173,8 +165,7 @@ PresentationML framework.
 ### Transition Class
 
 The **Transition** class corresponds to the
-\<transition\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<transition\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<transition\> element:
 
 This element specifies the kind of slide transition that should be used
@@ -221,9 +212,7 @@ class="nolink">Shape</span></span> class.
 
 --------------------------------------------------------------------------------
 
-The following method from the article <span sdata="link">[How to: Create
-a presentation document by providing a file name (Open XML
-SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.htm)</span> adds a new slide
+The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> adds a new slide
 layout part to an existing presentation and creates an instance of an
 Open XML SDK 2.5**SlideLayout** class in the
 new slide layout part. The **SlideLayout**
@@ -275,6 +264,7 @@ namespace.
                 return slideLayoutPart1;
              }
 ```
+
 ```vb
     Private Shared Function CreateSlideLayoutPart(ByVal slidePart1 As SlidePart) As SlideLayoutPart
                 Dim slideLayoutPart1 As SlideLayoutPart = slidePart1.AddNewPart(Of SlideLayoutPart)("rId1")
@@ -346,11 +336,8 @@ PresentationML document file referenced in the code.
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-[How to: Create a Presentation by Providing a File
-Name](how-to-create-a-presentation-document-by-providing-a-file-name.htm)
+[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md) 
 
-<span sdata="link"> [How to: Apply a theme to a presentation (Open XML
-SDK)](how-to-apply-a-theme-to-a-presentation.htm) </span>
+[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  

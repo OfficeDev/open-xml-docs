@@ -27,6 +27,7 @@ this topic.
     using DocumentFormat.OpenXml.Packaging;
     using System.Xml;
 ```
+
 ```vb
     Imports System.IO
     Imports DocumentFormat.OpenXml.Packaging
@@ -50,12 +51,14 @@ to enable editing the document.
        // Insert other code here. 
     }
 ```
+
 ```vb
     Using wdDoc As WordprocessingDocument = _
             WordprocessingDocument.Open(filepath, True)
         ' Insert other code here.
     End Using
 ```
+
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
@@ -98,6 +101,7 @@ markup for a document that contains the text "Example text."
       </w:body>
     </w:document>
 ```
+
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to <span
 class="keyword">WordprocessingML</span> elements. You will find these
@@ -131,8 +135,7 @@ direct formatting, setting it to **true** or
 **false** sets the absolute state of the
 resulting property.
 
-The following information from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the **vanish** element.
 
 > **vanish (Hidden Text)**
@@ -158,6 +161,7 @@ introduces the **vanish** element.
       <w:vanish />
     </w:rPr>
 ```
+
 > This run declares that the **vanish** property is set for the contents
 > of this run, so the contents of this run will be hidden when the
 > document contents are displayed. *end example*]
@@ -171,6 +175,7 @@ The following XML schema segment defines the contents of this element.
        <attribute name="val" type="ST_OnOff"/>
     </complexType>
 ```
+
 The **val** property in the code above is a binary value that can be
 turned on or off. If given a value of **on**, **1**, or <span
 class="keyword">true</span> the property is turned on. If given the
@@ -189,12 +194,14 @@ named "Word14.docx."
     string docName = @"C:\Users\Public\Documents\Word14.docx";
     WDDeleteHiddenText(docName);
 ```
+
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Word14.docx"
     WDDeleteHiddenText(docName)
 ```
-> ![](./media/alert_note.gif)**Note**  
-> This example assumes that the file Word14.docx contains some hidden text. In order to hide part of the file text, select it, and click CTRL+D to show the <span class="ui">Font</span> dialog box. Select the <span class="ui">Hidden</span> box and click <span class="ui">OK</span>.
+
+> [!NOTE]
+> This example assumes that the file Word14.docx contains some hidden text. In order to hide part of the file text, select it, and click CTRL+D to show the **Font** dialog box. Select the **Hidden** box and click **OK**.
 
 
 Following is the complete sample code in both C\# and Visual Basic.
@@ -233,6 +240,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     Public Sub WDDeleteHiddenText(ByVal docName As String)
         ' Given a document name, delete all the hidden text.
@@ -268,5 +276,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

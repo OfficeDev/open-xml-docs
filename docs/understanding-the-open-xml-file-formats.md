@@ -21,20 +21,15 @@ the Open XML file formats and markup languages.
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [Introduction to markup compatibility (Open XML
-SDK)](introduction-to-markup-compatibility.htm) </span>
+[Introduction to markup compatibility (Open XML SDK)](introduction-to-markup-compatibility.md)  
 
-<span sdata="link"> [Working with PresentationML documents (Open XML
-SDK)](working-with-presentationml-documents.htm) </span>
+[Working with PresentationML documents (Open XML SDK)](working-with-presentationml-documents.md)  
 
-<span sdata="link"> [Working with SpreadsheetML documents (Open XML
-SDK)](working-with-spreadsheetml-documents.htm) </span>
+[Working with SpreadsheetML documents (Open XML SDK)](working-with-spreadsheetml-documents.md)  
 
-<span sdata="link"> [Working with WordprocessingML documents (Open XML
-SDK)](working-with-wordprocessingml-documents.htm) </span>
+[Working with WordprocessingML documents (Open XML SDK)](working-with-wordprocessingml-documents.md)  
 
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [How do I... (Open XML
-SDK)](how-do-i.htm) </span>
+[How do I... (Open XML SDK)](how-do-i.md)  

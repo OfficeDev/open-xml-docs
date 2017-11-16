@@ -26,6 +26,7 @@ this topic.
     using System.IO;
     using DocumentFormat.OpenXml.Packaging;
 ```
+
 ```vb
     Imports System.IO
     Imports DocumentFormat.OpenXml.Packaging
@@ -66,11 +67,13 @@ to **true** to enable editing the document.
         // Insert other code here.
     }
 ```
+
 ```vb
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
         ' Insert other code here.
     End Using
 ```
+
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
@@ -157,6 +160,7 @@ manner:
        <attribute name="name" type="xsd:string" use="optional" default=""/>
     </complexType>
 ```
+
 This complex type also holds a <span
 class="keyword">CT\_OfficeArtExtensionList</span>, which is used for
 future extensibility of this complex type.
@@ -179,6 +183,7 @@ delete the old theme part.
             // Delete the old document part.
             mainPart.DeletePart(mainPart.ThemePart);
 ```
+
 ```vb
     Public Shared Sub ReplaceTheme(ByVal document As String, ByVal themeFile As String)
         Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
@@ -205,6 +210,7 @@ class="keyword">StreamWriter</span> objects to copy the theme from the
         streamWriter.Write(streamReader.ReadToEnd());
     }
 ```
+
 ```vb
     ' Add a new document part and then add content.
     Dim themePart As ThemePart = mainPart.AddNewPart(Of ThemePart)()
@@ -232,11 +238,13 @@ you can use the following call example to copy the theme from the file
     string themeFile = @"C:\Users\Public\Documents\Theme1.xml";
     ReplaceTheme(document, themeFile);
 ```
+
 ```vb
     Dim document As String = "C:\Users\Public\Documents\\MyPkg7.docx"
     Dim themeFile As String = "C:\Users\Public\Documents\Theme1.xml"
     ReplaceTheme(document, themeFile)
 ```
+
 After you run the program open the Word file and notice the change in
 font.
 
@@ -266,6 +274,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     ' This method can be used to replace a document part in a package.
     Public Sub ReplaceTheme(ByVal document As String, ByVal themeFile As String)
@@ -294,5 +303,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

@@ -23,8 +23,7 @@ Open XML File Format PresentationML schema.
 
 --------------------------------------------------------------------------------
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<notes\> element
 used to represent notes slides in a PresentationML document as follows:
 
@@ -33,28 +32,28 @@ corresponding data. Contained within a notes slide are all the common
 slide elements along with additional properties that are specific to the
 notes element.
 
-[Example: Consider the following PresentationML notes slide:
+Example: Consider the following PresentationML notes slide:
 
-\<p:notes\>  
-    \<p:cSld\>  
+```xml
+<p:notes>  
+    <p:cSld>  
         …  
-    \</p:cSld\>  
+    </p:cSld>  
     …  
-\</p:notes\>
+</p:notes>
+```
 
 In the above example a notes element specifies the existence of a notes
 slide with all of its parts. Notice the cSld element, which specifies
 the common elements that can appear on any slide type and then any
 elements specify additional non-common properties for this notes slide.
-end example]
 
 © ISO/IEC29500: 2008.
 
 The \<notes\> element is the root element of the PresentationML Notes
 Slide part. For more information about the overall structure of the
 parts and elements that make up a PresentationML document, see
-[Structure of a PresentationML
-Document](structure-of-a-presentationml-document.htm).
+[Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 The following table lists the child elements of the \<notes\> element
 used when working with notes slides and the Open XML SDK 2.5 classes
@@ -66,8 +65,7 @@ that correspond to them.
 <cSld>|CommonSlideData
 <extLst>|ExtensionListWithModification
 
-The following table from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<notes\> element.
 
 **Attributes**|**Description**
@@ -93,8 +91,7 @@ class="keyword">NotesSlide</span> class are shown in the following list.
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -109,8 +106,7 @@ slide, presentation slide, or slide layout.
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -130,8 +126,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -232,6 +227,7 @@ namespace.
             return notesSlidePart1;
         }
 ```
+
 ```vb
     Private Shared Function CreateNotesSlidePart(ByVal slidePart1 As SlidePart) As NotesSlidePart
             Dim notesSlidePart1 As NotesSlidePart = slidePart1.AddNewPart(Of NotesSlidePart)("rId6")
@@ -304,17 +300,12 @@ the PresentationML document referenced in the code.
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-[How to: Create a Presentation by Providing a File
-Name](how-to-create-a-presentation-document-by-providing-a-file-name.htm)
+[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-<span sdata="link"> [How to: Insert a new slide into a presentation
-(Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.htm) </span>
+[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-<span sdata="link"> [How to: Delete a slide from a presentation (Open
-XML SDK)](how-to-delete-a-slide-from-a-presentation.htm) </span>
+[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
 
-<span sdata="link"> [How to: Apply a theme to a presentation (Open XML
-SDK)](how-to-apply-a-theme-to-a-presentation.htm) </span>
+[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  

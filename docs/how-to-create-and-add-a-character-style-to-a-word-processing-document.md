@@ -70,8 +70,7 @@ in the user interface).
     ByVal styleid As String, ByVal stylename As String, Optional ByVal aliases As String = "")
 ```
 
-The complete code listing for the method can be found in the [Sample
-Code](c38f2c94-f0b5-4bb5-8c95-02e556d4e9f1.htm#sampleCode) section.
+The complete code listing for the method can be found in the [Sample Code](how-to-create-and-add-a-character-style-to-a-word-processing-document.md#sampleCode) section.
 
 
 ---------------------------------------------------------------------------------
@@ -263,7 +262,7 @@ type attribute:
 
 -   Default paragraph + character properties
 
-[*Example*: Consider a style called Heading 1 in a document as shown in
+*Example*: Consider a style called Heading 1 in a document as shown in
 the following code example.
 
 ```xml
@@ -329,8 +328,7 @@ range of text.
 Figure 1. Text with a character style applied
 
   
- ![A character style applied to some
-text](../media/OpenXmlCon_CreateCharacterStyle_Fig1.gif)
+ ![A character style applied to some text](../media/OpenXmlCon_CreateCharacterStyle_Fig1.gif)
 
 
 --------------------------------------------------------------------------------
@@ -362,17 +360,13 @@ styles element is created and saved to the part.
 
 --------------------------------------------------------------------------------
 
-To create the style, the code instantiates the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Style"><span
+To create the style, the code instantiates the <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Style"><span
 class="nolink">Style</span></span> class and sets certain properties,
-such as the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type"><span
+such as the <span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type"><span
 class="nolink">Type</span></span> of style (paragraph), the <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId"><span
+sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId"><span
 class="nolink">StyleId</span></span>, and whether the style is a <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle"><span
+sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle"><span
 class="nolink">CustomStyle</span></span>.
 
 ```csharp
@@ -406,8 +400,7 @@ corresponding class, and then call the <span sdata="cer"
 target="M:DocumentFormat.OpenXml.OpenXmlElement.Append(DocumentFormat.OpenXml.OpenXmlElement[])"><span
 class="nolink">Append([])</span></span> method to add the child element
 to the style. For more information about these properties, see section
-17.7 of the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification.
+17.7 of the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification.
 
 ```csharp
     // Create and add the child elements (properties of the style).

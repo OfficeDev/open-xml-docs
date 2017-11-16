@@ -21,14 +21,12 @@ class="nolink">HandoutMaster</span></span> class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see <span sdata="link">[Structure of a
-PresentationML document (Open XML
-SDK)](structure-of-a-presentationml-document.htm)</span>.
+PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)</span>.
 
 
 ---------------------------------------------------------------------------------
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<handoutMaster\>
 element used to represent a handout master slide in a PresentationML
 document as follows:
@@ -49,10 +47,10 @@ SDK 2.5 classes that correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-<clrMap>|ColorMap
-<cSld>|CommonSlideData
-<extLst>|ExtensionListWithModification
-<hf>|HeaderFooter
+\<clrMap\>|ColorMap
+\<cSld\>|CommonSlideData
+\<extLst\>|ExtensionListWithModification
+\<hf\>|HeaderFooter
 
 
 --------------------------------------------------------------------------------
@@ -70,8 +68,7 @@ sections.
 ### ColorMap Class
 
 The **ColorMap** class corresponds to the
-\<clrMap\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<clrMap\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<clrMap\> element:
 
 This element specifies the mapping layer that transforms one color
@@ -82,20 +79,20 @@ corresponding color in the theme.
 [Example: Consider the following mapping of colors that applies to a
 slide master:
 
-\<p:clrMap bg1="dk1" tx1="lt1" bg2="dk2" tx2="lt2" accent1="accent1"  
+```xml
+<p:clrMap bg1="dk1" tx1="lt1" bg2="dk2" tx2="lt2" accent1="accent1"  
 accent2="accent2" accent3="accent3" accent4="accent4"
 accent5="accent5"  
-accent6="accent6" hlink="hlink" folHlink="folHlink"/\>
+accent6="accent6" hlink="hlink" folHlink="folHlink"/>
+```
 
-end example]
 
 © ISO/IEC29500: 2008.
 
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -115,8 +112,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -126,16 +122,16 @@ extend the storage capabilities of the PresentationML framework. This
 allows for various new kinds of data to be stored natively within the
 framework.
 
-[Note: Using this extLst element allows the generating application to
-store whether this extension property has been modified. end note]
+> [!NOTE]
+> Using this extLst element allows the generating application to
+store whether this extension property has been modified.
 
 © ISO/IEC29500: 2008.
 
 ### HeaderFooter Class
 
 The **HeaderFooter** class corresponds to the
-\<hf\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<hf\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<hf\> element:
 
 This element specifies the header and footer information for a slide.
@@ -330,22 +326,14 @@ the PresentationML document referenced in the code.
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-<span sdata="link"> [How to: Create a presentation document by providing
-a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.htm)
-</span>
+[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-<span sdata="link"> [How to: Insert a new slide into a presentation
-(Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.htm) </span>
+[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-<span sdata="link"> [How to: Delete a slide from a presentation (Open
-XML SDK)](how-to-delete-a-slide-from-a-presentation.htm) </span>
+[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
 
-<span sdata="link"> [How to: Retrieve the number of slides in a
-presentation document (Open XML
-SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.htm) </span>
+[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
 
-<span sdata="link"> [How to: Apply a theme to a presentation (Open XML
-SDK)](how-to-apply-a-theme-to-a-presentation.htm) </span>
+[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  

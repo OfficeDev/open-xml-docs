@@ -27,6 +27,7 @@ this topic.
     using DocumentFormat.OpenXml.Spreadsheet;
     using System.Linq;
 ```
+
 ```vb
     Imports System.IO
     Imports DocumentFormat.OpenXml.Packaging
@@ -83,10 +84,12 @@ shown in the following example.
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))
 ```
+
 ```vb
     ' Open the document for editing.
     Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
 ```
+
 After you have opened the spreadsheet document package, you can add a
 row to a sheet in the workbook. Each workbook has a workbook part and at
 least one <span sdata="cer"
@@ -102,9 +105,11 @@ code example.
 ```csharp
     WorkbookPart wbPart = document.WorkbookPart;
 ```
+
 ```vb
     Dim wbPart As WorkbookPart = document.WorkbookPart
 ```
+
 The basic document structure of a SpreadsheetML document consists of the
 <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
@@ -125,6 +130,7 @@ file and is shown in the following code example.
         </sheets>
     </workbook>
 ```
+
 The worksheet XML files contain one or more block level elements such as
 <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData"><span
@@ -156,6 +162,7 @@ code example.
         </sheetData>
     </worksheet>
 ```
+
 Using the Open XML SDK 2.5, you can create document structure and
 content that uses strongly-typed classes that correspond to
 SpreadsheetML elements. You can find these classes in the <span
@@ -195,6 +202,7 @@ adds the new **WorksheetPart**.
     newWorksheetPart.Worksheet = new Worksheet(new SheetData());
     newWorksheetPart.Worksheet.Save();
 ```
+
 ```vb
     ' Add a new worksheet.
     Dim newWorksheetPart As WorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
@@ -218,12 +226,14 @@ method that uses a file named Sheet11.xslx.
     OpenAndAddToSpreadsheetStream(stream);
     stream.Close();
 ```
+
 ```vb
     Dim strDoc As String = "C:\Users\Public\Documents\Sheet11.xlsx"
     Dim stream As Stream = File.Open(strDoc, FileMode.Open)
     OpenAndAddToSpreadsheetStream(stream)
     stream.Close()
 ```
+
 Notice that the <span
 class="keyword">OpenAddAndAddToSpreadsheetStream</span> method does not
 close the stream passed to it. The calling code must do that.
@@ -266,6 +276,7 @@ The following is the complete sample code in both C\# and Visual Basic.
         // Caller must close the stream.
     }
 ```
+
 ```vb
     Public Sub OpenAndAddToSpreadsheetStream(ByVal stream As Stream)
         ' Open a SpreadsheetDocument based on a stream.
@@ -307,5 +318,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

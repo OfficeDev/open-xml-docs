@@ -21,26 +21,18 @@ documents.
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [Structure of a SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.htm) </span>
+[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)  
 
-<span sdata="link"> [Working with the calculation chain (Open XML
-SDK)](working-with-the-calculation-chain.htm) </span>
+[Working with the calculation chain (Open XML SDK)](working-with-the-calculation-chain.md)  
 
-<span sdata="link"> [Working with conditional formatting (Open XML
-SDK)](working-with-conditional-formatting.htm) </span>
+[Working with conditional formatting (Open XML SDK)](working-with-conditional-formatting.md)  
 
-<span sdata="link"> [Working with formulas (Open XML
-SDK)](working-with-formulas.htm) </span>
+[Working with formulas (Open XML SDK)](working-with-formulas.md)  
 
-<span sdata="link"> [Working with PivotTables (Open XML
-SDK)](working-with-pivottables.htm) </span>
+[Working with PivotTables (Open XML SDK)](working-with-pivottables.md)  
 
-<span sdata="link"> [Working with the shared string table (Open XML
-SDK)](working-with-the-shared-string-table.htm) </span>
+[Working with the shared string table (Open XML SDK)](working-with-the-shared-string-table.md)  
 
-<span sdata="link"> [Working with sheets (Open XML
-SDK)](working-with-sheets.htm) </span>
+[Working with sheets (Open XML SDK)](working-with-sheets.md)  
 
-<span sdata="link"> [Working with SpreadsheetML tables (Open XML
-SDK)](working-with-tables-1.htm) </span>
+[Working with SpreadsheetML tables (Open XML SDK)](working-with-tables-1.md)  

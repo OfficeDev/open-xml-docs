@@ -22,8 +22,7 @@ contains an example **ReplaceStyles** method to illustrate this task, as
 well as the **ReplaceStylesPart** and **ExtractStylesPart** supporting
 methods.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -40,6 +39,7 @@ the code in this topic.
     using System.Xml.Linq;
     using DocumentFormat.OpenXml.Packaging;
 ```
+
 ```vb
     Imports System.IO
     Imports System.Xml
@@ -55,8 +55,7 @@ a particular content type, and can contain content equal to the content
 of an external XML file, binary file, image file, and so on, depending
 on the type. The standard that defines how Open XML documents are stored
 in .zip files is called the Open Packaging Conventions. For more
-information about the Open Packaging Conventions, see [ISO/IEC
-29500-2](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51459).
+information about the Open Packaging Conventions, see [ISO/IEC 29500-2](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.md?csnumber=51459).
 
 Styles are stored in dedicated parts within a word processing document
 package. An Microsoft Word 2010 document contains a single styles part.
@@ -68,8 +67,7 @@ document that contains styles.
 Figure 1. Styles parts in a word processing document
 
   
- ![Styles parts in a word processing
-document.](./media/OpenXmlCon_HowToReplaceStyles_Fig1.gif)
+ ![Styles parts in a word processing document.](./media/OpenXmlCon_HowToReplaceStyles_Fig1.gif)
 In order to provide for "round-tripping" a document from Word 2013 to
 Word 2010 and back, Word 2013 maintains both the original styles part
 and the new styles part. (The Office Open XML File Formats specification
@@ -94,13 +92,14 @@ effectively completely replacing the styles.
 ```csharp
     public static void ReplaceStyles(string fromDoc, string toDoc)
 ```
+
 ```vb
     Public Sub ReplaceStyles(fromDoc As String, toDoc As String)
 ```
+
 The complete code listing for the <span
 class="keyword">ReplaceStyles</span> method and its supporting methods
-can be found in the [Sample
-Code](67edb37c-cfec-461c-b616-5a8b7d074c91.md#sampleCode) section.
+can be found in the [Sample Code](how-to-replace-the-styles-parts-in-a-word-processing-document.md#sampleCode) section.
 
 
 --------------------------------------------------------------------------------
@@ -118,6 +117,7 @@ document will reflect the new styles.
     const string toDoc = @"C:\Users\Public\Documents\StylesTo.docx";
     ReplaceStyles(fromDoc, toDoc);
 ```
+
 ```vb
     Const fromDoc As String = "C:\Users\Public\Documents\StylesFrom.docx"
     Const toDoc As String = "C:\Users\Public\Documents\StylesTo.docx"
@@ -143,6 +143,7 @@ target document.
     if (node != null)
         ReplaceStylesPart(toDoc, node, false);
 ```
+
 ```vb
     ' Extract and replace the styles part.
     Dim node = ExtractStylesPart(fromDoc, False)
@@ -168,6 +169,7 @@ stylesWithEffects part.
         ReplaceStylesPart(toDoc, node);
     return;
 ```
+
 ```vb
     ' Extract and replace the stylesWithEffects part. To fully support 
     ' round-tripping from Word 2013 to Word 2010, you should 
@@ -208,6 +210,7 @@ from a source document).
     public static void ReplaceStylesPart(string fileName, XDocument newStyles,
       bool setStylesWithEffectsPart = true)
 ```
+
 ```vb
     Public Sub ReplaceStylesPart(
       ByVal fileName As String, ByVal newStyles As XDocument,
@@ -244,6 +247,7 @@ class="code">stylesPart</span> to hold a reference to the styles part.
         // stylesPart variable.
         StylesPart stylesPart = null;
 ```
+
 ```vb
     ' Open the document for write access and get a reference.
     Using document = WordprocessingDocument.Open(fileName, True)
@@ -270,6 +274,7 @@ class="code">stylesPart</span> variable.
     else
         stylesPart = docPart.StyleDefinitionsPart;
 ```
+
 ```vb
     If setStylesWithEffectsPart Then
         stylesPart = docPart.StylesWithEffectsPart
@@ -300,6 +305,7 @@ the XDocument, saving its contents into the styles part.
           FileMode.Create, FileAccess.Write)));
     }
 ```
+
 ```vb
     ' If the part exists, populate it with the new styles.
     If stylesPart IsNot Nothing Then
@@ -404,6 +410,7 @@ Basic.
         return styles;
     }
 ```
+
 ```vb
     ' Replace the styles in the "to" document with the styles
     ' in the "from" document.
@@ -495,5 +502,4 @@ Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

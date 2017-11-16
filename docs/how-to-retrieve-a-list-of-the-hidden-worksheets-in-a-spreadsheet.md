@@ -21,8 +21,7 @@ Microsoft Excel 2010 or Microsoft Excel 2010 workbook, without loading
 the document into Excel. It contains an example <span
 class="keyword">GetHiddenSheets</span> method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -40,6 +39,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Spreadsheet
     Imports DocumentFormat.OpenXml.Packaging
@@ -57,9 +57,11 @@ examine.
 ```csharp
     public static List<Sheet> GetHiddenSheets(string fileName)
 ```
+
 ```vb
     Public Function GetHiddenSheets(ByVal fileName As String) As List(Of Sheet)
 ```
+
 The method works with the workbook you specify, filling a <span
 sdata="cer"
 target="T:System.Collections.Generic.List`1">[List\<T\>](http://msdn2.microsoft.com/EN-US/library/6sh2ey19)</span>
@@ -85,6 +87,7 @@ required parameter value, as shown in the following code.
         Console.WriteLine(sheet.Name);
     }
 ```
+
 ```vb
     ' Revise this path to the location of a file that contains hidden worksheets.
     Const DEMOPATH As String =
@@ -103,9 +106,11 @@ information about the hidden worksheets.
 ```csharp
     List<Sheet> returnVal = new List<Sheet>();
 ```
+
 ```vb
     Dim returnVal As New List(Of Sheet)
 ```
+
 Next, the following code opens the specified workbook by using the <span
 sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
@@ -127,6 +132,7 @@ class="code">wbPart</span>.
     }
     return returnVal;
 ```
+
 ```vb
     Using document As SpreadsheetDocument =     SpreadsheetDocument.Open(fileName, False)
         Dim wbPart As WorkbookPart = document.WorkbookPart
@@ -160,6 +166,7 @@ the sheet child elements of the workbook's XML content.
 ```csharp
     var sheets = wbPart.Workbook.Descendants<Sheet>();
 ```
+
 ```vb
     Dim sheets = wbPart.Workbook.Descendants(Of Sheet)()
 ```
@@ -202,6 +209,7 @@ value is either **SheetStateValues.Hidden** or
         (item.State.Value == SheetStateValues.Hidden || 
         item.State.Value == SheetStateValues.VeryHidden));
 ```
+
 ```vb
     Dim hiddenSheets = sheets.Where(Function(item) item.State IsNot
         Nothing AndAlso item.State.HasValue _
@@ -216,6 +224,7 @@ sheets, placing the result into the return value for the function.
 ```csharp
     returnVal = hiddenSheets.ToList();
 ```
+
 ```vb
     returnVal = hiddenSheets.ToList()
 ```
@@ -250,6 +259,7 @@ Basic.
         return returnVal;
     }
 ```
+
 ```vb
     Public Function GetHiddenSheets(ByVal fileName As String) As List(Of Sheet)
         Dim returnVal As New List(Of Sheet)
@@ -278,5 +288,4 @@ Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

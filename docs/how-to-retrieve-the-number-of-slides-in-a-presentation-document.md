@@ -22,8 +22,7 @@ loading the document into Microsoft PowerPoint. It contains an example
 **RetrieveNumberOfSlides** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -39,6 +38,7 @@ the code in this topic.
     using System.Linq;
     using DocumentFormat.OpenXml.Packaging;
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Packaging
 ```
@@ -57,6 +57,7 @@ include hidden slides in the count.
     public static int RetrieveNumberOfSlides(string fileName, 
         bool includeHidden = true)
 ```
+
 ```vb
     Public Function RetrieveNumberOfSlides(ByVal fileName As String,
             Optional ByVal includeHidden As Boolean = True) As Integer
@@ -75,6 +76,7 @@ values, as shown in the following code.
     // Retrieve the number of slides, including the hidden slides.
     Console.WriteLine(RetrieveNumberOfSlides(DEMOPATH));
 ```
+
 ```vb
     ' Retrieve the number of slides, excluding the hidden slides.
     Console.WriteLine(RetrieveNumberOfSlides(DEMOPATH, False))
@@ -107,6 +109,7 @@ the main presentation part, storing the reference in a variable named
     }
     Return slidesCount;
 ```
+
 ```vb
     Using doc As PresentationDocument =
         PresentationDocument.Open(fileName, False)
@@ -139,6 +142,7 @@ exclude hidden slides, as shown in the following code.
         // Code removed here…
     }
 ```
+
 ```vb
     If includeHidden Then
         slidesCount = presentationPart.SlideParts.Count()
@@ -172,6 +176,7 @@ function with a lambda expression to do the work.
           s.Slide.Show.Value)));
     slidesCount = slides.Count();
 ```
+
 ```vb
     Dim slides = presentationPart.SlideParts.
       Where(Function(s) (s.Slide IsNot Nothing) AndAlso
@@ -220,6 +225,7 @@ Visual Basic.
         return slidesCount;
     }
 ```
+
 ```vb
     Public Function RetrieveNumberOfSlides(ByVal fileName As String,
             Optional ByVal includeHidden As Boolean = True) As Integer
@@ -253,5 +259,4 @@ Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

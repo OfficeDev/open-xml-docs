@@ -21,14 +21,12 @@ class="nolink">Slide</span></span> class and how it relates to the Open
 XML File Format PresentationML schema. For more information about the
 overall structure of the parts and elements that make up a
 PresentationML document, see <span sdata="link">[Structure of a
-PresentationML document (Open XML
-SDK)](structure-of-a-presentationml-document.htm)</span>.
+PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)</span>.
 
 
 ---------------------------------------------------------------------------------
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<sld\> element used
 to represent a presentation slide in a PresentationML document as
 follows:
@@ -36,7 +34,7 @@ follows:
 This element specifies a slide within a slide list. The slide list is
 used to specify an ordering of slides.
 
-[Example: Consider the following custom show with an ordering of slides.
+Example: Consider the following custom show with an ordering of slides.
 
 ```xml
 <p:custShowLst>  
@@ -54,14 +52,12 @@ used to specify an ordering of slides.
 In the above example the order specified to present the slides is slide
 4, then 3, 2, and finally 5.
 
-end example]"
 
 © ISO/IEC29500: 2008.
 
 The \<sld\> element is the root element of the PresentationML Slide
 part. For more information about the overall structure of the parts and
-elements that make up a PresentationML document, see [Structure of a
-PresentationML Document](structure-of-a-presentationml-document.htm).
+elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 The following table lists the child elements of the \<sld\> element used
 when working with presentation slides and the Open XML SDK 2.5 classes
@@ -69,11 +65,11 @@ that correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-<clrMapOvr>|ColorMapOverride
-<cSld>|CommonSlideData
-<extLst>|ExtensionListWithModification
-<timing>|Timing
-<transition>|Transition
+\<clrMapOvr\>|ColorMapOverride
+\<cSld\>|CommonSlideData
+\<extLst\>|ExtensionListWithModification
+\<timing\>|Timing
+\<transition\>|Transition
 
 
 --------------------------------------------------------------------------------
@@ -89,8 +85,7 @@ class are shown in the following sections.
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -105,8 +100,7 @@ slide, presentation slide, or slide layout.
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -126,8 +120,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -145,8 +138,7 @@ store whether this extension property has been modified. end note]
 ### Timing Class
 
 The **Timing** class corresponds to the
-\<timing\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<timing\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<timing\> element:
 
 This element specifies the timing information for handling all
@@ -161,8 +153,7 @@ PresentationML framework.
 ### Transition Class
 
 The **Transition** class corresponds to the
-\<transition\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<transition\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<transition\> element:
 
 This element specifies the kind of slide transition that should be used
@@ -208,9 +199,7 @@ class="nolink">Shape</span></span> class.
 
 --------------------------------------------------------------------------------
 
-The following method from the article <span sdata="link">[How to: Create
-a presentation document by providing a file name (Open XML
-SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.htm)</span> adds a new slide
+The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> adds a new slide
 part to an existing presentation and creates an instance of the Open XML
 SDK 2.5**Slide** class in the new slide part.
 The **Slide** class constructor creates
@@ -262,6 +251,7 @@ namespace.
                     return slidePart1;
              }
 ```
+
 ```vb
     Private Shared Function CreateSlidePart(ByVal presentationPart As PresentationPart) As SlidePart
                 Dim slidePart1 As SlidePart = presentationPart.AddNewPart(Of SlidePart)("rId2")
@@ -281,6 +271,7 @@ namespace.
                 Return slidePart1
             End Function
 ```
+
 To add another shape to the shape tree and, hence, to the slide,
 instantiate a second **Shape** object by
 passing an additional parameter that contains the following code to the
@@ -298,6 +289,7 @@ passing an additional parameter that contains the following code to the
                   new ListStyle(),
                   new Paragraph(new EndParagraphRunProperties() { Language = "en-US" })))
 ```
+
 ```vb
     New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
                   .Id = CType(2UI, UInt32Value), _
@@ -307,8 +299,8 @@ passing an additional parameter that contains the following code to the
                 }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New P.TextBody(New BodyProperties(), _
                    New ListStyle(), New Paragraph(New EndParagraphRunProperties() With { _
                   .Language = "en-US" })))
-
 ```
+
 ---------------------------------------------------------------------------------
 
 When the Open XML SDK code in the method is run, the following XML code
@@ -352,28 +344,20 @@ is written to the PresentationML document file referenced in the code.
           <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
         </p:clrMapOvr>
     </p:sld>
-
 ```
+
 --------------------------------------------------------------------------------
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-<span sdata="link"> [How to: Insert a new slide into a presentation
-(Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.htm) </span>
+[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-<span sdata="link"> [How to: Delete a slide from a presentation (Open
-XML SDK)](how-to-delete-a-slide-from-a-presentation.htm) </span>
+[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
 
-<span sdata="link"> [How to: Retrieve the number of slides in a
-presentation document (Open XML
-SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.htm) </span>
+[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
 
-<span sdata="link"> [How to: Apply a theme to a presentation (Open XML
-SDK)](how-to-apply-a-theme-to-a-presentation.htm) </span>
+[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
 
-<span sdata="link"> [How to: Create a presentation document by providing
-a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.htm)
-</span>
+[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)  

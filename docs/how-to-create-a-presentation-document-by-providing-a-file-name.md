@@ -793,26 +793,18 @@ presentation, given a file path.
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-[Structure of a PresentationML
-Document](structure-of-a-presentationml-document.htm)
+[Structure of a PresentationML Document](structure-of-a-presentationml-document.md)  
 
-<span sdata="link"> [How to: Insert a new slide into a presentation
-(Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.htm) </span>
+[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-<span sdata="link"> [How to: Delete a slide from a presentation (Open
-XML SDK)](how-to-delete-a-slide-from-a-presentation.htm) </span>
+[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
 
-<span sdata="link"> [How to: Retrieve the number of slides in a
-presentation document (Open XML
-SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.htm) </span>
+[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
 
-<span sdata="link"> [How to: Apply a theme to a presentation (Open XML
-SDK)](how-to-apply-a-theme-to-a-presentation.htm) </span>
+[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

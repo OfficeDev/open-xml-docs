@@ -25,10 +25,8 @@ The SDK is built on the **System.IO.Packaging**
 API and provides strongly-typed classes to manipulate documents that
 adhere to the Office Open XML File Formats Specification. The Office
 Open XML File Formats specification is an open, international,
-[ECMA-376, Second
-Edition](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
-and [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ECMA-376, Second Edition](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
+and [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 standard. The Open XML file formats are useful for developers because
 they are an open standard and are based on well-known technologies: ZIP
 and XML.
@@ -44,37 +42,28 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
 ---------------------------------------------------------------------------------
 
-<span sdata="link"> [Getting started with the Open XML SDK 2.5 for
-Office](getting-started.md) </span>
+[Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
 
-<span sdata="link"> [Understanding the Open XML file
-formats](understanding-the-open-xml-file-formats.md) </span>
+[Understanding the Open XML file formats](understanding-the-open-xml-file-formats.md)  
 
-<span sdata="link"> [How do I... (Open XML
-SDK)](how-do-i.md) </span>
+[How do I... (Open XML SDK)](how-do-i.md)  
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)  
 
 
 ---------------------------------------------------------------------------------
 
--   [Open XML SDK 2.5 for Microsoft
-    Office](http://www.microsoft.com/en-us/download/details.aspx?id=30425)
+-   [Open XML SDK 2.5 for Microsoft Office](http://www.microsoft.com/en-us/download/details.aspx?id=30425)
 
--   [Microsoft Office Developer
-    Center](http://msdn.microsoft.com/en-us/office/default.aspx)
+-   [Microsoft Office Developer Center](http://msdn.microsoft.com/en-us/office/default.aspx)
 
 -   [Samples on GitHub](https://github.com/OfficeDev)
 
--   [Open XML SDK copyright
-    notice](http://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)
+-   [Open XML SDK copyright notice](http://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)
 
--   [Accessibility Features in the Microsoft Office
-    System](http://go.microsoft.com/fwlink/?LinkID=35092&clcid=0x409)
+-   [Accessibility Features in the Microsoft Office System](http://go.microsoft.com/fwlink/?LinkID=35092&clcid=0x409)
 
--   [Document Conventions in Office Developer
-    Documentation](http://msdn.microsoft.com/en-us/office/aa905365.aspx)
+-   [Document Conventions in Office Developer Documentation](http://msdn.microsoft.com/en-us/office/aa905365.aspx)
 
 <sup>1</sup>© ISO/IEC2900:2008. This material is reproduced from ISO/IEC
 29500:2008 with permission of the American National Standards Institute

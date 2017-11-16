@@ -20,8 +20,7 @@ Office to programmatically retrieve the values of cells in a spreadsheet
 document. It contains an example **GetCellValue** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -36,6 +35,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Packaging
     Imports DocumentFormat.OpenXml.Spreadsheet
@@ -62,6 +62,7 @@ found. The following code example shows the method signature.
         string sheetName, 
         string addressName)
 ```
+
 ```vb
     Public Function GetCellValue(ByVal fileName As String,
         ByVal sheetName As String,
@@ -86,6 +87,7 @@ example.
     Console.WriteLine(
         DateTime.FromOADate(double.Parse(value)).ToShortDateString());
 ```
+
 ```vb
     Const fileName As String =
         "C:\Users\Public\Documents\RetrieveCellValue.xlsx"
@@ -108,6 +110,7 @@ initializes it to null.
 ```csharp
     string value = null;
 ```
+
 ```vb
     Dim value as String = Nothing
 ```
@@ -131,6 +134,7 @@ class="nolink">WorkbookPart</span></span> property of the document.
         // Retrieve a reference to the workbook part.
         WorkbookPart wbPart = document.WorkbookPart;
 ```
+
 ```vb
     ' Open the spreadsheet document for read-only access.
     Using document As SpreadsheetDocument =
@@ -139,6 +143,7 @@ class="nolink">WorkbookPart</span></span> property of the document.
         ' Retrieve a reference to the workbook part.
         Dim wbPart As WorkbookPart = document.WorkbookPart
 ```
+
 To find the requested cell, the code must first retrieve a reference to
 the sheet, given its name. The code must search all the sheet-type
 descendants of the workbook part workbook element and examine the <span
@@ -167,6 +172,7 @@ this is to use a LINQ query, as shown in the following code example.
         throw new ArgumentException("sheetName");
     }
 ```
+
 ```vb
     ' Find the sheet with the supplied name, and then use that Sheet object
     ' to retrieve a reference to the appropriate worksheet.
@@ -178,6 +184,7 @@ this is to use a LINQ query, as shown in the following code example.
         Throw New ArgumentException("sheetName")
     End If
 ```
+
 Be aware that the
 [FirstOrDefault](http://msdn.microsoft.com/en-us/library/bb340482.aspx)
 method returns either the first matching reference (a sheet, in this
@@ -201,11 +208,13 @@ class="nolink">GetPartById</span></span> method.
     WorksheetPart wsPart = 
         (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
 ```
+
 ```vb
     ' Retrieve a reference to the worksheet part.
     Dim wsPart As WorksheetPart =
         CType(wbPart.GetPartById(theSheet.Id), WorksheetPart)
 ```
+
 Just as when locating the named sheet, when locating the named cell, the
 code uses the <span sdata="cer"
 target="M:DocumentFormat.OpenXml.OpenXmlElement.Descendants``1"><span
@@ -224,6 +233,7 @@ or will contain a null reference.
     Cell theCell = wsPart.Worksheet.Descendants<Cell>().
         Where(c => c.CellReference == addressName).FirstOrDefault();
 ```
+
 ```vb
     ' Use its Worksheet property to get a reference to the cell 
     ' whose address matches the address you supplied.
@@ -244,6 +254,7 @@ such as the following.
         <x:v>12.345000000000001</x:v>
     </x:c>
 ```
+
 The <span sdata="cer"
 target="P:DocumentFormat.OpenXml.OpenXmlElement.InnerText"><span
 class="nolink">InnerText</span></span> property contains the content for
@@ -257,6 +268,7 @@ the cell, and so the next block of code retrieves this value.
         // Code removed here…
     }
 ```
+
 ```vb
     ' If the cell does not exist, return an empty string.
     If theCell IsNot Nothing Then
@@ -264,6 +276,7 @@ the cell, and so the next block of code retrieves this value.
         ' Code removed here…
     End If
 ```
+
 Now, the sample method must interpret the value. As it is, the code
 handles numeric and date, string, and Boolean values. You can extend the
 sample as necessary. The <span sdata="cer"
@@ -296,6 +309,7 @@ continues by branching based on the data type.
         }
     }
 ```
+
 ```vb
     ' If the cell represents an numeric value, you are done. 
     ' For dates, this code returns the serialized value that 
@@ -310,6 +324,7 @@ continues by branching based on the data type.
         End Select
     End If
 ```
+
 If the **DataType** property contains <span
 class="keyword">CellValues.SharedString</span>, the code must retrieve a
 reference to the single <span sdata="cer"
@@ -323,12 +338,14 @@ class="nolink">SharedStringTablePart</span></span>.
         wbPart.GetPartsOfType<SharedStringTablePart>()
         .FirstOrDefault();
 ```
+
 ```vb
     ' For shared strings, look up the value in the 
     ' shared strings table.
     Dim stringTable = wbPart.
       GetPartsOfType(Of SharedStringTablePart).FirstOrDefault()
 ```
+
 Next, if the string table exists (and if it does not, the workbook is
 damaged and the sample code returns the index into the string table
 instead of the string itself) the code returns the <span
@@ -347,6 +364,7 @@ specified index (first converting the value property to an integer).
             .ElementAt(int.Parse(value)).InnerText;
     }
 ```
+
 ```vb
     ' If the shared string table is missing, something
     ' is wrong. Return the index that is in 
@@ -357,6 +375,7 @@ specified index (first converting the value property to an integer).
         ElementAt(Integer.Parse(value)).InnerText
     End If
 ```
+
 If the **DataType** property contains <span
 class="keyword">CellValues.Boolean</span>, the code converts the 0 or 1
 it finds in the cell value into the appropriate text string.
@@ -373,6 +392,7 @@ it finds in the cell value into the appropriate text string.
                 break;
         }
 ```
+
 ```vb
     Case CellValues.Boolean
         Select Case value
@@ -382,6 +402,7 @@ it finds in the cell value into the appropriate text string.
                 value = "TRUE"
         End Select
 ```
+
 Finally, the procedure returns the variable <span
 class="code">value</span>, which contains the requested information.
 
@@ -481,6 +502,7 @@ code sample in C\# and Visual Basic.
         return value;
     }
 ```
+
 ```vb
     Public Function GetCellValue(ByVal fileName As String,
         ByVal sheetName As String,
@@ -562,5 +584,4 @@ code sample in C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

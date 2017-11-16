@@ -22,28 +22,17 @@ document programmatically.
 The following assembly directives are required to compile the code in
 this topic.
 
-<span codelanguage="other"> </span>
- 
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```csharp
     using System.Linq;
     using DocumentFormat.OpenXml.Wordprocessing;
     using DocumentFormat.OpenXml.Packaging;
+```
 
-<span codelanguage="other"> </span>
- 
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```vb
     Imports System.Linq
     Imports DocumentFormat.OpenXml.Wordprocessing
     Imports DocumentFormat.OpenXml.Packaging
-
+```
 
 --------------------------------------------------------------------------------
 
@@ -80,6 +69,7 @@ opened in read/write mode.
         // Insert other code here.
     }
 ```
+
 ```vb
     ' Open a Wordprocessing document for editing.
     Dim package As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
@@ -87,6 +77,7 @@ opened in read/write mode.
         ' Insert other code here.
     End Using
 ```
+
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
@@ -144,6 +135,7 @@ This content may be expressed in a single WordprocessingML run:
       <w:t>English العربية</w:t>
     </w:r>
 ```
+
 Although it is in the same run, the contents are in different font faces
 by specifying a different font for ASCII and CS characters in the run:
 
@@ -155,6 +147,7 @@ by specifying a different font for ASCII and CS characters in the run:
       <w:t>English العربية</w:t>
     </w:r>
 ```
+
 This text run shall therefore use the Courier New font for all
 characters in the ASCII range, and shall use the Times New Roman font
 for all characters in the Complex Script range.
@@ -186,10 +179,12 @@ class="keyword">Ascii</span> value to "Arial".
             Ascii = "Arial"
         });
 ```
+
 ```vb
     ' Use an object initializer for RunProperties and rPr.
     Dim rPr As New RunProperties(New RunFonts() With {.Ascii = "Arial"})
 ```
+
 The code then creates a <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
 class="nolink">Run</span></span> object that represents the first text
@@ -224,6 +219,7 @@ in the Wordprocessing package).
     // Save changes to the MainDocumentPart part.
     package.MainDocumentPart.Document.Save();
 ```
+
 ```vb
     Dim r As Run = package.MainDocumentPart.Document.Descendants(Of Run)().First()
     r.PrependChild(Of RunProperties)(rPr)
@@ -243,14 +239,16 @@ change the font in the file "myPkg9.docx" by using the following call.
     string fileName = @"C:\Users\Public\Documents\MyPkg9.docx";
     SetRunFont(fileName);
 ```
+
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\MyPkg9.docx"
     SetRunFont(fileName)
 ```
+
 After running the program check your file "MyPkg9.docx" to see the
 changed font.
 
-> ![](./media/alert_note.gif)**Note**  
+> [!NOTE]
 > This code example assumes that the test word processing document (MyPakg9.docx) contains at least one text run.
 
 The following is the complete sample code in both C\# and Visual Basic.
@@ -278,6 +276,7 @@ The following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     ' Set the font for a text run.
     Public Sub SetRunFont(ByVal fileName As String)
@@ -300,11 +299,8 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
 
-[Object Initializers: Named and Anonymous
-Types](http://msdn.microsoft.com/en-us/library/bb385125.aspx)
+[Object Initializers: Named and Anonymous Types](http://msdn.microsoft.com/en-us/library/bb385125.aspx)
 
-[Object and Collection Initializers (C\# Programming
-Guide)](http://msdn.microsoft.com/en-us/library/bb384062.aspx)
+[Object and Collection Initializers (C\# Programming Guide)](http://msdn.microsoft.com/en-us/library/bb384062.aspx)

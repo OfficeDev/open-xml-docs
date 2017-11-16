@@ -21,39 +21,25 @@ packages using the Open XML SDK 2.5.
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [How to: Add a new document part that receives a
-relationship ID to a package (Open XML
-SDK)](how-to-add-a-new-document-part-that-receives-a-relationship-id-to-a-package.md) </span>
+[How to: Add a new document part that receives a relationship ID to a package (Open XML SDK)](how-to-add-a-new-document-part-that-receives-a-relationship-id-to-a-package.md)  
 
-<span sdata="link"> [How to: Add a new document part to a package (Open
-XML SDK)](how-to-add-a-new-document-part-to-a-package.md) </span>
+[How to: Add a new document part to a package (Open XML SDK)](how-to-add-a-new-document-part-to-a-package.md)  
 
-<span sdata="link"> [How to: Copy the contents of an Open XML package
-part to a document part in a different package (Open XML
-SDK)](how-to-copy-the-contents-of-an-open-xml-package-part-to-a-document-part-in-a-dif.md) </span>
+[How to: Copy the contents of an Open XML package part to a document part in a different package (Open XML SDK)](how-to-copy-the-contents-of-an-open-xml-package-part-to-a-document-part-in-a-dif.md)  
 
-<span sdata="link"> [How to: Create a package (Open XML
-SDK)](how-to-create-a-package.md) </span>
+[How to: Create a package (Open XML SDK)](how-to-create-a-package.md)  
 
-<span sdata="link"> [How to: Get the contents of a document part from a
-package (Open XML SDK)](how-to-get-the-contents-of-a-document-part-from-a-package.md)
-</span>
+[How to: Get the contents of a document part from a package (Open XML SDK)](how-to-get-the-contents-of-a-document-part-from-a-package.md) 
 
-<span sdata="link"> [How to: Remove a document part from a package (Open
-XML SDK)](how-to-remove-a-document-part-from-a-package.md) </span>
+[How to: Remove a document part from a package (Open XML SDK)](how-to-remove-a-document-part-from-a-package.md)  
 
-<span sdata="link"> [How to: Replace the theme part in a word processing
-document (Open XML SDK)](how-to-replace-the-theme-part-in-a-word-processing-document.md)
-</span>
+[How to: Replace the theme part in a word processing document (Open XML SDK)](how-to-replace-the-theme-part-in-a-word-processing-document.md) 
 
-<span sdata="link"> [How to: Search and replace text in a document part
-(Open XML SDK)](how-to-search-and-replace-text-in-a-document-part.md) </span>
+[How to: Search and replace text in a document part (Open XML SDK)](how-to-search-and-replace-text-in-a-document-part.md)  
 
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [How do I... (Open XML
-SDK)](how-do-i.md) </span>
+[How do I... (Open XML SDK)](how-do-i.md)  
 
-<span sdata="link"> [Getting started with the Open XML SDK 2.5 for
-Office](getting-started.md) </span>
+[Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  

@@ -27,6 +27,7 @@ this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Wordprocessing;
 ```
+
 ```vb
     Imports System
     Imports DocumentFormat.OpenXml.Packaging
@@ -55,6 +56,7 @@ the Boolean parameter to **false**.
        // Insert other code here. 
     }
 ```
+
 ```vb
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(fileName, False)
         ' Insert other code here.
@@ -98,6 +100,7 @@ introduces the comments element.
       </w:comment>
     </w:comments>
 ```
+
 > © ISO/IEC29500: 2008.
 
 The following XML schema segment defines the contents of the comments
@@ -174,6 +177,7 @@ element.
         Console.WriteLine(comment.InnerText);
     }
 ```
+
 ```vb
     For Each comment As Comment In _
         commentsPart.Comments.Elements(Of Comment)()
@@ -193,10 +197,12 @@ example.
     string fileName = @"C:\Users\Public\Documents\Word16.docx";
     GetCommentsFromDocument(fileName);
 ```
+
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\Word16.docx"
     GetCommentsFromDocument(fileName)
 ```
+
 The following is the complete sample code in both C\# and Visual Basic.
 
 ```csharp
@@ -218,6 +224,7 @@ The following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     Public Sub GetCommentsFromDocument(ByVal fileName As String)
         Using wordDoc As WordprocessingDocument = _
@@ -241,5 +248,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

@@ -20,9 +20,7 @@ target="T:DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatting"><span
 class="nolink">ConditionalFormatting</span></span> class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
-make up a SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
+make up a SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
 ---------------------------------------------------------------------------------
@@ -67,8 +65,7 @@ class="keyword">ConditionalFormatting</span> class to manipulate
 individual \<**conditionalFormatting**\>
 elements in a SpreadsheetML document.
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the <span
 class="keyword">ConditionalFormatting</span> (\<<span
 class="keyword">conditionalFormatting</span>\>) element.
@@ -78,17 +75,15 @@ that a spreadsheet application can automatically apply to cells if a
 specified condition is true. This collection expresses conditional
 formatting rules applied to a particular cell or range.
 
-[Example: This example applies a 'top10' rule to the cells C3:C8. The
+Example: This example applies a 'top10' rule to the cells C3:C8. The
 @dxfId references the formatting (defined in the styles part) to be
 applied to cells that match the criteria.
 
-    \<conditionalFormatting sqref="C3:C8"\>
-
-        \<cfRule type="top10" dxfId="1" priority="3" rank="2"/\>
-
-    \</conditionalFormatting\>
-
-end example]
+```xml
+    <conditionalFormatting sqref="C3:C8">
+        <cfRule type="top10" dxfId="1" priority="3" rank="2"/>
+    </conditionalFormatting>
+```
 
 © ISO/IEC29500: 2008.
 
@@ -101,24 +96,20 @@ introduces the **ConditionalFormattingRule**
 This collection represents a description of a conditional formatting
 rule.
 
-[Example:
+Example:
 
 This example shows a conditional formatting rule highlighting cells
 whose values are greater than 0.5. Note that in this case the content of
 \<formula\> is a static value, but can also be a formula expression.
 
-    \<conditionalFormatting sqref="E3:E9"\>
+```xml
+    <conditionalFormatting sqref="E3:E9">
+        <cfRule type="cellIs" dxfId="0" priority="1" operator="greaterThan">
+            <formula>0.5</formula>
+        </cfRule>
+    <conditionalFormatting>
+```
 
-        \<cfRule type="cellIs" dxfId="0" priority="1"
-operator="greaterThan"\>
-
-            \<formula\>0.5\</formula\>
-
-        \</cfRule\>
-
-    \</conditionalFormatting\>
-
-end example]
 
 Only rules with a type attribute value of expression support formula
 syntax.
@@ -150,23 +141,19 @@ class="keyword">dataBar</span>\>) element.
 
 Describes a data bar conditional formatting rule.
 
-[Example:
+Example:
 
 In this example a data bar conditional format is expressed, which
 spreads across all cell values in the cell range, and whose color is
 blue.
 
-    \<dataBar\>
-
-        \<cfvo type="min" val="0"/\>
-
-        \<cfvo type="max" val="0"/\>
-
-        \<color rgb="FF638EC6"/\>
-
-    \</dataBar\>
-
-end example]
+```xml
+    <dataBar>
+        <cfvo type="min" val="0"/>
+        <cfvo type="max" val="0"/>
+        <color rgb="FF638EC6"/>
+    </dataBar>
+```
 
 The length of the data bar for any cell can be calculated as follows:
 
@@ -206,21 +193,15 @@ class="keyword">colorScale</span>\>) element.
 
 Describes a gradated color scale in this conditional formatting rule.
 
-[Example:
-
-    \<colorScale\>
-
-        \<cfvo type="min" val="0"/\>
-
-        \<cfvo type="max" val="0"/\>
-
-        \<color theme="5"/\>
-
-        \<color rgb="FFFFEF9C"/\>
-
-    \</colorScale\>
-
-end example]
+Example:
+```xml
+    <colorScale>
+        <cfvo type="min" val="0"/>
+        <cfvo type="max" val="0"/>
+        <color theme="5"/>
+        <color rgb="FFFFEF9C"/>
+    </colorScale>
+```
 
 © ISO/IEC29500: 2008.
 
@@ -242,24 +223,20 @@ class="keyword">iconSet</span>\>) element.
 
 Describes an icon set conditional formatting rule.
 
-[Example: This example demonstrates the "3Arrows" style of icons. The
+Example: This example demonstrates the "3Arrows" style of icons. The
 first icon in the set must be shown if the cell's value is less than the
 33rd percentile. The second icon in the set must be shown if the cell's
 value is less than the 67th percentile, and greater than or equal to the
 33rd percentile. The third icon in the set must be shown if the cell's
 value is greater than or equal to the 67th percentile.
 
-    \<iconSet iconSet="3Arrows"\>
-
-        \<cfvo type="percentile" val="0"/\>
-
-        \<cfvo type="percentile" val="33"/\>
-
-        \<cfvo type="percentile" val="67"/\>
-
-    \</iconSet\>
-
-end example]
+```xml
+    <iconSet iconSet="3Arrows">
+        <cfvo type="percentile" val="0"/>
+        <cfvo type="percentile" val="33"/>
+        <cfvo type="percentile" val="67"/>
+    </iconSet>
+```
 
 © ISO/IEC29500: 2008.
 

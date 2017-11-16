@@ -4,7 +4,7 @@ api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
 - schema
-ms.assetid: 30dfce05-00c1-423e-b4b4-149329fdf184
+ms.assetid: how-to-set-a-custom-property-in-a-word-processing-document
 title: 'How to: Set a custom property in a word processing document (Open XML SDK)'
 ms.suite: office
 ms.technology: open-xml
@@ -20,8 +20,7 @@ Office to programmatically set a custom property in a word processing
 document. It contains an example **SetCustomProperty** method to
 illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -40,6 +39,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.VariantTypes;
 ```
+
 ```vb
     Imports System.IO
     Imports DocumentFormat.OpenXml.CustomProperties
@@ -61,6 +61,7 @@ one of these values when you call the method.
         NumberDouble
     }
 ```
+
 ```vb
     Public Enum PropertyTypes
         YesNo
@@ -78,8 +79,7 @@ processing document. You can use the Productivity Tool for Microsoft
 Office, shown in Figure 1, to discover how they are stored. This tool
 enables you to open a document and view its parts and the hierarchy of
 parts. Figure 1 shows a test document after you run the code in the
-[Calling the SetCustomProperty
-Method](30dfce05-00c1-423e-b4b4-149329fdf184.md#Calling) section of
+[Calling the SetCustomProperty Method](how-to-set-a-custom-property-in-a-word-processing-document.md#Calling) section of
 this article. The tool displays in the right-hand panes both the XML for
 the part and the reflected C\# code that you can use to generate the
 contents of the part.
@@ -87,8 +87,7 @@ contents of the part.
 Figure 1. Open XML SDK Productivity Tool for Microsoft Office
 
   
- ![Open XML SDK 2.0 Productivity
-Tool](./media/OpenXmlCon_HowToSetCustomProperty_Fig1.gif)
+ ![Open XML SDK 2.0 Productivity Tool](./media/OpenXmlCon_HowToSetCustomProperty_Fig1.gif)
   
 The relevant XML is also extracted and shown here for ease of reading.
 
@@ -102,6 +101,7 @@ The relevant XML is also extracted and shown here for ease of reading.
       </op:property>
     </op:Properties>
 ```
+
 If you examine the XML content, you will find the following:
 
 -   Each property in the XML content consists of an XML element that
@@ -126,7 +126,7 @@ The sample method that is provided here includes the code that is
 required to create or modify a custom document property in a Microsoft
 Word 2010 or Microsoft Word 2013 document. You can find the complete
 code listing for the method in the [Sample
-Code](30dfce05-00c1-423e-b4b4-149329fdf184.md#SampleCode) section.
+Code](how-to-set-a-custom-property-in-a-word-processing-document.md#SampleCode) section.
 
 
 ---------------------------------------------------------------------------------
@@ -151,6 +151,7 @@ class="keyword">SetCustomProperty</span> method accepts four parameters:
         object propertyValue, 
         PropertyTypes propertyType)
 ```
+
 ```vb
     Public Function SetCustomProperty( _
         ByVal fileName As String,
@@ -180,6 +181,7 @@ shows an example.
         SetCustomProperty(fileName, "ReviewDate",
         DateTime.Parse("12/21/2010"), PropertyTypes.DateTime));
 ```
+
 ```vb
     Const fileName As String = "C:\Users\Public\Documents\SetCustomProperty.docx"
 
@@ -211,8 +213,7 @@ shown in Figure 2.
 Figure 2. Custom Properties in the Advanced Properties dialog box
 
   
- ![Advanced Properties dialog with custom
-properties](./media/OpenXmlCon_HowToSetCustomPropertyFig2.gif)
+ ![Advanced Properties dialog with custom properties](./media/OpenXmlCon_HowToSetCustomPropertyFig2.gif)
 
 
 --------------------------------------------------------------------------------
@@ -229,7 +230,7 @@ type of the property value, and then converts the input to the correct
 type, setting the appropriate property of the <span
 class="keyword">CustomDocumentProperty</span> object.
 
-> ![](./media/alert_note.gif)**Note**  
+> [!NOTE]
 > The **CustomDocumentProperty** type works much like a VBA Variant type. It maintains separate placeholders as properties for the various types of data it might contain.
 
 ```csharp
@@ -299,6 +300,7 @@ class="keyword">CustomDocumentProperty</span> object.
         throw new InvalidDataException("propertyValue");
     }
 ```
+
 ```vb
     Dim returnValue As String = Nothing
 
@@ -364,6 +366,7 @@ class="nolink">Name</span></span> properties of the new custom property.
     newProp.FormatId = "{D5CDD505-2E9C-101B-9397-08002B2CF9AE}";
     newProp.Name = propertyName;
 ```
+
 ```vb
     ' Now that you have handled the parameters, start
     ' working on the document.
@@ -395,6 +398,7 @@ document.
         // Code removed here...
     }
 ```
+
 ```vb
     Using document = WordprocessingDocument.Open(fileName, True)
         Dim customProps = document.CustomFilePropertiesPart
@@ -414,6 +418,7 @@ and adds a new set of properties to the part.
             new DocumentFormat.OpenXml.CustomProperties.Properties();
     }
 ```
+
 ```vb
     If customProps Is Nothing Then
         ' No custom properties? Add the part, and the
@@ -439,6 +444,7 @@ cannot continue.
       // Code removed here...
     }
 ```
+
 ```vb
     Dim props = customProps.Properties
     If props IsNot Nothing Then
@@ -469,6 +475,7 @@ find the first match for the property name.
         prop.Remove();
     }
 ```
+
 ```vb
     Dim prop = props.
       Where(Function(p) CType(p, CustomDocumentProperty).
@@ -505,6 +512,7 @@ the following steps:
     }
     props.Save();
 ```
+
 ```vb
     ' Append the new property, and 
     ' fix up all the property ID values. 
@@ -517,11 +525,13 @@ the following steps:
     Next
     props.Save()
 ```
+
 Finally, the code returns the stored original property value.
 
 ```csharp
     return returnValue;
 ```
+
 ```vb
     Return returnValue
 ```
@@ -669,6 +679,7 @@ Basic.
         return returnValue;
     }
 ```
+
 ```vb
     Public Enum PropertyTypes
         YesNo
@@ -790,5 +801,4 @@ Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

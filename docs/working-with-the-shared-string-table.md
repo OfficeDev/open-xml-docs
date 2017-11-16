@@ -20,15 +20,12 @@ target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable"><span
 class="nolink">SharedStringTable</span></span> class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
-SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
+SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 
 --------------------------------------------------------------------------------
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the <span
 class="keyword">SharedStringTable</span> (\<<span
 class="keyword">sst</span>\>) element.
@@ -219,9 +216,7 @@ exist, it is added as a shared string item to the shared string table.
 
 For more information about how to use the <span
 class="keyword">SharedStringTable</span> class to programmatically
-insert text into a cell, see <span sdata="link">[How to: Insert text
-into a cell in a spreadsheet document (Open XML
-SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.htm)</span>.
+insert text into a cell, see [How to: Insert text into a cell in a spreadsheet document (Open XML SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.md).
 
 ```csharp
     // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
@@ -254,6 +249,7 @@ SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.htm)</span>.
         return i;
     }
 ```
+
 ```vb
     ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
@@ -282,9 +278,7 @@ SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.htm)</span>.
 ```
 ### Generated SpreadsheetML
 
-If you run the Open XML SDK 2.5 in the <span sdata="link">[How to:
-Insert text into a cell in a spreadsheet document (Open XML
-SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.htm)</span> topic and insert
+If you run the Open XML SDK 2.5 in the [How to: Insert text into a cell in a spreadsheet document (Open XML SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.md) topic and insert
 the word "hello" into cell A1, the following XML is written to the
 "sharedStrings.xml" file in the .zip file of the SpreadsheetML document
 referenced in the code.

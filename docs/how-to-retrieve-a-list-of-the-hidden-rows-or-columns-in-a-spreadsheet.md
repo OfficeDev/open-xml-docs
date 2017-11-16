@@ -22,8 +22,7 @@ loading the document into Excel. It contains an example <span
 class="keyword">GetHiddenRowsOrCols</span> method to illustrate this
 task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -42,6 +41,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
+
 ```vb
     Imports System.IO
     Imports DocumentFormat.OpenXml.Packaging
@@ -65,6 +65,7 @@ parameters, indicating the following:
     public static List<uint> GetHiddenRowsOrCols(
       string fileName, string sheetName, bool detectRows)
 ```
+
 ```vb
     Public Function GetHiddenRowsOrCols(
       ByVal fileName As String, ByVal sheetName As String,
@@ -87,6 +88,7 @@ shown in the following example code.
         sw.WriteLine(item);
     Console.WriteLine(sw.ToString());
 ```
+
 ```vb
     Const fileName As String = "C:\Users\Public\Documents\RetrieveHiddenRowsCols.xlsx"
     Dim items As List(Of UInteger) =
@@ -106,9 +108,11 @@ class="code">itemList</span>, that will contain the return value.
 ```csharp
     List<uint> itemList = new List<uint>();
 ```
+
 ```vb
     Dim itemList As New List(Of UInteger)
 ```
+
 Next, the code opens the document, by using the <span sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
 class="nolink">SpreadsheetDocument.Open</span></span> method and
@@ -127,6 +131,7 @@ class="nolink">WorkbookPart</span></span> property of the document.
         // Code removed here...
     }
 ```
+
 ```vb
     Using document As SpreadsheetDocument =
         SpreadsheetDocument.Open(fileName, False)
@@ -135,6 +140,7 @@ class="nolink">WorkbookPart</span></span> property of the document.
         ' Code removed here...
     End Using
 ```
+
 To find the hidden rows or columns, the code must first retrieve a
 reference to the specified sheet, given its name. This is not as easy as
 you might think. The code must look through all the sheet-type
@@ -162,12 +168,14 @@ to accomplish this is to use a LINQ query.
         throw new ArgumentException("sheetName");
     }
 ```
+
 ```vb
     Dim theSheet As Sheet = wbPart.Workbook.Descendants(Of Sheet)().
         Where(Function(s) s.Name = sheetName).FirstOrDefault()
     If theSheet Is Nothing Then
         Throw New ArgumentException("sheetName")
 ```
+
 The <span sdata="cer"
 target="M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">[FirstOrDefault](http://msdn2.microsoft.com/EN-US/library/bb358452)</span>
 method returns either the first matching reference (a sheet, in this
@@ -197,6 +205,7 @@ class="nolink">WorkbookPart</span></span> object.
         // Code removed here...
     }
 ```
+
 ```vb
     Else
         ' The sheet does exist.
@@ -225,6 +234,7 @@ retrieve information about rows or columns.
         // Code removed here...
     }
 ```
+
 ```vb
     If detectRows Then
         ' Retrieve hidden rows.
@@ -234,6 +244,7 @@ retrieve information about rows or columns.
         ' Code removed here...
     End If
 ```
+
 The code that actually retrieves the list of hidden rows requires only a
 single line of code.
 
@@ -242,12 +253,14 @@ single line of code.
         Where((r) => r.Hidden != null && r.Hidden.Value).
         Select(r => r.RowIndex.Value).ToList<uint>();
 ```
+
 ```vb
     itemList = ws.Descendants(Of Row).
         Where(Function(r) r.Hidden IsNot Nothing AndAlso
               r.Hidden.Value).
         Select(Function(r) r.RowIndex.Value).ToList()
 ```
+
 This single line accomplishes a lot, however. It starts by calling the
 <span sdata="cer"
 target="M:DocumentFormat.OpenXml.OpenXmlElement.Descendants"><span
@@ -298,6 +311,7 @@ class="keyword">Max</span> value, inclusively).
         }
     }
 ```
+
 ```vb
     Dim cols = ws.Descendants(Of Column).
       Where(Function(c) c.Hidden IsNot Nothing AndAlso
@@ -370,6 +384,7 @@ Basic.
         return itemList;
     }
 ```
+
 ```vb
     Public Function GetHiddenRowsOrCols(
       ByVal fileName As String, ByVal sheetName As String,
@@ -425,5 +440,4 @@ Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

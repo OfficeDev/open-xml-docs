@@ -34,14 +34,11 @@ class="keyword">t</span>\> element contains a range of text.
 
 **In This Section**
 
-[Important WordprocessingML
-Parts](03636fa2-be44-4e8d-9c26-7d38415bb459.htm#ImpWPParts)
+[Important WordprocessingML Parts](structure-of-a-wordprocessingml-document.md#ImpWPParts)
 
-[Minimum Document
-Scenario](03636fa2-be44-4e8d-9c26-7d38415bb459.htm#MinDocScen)
+[Minimum Document Scenario](structure-of-a-wordprocessingml-document.md#MinDocScen)
 
-[Typical Document
-Scenario](03636fa2-be44-4e8d-9c26-7d38415bb459.htm#TypDocScen)
+[Typical Document Scenario](structure-of-a-wordprocessingml-document.md#TypDocScen)
 
 
 --------------------------------------------------------------------------------
@@ -103,8 +100,7 @@ represented by the main document part. At a minimum, to create a valid
 **WordprocessingML** document using code, add a
 main document part to the document.
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 introduces the WordprocessingML elements required in the main document
 part in order to complete the minimum document scenario.
 
@@ -150,6 +146,7 @@ class="keyword">WordprocessingML</span> document that contains the text
         }
     }
 ```
+
 ```vb
     Public Shared Sub CreateWordDoc(filepath As String, msg As String)
         Using doc As WordprocessingDocument = WordprocessingDocument.Create(filepath, DocumentFormat.OpenXml.WordprocessingDocumentType.Document)
@@ -167,6 +164,7 @@ class="keyword">WordprocessingML</span> document that contains the text
         End Using
     End Sub
 ```
+
 ### Generated WordprocessingML
 
 After you run the Open XML SDK 2.5 code in the previous section to

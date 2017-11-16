@@ -21,8 +21,7 @@ Microsoft Excel 2010 or Microsoft Excel 2013 workbook, without loading
 the document into Excel. It contains an example <span
 class="keyword">GetAllWorksheets</span> method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -38,6 +37,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Packaging
     Imports DocumentFormat.OpenXml.Spreadsheet
@@ -55,9 +55,11 @@ examine.
 ```csharp
     public static Sheets GetAllWorksheets(string fileName)
 ```
+
 ```vb
     Public Function GetAllWorksheets(ByVal fileName As String) As Sheets
 ```
+
 The method works with the workbook you specify, returning an instance of
 the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
@@ -84,6 +86,7 @@ the required value, as shown in the following code.
         }
     }
 ```
+
 ```vb
     Const DEMOFILE As String = 
         "C:\Samples\SampleWorkbook.xlsx"
@@ -113,11 +116,13 @@ workbook).
     // Code removed here…
     return theSheets;
 ```
+
 ```vb
     Dim theSheets As Sheets
     ' Code removed here…
     Return theSheets
 ```
+
 The code then continues by opening the document in read-only mode, and
 retrieving a reference to the <span sdata="cer"
 target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart"><span
@@ -131,6 +136,7 @@ class="nolink">WorkbookPart</span></span>.
         // Code removed here.
     }
 ```
+
 ```vb
     Using document As SpreadsheetDocument = 
         SpreadsheetDocument.Open(fileName, False)
@@ -138,6 +144,7 @@ class="nolink">WorkbookPart</span></span>.
         ' Code removed here.
     End Using
 ```
+
 To get access to the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook"><span
 class="nolink">Workbook</span></span> object, the code retrieves the
@@ -158,6 +165,7 @@ return value.
 ```csharp
     theSheets = wbPart.Workbook.Sheets;
 ```
+
 ```vb
     theSheets = wbPart.Workbook.Sheets
 ```
@@ -208,6 +216,7 @@ Basic.
         }
     }
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Packaging
     Imports DocumentFormat.OpenXml.Spreadsheet
@@ -246,5 +255,4 @@ Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

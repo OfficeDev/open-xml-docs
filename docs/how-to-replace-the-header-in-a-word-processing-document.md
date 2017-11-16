@@ -19,8 +19,7 @@ This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to replace the header in word processing document
 programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -37,6 +36,7 @@ the code in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Wordprocessing;
 ```
+
 ```vb
     Imports System.Collections.Generic
     Imports System.Linq
@@ -103,23 +103,16 @@ rules shall apply.
     or, if this is the first section in the document, a new blank header
     shall be created.
 
-[*Example*: Consider a three page document with different first, odd,
+*Example*: Consider a three page document with different first, odd,
 and even page header defined as follows:
 
-![Three page document with different
-headers](./media/w-headerref01.gif)
+![Three page document with different headers](./media/w-headerref01.gif)
   
 This document defines three headers, each of which has a relationship
 from the document part with a unique relationship ID, as shown in the
 following packaging markup:
 
-<span codelanguage="other"> </span>
- 
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```xml
     <Relationships xmlns=http://schemas.openxmlformats.org/package/2006/relationships>
       …
       <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml" />
@@ -127,17 +120,14 @@ code](./media/copycode.gif "Copy code")Copy code</span>
       <Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header3.xml" />
       …
     </Relationships>
+```
 
 These relationships are then referenced in the section's properties
 using the following WordprocessingML:
 
 <span codelanguage="other"> </span>
  
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>  
+```xml
     <w:sectPr>  
       …  
       <w:headerReference r:id="rId3" w:type="first" />  
@@ -145,6 +135,7 @@ code](./media/copycode.gif "Copy code")Copy code</span>
       <w:headerReference r:id="rId2" w:type="even" />  
       …  
     </w:sectPr>  
+```
 
 The resulting section shall use the header part with relationship id
 <span class="code">rId3</span> for the first page, the header part with
@@ -168,11 +159,13 @@ segment as an example.
     string filepathTo=@"C:\Users\Public\Documents\Word15b.docx";
     AddHeaderFromTo(filepathFrom,  filepathTo);
 ```
+
 ```vb
     Dim filepathFrom As String = "C:\Users\Public\Documents\word15a.docx"
     Dim filepathTo As String = "C:\Users\Public\Documents\Word15b.docx"
     AddHeaderFromTo(filepathFrom, filepathTo)
 ```
+
 Following is the complete sample code in both C\# and Visual Basic.
 
 ```csharp
@@ -223,6 +216,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     Public Sub AddHeaderFromTo(ByVal filepathFrom As String, ByVal filepathTo As String)
         ' Replace header in target document with header of source document.
@@ -266,5 +260,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

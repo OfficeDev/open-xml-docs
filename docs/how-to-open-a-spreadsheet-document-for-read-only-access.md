@@ -28,6 +28,7 @@ this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
+
 ```vb
     Imports System.IO
     Imports System.IO.Packaging
@@ -96,10 +97,12 @@ Method.
     // Open a SpreadsheetDocument for read-only access based on a filepath.
     using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(filepath, false))
 ```
+
 ```vb
     ' Open a SpreadsheetDocument for read-only access based on a filepath.
     Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(filepath, False)
 ```
+
 The other two **Open** methods create an
 instance of the SpreadsheetDocument class based on an input/output
 stream. You might use this approach, for example, if you have a
@@ -115,11 +118,13 @@ The following code example opens a document based on a stream.
     using (SpreadsheetDocument spreadsheetDocument =
         SpreadsheetDocument.Open(stream, false))
 ```
+
 ```vb
     Dim stream As Stream = File.Open(strDoc, FileMode.Open)
     ' Open a SpreadsheetDocument for read-only access based on a stream.
     Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(stream, False)
 ```
+
 Suppose you have an application that uses the Open XML support in the
 System.IO.Packaging namespace of the .NET Framework Class Library, and
 you want to use the Open XML SDK 2.5 to work with a package as
@@ -142,6 +147,7 @@ operation.
     using (SpreadsheetDocument spreadsheetDocument =
         SpreadsheetDocument.Open(spreadsheetPackage))
 ```
+
 ```vb
     ' Open System.IO.Packaging.Package.
     Dim spreadsheetPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
@@ -149,6 +155,7 @@ operation.
     ' Open a SpreadsheetDocument based on a package.
     Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(spreadsheetPackage)
 ```
+
 After you open the spreadsheet document package, you can access the main
 workbook part. To access the main workbook part, you assign a reference
 to the existing workbook part, as shown in the following code example.
@@ -157,6 +164,7 @@ to the existing workbook part, as shown in the following code example.
     // Assign a reference to the existing workbook part.
     WorkbookPart wbPart = document.WorkbookPart;
 ```
+
 ```vb
     ' Assign a reference to the existing workbook part.
     Dim wbPart As WorkbookPart = document.WorkbookPart
@@ -188,6 +196,7 @@ located in the Workbook.xml file and is as follows.
         </sheets>
     </workbook>
 ```
+
 The worksheet XML files contain one or more block level elements such as
 <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData"><span
@@ -218,6 +227,7 @@ Sheet1.xml file and is as follows.
         </sheetData>
     </worksheet>
 ```
+
 Using the Open XML SDK 2.5, you can create document structure and
 content that uses strongly-typed classes that correspond to
 SpreadsheetML elements. You can find these classes in the <span
@@ -267,6 +277,7 @@ attempts to add the new **WorksheetPart**.
         }
     }
 ```
+
 ```vb
     Public Shared Sub OpenSpreadsheetDocumentReadonly(ByVal filepath As String)
         ' Open a SpreadsheetDocument based on a filepath.
@@ -310,6 +321,7 @@ The following is the complete sample code in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     Public Sub OpenSpreadsheetDocumentReadonly(ByVal filepath As String)
         ' Open a SpreadsheetDocument based on a filepath.

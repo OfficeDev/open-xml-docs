@@ -27,6 +27,7 @@ this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Wordprocessing;
 ```
+
 ```vb
     Imports System.IO
     Imports DocumentFormat.OpenXml.Packaging
@@ -84,6 +85,7 @@ method.
     WordprocessingDocument wordprocessingDocument = 
         WordprocessingDocument.Open(stream, true);
 ```
+
 ```vb
     ' Open a WordProcessingDocument based on a stream.
     Dim wordprocessingDocument As WordprocessingDocument = _
@@ -116,6 +118,7 @@ the WordprocessingML markup for a document that contains only the text
       </w:body>
     </w:document>
 ```
+
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
 elements. You can find these classes in the <span sdata="cer"
@@ -146,10 +149,12 @@ segment.
     // Assign a reference to the existing document body.
     Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
 ```
+
 ```vb
     ' Assign a reference to the existing document body.
     Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
 ```
+
 When you access to the body of the main document part, add text by
 adding instances of the **Paragraph**, <span
 class="keyword">Run</span>, and **Text**
@@ -163,6 +168,7 @@ the sample code add the paragraph, run, and text.
     Run run = para.AppendChild(new Run());
     run.AppendChild(new Text(txt));
 ```
+
 ```vb
     ' Add new text.
     Dim para As Paragraph = body.AppendChild(New Paragraph())
@@ -187,6 +193,7 @@ Word13.docx file in the Public Documents folder and adds text to it.
     OpenAndAddToWordprocessingStream(stream, txt);
     stream.Close();
 ```
+
 ```vb
     Dim strDoc As String = "C:\Users\Public\Documents\Word13.docx"
     Dim txt As String = "Append text in body - OpenAndAddToWordprocessingStream"
@@ -194,7 +201,8 @@ Word13.docx file in the Public Documents folder and adds text to it.
     OpenAndAddToWordprocessingStream(stream, txt)
     stream.Close()
 ```
-> ![](./media/alert_note.gif)**Note**  
+
+> [!NOTE]
 > Notice that the **OpenAddAddToWordprocessingStream** method does not close the stream passed to it. The calling code must do that.
 
 Following is the complete sample code in both C\# and Visual Basic.
@@ -220,6 +228,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         // Caller must close the stream.
     }
 ```
+
 ```vb
     Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As String)
         ' Open a WordProcessingDocument based on a stream.
@@ -244,5 +253,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

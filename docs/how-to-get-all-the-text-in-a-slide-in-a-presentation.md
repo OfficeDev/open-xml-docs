@@ -96,8 +96,6 @@ that contains the presentation definition. The following text from the
 specification introduces the overall form of a <span
 class="keyword">PresentationML</span> package.
 
-### 
-
 > A PresentationML package's main part starts with a presentation root
 > element. That element contains a presentation, which, in turn, refers
 > to a <span class="term">slide</span> list, a <span class="term">slide
@@ -651,5 +649,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

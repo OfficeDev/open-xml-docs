@@ -87,8 +87,7 @@ requested does not exist).
       Optional ByVal getStylesWithEffectsPart As Boolean = True) As XDocument
 ```
 
-The complete code listing for the method can be found in the [Sample
-Code](20258c39-9411-41f2-8463-e94a4b0fa326.htm#sampleCode) section.
+The complete code listing for the method can be found in the [Sample Code](how-to-extract-styles-from-a-word-processing-document.md#sampleCode) section.
 
 
 --------------------------------------------------------------------------------

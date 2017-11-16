@@ -21,29 +21,20 @@ documents.
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [Structure of a PresentationML document (Open XML
-SDK)](structure-of-a-presentationml-document.htm) </span>
+[Structure of a PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)  
 
-<span sdata="link"> [Working with animation (Open XML
-SDK)](working-with-animation.htm) </span>
+[Working with animation (Open XML SDK)](working-with-animation.md)  
 
-<span sdata="link"> [Working with comments (Open XML
-SDK)](working-with-comments.htm) </span>
+[Working with comments (Open XML SDK)](working-with-comments.md)  
 
-<span sdata="link"> [Working with handout master slides (Open XML
-SDK)](working-with-handout-master-slides.htm) </span>
+[Working with handout master slides (Open XML SDK)](working-with-handout-master-slides.md)  
 
-<span sdata="link"> [Working with notes slides (Open XML
-SDK)](working-with-notes-slides.htm) </span>
+[Working with notes slides (Open XML SDK)](working-with-notes-slides.md)  
 
-<span sdata="link"> [Working with presentations (Open XML
-SDK)](working-with-presentations.htm) </span>
+[Working with presentations (Open XML SDK)](working-with-presentations.md)  
 
-<span sdata="link"> [Working with presentation slides (Open XML
-SDK)](working-with-presentation-slides.htm) </span>
+[Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md)  
 
-<span sdata="link"> [Working with slide layouts (Open XML
-SDK)](working-with-slide-layouts.htm) </span>
+[Working with slide layouts (Open XML SDK)](working-with-slide-layouts.md)  
 
-<span sdata="link"> [Working with slide masters (Open XML
-SDK)](working-with-slide-masters.htm) </span>
+[Working with slide masters (Open XML SDK)](working-with-slide-masters.md)  

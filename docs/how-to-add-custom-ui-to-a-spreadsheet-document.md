@@ -22,8 +22,7 @@ Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an
 example **AddCustomUI** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.0](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=5124).
+To use the sample code in this topic, you must install the [Open XML SDK 2.0](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=5124).
 You must explicitly reference the following assemblies in your project:
 
 -   WindowsBase

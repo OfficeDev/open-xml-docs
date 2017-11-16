@@ -729,7 +729,7 @@ C\# and Visual Basic.
 
 #### Concepts
 
-[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.htm)
+[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
 
 #### Other resources
 

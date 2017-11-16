@@ -18,9 +18,7 @@ ms.date: 11/01/2017
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically read a large Excel file. For more information
 about the basic structure of a <span
-class="keyword">SpreadsheetML</span> document, see <span
-sdata="link">[Structure of a SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.md)</span>.
+class="keyword">SpreadsheetML</span> document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 You must use the following **using** directives
 or **Imports** statements to compile the code
@@ -33,6 +31,7 @@ in this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
+
 ```vb
     Imports System
     Imports System.Linq
@@ -76,6 +75,7 @@ because the document is opened as read-only.
         // Code removed here.
     }
 ```
+
 ```vb
     ' Open the document for editing.
     Using spreadsheetDocument As SpreadsheetDocument = _
@@ -114,6 +114,7 @@ the DOM approach.
         }
     }
 ```
+
 ```vb
     Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
     Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
@@ -126,6 +127,7 @@ the DOM approach.
         Next
     Next
 ```
+
 The following code segment performs an identical task to the preceding
 sample (reading a very large Excel file), but uses the SAX approach.
 This is the recommended approach for reading very large files.
@@ -145,6 +147,7 @@ This is the recommended approach for reading very large files.
         }
     }
 ```
+
 ```vb
     Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
     Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
@@ -178,12 +181,14 @@ exclude.
     ReadExcelFileDOM(fileName);    // DOM
     ReadExcelFileSAX(fileName);    // SAX
 ```
+
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\BigFile.xlsx"
     ' Comment one of the following lines to test each method separately.
     ReadExcelFileDOM(fileName)    ' DOM
     ReadExcelFileSAX(fileName)    ' SAX
 ```
+
 The following is the complete code sample in both C\# and Visual Basic.
 
 ```csharp
@@ -234,6 +239,7 @@ The following is the complete code sample in both C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     ' The DOM approach.
     ' Note that the this code works only for cells that contain numeric values.
@@ -280,10 +286,8 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 #### Concepts
 
-<span sdata="link"> [Structure of a SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.md) </span>
+[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)  
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

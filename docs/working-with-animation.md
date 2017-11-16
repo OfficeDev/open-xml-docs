@@ -20,14 +20,12 @@ target="T:DocumentFormat.OpenXml.Presentation.Animate"><span
 class="nolink">Animate</span></span> class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
-PresentationML document, see [Structure of a PresentationML
-Document](structure-of-a-presentationml-document.htm).
+PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 
 --------------------------------------------------------------------------------
 
-The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Animation section of the Open XML
 PresentationML framework as follows:
 
@@ -45,18 +43,19 @@ described in this schema are contained within the slide XML file. More
 specifically they are in the \<transition\> and the \<timing\> element
 as shown below:
 
-\<p:sld\>  
-    \<p:cSld\> … \</p:cSld\>  
-    \<p:clrMapOvr\> … \</p:clrMapOvr\>  
-    \<p:transition\> … \</p:transition\>  
-    \<p:timing\> … \</p:timing\>  
-\</p:sld\>
+```xml
+<p:sld>  
+    <p:cSld> … </p:cSld>  
+    <p:clrMapOvr> … </p:clrMapOvr>  
+    <p:transition> … </p:transition>  
+    <p:timing> … </p:timing>  
+</p:sld>
+```
 
 © ISO/IEC29500: 2008.
 
 Animation consists of several behaviors, the most basic of which is the
-Animate behavior, represented by the \<anim\> element. The [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+Animate behavior, represented by the \<anim\> element. The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<anim\> element
 used to represent basic animation behavior in a PresentationML document
 as follows:
@@ -67,23 +66,23 @@ text within a shape or even the shape itself.[Example: Consider trying
 to emphasize text within a shape by changing the size of its font by
 150%. The \<anim\> element should be used as follows:
 
-\<p:anim to="1.5" calcmode="lin" valueType="num"\>  
-    \<p:cBhvr override="childStyle"\>  
-        \<p:cTn id="1" dur="2000" fill="hold"/\>  
-        \<p:tgtEl\>  
-            \<p:spTgt spid="1"\>  
-                \<p:txEl\>  
-                    \<p:charRg st="1" end="4"/\>  
-                \</p:txEl\>  
-            \</p:spTgt\>  
-        \</p:tgtEl\>  
-        \<p:attrNameLst\>  
-            \<p:attrName\>style.fontSize\</p:attrName\>  
-        \</p:attrNameLst\>  
-    \</p:cBhvr\>  
-\</p:anim\>
-
-end example]
+```xml
+<p:anim to="1.5" calcmode="lin" valueType="num">  
+    <p:cBhvr override="childStyle">  
+        <p:cTn id="1" dur="2000" fill="hold">  
+        <p:tgtEl>  
+            <p:spTgt spid="1">  
+                <p:txEl>  
+                    <p:charRg st="1" end="4">  
+                </p:txEl>  
+            </p:spTgt>  
+        </p:tgtEl>  
+        <p:attrNameLst>  
+            <p:attrName>style.fontSize</p:attrName>  
+        </p:attrNameLst>  
+    </p:cBhvr>  
+</p:anim>
+```
 
 © ISO/IEC29500: 2008.
 
@@ -93,11 +92,10 @@ correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-<cBhvr>|CommonBehavior
-<tavLst>|TimeAnimateValueList
+\<cBhvr\>|CommonBehavior
+\<tavLst\>|TimeAnimateValueList
 
-The following table from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<anim\> element.
 
 **Attributes**|**Description**
@@ -126,64 +124,62 @@ class="keyword">Animate</span> class are shown in the following list.
 ### CommonBehavior Class
 
 The **CommonBehavior** class corresponds to the
-\<cBhvr\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<cBhvr\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<cBhvr\>element:
 
 This element describes the common behaviors of animations.  
 
-[Example: Consider trying to emphasize text within a shape by changing
+Example: Consider trying to emphasize text within a shape by changing
 the size of its font. The \<anim\> element should be used as follows:
 
-\<p:anim to="1.5" calcmode="lin" valueType="num"\>  
-    \<p:cBhvr override="childStyle"\>  
-        \<p:cTn id="6" dur="2000" fill="hold"/\>  
-        \<p:tgtEl\>  
-            \<p:spTgt spid="3"\>  
-                \<p:txEl\>  
-                   \<p:charRg st="4294967295" end="4294967295"/\>  
-                \</p:txEl\>  
-           \</p:spTgt\>  
-        \</p:tgtEl\>  
-        \<p:attrNameLst\>  
-            \<p:attrName\>style.fontSize\</p:attrName\>  
-        \</p:attrNameLst\>  
-    \</p:cBhvr\>  
-\</p:anim\>
-
-end example]
+```xml
+<p:anim to="1.5" calcmode="lin" valueType="num">  
+    <p:cBhvr override="childStyle">  
+        <p:cTn id="6" dur="2000" fill="hold">  
+        <p:tgtEl>  
+            <p:spTgt spid="3">  
+                <p:txEl>  
+                   <p:charRg st="4294967295" end="4294967295"/>  
+                </p:txEl>  
+           </p:spTgt>  
+        </p:tgtEl>  
+        <p:attrNameLst>  
+            <p:attrName>style.fontSize</p:attrName>  
+        </p:attrNameLst>  
+    </p:cBhvr>  
+</p:anim>
+```
 
 © ISO/IEC29500: 2008.
 
 ### TimeAnimateValueList Class
 
 The **TimeAnimateValueList** class corresponds
-to the \<tavLst\> element. The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+to the \<tavLst\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<tavLst\> element:
 
 This element specifies a list of time animated value elements.
 
-[Example: Consider a shape with a "fly-in" animation. The \<tav\>
+Example: Consider a shape with a "fly-in" animation. The \<tav\>
 element should be used as follows:
 
-\<p:anim calcmode="lin" valueType="num"\>  
-    \<p:cBhvr additive="base"\> … \</p:cBhvr\>  
-    \<p:tavLst\>  
-        \<p:tav tm="0"\>  
-            \<p:val\>  
-                \<p:strVal val="1+\#ppt\_h/2"/\>  
-            \</p:val\>  
-        \</p:tav\>  
-        \<p:tav tm="100000"\>  
-            \<p:val\>  
-                \<p:strVal val="\#ppt\_y"/\>  
-            \</p:val\>  
-        \</p:tav\>  
-    \</p:tavLst\>  
-\</p:anim\>
-
-end example]
+```xml
+<p:anim calcmode="lin" valueType="num">  
+    <p:cBhvr additive="base"> … </p:cBhvr>  
+    <p:tavLst>  
+        <p:tav tm="0">  
+            <p:val>  
+                <p:strVal val="1+#ppt_h/2"/>  
+            </p:val>  
+        </p:tav>  
+        <p:tav tm="100000"\>  
+            <p:val>  
+                <p:strVal val="#ppt_y">  
+            </p:val>  
+        </p:tav>  
+    </p:tavLst>  
+</p:anim>
+```
 
 © ISO/IEC29500: 2008.
 
@@ -212,17 +208,12 @@ target child elements to which the animation effects are applied.
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-[How to: Create a Presentation by Providing a File
-Name](how-to-create-a-presentation-document-by-providing-a-file-name.htm)
+[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-<span sdata="link"> [How to: Insert a new slide into a presentation
-(Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.htm) </span>
+[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-<span sdata="link"> [How to: Delete a slide from a presentation (Open
-XML SDK)](how-to-delete-a-slide-from-a-presentation.htm) </span>
+[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
 
-<span sdata="link"> [How to: Apply a theme to a presentation (Open XML
-SDK)](how-to-apply-a-theme-to-a-presentation.htm) </span>
+[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  

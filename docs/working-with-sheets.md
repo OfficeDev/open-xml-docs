@@ -25,14 +25,12 @@ class="nolink">DialogSheet</span></span> classes and how they relate to
 the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.htm)</span>.
+SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
 --------------------------------------------------------------------------------
 
-The following information from the [ISO/IEC
-29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **sheet** (\<<span
 class="keyword">sheet</span>\>) element.
 
@@ -80,11 +78,11 @@ introduces the minimum worksheet scenario.
 
 The smallest possible (blank) sheet is as follows:
 
-\<worksheet\>
-
-    \<sheetData/\>
-
-\</worksheet\>
+```xml
+<worksheet>
+    <sheetData/>
+</worksheet>
+```
 
 The empty sheetData collection represents an empty grid; this element is
 required. As defined in the schema, some optional sheet property
@@ -122,9 +120,8 @@ current value of the worksheet cell. If the value is a numeric value, it
 is stored directly in the \<**v**\> element in
 the XML file. If the value is a string value, it is stored in a shared
 string table. For more information about using the shared string table
-to store string values, see <span sdata="link">[Working with the shared
-string table (Open XML
-SDK)](working-with-the-shared-string-table.htm)</span>.
+to store string values, see [Working with the shared
+string table (Open XML SDK)](working-with-the-shared-string-table.md).
 
 The following table lists the common Open XML SDK 2.5 classes used when
 working with the <span sdata="cer"
@@ -263,6 +260,7 @@ is set equal to the numeric value 100.
         spreadsheetDocument.Close();
     }
 ```
+
 ```vb
     Public Sub CreateSpreadsheetWorkbookWithNumValue(ByVal filepath As String)
         ' Create a spreadsheet document by supplying the filepath.
@@ -331,7 +329,6 @@ the "sheet.xml" file in the "worksheets" folder of the .zip file.
             </x:row>
         </x:sheetData>
     </x:worksheet>
-
 ```
 ---------------------------------------------------------------------------------
 
@@ -344,22 +341,17 @@ own sheet.
 
 A package is permitted to contain zero or more Chartsheet parts.
 
-[Example: sheet1.xml refers to a drawing that is the target of a
+Example: sheet1.xml refers to a drawing that is the target of a
 relationship in the Chartsheet part's relationship item:
 
-\<chartsheet xmlns:r="…" …\>
-
-    \<sheetViews\>
-
-        \<sheetView scale="64"/\>
-
-    \</sheetViews\>
-
-    \<drawing r:id="rId1"/\>
-
-\</chartsheet\>
-
-end example]
+```xml
+<chartsheet xmlns:r="…" …>
+    <sheetViews>
+        <sheetView scale="64"/>
+    </sheetViews\>
+    <drawing r:id="rId1">
+</chartsheet>
+```
 
 © ISO/IEC29500: 2008.
 
@@ -403,28 +395,19 @@ A package is permitted to contain one or more Dialogsheet parts
 
 The root element for a part of this content type shall be dialogsheet.
 
-[Example: sheet1.xml contains the following:
+Example: sheet1.xml contains the following:
 
-\<dialogsheet xmlns:r="…" …\>
-
-    \<sheetPr\>
-
-        \<pageSetUpPr/\>
-
-    \</sheetPr\>
-
-    \<sheetViews\>
-
+```xml
+<dialogsheet xmlns:r="…" …>
+    <sheetPr>
+        <pageSetUpPr/>
+    </sheetPr>
+    <sheetViews>
         …
-
-    \</sheetViews\>
-
+    </sheetViews>
     …
-
-    \<legacyDrawing r:id="rId1"/\>
-
-\</dialogsheet\>
-
-end example]
+    <legacyDrawing r:id="rId1"/>
+</dialogsheet>
+```
 
 © ISO/IEC29500: 2008.

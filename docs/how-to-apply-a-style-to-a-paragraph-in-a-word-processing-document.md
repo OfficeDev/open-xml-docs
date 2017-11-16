@@ -61,7 +61,7 @@ to which to apply the style.
 
 The following sections in this topic explain the implementation of this
 method and the supporting code, as well as how to call it. The complete
-sample code listing can be found in the [Sample Code](8d465a77-6c1b-453a-8375-ecf80d2f1bdc.htm#sampleCode) section at
+sample code listing can be found in the [Sample Code](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md#sampleCode) section at
 the end of this topic.
 
 
@@ -161,7 +161,7 @@ class="keyword">r</span>, and **t** elements.
 For more information about the overall structure of the parts and
 elements of a WordprocessingML document, see <span
 sdata="link">[Structure of a WordprocessingML document (Open XML
-SDK)](structure-of-a-wordprocessingml-document.htm)</span>.
+SDK)](structure-of-a-wordprocessingml-document.md)</span>.
 
 
 ----------------------------------------------------------------------------
@@ -982,9 +982,5 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
-
-
-
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
 

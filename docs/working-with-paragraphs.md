@@ -118,6 +118,7 @@ a WordprocessingML document.
         }
     }
 ```
+
 ```vb
     Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
         ' Open a WordprocessingDocument for editing using the filepath.
@@ -134,6 +135,7 @@ a WordprocessingML document.
 
     End Sub
 ```
+
 When this code is run, the following XML is written to the
 WordprocessingML document referenced in the code.
 
@@ -143,22 +145,16 @@ WordprocessingML document referenced in the code.
         <w:t>String from WriteToWordDoc method.</w:t>
       </w:r>
     </w:p>
-
 ```
+
 --------------------------------------------------------------------------------
 
 #### Concepts
 
-<span sdata="link"> [About the Open XML SDK 2.5 for
-Office](about-the-open-xml-sdk-2-5.htm) </span>
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
 
-<span sdata="link"> [Working with runs (Open XML
-SDK)](working-with-runs.htm) </span>
+[Working with runs (Open XML SDK)](working-with-runs.md)  
 
-<span sdata="link"> [How to: Apply a style to a paragraph in a word
-processing document (Open XML
-SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.htm) </span>
+[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)  
 
-<span sdata="link"> [How to: Open and add text to a word processing
-document (Open XML SDK)](how-to-open-and-add-text-to-a-word-processing-document.htm)
-</span>
+[How to: Open and add text to a word processing document (Open XML SDK)](how-to-open-and-add-text-to-a-word-processing-document.md)  

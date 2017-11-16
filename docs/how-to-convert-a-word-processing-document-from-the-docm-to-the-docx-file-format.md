@@ -92,8 +92,7 @@ contain content equivalent to an external XML file, binary file, image
 file, and so on, depending on the type. The standard that defines how
 Open XML documents are stored in .zip files is called the Open Packaging
 Conventions. For more information about the Open Packaging Conventions,
-see [ISO/IEC
-29500-2](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51459).
+see [ISO/IEC 29500-2](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51459).
 
 When you create and save a VBA macro in a document, Word adds a new
 binary part named vbaProject that contains the internal representation

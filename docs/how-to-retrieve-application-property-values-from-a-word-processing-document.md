@@ -20,8 +20,7 @@ Office to programmatically retrieve an application property from a
 Microsoft Word 2013 document, without loading the document into Word. It
 contains example code to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -36,6 +35,7 @@ the code in this topic.
     using System;
     using DocumentFormat.OpenXml.Packaging;
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Packaging
 ```
@@ -62,6 +62,7 @@ code.
         // Code removed here…
     }
 ```
+
 ```vb
     Private Const FILENAME As String = "DocumentProperties.docx"
 
@@ -70,6 +71,7 @@ code.
         ' Code removed here…
     End Using
 ```
+
 Given the reference to the <span
 class="keyword">WordProcessingDocument</span> object, you can retrieve a
 reference to the <span sdata="cer"
@@ -81,9 +83,11 @@ one of the application document properties.
 ```csharp
     var props = document.ExtendedFilePropertiesPart.Properties;
 ```
+
 ```vb
     Dim props = document.ExtendedFilePropertiesPart.Properties
 ```
+
 Once you have the reference to the properties of <span
 class="keyword">ExtendedFilePropertiesPart</span>, you can then retrieve
 any of the application properties, using simple code such as that shown
@@ -105,6 +109,7 @@ specifically given them a value.
     if (props.Manager != null)
         Console.WriteLine("Manager = " + props.Manager.Text);
 ```
+
 ```vb
     If props.Company IsNot Nothing Then
         Console.WriteLine("Company = " & props.Company.Text)
@@ -154,6 +159,7 @@ The following is the complete code sample in C\# and Visual Basic.
         }
     }
 ```
+
 ```vb
     Imports DocumentFormat.OpenXml.Packaging
 
@@ -187,5 +193,4 @@ The following is the complete code sample in C\# and Visual Basic.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

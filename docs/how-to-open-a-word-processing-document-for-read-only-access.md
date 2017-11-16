@@ -28,6 +28,7 @@ this topic.
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Wordprocessing;
 ```
+
 ```vb
     Imports System.IO
     Imports System.IO.Packaging
@@ -99,10 +100,12 @@ Method.
     using (WordprocessingDocument wordDocument =
         WordprocessingDocument.Open(filepath, false))
 ```
+
 ```vb
     ' Open a WordprocessingDocument for read-only access based on a filepath.
     Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, False)
 ```
+
 The other two **Open** methods create an
 instance of the **WordprocessingDocument**
 class based on an input/output stream. You might employ this approach,
@@ -118,11 +121,13 @@ The following code example opens a document based on a stream.
     using (WordprocessingDocument wordDocument =
         WordprocessingDocument.Open(stream, false))
 ```
+
 ```vb
     Dim stream As Stream = File.Open(strDoc, FileMode.Open)
     ' Open a WordprocessingDocument for read-only access based on a stream.
     Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(stream, False)
 ```
+
 Suppose you have an application that employs the Open XML support in the
 System.IO.Packaging namespace of the .NET Framework Class Library, and
 you want to use the Open XML SDK 2.5 to work with a package read only.
@@ -145,6 +150,7 @@ this operation.
     using (WordprocessingDocument wordDocument =
         WordprocessingDocument.Open(wordPackage))
 ```
+
 ```vb
     ' Open System.IO.Packaging.Package.
     Dim wordPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
@@ -152,6 +158,7 @@ this operation.
     ' Open a WordprocessingDocument based on a package.
     Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(wordPackage)
 ```
+
 Once you open the Word document package, you can access the main
 document part. To access the body of the main document part, you assign
 a reference to the existing document body, as shown in the following
@@ -161,6 +168,7 @@ code example.
     // Assign a reference to the existing document body.
     Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
 ```
+
 ```vb
     ' Assign a reference to the existing document body.
     Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
@@ -192,6 +200,7 @@ shown in the following code example.
       </w:body>
     </w:document>
 ```
+
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
 elements. You will find these classes in the <span sdata="cer"
@@ -230,6 +239,7 @@ following code example adds the paragraph, run, and text.
     // Call Save to generate an exception and show that access is read-only.
     wordDocument.MainDocumentPart.Document.Save();
 ```
+
 ```vb
     ' Attempt to add some text.
     Dim para As Paragraph = body.AppendChild(New Paragraph())
@@ -252,9 +262,11 @@ access.
 ```csharp
     OpenWordprocessingDocumentReadonly(@"c:\Users\Public\Public Documents\Word12.docx");
 ```
+
 ```vb
     OpenWordprocessingDocumentReadonly("c:\Users\Public\Public Documents\Word12.docx")
 ```
+
 The second example method, <span
 class="keyword">OpenWordprocessingPackageReadonly</span>, shows how to
 open a Word document for read-only access from a
@@ -265,10 +277,12 @@ Word12.docx file in the Public Documents folder for read-only access.
 ```csharp
     OpenWordprocessingPackageReadonly(@"c:\Users\Public\Public Documents\Word12.docx");
 ```
+
 ```vb
     OpenWordprocessingPackageReadonly("c:\Users\Public\Public Documents\Word12.docx")
 ```
-> ![](./media/alert_caution.gif)**Important note**  
+
+> [!IMPORTANT]
 > If you uncomment the statement that saves the file, the program would throw an **IOException** because the file is opened for read-only access.
 
 The following is the complete sample code in C\# and VB.
@@ -318,6 +332,7 @@ The following is the complete sample code in C\# and VB.
         wordPackage.Close();
     }
 ```
+
 ```vb
     Public Sub OpenWordprocessingDocumentReadonly(ByVal filepath As String)
         ' Open a WordprocessingDocument based on a filepath.
@@ -362,5 +377,4 @@ The following is the complete sample code in C\# and VB.
 
 #### Other resources
 
-[Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

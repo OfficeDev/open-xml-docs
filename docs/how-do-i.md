@@ -21,14 +21,10 @@ This section provides how-to topics for working with the Open XML SDK
 
 --------------------------------------------------------------------------------
 
-<span sdata="link"> [Presentations (Open XML
-SDK)](presentations.htm) </span>
+[Presentations (Open XML SDK)](presentations.md)  
 
-<span sdata="link"> [Packages and general (Open XML
-SDK)](packages-and-general.htm) </span>
+[Packages and general (Open XML SDK)](packages-and-general.md)  
 
-<span sdata="link"> [Spreadsheets (Open XML
-SDK)](spreadsheets.htm) </span>
+[Spreadsheets (Open XML SDK)](spreadsheets.md)  
 
-<span sdata="link"> [Word processing (Open XML
-SDK)](word-processing.htm) </span>
+[Word processing (Open XML SDK)](word-processing.md)  

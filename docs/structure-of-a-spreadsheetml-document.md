@@ -30,13 +30,13 @@ related elements.
 **In This Section**
 
 [Important Spreadsheet
-Parts](3b35a153-c8ff-4dc7-96d5-02c515f31770.htm#ImpSSParts)
+Parts](structure-of-a-spreadsheetml-document.md#ImpSSParts)
 
 [Minimum Workbook
-Scenario](3b35a153-c8ff-4dc7-96d5-02c515f31770.htm#MinWBScenario)
+Scenario](structure-of-a-spreadsheetml-document.md#MinWBScenario)
 
 [Typical Workbook
-Scenario](3b35a153-c8ff-4dc7-96d5-02c515f31770.htm#TypWBScenario)
+Scenario](structure-of-a-spreadsheetml-document.md#TypWBScenario)
 
 
 --------------------------------------------------------------------------------
@@ -65,33 +65,25 @@ Conditional Formatting|conditionalFormatting|ConditionalFormatting|A construct t
 
 --------------------------------------------------------------------------------
 
-The following text from the [Standard
-ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
+The following text from the [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
 introduces the minimum workbook scenario.
 
 The smallest possible (blank) workbook must contain the following:
 
-????????A single sheet
+A single sheet  
 
-????????A sheet ID
+A sheet ID  
 
-????????A relationship Id that points to the location of the sheet
-definition
+A relationship Id that points to the location of the sheet definition  
 
-?? Ecma International: December 2006.
+© Ecma International: December 2006.  
 
 ### Open XML SDK Code Example
 
 This code example uses the classes in the Open XML SDK 2.5 to create a
 minimum, blank workbook.
 
-<span codelanguage="CSharp"> </span>
-C\#??
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```csharp
     public static void CreateSpreadsheetWorkbook(string filepath)
     {
         // Create a spreadsheet document by supplying the filepath.
@@ -118,14 +110,9 @@ code](./media/copycode.gif "Copy code")Copy code</span>
         // Close the document.
         spreadsheetDocument.Close();
     }
+```
 
-<span codelanguage="VisualBasic"> </span>
-Visual Basic??
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```vb
     Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
         ' Create a spreadsheet document by supplying the filepath.
         ' By default, AutoSave = true, Editable = true, and Type = xlsx.
@@ -155,6 +142,7 @@ code](./media/copycode.gif "Copy code")Copy code</span>
         ' Close the document.
         spreadsheetDocument.Close()
     End Sub
+```
 
 ### Generated SpreadsheetML
 
@@ -165,15 +153,13 @@ on the minimum spreadsheet from **.xlsx** to
 **.zip**. Inside the .zip package, there are
 several parts that make up the minimum workbook.
 
-The following figure shows the structure under the <span
-class="keyword">xl</span> folder of the .zip package for a minimum
+The following figure shows the structure under the <span class="keyword">xl</span> folder of the .zip package for a minimum
 workbook.
 
 Figure 1. .zip folder structure
 
   
- ![Structure of a minimum
-workbook](./media/odc_oxml_xl_documentstructure_fig02.gif)
+ ![Structure of a minimum workbook](./media/odc_oxml_xl_documentstructure_fig02.gif)
 The **workbook.xml** file contains \<<span
 class="keyword">sheet</span>\> elements that reference the worksheets in
 the workbook. Each worksheet is associated to the workbook via a Sheet
@@ -187,19 +173,14 @@ The following XML code is the spreadsheetML that represents the workbook
 part of the spreadsheet document. This code is generated when you run
 the Open XML SDK 2.5 code to create a minimum workbook.
 
-<span codelanguage="xmlLang"> </span>
-XML??
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <x:workbook xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheets>
             <x:sheet name="mySheet" sheetId="1" r:id="Rddc7711f116045e5" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
         </x:sheets>
     </x:workbook>
+```
 
 The **workbook.xml.rels** file contains the
 \<**Relationship**\> elements that define the
@@ -209,41 +190,29 @@ The following XML code is the spreadsheetML that represents the
 relationship part of the spreadsheet document. This code is generated
 when you run the Open XML SDK 2.5 to create a minimum workbook.
 
-<span codelanguage="xmlLang"> </span>
-XML??
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
         <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="/xl/worksheets/sheet.xml" Id="Rddc7711f116045e5" />
     </Relationships>
+```
 
 The **sheet.xml** file contains the \<<span
 class="keyword">sheetData</span>\> element that represents the cell
 table. In this example, the workbook is blank, so the \<<span
 class="keyword">sheetData</span>\> element is empty. For more
-information about sheets, see <span sdata="link">[Working with sheets
-(Open XML SDK)](working-with-sheets.htm)</span>.
+information about sheets, see <span sdata="link">[Working with sheets (Open XML SDK)](working-with-sheets.md)</span>.
 
 The following XML code is the spreadsheetML that represents the
 worksheet part of the spreadsheet document. This code is generated when
 you run the Open XML SDK 2.5 to create a minimum workbook.
 
-<span codelanguage="xmlLang"> </span>
-XML??
-<span class="copyCode" onclick="CopyCode(this)"
-onkeypress="CopyCode_CheckKey(this, event)"
-onmouseover="ChangeCopyCodeIcon(this)"
-onmouseout="ChangeCopyCodeIcon(this)" tabindex="0"> ![Copy
-code](./media/copycode.gif "Copy code")Copy code</span>
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheetData />
     </x:worksheet>
-
+```
 
 --------------------------------------------------------------------------------
 
@@ -258,5 +227,4 @@ typical spreadsheet.
 Figure 2. Typical spreadsheet elements
 
   
- ![Structure of a SpreadsheetML
-document](./media/odc_oxml_xl_documentstructure_fig01.gif)
+ ![Structure of a SpreadsheetML document](./media/odc_oxml_xl_documentstructure_fig01.gif)
