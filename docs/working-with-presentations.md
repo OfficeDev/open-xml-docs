@@ -333,7 +333,7 @@ class="keyword">DefaultTextStyle</span> classes.
 
 --------------------------------------------------------------------------------
 
-The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.htm)</span> uses the <span
+The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> uses the <span
 sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Create(System.String,DocumentFormat.OpenXml.PresentationDocumentType)"><span
 class="nolink">Create(String, PresentationDocumentType)</span></span>
