@@ -1,4 +1,3 @@
-# [Index](index.md)
 # [Open XML SDK 2.5](open-xml-sdk-2-5.md)
 ## [Getting started](getting-started.md)
 ### [About the Open XML SDK 2.5](about-the-open-xml-sdk-2-5.md)
