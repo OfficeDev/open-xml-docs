@@ -1,0 +1,305 @@
+---
+ms.prod: OPENXML
+api_name:
+- Microsoft.Office.DocumentFormat.OpenXML.Packaging
+api_type:
+- schema
+ms.assetid: 7dbfd93c-a9e3-4465-9b57-4a043b07b807
+title: 'How to: Copy the contents of an Open XML package part to a document part in a different package (Open XML SDK)'
+ms.suite: office
+ms.technology: open-xml
+ms.author: o365devx
+author: o365devx
+ms.topic: conceptual
+ms.date: 11/01/2017
+---
+
+# How to: Copy the contents of an Open XML package part to a document part in a different package (Open XML SDK)
+
+This topic shows how to use the classes in the Open XML SDK 2.5 for
+Office to copy the contents of an Open XML Wordprocessing document part
+to a document part in a different word-processing document
+programmatically.
+
+The following assembly directives are required to compile the code in
+this topic.
+
+```csharp
+    using System.IO;
+    using DocumentFormat.OpenXml.Packaging;
+```
+
+```vb
+    Imports System.IO
+    Imports DocumentFormat.OpenXml.Packaging
+```
+
+--------------------------------------------------------------------------------
+
+An Open XML document is stored as a package, whose format is defined by
+[ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
+package can have multiple parts with relationships between them. The
+relationship between parts controls the category of the document. A
+document can be defined as a word-processing document if its
+package-relationship item contains a relationship to a main document
+part. If its package-relationship item contains a relationship to a
+presentation part it can be defined as a presentation document. If its
+package-relationship item contains a relationship to a workbook part, it
+is defined as a spreadsheet document. In this how-to topic, you will use
+a word-processing document package.
+
+
+--------------------------------------------------------------------------------
+
+To open an existing document, instantiate the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
+class="nolink">WordprocessingDocument</span></span> class as shown in
+the following two **using** statements. In the
+same statement, you open the word processing file with the specified
+file name by using the <span sdata="cer"
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span class="nolink">Open</span></span> method, with the Boolean parameter.
+For the source file that set the parameter to <span
+class="keyword">false</span> to open it for read-only access. For the
+target file, set the parameter to **true** in
+order to enable editing the document.
+
+```csharp
+    using (WordprocessingDocument wordDoc1 = WordprocessingDocument.Open(fromDocument1, false))
+    using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(toDocument2, true))
+    {
+        // Insert other code here.
+    }
+```
+
+```vb
+    Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)
+    Dim wordDoc2 As WordprocessingDocument = WordprocessingDocument.Open(toDocument2, True)
+    Using (wordDoc2)
+        ' Insert other code here.
+    End Using
+```
+
+The **using** statement provides a recommended
+alternative to the typical .Create, .Save, .Close sequence. It ensures
+that the **Dispose** method (internal method
+used by the Open XML SDK to clean up resources) is automatically called
+when the closing brace is reached. The block that follows the using
+statement establishes a scope for the object that is created or named in
+the **using** statement. Because the <span
+class="keyword">WordprocessingDocument</span> class in the Open XML SDK
+automatically saves and closes the object as part of its <span
+class="keyword">System.IDisposable</span> implementation, and because
+**Dispose** is automatically called when you
+exit the block, you do not have to explicitly call <span
+class="keyword">Save</span> and **Close**─as
+long as you use **using**.
+
+
+--------------------------------------------------------------------------------
+
+The basic document structure of a <span
+class="keyword">WordProcessingML</span> document consists of the <span
+class="keyword">document</span> and **body**
+elements, followed by one or more block level elements such as <span
+class="keyword">p</span>, which represents a paragraph. A paragraph
+contains one or more **r** elements. The <span
+class="keyword">r</span> stands for run, which is a region of text with
+a common set of properties, such as formatting. A run contains one or
+more **t** elements. The <span
+class="keyword">t</span> element contains a range of text. The following
+code example shows the **WordprocessingML**
+markup for a document that contains the text "Example text."
+
+```xml
+    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+      <w:body>
+        <w:p>
+          <w:r>
+            <w:t>Example text.</w:t>
+          </w:r>
+        </w:p>
+      </w:body>
+    </w:document>
+```
+
+Using the Open XML SDK 2.5, you can create document structure and
+content using strongly-typed classes that correspond to <span
+class="keyword">WordprocessingML</span> elements. You will find these
+classes in the <span sdata="cer"
+target="N:DocumentFormat.OpenXml.Wordprocessing"><span
+class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+namespace. The following table lists the class names of the classes that
+correspond to the **document**, <span
+class="keyword">body</span>, **p**, <span
+class="keyword">r</span>, and **t** elements.
+
+| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
+|---|---|---|
+| document | Document | The root element for the main document part. |
+| body | Body | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
+| p | Paragraph | A paragraph. |
+| r | Run | A run. |
+| t | Text | A range of text. |
+
+--------------------------------------------------------------------------------
+
+The theme part contains information about the color, font, and format of
+a document. It is defined in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification as
+follows.
+
+An instance of this part type contains information about a document's
+theme, which is a combination of color scheme, font scheme, and format
+scheme (the latter also being referred to as effects). For a
+WordprocessingML document, the choice of theme affects the color and
+style of headings, among other things. For a SpreadsheetML document, the
+choice of theme affects the color and style of cell contents and charts,
+among other things. For a PresentationML document, the choice of theme
+affects the formatting of slides, handouts, and notes via the associated
+master, among other things.
+
+A WordprocessingML or SpreadsheetML package shall contain zero or one
+Theme part, which shall be the target of an implicit relationship in a
+Main Document (§11.3.10) or Workbook (§12.3.23) part. A PresentationML
+package shall contain zero or one Theme part per Handout Master
+(§13.3.3), Notes Master (§13.3.4), Slide Master (§13.3.10) or
+Presentation (§13.3.6) part via an implicit relationship.
+
+*Example*: The following WordprocessingML Main Document
+part-relationship item contains a relationship to the Theme part, which
+is stored in the ZIP item theme/theme1.xml:
+
+```xml
+    <Relationships xmlns="…">
+       <Relationship Id="rId4"
+          Type="http://…/theme" Target="theme/theme1.xml"/>
+    </Relationships>
+```
+
+
+© ISO/IEC29500: 2008.
+
+
+--------------------------------------------------------------------------------
+
+To copy the contents of a document part in an Open XML package to a
+document part in a different package, the full path of the each word
+processing document is passed in as a parameter to the <span
+class="keyword">CopyThemeContent</span> method. The code then opens both
+documents as **WordprocessingDocument**
+objects, and creates variables that reference the <span
+class="keyword">ThemePart</span> parts in each of the packages.
+
+```csharp
+    public static void CopyThemeContent(string fromDocument1, string toDocument2)
+    {
+       using (WordprocessingDocument wordDoc1 = WordprocessingDocument.Open(fromDocument1, false))
+       using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(toDocument2, true))
+       {
+          ThemePart themePart1 = wordDoc1.MainDocumentPart.ThemePart;
+          ThemePart themePart2 = wordDoc2.MainDocumentPart.ThemePart;
+```
+
+```vb
+    Public Sub CopyThemeContent(ByVal fromDocument1 As String, ByVal toDocument2 As String)
+       Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)
+       Dim wordDoc2 As WordprocessingDocument = WordprocessingDocument.Open(toDocument2, True)
+       Using (wordDoc2)
+          Dim themePart1 As ThemePart = wordDoc1.MainDocumentPart.ThemePart
+          Dim themePart2 As ThemePart = wordDoc2.MainDocumentPart.ThemePart
+```
+
+The code then reads the contents of the source <span
+class="keyword">ThemePart</span> part by using a <span
+class="keyword">StreamReader</span> object and writes to the target
+**ThemePart** part by using a <span
+class="keyword">StreamWriter</span> object.
+
+```csharp
+    using (StreamReader streamReader = new StreamReader(themePart1.GetStream()))
+    using (StreamWriter streamWriter = new StreamWriter(themePart2.GetStream(FileMode.Create))) 
+    {
+        streamWriter.Write( streamReader.ReadToEnd());
+    }
+```
+
+```vb
+    Dim streamReader As StreamReader = New StreamReader(themePart1.GetStream())
+    Dim streamWriter As StreamWriter = New StreamWriter(themePart2.GetStream(FileMode.Create))
+    Using (streamWriter)
+        streamWriter.Write(streamReader.ReadToEnd)
+    End Using
+```
+
+--------------------------------------------------------------------------------
+
+The following code copies the contents of one document part in an Open
+XML package to a document part in a different package. To call the <span
+class="keyword">CopyThemeContent</span> method, you can use the
+following example, which copies the theme part from "MyPkg4.docx" to
+"MyPkg3.docx."
+
+```csharp
+    string fromDocument1 = @"C:\Users\Public\Documents\MyPkg4.docx";
+    string toDocument2 = @"C:\Users\Public\Documents\MyPkg3.docx";
+    CopyThemeContent(fromDocument1, toDocument2);
+```
+
+```vb
+    Dim fromDocument1 As String = "C:\Users\Public\Documents\MyPkg4.docx"
+    Dim toDocument2 As String = "C:\Users\Public\Documents\MyPkg3.docx"
+    CopyThemeContent(fromDocument1, toDocument2)
+```
+
+> [!IMPORTANT]
+> Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word 2013, click the <span class="ui">Page Layout</span> tab, click <span class="ui">Themes</span>, and select one of the available themes.
+
+After running the program, you can inspect the file "MyPkg3.docx" to see
+the copied theme from the file "MyPkg4.docx."
+
+Following is the complete sample code in both C\# and Visual Basic.
+
+```csharp
+    // To copy contents of one package part.
+    public static void CopyThemeContent(string fromDocument1, string toDocument2)
+    {
+       using (WordprocessingDocument wordDoc1 = WordprocessingDocument.Open(fromDocument1, false))
+       using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(toDocument2, true))
+       {
+          ThemePart themePart1 = wordDoc1.MainDocumentPart.ThemePart;
+          ThemePart themePart2 = wordDoc2.MainDocumentPart.ThemePart;
+
+           using (StreamReader streamReader = new StreamReader(themePart1.GetStream()))
+           using (StreamWriter streamWriter = new StreamWriter(themePart2.GetStream(FileMode.Create))) 
+          {
+             streamWriter.Write( streamReader.ReadToEnd() );
+          }
+       }
+    }
+```
+
+```vb
+    ' To copy contents of one package part.
+    Public Sub CopyThemeContent(ByVal fromDocument1 As String, ByVal toDocument2 As String)
+       Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)
+       Dim wordDoc2 As WordprocessingDocument = WordprocessingDocument.Open(toDocument2, True)
+       Using (wordDoc2)
+          Dim themePart1 As ThemePart = wordDoc1.MainDocumentPart.ThemePart
+          Dim themePart2 As ThemePart = wordDoc2.MainDocumentPart.ThemePart
+          Dim streamReader As StreamReader = New StreamReader(themePart1.GetStream())
+          Dim streamWriter As StreamWriter = New StreamWriter(themePart2.GetStream(FileMode.Create))
+          Using (streamWriter)
+             streamWriter.Write(streamReader.ReadToEnd)
+          End Using
+       End Using
+    End Sub
+```
+
+--------------------------------------------------------------------------------
+
+#### Other resources
+
+[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+
+
+
+

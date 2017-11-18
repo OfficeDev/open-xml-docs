@@ -1,1 +1,3 @@
-# Welcome to open-xml-docs!
+---
+redirect_url: /office/open-xml/open-xml-sdk-2-5/
+---
