@@ -83,7 +83,7 @@ following example that validates a file named "Word18.docx.".
     Console.ReadKey()
 ```
 
-> ![](./media/alert_caution.gif)**Important note**  
+> [!Important] 
 > Notice that you cannot run the code twice after corrupting the file in the first run. You have to start with a new Word file.
 
 Following is the complete sample code in both C\# and Visual Basic.
