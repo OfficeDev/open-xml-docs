@@ -211,7 +211,7 @@ calling the **InsertSharedStringItem** method.
 The code inserts a new cell for the result into the worksheet by calling
 the **InsertCellInWorksheet** method and set
 the value of the cell. For more information, see
-[how to insert a cell in a spreadsheet](how-to-insert-text-into-a-cell-in-a-spreadsheet.md#InsertCell), and then saves
+[how to insert a cell in a spreadsheet](how-to-insert-text-into-a-cell-in-a-spreadsheet.md#how-the-sample-code-works), and then saves
 the worksheet.
 
 ```csharp
