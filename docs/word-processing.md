@@ -20,7 +20,7 @@ documents using the Open XML SDK 2.5 for Office.
 
 
 --------------------------------------------------------------------------------
-
+## In this section 
 [How to: Accept all revisions in a word processing document (Open XML SDK)](how-to-accept-all-revisions-in-a-word-processing-document.md)  
 
 [How to: Add tables to word processing documents (Open XML SDK)](how-to-add-tables-to-word-processing-documents.md)  
@@ -75,7 +75,7 @@ documents using the Open XML SDK 2.5 for Office.
 
 
 --------------------------------------------------------------------------------
-
+## Related sections 
 [How do I... (Open XML SDK)](how-do-i.md)  
 
 [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
