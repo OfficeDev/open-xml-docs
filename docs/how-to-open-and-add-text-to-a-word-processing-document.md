@@ -33,7 +33,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## How to Open and Add Text to a Document
 The Open XML SDK 2.5 helps you create Word processing document structure
 and content using strongly-typed classes that correspond to <span
 class="keyword">WordprocessingML</span> elements. This topic shows how
@@ -45,7 +45,7 @@ elements, and their corresponding Open XML SDK classes.
 
 
 --------------------------------------------------------------------------------
-
+## Create a WordprocessingDocument Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
 class="nolink">WordprocessingDocument</span></span> class represents a
@@ -100,7 +100,7 @@ code example.
 ```
 
 --------------------------------------------------------------------------------
-
+## Structure of a WordProcessingML Document
 The basic document structure of a WordProcessingML document consists of
 the **document** and <span
 class="keyword">body</span> elements, followed by one or more block
@@ -146,7 +146,7 @@ class="keyword">r</span>, and **t** elements.
 
 
 --------------------------------------------------------------------------------
-
+## Generate the WordprocessingML Markup to Add the Text
 When you have access to the body of the main document part, add text by
 adding instances of the **Paragraph**, <span
 class="keyword">Run</span>, and **Text**
@@ -168,7 +168,7 @@ following code example adds the paragraph, run and text.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The example **OpenAndAddTextToWordDocument**
 method shown here can be used to open a Word document and append some
 text using the Open XML SDK. To call this method, pass a full path
@@ -237,7 +237,7 @@ of **OpenSettings**.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
