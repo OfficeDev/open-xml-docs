@@ -48,7 +48,7 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Create a Presentation 
 A presentation file, like all files defined by the Open XML standard,
 consists of a package file container. This is the file that users see in
 their file explorer; it usually has a .pptx extension. The package file
@@ -166,7 +166,7 @@ two slides.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 Following is the complete sample C\# and VB code to create a
 presentation, given a file path.
 
@@ -790,7 +790,7 @@ presentation, given a file path.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
