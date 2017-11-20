@@ -20,7 +20,7 @@ documents using the Open XML SDK 2.5.
 
 
 --------------------------------------------------------------------------------
-
+## In this section 
 [How to: Add a comment to a slide in a presentation (Open XML SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)  
 
 [How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
@@ -53,7 +53,7 @@ documents using the Open XML SDK 2.5.
 
 
 --------------------------------------------------------------------------------
-
+## Related sections 
 [How do I... (Open XML SDK)](how-do-i.md)  
 
 [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
