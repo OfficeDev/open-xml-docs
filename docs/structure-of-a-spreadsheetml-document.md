@@ -40,7 +40,7 @@ Scenario](structure-of-a-spreadsheetml-document.md#TypWBScenario)
 
 
 --------------------------------------------------------------------------------
-
+## Important Spreadsheet Parts
 Using the Open XML SDK 2.5 for Office, you can create document structure
 and content that uses strongly-typed classes that correspond to <span
 class="keyword">SpreadsheetML</span> elements. You can find these
@@ -64,7 +64,7 @@ Conditional Formatting|conditionalFormatting|ConditionalFormatting|A construct t
 
 
 --------------------------------------------------------------------------------
-
+## Minimum Workbook Scenario
 The following text from the [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
 introduces the minimum workbook scenario.
 
@@ -215,7 +215,7 @@ you run the Open XML SDK 2.5 to create a minimum workbook.
 ```
 
 --------------------------------------------------------------------------------
-
+## Typical Workbook Scenario
 A typical workbook will not be a blank, minimum workbook. A typical
 workbook might contain numbers, text, charts, tables, and pivot tables.
 Each of these additional parts is contained within the .zip package of
