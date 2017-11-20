@@ -34,7 +34,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Getting a SpreadsheetDocument Object 
 In the Open XML SDK, the **<span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
 class="nolink">SpreadsheetDocument</span></span>** class represents an
@@ -120,7 +120,7 @@ worksheet to the workbook.
 
 
 --------------------------------------------------------------------------------
-
+## Basic Structure of a SpreadsheetML Document 
 The following code example is the <span
 class="keyword">SpreadsheetML</span> markup for the workbook that the
 sample code creates.
@@ -183,7 +183,7 @@ class="keyword">sheetData</span> elements.
 
 
 --------------------------------------------------------------------------------
-
+## Generating the SpreadsheetML Markup 
 To create the basic document structure using the Open XML SDK,
 instantiate the **Workbook** class, assign it
 to the <span sdata="cer"
@@ -198,7 +198,7 @@ classes. This is shown in the sample code and generates the required
 
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 The **CreateSpreadsheetWorkbook** method shown
 here can be used to create a basic Excel document, a workbook with one
 sheet named "mySheet". To call it in your program, you can use the
@@ -286,7 +286,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
