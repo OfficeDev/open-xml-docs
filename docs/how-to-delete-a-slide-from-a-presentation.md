@@ -46,6 +46,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
+## Getting a Presentation Object 
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -119,6 +120,7 @@ class="keyword">presentationDocument</span>.
 
 
 --------------------------------------------------------------------------------
+## Basic Presentation Document Structure 
 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of the main part
@@ -205,6 +207,7 @@ class="keyword">notesMaster</span> elements.
 | notesMaster | NotesMaster | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 --------------------------------------------------------------------------------
+## Counting the Number of Slides 
 
 The sample code consists of two overloads of the <span
 class="keyword">CountSlides</span> method. The first overload uses a
@@ -278,6 +281,7 @@ and returns it.
 ```
 
 --------------------------------------------------------------------------------
+## Deleting a Specific Slide 
 
 The code for deleting a slide uses two overloads of the <span
 class="keyword">DeleteSlide</span> method. The first overloaded <span
@@ -490,6 +494,7 @@ part for the deleted slide.
 ```
 
 --------------------------------------------------------------------------------
+## Sample Code 
 
 The following is the complete sample code for the two overloaded
 methods, **CountSlides** and <span
@@ -771,6 +776,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Other resources
 

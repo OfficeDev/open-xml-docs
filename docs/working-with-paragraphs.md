@@ -22,7 +22,7 @@ Open XML File Format WordprocessingML schema.
 
 
 --------------------------------------------------------------------------------
-
+## Paragraphs in WordprocessingML
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the Open XML WordprocessingML element used to represent a
@@ -54,7 +54,7 @@ working with paragraphs.
 
 
 ---------------------------------------------------------------------------------
-
+## Paragraph Class
 The Open XML SDK 2.5<span sdata="cer"
 target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph"><span
 class="nolink">Paragraph</span></span> class represents the paragraph
@@ -96,7 +96,7 @@ class="keyword">t</span>\> element.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example
 The following code instantiates an Open XML SDK 2.5<span
 class="keyword">Paragraph</span> object and then uses it to add text to
 a WordprocessingML document.
@@ -148,7 +148,7 @@ WordprocessingML document referenced in the code.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  

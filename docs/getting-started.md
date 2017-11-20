@@ -20,7 +20,7 @@ The Open XML SDK 2.5 for Office simplifies the task of manipulating Open XML pac
 
 
 ------------------------------------------------------------
-
+## Using the Classes in the Open XML SDK
 Using the classes in the Open XML SDK 2.5 is simple. When you have installed the Open XML SDK 2.5, open your existing project or application in Visual Studio, or create a new project or application. Then, in your project or application, add references to the following components.
 
 -   **DocumentFormat.OpenXml**
@@ -35,7 +35,7 @@ Using the classes in the Open XML SDK 2.5 is simple. When you have installed the
 
 3.  In the Component Name column, select the components (scroll if you need to), and then click <span class="ui">OK</span>.
 
-> [!TIP]
+> [!TIP]  
 > To select more than one component, hold down the Ctrl key and click each component.
 
 The added components are displayed in the References section in Solution Explorer.

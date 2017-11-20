@@ -42,6 +42,7 @@ this topic.
 ```
 
 ----------------------------------------------------------------------------
+## Getting a SpreadsheetDocument Object 
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
@@ -99,6 +100,7 @@ class="term">document</span>.
 
 
 ----------------------------------------------------------------------------
+## Basic Structure of a SpreadsheetML Document 
 
 The basic document structure of a <span
 class="keyword">SpreadsheetML</span> document consists of the <span
@@ -175,6 +177,7 @@ class="keyword">sheetData</span> elements.
 | v | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell. |
 
 ----------------------------------------------------------------------------
+## How the Sample Code Works 
 
 The sample code starts by passing in to the method <span
 class="keyword">CalculateSumOfCellRange</span> a parameter that
@@ -624,6 +627,7 @@ new **Cell** object.
 ```
 
 ----------------------------------------------------------------------------
+## Sample Code 
 
 The following code sample calculates the sum of a contiguous range of
 cells in a spreadsheet document. The result is inserted into the <span
@@ -975,6 +979,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 -----------------------------------------------------------------------------
+## See also 
 
 #### Other resources
 

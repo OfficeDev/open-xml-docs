@@ -42,6 +42,7 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
+## GetCellValue Method 
 
 You can use the **GetCellValue** method to
 retrieve the value of a cell in a workbook. The method requires the
@@ -70,6 +71,7 @@ found. The following code example shows the method signature.
 ```
 
 --------------------------------------------------------------------------------
+## Calling the GetCellValue Sample Method 
 
 To call the **GetCellValue** method, pass the
 file name, sheet name, and cell address, as shown in the following code
@@ -103,6 +105,7 @@ example.
 ```
 
 --------------------------------------------------------------------------------
+## How the Code Works 
 
 The code starts by creating a variable to hold the return value, and
 initializes it to null.
@@ -116,6 +119,7 @@ initializes it to null.
 ```
 
 --------------------------------------------------------------------------------
+## Accessing the Cell 
 
 Next, the code opens the document by using the <span sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
@@ -242,6 +246,7 @@ or will contain a null reference.
 ```
 
 ---------------------------------------------------------------------------------
+## Retrieving the Value 
 
 At this point, the variable named <span class="code">theCell</span>
 contains either a null reference, or a reference to the cell that you
@@ -408,6 +413,7 @@ class="code">value</span>, which contains the requested information.
 
 
 --------------------------------------------------------------------------------
+## Sample Code 
 
 The following is the complete **GetCellValue**
 code sample in C\# and Visual Basic.
@@ -581,6 +587,7 @@ code sample in C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Other resources
 

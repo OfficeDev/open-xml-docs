@@ -43,6 +43,7 @@ this topic.
 ```
 
 ---------------------------------------------------------------------------------
+## Getting a PresentationDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -90,6 +91,7 @@ class="keyword">using</span> statement, in this case
 
 
 ---------------------------------------------------------------------------------
+## Basic Presentation Document Structure 
 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of the main part
@@ -177,6 +179,7 @@ class="keyword">notesMaster</span> elements:
 
 
 --------------------------------------------------------------------------------
+## How the Sample Code Works 
 
 The sample code consists of two overloads of the method <span
 class="keyword">GetSlideTitles</span>. In the first overloaded method,
@@ -440,6 +443,7 @@ a title shape; otherwise, it returns **false**.
 ```
 
 --------------------------------------------------------------------------------
+## Sample Code 
 
 The following is the complete sample code that you can use to get the
 titles of the slides in a presentation file. For example you can use the
@@ -686,6 +690,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Other resources
 

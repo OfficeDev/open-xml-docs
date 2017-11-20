@@ -44,6 +44,7 @@ the code in this topic.
 ```
 
 -----------------------------------------------------------------------------
+## AddTable Method 
 
 You can use the **AddTable** method to add a
 simple table to a word processing document. The <span
@@ -65,6 +66,7 @@ indicating the following:
 ```
 
 -----------------------------------------------------------------------------
+## Calling the AddTable Method 
 
 The **AddTable** method modifies the document
 you specify, adding a table that contains the information in the
@@ -91,6 +93,7 @@ the parameter values, as shown in the following code.
 ```
 
 --------------------------------------------------------------------------------
+## How the Code Works 
 
 The following code starts by opening the document, using the <span
 sdata="cer"
@@ -122,6 +125,7 @@ document.
 ```
 
 -----------------------------------------------------------------------------
+## Creating the Table Object and Setting Its Properties 
 
 Before you can insert a table into a document, you must create the <span
 sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Table"><span
@@ -252,6 +256,7 @@ using the variable <span class="code">props</span> as the value.
 
 
 -----------------------------------------------------------------------------
+## Filling the Table with Data 
 
 Given that table and its properties, now it is time to fill the table
 with data. The sample procedure iterates first through all the rows of
@@ -373,6 +378,7 @@ the width of each column).
 ```
 
 -----------------------------------------------------------------------------
+## Finishing Up 
 
 The following code concludes by appending the table to the body of the
 document, and then saving the document.
@@ -388,6 +394,7 @@ document, and then saving the document.
 ```
 
 -----------------------------------------------------------------------------
+## Sample Code 
 
 The following is the complete **AddTable** code
 sample in C\# and Visual Basic.
@@ -515,6 +522,7 @@ sample in C\# and Visual Basic.
 ```
 
 -----------------------------------------------------------------------------
+## See also 
 
 #### Other resources
 

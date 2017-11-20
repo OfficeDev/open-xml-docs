@@ -328,7 +328,7 @@ range of text.
 Figure 1. Text with a character style applied
 
   
- ![A character style applied to some text](../media/OpenXmlCon_CreateCharacterStyle_Fig1.gif)
+ ![A character style applied to some text](./media/OpenXmlCon_CreateCharacterStyle_Fig1.gif)
 
 
 ## How the Code Works

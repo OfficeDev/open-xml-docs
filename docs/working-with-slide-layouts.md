@@ -22,7 +22,7 @@ Open XML File Format PresentationML schema.
 
 
 ---------------------------------------------------------------------------------
-
+## Slide Layouts in PresentationML 
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<sldLayout\>
 element used to represent slide layouts in a PresentationML document as
@@ -69,7 +69,7 @@ userDrawn (Is User Drawn)|Specifies if the corresponding object has been drawn b
 
 
 --------------------------------------------------------------------------------
-
+## The Open XML SDK 2.5 SlideLayout Class 
 The OXML SDK **SlideLayout** class represents
 the \<sldLayout\> element defined in the Open XML File Format schema for
 PresentationML documents. Use the <span
@@ -177,7 +177,7 @@ transition is complete.
 
 
 --------------------------------------------------------------------------------
-
+## Working with the SlideLayout Class 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **SlideLayout** class is associated with an
 instance of the <span sdata="cer"
@@ -211,7 +211,7 @@ class="nolink">Shape</span></span> class.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example 
 The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> adds a new slide
 layout part to an existing presentation and creates an instance of an
 Open XML SDK 2.5**SlideLayout** class in the
@@ -285,7 +285,7 @@ namespace.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Generated PresentationML 
 When the Open XML SDK code is run, the following XML is written to the
 PresentationML document file referenced in the code.
 
@@ -333,7 +333,7 @@ PresentationML document file referenced in the code.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
