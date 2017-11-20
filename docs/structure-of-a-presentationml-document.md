@@ -39,6 +39,7 @@ part. A separate XML file is created for each slide.
 
 
 --------------------------------------------------------------------------------
+## Important Presentation Parts 
 
 Using the Open XML SDK 2.5, you can create document structure and
 content that uses strongly-typed classes that correspond to
@@ -802,6 +803,7 @@ to any other part defined by ISO/IEC 29500.
 
 
 ---------------------------------------------------------------------------------
+## The Structure of a Minimum Presentation File 
 
 Now that you are familiar with the parts of a PresentationML document,
 consider how some of these parts are implemented and connected in an
@@ -823,6 +825,7 @@ reference slide layouts.
 
 
 ---------------------------------------------------------------------------------
+## Generated PresentationML XML Code 
 
 After you run the Open XML SDK 2.5 code to generate a presentation, you
 can explore the contents of the .zip package to view the PresentationML
@@ -941,6 +944,7 @@ Open XML SDK 2.5 to create a minimum presentation.
 ```
 
 ---------------------------------------------------------------------------------
+## Typical Presentation Scenario 
 
 A typical presentation does not have a minimum configuration. A typical
 presentation might contain several slides, each of which references
@@ -959,6 +963,7 @@ Figure 2. Elements of a PresentationML file
 
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Concepts
 
