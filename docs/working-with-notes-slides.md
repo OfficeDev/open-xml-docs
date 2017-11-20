@@ -22,7 +22,7 @@ Open XML File Format PresentationML schema.
 
 
 --------------------------------------------------------------------------------
-
+## Notes Slides in PresentationML
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<notes\> element
 used to represent notes slides in a PresentationML document as follows:
@@ -77,7 +77,7 @@ showMasterSp (Show Master Shapes)|Specifies if shapes on the master slide should
 
 
 ---------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 NotesSlide Class
 The OXML SDK **NotesSlide** class represents
 the \<notes\> element defined in the Open XML File Format schema for
 PresentationML documents. Use the <span
@@ -143,7 +143,7 @@ store whether this extension property has been modified. end note]
 
 
 ---------------------------------------------------------------------------------
-
+## Working with the NotesSlide Class
 As shown in the Open XML SDK code sample that follows, every instance of
 the **NotesSlide** class is associated with an
 instance of the <span sdata="cer"
@@ -175,7 +175,7 @@ the **CommonSlideData** class.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example
 The following method adds a new notes slide part to an existing
 presentation and creates an instance of an Open XML SDK 2.5<span
 class="keyword">NotesSlide</span> class in the new notes slide part. The
@@ -249,7 +249,7 @@ namespace.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Generated PresentationML
 When the Open XML SDK 2.0 code is run, the following XML is written to
 the PresentationML document referenced in the code.
 
@@ -297,7 +297,7 @@ the PresentationML document referenced in the code.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
