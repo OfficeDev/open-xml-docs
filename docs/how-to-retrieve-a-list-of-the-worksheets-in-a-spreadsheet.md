@@ -44,7 +44,7 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## GetAllWorksheets Method 
 You can use the **GetAllWorksheets** method,
 which is shown in the following code, to retrieve a list of the
 worksheets in a workbook. The <span
@@ -70,7 +70,7 @@ class="nolink">Sheet</span></span> object.
 
 
 --------------------------------------------------------------------------------
-
+## Calling the GetAllWorksheets Method 
 To call the **GetAllWorksheets** method, pass
 the required value, as shown in the following code.
 
@@ -102,7 +102,7 @@ the required value, as shown in the following code.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Code Works 
 The sample method, **GetAllWorksheets**,
 creates a variable that will contain a reference to the <span
 class="keyword">Sheets</span> collection of the workbook. At the end of
@@ -171,7 +171,7 @@ return value.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 The following is the complete <span
 class="keyword">GetAllWorksheets</span> code sample in C\# and Visual
 Basic.
@@ -252,7 +252,7 @@ Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
