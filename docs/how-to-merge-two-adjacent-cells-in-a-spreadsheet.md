@@ -43,6 +43,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
+## Getting a SpreadsheetDocument Object 
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
@@ -100,6 +101,7 @@ class="term">document</span>.
 
 
 --------------------------------------------------------------------------------
+## Basic Structure of a SpreadsheetML Document 
 
 The basic document structure of a <span
 class="keyword">SpreadsheetML</span> document consists of the <span
@@ -180,6 +182,7 @@ class="keyword">sheetData</span> elements.
 
 
 --------------------------------------------------------------------------------
+## How the Sample Code Works 
 
 After you have opened the spreadsheet file for editing, the code
 verifies that the specified cells exist, and if they do not exist, it
@@ -323,6 +326,7 @@ decimal digits.
 ```
 
 --------------------------------------------------------------------------------
+## Sample Code 
 
 The following code merges two adjacent cells in a <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
@@ -613,6 +617,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Other resources
 
