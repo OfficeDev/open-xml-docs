@@ -20,7 +20,7 @@ WordprocessingML documents.
 
 
 --------------------------------------------------------------------------------
-
+## In this section
 [Working with paragraphs (Open XML SDK)](working-with-paragraphs.md)  
 
 [Working with runs (Open XML SDK)](working-with-runs.md)  
