@@ -35,7 +35,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Packages and Document Parts
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
 package can have multiple parts with relationships between them. The
@@ -50,7 +50,7 @@ a word-processing document package.
 
 
 --------------------------------------------------------------------------------
-
+## Getting a WordprocessingDocument Object
 To open an existing document, instantiate the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
 class="nolink">WordprocessingDocument</span></span> class as shown in
@@ -96,7 +96,7 @@ long as you use **using**.
 
 
 --------------------------------------------------------------------------------
-
+## Structure of a WordProcessingML Document
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
 class="keyword">document</span> and **body**
@@ -142,7 +142,7 @@ class="keyword">r</span>, and **t** elements.
 | t | Text | A range of text. |
 
 --------------------------------------------------------------------------------
-
+## The Theme Part
 The theme part contains information about the color, font, and format of
 a document. It is defined in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification as
 follows.
@@ -180,7 +180,7 @@ is stored in the ZIP item theme/theme1.xml:
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 To copy the contents of a document part in an Open XML package to a
 document part in a different package, the full path of the each word
 processing document is passed in as a parameter to the <span
@@ -231,7 +231,7 @@ class="keyword">StreamWriter</span> object.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code copies the contents of one document part in an Open
 XML package to a document part in a different package. To call the <span
 class="keyword">CopyThemeContent</span> method, you can use the
@@ -295,7 +295,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
