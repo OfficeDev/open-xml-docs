@@ -35,7 +35,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Open the Existing Document for Read-only Access
 To open an existing document, instantiate the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
 class="nolink">WordprocessingDocument</span></span> class as shown in
@@ -74,7 +74,7 @@ class="term">wordDoc</span>.
 
 
 --------------------------------------------------------------------------------
-
+## Comments Element
 The **comments** and <span
 class="keyword">comment</span> elements are crucial to working with
 comments in a word processing file. It is important in this code example
@@ -115,7 +115,7 @@ element.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Comment Element
 The following information from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the comment element.
@@ -165,7 +165,7 @@ element.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 After you have opened the file for read-only access, you instantiate the
 **WordprocessingCommentsPart** class. You can
 then display the inner text of the **Comment**
@@ -186,7 +186,7 @@ element.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code example shows how to retrieve comments that have been
 inserted into a word processing document. To call the method <span
 class="keyword">GetCommentsFromDocument</span> you can use the following
@@ -245,7 +245,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
