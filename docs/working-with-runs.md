@@ -22,7 +22,7 @@ XML File Format WordprocessingML schema.
 
 
 ---------------------------------------------------------------------------------
-
+## Runs in WordprocessingML 
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the Open XML WordprocessingML run element.
@@ -58,7 +58,7 @@ working with runs.
 
 
 ---------------------------------------------------------------------------------
-
+## Run Class 
 The Open XML SDK 2.5<span sdata="cer"
 target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
 class="nolink">Run</span></span> class represents the run (\<<span
@@ -92,7 +92,7 @@ document.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example 
 The following code adds text to the main document surface of the
 specified WordprocessingML document. A **Run**
 object demarcates a region of text within the paragraph and then a <span
@@ -153,7 +153,7 @@ WordprocessingML document specified in the preceding code.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
