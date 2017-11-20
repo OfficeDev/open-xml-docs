@@ -35,7 +35,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Packages and Document Parts
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
 package can have multiple parts with relationships between them. The
@@ -50,7 +50,7 @@ a word-processing document package.
 
 
 ---------------------------------------------------------------------------------
-
+## Getting a WordprocessingDocument Object
 The code starts with opening a package file by passing a file name to
 one of the overloaded <span sdata="cer"
 target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open"><span
@@ -97,7 +97,7 @@ long as you use using.
 
 
 ---------------------------------------------------------------------------------
-
+## Basic Structure of a WordProcessingML Document
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
 class="keyword">document</span> and **body**
@@ -144,7 +144,7 @@ class="keyword">r</span>, and **t** elements.
 
 
 --------------------------------------------------------------------------------
-
+## Comments Element
 In this how-to, you are going to work with comments. Therefore, it is
 useful to familiarize yourself with the structure of the \<<span
 class="keyword">comments</span>\> element. The following information
@@ -181,7 +181,7 @@ The following XML schema fragment defines the contents of this element.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 After you have opened the source file for reading, you create a <span
 class="keyword">mainPart</span> object by instantiating the <span
 class="keyword">MainDocumentPart</span>. Then you can create a reference
@@ -232,7 +232,7 @@ and return its contents.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code retrieves the contents of a <span
 class="keyword">WordprocessingCommentsPart</span> part contained in a
 **WordProcessing** document package. You can
@@ -286,7 +286,7 @@ Following is the complete code example in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library
