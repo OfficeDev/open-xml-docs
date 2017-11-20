@@ -22,6 +22,7 @@ Open XML File Format PresentationML schema.
 
 
 ---------------------------------------------------------------------------------
+## Slide Masters in PresentationML 
 
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<sldMaster\>
@@ -73,6 +74,7 @@ preserve (Preserve Slide Master)|Specifies whether the corresponding slide layou
 
 
 --------------------------------------------------------------------------------
+## Open XML SDK 2.5 SlideMaster Class 
 
 The Open XML SDK 2.5**SlideMaster** class
 represents the \<sldMaster\> element defined in the Open XML File Format
@@ -239,6 +241,7 @@ formatting for all related slides within the presentation. end example]
 
 
 --------------------------------------------------------------------------------
+## Working with the SlideMaster Class 
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **SlideMaster** class is associated with an
@@ -273,6 +276,7 @@ class="nolink">Shape</span></span> class.
 
 
 --------------------------------------------------------------------------------
+## Open XML SDK Code Example 
 
 The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> adds a new slide
 master part to an existing presentation and creates an instance of an
@@ -369,6 +373,7 @@ namespace.
 ```
 
 ---------------------------------------------------------------------------------
+## Generated PresentationML 
 
 When the Open XML SDK code is run, the following XML is written to the
 PresentationML document referenced in the code.
@@ -434,6 +439,7 @@ PresentationML document referenced in the code.
 ```
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Concepts
 
