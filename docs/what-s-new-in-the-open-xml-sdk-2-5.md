@@ -20,7 +20,7 @@ XML SDK 2.5 for Office in addition to known issues and limitations.
 
 
 ---------------------------------------------------------------------------------
-
+## In this Topic 
 -   [Introduction](#BKMK_Introduction)
 
 -   [System Requirements](#BKMK_Requirements)
@@ -38,7 +38,7 @@ XML SDK 2.5 for Office in addition to known issues and limitations.
 
 
 --------------------------------------------------------------------------------
-
+## Introduction 
 The Open XML SDK 2.5 is a collection of classes that let you create and
 manipulate Open XML documents - documents that adhere to the [Office Open XML File Formats Standard](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463).
 Because the SDK provides an application program interface that lets you
@@ -53,7 +53,7 @@ while adding new features.
 
 
 --------------------------------------------------------------------------------
-
+## System Requirements 
 The Open XML SDK 2.5 has the following system requirements:
 
 **Supported operating systems:** Windows 8 Preview, Windows 7, Windows
@@ -65,14 +65,14 @@ available disk space
 
 
 --------------------------------------------------------------------------------
-
+## New Software Requirements 
 Open XML SDK 2.5 requires .NET Framework 4.0 or the greater version.
 Accordingly, the supported operating systems are updated to be the same
 as the requirements of the .NET Framework 4.0.
 
 
 --------------------------------------------------------------------------------
-
+## Support of Office 2013 Preview File Format 
 In addition to offering compatibility with the Open XML SDK 1.0 classes
 and the Open XML SDK 2.0 for Microsoft Office classes, Open XML SDK 2.5
 provides new classes that enable you to write and build applications to
@@ -97,7 +97,7 @@ the Microsoft Developer Network.
 
 
 --------------------------------------------------------------------------------
-
+## Reads ISO Strict Document Files 
 The Open XML SDK 2.5 can read ISO/IEC 29500 Strict Format files. Its
 document contents are recognized as an Open XML Transitional Format file
 when the document is opened. When the file is saved, the document is
@@ -110,7 +110,7 @@ an ISO Strict Format file.
 
 
 --------------------------------------------------------------------------------
-
+## Updated API information 
 Because the file format extension of Office 2013 extends members of the
 **\<extLst\>** element which did not have any
 member elements, Open XML SDK 2.0 classes associated with the empty
@@ -175,7 +175,7 @@ element members.
 
 
 --------------------------------------------------------------------------------
-
+## Deprecated API Information 
 The following section discusses deprecated API members:
 
 **Smart Tags**
