@@ -25,7 +25,7 @@ document, see <span sdata="link">[Structure of a SpreadsheetML document
 
 
 --------------------------------------------------------------------------------
-
+## Tables in SpreadsheetML 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **table** (\<<span
 class="keyword">table</span>\>) element.
@@ -79,7 +79,7 @@ autoFilter|AutoFilter
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 Table Class 
 The Open XML SDK 2.5**Table** class represents
 the table (\<**table**\>) element defined in
 the Open XML File Format schema for SpreadsheetML documents. Use the
