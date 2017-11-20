@@ -24,7 +24,7 @@ make up a SpreadsheetML document, see <span sdata="link">[Structure of a Spreads
 
 
 ---------------------------------------------------------------------------------
-
+## Conditional Formatting in SpreadsheetML 
 Cell based conditional formatting provides structure to data inside a
 worksheet. Showing colors, in addition to showing a value, helps
 distinguish the relative height of those values. There are several
@@ -56,7 +56,7 @@ iconSet|IconSet
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 Conditional Formatting Class 
 The Open XML SDK 2.5**ConditionalFormatting**
 class represents the table (\<<span
 class="keyword">conditionalFormatting</span>\>) element defined in the
