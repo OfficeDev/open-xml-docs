@@ -47,6 +47,7 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
+## About Styles Storage 
 
 A word processing document package, such as a file that has a .docx
 extension, is in fact a .zip file that consists of several parts. You
@@ -80,6 +81,7 @@ styles parts.
 
 
 ---------------------------------------------------------------------------------
+## ReplaceStyles Method 
 
 You can use the **ReplaceStyles** sample method to replace the styles in
 a word processing document with the styles in another word processing
@@ -103,6 +105,7 @@ can be found in the [Sample Code](how-to-replace-the-styles-parts-in-a-word-proc
 
 
 --------------------------------------------------------------------------------
+## Calling the Sample Method 
 
 To call the sample method, you pass a string for the first parameter
 that indicates the path of the file with the styles to extract, and a
@@ -125,6 +128,7 @@ document will reflect the new styles.
 ```
 
 --------------------------------------------------------------------------------
+## How the Code Works 
 
 The code extracts and replaces the styles part first, and then the
 stylesWithEffects part second, and relies on two supporting methods to
@@ -188,6 +192,7 @@ class="keyword">ReplaceStylesPart</span> method.
 
 
 ---------------------------------------------------------------------------------
+## ReplaceStylesPart Method 
 
 The **ReplaceStylesPart** method can be used to
 replace the styles or styleWithEffects part in a document, given an
@@ -218,6 +223,7 @@ from a source document).
 ```
 
 --------------------------------------------------------------------------------
+## How the ReplaceStylesPart Code Works 
 
 The **ReplaceStylesPart** method examines the
 document you specify, looking for the styles or stylesWithEffects part.
@@ -261,6 +267,7 @@ class="code">stylesPart</span> to hold a reference to the styles part.
 ```
 
 --------------------------------------------------------------------------------
+## Find the Correct Styles Part 
 
 The code next retrieves a reference to the requested styles part, using
 the <span class="code">setStylesWithEffectsPart</span> Boolean
@@ -284,6 +291,7 @@ class="code">stylesPart</span> variable.
 ```
 
 ---------------------------------------------------------------------------------
+## Save the Part Contents 
 
 Assuming that the requested part exists, the code must save the entire
 contents of the **XDocument** passed to the
@@ -315,6 +323,7 @@ the XDocument, saving its contents into the styles part.
 ```
 
 --------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete <span
 class="keyword">ReplaceStyles</span>, <span
@@ -499,6 +508,7 @@ Basic.
 ```
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Other resources
 
