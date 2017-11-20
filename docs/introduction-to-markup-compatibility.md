@@ -20,7 +20,7 @@ Open XML SDK 2.5 for Office.
 
 
 --------------------------------------------------------------------------------
-
+## Introduction 
 Suppose you have a Microsoft Word 2013 document that employs a feature
 introduced in Microsoft Office 2013. When you open that document in
 Microsoft Word 2010, an earlier version, what should happen? Ideally,
@@ -44,7 +44,7 @@ details.
 
 
 ---------------------------------------------------------------------------------
-
+## What is Markup Compatibility? 
 Open XML defines formats for word-processing, spreadsheet and
 presentation documents in the form of specific markup languages, namely
 WordprocessingML, SpreadsheetML, and PresentationML. With respect to the
@@ -61,7 +61,7 @@ applications.
 
 
 --------------------------------------------------------------------------------
-
+## Markup Compatibility in the Open XML File Formats Specification 
 Markup compatibility is discussed in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip),
 which is recommended reading to understand markup compatibility. The
 specification defines XML attributes to express compatibility rules, and
@@ -76,7 +76,7 @@ details can be found in the specification.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 Support for Markup Compatibility 
 The work that the Open XML SDK 2.5 does for markup compatibility is
 detailed and subtle. However, the goal can be summarized as: using
 settings that you assign when you open a document, preprocess the
@@ -103,7 +103,7 @@ apply to markup compatibility.
 
 
 ---------------------------------------------------------------------------------
-
+## Setting the stage when you Open 
 When you open a document using the Open XML SDK 2.5, you have the option
 of using an overload with a signature that accepts an instance of the
 <span sdata="cer"
@@ -165,7 +165,7 @@ class="keyword">MarkupCompatiblityProcessSettings</span> constructor.
 ```
 
 ---------------------------------------------------------------------------------
-
+## What Happens During Preprocessing 
 During preprocessing, the Open XML SDK 2.5 removes elements and
 attributes in the markup compatibility namespace, removing the contents
 of unselected alternate-content elements, and interpreting
@@ -182,7 +182,7 @@ property.
 > Preprocessing affects what gets saved. When you save a file, the only markup that is saved is that which remains after preprocessing.
 
 ---------------------------------------------------------------------------------
-
+## Understanding Process Mode 
 The process mode specifies which document parts should be preprocessed.
 You set this property to a member of the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessMode"><span
@@ -206,7 +206,7 @@ document is preprocessed.
 
 
 ---------------------------------------------------------------------------------
-
+## Setting the Target File Format Version 
 The target file format versions property lets you choose to process
 markup compatibility content in either Office 2010 or Office 2013
 context. Set the **TargetFileFormatVersions**
