@@ -25,7 +25,7 @@ Document](structure-of-a-presentationml-document.md).
 
 
 ---------------------------------------------------------------------------------
-
+## Comments in PresentationML 
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Comments section of the Open XML
 PresentationML framework as follows:
@@ -82,7 +82,7 @@ idx|This attribute specifies an identifier for this comment that is unique withi
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 Comment Class 
 The OXML SDK **Comment** class represents the
 \<cm\> element defined in the Open XML File Format schema for
 PresentationML documents. Use the **Comment**
@@ -157,7 +157,7 @@ The possible values for this element are defined by the W3C XML Schema
 
 
 --------------------------------------------------------------------------------
-
+## Working with the Comment Class 
 A comment is a text note attached to a slide, with the primary purpose
 of enabling readers of a presentation to provide feedback to the
 presentation author. Each comment contains an unformatted text string
@@ -203,7 +203,7 @@ the comment.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example 
 The following code segment from the article <span sdata="link">[How to:
 Add a comment to a slide in a presentation (Open XML
 SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)</span> adds a new
@@ -308,7 +308,7 @@ article.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Generated PresentationML 
 When the Open XML SDK 2.5 code in <span sdata="link">[How to: Add a
 comment to a slide in a presentation (Open XML
 SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)</span> is run, including
@@ -346,7 +346,7 @@ article.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
