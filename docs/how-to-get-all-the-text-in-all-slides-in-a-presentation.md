@@ -44,6 +44,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
+## Getting a PresentationDocument object 
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -91,7 +92,7 @@ class="keyword">presentationDocument</span>.
 
 
 --------------------------------------------------------------------------------
-
+## Basic Presentation Document Structure 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of a number of
 parts, among which is the main part that contains the presentation
@@ -185,7 +186,7 @@ class="keyword">notesMaster</span> elements.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works 
 The sample code starts by counting the number of slides in the
 presentation. It does that by using two overloads of the method <span
 class="keyword">CountSlides</span>. The first overload uses a string
@@ -317,7 +318,7 @@ class="keyword">StringBuilder</span> object.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 The following code gets all the text in all the slides in a specific
 presentation file. For example, you can enter the name of the
 presentation file from the keyboard, and then use a <span
@@ -471,7 +472,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library
