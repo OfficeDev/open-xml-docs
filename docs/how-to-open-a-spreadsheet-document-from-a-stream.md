@@ -36,7 +36,7 @@ this topic.
 ```
 
 ---------------------------------------------------------------------------------
-
+## When to Open From a Stream 
 If you have an application, such as Microsoft SharePoint Foundation
 2010, that works with documents by using stream input/output, and you
 want to use the Open XML SDK 2.5 to work with one of the documents, this
@@ -50,7 +50,7 @@ Open XML SDK 2.5.
 
 
 --------------------------------------------------------------------------------
-
+## Getting a SpreadsheetDocument Object 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
 class="nolink">SpreadsheetDocument</span></span> class represents an
@@ -186,7 +186,7 @@ v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 
 
 --------------------------------------------------------------------------------
-
+## Generating the SpreadsheetML Markup to Add a Worksheet 
 When you have access to the body of the main document part, you add a
 worksheet by calling <span sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart``1(System.String,System.String)"><span
@@ -211,7 +211,7 @@ adds the new **WorksheetPart**.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 In this example, the <span
 class="keyword">OpenAndAddToSpreadsheetStream</span> method can be used
 to open a spreadsheet document from an already open stream and append
@@ -315,7 +315,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
