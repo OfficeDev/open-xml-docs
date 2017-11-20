@@ -37,7 +37,7 @@ this topic.
 ```
 
 ---------------------------------------------------------------------------------
-
+## When to Open a Document for Read-only Access 
 Sometimes you want to open a document to inspect or retrieve some
 information, and you want to do so in a way that ensures the document
 remains unchanged. In these instances, you want to open the document for
@@ -46,7 +46,7 @@ programmatically open a read-only word processing document.
 
 
 --------------------------------------------------------------------------------
-
+## Create a WordprocessingDocument Object 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
 class="nolink">WordprocessingDocument</span></span> class represents a
@@ -175,7 +175,7 @@ code example.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Basic Document Structure 
 The basic document structure of a WordProcessingML document consists of
 the **document** and <span
 class="keyword">body</span> elements, followed by one or more block
@@ -221,7 +221,7 @@ t|Text |A range of text.
 
 
 --------------------------------------------------------------------------------
-
+## Generate the WordprocessingML Markup to Add Text and Attempt to Save 
 The sample code shows how you can add some text and attempt to save the
 changes to show that access is read-only. Once you have access to the
 body of the main document part, you add text by adding instances of the
@@ -251,7 +251,7 @@ following code example adds the paragraph, run, and text.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 The first example method shown here, <span
 class="keyword">OpenWordprocessingDocumentReadOnly</span>, opens a Word
 document for read-only access. Call it by passing a full path to the
@@ -374,7 +374,7 @@ The following is the complete sample code in C\# and VB.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
