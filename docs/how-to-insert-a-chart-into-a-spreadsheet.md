@@ -43,7 +43,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Drawing.Spreadsheet
 ```
 
--------------------------------------------------------------------------------
+## Getting a SpreadsheetDocument Object 
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
@@ -99,7 +99,7 @@ object that is created or named in the <span
 class="keyword">using</span> statement, in this case *document*.
 
 
--------------------------------------------------------------------------------
+## Basic Structure of a SpreadsheetML Document 
 
 The basic document structure of a <span
 class="keyword">SpreadsheetML</span> document consists of the \<<span
@@ -183,7 +183,7 @@ class="nolink">SheetData</span></span> elements.
 | v | CellValue | The value of a cell. |
 
 
--------------------------------------------------------------------------------
+## Row Element
 
 In this how-to, you are going to deal with the row, cell, and cell value
 elements. Therefore it is useful to familiarize yourself with these
@@ -239,7 +239,7 @@ element.
     </complexType>
 ```
 
--------------------------------------------------------------------------------
+## Cell Element
 
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
@@ -283,7 +283,7 @@ element.
     </complexType>
 ```
 
---------------------------------------------------------------------------------
+## Cell Value Element
 
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
@@ -314,7 +314,7 @@ In the following example cell B4 contains the number 360.
     </c>
 ```
 
--------------------------------------------------------------------------------
+## How the Sample Code Works
 
 After opening the spreadsheet file for read/write access, the code
 verifies if the specified worksheet exists. It then adds a new <span
@@ -690,7 +690,7 @@ and names the chart "Chart 1," and saves the worksheet drawing.
     drawingsPart.WorksheetDrawing.Save()
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 In the following code, you add a clustered column chart to a <span
 sdata="cer"
@@ -998,7 +998,7 @@ The following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
--------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

@@ -46,7 +46,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
----------------------------------------------------------------------------------
+## CreateAndAddCharacterStyle Method
 
 The **CreateAndAddCharacterStyle** sample method can be used to add a
 style to a word processing document. You must first obtain a reference
@@ -73,7 +73,7 @@ in the user interface).
 The complete code listing for the method can be found in the [Sample Code](how-to-create-and-add-a-character-style-to-a-word-processing-document.md#sampleCode) section.
 
 
----------------------------------------------------------------------------------
+## About Style IDs, Style Names, and Aliases 
 
 The style ID is used by the document to refer to the style, and can be
 thought of as its primary identifier. Typically, you use the style ID to
@@ -103,7 +103,7 @@ Finally, the name element specifies the primary style name, which is the
 one typically shown in an application's user interface.
 
 
---------------------------------------------------------------------------------
+## Calling the Sample Method
 
 You can use the **CreateAndAddCharacterStyle**
 example method to create and add a named style to a word processing
@@ -236,7 +236,7 @@ second run.
     End Using
 ```
 
---------------------------------------------------------------------------------
+## Style Types
 
 WordprocessingML supports six style types, four of which you can specify
 using the type attribute on the style element. The following
@@ -288,7 +288,7 @@ by specifying the corresponding value in the style element's type
 attribute.
 
 
----------------------------------------------------------------------------------
+## Character Style Type
 
 You specify character as the style type by setting the value of the type
 attribute on the style element to "character".
@@ -331,7 +331,7 @@ Figure 1. Text with a character style applied
  ![A character style applied to some text](../media/OpenXmlCon_CreateCharacterStyle_Fig1.gif)
 
 
---------------------------------------------------------------------------------
+## How the Code Works
 
 The **CreateAndAddCharacterStyle** method
 begins by retrieving a reference to the styles element in the styles
@@ -358,7 +358,7 @@ styles element is created and saved to the part.
         End If
 ```
 
---------------------------------------------------------------------------------
+## Creating the Style
 
 To create the style, the code instantiates the <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Style"><span
 class="nolink">Style</span></span> class and sets certain properties,
@@ -500,7 +500,7 @@ here.
     </w:style>
 ```
 
---------------------------------------------------------------------------------
+## Applying the Character Style
 
 Once you have the style created, you can apply it to a run by
 referencing the styleId attribute value for this style in the run
@@ -543,7 +543,7 @@ properties' **rStyle** element.
     rPr.RunStyle.Val = "OverdueAmountChar"
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete <span
 class="keyword">CreateAndAddCharacterStyle</span> code sample in both
@@ -668,7 +668,7 @@ C\# and Visual Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Concepts
 

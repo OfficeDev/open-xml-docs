@@ -36,7 +36,7 @@ this topic.
     Imports Drawing = DocumentFormat.OpenXml.Drawing
 ```
 
---------------------------------------------------------------------------------
+## Getting a PresentationDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -78,7 +78,7 @@ object that is created or named in the <span
 class="keyword">using</span> statement, in this case *doc*.
 
 
---------------------------------------------------------------------------------
+## Basic Presentation Document Structure
 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of a number of
@@ -166,7 +166,7 @@ class="keyword">notesMaster</span> elements.
 | notesMaster | NotesMaster | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 
---------------------------------------------------------------------------------
+## Structure of the Shape Text Body
 
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
@@ -200,7 +200,7 @@ The following XML Schema fragment defines the contents of this element:
     </complexType>
 ```
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 The code in this topic consists of two methods, <span
 class="keyword">MoveParagraphToPresentation</span> and <span
@@ -350,7 +350,7 @@ method.
     End Function
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 By using this sample code, you can move a paragraph from one
 presentation to another. In your program, you can use the following call
@@ -496,7 +496,7 @@ The following is the complete sample code in both C\# and Visual Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

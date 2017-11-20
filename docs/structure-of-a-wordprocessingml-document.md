@@ -41,7 +41,7 @@ class="keyword">t</span>\> element contains a range of text.
 [Typical Document Scenario](structure-of-a-wordprocessingml-document.md#TypDocScen)
 
 
---------------------------------------------------------------------------------
+## Important WordprocessingML Parts
 
 The Open XML SDK 2.5 API provides strongly-typed classes in the
 DocumentFormat.OpenXML.WordprocessingML namespace that correspond to
@@ -66,7 +66,7 @@ Header|hdr|Header|The root element for the header part.
 Style Definitions|styles|Styles|The root element for a Style Definitions part.
 
 
---------------------------------------------------------------------------------
+## Minimum Document Scenario
 
 A **WordprocessingML** document is organized
 around the concept of stories. A story is a region of content in a <span
@@ -196,7 +196,7 @@ run the Open XML SDK 2.5 code in the previous section.
     </w:document
 ```
 
---------------------------------------------------------------------------------
+## Typical Document Scenario
 
 A typical document will not be a blank, minimum document. A typical
 document might contain comments, headers, footers, footnotes, and
@@ -209,5 +209,4 @@ typical document.
 Figure 1. Typical document structure
 
   
- ![Structure of a WordprocessingML
-Document](./media/odc_oxml_wd_documentstructure_fig01.jpg)
+ ![Structure of a WordprocessingML Document](./media/odc_oxml_wd_documentstructure_fig01.jpg)

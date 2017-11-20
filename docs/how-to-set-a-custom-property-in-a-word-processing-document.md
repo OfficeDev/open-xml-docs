@@ -72,7 +72,7 @@ one of these values when you call the method.
     End Enum
 ```
 
---------------------------------------------------------------------------------
+## How Custom Properties Are Stored
 
 It is important to understand how custom properties are stored in a word
 processing document. You can use the Productivity Tool for Microsoft
@@ -129,7 +129,7 @@ code listing for the method in the [Sample
 Code](how-to-set-a-custom-property-in-a-word-processing-document.md#SampleCode) section.
 
 
----------------------------------------------------------------------------------
+## SetCustomProperty Method
 
 You can use the **SetCustomProperty** method to
 set a custom property in a word processing document. The <span
@@ -160,7 +160,7 @@ class="keyword">SetCustomProperty</span> method accepts four parameters:
         ByVal propertyType As PropertyTypes) As String
 ```
 
---------------------------------------------------------------------------------
+## Calling the SetCustomProperty Method
 
 The **SetCustomProperty** method enables you to
 set a custom property, and returns the current value of the property, if
@@ -216,7 +216,7 @@ Figure 2. Custom Properties in the Advanced Properties dialog box
  ![Advanced Properties dialog with custom properties](./media/OpenXmlCon_HowToSetCustomPropertyFig2.gif)
 
 
---------------------------------------------------------------------------------
+## How the Code Works 
 
 The **SetCustomProperty** method starts by
 setting up some internal variables. Next, it examines the information
@@ -374,7 +374,7 @@ class="nolink">Name</span></span> properties of the new custom property.
     newProp.Name = propertyName
 ```
 
---------------------------------------------------------------------------------
+## Working with the Document
 
 Given the **CustomDocumentProperty** object,
 the code next interacts with the document that you supplied in the
@@ -536,7 +536,7 @@ Finally, the code returns the stored original property value.
     Return returnValue
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete <span
 class="keyword">SetCustomProperty</span> code sample in C\# and Visual
@@ -797,7 +797,7 @@ Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

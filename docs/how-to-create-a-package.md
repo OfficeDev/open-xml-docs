@@ -37,7 +37,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
---------------------------------------------------------------------------------
+## Packages and Document Parts
 
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
@@ -52,7 +52,7 @@ is defined as a spreadsheet document. In this how-to topic, you will use
 a word-processing document package.
 
 
---------------------------------------------------------------------------------
+## Getting a WordprocessingDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
@@ -122,7 +122,7 @@ class="keyword">WordprocessingDocument</span> class. Having done that,
 you can set about adding the document structure and text.
 
 
---------------------------------------------------------------------------------
+## Structure of a WordprocessingML Document
 
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
@@ -167,7 +167,7 @@ class="keyword">r</span>, and **t** elements:
 | r | Run | A run. |
 | t | Text | A range of text. |
 
---------------------------------------------------------------------------------
+## How the Sample Code Works 
 
 First, the code creates a <span
 class="keyword">WordprocessingDocument</span> object that represents the
@@ -250,7 +250,7 @@ main document part.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete code sample that you can use to create an
 Open XML word processing document package from XML content in the form
@@ -338,7 +338,7 @@ Following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

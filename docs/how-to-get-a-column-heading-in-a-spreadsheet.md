@@ -38,7 +38,7 @@ this topic.
     Imports System.Text.RegularExpressions
 ```
 
---------------------------------------------------------------------------------
+## Create a SpreadsheetDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
@@ -85,7 +85,7 @@ class="keyword">using</span> statement, in this case <span
 class="term">mySpreadsheet</span>.
 
 
---------------------------------------------------------------------------------
+## Basic Structure of a SpreadsheetML Document
 
 The basic document structure of a <span
 class="keyword">SpreadsheetML</span> document consists of the <span
@@ -167,7 +167,7 @@ class="keyword">sheetData</span> elements.
 | v | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell |
 
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 The code in this how-to consists of three methods (functions in Visual
 Basic): **GetColumnHeading**, <span
@@ -301,7 +301,7 @@ content of the cell.
     End If
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following code example shows how to retrieve the column heading
 using the name of the column. You can call the <span
@@ -453,7 +453,7 @@ Following is the complete sample code in both C\# and Visual Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

@@ -45,7 +45,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
----------------------------------------------------------------------------------
+## GetHiddenSheets Method
 
 You can use the **GetHiddenSheets** method,
 which is shown in the following code, to retrieve a list of the hidden
@@ -70,7 +70,7 @@ target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
 class="nolink">Sheet</span></span> object.
 
 
---------------------------------------------------------------------------------
+## Calling the GetHiddenSheets Method
 
 The method returns a generic list that contains information about the
 individual hidden **Sheet** objects. To call
@@ -98,7 +98,7 @@ required parameter value, as shown in the following code.
     Next
 ```
 
---------------------------------------------------------------------------------
+## How the Code Works
 
 The following code starts by creating a generic list that will contain
 information about the hidden worksheets.
@@ -141,7 +141,7 @@ class="code">wbPart</span>.
     Return returnVal
 ```
 
----------------------------------------------------------------------------------
+## Retrieving the Collection of Worksheets
 
 The <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WorkbookPart"><span
@@ -171,7 +171,7 @@ the sheet child elements of the workbook's XML content.
     Dim sheets = wbPart.Workbook.Descendants(Of Sheet)()
 ```
 
----------------------------------------------------------------------------------
+## Retrieving Hidden Sheets
 
 It is important to be aware that Excel supports two levels of hiding
 worksheets. You can hide a worksheet by using the Excel user interface
@@ -229,7 +229,7 @@ sheets, placing the result into the return value for the function.
     returnVal = hiddenSheets.ToList()
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete <span
 class="keyword">GetHiddenSheets</span> code sample in C\# and Visual
@@ -284,7 +284,7 @@ Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

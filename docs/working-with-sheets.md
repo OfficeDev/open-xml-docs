@@ -28,7 +28,7 @@ SpreadsheetML document, see <span sdata="link">[Structure of a
 SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
---------------------------------------------------------------------------------
+## Sheets in SpreadsheetML
 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **sheet** (\<<span
@@ -50,7 +50,7 @@ Other types of sheets include chart sheets and dialog sheets.
 © ISO/IEC29500: 2008.
 
 
---------------------------------------------------------------------------------
+## Open XML SDK 2.5 Worksheet Class
 
 The Open XML SDK 2.5**Worksheet** class
 represents the **worksheet** (\<<span
@@ -330,7 +330,7 @@ the "sheet.xml" file in the "worksheets" folder of the .zip file.
         </x:sheetData>
     </x:worksheet>
 ```
----------------------------------------------------------------------------------
+## The Open XML SDK Chartsheet Class
 
 The following information from the ISO/IEC 29500 specification
 introduces the **chartsheet** (\<<span
@@ -382,7 +382,7 @@ be only one Drawings part per worksheet or chartsheet.
 © ISO/IEC29500: 2008.
 
 
---------------------------------------------------------------------------------
+## Open XML SDK 2.5 Dialogsheet Class
 
 The following information from the ISO/IEC 29500 specification
 introduces the **dialogsheet** (\<<span

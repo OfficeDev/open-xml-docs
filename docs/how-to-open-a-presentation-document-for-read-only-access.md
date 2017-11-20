@@ -42,7 +42,7 @@ this topic.
     Imports System.Text
 ```
 
---------------------------------------------------------------------------------
+## How to Open a File for Read-Only Access
 
 You may want to open a presentation document to read the slides. You
 might want to extract information from a slide, copy a slide to a slide
@@ -53,7 +53,7 @@ discusses several ways to programmatically open a read-only presentation
 document.
 
 
---------------------------------------------------------------------------------
+## Create an Instance of the PresentationDocument Class 
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -154,7 +154,7 @@ code segment performs this operation.
     End Using
 ```
 
---------------------------------------------------------------------------------
+## Basic Presentation Document Structure
 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of a number of
@@ -232,7 +232,7 @@ for this attribute are from 256 through 2147483647.
     </p:presentation>
 ```
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 In the sample code, after you open the presentation document in the
 **using** statement for read-only access,
@@ -297,7 +297,7 @@ main method to be displayed.
 > This example displays only the text in the presentation file. Non-text parts, such as shapes or graphics, are not displayed.
 
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following example opens a presentation file for read-only access and
 gets the inner text of a slide at a specified index. To call the method
@@ -394,7 +394,7 @@ The following is the complete code listing in C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

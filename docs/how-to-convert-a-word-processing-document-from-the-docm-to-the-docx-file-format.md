@@ -46,7 +46,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml
 ```
 
---------------------------------------------------------------------------------
+## ConvertDOCMtoDOCX Method
 
 The **ConvertDOCMtoDOCX** sample method can be used to convert a Word
 2010 or Word 2013 document that contains VBA code (and has a .docm
@@ -67,7 +67,7 @@ The complete code listing for the method can be found in the [Sample
 Code](how-to-convert-a-word-processing-document-from-the-docm-to-the-docx-file-format.md#sampleCode) section.
 
 
---------------------------------------------------------------------------------
+## Calling the Sample Method
 
 To call the sample method, pass a string that contains the name of the
 file to convert. The following sample code shows an example.
@@ -82,7 +82,7 @@ file to convert. The following sample code shows an example.
     ConvertDOCMtoDOCX(filename)
 ```
 
---------------------------------------------------------------------------------
+## Parts and the vbaProject Part
 
 A word processing document package such as a file that has a .docx or
 .docm extension is in fact a .zip file that consists of several <span
@@ -110,7 +110,7 @@ enabled therefore consists largely of removing the vbaProject part from
 the document package.
 
 
---------------------------------------------------------------------------------
+## How the Code Works
 
 The sample code modifies the document that you specify, verifying that
 the document contains a vbaProject part, and deleting the part. After
@@ -262,7 +262,7 @@ old file name to the new file name.
     End If
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete <span
 class="keyword">ConvertDOCMtoDOCX</span> code sample in C\# and Visual
@@ -366,7 +366,7 @@ Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

@@ -40,7 +40,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
----------------------------------------------------------------------------------
+## Retrieving Application Properties
 
 To retrieve application document properties, you can retrieve the <span
 sdata="cer"
@@ -124,7 +124,7 @@ specifically given them a value.
     End If
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete code sample in C\# and Visual Basic.
 
@@ -189,7 +189,7 @@ The following is the complete code sample in C\# and Visual Basic.
     End Module
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

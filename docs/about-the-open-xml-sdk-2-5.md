@@ -19,7 +19,7 @@ ms.date: 11/01/2017
 Open XML is an open standard for word-processing documents, presentations, and spreadsheets that can be freely implemented by multiple applications on different platforms. Open XML is designed to faithfully represent existing word-processing documents, presentations, and spreadsheets that are encoded in binary formats defined by Microsoft Office applications. The reason for Open XML is simple: billions of documents now exist but, unfortunately, the information in those documents is tightly coupled with the programs that created them. The purpose of the Open XML standard is to de-couple documents created by Microsoft Office applications so that they can be manipulated by other applications independent of proprietary formats and without the loss of data.
 
 
-------------------------------------------------------------
+## Structure of an Open XML Package
 
 An Open XML file is stored in a ZIP archive for packaging and compression. You can view the structure of any Open XML file using a ZIP viewer. An Open XML document is built of multiple document parts. The relationships between the parts are themselves stored in document parts. The ZIP format supports random access to each part. For example, an application can move a slide from one presentation to another presentation without parsing the slide content. Likewise, an application can strip all of the comments out of a word processing document without parsing any of its contents.
 
@@ -66,7 +66,7 @@ Spreadsheet workbooks are described by using SpreadsheetML markup. For more info
 -   Custom XML
 
 
-------------------------------------------------------------
+## Open XML SDK 1.0
 
 Version 1 of the Open XML SDK simplified the manipulation of Open XML packages. The Open XML SDK Application Programming Interface (API) encapsulates many of the common tasks that you typically perform on Open XML packages, so you can perform complex operations with just a few lines of code. Some common tasks:
 
@@ -81,7 +81,7 @@ Version 1 of the Open XML SDK simplified the manipulation of Open XML packages. 
 -   <span class="label">Privacy</span>—With a few lines of code, you can remove comments and other personal information from a document before it is distributed.
 
 
-------------------------------------------------------------
+## Open XML SDK 2.0 for Microsoft Office
 
 The Open XML SDK 2.0 for Microsoft Office extended the strongly typed class support from the part classes, which are provided in version 1.0, to the XML content in each part. All functions available in version 1.0 are still supported. With version 2.0, you are able to program against the XML content inside the part. The SDK supports programming in the style of LINQ to XML which makes coding against the XML content much easier than the traditional W3C XML DOM programming model.
 
@@ -94,7 +94,7 @@ The SDK supports the following common tasks/scenarios:
 -   <span class="label">Validation</span>—The Open XML SDK 2.0 for Microsoft Office provides validation functionality, enabling you to validate Open XML documents against different variations of the Open XML Format.
 
 
-------------------------------------------------------------
+## Open XML SDK 2.5 for Office
 
 The Open XML SDK 2.5 provides the namespaces and members to support the Microsoft Office 2013. The Open XML SDK 2.5 can also read ISO/IEC 29500 Strict Format files. The Strict format is a subset of the Transitional format that does not include legacy features - this makes it theoretically easier for a new implementer to support since it has a smaller technical footprint.
 

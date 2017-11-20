@@ -23,7 +23,7 @@ the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 
---------------------------------------------------------------------------------
+## Animation in PresentationML
 
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Animation section of the Open XML
@@ -109,7 +109,7 @@ valueType|This attribute specifies the type of property value.The possible value
 © ISO/IEC29500: 2008.
 
 
---------------------------------------------------------------------------------
+## Open XML SDK 2.5 Animate Class
 
 The OXML SDK **Animate** class represents the
 \<anim\> element defined in the Open XML File Format schema for
@@ -184,7 +184,7 @@ element should be used as follows:
 © ISO/IEC29500: 2008.
 
 
---------------------------------------------------------------------------------
+## Working with the Animate Class
 
 The **Animate** class, which represents the
 \<anim\> element, is therefore also associated with other classes that
@@ -204,7 +204,7 @@ class="nolink">TargetElement</span></span> class, which specifies the
 target child elements to which the animation effects are applied.
 
 
---------------------------------------------------------------------------------
+## See also
 
 #### Concepts
 

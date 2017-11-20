@@ -37,7 +37,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
------------------------------------------------------------------------------
+## Getting a PresentationDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -79,7 +79,7 @@ object that is created or named in the <span
 class="keyword">using</span> statement, in this case *doc*.
 
 
------------------------------------------------------------------------------
+## Basic Presentation Document Structure 
 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of a number of
@@ -167,7 +167,7 @@ class="keyword">notesMaster</span> elements.
 | notesMaster | NotesMaster | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 
------------------------------------------------------------------------------
+## The Structure of the Comment Element
 
 A comment is a text note attached to a slide, with the primary purpose
 of enabling readers of a presentation to provide feedback to the
@@ -223,7 +223,7 @@ optional attributes.
     </complexType>
 ```
 
------------------------------------------------------------------------------
+## How the Sample Code Works 
 
 The sample code opens the presentation document in the <span
 class="keyword">using</span> statement. Then it instantiates the <span
@@ -460,7 +460,7 @@ it saves the comment authors part and the comments part.
     commentsPart.CommentList.Save()
 ```
 
------------------------------------------------------------------------------
+## Sample Code
 
 The **AddCommentToPresentation** method can be
 used to add a comment to a slide. The method takes as parameters the
@@ -780,7 +780,7 @@ comment string to the first slide in the presentation file Myppt1.pptx.
     End Module
 ```
 
------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

@@ -36,7 +36,7 @@ The following assembly directives are required to compile the code in this topic
     Imports System.Collections.Generic
 ```
 
------------------------------------------------------------------------------
+## Open the Existing Document for Editing
 
 To open an existing document, you can instantiate the <span sdata="cer" target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span class="nolink">WordprocessingDocument</span></span> class as shown in the following **using** statement. To do so, you open the word processing file with the specified *fileName* by using the <span sdata="cer" target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span class="nolink">Open(String, Boolean)</span></span> method, with the Boolean parameter set to **true** in order to enable editing the document.
 
@@ -56,7 +56,7 @@ To open an existing document, you can instantiate the <span sdata="cer" target="
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the <span class="keyword">using</span> statement establishes a scope for the object that is created or named in the <span class="keyword">using</span> statement, in this case *wdDoc*. Because the **WordprocessingDocument** class in the Open XML SDK automatically saves and closes the object as part of its **System.IDisposable** implementation, and because **Dispose** is automatically called when you exit the block, you do not have to explicitly call <span class="keyword">Save</span> and **Close** as long as you use **using**.
 
 
------------------------------------------------------------------------------
+## Structure of a WordProcessingML Document
 
 The basic document structure of a <span class="keyword">WordProcessingML</span> document consists of the <span class="keyword">document</span> and **body** elements, followed by one or more block level elements such as <span class="keyword">p</span>, which represents a paragraph. A paragraph contains one or more **r** elements. The <span class="keyword">r</span> stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The <span class="keyword">t</span> element contains a range of text. The following code example shows the **WordprocessingML** markup for a document that contains the text "Example text."
 
@@ -82,7 +82,7 @@ Using the Open XML SDK 2.5, you can create document structure and content using 
 | r | Run | A run. |
 | t | Text | A range of text. |
 
------------------------------------------------------------------------------
+## ParagraphPropertiesChange Element
 
 When you accept a revision mark, you change the properties of a paragraph either by deleting an existing text or inserting a new text. In the following sections, you read about three elements that are used in the code to change the paragraph contents, mainly, `<w: pPrChange\>` (Revision Information for Paragraph Properties), **`<w:del>`** (Deleted Paragraph), and **`<w:ins>`** (Inserted Table Row) elements.
 
@@ -114,7 +114,7 @@ The element specifies that there was a revision to the paragraph properties at 0
 © ISO/IEC29500: 2008.
 
 
------------------------------------------------------------------------------
+## Deleted Element
 
 The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the Deleted element (**del**).
@@ -155,7 +155,7 @@ and this deletion was tracked as a revision.
 © ISO/IEC29500: 2008.
 
 
------------------------------------------------------------------------------
+## The Inserted Element
 
 The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the Inserted element (**ins**).
@@ -203,7 +203,7 @@ a revision.
 © ISO/IEC29500: 2008.
 
 
------------------------------------------------------------------------------
+## How the Sample Code Works
 
 After you have opened the document in the using statement, you
 instantiate the **Body** class, and then handle
@@ -359,7 +359,7 @@ same as accepting the inserted text.
     Next
 ```
 
------------------------------------------------------------------------------
+## Sample Code
 
 The following code example shows how to accept the entire revisions in a
 word processing document. To run the program, you can call the method
@@ -515,7 +515,7 @@ The following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

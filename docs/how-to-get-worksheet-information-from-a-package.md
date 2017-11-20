@@ -38,7 +38,7 @@ this topic.
     Imports A = DocumentFormat.OpenXml.OpenXmlAttribute
 ```
 
---------------------------------------------------------------------------------
+## Create SpreadsheetDocument Object
 
 In the Open XML SDK, the **<span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
@@ -85,7 +85,7 @@ class="keyword">using</span> statement, in this case <span
 class="term">mySpreadsheet</span>.
 
 
---------------------------------------------------------------------------------
+## Basic Structure of a SpreadsheetML
 
 The basic document structure of a <span
 class="keyword">SpreadsheetML</span> document consists of the <span
@@ -167,7 +167,7 @@ class="keyword">sheetData</span> elements.
 | v | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell. |
 
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 After you have opened the file for read-only access, you instantiate the
 <span sdata="cer"
@@ -211,7 +211,7 @@ By displaying the attribute information you get the name and ID for each
 worksheet in the spreadsheet file.
 
 
---------------------------------------------------------------------------------
+## Sample Code
 
 In the following code example, you retrieve and display the attributes
 of the all sheets in the specified workbook contained in a <span
@@ -265,7 +265,7 @@ The following is the complete code sample in both C\# and Visual Basic.
         End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

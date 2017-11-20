@@ -35,7 +35,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
------------------------------------------------------------------------------
+## Open the Existing Document
 
 To open an existing document, instantiate the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
@@ -79,7 +79,7 @@ class="keyword">Save</span> and **Close**─as
 long as you use **using**.
 
 
------------------------------------------------------------------------------
+## The Structure of a Table
 
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
@@ -136,7 +136,7 @@ using the **tblGrid** element, and a single
 table row using the **tr** element.
 
 
------------------------------------------------------------------------------
+## How the Sample Code Works
 
 In the sample code, after you open the document in the <span
 class="keyword">using</span> statement, you locate the first table in
@@ -185,7 +185,7 @@ text. The following code example shows these actions.
     t.Text = txt
 ```
 
------------------------------------------------------------------------------
+## Change Text in a Cell in a Table
 
 The following code example shows how to change the text in the specified
 table cell in a word processing document. The code example expects that
@@ -207,7 +207,7 @@ the text "The text from the API example" was used.
 
 
 
------------------------------------------------------------------------------
+## Sample Code
 
 The **ChangeTextinCell** method changes the
 text in the second row and the third column of the first table found in
@@ -289,7 +289,7 @@ Following is the complete code example.
     End Sub
 ```
 
------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

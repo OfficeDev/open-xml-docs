@@ -44,7 +44,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
----------------------------------------------------------------------------------
+## Structure of the Header Reference Element
 
 In this example you are going to delete the header part from the target
 file and create another header part. You are also going to delete the
@@ -146,7 +146,7 @@ class="code">rId5</span> for all subsequent odd pages. *end example*]
 © ISO/IEC29500: 2008.
 
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following code example shows how to replace the header in a word
 processing document with the header from another word processing
@@ -256,7 +256,7 @@ Following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

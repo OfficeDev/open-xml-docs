@@ -40,7 +40,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
----------------------------------------------------------------------------------
+## Getting a PresentationDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -88,7 +88,7 @@ object that is created or named in the <span
 class="keyword">using</span> statement, in this case *doc*.
 
 
----------------------------------------------------------------------------------
+## Basic Presentation Document Structure
 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of the main part
@@ -176,7 +176,7 @@ class="keyword">notesMaster</span> elements:
 | notesMaster | NotesMaster | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 
---------------------------------------------------------------------------------
+## The Structure of the Comment Element
 
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
@@ -237,7 +237,7 @@ optional attributes.
     </complexType>
 ```
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 After opening the presentation document for read/write access and
 instantiating the **PresentationDocument**
@@ -332,7 +332,7 @@ the comment author from the comment authors part.
     Next
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following method takes as parameters the source presentation file
 name and path and the name of the comment author whose comments are to
@@ -460,7 +460,7 @@ The following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

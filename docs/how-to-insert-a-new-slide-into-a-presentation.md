@@ -35,7 +35,7 @@ this topic.
     Imports Drawing = DocumentFormat.OpenXml.Drawing
 ```
 
----------------------------------------------------------------------------------
+## Getting a PresentationDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
@@ -79,7 +79,7 @@ class="keyword">using</span> statement, in this case
 *presentationDocument*.
 
 
----------------------------------------------------------------------------------
+## Basic Presentation Document Structure
 
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of the main part
@@ -166,7 +166,7 @@ class="keyword">notesMaster</span> elements:
 | notesMaster | NotesMaster | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 
---------------------------------------------------------------------------------
+## How the Sample Code Works 
 
 The sample code consists of two overloads of the <span
 class="keyword">InsertNewSlide</span> method. The first overloaded
@@ -477,7 +477,7 @@ inserts it and saves the modified presentation.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 By using the sample code you can add a new slide to an existing
 presentation. In your program, you can use the following call to the
@@ -766,7 +766,7 @@ The following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

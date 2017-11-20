@@ -19,7 +19,7 @@ This section provides conceptual topics for working with SpreadsheetML
 documents.
 
 
---------------------------------------------------------------------------------
+## In this section
 
 [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)  
 

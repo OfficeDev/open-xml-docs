@@ -44,7 +44,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Spreadsheet
 ```
 
----------------------------------------------------------------------------------
+## GetDefinedNames Method
 
 The **GetDefinedNames** procedure accepts a
 single parameter that indicates the name of the document from which to
@@ -69,7 +69,7 @@ the contents of the part, adding the name and value for each defined
 name to the returned dictionary.
 
 
---------------------------------------------------------------------------------
+## Calling the Sample Method
 
 To call the sample method, pass a string that contains the name of the
 file from which to retrieve the defined names. The following code
@@ -91,7 +91,7 @@ and displays the key and value from each item.
         Console.WriteLine("{0}: {1}", dn.Key, dn.Value)
 ```
 
---------------------------------------------------------------------------------
+## How the Code Works
 
 The code starts by creating a variable named <span
 class="code">returnValue</span> that the method will return before it
@@ -146,7 +146,7 @@ main workbook part. The code stores this reference in a variable named
     End Using
 ```
 
---------------------------------------------------------------------------------
+## Retrieving the Defined Names
 
 Given the workbook part, the next step is simple. The code uses the
 <span sdata="cer"
@@ -186,7 +186,7 @@ and value (range description) to the dictionary for each defined name.
     End If
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete <span
 class="keyword">GetDefinedNames</span> code sample in C\# and Visual
@@ -250,7 +250,7 @@ Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

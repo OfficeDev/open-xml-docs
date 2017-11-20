@@ -40,7 +40,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
-----------------------------------------------------------------------------
+## ApplyStyleToParagraph Method
 
 The **ApplyStyleToParagraph** example method can be used to apply a
 style to a paragraph. You must first obtain a reference to the document
@@ -65,7 +65,7 @@ sample code listing can be found in the [Sample Code](how-to-apply-a-style-to-a-
 the end of this topic.
 
 
-----------------------------------------------------------------------------
+## Getting a WordprocessingDocument Object
 
 The Sample Code section also shows the code required to set up for
 calling the sample method. To use the method to apply a style to a
@@ -106,7 +106,7 @@ access to the file.
     End Using
 ```
 
-----------------------------------------------------------------------------
+## Understanding the Structure of a WordprocessingML Document
 
 The basic document structure of a WordprocessingML document consists of
 the **document** and <span
@@ -164,7 +164,7 @@ sdata="link">[Structure of a WordprocessingML document (Open XML
 SDK)](structure-of-a-wordprocessingml-document.md)</span>.
 
 
-----------------------------------------------------------------------------
+## Getting the Paragraph to Style
 
 After opening the file, the sample code retrieves a reference to the
 first paragraph. Because a typical word processing document body
@@ -215,7 +215,7 @@ third parameter, and the reference to the paragraph to which to apply
 the style, as the fourth parameter.
 
 
-----------------------------------------------------------------------------
+## Adding the Paragraph Properties Element
 
 The first step of the example method is to ensure that the paragraph has
 a paragraph properties element. The paragraph properties element is a
@@ -283,7 +283,7 @@ the instance, as shown in the following code example.
     Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties)().First()
 ```
 
-----------------------------------------------------------------------------
+## Adding the Styles Part
 
 With the paragraph found and the paragraph properties element present,
 now ensure that the prerequisites are in place for applying the style.
@@ -356,7 +356,7 @@ the code saves the part.
     End Function
 ```
 
-----------------------------------------------------------------------------
+## Verifying that the Style Exists
 
 Applying a style that does not exist to a paragraph has no effect; there
 is no exception generated and no formatting changes occur. The example
@@ -504,7 +504,7 @@ work, looking for a match on style name and returning the styleid for
 the matching element if found, or null if not.
 
 
-----------------------------------------------------------------------------
+## Adding the Style to the Styles Part
 
 The **AddNewStyle** example method takes three
 parameters. The first parameter takes a reference to the styles part.
@@ -643,7 +643,7 @@ example.
     End Sub
 ```
 
-----------------------------------------------------------------------------
+## Applying the Style to the Paragraph
 
 Now, the example code has located the paragraph, added the required
 paragraph properties element if required, checked for the styles part
@@ -668,7 +668,7 @@ properties object. This creates and assigns the appropriate value to the
          .Val = styleid}
 ```
 
-----------------------------------------------------------------------------
+## Sample Code
 
 You can use the **ApplyStyleToParagraph**
 example method to apply a named style to a paragraph in a word
@@ -978,7 +978,7 @@ The following is the complete code sample in both C\# and Visual Basic.
     End Function
 ```
 
------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

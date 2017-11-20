@@ -34,7 +34,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
----------------------------------------------------------------------------------
+## When to Open a Document from a Stream
 
 If you have an application, such as a SharePoint application, that works
 with documents using stream input/output, and you want to employ the
@@ -47,7 +47,7 @@ method in the sample code accepts an open stream as a parameter and then
 adds text to the document behind the stream using the Open XML SDK 2.5.
 
 
---------------------------------------------------------------------------------
+## Creating a WordprocessingDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
@@ -92,7 +92,7 @@ method.
     WordprocessingDocument.Open(stream, True)
 ```
 
---------------------------------------------------------------------------------
+## Structure of a WordProcessingML Document
 
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
@@ -138,7 +138,7 @@ r|Run |A run.
 t|Text |A range of text.
 
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 When you open the Word document package, you can add text to the main
 document part. To access the body of the main document part you assign a
@@ -176,7 +176,7 @@ the sample code add the paragraph, run, and text.
     run.AppendChild(New Text(txt))
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The example <span
 class="keyword">OpenAndAddToWordprocessingStream</span> method shown
@@ -249,7 +249,7 @@ Following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

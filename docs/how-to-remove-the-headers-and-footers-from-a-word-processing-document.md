@@ -45,7 +45,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
---------------------------------------------------------------------------------
+## RemoveHeadersAndFooters Method
 
 You can use the **RemoveHeadersAndFooters**
 method to remove all header and footer information from a word
@@ -69,7 +69,7 @@ The complete code listing for the method can be found in the [Sample
 Code](how-to-remove-the-headers-and-footers-from-a-word-processing-document.md#sampleCode) section.
 
 
---------------------------------------------------------------------------------
+## Calling the Sample Method
 
 To call the sample method, pass a string for the first parameter that
 contains the file name of the document that you want to modify as shown
@@ -83,7 +83,7 @@ in the following code example.
     RemoveHeadersAndFooters("C:\Users\Public\Documents\Headers.docx")
 ```
 
---------------------------------------------------------------------------------
+## How the Code Works
 
 The **RemoveHeadersAndFooters** method works
 with the document you specify, deleting all of the header and footer
@@ -116,7 +116,7 @@ class="code">docPart</span>.
     End Using
 ```
 
----------------------------------------------------------------------------------
+## Remove the Header and Footer Parts
 
 Given a reference to the document part, the code next determines if it
 has any work to do─that is, if the document contains any headers or
@@ -161,7 +161,7 @@ class="nolink">FooterPart</span></span> objects, respectively.
     End If
 ```
 
---------------------------------------------------------------------------------
+## Remove the Header and Footer Parts
 
 Given a collection of references to header and footer parts, you could
 write code to delete each one individually, but that is not necessary
@@ -186,7 +186,7 @@ write yourself.
     docPart.DeleteParts(docPart.FooterParts)
 ```
 
---------------------------------------------------------------------------------
+## Work with the Document Content
 
 At this point, the code has deleted the header and footer parts, but the
 document still contains orphaned references to those parts. Before the
@@ -215,7 +215,7 @@ shown in the section that follows the following code example.
     document.Save()
 ```
 
----------------------------------------------------------------------------------
+## Delete the Header and Footer References
 
 To remove the stranded references, the code first retrieves a collection
 of HeaderReference elements, converts the collection to a List, and then
@@ -281,7 +281,7 @@ the operation with the footer elements.
     Next
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following is the complete <span
 class="keyword">RemoveHeadersAndFooters</span> code sample in C\# and
@@ -392,7 +392,7 @@ Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

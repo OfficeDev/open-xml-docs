@@ -34,7 +34,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
---------------------------------------------------------------------------------
+## Getting a WordprocessingDocument Object
 
 To open an existing document, instantiate the <span
 class="keyword">WordprocessingDocument</span> class as shown in the
@@ -74,7 +74,7 @@ class="keyword">Save</span> and **Close**─as
 long as you use **using**.
 
 
---------------------------------------------------------------------------------
+## Structure of a Table
 
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
@@ -128,7 +128,7 @@ using the **tblGrid** element, and a single
 table row using the **tr** element.
 
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 In sample code, after you open the document in the <span
 class="keyword">using</span> statement, you create a new <span
@@ -312,7 +312,7 @@ class="nolink">Document</span></span> object.
     doc.MainDocumentPart.Document.Save()
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following code example shows how to create a table, set its
 properties, insert text into a cell in the table, copy a cell, and then
@@ -451,7 +451,7 @@ Following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

@@ -32,7 +32,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
---------------------------------------------------------------------------------
+## Packages and Document Parts
 
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
@@ -47,7 +47,7 @@ is defined as a spreadsheet document. In this how-to topic, you will use
 a word-processing document package.
 
 
----------------------------------------------------------------------------------
+## Getting a WordprocessingDocument Object
 
 In the sample code, you start by opening the word processing file by
 instantiating the <span sdata="cer"
@@ -91,7 +91,7 @@ class="keyword">Save</span> and **Close**─as
 long as you use **using**.
 
 
----------------------------------------------------------------------------------
+## How to Change Theme in a Word Package
 
 If you would like to change the theme in a Word document, click the
 ribbon <span class="ui">Page Layout</span> and then click <span
@@ -102,7 +102,7 @@ class="ui">Browse for Themes...</span> to locate and apply a theme file
 in your computer.
 
 
---------------------------------------------------------------------------------
+## The Structure of the Theme Element 
 
 The theme element constitutes of color, font, and format schemes. In
 this how-to you learn how to change the theme programmatically.
@@ -166,7 +166,7 @@ class="keyword">CT\_OfficeArtExtensionList</span>, which is used for
 future extensibility of this complex type.
 
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 After opening the file, you can instantiate the <span
 class="keyword">MainDocumentPart</span> in the *wordDoc* object, and
@@ -222,7 +222,7 @@ class="keyword">StreamWriter</span> objects to copy the theme from the
     End Using
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 The following code example shows how to replace the theme document part
 in a word processing document with the theme part from another package.
@@ -299,7 +299,7 @@ Following is the complete sample code in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 

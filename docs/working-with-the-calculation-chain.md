@@ -23,7 +23,7 @@ about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
----------------------------------------------------------------------------------
+## CalculationChain in SpreadsheetML
 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the <span
@@ -80,7 +80,7 @@ working with the **CalculationChain** class.
 c|CalculationCell 
 
 
----------------------------------------------------------------------------------
+## Open XML SDK 2.5 CalculationChain Class
 
 The Open XML SDK 2.5**CalculationChain** class
 represents the paragraph (\<**calcChain**\>)

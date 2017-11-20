@@ -19,7 +19,7 @@ This section provides how-to topics for working with documents and
 packages using the Open XML SDK 2.5.
 
 
---------------------------------------------------------------------------------
+## In this section
 
 [How to: Add a new document part that receives a relationship ID to a package (Open XML SDK)](how-to-add-a-new-document-part-that-receives-a-relationship-id-to-a-package.md)  
 
@@ -38,7 +38,7 @@ packages using the Open XML SDK 2.5.
 [How to: Search and replace text in a document part (Open XML SDK)](how-to-search-and-replace-text-in-a-document-part.md)  
 
 
---------------------------------------------------------------------------------
+## Related sections 
 
 [How do I... (Open XML SDK)](how-do-i.md)  
 

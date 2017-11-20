@@ -19,7 +19,7 @@ This section provides how-to topics for working with the Open XML SDK
 2.5 for Office.
 
 
---------------------------------------------------------------------------------
+## In this section
 
 [Presentations (Open XML SDK)](presentations.md)  
 

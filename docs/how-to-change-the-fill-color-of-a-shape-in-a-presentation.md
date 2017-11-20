@@ -37,7 +37,7 @@ this topic.
     Imports Drawing = DocumentFormat.OpenXml.Drawing
 ```
 
---------------------------------------------------------------------------------
+## Getting a Presentation Object 
 
 In the Open XML SDK, the <span
 class="keyword">PresentationDocument</span> class represents a
@@ -76,7 +76,7 @@ object that is created or named in the <span
 class="keyword">using</span> statement, in this case *ppt*.
 
 
---------------------------------------------------------------------------------
+## The Structure of the Shape Tree 
 
 The basic document structure of a PresentationML document consists of a
 number of parts, among which is the Shape Tree (<span class="keyword">sp
@@ -153,7 +153,7 @@ The following XML Schema fragment defines the contents of this element.
     </complexType>
 ```
 
---------------------------------------------------------------------------------
+## How the Sample Code Works
 
 After opening the presentation file for read/write access in the <span
 class="keyword">using</span> statement, the code gets the presentation
@@ -247,7 +247,7 @@ presentation.
     End If
 ```
 
---------------------------------------------------------------------------------
+## Sample Code
 
 Following is the complete sample code that you can use to change the
 fill color of a shape in a presentation. In your program, you can invoke
@@ -349,7 +349,7 @@ change in the fill color.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+## See also
 
 #### Other resources
 
