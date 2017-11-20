@@ -33,7 +33,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Packages and Document Parts
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
 package can have multiple parts with relationships between them. The
@@ -48,7 +48,7 @@ a word-processing document package.
 
 
 ---------------------------------------------------------------------------------
-
+## Getting a WordprocessingDocument Object
 The code example starts with opening a package file by passing a file
 name as an argument to one of the overloaded <span sdata="cer"
 target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open"><span
@@ -94,7 +94,7 @@ long as you use **using**.
 
 
 ---------------------------------------------------------------------------------
-
+## Basic Structure of a WordProcessingML Document
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
 class="keyword">document</span> and **body**
@@ -141,7 +141,7 @@ t|Text |A range of text.
 
 
 --------------------------------------------------------------------------------
-
+## Settings Element
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the settings element in a <span
@@ -171,7 +171,7 @@ class="keyword">PresentationML</span> package.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 After you have opened the document, in the <span
 class="keyword">using</span> statement, as a <span
 class="keyword">WordprocessingDocument</span> object, you create a
@@ -196,7 +196,7 @@ part is removed from the package.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code removes a document part from a package. To run the
 program, call the method **RemovePart** like
 this example.
@@ -242,7 +242,7 @@ Following is the complete code example in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
