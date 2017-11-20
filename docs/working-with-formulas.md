@@ -26,7 +26,7 @@ SDK)](structure-of-a-spreadsheetml-document.md)</span>.
 
 
 --------------------------------------------------------------------------------
-
+## Formulas in SpreadsheetML
 You can use formulas to create computational models. Formulas allow for
 automatic calculation of values based on data inside and outside the
 spreadsheet or the output of other computed cells in the spreadsheet.
