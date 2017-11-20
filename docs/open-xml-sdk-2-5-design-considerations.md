@@ -20,7 +20,7 @@ design considerations.
 
 
 --------------------------------------------------------------------------------
-
+## Design Considerations
 The Open XML SDK 2.5:
 
 -   Does not replace the Microsoft Office Object Model and provides no
