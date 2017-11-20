@@ -34,7 +34,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Creating a WordprocessingDocument Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
 class="nolink">WordprocessingDocument</span></span> class represents a
@@ -113,7 +113,7 @@ you can set about adding the document structure and text.
 
 
 --------------------------------------------------------------------------------
-
+## Structure of a WordProcessingML Document
 The basic document structure of a WordProcessingML document consists of
 the **document** and <span
 class="keyword">body</span> elements, followed by one or more block
@@ -160,7 +160,7 @@ class="keyword">r</span>, and **t** elements.
 
 
 --------------------------------------------------------------------------------
-
+## Generating the WordprocessingML Markup
 To create the basic document structure using the Open XML SDK, you
 instantiate the **Document** class, assign it
 to the **Document** property of the main
@@ -186,7 +186,7 @@ using the technique shown in the following code example.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The **CreateWordprocessingDocument** method can
 be used to create a basic Word document. You call it by passing a full
 path as the only parameter. The following code example creates the
@@ -246,7 +246,7 @@ Following is the complete code example in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
