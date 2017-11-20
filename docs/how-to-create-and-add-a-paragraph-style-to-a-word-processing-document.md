@@ -46,6 +46,7 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
+## CreateAndAddParagraphStyle Method 
 
 The **CreateAndAddParagraphStyle** sample method can be used to add a
 style to a word processing document. You must first obtain a reference
@@ -75,6 +76,7 @@ Code](how-to-create-and-add-a-paragraph-style-to-a-word-processing-document.md#s
 
 
 ---------------------------------------------------------------------------------
+## About Style IDs, Style Names, and Aliases
 
 The style ID is used by the document to refer to the style, and can be
 thought of as its primary identifier. Typically you use the style ID to
@@ -106,6 +108,7 @@ application.
 
 
 --------------------------------------------------------------------------------
+## Calling the Sample Method 
 
 Use the **CreateAndAddParagraphStyle** example
 method to create and add a named style to a word processing document
@@ -227,6 +230,7 @@ applies the style to the paragraph.
 ```
 
 --------------------------------------------------------------------------------
+## Style Types 
 
 WordprocessingML supports six style types, four of which you can specify
 using the type attribute on the style element. The following
@@ -277,6 +281,7 @@ element.
 
 
 ---------------------------------------------------------------------------------
+## Paragraph Style Type 
 
 You specify paragraph as the style type by setting the value of the type
 attribute on the style element to "paragraph".
@@ -320,6 +325,7 @@ styleId attribute value for this style in the paragraph properties'
 
 
 --------------------------------------------------------------------------------
+## How the Code Works 
 
 The **CreateAndAddParagraphStyle** method
 begins by retrieving a reference to the styles element in the styles
@@ -347,6 +353,7 @@ styles element is created and saved to the part.
 ```
 
 --------------------------------------------------------------------------------
+## Creating the Style 
 
 To create the style, the code instantiates the <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Style"><span class="nolink">Style</span></span> class and sets certain properties,
 such as the <span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type"><span
@@ -510,6 +517,7 @@ to the styles root element in the styles part.
 ```
 
 --------------------------------------------------------------------------------
+## Applying the Paragraph Style 
 
 When you have the style created, you can apply it to a paragraph by
 referencing the styleId attribute value for this style in the paragraph
@@ -555,6 +563,7 @@ ParagraphStyleId property represents the paragraph properties' <span class="keyw
 ```
 
 --------------------------------------------------------------------------------
+## Sample Code 
 
 The following is the complete <span
 class="keyword">CreateAndAddParagraphStyle</span> code sample in both
@@ -726,6 +735,7 @@ C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
+## See also 
 
 #### Concepts
 
