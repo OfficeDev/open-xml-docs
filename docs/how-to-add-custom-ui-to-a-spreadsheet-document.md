@@ -44,7 +44,7 @@ the code in this topic.
 ```
 
 -----------------------------------------------------------------------------
-
+## Creating Custom UI 
 Before using the Open XML SDK 2.5 to create a ribbon customization in an
 Excel workbook, you must first create the customization content.
 Describing the XML required to create a ribbon customization is beyond
@@ -81,7 +81,7 @@ in Excel. When you click the button, it attempts to run a macro named
 ```
 
 -----------------------------------------------------------------------------
-
+## Create the Macro 
 For this demonstration, the ribbon customization includes a button that
 attempts to run a macro in the host workbook. To complete the
 demonstration, you must create a macro in a sample workbook for the
@@ -109,7 +109,7 @@ button's Click action to call.
 
 
 -----------------------------------------------------------------------------
-
+## AddCustomUI Method 
 The **AddCustomUI** method accepts two
 parameters:
 
@@ -134,7 +134,7 @@ The following code shows the two parameters.
 ```
 
 -----------------------------------------------------------------------------
-
+## Calling the AddCustomUI Method 
 The method modifies the ribbon in an Excel workbook. To call the method,
 pass the file name of the workbook to modify, and a string that contains
 the customization XML, as shown in the following example code.
@@ -156,7 +156,7 @@ the customization XML, as shown in the following example code.
 ```
 
 -----------------------------------------------------------------------------
-
+## Interacting with the Workbook 
 The sample method, **AddCustomUI**, starts by
 opening the requested workbook in read/write mode, as shown in the
 following code.
@@ -172,7 +172,7 @@ following code.
 ```
 
 -----------------------------------------------------------------------------
-
+## Work with the Ribbon Extensibility Part 
 Next, as shown in the following code, the sample method attempts to
 retrieve a reference to the single ribbon extensibility part. If the
 part does not yet exist, the code creates it and stores a reference to
@@ -198,7 +198,7 @@ the new part.
 ```
 
 -----------------------------------------------------------------------------
-
+## Add the Customization 
 Given a reference to the ribbon extensibility part, the following code
 finishes by setting the part's <span sdata="cer"
 target="P:DocumentFormat.OpenXml.Packaging.CustomUiPart.CustomUI">**CustomUI**</span>
@@ -219,7 +219,7 @@ custom UI.
 ```
 
 -----------------------------------------------------------------------------
-
+## Sample Code 
 The following is the complete **AddCustomUI**
 code sample in C\# and Visual Basic.
 
@@ -305,7 +305,7 @@ code sample in C\# and Visual Basic.
 ```
 
 -----------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
