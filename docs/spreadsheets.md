@@ -20,7 +20,7 @@ documents using the Open XML SDK 2.5 for Office.
 
 
 --------------------------------------------------------------------------------
-
+## In this section
 [How to: Calculate the sum of a range of cells in a spreadsheet document (Open XML SDK)](how-to-calculate-the-sum-of-a-range-of-cells-in-a-spreadsheet-document.md)  
 
 [How to: Create a spreadsheet document by providing a file name (Open XML SDK)](how-to-create-a-spreadsheet-document-by-providing-a-file-name.md)  
@@ -55,7 +55,7 @@ documents using the Open XML SDK 2.5 for Office.
 
 
 --------------------------------------------------------------------------------
-
+## Related sections
 [How do I... (Open XML SDK)](how-do-i.md)  
 
 [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
