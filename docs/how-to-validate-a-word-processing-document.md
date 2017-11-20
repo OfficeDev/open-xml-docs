@@ -36,7 +36,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 This code example consists of two methods. The first method, <span
 class="keyword">ValidateWordDocument</span>, is used to validate a
 regular Word file. It doesn't throw any exceptions and closes the file
@@ -53,7 +53,7 @@ errors.
 
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 In your main method, you can call the two methods, <span
 class="keyword">ValidateWordDocument</span> and <span
 class="keyword">ValidateCorruptedWordDocument</span> by using the
@@ -221,7 +221,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
