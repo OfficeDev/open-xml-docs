@@ -49,7 +49,7 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
-
+## ExtractStylesPart Method
 You can use the **ExtractStylesPart** sample method to retrieve an <span
 class="keyword">XDocument</span> instance that contains the styles or
 stylesWithEffects part for a Microsoft Word 2010 or Microsoft Word 2013
@@ -91,7 +91,7 @@ The complete code listing for the method can be found in the [Sample Code](how-t
 
 
 --------------------------------------------------------------------------------
-
+## Calling the Sample Method
 To call the sample method, pass a string for the first parameter that
 contains the file name of the document from which to extract the styles,
 and a Boolean for the second parameter that specifies whether the type
@@ -129,7 +129,7 @@ the console.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Code Works
 The code starts by creating a variable named <span
 class="code">styles</span> that the method returns before it exits.
 
@@ -190,7 +190,7 @@ class="code">stylesPart</span> to hold a reference to the styles part.
 ```
 
 --------------------------------------------------------------------------------
-
+## Find the Correct Styles Part
 The code next retrieves a reference to the requested styles part by
 using the <span class="code">getStylesWithEffectsPart</span> Boolean
 parameter. Based on this value, the code retrieves a specific property
@@ -213,7 +213,7 @@ of the <span class="code">docPart</span> variable, and stores it in the
 ```
 
 ---------------------------------------------------------------------------------
-
+## Retrieve the Part Contents
 If the requested styles part exists, the code must return the contents
 of the part in an **XDocument** instance. Each
 part provides a <span sdata="cer"
@@ -251,7 +251,7 @@ parameter.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following is the complete <span
 class="keyword">ExtractStylesPart</span> code sample in C\# and Visual
 Basic.
@@ -337,7 +337,7 @@ Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
