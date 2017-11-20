@@ -44,7 +44,7 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
-
+## RetrieveNumberOfSlides Method
 You can use the **RetrieveNumberOfSlides**
 method to get the number of slides in a presentation document,
 optionally including the hidden slides. The <span
@@ -64,7 +64,7 @@ include hidden slides in the count.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Calling the RetrieveNumberOfSlides Method
 The method returns an integer that indicates the number of slides,
 counting either all the slides or only visible slides, depending on the
 second parameter value. To call the method, pass all the parameter
@@ -85,7 +85,7 @@ values, as shown in the following code.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Code Works
 The code starts by creating an integer variable, <span
 class="code">slidesCount</span>, to hold the number of slides. The code
 then opens the specified presentation by using the <span sdata="cer"
@@ -121,7 +121,7 @@ the main presentation part, storing the reference in a variable named
 ```
 
 --------------------------------------------------------------------------------
-
+## Retrieving the Count of All Sheets
 If the presentation part reference is not null (and it will not be, for
 any valid presentation that loads correctly into PowerPoint), the code
 next calls the **Count** method on the value of
@@ -152,7 +152,7 @@ exclude hidden slides, as shown in the following code.
 ```
 
 --------------------------------------------------------------------------------
-
+## Retrieving the Count of Visible Sheets
 If you requested that the code should limit the return value to include
 only visible slides, the code must filter its collection of slides to
 include only those slides that have a <span sdata="cer"
@@ -187,7 +187,7 @@ function with a lambda expression to do the work.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following is the complete <span
 class="keyword">RetrieveNumberOfSlides</span> code sample in C\# and
 Visual Basic.
@@ -256,7 +256,7 @@ Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
