@@ -37,7 +37,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Open the Existing Document for Editing
 To open an existing document, instantiate the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
 class="nolink">WordprocessingDocument</span></span> class as shown in
@@ -74,7 +74,7 @@ class="keyword">using</span> statement, in this case *document*.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 After you open the document, you can find the first paragraph to attach
 a comment. The code finds the first paragraph by calling the
 [First](http://msdn.microsoft.com/en-us/library/system.linq.enumerable.first.aspx)
@@ -283,7 +283,7 @@ class="nolink">Run</span></span> object.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code example shows how to create a comment and associate
 it with a range in a word processing document. To call the method <span
 class="keyword">AddCommentOnFirstParagraph</span> pass in the path of
@@ -412,7 +412,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
