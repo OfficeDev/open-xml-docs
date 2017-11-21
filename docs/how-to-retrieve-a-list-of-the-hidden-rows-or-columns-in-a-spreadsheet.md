@@ -49,7 +49,7 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
-
+## GetHiddenRowsOrCols Method
 You can use the **GetHiddenRowsOrCols** method
 to retrieve a list of the hidden rows or columns in a worksheet. The
 **GetHiddenRowsOrCols** method accepts three
@@ -73,7 +73,7 @@ parameters, indicating the following:
 ```
 
 --------------------------------------------------------------------------------
-
+## Calling the GetHiddenRowsOrCols Method
 The method returns a list of unsigned integers that contain each index
 for the hidden rows or columns, if the specified worksheet contains any
 hidden rows or columns (rows and columns are numbered starting at 1,
@@ -101,7 +101,7 @@ shown in the following example code.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Code Works
 The code starts by creating a variable, <span
 class="code">itemList</span>, that will contain the return value.
 
@@ -217,7 +217,7 @@ class="nolink">WorkbookPart</span></span> object.
 ```
 
 --------------------------------------------------------------------------------
-
+## Retrieving the List of Hidden Row or Column Index Values
 The code uses the <span class="code">detectRows</span> parameter that
 you specified when you called the method to determine whether to
 retrieve information about rows or columns.
@@ -324,7 +324,7 @@ class="keyword">Max</span> value, inclusively).
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following is the complete <span
 class="keyword">GetHiddenRowsOrCols</span> code sample in C\# and Visual
 Basic.
@@ -437,7 +437,7 @@ Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
