@@ -25,7 +25,7 @@ PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.m
 
 
 ---------------------------------------------------------------------------------
-
+## Presentations in PresentationML
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<presentation\>
 element used to represent a presentation in a PresentationML document as
@@ -88,7 +88,7 @@ Open XML SDK 2.5 classes that correspond to them.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 Presentation Class
 The Open XML SDK 2.5**Presentation** class
 represents the \<presentation\> element defined in the Open XML File
 Format schema for PresentationML documents. Use the <span
@@ -311,7 +311,7 @@ text within the presentation slide.
 
 
 --------------------------------------------------------------------------------
-
+## Working with the Presentation Class
 As shown in the Open XML SDK code example that follows, every instance
 of the **Presentation** class is associated
 with an instance of the <span sdata="cer"
@@ -332,7 +332,7 @@ class="keyword">DefaultTextStyle</span> classes.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example
 The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> uses the <span
 sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Create(System.String,DocumentFormat.OpenXml.PresentationDocumentType)"><span
@@ -433,7 +433,7 @@ presentation.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Resulting PresentationML
 When the Open XML SDK code is run, the following XML is written to the
 PresentationML document referenced in the code.
 
@@ -453,7 +453,7 @@ PresentationML document referenced in the code.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
