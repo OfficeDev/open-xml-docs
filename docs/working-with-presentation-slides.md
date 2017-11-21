@@ -25,7 +25,7 @@ PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.m
 
 
 ---------------------------------------------------------------------------------
-
+## Presentation Slides in PresentationML
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<sld\> element used
 to represent a presentation slide in a PresentationML document as
@@ -73,7 +73,7 @@ that correspond to them.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 Slide Class
 The Open XML SDK 2.5**Slide** class represents the \<sld\> element
 defined in the Open XML File Format schema for PresentationML documents.
 Use the **Slide** object to manipulate
@@ -165,7 +165,7 @@ transition is complete.
 
 
 --------------------------------------------------------------------------------
-
+## Working with the Slide Class
 As shown in the Open XML SDK code example that follows, every instance
 of the **Slide** class is associated with an
 instance of the <span sdata="cer"
@@ -198,7 +198,7 @@ class="nolink">Shape</span></span> class.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example
 The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> adds a new slide
 part to an existing presentation and creates an instance of the Open XML
 SDK 2.5**Slide** class in the new slide part.
@@ -302,7 +302,7 @@ passing an additional parameter that contains the following code to the
 ```
 
 ---------------------------------------------------------------------------------
-
+## Generated PresentationML
 When the Open XML SDK code in the method is run, the following XML code
 is written to the PresentationML document file referenced in the code.
 
@@ -347,7 +347,7 @@ is written to the PresentationML document file referenced in the code.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
