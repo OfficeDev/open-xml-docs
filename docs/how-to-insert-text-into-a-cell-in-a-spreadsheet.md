@@ -37,7 +37,7 @@ this topic:
 ```
 
 --------------------------------------------------------------------------------
-
+## Getting a SpreadsheetDocument Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
 class="nolink">SpreadsheetDocument</span></span> class represents an
@@ -93,7 +93,7 @@ class="keyword">using</span> statement, in this case *spreadSheet*.
 
 
 --------------------------------------------------------------------------------
-
+## The Basic Structure of a SpreadsheetML Document
 The basic document structure of a <span
 class="keyword">SpreadsheetML</span> document consists of the <span
 sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
@@ -176,7 +176,7 @@ class="keyword">sheetData</span> elements.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 After opening the **SpreadsheetDocument**
 document for editing, the code inserts a blank <span sdata="cer"
 target="P:DocumentFormat.OpenXml.Packaging.WorksheetPart.Worksheet"><span
@@ -529,7 +529,7 @@ object into a **Worksheet** object.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code sample is used to insert a new worksheet and write
 the text to the cell "A1" of the new worksheet for a specific
 spreadsheet document named "Sheet8.xlsx." To call the <span
@@ -821,7 +821,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
