@@ -40,7 +40,7 @@ this topic.
 ```
 
 -----------------------------------------------------------------------------
-
+## Getting a PresentationDocument Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
 class="nolink">PresentationDocument</span></span> class represents a
@@ -95,7 +95,7 @@ class="keyword">presentationDocument</span>.
 
 
 -----------------------------------------------------------------------------
-
+## Basic Presentation Document Structure
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of the main part
 that contains the presentation definition. The following text from the
@@ -182,7 +182,7 @@ class="keyword">notesMaster</span> elements.
 
 
 -----------------------------------------------------------------------------
-
+## Structure of the Theme Element
 The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification can
 be useful when working with this element.
 
@@ -242,7 +242,7 @@ future extensibility of this complex type.
 
 
 -----------------------------------------------------------------------------
-
+## How the Sample Code Works
 The sample code consists of two overloads of the method <span
 class="keyword">ApplyThemeToPresentation</span>, and the <span
 class="keyword">GetSlideLayoutType</span> method. The following code
@@ -489,7 +489,7 @@ represents the name of the slide layout type
 ```
 
 -----------------------------------------------------------------------------
-
+## Sample Code
 The following is the complete sample code to copy a theme from one
 presentation to another. To use the program, you must create two
 presentations, a source presentation with the theme you would like to
@@ -697,7 +697,7 @@ would see the same theme of the file Myppt9-theme.pptx.
 ```
 
 -----------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
