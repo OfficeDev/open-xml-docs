@@ -50,14 +50,10 @@ a word-processing document package.
 ## Getting a WordprocessingDocument Object
 
 In the sample code, you start by opening the word processing file by
-instantiating the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class as shown in
+instantiating the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
-<span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method, with the Boolean parameter set
+[Open](https://msdn.microsoft.com/library/office/cc562234.aspx) method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ```csharp
@@ -78,27 +74,22 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case *wordDoc*. Because
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case *wordDoc*. Because
 the **WordprocessingDocument** class in the
 Open XML SDK automatically saves and closes the object as part of its
 **System.IDisposable** implementation, and
 because **Dispose** is automatically called
-when you exit the block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+when you exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
 ## How to Change Theme in a Word Package
 
 If you would like to change the theme in a Word document, click the
-ribbon <span class="ui">Page Layout</span> and then click <span
-class="ui">Themes</span>. The <span class="ui">Themes</span> pull-down
+ribbon **Page Layout** and then click **Themes**. The **Themes** pull-down
 menu opens. To choose one of the built it themes and apply it to the
-Word document, click the theme icon. You can also use the option <span
-class="ui">Browse for Themes...</span> to locate and apply a theme file
+Word document, click the theme icon. You can also use the option **Browse for Themes...** to locate and apply a theme file
 in your computer.
 
 
@@ -107,8 +98,7 @@ in your computer.
 The theme element constitutes of color, font, and format schemes. In
 this how-to you learn how to change the theme programmatically.
 Therefore, it is useful to familiarize yourself with the theme element.
-The following information from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification can
+The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification can
 be useful when working with this element.
 
 This element defines the root level complex type associated with a
@@ -144,8 +134,7 @@ element. The **themeElements** element is the
 piece that holds the main formatting defined within the theme. The other
 parts provide overrides, defaults, and additions to the information
 contained in **themeElements**. The complex
-type defining a theme, <span
-class="keyword">CT\_OfficeStyleSheet</span>, is defined in the following
+type defining a theme, **CT\_OfficeStyleSheet**, is defined in the following
 manner:
 
 ```xml
@@ -161,15 +150,13 @@ manner:
     </complexType>
 ```
 
-This complex type also holds a <span
-class="keyword">CT\_OfficeArtExtensionList</span>, which is used for
+This complex type also holds a **CT\_OfficeArtExtensionList**, which is used for
 future extensibility of this complex type.
 
 
 ## How the Sample Code Works
 
-After opening the file, you can instantiate the <span
-class="keyword">MainDocumentPart</span> in the *wordDoc* object, and
+After opening the file, you can instantiate the **MainDocumentPart** in the *wordDoc* object, and
 delete the old theme part.
 
 ```csharp
@@ -194,9 +181,7 @@ delete the old theme part.
 ```
 You can then create add a new **ThemePart**
 object and add it to the **MainDocumentPart**
-object. Then you add content by using a <span
-class="keyword">StreamReader</span> and <span
-class="keyword">StreamWriter</span> objects to copy the theme from the
+object. Then you add content by using a **StreamReader** and **StreamWriter** objects to copy the theme from the
 *themeFile* to the **ThemePart** object.
 
 ```csharp

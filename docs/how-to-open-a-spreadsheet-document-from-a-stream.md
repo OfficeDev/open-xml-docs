@@ -51,6 +51,7 @@ Open XML SDK 2.5.
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
+
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
 class="nolink">SpreadsheetDocument</span></span> class represents an

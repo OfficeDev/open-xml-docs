@@ -49,7 +49,7 @@ adds text to the document behind the stream using the Open XML SDK 2.5.
 
 ## Creating a WordprocessingDocument Object
 
-In the Open XML SDK, the **WordprocessingDocument** class represents a
+In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
 Word document package. To work with a Word document, first create an
 instance of the **WordprocessingDocument**
 class from the document, and then work with that instance. When you
@@ -62,7 +62,7 @@ a Word document, the text in the main document part is represented in
 the package as XML using **WordprocessingML**
 markup.
 
-To create the class instance from the document call the **Open(Stream, Boolean)** method. Several **Open** methods are provided, each with a different
+To create the class instance from the document call the [Open(Stream, Boolean)](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) method. Several **Open** methods are provided, each with a different
 signature. The sample code in this topic uses the **Open** method with a signature that requires two
 parameters. The first parameter takes a handle to the stream from which
 you want to open the document. The second parameter is either **true** or **false** and
@@ -107,17 +107,17 @@ the WordprocessingML markup for a document that contains only the text
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
-elements. You can find these classes in the **DocumentFormat.OpenXml.Wordprocessing**
+elements. You can find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
-WordprocessingML Element|Open XML SDK 2.5 Class|Description
---|--|--
-document|Document |The root element for the main document part.
-body|Body |The container for the block-level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification.
-p|Paragraph |A paragraph.
-r|Run |A run.
-t|Text |A range of text.
+| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
+|---|---|---|
+| document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
+| body |Body |The container for the block-level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
+| p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | A paragraph. |
+| r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A run. |
+| t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
 
 ## How the Sample Code Works

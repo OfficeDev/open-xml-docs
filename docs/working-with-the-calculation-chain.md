@@ -15,20 +15,16 @@ ms.date: 11/01/2017
 ---
 # Working with the calculation chain (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CalculationChain"><span
-class="nolink">CalculationChain</span></span> class and how it relates
+This topic discusses the Open XML SDK 2.5 [CalculationChain](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.calculationchain.aspx) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
-SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
+SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 
 ## CalculationChain in SpreadsheetML
 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the <span
-class="keyword">CalculationChain</span> (\<<span
-class="keyword">calcChain</span>\>) element.
+specification introduces the **CalculationChain** (\<**calcChain**\>) element.
 
 An instance of this part type contains an ordered set of references to
 all cells in all worksheets in the workbook whose value is calculated
@@ -96,7 +92,7 @@ cell (\<**si**\>) element that represents a
 cell that contains a formula.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **CalculationCell** (\<<span class="keyword">c</span>\>) element.
+introduces the **CalculationCell** (\<**c**\>) element.
 
 Every c element represents a cell containing a formula. The first cell
 calculated appears first (top-tobottom), and so on. The reference

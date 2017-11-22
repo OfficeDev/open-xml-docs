@@ -73,7 +73,7 @@ of document, template, and the macro enabled variety of document and
 template.
 
 > [!NOTE]
-> Carefully select the appropriate **WordProcessingDocumentType** and verify that the persisted file has the correct, matching file extension. If the <span class="keyword">WordProcessingDocumentType</span> does not match the file extension, an error occurs when you open the file in Microsoft Word. The code that calls the <span class="keyword">Create</span> method is part of a <span class="keyword">using** statement followed by a bracketed block, as shown in the following code example.
+> Carefully select the appropriate **WordProcessingDocumentType** and verify that the persisted file has the correct, matching file extension. If the **WordProcessingDocumentType** does not match the file extension, an error occurs when you open the file in Microsoft Word. The code that calls the **Create** method is part of a **using** statement followed by a bracketed block, as shown in the following code example.
 
 ```csharp
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Create(document, WordprocessingDocumentType.Document))
@@ -132,11 +132,11 @@ correspond to the **document**, **body**, **p**, **r**, and **t** elements:
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| document | Document | The root element for the main document part. |
-| body | Body | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
-| p | Paragraph | A paragraph. |
-| r | Run | A run. |
-| t | Text | A range of text. |
+| document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
+| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
+| p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
+| r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
+| t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
 ## How the Sample Code Works 
 
