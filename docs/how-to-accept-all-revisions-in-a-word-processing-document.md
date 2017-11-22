@@ -38,7 +38,7 @@ The following assembly directives are required to compile the code in this topic
 
 ## Open the Existing Document for Editing
 
-To open an existing document, you can instantiate the <span sdata="cer" target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span class="nolink">WordprocessingDocument</span></span> class as shown in the following **using** statement. To do so, you open the word processing file with the specified *fileName* by using the <span sdata="cer" target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span class="nolink">Open(String, Boolean)</span></span> method, with the Boolean parameter set to **true** in order to enable editing the document.
+To open an existing document, you can instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in the following **using** statement. To do so, you open the word processing file with the specified *fileName* by using the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) method, with the Boolean parameter set to **true** in order to enable editing the document.
 
 ```csharp
     using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(fileName, true))
@@ -53,12 +53,12 @@ To open an existing document, you can instantiate the <span sdata="cer" target="
     End Using
 ```
 
-The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the <span class="keyword">using</span> statement establishes a scope for the object that is created or named in the <span class="keyword">using</span> statement, in this case *wdDoc*. Because the **WordprocessingDocument** class in the Open XML SDK automatically saves and closes the object as part of its **System.IDisposable** implementation, and because **Dispose** is automatically called when you exit the block, you do not have to explicitly call <span class="keyword">Save</span> and **Close** as long as you use **using**.
+The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case *wdDoc*. Because the **WordprocessingDocument** class in the Open XML SDK automatically saves and closes the object as part of its **System.IDisposable** implementation, and because **Dispose** is automatically called when you exit the block, you do not have to explicitly call **Save** and **Close** as long as you use **using**.
 
 
 ## Structure of a WordProcessingML Document
 
-The basic document structure of a <span class="keyword">WordProcessingML</span> document consists of the <span class="keyword">document</span> and **body** elements, followed by one or more block level elements such as <span class="keyword">p</span>, which represents a paragraph. A paragraph contains one or more **r** elements. The <span class="keyword">r</span> stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The <span class="keyword">t</span> element contains a range of text. The following code example shows the **WordprocessingML** markup for a document that contains the text "Example text."
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The following code example shows the **WordprocessingML** markup for a document that contains the text "Example text."
 
 ```xml
     <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -72,15 +72,15 @@ The basic document structure of a <span class="keyword">WordProcessingML</span> 
     </w:document>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and content using strongly-typed classes that correspond to <span class="keyword">WordprocessingML</span> elements. You will find these classes in the <span sdata="cer" target="N:DocumentFormat.OpenXml.Wordprocessing"><span class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span> namespace. The following table lists the class names of the classes that correspond to the **document**, <span class="keyword">body</span>, **p**, <span class="keyword">r</span>, and **t** elements.
+Using the Open XML SDK 2.5, you can create document structure and content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx) namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| document | Document | The root element for the main document part. |
-| body | Body | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
-| p | Paragraph | A paragraph. |
-| r | Run | A run. |
-| t | Text | A range of text. |
+| document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
+| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
+| p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
+| r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
+| t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
 ## ParagraphPropertiesChange Element
 
@@ -109,7 +109,7 @@ Consider a paragraph in a WordprocessingML document which is centered, and this 
     </w:pPr>
 ```
 
-The element specifies that there was a revision to the paragraph properties at 01-01-2006 by Samantha Smith, and the previous set of paragraph properties on the paragraph was the null set (in other words, no paragraph properties explicitly present under the element).<span class="keyword">pPr</span>**pPrChange**
+The element specifies that there was a revision to the paragraph properties at 01-01-2006 by Samantha Smith, and the previous set of paragraph properties on the paragraph was the null set (in other words, no paragraph properties explicitly present under the element). **pPr** **pPrChange**
 
 © ISO/IEC29500: 2008.
 
@@ -207,10 +207,7 @@ a revision.
 
 After you have opened the document in the using statement, you
 instantiate the **Body** class, and then handle
-the formatting changes by creating the *changes*<span
-class="keyword">List</span>, and removing each change (the <span
-class="keyword">w:pPrChange</span> element) from the <span
-class="keyword">List</span>, which is the same as accepting changes.
+the formatting changes by creating the *changes* **List**, and removing each change (the **w:pPrChange** element) from the **List**, which is the same as accepting changes.
 
 ```csharp
     Body body = wdDoc.MainDocumentPart.Document.Body;
@@ -240,10 +237,7 @@ class="keyword">List</span>, which is the same as accepting changes.
     Next
 ```
 
-You then handle the deletions by constructing the *deletions*<span
-class="keyword">List</span>, and removing each deletion element (<span
-class="keyword">w:del</span>) from the <span
-class="keyword">List</span>, which is similar to the process of
+You then handle the deletions by constructing the *deletions* **List**, and removing each deletion element (**w:del**) from the **List**, which is similar to the process of
 accepting deletion changes.
 
 ```csharp
@@ -284,8 +278,7 @@ accepting deletion changes.
     Next
 ```
 
-Finally, you handle the insertions by constructing the *insertions*<span
-class="keyword">List</span> and inserting the new text by removing the
+Finally, you handle the insertions by constructing the *insertions* **List** and inserting the new text by removing the
 insertion element (**w:ins**), which is the
 same as accepting the inserted text.
 

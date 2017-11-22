@@ -47,8 +47,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.VariantTypes
 ```
 The sample code also includes an enumeration that defines the possible
-types of custom properties. The <span
-class="keyword">SetCustomProperty</span> method requires that you supply
+types of custom properties. The **SetCustomProperty** method requires that you supply
 one of these values when you call the method.
 
 ```csharp
@@ -107,33 +106,26 @@ If you examine the XML content, you will find the following:
 -   Each property in the XML content consists of an XML element that
     includes the name and the value of the property.
 
--   For each property, the XML content includes an <span
-    class="keyword">fmtid</span> attribute, which is always set to the
-    same string value: <span
-    class="code">{D5CDD505-2E9C-101B-9397-08002B2CF9AE}</span>.
+-   For each property, the XML content includes an **fmtid** attribute, which is always set to the
+    same string value: `{D5CDD505-2E9C-101B-9397-08002B2CF9AE}`.
 
--   Each property in the XML content includes a <span
-    class="keyword">pid</span> attribute, which must include an integer
+-   Each property in the XML content includes a **pid** attribute, which must include an integer
     starting at 2 for the first property and incrementing for each
     successive property.
 
--   Each property tracks its type (in the figure, the <span
-    class="keyword">vt:lpwstr</span> and <span
-    class="keyword">vt:filetime</span> element names define the types
+-   Each property tracks its type (in the figure, the **vt:lpwstr** and **vt:filetime** element names define the types
     for each property).
 
 The sample method that is provided here includes the code that is
 required to create or modify a custom document property in a Microsoft
 Word 2010 or Microsoft Word 2013 document. You can find the complete
-code listing for the method in the [Sample
-Code](how-to-set-a-custom-property-in-a-word-processing-document.md#SampleCode) section.
+code listing for the method in the [Sample Code](how-to-set-a-custom-property-in-a-word-processing-document.md#SampleCode) section.
 
 
 ## SetCustomProperty Method
 
 You can use the **SetCustomProperty** method to
-set a custom property in a word processing document. The <span
-class="keyword">SetCustomProperty</span> method accepts four parameters:
+set a custom property in a word processing document. The **SetCustomProperty** method accepts four parameters:
 
 -   The name of the document to modify (string).
 
@@ -141,8 +133,7 @@ class="keyword">SetCustomProperty</span> method accepts four parameters:
 
 -   The value of the property (object).
 
--   The kind of property (one of the values in the <span
-    class="keyword">PropertyTypes</span> enumeration).
+-   The kind of property (one of the values in the **PropertyTypes** enumeration).
 
 ```csharp
     public static string SetCustomProperty(
@@ -200,12 +191,11 @@ properties from Word.
 
 1.  Open the **SetCustomProperty.docx** file in Word.
 
-2.  On the <span class="ui">File</span> tab, click <span
-    class="ui">Info</span>.
+2.  On the **File** tab, click **Info**.
 
-3.  Click <span class="ui">Properties</span>.
+3.  Click **Properties**.
 
-4.  Click <span class="ui">Advanced Properties</span>.
+4.  Click **Advanced Properties**.
 
 The custom properties will display in the dialog box that appears, as
 shown in Figure 2.
@@ -220,15 +210,12 @@ Figure 2. Custom Properties in the Advanced Properties dialog box
 
 The **SetCustomProperty** method starts by
 setting up some internal variables. Next, it examines the information
-about the property, and creates a new <span sdata="cer"
-target="T:DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty"><span
-class="nolink">CustomDocumentProperty</span></span> based on the
+about the property, and creates a new [CustomDocumentProperty](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.aspx) based on the
 parameters that you have specified. The code also maintains a variable
-named <span class="code">propSet</span> to indicate whether it
+named **propSet** to indicate whether it
 successfully created the new property object. This code verifies the
 type of the property value, and then converts the input to the correct
-type, setting the appropriate property of the <span
-class="keyword">CustomDocumentProperty</span> object.
+type, setting the appropriate property of the **CustomDocumentProperty** object.
 
 > [!NOTE]
 > The **CustomDocumentProperty** type works much like a VBA Variant type. It maintains separate placeholders as properties for the various types of data it might contain.
@@ -354,11 +341,7 @@ class="keyword">CustomDocumentProperty</span> object.
     End If
 ```
 At this point, if the code has not thrown an exception, you can assume
-that the property is valid, and the code sets the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty.FormatId"><span
-class="nolink">FormatId</span></span> and <span sdata="cer"
-target="P:DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty.Name"><span
-class="nolink">Name</span></span> properties of the new custom property.
+that the property is valid, and the code sets the [FormatId](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.formatid.aspx) and [Name](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.name.aspx) properties of the new custom property.
 
 ```csharp
     // Now that you have handled the parameters, start
@@ -380,15 +363,9 @@ Given the **CustomDocumentProperty** object,
 the code next interacts with the document that you supplied in the
 parameters to the **SetCustomProperty**
 procedure. The code starts by opening the document in read/write mode by
-using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class. The code
+using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class. The code
 attempts to retrieve a reference to the custom file properties part by
-using the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.CustomFilePropertiesPart"><span
-class="nolink">CustomFilePropertiesPart</span></span> property of the
+using the [CustomFilePropertiesPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart.aspx) property of the
 document.
 
 ```csharp
@@ -405,8 +382,7 @@ document.
         ' Code removed here...
     End Using
 ```
-If the code cannot find a custom properties part, it creates a new part,
-and adds a new set of properties to the part.
+If the code cannot find a custom properties part, it creates a new part, and adds a new set of properties to the part.
 
 ```csharp
     if (customProps == null)
@@ -427,14 +403,11 @@ and adds a new set of properties to the part.
         customProps.Properties = New Properties
     End If
 ```
-Next, the code retrieves a reference to the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart.Properties"><span
-class="nolink">Properties</span></span> property of the custom
+Next, the code retrieves a reference to the [Properties](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.customfilepropertiespart.properties.aspx) property of the custom
 properties part (that is, a reference to the properties themselves). If
 the code had to create a new custom properties part, you know that this
 reference is not null. However, for existing custom properties parts, it
-is possible, although highly unlikely, that the <span
-class="keyword">Properties</span> property will be null. If so, the code
+is possible, although highly unlikely, that the **Properties** property will be null. If so, the code
 cannot continue.
 
 ```csharp
@@ -538,8 +511,7 @@ Finally, the code returns the stored original property value.
 
 ## Sample Code
 
-The following is the complete <span
-class="keyword">SetCustomProperty</span> code sample in C\# and Visual
+The following is the complete **SetCustomProperty** code sample in C\# and Visual
 Basic.
 
 ```csharp

@@ -36,8 +36,7 @@ this topic.
 
 ## Getting a WordprocessingDocument Object
 
-To open an existing document, instantiate the <span
-class="keyword">WordprocessingDocument</span> class as shown in the
+To open an existing document, instantiate the **WordprocessingDocument** class as shown in the
 following **using** statement. In the same
 statement, open the word processing file at the specified filepath by
 using the **Open** method, with the Boolean
@@ -64,32 +63,23 @@ that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the using
 statement establishes a scope for the object that is created or named in
-the using statement, in this case doc. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
+the using statement, in this case doc. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 **Dispose** is automatically called when you
-exit the block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
 ## Structure of a Table
 
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
 contains one or more **r** elements. The r
 stands for run, which is a region of text with a common set of
-properties, such as formatting. A run contains one or more <span
-class="keyword">t</span> elements. The **t**
+properties, such as formatting. A run contains one or more **t** elements. The **t**
 element contains a range of text.The document might contain a table as
 in this example. A table is a set of paragraphs (and other block-level
-content) arranged in rows and columns. Tables in <span
-class="keyword">WordprocessingML</span> are defined via the <span
-class="keyword">tbl</span> element, which is analogous to the HTML table
+content) arranged in rows and columns. Tables in **WordprocessingML** are defined via the **tbl** element, which is analogous to the HTML table
 tag. Consider an empty one-cell table (i.e. a table with one row, one
 column) and 1 point borders on all sides. This table is represented by
 the following **WordprocessingML** markup
@@ -130,24 +120,10 @@ table row using the **tr** element.
 
 ## How the Sample Code Works
 
-In sample code, after you open the document in the <span
-class="keyword">using</span> statement, you create a new <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Table"><span
-class="nolink">Table</span></span> object. Then you create a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableProperties"><span
-class="nolink">TableProperties</span></span> object and specify its
+In sample code, after you open the document in the **using** statement, you create a new [Table](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.table.aspx) object. Then you create a [TableProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tableproperties.aspx) object and specify its
 border information. The **TableProperties**
-class contains an overloaded constructor <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Wordprocessing.TableProperties.#ctor"><span
-class="nolink">TableProperties()</span></span> that takes a <span
-class="keyword">params</span> array of type <span sdata="cer"
-target="T:DocumentFormat.OpenXml.OpenXmlElement"><span
-class="nolink">OpenXmlElement</span></span>. The code uses this
-constructor to instantiate a <span
-class="keyword">TableProperties</span> object with <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.BorderType"><span
-class="nolink">BorderType</span></span> objects for each border,
+class contains an overloaded constructor [TableProperties()](https://msdn.microsoft.com/library/office/cc882762.aspx) that takes a **params** array of type [OpenXmlElement](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.aspx). The code uses this
+constructor to instantiate a **TableProperties** object with [BorderType](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.bordertype.aspx) objects for each border,
 instantiating each **BorderType** and
 specifying its value using object initializers. After it has been
 instantiated, append the **TableProperties**
@@ -191,40 +167,20 @@ object to the table.
 ```
 
 The code creates a table row. This section of the code makes extensive
-use of the overloaded <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.Append(DocumentFormat.OpenXml.OpenXmlElement[])"><span
-class="nolink">Append([])</span></span> methods, which classes derived
-from **OpenXmlElement** inherit. The <span
-class="keyword">Append</span> methods provide a way to either append a
+use of the overloaded [Append\[\])](https://msdn.microsoft.com/library/office/cc801361.aspx) methods, which classes derived
+from **OpenXmlElement** inherit. The **Append** methods provide a way to either append a
 single element or to append a portion of an XML tree, to the end of the
 list of child elements under a given parent element. Next, the code
-creates a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableCell"><span
-class="nolink">TableCell</span></span> object, which represents an
+creates a [TableCell](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tablecell.aspx) object, which represents an
 individual table cell, and specifies the width property of the table
-cell using a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableCellProperties"><span
-class="nolink">TableCellProperties</span></span> object, and the cell
-content ("Hello, World!") using a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Text"><span
-class="nolink">Text</span></span> object. In the Open XML Wordprocessing
+cell using a [TableCellProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tablecellproperties.aspx) object, and the cell
+content ("Hello, World!") using a [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) object. In the Open XML Wordprocessing
 schema, a paragraph element (**\<p\>**)
 contains run elements (**\<r\>**) which, in
 turn, contain text elements (**\<t\>**). To
-insert text within a table cell using the API, you must create a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph"><span
-class="nolink">Paragraph</span></span> object that contains a <span
-class="keyword">Run</span> object that contains a <span
-class="keyword">Text</span> object that contains the text you want to
-insert in the cell. You then append the <span
-class="keyword">Paragraph</span> object to the <span
-class="keyword">TableCell</span> object. This creates the proper XML
-structure for inserting text into a cell. The <span
-class="keyword">TableCell</span> is then appended to the <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableRow"><span
-class="nolink">TableRow</span></span> object.
+insert text within a table cell using the API, you must create a [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) object that contains a **Run** object that contains a **Text** object that contains the text you want to
+insert in the cell. You then append the **Paragraph** object to the **TableCell** object. This creates the proper XML
+structure for inserting text into a cell. The **TableCell** is then appended to the [TableRow](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tablerow.aspx) object.
 
 ```csharp
     // Create a row.
@@ -261,22 +217,9 @@ class="nolink">TableRow</span></span> object.
 ```
 
 The code then creates a second table cell. The final section of code
-creates another table cell using the overloaded <span
-class="keyword">TableCell</span> constructor <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Wordprocessing.TableCell.#ctor(System.String)"><span
-class="nolink">TableCell(String)</span></span> that takes the <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.OpenXmlElement.OuterXml"><span
-class="nolink">OuterXml</span></span> property of an existing <span
-class="keyword">TableCell</span> object as its only argument. After
-creating the second table cell, the code appends the <span
-class="keyword">TableCell</span> to the <span
-class="keyword">TableRow</span>, appends the <span
-class="keyword">TableRow</span> to the <span
-class="keyword">Table</span>, and the **Table**
-to the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Document"><span
-class="nolink">Document</span></span> object.
+creates another table cell using the overloaded **TableCell** constructor [TableCell(String)](https://msdn.microsoft.com/library/office/cc803944.aspx) that takes the [OuterXml](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.outerxml.aspx) property of an existing **TableCell** object as its only argument. After
+creating the second table cell, the code appends the **TableCell** to the **TableRow**, appends the **TableRow** to the **Table**, and the **Table**
+to the [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) object.
 
 ```csharp
     // Create a second table cell by copying the OuterXml value of the first table cell.

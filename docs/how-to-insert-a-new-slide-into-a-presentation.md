@@ -37,16 +37,10 @@ this topic.
 
 ## Getting a PresentationDocument Object
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
-that instance. To create the class instance from the document call the
-<span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method that uses a
+first create an instance of the **PresentationDocument** class, and then work with
+that instance. To create the class instance from the document call the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx) method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. To open a document for read/write,
 specify the value **true** for this parameter
@@ -72,26 +66,21 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case
 *presentationDocument*.
 
 
 ## Basic Presentation Document Structure
 
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of the main part
+The basic document structure of a **PresentationML** document consists of the main part
 that contains the presentation definition. The following text from the
 [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
-specification introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+specification introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part
 > starts with a presentation root element. That element contains a
-> presentation, which, in turn, refers to a <span
-> class="keyword">slide</span> list, a *slide master* list, a *notes
+> presentation, which, in turn, refers to a **slide** list, a *slide master* list, a *notes
 > master* list, and a *handout master* list. The slide list refers to
 > all of the slides in the presentation; the slide master list refers to
 > the entire slide masters used in the presentation; the notes master
@@ -149,35 +138,27 @@ two slides denoted by the Id's 267 and 256.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
-elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements:
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements:
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| sld | Slide | Presentation Slide. It is the root element of SlidePart. |
-| sldLayout | SlideLayout | Slide Layout. It is the root element of SlideLayoutPart. |
-| sldMaster | SlideMaster | Slide Master. It is the root element of SlideMasterPart. |
-| notesMaster | NotesMaster | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
+| sld | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) | Presentation Slide. It is the root element of SlidePart. |
+| sldLayout | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) | Slide Layout. It is the root element of SlideLayoutPart. |
+| sldMaster | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) | Slide Master. It is the root element of SlideMasterPart. |
+| notesMaster | [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 
 ## How the Sample Code Works 
 
-The sample code consists of two overloads of the <span
-class="keyword">InsertNewSlide</span> method. The first overloaded
+The sample code consists of two overloads of the **InsertNewSlide** method. The first overloaded
 method takes three parameters: the full path to the presentation file to
 which to add a slide, an integer that represents the zero-based slide
 index position in the presentation where to add the slide, and the
 string that represents the title of the new slide. It opens the
-presentation file as read/write, gets a <span
-class="keyword">PresentationDocument</span> object, and then passes that
-object to the second overloaded <span
-class="keyword">InsertNewSlide</span> method, which performs the
+presentation file as read/write, gets a **PresentationDocument** object, and then passes that
+object to the second overloaded **InsertNewSlide** method, which performs the
 insertion.
 
 ```csharp
@@ -280,8 +261,7 @@ its properties.
         slide.CommonSlideData.ShapeTree.AppendChild(New GroupShapeProperties())
 ```
 
-The next section of the second overloaded <span
-class="keyword">InsertNewSlide</span> method adds a title shape to the
+The next section of the second overloaded **InsertNewSlide** method adds a title shape to the
 slide and sets its properties, including its text
 
 ```csharp
@@ -324,8 +304,7 @@ slide and sets its properties, including its text
          (New Drawing.Run(New Drawing.Text() With {.Text = slideTitle})))
 ```
 
-The next section of the second overloaded <span
-class="keyword">InsertNewSlide</span> method adds a body shape to the
+The next section of the second overloaded **InsertNewSlide** method adds a body shape to the
 slide and sets its properties, including its text.
 
 ```csharp
@@ -359,8 +338,7 @@ slide and sets its properties, including its text.
         bodyShape.TextBody = New TextBody(New Drawing.BodyProperties(), New Drawing.ListStyle(), New Drawing.Paragraph())
 ```
 
-The final section of the second overloaded <span
-class="keyword">InsertNewSlide</span> method creates a new slide part,
+The final section of the second overloaded **InsertNewSlide** method creates a new slide part,
 finds the specified index position where to insert the slide, and then
 inserts it and saves the modified presentation.
 

@@ -40,9 +40,7 @@ this topic.
 
 ## Create a SpreadsheetDocument Object
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> class represents an
+In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
 Excel document package. To create an Excel document, you create an
 instance of the **SpreadsheetDocument** class
 and populate it with parts. At a minimum, the document must have a
@@ -50,19 +48,12 @@ workbook part that serves as a container for the document, and at least
 one worksheet part. The text is represented in the package as XML using
 **SpreadsheetML** markup.
 
-To create the class instance from the document you call one of the <span
-sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open"><span
-class="nolink">Open()</span></span> overload methods. In this example,
+To create the class instance from the document you call one of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) overload methods. In this example,
 you need to open the file for read access only. Therefore, you can use
-the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method, and set the
+the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) method, and set the
 Boolean parameter to **false**.
 
-The following code example calls the Open method to <span
-class="keyword">Open</span> the file specified by the <span
-class="term">filepath</span> for read-only access.
+The following code example calls the Open method to **Open** the file specified by the **filepath** for read-only access.
 
 ```csharp
     // Open file as read-only.
@@ -78,28 +69,15 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="term">mySpreadsheet</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **mySpreadsheet**.
 
 
 ## Basic Structure of a SpreadsheetML Document
 
-The basic document structure of a <span
-class="keyword">SpreadsheetML</span> document consists of the <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
-class="nolink">Sheets</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span> elements, which reference the
-worksheets in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook"><span
-class="nolink">Workbook</span></span>. A separate XML file is created
-for each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet"><span
-class="nolink">Worksheet</span></span>. For example, the <span
-class="keyword">SpreadsheetML</span> for a workbook that has two
+The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
+worksheets in the [Workbook](https://msdn.microsoft.comlibrary/office/documentformat.openxml.spreadsheet.workbook.aspx). A separate XML file is created
+for each [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). For example, the **SpreadsheetML** for a workbook that has two
 worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
 file and is shown in the following code example.
 
@@ -114,19 +92,8 @@ file and is shown in the following code example.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData"><span
-class="nolink">SheetData</span></span>. <span
-class="keyword">sheetData</span> represents the cell table and contains
-one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row"><span
-class="nolink">Row</span></span> elements. A <span
-class="keyword">row</span> contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell"><span
-class="nolink">Cell</span></span> elements. Each cell contains a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue"><span
-class="nolink">CellValue</span></span> element that represents the value
+[SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
+one or more [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is shown in the following code example.
@@ -145,15 +112,10 @@ Sheet1.xml file and is shown in the following code example.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content that uses strongly-typed classes that correspond to <span
-class="keyword">SpreadsheetML</span> elements. You can find these
-classes in the <span
-class="keyword">DocumentFormat.OpenXML.Spreadsheet</span> namespace. The
+content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
+classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
-the **workbook**, <span
-class="keyword">sheets</span>, **sheet**, <span
-class="keyword">worksheet</span>, and <span
-class="keyword">sheetData</span> elements.
+the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
 | SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -170,17 +132,13 @@ class="keyword">sheetData</span> elements.
 ## How the Sample Code Works
 
 The code in this how-to consists of three methods (functions in Visual
-Basic): **GetColumnHeading**, <span
-class="keyword">GetColumnName</span>, and <span
-class="keyword">GetRowIndex</span>. The last two methods are called from
+Basic): **GetColumnHeading**, **GetColumnName**, and **GetRowIndex**. The last two methods are called from
 within the **GetColumnHeading** method.
 
 The **GetColumnName** method takes the cell
 name as a parameter. It parses the cell name to get the column name by
 creating a regular expression to match the column name portion of the
-cell name. For more information about regular expressions, see [Regular
-Expression Language
-Elements](http://msdn.microsoft.com/en-us/library/az24scfc.aspx).
+cell name. For more information about regular expressions, see [Regular Expression Language Elements](http://msdn.microsoft.com/en-us/library/az24scfc.aspx).
 
 ```csharp
     // Create a regular expression to match the column name portion of the cell name.
@@ -223,8 +181,7 @@ in the column for which to get the heading.
 
 The code gets the name of the column of the specified cell by calling
 the **GetColumnName** method. The code also
-gets the cells in the column and orders them by row using the <span
-class="keyword">GetRowIndex</span> method.
+gets the cells in the column and orders them by row using the **GetRowIndex** method.
 
 ```csharp
     // Get the column name for the specified cell.
@@ -260,15 +217,11 @@ method. The first cell contains the heading.
     Dim headCell As Cell = cells.First()
 ```
 
-If the content of the cell is stored in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SharedStringTablePart"><span
-class="nolink">SharedStringTablePart</span></span> object, it gets the
+If the content of the cell is stored in the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object, it gets the
 shared string items and returns the content of the column heading using
 the
 [M:System.Int32.Parse(System.String)](http://msdn.microsoft.com/en-us/library/b3h1hf19.aspx)
-method. If the content of the cell is not in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable"><span
-class="nolink">SharedStringTable</span></span> object, it returns the
+method. If the content of the cell is not in the [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object, it returns the
 content of the cell.
 
 ```csharp
@@ -304,8 +257,7 @@ content of the cell.
 ## Sample Code
 
 The following code example shows how to retrieve the column heading
-using the name of the column. You can call the <span
-class="keyword">GetColumnHeading</span> method by using a call like the
+using the name of the column. You can call the **GetColumnHeading** method by using a call like the
 following example that uses the file "Sheet4.xlsx."
 
 ```csharp

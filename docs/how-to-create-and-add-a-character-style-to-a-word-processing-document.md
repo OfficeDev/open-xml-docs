@@ -21,8 +21,7 @@ processing document. It contains an example
 **CreateAndAddCharacterStyle** method to illustrate this task, plus a
 supplemental example method to add the styles part when it is necessary.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -240,8 +239,7 @@ second run.
 
 WordprocessingML supports six style types, four of which you can specify
 using the type attribute on the style element. The following
-information, from section 17.7.4.17 in the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification,
+information, from section 17.7.4.17 in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification,
 introduces style types.
 
 *Style types* refers to the property on a style which defines the type
@@ -279,7 +277,7 @@ the following code example.
 ```
 
 The type attribute has a value of paragraph, which indicates that the
-following style definition is a paragraph style. *end example*]
+following style definition is a paragraph style. *end example*
 
 © ISO/IEC29500: 2008.
 
@@ -360,14 +358,8 @@ styles element is created and saved to the part.
 
 ## Creating the Style
 
-To create the style, the code instantiates the <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Style"><span
-class="nolink">Style</span></span> class and sets certain properties,
-such as the <span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type"><span
-class="nolink">Type</span></span> of style (paragraph), the <span
-sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId"><span
-class="nolink">StyleId</span></span>, and whether the style is a <span
-sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle"><span
-class="nolink">CustomStyle</span></span>.
+To create the style, the code instantiates the [Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx) class and sets certain properties,
+such as the [Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx) of style (paragraph), the [StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx), and whether the style is a [CustomStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx).
 
 ```csharp
     // Create a new character style and specify some of the attributes.
@@ -396,9 +388,7 @@ The code results in the following XML.
 
 The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
-corresponding class, and then call the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.Append(DocumentFormat.OpenXml.OpenXmlElement[])"><span
-class="nolink">Append([])</span></span> method to add the child element
+corresponding class, and then call the [Append(\[\])](https://msdn.microsoft.com/library/office/cc801361.aspx) method to add the child element
 to the style. For more information about these properties, see section
 17.7 of the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification.
 
@@ -425,16 +415,11 @@ to the style. For more information about these properties, see section
     style.Append(linkedStyle1)
 ```
 
-Next, the code instantiates a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties"><span
-class="nolink">StyleRunProperties</span></span> object to create a <span
-class="keyword">rPr</span> (Run Properties) element. You specify the
+Next, the code instantiates a [StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx) object to create a **rPr** (Run Properties) element. You specify the
 character properties that apply to the style, such as font and color, in
-this element. The properties are then appended as children of the <span
-class="keyword">rPr</span> element.
+this element. The properties are then appended as children of the **rPr** element.
 
-When the run properties are created, the code appends the <span
-class="keyword">rPr</span> element to the style, and the style element
+When the run properties are created, the code appends the **rPr** element to the style, and the style element
 to the styles root element in the styles part.
 
 ```csharp
@@ -507,8 +492,7 @@ referencing the styleId attribute value for this style in the run
 properties' **rStyle** element. The following
 code example shows how to apply a style to a run referenced by the
 variable r. The style ID of the style to apply, OverdueAmountChar in
-this example, is stored in the RunStyle property of the <span
-class="keyword">rPr</span> object. This property represents the run
+this example, is stored in the RunStyle property of the **rPr** object. This property represents the run
 properties' **rStyle** element.
 
 ```csharp
@@ -545,8 +529,7 @@ properties' **rStyle** element.
 
 ## Sample Code
 
-The following is the complete <span
-class="keyword">CreateAndAddCharacterStyle</span> code sample in both
+The following is the complete **CreateAndAddCharacterStyle** code sample in both
 C\# and Visual Basic.
 
 ```csharp

@@ -70,8 +70,7 @@ the end of this topic.
 The Sample Code section also shows the code required to set up for
 calling the sample method. To use the method to apply a style to a
 paragraph in a document, you first need a reference to the open
-document. In the Open XML SDK, the <span sdata="cer" target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class represents a
+document. In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
 Word document package. To open and work with a Word document, you create
 an instance of the **WordprocessingDocument**
 class from the document. After you create the instance, you can use it
@@ -79,11 +78,8 @@ to obtain access to the main document part that contains the text of the
 document. The content in the main document part is represented in the
 package as XML using WordprocessingML markup.
 
-To create the class instance, you call one of the overloads of the <span
-sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open"><span class="nolink">Open()</span></span> method. The following sample code
-shows how to use the <span sdata="cer" target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">WordprocessingDocument.Open</span></span> overload. The
+To create the class instance, you call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method. The following sample code
+shows how to use the [WordprocessingDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) overload. The
 first parameter takes a string that represents the full path to the
 document to open. The second parameter takes a value of <span
 class="keyword">true</span> or **false** and
@@ -109,14 +105,11 @@ access to the file.
 ## Understanding the Structure of a WordprocessingML Document
 
 The basic document structure of a WordprocessingML document consists of
-the **document** and <span
-class="keyword">body</span> elements, followed by one or more block
+the **document** and **body** elements, followed by one or more block
 level elements such as **p**, which represents
-a paragraph. A paragraph contains one or more <span
-class="keyword">r</span> elements. The **r**
+a paragraph. A paragraph contains one or more **r** elements. The **r**
 stands for run, which is a region of text with a common set of
-properties, such as formatting. A run contains one or more <span
-class="keyword">t</span> elements. The **t**
+properties, such as formatting. A run contains one or more **t** elements. The **t**
 element contains a range of text. The following code example shows the
 WordprocessingML markup for a document that contains the text "Example
 text."
@@ -142,26 +135,20 @@ The root element is document, which specifies the contents of the main
 document part in a WordprocessingML document. Using the Open XML SDK
 2.5, you can create document structure and content using strongly-typed
 classes that correspond to WordprocessingML elements. You will find
-these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements.
+correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| document | Document | The root element for the main document part. |
-| body | Body | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
-| p | Paragraph | A paragraph. |
-| r | Run | A run. |
-| t | Text | A range of text. |
+| document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
+| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
+| p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
+| r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
+| t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
 For more information about the overall structure of the parts and
-elements of a WordprocessingML document, see <span
-sdata="link">[Structure of a WordprocessingML document (Open XML
-SDK)](structure-of-a-wordprocessingml-document.md)</span>.
+elements of a WordprocessingML document, see [Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.md).
 
 
 ## Getting the Paragraph to Style
@@ -169,8 +156,7 @@ SDK)](structure-of-a-wordprocessingml-document.md)</span>.
 After opening the file, the sample code retrieves a reference to the
 first paragraph. Because a typical word processing document body
 contains many types of elements, the code filters the descendants in the
-body of the document to those of type <span
-class="keyword">Paragraph</span>. The
+body of the document to those of type **Paragraph**. The
 [ElementAtOrDefault](http://msdn.microsoft.com/en-us/library/bb494386.aspx)
 method is then employed to retrieve a reference to the paragraph.
 Because the elements are indexed starting at zero, you pass a zero to
@@ -250,16 +236,10 @@ following sample markup shows a pStyle element that specifies the
 ```
 
 In the Open XML SDK, the **pPr** element is
-represented by the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties"><span
-class="nolink">ParagraphProperties</span></span> class. The code
+represented by the [ParagraphProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraphproperties.aspx) class. The code
 determines if the element exists, and creates a new instance of the
 **ParagraphProperties** class if it does not.
-The **pPr** element is a child of the <span
-class="keyword">p</span> (paragraph) element; consequently, the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.PrependChild``1(``0)"><span
-class="nolink">PrependChild\<T\>(T)</span></span> method is used to add
+The **pPr** element is a child of the **p** (paragraph) element; consequently, the [PrependChild\<T\>(T)](https://msdn.microsoft.com/library/office/cc883719.aspx) method is used to add
 the instance, as shown in the following code example.
 
 ```csharp
@@ -322,14 +302,10 @@ it does not.
 ```
 
 The **AddStylesPartToPackage** example method
-does the work of adding the styles part. It creates a part of the <span
-class="keyword">StyleDefinitionsPart</span> type, adding it as a child
-to the main document part. The code then appends the <span
-class="keyword">Styles</span> root element, which is the parent element
+does the work of adding the styles part. It creates a part of the **StyleDefinitionsPart** type, adding it as a child
+to the main document part. The code then appends the **Styles** root element, which is the parent element
 that contains all of the styles. The **Styles**
-element is represented by the<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Styles"><span
-class="nolink">Styles</span></span> class in the Open XML SDK. Finally,
+element is represented by the [Styles](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.styles.aspx) class in the Open XML SDK. Finally,
 the code saves the part.
 
 ```csharp
@@ -428,11 +404,7 @@ to add the style.
 ```
 
 Within the **IsStyleInDocument** example
-method, the work begins with retrieving the <span
-class="keyword">Styles</span> element through the <span
-class="keyword">Styles</span> property of the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.StyleDefinitionsPart"><span
-class="nolink">StyleDefinitionsPart</span></span> of the main document
+method, the work begins with retrieving the **Styles** element through the **Styles** property of the [StyleDefinitionsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.styledefinitionspart.aspx) of the main document
 part, and then determining whether any styles exist as children of that
 element. All style elements are stored as children of the styles
 element.
@@ -513,15 +485,8 @@ parameter takes the style name. The <span
 class="keyword">AddNewStyle</span> code creates the named style
 definition within the specified part.
 
-To create the style, the code instantiates the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Style"><span
-class="nolink">Style</span></span> class and sets certain properties,
-such as the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type"><span
-class="nolink">Type</span></span> of style (paragraph) and <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId"><span
-class="nolink">StyleId</span></span>. As mentioned above, the styleid is
+To create the style, the code instantiates the [Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx) class and sets certain properties,
+such as the [Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx) of style (paragraph) and [StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx). As mentioned above, the styleid is
 used by the document to refer to the style, and can be thought of as its
 primary identifier. Typically you use the styleid to identify a style in
 code. A style can also have a separate user friendly style name to be
@@ -546,10 +511,7 @@ the font and color characteristics for the runs in a paragraph, you use
 the run properties.
 
 To create the **rPr** element with the
-appropriate child elements, the code creates an instance of the <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties"><span
-class="nolink">StyleRunProperties</span></span> class and then appends
+appropriate child elements, the code creates an instance of the [StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx) class and then appends
 instances of the appropriate property classes. For this code example,
 the style specifies the Lucida Console font, a point size of 12,
 rendered in bold and italic, using the Accent2 color from the document
@@ -649,11 +611,8 @@ Now, the example code has located the paragraph, added the required
 paragraph properties element if required, checked for the styles part
 and added it if required, and checked for the style and added it if
 required. Now, set the paragraph style. To accomplish this task, the
-code creates an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleId"><span
-class="nolink">ParagraphStyleId</span></span> class with the styleid and
-then places a reference to that instance in the <span
-class="keyword">ParagraphStyleId</span> property of the paragraph
+code creates an instance of the [ParagraphStyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraphstyleid.aspx) class with the styleid and
+then places a reference to that instance in the **ParagraphStyleId** property of the paragraph
 properties object. This creates and assigns the appropriate value to the
 **pStyle** element that specifies the style to use for the paragraph.
 
@@ -674,8 +633,7 @@ You can use the **ApplyStyleToParagraph**
 example method to apply a named style to a paragraph in a word
 processing document using the Open XML SDK. The following code shows how
 to open and acquire a reference to a word processing document, retrieve
-a reference to the first paragraph, and then call the <span
-class="keyword">ApplyStyleToParagraph</span> method.
+a reference to the first paragraph, and then call the **ApplyStyleToParagraph** method.
 
 To call the method, pass the reference to the document as the first
 parameter, the styleid of the style to apply as the second parameter,

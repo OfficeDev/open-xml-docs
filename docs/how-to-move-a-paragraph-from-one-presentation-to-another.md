@@ -38,16 +38,11 @@ this topic.
 
 ## Getting a PresentationDocument Object
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-<span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method that uses a
+[Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx) method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. To open a document for read/write,
 specify the value **true** for this parameter
@@ -72,26 +67,20 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case *doc*.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case *doc*.
 
 
 ## Basic Presentation Document Structure
 
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of a number of
+The basic document structure of a **PresentationML** document consists of a number of
 parts, among which is the main part that contains the presentation
-definition. The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
-introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+definition. The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part
 > starts with a presentation root element. That element contains a
-> presentation, which, in turn, refers to a <span
-> class="keyword">slide</span> list, a *slide master* list, a *notes
+> presentation, which, in turn, refers to a **slide** list, a *slide master* list, a *notes
 > master* list, and a *handout master* list. The slide list refers to
 > all of the slides in the presentation; the slide master list refers to
 > the entire slide masters used in the presentation; the notes master
@@ -149,27 +138,21 @@ two slides denoted by the ID 267 and 256.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
-elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements.
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| sld | Slide | Presentation Slide. It is the root element of SlidePart. |
-| sldLayout | SlideLayout | Slide Layout. It is the root element of SlideLayoutPart. |
-| sldMaster | SlideMaster | Slide Master. It is the root element of SlideMasterPart. |
-| notesMaster | NotesMaster | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
+| sld | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) | Presentation Slide. It is the root element of SlidePart. |
+| sldLayout | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) | Slide Layout. It is the root element of SlideLayoutPart. |
+| sldMaster | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) | Slide Master. It is the root element of SlideMasterPart. |
+| notesMaster | [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 
 ## Structure of the Shape Text Body
 
-The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the structure of this element.
 
 > This element specifies the existence of text to be contained within
@@ -211,9 +194,8 @@ paragraph is moved. The method opens both presentation files and then
 calls the **GetFirstSlide** method to get the
 first slide in each file. It then gets the first <span
 class="keyword">TextBody</span> shape in each slide and the first
-paragraph in the source shape. It performs a <span class="term">deep
-clone</span> of the source paragraph, copying not only the source <span
-class="keyword">Paragraph</span> object itself, but also everything
+paragraph in the source shape. It performs a **deep
+clone** of the source paragraph, copying not only the source **Paragraph** object itself, but also everything
 contained in that object, including its text. It then inserts the cloned
 paragraph in the target file and removes the source paragraph from the
 source file, replacing it with a placeholder paragraph. Finally, it
