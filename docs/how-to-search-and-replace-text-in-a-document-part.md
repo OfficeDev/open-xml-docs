@@ -35,7 +35,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Packages and Document Parts 
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
 package can have multiple parts with relationships between them. The
@@ -50,7 +50,7 @@ a word-processing document package.
 
 
 ---------------------------------------------------------------------------------
-
+## Getting a WordprocessingDocument Object 
 In the sample code, you start by opening the word processing file by
 instantiating the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
@@ -94,7 +94,7 @@ long as you use **using**.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works 
 After you have opened the file for editing, you read it by using a <span
 class="keyword">StreamReader</span> object.
 
@@ -129,7 +129,7 @@ Expressions](http://msdn.microsoft.com/en-us/library/hs600312.aspx)
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 The following example demonstrates a quick and easy way to search and
 replace. It may not be reliable because it retrieves the XML document in
 string format. Depending on the regular expression you might
@@ -203,7 +203,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

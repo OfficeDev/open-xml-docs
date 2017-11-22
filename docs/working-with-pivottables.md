@@ -25,7 +25,7 @@ SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)
 
 
 --------------------------------------------------------------------------------
-
+## PivotTable in SpreadsheetML 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the <span
 class="keyword">PivotTableDefinition</span> (\<<span
@@ -107,7 +107,7 @@ pivotCacheRecords|PivotCacheRecords
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 PivotTableDefinition Class 
 The Open XML SDK 2.5**PivotTableDefinition**
 class represents the PivotTable definition (\<<span
 class="keyword">pivotTableDefinition</span>\>) element defined in the

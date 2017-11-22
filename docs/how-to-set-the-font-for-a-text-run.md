@@ -35,7 +35,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Packages and Document Parts
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
 package can have multiple parts with relationships between them. The
@@ -50,7 +50,7 @@ a word-processing document package.
 
 
 --------------------------------------------------------------------------------
-
+## Create a WordprocessingDocument Object
 The code example opens a word processing document package by passing a
 file name as an argument to one of the overloaded <span sdata="cer"
 target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open"><span
@@ -97,7 +97,7 @@ long as you use using.
 
 
 --------------------------------------------------------------------------------
-
+## Structure of the Run Fonts Element
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification can
 be useful when working with **rFonts** element.
@@ -156,7 +156,7 @@ for all characters in the Complex Script range.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 After opening the package file for read/write, the code creates a <span
 class="keyword">RunProperties</span> object that contains a <span
 class="keyword">RunFonts</span> object that has its <span
@@ -229,7 +229,7 @@ in the Wordprocessing package).
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following is the code you can use to change the font of the first
 paragraph of a Word-processing document. For instance, you can invoke
 the **SetRunFont** method in your program to
@@ -296,7 +296,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

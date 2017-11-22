@@ -34,7 +34,7 @@ this topic.
 ```
 
 -----------------------------------------------------------------------------
-
+## Packages and Document Parts 
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
 package can have multiple parts with relationships between them. The
@@ -49,7 +49,7 @@ a word-processing document package.
 
 
 -----------------------------------------------------------------------------
-
+## Getting a WordprocessingDocument Object 
 The code starts with opening a package file by passing a file name to
 one of the overloaded <span sdata="cer" target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open"><span class="nolink">Open()</span></span> methods of the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
@@ -91,7 +91,7 @@ long as you use **using**.
 
 
 -----------------------------------------------------------------------------
-
+## Basic Structure of a WordProcessingML Document 
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
 class="keyword">document</span> and **body**
@@ -137,7 +137,7 @@ class="keyword">r</span>, and **t** elements,
 | t | Text | A range of text. |
 
 -----------------------------------------------------------------------------
-
+## How the Sample Code Works 
 After opening the document for editing, in the <span
 class="keyword">using</span> statement, as a <span
 class="keyword">WordprocessingDocument</span> object, the code creates a
@@ -170,7 +170,7 @@ class="keyword">CustomXmlPart</span> part.
 ```
 
 -----------------------------------------------------------------------------
-
+## Sample Code 
 The following code adds a new document part that contains custom XML
 from an external file and then populates the part. To call the
 AddCustomXmlPart method in your program, you can use the following
@@ -228,7 +228,7 @@ Following is the complete code example in both C\# and Visual Basic.
 ```
 
 -----------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

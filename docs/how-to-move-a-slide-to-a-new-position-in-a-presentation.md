@@ -37,7 +37,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Getting a Presentation Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
 class="nolink">PresentationDocument</span></span> class represents a
@@ -85,7 +85,7 @@ class="keyword">presentationDocument</span>.
 
 
 --------------------------------------------------------------------------------
-
+## Basic Presentation Document Structure
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of a number of
 parts, among which is the main part that contains the presentation
@@ -173,7 +173,7 @@ class="keyword">notesMaster</span> elements.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 In order to move a specific slide in a presentation file to a new
 position, you need to know first the number of slides in the
 presentation. Therefore, the code in this topic is divided into two
@@ -182,7 +182,7 @@ moving a slide to a new position.
 
 
 --------------------------------------------------------------------------------
-
+## Counting the Number of Slides
 The sample code for counting the number of slides consists of two
 overloads of the method **CountSlides**. The
 first overload uses a **string** parameter and
@@ -256,7 +256,7 @@ class="keyword">slideCount</span> and returns it.
 ```
 
 --------------------------------------------------------------------------------
-
+## Moving a Slide from one Position to Another
 Moving a slide to a new position requires opening the file for
 read/write access by specifying the value <span
 class="keyword">true</span> to the Boolean parameter as shown in the
@@ -440,7 +440,7 @@ modified presentation is saved.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 Following is the complete sample code that you can use to move a slide
 from one position to another in the same presentation file. For
 instance, you can use the following call in your program to move a slide
@@ -667,7 +667,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

@@ -37,7 +37,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Getting a PresentationDocument Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
 class="nolink">PresentationDocument</span></span> class represents a
@@ -86,7 +86,7 @@ class="term">document</span>.
 
 
 --------------------------------------------------------------------------------
-
+## Basic Presentation Document Structure
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of the main part
 that contains the presentation definition. The following text from the
@@ -174,7 +174,7 @@ class="keyword">notesMaster</span> elements.
 
 
 --------------------------------------------------------------------------------
-
+## Structure of the Hyperlink Element
 In this how-to code example, you are going to work with external
 hyperlinks. Therefore, it is best to familiarize yourself with the
 hyperlink element. The following text from the [ISO/IEC
@@ -226,7 +226,7 @@ introduces the **id** (Hyperlink Target).
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 The sample code in this topic consists of one method that takes as a
 parameter the full path of the presentation file. It iterates through
 all the slides in the presentation and returns a list of strings that
@@ -273,7 +273,7 @@ hyperlinks in the presentation.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 Following is the complete code sample that you can use to return the
 list of all external links in a presentation. You can use the following
 loop in your program to call the <span
@@ -371,7 +371,7 @@ get the list of URIs in your presentation.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

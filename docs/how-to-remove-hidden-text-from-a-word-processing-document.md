@@ -35,7 +35,7 @@ this topic.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Getting a WordprocessingDocument Object
 To open an existing document, you instantiate the <span
 class="keyword">WordprocessingDocument</span> class as shown in the
 following **using** statement. In the same
@@ -76,7 +76,7 @@ long as you use **using**.
 
 
 --------------------------------------------------------------------------------
-
+## Structure of a WordProcessingML Document
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
 class="keyword">document</span> and **body**
@@ -123,7 +123,7 @@ t|Text |A range of text.
 
 
 ---------------------------------------------------------------------------------
-
+## Structure of the Vanish Element
 The **vanish** element plays an important role in hiding the text in a
 Word file. The **Hidden** formatting property is a toggle property,
 which means that its behavior differs between using it within a style
@@ -184,7 +184,7 @@ is turned off.
 
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code example shows how to remove all of the hidden text
 from a document. You can call the method, WDDeleteHiddenText, by using
 the following call as an example to delete the hidden text from a file
@@ -273,7 +273,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

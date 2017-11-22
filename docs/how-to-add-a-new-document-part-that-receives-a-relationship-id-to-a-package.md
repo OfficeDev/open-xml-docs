@@ -41,7 +41,7 @@ this topic.
 ```
 
 -----------------------------------------------------------------------------
-
+## Packages and Document Parts 
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
 package can have multiple parts with relationships between them. The
@@ -56,7 +56,7 @@ a word-processing document package.
 
 
 -----------------------------------------------------------------------------
-
+## The Structure of a WordProcessingML Document 
 The basic document structure of a <span
 class="keyword">WordProcessingML</span> document consists of the <span
 class="keyword">document</span> and **body**
@@ -102,7 +102,7 @@ class="keyword">r</span>, and **t** elements.
 | t | Text | A range of text. |
 
 -----------------------------------------------------------------------------
-
+## How the Sample Code Works 
 The sample code, in this how-to, starts by passing in a parameter that
 represents the path to the Word document. It then creates a document as
 a **WordprocessingDocument** object.
@@ -212,7 +212,7 @@ the **wordDoc** object.
 > The **AddNewPart&lt;T&gt;*** method creates a relationship from the current document part to the new document part. This method returns the new document part. Also, you can use the **DataPart.FeedData** method to fill the document part.
 
 -----------------------------------------------------------------------------
-
+## Sample Code 
 The following code, adds a new document part that contains custom XML
 from an external file and then populates the document part. You can call
 the method **AddNewPart** by using a call like
@@ -314,7 +314,7 @@ The following is the complete code example in both C\# and Visual Basic.
 ```
 
 -----------------------------------------------------------------------------
-
+## See also 
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

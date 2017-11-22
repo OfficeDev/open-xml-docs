@@ -46,7 +46,7 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## DeleteComments Method
 You can use the **DeleteComments** method to
 delete all of the comments from a word processing document, or only
 those written by a specific author. As shown in the following code, the
@@ -71,7 +71,7 @@ an author name, the code deletes all comments.
 ```
 
 --------------------------------------------------------------------------------
-
+## Calling the DeleteComments Method
 To call the **DeleteComments** method, provide
 the required parameters as shown in the following code.
 
@@ -86,7 +86,7 @@ the required parameters as shown in the following code.
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Code Works
 The following code starts by opening the document, using the <span
 sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
@@ -142,7 +142,7 @@ in proceeding, as there cannot be any comments to delete.
 ```
 
 --------------------------------------------------------------------------------
-
+## Creating the List of Comments
 The code next performs two tasks: creating a list of all the comments to
 delete, and creating a list of comment IDs that correspond to the
 comments to delete. Given these lists, the code can both delete the
@@ -209,7 +209,7 @@ of strings that contain all the comment ID values.
 ```
 
 --------------------------------------------------------------------------------
-
+## Deleting Comments and Saving the Part
 Given the **commentsToDelete** collection, to
 the following code loops through all the comments that require deleting
 and performs the deletion. The code then saves the comments part.
@@ -238,7 +238,7 @@ and performs the deletion. The code then saves the comments part.
 ```
 
 --------------------------------------------------------------------------------
-
+## Deleting Comment References in the Document
 Although the code has successfully removed all the comments by this
 point, that is not enough. The code must also remove references to the
 comments from the document part. This action requires three steps
@@ -337,7 +337,7 @@ saving the document.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following is the complete code sample in both C\# and Visual Basic.
 
 ```csharp
@@ -494,7 +494,7 @@ The following is the complete code sample in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

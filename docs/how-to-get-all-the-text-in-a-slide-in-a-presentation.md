@@ -41,7 +41,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Getting a PresentationDocument object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
 class="nolink">PresentationDocument</span></span> class represents a
@@ -88,7 +88,7 @@ class="keyword">presentationDocument</span>.
 
 
 --------------------------------------------------------------------------------
-
+## Basic Presentation Document Structure
 The basic document structure of a <span
 class="keyword">PresentationML</span> document consists of the main part
 that contains the presentation definition. The following text from the
@@ -180,7 +180,7 @@ class="keyword">notesMaster</span> elements.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 The sample code consists of three overloads of the <span
 class="keyword">GetAllTextInSlide</span> method. In the following
 segment, the first overloaded method opens the source presentation that
@@ -419,7 +419,7 @@ the specified slide in the presentation.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 Following is the complete sample code that you can use to get all the
 text in a specific slide in a presentation file. For example, you can
 use the following **foreach** loop in your
@@ -646,7 +646,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

@@ -25,7 +25,7 @@ PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.m
 
 
 ---------------------------------------------------------------------------------
-
+## Handout Master Slides in PresentationML
 The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<handoutMaster\>
 element used to represent a handout master slide in a PresentationML
@@ -54,7 +54,7 @@ SDK 2.5 classes that correspond to them.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 HandoutMaster Class
 The Open XML SDK 2.5**HandoutMaster** class
 represents the \<handoutMaster\> element defined in the Open XML File
 Format schema for PresentationML documents. Use the <span
@@ -143,7 +143,7 @@ slide numbering, and custom header and footer text.
 
 
 --------------------------------------------------------------------------------
-
+## Working with the HandoutMaster Class
 As shown in the Open XML SDK code sample that follows, every instance of
 the **HandoutMaster** class is associated with
 an instance of the <span sdata="cer"
@@ -167,7 +167,7 @@ class="nolink">Shape</span></span> class.
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK Code Example
 The following method adds a new handout master part to an existing
 presentation and creates an instance of an Open XML SDK 2.5<span
 class="keyword">HandoutMaster</span> class in the new handout master
@@ -266,7 +266,7 @@ namespace.
 
 ```
 ---------------------------------------------------------------------------------
-
+## Generated PresentationML
 When the Open XML SDK 2.5 code is run, the following XML is written to
 the PresentationML document referenced in the code.
 
@@ -323,7 +323,7 @@ the PresentationML document referenced in the code.
 
 ```
 --------------------------------------------------------------------------------
-
+## See also
 #### Concepts
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  

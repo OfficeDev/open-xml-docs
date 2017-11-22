@@ -47,7 +47,7 @@ the code in this topic.
 ```
 
 -----------------------------------------------------------------------------
-
+## SetPrintOrientation Method
 You can use the **SetPrintOrientation** method
 to change the print orientation of a word processing document. The
 method accepts two parameters that indicate the name of the document to
@@ -76,7 +76,7 @@ the width, height, and margins for each section.
 
 
 -----------------------------------------------------------------------------
-
+## Calling the Sample SetPrintOrientation Method
 To call the sample **SetPrintOrientation**
 method, pass a string that contains the name of the file to convert. The
 following code shows an example method call.
@@ -92,7 +92,7 @@ following code shows an example method call.
 ```
 
 -----------------------------------------------------------------------------
-
+## How the Code Works
 The following code first opens the document by using the <span
 sdata="cer"
 target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
@@ -133,7 +133,7 @@ each section in turn.
 ```
 
 -----------------------------------------------------------------------------
-
+## Iterating Through All the Sections
 The next block of code iterates through all the sections in the
 collection of **SectionProperties** elements.
 For each section, the code initializes a variable that tracks whether
@@ -173,7 +173,7 @@ not null, the code updates the orientation as required.
 ```
 
 -----------------------------------------------------------------------------
-
+## Setting the Orientation for the Section
 The next block of code first checks whether the <span sdata="cer"
 target="P:DocumentFormat.OpenXml.Wordprocessing.PageSize.Orient"><span
 class="nolink">Orient</span></span> property of the <span
@@ -236,7 +236,7 @@ save the document at the end.)
 ```
 
 -----------------------------------------------------------------------------
-
+## Updating the Page Size
 At this point in the code, the page orientation may have changed. If so,
 the code must complete two more tasks. It must update the page size, and
 update the page margins for the section. The first task is easy—the
@@ -269,7 +269,7 @@ in the **PageSize** element.
 ```
 
 -----------------------------------------------------------------------------
-
+## Updating the Margins
 The next step in the sample procedure handles margins for the section.
 If the page orientation has changed, the code must rotate the margins to
 match. To do so, the code retrieves a reference to the <span sdata="cer"
@@ -330,7 +330,7 @@ margin settings, as shown in the following code.
 ```
 
 -----------------------------------------------------------------------------
-
+## Saving the Document
 After all the modifications, the code determines whether the document
 has changed. If the document has changed, the code saves it.
 
@@ -348,7 +348,7 @@ has changed. If the document has changed, the code saves it.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following is the complete <span
 class="keyword">SetPrintOrientation</span> code sample in C\# and Visual
 Basic.
@@ -544,7 +544,7 @@ Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

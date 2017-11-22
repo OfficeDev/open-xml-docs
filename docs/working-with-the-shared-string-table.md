@@ -24,7 +24,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK
 
 
 --------------------------------------------------------------------------------
-
+## SharedStringTable in SpreadsheetML 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the <span
 class="keyword">SharedStringTable</span> (\<<span
@@ -81,7 +81,7 @@ t|Text
 
 
 --------------------------------------------------------------------------------
-
+## Open XML SDK 2.5 SharedStringTable Class 
 The Open XML SDK 2.5**SharedStringTable** class
 represents the paragraph (\<**sst**\>) element
 defined in the Open XML File Format schema for SpreadsheetML documents.

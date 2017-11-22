@@ -37,7 +37,7 @@ this topic.
 ```
 
 ---------------------------------------------------------------------------------
-
+## When to Open a Document for Read-Only Access
 Sometimes you want to open a document to inspect or retrieve some
 information, and you want to do this in a way that ensures the document
 remains unchanged. In these instances, you want to open the document for
@@ -46,7 +46,7 @@ programmatically open a read-only spreadsheet document.
 
 
 --------------------------------------------------------------------------------
-
+## Getting a SpreadsheetDocument Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
 class="nolink">SpreadsheetDocument</span></span> class represents an
@@ -171,7 +171,7 @@ to the existing workbook part, as shown in the following code example.
 ```
 
 ---------------------------------------------------------------------------------
-
+## Basic Document Structure
 The basic document structure of a SpreadsheetML document consists of the
 <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
@@ -251,7 +251,7 @@ v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 
 
 --------------------------------------------------------------------------------
-
+## Attempt to Generate the SpreadsheetML Markup to Add a Worksheet
 The sample code shows how, when you try to add a new worksheet, you get
 an exception error because the file is read-only. When you have access
 to the body of the main document part, you add a worksheet by calling
@@ -292,7 +292,7 @@ attempts to add the new **WorksheetPart**.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code sample is used to open a Spreadsheet Document for
 Read-only Access. You can call the <span
 class="keyword">OpenSpreadsheetDocumentReadonl</span> method by using
@@ -336,7 +336,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

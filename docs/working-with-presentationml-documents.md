@@ -20,7 +20,7 @@ documents.
 
 
 --------------------------------------------------------------------------------
-
+## In this section 
 [Structure of a PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)  
 
 [Working with animation (Open XML SDK)](working-with-animation.md)  

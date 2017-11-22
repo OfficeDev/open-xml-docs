@@ -42,7 +42,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Opening an Existing Document for Editing
 To open an existing document, instantiate the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
 class="nolink">WordprocessingDocument</span></span> class as shown in
@@ -87,7 +87,7 @@ long as you use **using**.
 
 
 --------------------------------------------------------------------------------
-
+## The XML Representation of the Graphic Object
 The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces the Graphic Object Data element.
@@ -114,7 +114,7 @@ The following XML Schema fragment defines the contents of this element
 ```
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 After you have opened the document, add the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.ImagePart"><span
 class="nolink">ImagePart</span></span> object to the <span sdata="cer"
@@ -262,7 +262,7 @@ class="nolink">Run</span></span>.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code example adds a picture to an existing word document.
 In your code, you can call the <span
 class="keyword">InsertAPicture</span> method by passing in the path of
@@ -420,7 +420,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

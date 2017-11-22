@@ -37,7 +37,7 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Getting a SpreadsheetDocument Object
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
 class="nolink">SpreadsheetDocument</span></span> class represents an
@@ -93,7 +93,7 @@ class="keyword">using</span> statement, in this case *document*.
 
 
 --------------------------------------------------------------------------------
-
+## Basic Structure of a SpreadsheetML Document
 The basic document structure of a <span
 class="keyword">SpreadsheetML</span> document consists of the <span
 sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
@@ -174,7 +174,7 @@ class="keyword">sheetData</span> elements.
 
 
 --------------------------------------------------------------------------------
-
+## How the Sample Code Works
 In the following code example, you delete text from a cell in a <span
 sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
@@ -440,7 +440,7 @@ class="nolink">SharedStringTable</span></span> object.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code
 The following code sample is used to delete text from a specific cell in
 a spreadsheet document. You can run the program by calling the method
 **DeleteTextFromCell** from the file
@@ -461,7 +461,7 @@ a spreadsheet document. You can run the program by calling the method
     Dim colName As String = "B"
     Dim rowIndex As UInteger = 2
     DeleteTextFromCell(docName, sheetName, colName, rowIndex)
-
+``` 
 The following is the complete code sample in both C\# and Visual Basic.
 
 ```csharp
@@ -681,7 +681,7 @@ The following is the complete code sample in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also
 #### Other resources
 
 [Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)  

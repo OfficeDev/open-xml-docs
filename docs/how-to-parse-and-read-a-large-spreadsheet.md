@@ -41,7 +41,7 @@ in this topic.
 ```
 
 --------------------------------------------------------------------------------
-
+## Getting a SpreadsheetDocument Object 
 In the Open XML SDK, the <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
 class="nolink">SpreadsheetDocument</span></span> class represents an
@@ -85,7 +85,7 @@ because the document is opened as read-only.
 ```
 
 --------------------------------------------------------------------------------
-
+## Approaches to Parsing Open XML Files 
 The Open XML SDK provides two approaches to parsing Open XML files. You
 can use the SDK Document Object Model (DOM), or the Simple API for XML
 (SAX) reading and writing features. The SDK DOM is designed to make it
@@ -163,7 +163,7 @@ This is the recommended approach for reading very large files.
 ```
 
 --------------------------------------------------------------------------------
-
+## Sample Code 
 You can imagine a scenario where you work for a financial company that
 handles very large Excel spreadsheets. Those spreadsheets are updated
 daily by analysts and can easily grow to sizes exceeding hundreds of
@@ -283,7 +283,7 @@ The following is the complete code sample in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-
+## See also 
 #### Concepts
 
 [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)  
