@@ -18,7 +18,7 @@ ms.date: 11/01/2017
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically create a word processing document package
-from content in the form of <span class="keyword">WordprocessingML</span> XML markup.
+from content in the form of **WordprocessingML** XML markup.
 
 The following assembly directives are required to compile the code in
 this topic.
@@ -54,30 +54,21 @@ a word-processing document package.
 
 ## Getting a WordprocessingDocument Object
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class represents a
-Word document package. To create a Word document, you create an instance
+In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a Word document package. To create a Word document, you create an instance
 of the **WordprocessingDocument** class and
 populate it with parts. At a minimum, the document must have a main
 document part that serves as a container for the main text of the
-document. The text is represented in the package as XML using <span
-class="keyword">WordprocessingML</span> markup.
+document. The text is represented in the package as XML using **WordprocessingML** markup.
 
-To create the class instance you call the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Create(System.String,DocumentFormat.OpenXml.WordprocessingDocumentType)"><span
-class="nolink">Create(String, WordprocessingDocumentType)</span></span>
+To create the class instance you call the [Create(String, WordprocessingDocumentType)](https://msdn.microsoft.com/library/office/cc535610.aspx)
 method. Several **Create** methods are
 provided, each with a different signature. The sample code in this topic
 uses the **Create** method with a signature
 that requires two parameters. The first parameter takes a full path
 string that represents the document that you want to create. The second
-parameter is a member of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.WordprocessingDocumentType"><span
-class="nolink">WordprocessingDocumentType</span></span> enumeration.
+parameter is a member of the [WordprocessingDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessingdocumenttype.aspx) enumeration.
 This parameter represents the type of document. For example, there is a
-different member of the <span
-class="keyword">WordProcessingDocumentType</span> enumeration for each
+different member of the [WordProcessingDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessingdocumenttype.aspx) enumeration for each
 of document, template, and the macro enabled variety of document and
 template.
 
@@ -101,40 +92,24 @@ The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** () method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing bracket is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">wordDoc</span>. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
-**Dispose** is automatically called when you
-exit the bracketed block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+when the closing bracket is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
+**Dispose** is automatically called when you exit the bracketed block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 Once you have created the Word document package, you can add parts to
-it. To add the main document part you call the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.AddMainDocumentPart"><span
-class="nolink">AddMainDocumentPart()</span></span> method of the <span
-class="keyword">WordprocessingDocument</span> class. Having done that,
+it. To add the main document part you call the [AddMainDocumentPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.addmaindocumentpart.aspx) method of the **WordprocessingDocument** class. Having done that,
 you can set about adding the document structure and text.
 
 
 ## Structure of a WordprocessingML Document
 
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
-contains one or more **r** elements. The <span
-class="keyword">r</span> stands for run, which is a region of text with
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
+contains one or more **r** elements. The **r** stands for run, which is a region of text with
 a common set of properties, such as formatting. A run contains one or
-more **t** elements. The <span
-class="keyword">t</span> element contains a range of text. The <span
-class="keyword">WordprocessingML</span> markup for the document that the
+more **t** elements. The **t** element contains a range of text. The **WordprocessingML** markup for the document that the
 sample code creates is shown in the following code example.
 
 ```xml
@@ -151,13 +126,9 @@ sample code creates is shown in the following code example.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
-elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+elements. You can find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements:
+correspond to the **document**, **body**, **p**, **r**, and **t** elements:
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -169,8 +140,7 @@ class="keyword">r</span>, and **t** elements:
 
 ## How the Sample Code Works 
 
-First, the code creates a <span
-class="keyword">WordprocessingDocument</span> object that represents the
+First, the code creates a **WordprocessingDocument** object that represents the
 package based on the name of the input document. The code then calls the
 **AddMainDocumentPart** method to create a main
 document part as **/word/document.xml** in the
@@ -202,8 +172,7 @@ new package.
     End Sub
 ```
 
-The code then calls the <span
-class="keyword">SetMainDocumentContent</span> method to populate the new
+The code then calls the **SetMainDocumentContent** method to populate the new
 main document part.
 
 ```csharp
@@ -255,8 +224,7 @@ main document part.
 The following is the complete code sample that you can use to create an
 Open XML word processing document package from XML content in the form
 of **WordprocessingML** markup. In your
-program, you can invoke the method <span
-class="keyword">CreateNewWordDocument</span> by using the following
+program, you can invoke the method **CreateNewWordDocument** by using the following
 call:
 
 ```csharp

@@ -45,29 +45,19 @@ this topic.
 
 ## Getting a SpreadsheetDocument Object 
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> class represents an
+In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
 Excel document package. To open and work with an Excel document, you
-create an instance of the <span
-class="keyword">SpreadsheetDocument</span> class from the document.
+create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
 access to the main workbook part that contains the worksheets. The
-content in the document is represented in the package as XML using <span
-class="keyword">SpreadsheetML</span> markup.
+content in the document is represented in the package as XML using **SpreadsheetML** markup.
 
 To create the class instance from the document, you call one of the
-<span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open"><span
-class="nolink">Open()</span></span> methods. Several are provided, each
-with a different signature. The sample code in this topic uses the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method with a
+[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) methods. Several are provided, each
+with a different signature. The sample code in this topic uses the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
-second parameter is either **true** or <span
-class="keyword">false</span> and represents whether you want the file to
+second parameter is either **true** or **false** and represents whether you want the file to
 be opened for editing. Any changes to the document will not be saved if
 this parameter is **false**.
 
@@ -93,25 +83,15 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case *document*.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case *document*.
 
 
 ## Basic Structure of a SpreadsheetML Document 
 
-The basic document structure of a <span
-class="keyword">SpreadsheetML</span> document consists of the \<<span
-class="keyword">sheets</span>\> and \<<span
-class="keyword">sheet</span>\> elements, which reference the worksheets
-in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook"><span
-class="nolink">Workbook</span></span>. A separate XML file is created
-for each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet"><span
-class="nolink">Worksheet</span></span>. For example, the <span
-class="keyword">SpreadsheetML</span> for a workbook that has three
+The basic document structure of a **SpreadsheetML** document consists of the \<**sheets**\> and \<**sheet**\> elements, which reference the worksheets
+in the [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx). A separate XML file is created
+for each [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). For example, the **SpreadsheetML** for a workbook that has three
 worksheets named MySheet1, MySheet2, and Chart1 is located in the
 Workbook.xml file and is shown in the following code example.
 
@@ -133,11 +113,9 @@ Workbook.xml file and is shown in the following code example.
 
 The worksheet XML files contain one or more block level elements such as
 \<**sheetData**\>, which represents the cell
-table and contains one or more row (\<<span
-class="keyword">row</span>\>) elements. A row element contains one or
+table and contains one or more row (\<**row**\>) elements. A row element contains one or
 more cell elements (\<**c**\>). Each cell
-element contains a cell value element (\<<span
-class="keyword">v</span>\>) that represents the value of the cell. For
+element contains a cell value element (\<**v**\>) that represents the value of the cell. For
 example, the **SpreadsheetML** for the first
 worksheet in a workbook, that only has the value 100 in cell A1, is
 located in the Sheet1.xml file and is shown in the following code
@@ -162,14 +140,7 @@ class="keyword">SpreadsheetML</span> elements. You can find these
 classes in the <span
 class="keyword">DocumentFormat.OpenXml.Spreadsheet</span> namespace. The
 following table lists the class names of the classes that correspond to
-the **workbook**, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
-class="nolink">Sheets</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span>, <span
-class="keyword">worksheet</span>, and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData"><span
-class="nolink">SheetData</span></span> elements.
+the **workbook**, [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx), [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx), **worksheet**, and [SheetData<](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx) elements.
 
 | SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -178,17 +149,16 @@ class="nolink">SheetData</span></span> elements.
 | sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
 | worksheet | DocumentFormat.OpenXml.Spreadsheet.Worksheet | A sheet definition file that contains the sheet data. |
 | sheetData | DocumentFormat.OpenXml.Spreadsheet.SheetData | The cell table, grouped together by rows. |
-| row | Row | A row in the cell table. |
-| c | Cell | A cell in a row. |
-| v | CellValue | The value of a cell. |
+| row | [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) | A row in the cell table. |
+| c | [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) | A cell in a row. |
+| v | [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) | The value of a cell. |
 
 
 ## Row Element
 
 In this how-to, you are going to deal with the row, cell, and cell value
 elements. Therefore it is useful to familiarize yourself with these
-elements. The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+elements. The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces row (\<**row**\>) element.
 
 > The row element expresses information about an entire row of a
@@ -241,8 +211,7 @@ element.
 
 ## Cell Element
 
-The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces cell (\<**c**\>) element.
 
 > This collection represents a cell in the worksheet. Information about
@@ -285,8 +254,7 @@ element.
 
 ## Cell Value Element
 
-The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
 introduces Cell Value (\<**c**\>) element.
 
 > This element expresses the value contained in a cell. If the cell
@@ -297,11 +265,7 @@ introduces Cell Value (\<**c**\>) element.
 > element.
 
 > For applications not wanting to implement the shared string table, an
-> "inline string" may be expressed in an \<<span
-> class="keyword">is</span>\> element under \<<span
-> class="keyword">c</span>\> (instead of a \<<span
-> class="keyword">v</span>\> element under \<<span
-> class="keyword">c</span>\>), in the same way a string would be
+> "inline string" may be expressed in an \<**is**\> element under \<**c**\> (instead of a \<**v**\> element under \<**c**\>), in the same way a string would be
 > expressed in the shared string table.
 
 > © ISO/IEC29500: 2008.
@@ -317,25 +281,8 @@ In the following example cell B4 contains the number 360.
 ## How the Sample Code Works
 
 After opening the spreadsheet file for read/write access, the code
-verifies if the specified worksheet exists. It then adds a new <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.DrawingsPart"><span
-class="nolink">DrawingsPart</span></span> object using the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.AddNewPart``1"><span
-class="nolink">AddNewPart</span></span> method, appends it to the
-worksheet, and saves the worksheet part. The code then adds a new <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Packaging.ChartPart"><span
-class="nolink">ChartPart</span></span> object, appends a new <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.ChartPart.ChartSpace"><span
-class="nolink">ChartSpace</span></span> object to the <span
-class="keyword">ChartPart</span> object, and then appends a new <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Drawing.Charts.ChartSpace.EditingLanguage"><span
-class="nolink">EditingLanguage</span></span> object to the <span
-class="keyword">ChartSpace</span> object that specifies the language for
-the chart is English-US.
+verifies if the specified worksheet exists. It then adds a new [DrawingsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.aspx) object using the [AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method, appends it to the
+worksheet, and saves the worksheet part. The code then adds a new [ChartPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.aspx) object, appends a new [ChartSpace](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.chartspace.aspx) object to the **ChartPart** object, and then appends a new [EditingLanguage](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chartspace.editinglanguage.aspx) object to the **ChartSpace*** object that specifies the language for the chart is English-US.
 
 ```csharp
     IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook.Descendants<Sheet>().Where
@@ -389,33 +336,11 @@ the chart is English-US.
             .Chart)(New DocumentFormat.OpenXml.Drawing.Charts.Chart())
 ```
 
-The code creates a new clustered column chart by creating a new <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.BarChart"><span
-class="nolink">BarChart</span></span> object with <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues"><span
-class="nolink">BarDirectionValues</span></span> object set to <span
-class="keyword">Column</span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues"><span
-class="nolink">BarGroupingValues</span></span> object set to <span
+The code creates a new clustered column chart by creating a new [BarChart](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.barchart.aspx) object with [BarDirectionValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bardirectionvalues.aspx) object set to **Column** and [BarGroupingValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bargroupingvalues.aspx) object set to <span
 class="keyword">Clustered</span>.
 
-The code then iterates through each key in the <span
-class="keyword">Dictionary</span> class. For each key, it appends a
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries"><span
-class="nolink">BarChartSeries</span></span> object to the <span
-class="keyword">BarChart</span> object and sets the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.SeriesText"><span
-class="nolink">SeriesText</span></span> object of the <span
-class="keyword">BarChartSeries</span> object to equal the key. For each
-key, it appends a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral"><span
-class="nolink">NumberLiteral</span></span> object to the <span
-class="keyword">Values</span> collection of the <span
-class="keyword">BarChartSeries</span> object and sets the <span
-class="keyword">NumberLiteral</span> object to equal the <span
-class="keyword">Dictionary</span> class value corresponding to the key.
+The code then iterates through each key in the **Dictionary** class. For each key, it appends a
+[BarChartSeries](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.barchartseries.aspx) object to the **BarChart** object and sets the [SeriesText](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.seriestext.aspx) object of the **BarChartSeries** object to equal the key. For each key, it appends a [NumberLiteral](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.numberliteral.aspx) object to the **Values** collection of the **BarChartSeries** object and sets the **NumberLiteral** object to equal the **Dictionary** class value corresponding to the key.
 
 ```csharp
     // Create a new clustered column chart.
@@ -490,32 +415,8 @@ class="keyword">Dictionary</span> class value corresponding to the key.
     Next key
 ```
 
-The code adds the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis"><span
-class="nolink">CategoryAxis</span></span> object and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.ValueAxis"><span
-class="nolink">ValueAxis</span></span> object to the chart and sets the
-value of the following properties: <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.Scaling"><span
-class="nolink">Scaling</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.AxisPosition"><span
-class="nolink">AxisPosition</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition"><span
-class="nolink">TickLabelPosition</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis"><span
-class="nolink">CrossingAxis</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.Crosses"><span
-class="nolink">Crosses</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled"><span
-class="nolink">AutoLabeled</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.LabelAlignment"><span
-class="nolink">LabelAlignment</span></span>, and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Charts.LabelOffset"><span
-class="nolink">LabelOffset</span></span>. It also adds the <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Drawing.Charts.Chart.Legend"><span
-class="nolink">Legend</span></span> object to the chart and saves the
-chart part.
+The code adds the [CategoryAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.categoryaxis.aspx) object and [ValueAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.valueaxis.aspx) object to the chart and sets the
+value of the following properties: [Scaling](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.drawing.charts.scaling.aspx), [AxisPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.axisposition.aspx), [TickLabelPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.ticklabelposition.aspx), [CrossingAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crossingaxis.aspx), [Crosses](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crosses.aspx), [AutoLabeled](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.autolabeled.aspx), [LabelAlignment](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labelalignment.aspx), and [LabelOffset](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labeloffset.aspx). It also adds the [Legend](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chart.legend.aspx) object to the chart and saves the chart part.
 
 ```csharp
     barChart.Append(new AxisId() { Val = new UInt32Value(48650112u) });
@@ -603,22 +504,11 @@ chart part.
     chartPart.ChartSpace.Save()
 ```
 
-The code positions the chart on the worksheet by creating a <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.DrawingsPart.WorksheetDrawing"><span
-class="nolink">WorksheetDrawing</span></span> object and appending a
-<span sdata="cer"
-target="P:DocumentFormat.OpenXml.Drawing.Spreadsheet.TwoCellAnchor">**TwoCellAnchor**</span>
+The code positions the chart on the worksheet by creating a [WorksheetDrawing](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.worksheetdrawing.aspx) object and appending a
+**TwoCellAnchor**
 object. The **TwoCellAnchor** object specifies
 how to move or resize the chart if you move the rows and columns between
-the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker"><span
-class="nolink">FromMarker</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Spreadsheet.ToMarker"><span
-class="nolink">ToMarker</span></span> anchors. The code then creates a
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Drawing.Spreadsheet.GraphicFrame"><span
-class="nolink">GraphicFrame</span></span> object to contain the chart
+the [FromMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.frommarker.aspx) and [ToMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.tomarker.aspx) anchors. The code then creates a [GraphicFrame](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.graphicframe.aspx) object to contain the chart
 and names the chart "Chart 1," and saves the worksheet drawing.
 
 ```csharp
@@ -692,16 +582,9 @@ and names the chart "Chart 1," and saves the worksheet drawing.
 
 ## Sample Code
 
-In the following code, you add a clustered column chart to a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> document package using
-the data from a <span sdata="cer"
-target="T:System.Collections.Generic.Dictionary`2">[Dictionary\<TKey,
-TValue\>](http://msdn2.microsoft.com/EN-US/library/xfhwa508)</span>
-class. For instance, you can call the method <span
-class="keyword">InsertChartInSpreadsheet</span> by using this code
-segment.
+In the following code, you add a clustered column chart to a [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package using
+the data from a [Dictionary\<TKey, TValue\>](http://msdn2.microsoft.com/EN-US/library/xfhwa508)
+class. For instance, you can call the method **InsertChartInSpreadsheet** by using this code segment.
 
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet6.xlsx";

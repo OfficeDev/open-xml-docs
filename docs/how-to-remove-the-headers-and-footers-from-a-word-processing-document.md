@@ -17,8 +17,7 @@ ms.date: 11/01/2017
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically remove all headers and footers in a word
-processing document. It contains an example <span
-class="keyword">RemoveHeadersAndFooters</span> method to illustrate this
+processing document. It contains an example **RemoveHeadersAndFooters** method to illustrate this
 task.
 
 To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
@@ -52,8 +51,7 @@ method to remove all header and footer information from a word
 processing document. Be aware that you must not only delete the header
 and footer parts from the document storage, you must also delete the
 references to those parts from the document too. The sample code
-demonstrates both steps in the operation. The <span
-class="keyword">RemoveHeadersAndFooters</span> method accepts a single
+demonstrates both steps in the operation. The **RemoveHeadersAndFooters** method accepts a single
 parameter, a string that indicates the path of the file that you want to
 modify.
 
@@ -65,8 +63,7 @@ modify.
     Public Sub RemoveHeadersAndFooters(ByVal filename As String)
 ```
 
-The complete code listing for the method can be found in the [Sample
-Code](how-to-remove-the-headers-and-footers-from-a-word-processing-document.md#sampleCode) section.
+The complete code listing for the method can be found in the [Sample Code](how-to-remove-the-headers-and-footers-from-a-word-processing-document.md#sampleCode) section.
 
 
 ## Calling the Sample Method
@@ -88,15 +85,10 @@ in the following code example.
 The **RemoveHeadersAndFooters** method works
 with the document you specify, deleting all of the header and footer
 parts and references to those parts. The code starts by opening the
-document, using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method and indicating that the
+document, using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
 document should be opened for read/write access (the final true
-parameter). Given the open document, the code uses the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart"><span
-class="nolink">MainDocumentPart</span></span> property to navigate to
-the main document, storing the reference in a variable named <span
-class="code">docPart</span>.
+parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
+the main document, storing the reference in a variable named **docPart**.
 
 ```csharp
     // Given a document name, remove all of the headers and footers
@@ -116,25 +108,15 @@ class="code">docPart</span>.
     End Using
 ```
 
-## Remove the Header and Footer Parts
+## Confirm Header/Footer Existence
 
 Given a reference to the document part, the code next determines if it
 has any work to do─that is, if the document contains any headers or
-footers. To decide, the code calls the <span
-class="keyword">Count</span> method of both the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.HeaderParts"><span
-class="nolink">HeaderParts</span></span> and <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.FooterParts"><span
-class="nolink">FooterParts</span></span> properties of the document
+footers. To decide, the code calls the **Count** method of both the [HeaderParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.headerparts.aspx) and [FooterParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.footerparts.aspx) properties of the document
 part, and if either returns a value greater than 0, the code continues.
-Be aware that the **HeaderParts** and <span
-class="keyword">FooterParts</span> properties each return an
+Be aware that the **HeaderParts** and **FooterParts** properties each return an
 [IEnumerable](http://msdn.microsoft.com/en-us/library/9eekhta0.aspx) of
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.HeaderPart"><span
-class="nolink">HeaderPart</span></span> or <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.FooterPart"><span
-class="nolink">FooterPart</span></span> objects, respectively.
+[HeaderPart](https://msdn.microsoft.com/library/9eekhta0.aspx) or [FooterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.footerpart.aspx) objects, respectively.
 
 ```csharp
     // Get a reference to the main document part.
@@ -165,10 +147,7 @@ class="nolink">FooterPart</span></span> objects, respectively.
 
 Given a collection of references to header and footer parts, you could
 write code to delete each one individually, but that is not necessary
-because of the Open XML SDK 2.5. Instead, you can call the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.DeleteParts``1(System.Collections.Generic.IEnumerable{``0})"><span
-class="nolink">DeleteParts\<T\></span></span> method, passing in the
+because of the Open XML SDK 2.5. Instead, you can call the [DeleteParts\<T\>](https://msdn.microsoft.com/library/office/cc562335.aspx) method, passing in the
 collection of parts to be deleted─this simple method provides a shortcut
 for deleting a collection of parts. Therefore, the following few lines
 of code take the place of the loop that you would otherwise have to
@@ -219,18 +198,11 @@ shown in the section that follows the following code example.
 
 To remove the stranded references, the code first retrieves a collection
 of HeaderReference elements, converts the collection to a List, and then
-loops through the collection, calling the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.Remove"><span
-class="nolink">Remove</span></span> method for each element found. Note
+loops through the collection, calling the [Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method for each element found. Note
 that the code converts the **IEnumerable**
-returned by the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.Descendants``1"><span
-class="nolink">Descendants</span></span> method into a List so that it
-can delete items from the list, and that the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.HeaderReference"><span
-class="nolink">HeaderReference</span></span> type that is provided by
-the Open XML SDK 2.5 makes it easy to refer to elements of type <span
-class="keyword">HeaderReference</span> in the XML content. (Without that
+returned by the [Descendants](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.descendants.aspx) method into a List so that it
+can delete items from the list, and that the [HeaderReference](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.headerreference.aspx) type that is provided by
+the Open XML SDK 2.5 makes it easy to refer to elements of type **HeaderReference** in the XML content. (Without that
 additional help, you would have to work with the details of the XML
 content directly.) Once it has removed all the headers, the code repeats
 the operation with the footer elements.
@@ -283,8 +255,7 @@ the operation with the footer elements.
 
 ## Sample Code
 
-The following is the complete <span
-class="keyword">RemoveHeadersAndFooters</span> code sample in C\# and
+The following is the complete **RemoveHeadersAndFooters** code sample in C\# and
 Visual Basic.
 
 ```csharp

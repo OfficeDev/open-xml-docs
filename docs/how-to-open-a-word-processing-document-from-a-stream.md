@@ -49,32 +49,23 @@ adds text to the document behind the stream using the Open XML SDK 2.5.
 
 ## Creating a WordprocessingDocument Object
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class represents a
+In the Open XML SDK, the **WordprocessingDocument** class represents a
 Word document package. To work with a Word document, first create an
 instance of the **WordprocessingDocument**
 class from the document, and then work with that instance. When you
 create the instance from the document, you can then obtain access to the
 main document part that contains the text of the document. Every Open
-XML package contains some number of parts. At a minimum, a <span
-class="keyword">WordProcessingDocument</span> must contain a main
+XML package contains some number of parts. At a minimum, a **WordProcessingDocument** must contain a main
 document part that acts as a container for the main text of the
 document. The package can also contain additional parts. Notice that in
 a Word document, the text in the main document part is represented in
 the package as XML using **WordprocessingML**
 markup.
 
-To create the class instance from the document call the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.IO.Stream,System.Boolean)"><span
-class="nolink">Open(Stream, Boolean)</span></span> method. Several <span
-class="keyword">Open</span> methods are provided, each with a different
-signature. The sample code in this topic uses the <span
-class="keyword">Open</span> method with a signature that requires two
+To create the class instance from the document call the **Open(Stream, Boolean)** method. Several **Open** methods are provided, each with a different
+signature. The sample code in this topic uses the **Open** method with a signature that requires two
 parameters. The first parameter takes a handle to the stream from which
-you want to open the document. The second parameter is either <span
-class="keyword">true</span> or **false** and
+you want to open the document. The second parameter is either **true** or **false** and
 represents whether the stream is opened for editing.
 
 The following code example calls the **Open**
@@ -94,16 +85,11 @@ method.
 
 ## Structure of a WordProcessingML Document
 
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
-contains one or more **r** elements. The <span
-class="keyword">r</span> stands for run, which is a region of text with
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
+contains one or more **r** elements. The **r** stands for run, which is a region of text with
 a common set of properties, such as formatting. A run contains one or
-more **t** elements. The <span
-class="keyword">t</span> element contains a range of text. For example,
+more **t** elements. The **t** element contains a range of text. For example,
 the WordprocessingML markup for a document that contains only the text
 "Example text." is shown in the following code example.
 
@@ -121,13 +107,9 @@ the WordprocessingML markup for a document that contains only the text
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
-elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+elements. You can find these classes in the **DocumentFormat.OpenXml.Wordprocessing**
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements.
+correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 WordprocessingML Element|Open XML SDK 2.5 Class|Description
 --|--|--
@@ -156,10 +138,8 @@ segment.
 ```
 
 When you access to the body of the main document part, add text by
-adding instances of the **Paragraph**, <span
-class="keyword">Run</span>, and **Text**
-classes. This generates the required <span
-class="keyword">WordprocessingML</span> markup. The following lines from
+adding instances of the **Paragraph**, **Run**, and **Text**
+classes. This generates the required **WordprocessingML** markup. The following lines from
 the sample code add the paragraph, run, and text.
 
 ```csharp
@@ -178,8 +158,7 @@ the sample code add the paragraph, run, and text.
 
 ## Sample Code
 
-The example <span
-class="keyword">OpenAndAddToWordprocessingStream</span> method shown
+The example **OpenAndAddToWordprocessingStream** method shown
 here can be used to open a Word document from an already open stream and
 append some text using the Open XML SDK. You can call it by passing a
 handle to an open stream as the first parameter and the text to add as

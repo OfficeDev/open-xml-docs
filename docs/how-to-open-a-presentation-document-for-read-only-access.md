@@ -55,25 +55,20 @@ document.
 
 ## Create an Instance of the PresentationDocument Class 
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call one
-of the <span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open"><span
-class="nolink">Open</span></span> methods. Several Open methods are
+of the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.open.aspx) methods. Several Open methods are
 provided, each with a different signature. The following table contains
 a subset of the overloads for the **Open**
 method that you can use to open the package.
 
 | Name | Description |
 |---|---|
-| Open(String, Boolean) | Create a new instance of the **PresentationDocument** class from the specified file. |
-| Open(Stream, Boolean) | Create a new instance of the **PresentationDocument** class from the I/O stream. |
-| Open(Package) | Create a new instance of the **PresentationDocument** class from the specified package. |
+| [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx) | Create a new instance of the **PresentationDocument** class from the specified file. |
+| [Open(Stream, Boolean)](https://msdn.microsoft.com/library/office/cc536282.aspx) | Create a new instance of the **PresentationDocument** class from the I/O stream. |
+| [Open(Package)](https://msdn.microsoft.com/library/office/cc514901.aspx) | Create a new instance of the **PresentationDocument** class from the specified package. |
 
 
 The previous table includes two **Open**
@@ -82,11 +77,9 @@ whether a document is editable. To open a document for read-only access,
 specify the value **false** for this parameter.
 
 For example, you can open the presentation file as read-only and assign
-it to a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> object as shown in the
+it to a [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) object as shown in the
 following **using** statement. In this code,
-the <span class="term">presentationFile</span> parameter is a string
+the **presentationFile** parameter is a string
 that represents the path of the file from which you want to open the
 document.
 
@@ -103,8 +96,7 @@ document.
     End Using
 ```
 
-You can also use the second overload of the <span
-class="keyword">Open</span> method, in the table above, to create an
+You can also use the second overload of the **Open** method, in the table above, to create an
 instance of the **PresentationDocument** class
 based on an I/O stream. You might use this approach if you have a
 Microsoft SharePoint Foundation 2010 application that uses stream I/O
@@ -156,41 +148,34 @@ code segment performs this operation.
 
 ## Basic Presentation Document Structure
 
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of a number of
+The basic document structure of a **PresentationML** document consists of a number of
 parts, among which the main part is that contains the presentation
-definition. The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
-introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+definition. The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+introduces the overall form of a **PresentationML** package.
 
 > The main part of a **PresentationML** package
 > starts with a presentation root element. That element contains a
-> presentation, which, in turn, refers to a <span
-> class="keyword">slide</span> list, a <span class="term">slide
-> master</span> list, a <span class="term">notes master</span> list, and
-> a <span class="term">handout master</span> list. The slide list refers
+> presentation, which, in turn, refers to a **slide** list, a **slide
+> master** list, a **notes master** list, and
+> a **handout master** list. The slide list refers
 > to all of the slides in the presentation; the slide master list refers
 > to the entire slide masters used in the presentation; the notes master
 > contains information about the formatting of notes pages; and the
 > handout master describes how a handout looks.
 
-> A <span class="term">handout</span> is a printed set of slides that
-> can be provided to an <span class="term">audience</span> for future
+> A **handout** is a printed set of slides that
+> can be provided to an **audience** for future
 > reference.
 
-> As well as text and graphics, each slide can contain <span
-> class="term">comments</span> and <span class="term">notes</span>, can
-> have a <span class="term">layout</span>, and can be part of one or
-> more <span class="term">custom presentations</span>. A comment is an
+> As well as text and graphics, each slide can contain **comments** and **notes**, can
+> have a **layout**, and can be part of one or
+> more **custom presentations**. A comment is an
 > annotation intended for the person maintaining the presentation slide
 > deck. A note is a reminder or piece of text intended for the presenter
 > or the audience.
 
 > Other features that a **PresentationML**
-> document can include the following: <span
-> class="term">animation</span>, <span class="term">audio</span>, <span
-> class="term">video</span>, and <span class="term">transitions</span>
+> document can include the following: **animation**, **audio**, **video**, and **transitions**
 > between slides.
 
 > A **PresentationML** document is not stored
@@ -202,8 +187,7 @@ class="keyword">PresentationML</span> package.
 > © ISO/IEC29500: 2008.
 
 This following XML code segment represents a presentation that contains
-two slides denoted by the IDs 267 and 256. The <span
-class="keyword">ID</span> property specifies the slide identifier that
+two slides denoted by the IDs 267 and 256. The **ID** property specifies the slide identifier that
 contains a unique value throughout the presentation. The possible values
 for this attribute are from 256 through 2147483647.
 
@@ -253,7 +237,7 @@ the slide list. Then you get the relationship ID of the first slide.
     Dim relId As String = (TryCast(slideIds(index), SlideId)).RelationshipId
 ```
 
-From the relationship ID, <span class="term">relId</span>, you get the
+From the relationship ID, **relId**, you get the
 slide part, and then the inner text of the slide by building a text
 string using **StringBuilder**.
 
@@ -288,9 +272,7 @@ string using **StringBuilder**.
     sldText = paragraphText.ToString()
 ```
 
-The inner text of the slide, which is an <span
-class="keyword">out</span> parameter of the <span
-class="keyword">GetSlideIdAndText</span> method, is passed back to the
+The inner text of the slide, which is an **out** parameter of the **GetSlideIdAndText** method, is passed back to the
 main method to be displayed.
 
 > [!IMPORTANT]
@@ -300,17 +282,15 @@ main method to be displayed.
 ## Sample Code
 
 The following example opens a presentation file for read-only access and
-gets the inner text of a slide at a specified index. To call the method
-<span class="term">GetSlideIdAndText</span> pass in the full path of the
+gets the inner text of a slide at a specified index. To call the method **GetSlideIdAndText** pass in the full path of the
 presentation document. Also pass in the **out**
-parameter <span class="term">sldText</span>, which will be assigned a
+parameter **sldText**, which will be assigned a
 value in the method itself, and then you can display its value in the
-main program. For example, the following call to the <span
-class="keyword">GetSlideIdAndText</span> method gets the inner text in
+main program. For example, the following call to the **GetSlideIdAndText** method gets the inner text in
 the second slide in a presentation file named "Myppt13.pptx".
 
 > [!TIP]
-> The most expected exception in this program is the **ArgumentOutOfRangeException</span> exception. It could be thrown if, for example, you have a file with two slides, and you wanted to display the text in slide number 4. Therefore, it is best to use a <span class="keyword">try</span> block when you call the <span class="keyword">GetSlideIdAndText** method as shown in the following example.
+> The most expected exception in this program is the **ArgumentOutOfRangeException** exception. It could be thrown if, for example, you have a file with two slides, and you wanted to display the text in slide number 4. Therefore, it is best to use a **try** block when you call the **GetSlideIdAndText** method as shown in the following example.
 
 ```csharp
     string file = @"C:\Users\Public\Documents\Myppt13.pptx";

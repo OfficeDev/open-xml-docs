@@ -125,7 +125,7 @@ calculation.
     <c r="B10" s="1"/>
     <c r="C10" s="1"/>
     <c r="D10" s="1"/>
-    <c r="A2"/\>
+    <c r="A2"/>
     <c r="A3" s="1"/>
     <c r="A4" s="1"/>
     <c r="A5" s="1"/>
@@ -134,5 +134,5 @@ calculation.
     <c r="A8" s="1"/>
     <c r="A9" s="1"/>
     <c r="A10" s="1"/>
-\</calcChain\>
+</calcChain>
 ```

@@ -15,24 +15,16 @@ ms.date: 11/01/2017
 ---
 # Working with sheets (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet"><span
-class="nolink">Worksheet</span></span>, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Chartsheet"><span
-class="nolink">Chartsheet</span></span>, and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.DialogSheet"><span
-class="nolink">DialogSheet</span></span> classes and how they relate to
+This topic discusses the Open XML SDK 2.5 [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx), [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx), and [DialogSheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.dialogsheet.aspx) classes and how they relate to
 the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
-SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
+SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 
 ## Sheets in SpreadsheetML
 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the **sheet** (\<<span
-class="keyword">sheet</span>\>) element.
+specification introduces the **sheet** (\<**sheet**\>) element.
 
 Sheets are the central structures within a workbook, and are where the
 user does most of their spreadsheet work. The most common type of sheet
@@ -53,15 +45,11 @@ Other types of sheets include chart sheets and dialog sheets.
 ## Open XML SDK 2.5 Worksheet Class
 
 The Open XML SDK 2.5**Worksheet** class
-represents the **worksheet** (\<<span
-class="keyword">worksheet</span>\>) element defined in the Open XML File
-Format schema for SpreadsheetML documents. Use the <span
-class="keyword">Worksheet</span> class to manipulate individual \<<span
-class="keyword">worksheet</span>\> elements in a SpreadsheetML document.
+represents the **worksheet** (\<**worksheet**\>) element defined in the Open XML File
+Format schema for SpreadsheetML documents. Use the **Worksheet** class to manipulate individual \<**worksheet**\> elements in a SpreadsheetML document.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **worksheet** (\<<span
-class="keyword">worksheet</span>\>) element.
+introduces the **worksheet** (\<**worksheet**\>) element.
 
 An instance of this part type contains all the data, formulas, and
 characteristics associated with a given worksheet.
@@ -94,46 +82,36 @@ when empty.
 © ISO/IEC29500: 2008.
 
 A typical spreadsheet has at least one worksheet. The worksheet contains
-a table like structure for defining data, represented by the <span
-class="keyword">sheetData</span> element. A sheet that contains data
+a table like structure for defining data, represented by the **sheetData** element. A sheet that contains data
 uses the **worksheet** element as the root
 element for defining worksheets. Inside a worksheet the data is split up
 into three distinct sections. The first section contains optional sheet
 properties. The second section contains the data, using the required
 **sheetData** element. The third section contains optional supporting
 features such as sheet protection and filter information. To define an
-empty worksheet you only have to use the <span
-class="keyword">worksheet</span> and <span
-class="keyword">sheetData</span> elements. The <span
-class="keyword">sheetData</span> element can be empty.
+empty worksheet you only have to use the **worksheet** and **sheetData** elements. The **sheetData** element can be empty.
 
-To create new values for the worksheet you define rows inside the <span
-class="keyword">sheetData</span> element. These rows contain cells,
+To create new values for the worksheet you define rows inside the **sheetData** element. These rows contain cells,
 which contain values. The **row** element
-defines a new row. Normally the first row in the <span
-class="keyword">sheetData</span> is the first row in the visible sheet.
-Inside the row you create new **cells** using the \<<span
-class="keyword">c</span>\> element. Values for cells can be provided by
+defines a new row. Normally the first row in the **sheetData** is the first row in the visible sheet.
+Inside the row you create new **cells** using the \<**c**\> element. Values for cells can be provided by
 storing a \<**v**\> element inside the cell.
 Usually the \<**v**\> element contains the
 current value of the worksheet cell. If the value is a numeric value, it
 is stored directly in the \<**v**\> element in
 the XML file. If the value is a string value, it is stored in a shared
 string table. For more information about using the shared string table
-to store string values, see [Working with the shared
-string table (Open XML SDK)](working-with-the-shared-string-table.md).
+to store string values, see [Working with the shared string table (Open XML SDK)](working-with-the-shared-string-table.md).
 
 The following table lists the common Open XML SDK 2.5 classes used when
-working with the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet"><span
-class="nolink">Worksheet</span></span> class.
+working with the [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx) class.
 
-**SpreadsheetML Element**|**Open XML SDK 2.5 Class**
----|---
-sheetData|SheetData
-row|Row
-c|Cell
-v|CellValue
+| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** |
+|---|---|
+| sheetData | [SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx) |
+| row | [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) |
+| c | [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) |
+| v | [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) |
 
 For more information about optional spreadsheet elements, such as sheet
 properties and supporting sheet features, see the ISO/IEC 29500
@@ -142,8 +120,7 @@ specification.
 ### SheetData Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **sheet data** (\<<span
-class="keyword">sheetData</span>\>) element.
+introduces the **sheet data** (\<**sheetData**\>) element.
 
 The cell table is the core structure of a worksheet. It consists of all
 the text, numbers, and formulas in the grid.
@@ -153,8 +130,7 @@ the text, numbers, and formulas in the grid.
 ### Row Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **row** (\<<span
-class="keyword">row</span>\>) element.
+introduces the **row** (\<**row**\>) element.
 
 The cells in the cell table are organized by row. Each row has an index
 (attribute r) so that empty rows need not be written out. Each row
@@ -166,8 +142,7 @@ position in the sheet. In this example, the first row of data is row 2.
 ### Cell Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **cell** (\<<span
-class="keyword">c</span>\>) element.
+introduces the **cell** (\<**c**\>) element.
 
 The cell itself is expressed by the c collection. Each cell indicates
 its location in the grid using A1-style reference notation. A cell can
@@ -181,8 +156,7 @@ written out.
 ### CellValue Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **cell value** (\<<span
-class="keyword">v</span>\>) element.
+introduces the **cell value** (\<**v**\>) element.
 
 Cells contain values, whether the values were directly entered (e.g.,
 cell A2 in our example has the value External Link:) or are the result
@@ -202,8 +176,7 @@ indicates string, then it is an index and not a numeric value.
 ### Open XML SDK Code Example
 
 The following code example creates a spreadsheet document with the
-specified file name and instantiates a <span
-class="keyword">Worksheet</span> class, and then adds a row and adds a
+specified file name and instantiates a **Worksheet** class, and then adds a row and adds a
 cell to the cell table at position A1. Then the value of the cell in A1
 is set equal to the numeric value 100.
 
@@ -333,8 +306,7 @@ the "sheet.xml" file in the "worksheets" folder of the .zip file.
 ## The Open XML SDK Chartsheet Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **chartsheet** (\<<span
-class="keyword">chartsheet</span>\>) element.
+introduces the **chartsheet** (\<**chartsheet**\>) element.
 
 An instance of this part type represents a chart that is stored in its
 own sheet.
@@ -356,19 +328,16 @@ relationship in the Chartsheet part's relationship item:
 © ISO/IEC29500: 2008.
 
 The following table lists the common Open XML SDK 2.5 classes used when
-working with the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Chartsheet"><span
-class="nolink">Chartsheet</span></span> class.
+working with the [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx) class.
 
-**SpreadsheetML Element**|**Open XML SDK 2.5 Class**
----|---
-drawing|Drawing
+| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** |
+|---|---|
+| drawing | [Drawing](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.drawing.aspx) |
 
 ### Drawing Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **drawings** (\<<span
-class="keyword">wsDr</span>\>) element.
+introduces the **drawings** (\<**wsDr**\>) element.
 
 An instance of this part type contains the presentation and layout
 information for one or more drawing elements that are present on this
@@ -385,8 +354,7 @@ be only one Drawings part per worksheet or chartsheet.
 ## Open XML SDK 2.5 Dialogsheet Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **dialogsheet** (\<<span
-class="keyword">dialogsheet</span>\>) element.
+introduces the **dialogsheet** (\<**dialogsheet**\>) element.
 
 An instance of this part type contains information about a legacy custom
 dialog box for a user form.

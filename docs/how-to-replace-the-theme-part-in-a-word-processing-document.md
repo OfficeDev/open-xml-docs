@@ -131,13 +131,13 @@ backgrounds, fills, and effects for different objects in a presentation.
 
 The following table lists the possible child types of the Theme class.
 
-PresentationML Element|Open XML SDK 2.5 Class|Description
---|--|--
-custClrLst|CustomColorList |Custom Color List
-extLst|ExtensionList |Extension List
-extraClrSchemeLst|ExtraColorSchemeList |Extra Color Scheme List
-objectDefaults|ObjectDefaults |Object Defaults
-themeElements|ThemeElements |Theme Elements
+| PresentationML Element | Open XML SDK 2.5 Class | Description |
+|---|---|---|
+| custClrLst | [CustomColorList](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.customcolorlist.aspx) |Custom Color List |
+| extLst | [ExtensionList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlist.aspx) | Extension List |
+| extraClrSchemeLst | [ExtraColorSchemeList](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.extracolorschemelist.aspx) | Extra Color Scheme List |
+| objectDefaults | [ObjectDefaults](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.objectdefaults.aspx) | Object Defaults |
+| themeElements | [ThemeElements](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.themeelements.aspx) | Theme Elements |
 
 The following XML Schema fragment defines the four parts of the theme
 element. The **themeElements** element is the

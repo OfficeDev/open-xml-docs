@@ -53,17 +53,17 @@ class="keyword">WordprocessingML</span> document package part that the
 element corresponds to (where applicable) and the managed class that
 represents the element in the Open XML SDK 2.5 API.
 
-**Package Part**|**WordprocessingML Element**|**Open XML SDK 2.5 Class**|**Description**
----|---|---|---
-Main Document|document|Document|The root element for the main document part.
-Comments|comments|Comments|The root element for the comments part.
-Document Settings|settings|Settings|The root element for the document settings part.
-Endnotes|endnotes|Endnotes|The root element for the endnotes part.
-Footer|ftr|Footer|The root element for the footer part.
-Footnotes|footnotes|Footnotes|The root element for the footnotes part.
-Glossary Document|glossaryDocument|GlossaryDocument|The root element for the glossary document part.
-Header|hdr|Header|The root element for the header part.
-Style Definitions|styles|Styles|The root element for a Style Definitions part.
+| **Package Part** | **WordprocessingML Element** | **Open XML SDK 2.5 Class** | **Description** |
+|---|---|---|---|
+| Main Document|document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
+| Comments | comments | [Comments](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.comments.aspx) | The root element for the comments part. |
+| Document Settings | settings | [Settings](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.settings.aspx) | The root element for the document settings part. |
+| Endnotes | endnotes | [Endnotes](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.endnotes.aspx) | The root element for the endnotes part. |
+| Footer | ftr | [Footer](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.footer.aspx) | The root element for the footer part. |
+| Footnotes | footnotes | [Footnotes](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.footnotes.aspx) | The root element for the footnotes part. |
+| Glossary Document | glossaryDocument | [GlossaryDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.glossarydocument.aspx) | The root element for the glossary document part. |
+| Header | hdr | [Header](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.header.aspx) | The root element for the header part. |
+| Style Definitions | styles | [Styles](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.styles.aspx) | The root element for a Style Definitions part. |
 
 
 ## Minimum Document Scenario
