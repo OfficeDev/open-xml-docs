@@ -43,26 +43,25 @@ part. A separate XML file is created for each slide.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content that uses strongly-typed classes that correspond to
-PresentationML elements. You can find these classes in the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
+PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)**
 namespace. The following table lists the class names of the classes that
 correspond to some of the important presentation elements.
 
-**Package Part**|**Top Level PresentationML Element**|**Open XML SDK 2.5 Class**|**Description**
+**Package Part**|**Top Level PresentationML Element**|**Open XML SDK 2.5 Class**|**Description***
 ---|---|---|---
-Presentation|<presentation>|Presentation|The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.
-Presentation Properties|<presentationPr>|PresentationProperties|The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.
-Slide Master|<sldMaster>|SlideMaster|The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see Working with slide masters (Open XML SDK).
-Slide Layout|<sldLayout>|SlideLayout|The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see Working with slide layouts (Open XML SDK).
-Theme|<officeStyleSheet>|Theme|The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.
-Slide|<sld>|Slide|The root element for the Slide part. This element specifies a slide within a slide list. For more information, see Working with presentation slides (Open XML SDK).
-Notes Master|<notesMaster>|NotesMaster|The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.
-Notes Slide|<notes>|NotesSlide|The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see Working with notes slides (Open XML SDK).
-Handout Master|<handoutMaster>|HandoutMaster|The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see Working with handout master slides (Open XML SDK).
-Comments|<cmLst>|CommentList|The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see Working with comments (Open XML SDK).
-Comments Author|<cmAuthorLst>|CommentAuthorList|The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see Working with comments (Open XML SDK).
+Presentation|\<presentation\>|[Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentation.aspx)|The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.
+Presentation Properties|\<presentationPr\>|[PresentationProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentationproperties.aspx)|The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.
+Slide Master|\<sldMaster\>|[SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx)|The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see Working with slide masters (Open XML SDK).
+Slide Layout|\<sldLayout\>|[SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx)|The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see Working with slide layouts (Open XML SDK).
+Theme|\<officeStyleSheet\>|[Theme](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.drawing.theme.aspx)|The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.
+Slide|\<sld\>|[Slide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.aspx)|The root element for the Slide part. This element specifies a slide within a slide list. For more information, see Working with presentation slides (Open XML SDK).
+Notes Master|\<notesMaster\>|[NotesMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesmaster.aspx)|The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.
+Notes Slide|\<notes\>|[NotesSlide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesslide.aspx)|The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see Working with notes slides (Open XML SDK).
+Handout Master|\<handoutMaster\>|[HandoutMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmaster.aspx)|The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see Working with handout master slides (Open XML SDK).
+Comments|\<cmLst\>|[CommentList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentlist.aspx)|The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see Working with comments (Open XML SDK).
+Comments Author|\<cmAuthorLst\>|[CommentAuthorList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentauthorlist.aspx)|The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see Working with comments (Open XML SDK).
 
- Descriptions adapted from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+*Descriptions adapted from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification, © ISO/IEC29500: 2008.
 
 ### Presentation Part
