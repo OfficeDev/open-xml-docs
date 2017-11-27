@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -114,8 +114,7 @@ Use the **CreateAndAddParagraphStyle** example
 method to create and add a named style to a word processing document
 using the Open XML SDK. The following code example shows how to open and
 obtain a reference to a word processing document, retrieve a reference
-to the style definitions part of the document, and then call the <span
-class="keyword">CreateAndAddParagraphStyle</span> method.
+to the style definitions part of the document, and then call the **CreateAndAddParagraphStyle** method.
 
 To call the method, pass a reference to the style definitions part as
 the first parameter, the style ID of the style as the second parameter,
@@ -313,7 +312,7 @@ characteristics:
     paragraph of this style.
 
 -   The style specifies both paragraph-level and character-level
-    properties using the **pPr** and <span class="keyword">rPr</span> elements, respectively. In this case, the
+    properties using the **pPr** and **rPr** elements, respectively. In this case, the
     run properties are the set of properties applied to each run in the
     paragraph.
 
@@ -355,15 +354,11 @@ styles element is created and saved to the part.
 --------------------------------------------------------------------------------
 ## Creating the Style 
 
-To create the style, the code instantiates the <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Style"><span class="nolink">Style</span></span> class and sets certain properties,
-such as the <span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type"><span
-class="nolink">Type</span></span> of style (paragraph), the <span
-sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId"><span
-class="nolink">StyleId</span></span>, whether the style is a <span
-sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle"><span
-class="nolink">CustomStyle</span></span>, and whether the style is the
-<span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Default"><span
-class="nolink">Default</span></span> style for its type.
+To create the style, the code instantiates the <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Style">**Style**** class and sets certain properties,
+such as the <span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type">**Type**** of style (paragraph), the <span
+sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId">**StyleId****, whether the style is a <span
+sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle">**CustomStyle****, and whether the style is the
+<span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Default">**Default**** style for its type.
 
 ```csharp
     // Create a new paragraph style element and specify some of the attributes.
@@ -393,7 +388,7 @@ The code results in the following XML.
 
 The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
-corresponding class, and then call the <span sdata="cer" target="M:DocumentFormat.OpenXml.OpenXmlElement.Append(DocumentFormat.OpenXml.OpenXmlElement[])"><span class="nolink">Append([])</span></span> method add the child element to
+corresponding class, and then call the <span sdata="cer" target="M:DocumentFormat.OpenXml.OpenXmlElement.Append(DocumentFormat.OpenXml.OpenXmlElement[])">**Append([])**** method add the child element to
 the style. For more information about these properties, see section 17.7
 of the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
 specification.
@@ -459,14 +454,11 @@ specification.
     style.Append(unhidewhenused1)
 ```
 
-Next, the code instantiates a <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties"><span
-class="nolink">StyleRunProperties</span></span> object to create a <span
-class="keyword">rPr</span> (Run Properties) element. You specify the
+Next, the code instantiates a <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties">**StyleRunProperties**** object to create a **rPr** (Run Properties) element. You specify the
 character properties that apply to the style, such as font and color, in
-this element. The properties are then appended as children of the <span class="keyword">rPr</span> element.
+this element. The properties are then appended as children of the **rPr** element.
 
-When the run properties are created, the code appends the <span
-class="keyword">rPr</span> element to the style, and the style element
+When the run properties are created, the code appends the **rPr** element to the style, and the style element
 to the styles root element in the styles part.
 
 ```csharp
@@ -524,7 +516,7 @@ referencing the styleId attribute value for this style in the paragraph
 properties' pStyle element. The following code example shows how to
 apply a style to a paragraph referenced by the variable p. The style ID
 of the style to apply is stored in the parastyleid variable, and the
-ParagraphStyleId property represents the paragraph properties' <span class="keyword">pStyle</span> element.
+ParagraphStyleId property represents the paragraph properties' **pStyle** element.
 
 ```csharp
     // If the paragraph has no ParagraphProperties object, create one.
@@ -565,8 +557,7 @@ ParagraphStyleId property represents the paragraph properties' <span class="keyw
 --------------------------------------------------------------------------------
 ## Sample Code 
 
-The following is the complete <span
-class="keyword">CreateAndAddParagraphStyle</span> code sample in both
+The following is the complete **CreateAndAddParagraphStyle** code sample in both
 C\# and Visual Basic.
 
 ```csharp

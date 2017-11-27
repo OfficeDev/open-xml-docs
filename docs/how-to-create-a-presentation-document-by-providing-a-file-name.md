@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -53,13 +53,11 @@ A presentation file, like all files defined by the Open XML standard,
 consists of a package file container. This is the file that users see in
 their file explorer; it usually has a .pptx extension. The package file
 is represented in the Open XML SDK 2.5 by the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class. The
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class. The
 presentation document contains, among other parts, a presentation part.
 The presentation part, represented in the Open XML SDK 2.5 by the <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationPart"><span
-class="nolink">PresentationPart</span></span> class, contains the basic
+target="T:DocumentFormat.OpenXml.Packaging.PresentationPart">**PresentationPart**** class, contains the basic
 *PresentationML* definition for the slide presentation. PresentationML
 is the markup language used for creating presentations. Each package can
 contain only one presentation part, and its root element must be
@@ -68,33 +66,25 @@ contain only one presentation part, and its root element must be
 The API calls used to create a new presentation document package are
 relatively simple. The first step is to call the static <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Create(System.String,DocumentFormat.OpenXml.PresentationDocumentType)"><span
-class="nolink">Create(String, PresentationDocumentType)</span></span>
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Create(System.String,DocumentFormat.OpenXml.PresentationDocumentType)">**Create(String, PresentationDocumentType)****
 method of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class, as shown here
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class, as shown here
 in the **CreatePresentation** procedure, which is the first part of the
 complete code sample presented later in the article. The
-**CreatePresentation** code calls the override of the <span
-class="keyword">Create</span> method that takes as arguments the path to
+**CreatePresentation** code calls the override of the **Create** method that takes as arguments the path to
 the new document and the type of presentation document to be created.
 The types of presentation documents available in that argument are
 defined by a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.PresentationDocumentType"><span
-class="nolink">PresentationDocumentType</span></span> enumerated value.
+target="T:DocumentFormat.OpenXml.PresentationDocumentType">**PresentationDocumentType**** enumerated value.
 
 Next, the code calls <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.AddPresentationPart"><span
-class="nolink">AddPresentationPart()</span></span>, which creates and
-returns a **PresentationPart**. After the <span
-class="keyword">PresentationPart</span> class instance is created, a new
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.AddPresentationPart">**AddPresentationPart()****, which creates and
+returns a **PresentationPart**. After the **PresentationPart** class instance is created, a new
 root element for the presentation is added by setting the <span
 sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.PresentationPart.Presentation"><span
-class="nolink">Presentation</span></span> property equal to the instance
+target="P:DocumentFormat.OpenXml.Packaging.PresentationPart.Presentation">**Presentation**** property equal to the instance
 of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Presentation"><span
-class="nolink">Presentation</span></span> class returned from a call to
+target="T:DocumentFormat.OpenXml.Presentation.Presentation">**Presentation**** class returned from a call to
 the **Presentation** class constructor.
 
 In order to create a complete, useable, and valid presentation, the code
@@ -123,14 +113,12 @@ slide layout, slide master, and theme parts.
 Using the Open XML SDK 2.5, you can create presentation structure and
 content by using strongly-typed classes that correspond to
 PresentationML elements. You can find these classes in the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the names of the classes that
 correspond to the presentation, slide, slide master, slide layout, and
 theme elements. The class that corresponds to the theme element is
 actually part of the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Drawing"><span
-class="nolink">DocumentFormat.OpenXml.Drawing</span></span> namespace.
+target="N:DocumentFormat.OpenXml.Drawing">**DocumentFormat.OpenXml.Drawing**** namespace.
 Themes are common to all Open XML markup languages.
 
 | PresentationML Element | Open XML SDK 2.5 Class |

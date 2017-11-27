@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -186,8 +186,7 @@ attributes of the **cm** (comment) element.
 | extLst | Specifies the extension list with modification ability within which all future extensions of element type ext are defined. The extension list along with corresponding future extensions is used to extend the storage capabilities of the PresentationML framework. This allows for various new kinds of data to be stored natively within the framework. |
 
 
-The following XML schema code example defines the members of the <span
-class="keyword">cm</span> element in addition to the required and
+The following XML schema code example defines the members of the **cm** element in addition to the required and
 optional attributes.
 
 ```xml
@@ -455,8 +454,7 @@ list. It then gets the relationship ID of the slide, gets the slide part
 from the relationship ID, and returns the slide part to the calling
 method.
 
-The following code example shows a call to the <span
-class="keyword">AddCommentToPresentation</span> which adds the specified
+The following code example shows a call to the **AddCommentToPresentation** which adds the specified
 comment string to the first slide in the presentation file Myppt1.pptx.
 
 ```csharp

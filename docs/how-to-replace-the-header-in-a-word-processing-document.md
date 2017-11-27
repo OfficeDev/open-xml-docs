@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -64,7 +64,7 @@ appropriate Header part in the WordprocessingML package.
 If the relationship type of the relationship specified by this element
 is not **http://schemas.openxmlformats.org/officeDocument/2006/header**,
 is not present, or does not have a **TargetMode** attribute value of
-<span class="code">Internal</span>, then the document shall be
+**Internal**, then the document shall be
 considered non-conformant.
 
 Within each section of a document there may be up to three different
@@ -125,7 +125,7 @@ following packaging markup:
 These relationships are then referenced in the section's properties
 using the following WordprocessingML:
 
-<span codelanguage="other"> </span>
+<span codelanguage="other"> **
  
 ```xml
     <w:sectPr>  
@@ -138,10 +138,9 @@ using the following WordprocessingML:
 ```
 
 The resulting section shall use the header part with relationship id
-<span class="code">rId3</span> for the first page, the header part with
-relationship id <span class="code">rId2</span> for all subsequent even
-pages, and the header part with relationship id <span
-class="code">rId5</span> for all subsequent odd pages. *end example*]
+**rId3** for the first page, the header part with
+relationship id **rId2** for all subsequent even
+pages, and the header part with relationship id **rId5** for all subsequent odd pages. *end example*]
 
 © ISO/IEC29500: 2008.
 
@@ -150,8 +149,7 @@ class="code">rId5</span> for all subsequent odd pages. *end example*]
 
 The following code example shows how to replace the header in a word
 processing document with the header from another word processing
-document. To call the method, <span
-class="keyword">AddHeaderFromTo</span>, you can use the following code
+document. To call the method, **AddHeaderFromTo**, you can use the following code
 segment as an example.
 
 ```csharp

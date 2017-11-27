@@ -48,8 +48,7 @@ programmatically open a read-only spreadsheet document.
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> class represents an
+target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
 Excel document package. To create an Excel document, you create an
 instance of the **SpreadsheetDocument** class
 and populate it with parts. At a minimum, the document must have a
@@ -59,9 +58,7 @@ SpreadsheetML markup.
 
 To create the class instance from the document that you call one of the
 <span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open"><span
-class="nolink">Open()</span></span> overload methods. Several <span
-class="keyword">Open</span> methods are provided, each with a different
+target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** overload methods. Several **Open** methods are provided, each with a different
 signature. The methods that let you specify whether a document is
 editable are listed in the following table.
 
@@ -72,11 +69,9 @@ Open(Stream, Boolean)|Open(Stream, Boolean)|Create an instance of the Spreadshee
 Open(String, Boolean, OpenSettings)|Open(String, Boolean, OpenSettings)|Create an instance of the SpreadsheetDocument class from the specified file.
 Open(Stream, Boolean, OpenSettings)|Open(Stream, Boolean, OpenSettings)|Create an instance of the SpreadsheetDocument class from the specified I/O stream.
 
-The table earlier in this topic lists only those <span
-class="keyword">Open</span> methods that accept a Boolean value as the
+The table earlier in this topic lists only those **Open** methods that accept a Boolean value as the
 second parameter to specify whether a document is editable. To open a
-document for read-only access, specify <span
-class="keyword">False</span> for this parameter.
+document for read-only access, specify **False** for this parameter.
 
 Notice that two of the **Open** methods create
 an instance of the SpreadsheetDocument class based on a string as the
@@ -85,9 +80,7 @@ technique. It uses the first **Open** method in
 the table earlier in this topic; with a signature that requires two
 parameters. The first parameter takes a string that represents the full
 path file name from which you want to open the document. The second
-parameter is either **true** or <span
-class="keyword">false</span>. This example uses <span
-class="keyword">false</span> and indicates that you want to open the
+parameter is either **true** or **false**. This example uses **false** and indicates that you want to open the
 file as read-only.
 
 The following code example calls the **Open**
@@ -134,8 +127,7 @@ there is not one that takes a Boolean as the second parameter to
 indicate whether the document should be opened for editing.
 
 The recommended method is to open the package as read-only at first,
-before creating the instance of the <span
-class="keyword">SpreadsheetDocument</span> class, as shown in the second
+before creating the instance of the **SpreadsheetDocument** class, as shown in the second
 example in the sample code. The following code example performs this
 operation.
 
@@ -174,16 +166,12 @@ to the existing workbook part, as shown in the following code example.
 ## Basic Document Structure
 The basic document structure of a SpreadsheetML document consists of the
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
-class="nolink">Sheets</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span> elements, which reference the
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
 worksheets in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook"><span
-class="nolink">Workbook</span></span>. A separate XML file is created
+target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook****. A separate XML file is created
 for each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet"><span
-class="nolink">Worksheet</span></span>. For example, the SpreadsheetML
+target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet">**Worksheet****. For example, the SpreadsheetML
 for a workbook that has two worksheets name MySheet1 and MySheet2 is
 located in the Workbook.xml file and is as follows.
 
@@ -199,18 +187,12 @@ located in the Workbook.xml file and is as follows.
 
 The worksheet XML files contain one or more block level elements such as
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData"><span
-class="nolink">SheetData</span></span>. <span
-class="keyword">sheetData</span> represents the cell table and contains
+target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
 one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row"><span
-class="nolink">Row</span></span> elements. A <span
-class="keyword">row</span> contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell"><span
-class="nolink">Cell</span></span> elements. Each cell contains a <span
+target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue"><span
-class="nolink">CellValue</span></span> element that represents the value
+target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is as follows.
@@ -230,13 +212,9 @@ Sheet1.xml file and is as follows.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content that uses strongly-typed classes that correspond to
-SpreadsheetML elements. You can find these classes in the <span
-class="keyword">DocumentFormat.OpenXML.Spreadsheet</span> namespace. The
+SpreadsheetML elements. You can find these classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
-the **workbook**, <span
-class="keyword">sheets</span>, **sheet**, <span
-class="keyword">worksheet</span>, and <span
-class="keyword">sheetData</span> elements.
+the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
 SpreadsheetML Element|Open XML SDK 2.5 Class|Description
 --|--|--
@@ -256,11 +234,9 @@ The sample code shows how, when you try to add a new worksheet, you get
 an exception error because the file is read-only. When you have access
 to the body of the main document part, you add a worksheet by calling
 the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart``1(System.String,System.String)"><span
-class="nolink">AddNewPart\<T\>(String, String)</span></span> method to
+target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart``1(System.String,System.String)">**AddNewPart\<T\>(String, String)**** method to
 create a new <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart"><span
-class="nolink">WorksheetPart</span></span>. The following code example
+target="P:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart">**WorksheetPart****. The following code example
 attempts to add the new **WorksheetPart**.
 
 ```csharp
@@ -294,8 +270,7 @@ attempts to add the new **WorksheetPart**.
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code sample is used to open a Spreadsheet Document for
-Read-only Access. You can call the <span
-class="keyword">OpenSpreadsheetDocumentReadonl</span> method by using
+Read-only Access. You can call the **OpenSpreadsheetDocumentReadonl** method by using
 the following code, which opens the file "Sheet10.xlsx," as an example.
 
 ```csharp

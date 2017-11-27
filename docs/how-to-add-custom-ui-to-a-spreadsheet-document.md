@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -62,7 +62,7 @@ Ribbon Designer, and then right-click to export the customization to an
 XML file). Copy the following content into a text file that is named
 AddCustomUI.xml for use as part of this example. This XML content
 describes a ribbon customization that includes a button labeled "Click
-Me!" in a group named Group1 on the <span class="ui">Add-Ins</span> tab
+Me!" in a group named Group1 on the **Add-Ins** tab
 in Excel. When you click the button, it attempts to run a macro named
 **SampleMacro** in the host workbook.
 
@@ -93,8 +93,8 @@ button's Click action to call.
 
 2.  Press Alt+F11 to open the Visual Basic Editor.
 
-3.  On the <span class="ui">Insert</span> tab, click <span
-    class="ui">Module</span> to create a new module.
+3.  On the **Insert** tab, click <span
+    class="ui">Module** to create a new module.
 
 4.  Add code such as the following to the new module.
 
@@ -113,12 +113,12 @@ button's Click action to call.
 The **AddCustomUI** method accepts two
 parameters:
 
--   <span class="parameter" sdata="paramReference">filename</span>—A
+-   **filename**—A
     string that contains a file name that specifies the workbook to
     modify.
 
 -   <span class="parameter"
-    sdata="paramReference">customUIContent</span>—A string that contains
+    sdata="paramReference">customUIContent**—A string that contains
     the custom content (that is, the XML markup that describes the
     customization).
 
@@ -201,10 +201,9 @@ the new part.
 ## Add the Customization 
 Given a reference to the ribbon extensibility part, the following code
 finishes by setting the part's <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.CustomUiPart.CustomUI">**CustomUI**</span>
+target="P:DocumentFormat.OpenXml.Packaging.CustomUiPart.CustomUI">**CustomUI****
 property to a new <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Office.CustomUI.CustomUI"><span
-class="nolink">CustomUI</span></span> object that contains the supplied
+target="T:DocumentFormat.OpenXml.Office.CustomUI.CustomUI">**CustomUI**** object that contains the supplied
 customization. Once the customization is in place, the code saves the
 custom UI.
 

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -46,21 +46,16 @@ this topic.
 ## Getting a PresentationDocument Object
 
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">PresentationDocument.Open(String, Boolean)</span></span>
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**PresentationDocument.Open(String, Boolean)****
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. To open a document
 for read-only, specify the value **false** for
-this parameter as shown in the following <span
-class="keyword">using</span> statement. In this code, the <span
-class="keyword">presentationFile</span> parameter is a string that
+this parameter as shown in the following **using** statement. In this code, the **presentationFile** parameter is a string that
 represents the path for the file from which you want to open the
 document.
 
@@ -83,27 +78,23 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case
 *presentationDocument*.
 
 
 ---------------------------------------------------------------------------------
 ## Basic Presentation Document Structure 
 
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of the main part
+The basic document structure of a **PresentationML** document consists of the main part
 that contains the presentation definition. The following text from the
 [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
-specification introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+specification introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part
 > starts with a presentation root element. That element contains a
 > presentation, which, in turn, refers to a <span
-> class="keyword">slide</span> list, a *slide master* list, a *notes
+> class="keyword">slide** list, a *slide master* list, a *notes
 > master* list, and a *handout master* list. The slide list refers to
 > all of the slides in the presentation; the slide master list refers to
 > the entire slide masters used in the presentation; the notes master
@@ -162,13 +153,9 @@ two slides denoted by the Id's 267 and 256.
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
 elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements:
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements:
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -181,11 +168,8 @@ class="keyword">notesMaster</span> elements:
 --------------------------------------------------------------------------------
 ## How the Sample Code Works 
 
-The sample code consists of two overloads of the method <span
-class="keyword">GetSlideTitles</span>. In the first overloaded method,
-the presentation file is opened in the <span
-class="keyword">using</span> statement. Then it passes the <span
-class="keyword">PresentationDocument</span> object to the second
+The sample code consists of two overloads of the method **GetSlideTitles**. In the first overloaded method,
+the presentation file is opened in the **using** statement. Then it passes the **PresentationDocument** object to the second
 overloaded **GetSlideTitles** method, which
 returns a list that represents the titles of all the slides in the
 presentation.
@@ -214,8 +198,7 @@ presentation.
 ```
 
 The second overloaded **GetSlideTitles** method
-is used to get a list of slide titles. It takes the <span
-class="keyword">PresentationDocument</span> object passed in, iterates
+is used to get a list of slide titles. It takes the **PresentationDocument** object passed in, iterates
 through its slides, and gets the slide IDs of all the slides in the
 presentation. For each slide ID, it gets a slide part to pass to the
 **GetSlideTitle** method. It returns to the

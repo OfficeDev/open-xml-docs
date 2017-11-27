@@ -37,26 +37,21 @@ this topic.
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
-This code example consists of two methods. The first method, <span
-class="keyword">ValidateWordDocument</span>, is used to validate a
+This code example consists of two methods. The first method, **ValidateWordDocument**, is used to validate a
 regular Word file. It doesn't throw any exceptions and closes the file
-after running the validation check. The second method, <span
-class="keyword">ValidateCorruptedWordDocument</span>, starts by
+after running the validation check. The second method, **ValidateCorruptedWordDocument**, starts by
 inserting some text into the body, which causes a schema error. It then
 validates the Word file, in which case the method throws an exception on
 trying to open the corrupted file. The validation is done by using the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Validation.OpenXmlValidator.Validate(DocumentFormat.OpenXml.Packaging.OpenXmlPackage)"><span
-class="nolink">Validate</span></span> method. The code displays
+target="M:DocumentFormat.OpenXml.Validation.OpenXmlValidator.Validate(DocumentFormat.OpenXml.Packaging.OpenXmlPackage)">**Validate**** method. The code displays
 information about any errors that are found, in addition to the count of
 errors.
 
 
 --------------------------------------------------------------------------------
 ## Sample Code
-In your main method, you can call the two methods, <span
-class="keyword">ValidateWordDocument</span> and <span
-class="keyword">ValidateCorruptedWordDocument</span> by using the
+In your main method, you can call the two methods, **ValidateWordDocument** and **ValidateCorruptedWordDocument** by using the
 following example that validates a file named "Word18.docx.".
 
 ```csharp

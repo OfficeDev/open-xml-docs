@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -18,8 +18,7 @@ ms.date: 11/01/2017
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically retrieve a list of the worksheets in a
 Microsoft Excel 2010 or Microsoft Excel 2013 workbook, without loading
-the document into Excel. It contains an example <span
-class="keyword">GetAllWorksheets</span> method to illustrate this task.
+the document into Excel. It contains an example **GetAllWorksheets** method to illustrate this task.
 
 To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
@@ -47,8 +46,7 @@ the code in this topic.
 ## GetAllWorksheets Method 
 You can use the **GetAllWorksheets** method,
 which is shown in the following code, to retrieve a list of the
-worksheets in a workbook. The <span
-class="keyword">GetAllWorksheets</span> method accepts a single
+worksheets in a workbook. The **GetAllWorksheets** method accepts a single
 parameter, a string that indicates the path of the file that you want to
 examine.
 
@@ -62,11 +60,9 @@ examine.
 
 The method works with the workbook you specify, returning an instance of
 the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
-class="nolink">Sheets</span></span> object, from which you can retrieve
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** object, from which you can retrieve
 a reference to each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span> object.
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** object.
 
 
 --------------------------------------------------------------------------------
@@ -104,8 +100,7 @@ the required value, as shown in the following code.
 --------------------------------------------------------------------------------
 ## How the Code Works 
 The sample method, **GetAllWorksheets**,
-creates a variable that will contain a reference to the <span
-class="keyword">Sheets</span> collection of the workbook. At the end of
+creates a variable that will contain a reference to the **Sheets** collection of the workbook. At the end of
 its work, the method returns the variable, which contains either a
 reference to the **Sheets** collection, or
 null/Nothing if there were no sheets (this cannot occur in a well-formed
@@ -125,8 +120,7 @@ workbook).
 
 The code then continues by opening the document in read-only mode, and
 retrieving a reference to the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart"><span
-class="nolink">WorkbookPart</span></span>.
+target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart****.
 
 ```csharp
     using (SpreadsheetDocument document = 
@@ -146,20 +140,14 @@ class="nolink">WorkbookPart</span></span>.
 ```
 
 To get access to the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook"><span
-class="nolink">Workbook</span></span> object, the code retrieves the
+target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**** object, the code retrieves the
 value of the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook"><span
-class="nolink">Workbook</span></span> property from the <span
-class="keyword">WorkbookPart</span>, and then retrieves a reference to
+target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook">**Workbook**** property from the **WorkbookPart**, and then retrieves a reference to
 the **Sheets** object from the <span
 sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.Sheets"><span
-class="nolink">Sheets</span></span> property of the <span
-class="keyword">Workbook</span>. The **Sheets**
+target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.Sheets">**Sheets**** property of the **Workbook**. The **Sheets**
 object contains the collection of <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span> objects that provide the method's
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** objects that provide the method's
 return value.
 
 ```csharp
@@ -172,8 +160,7 @@ return value.
 
 --------------------------------------------------------------------------------
 ## Sample Code 
-The following is the complete <span
-class="keyword">GetAllWorksheets</span> code sample in C\# and Visual
+The following is the complete **GetAllWorksheets** code sample in C\# and Visual
 Basic.
 
 ```csharp

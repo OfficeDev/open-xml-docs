@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -53,13 +53,11 @@ a word-processing document package.
 ## Getting a WordprocessingDocument Object 
 In the sample code, you start by opening the word processing file by
 instantiating the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class as shown in
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method, with the Boolean parameter set
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ```csharp
@@ -80,23 +78,19 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case *wordDoc*. Because
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case *wordDoc*. Because
 the **WordprocessingDocument** class in the
 Open XML SDK automatically saves and closes the object as part of its
 **System.IDisposable** implementation, and
 because **Dispose** is automatically called
-when you exit the block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+when you exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works 
-After you have opened the file for editing, you read it by using a <span
-class="keyword">StreamReader</span> object.
+After you have opened the file for editing, you read it by using a **StreamReader** object.
 
 ```csharp
     using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))

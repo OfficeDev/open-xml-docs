@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -49,28 +49,23 @@ this topic.
 ## Getting a Presentation Object 
 
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call one
 of the **Open** method overloads. The code in
 this topic uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">PresentationDocument.Open(String, Boolean)</span></span>
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**PresentationDocument.Open(String, Boolean)****
 method, which takes a file path as the first parameter to specify the
 file to open, and a Boolean value as the second parameter to specify
-whether a document is editable. Set this second parameter to <span
-class="keyword">false</span> to open the file for read-only access, or
+whether a document is editable. Set this second parameter to **false** to open the file for read-only access, or
 **true** if you want to open the file for
 read/write access. The code in this topic opens the file twice, once to
 count the number of slides and once to delete a specific slide. When you
 count the number of slides in a presentation, it is best to open the
 file for read-only access to protect the file against accidental
 writing. The following **using** statement
-opens the file for read-only access. In this code example, the <span
-class="keyword">presentationFile</span> parameter is a string that
+opens the file for read-only access. In this code example, the **presentationFile** parameter is a string that
 represents the path for the file from which you want to open the
 document.
 
@@ -112,27 +107,22 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">presentationDocument</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **presentationDocument**.
 
 
 --------------------------------------------------------------------------------
 ## Basic Presentation Document Structure 
 
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of the main part
+The basic document structure of a **PresentationML** document consists of the main part
 that contains the presentation definition. The following text from the
 [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
-specification introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+specification introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part
 > starts with a presentation root element. That element contains a
 > presentation, which, in turn, refers to a <span
-> class="keyword">slide</span> list, a *slide master* list, a *notes
+> class="keyword">slide** list, a *slide master* list, a *notes
 > master* list, and a *handout master* list. The slide list refers to
 > all of the slides in the presentation; the slide master list refers to
 > the entire slide masters used in the presentation; the notes master
@@ -191,13 +181,9 @@ two slides denoted by the IDs 267 and 256.
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
 elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements.
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -209,15 +195,11 @@ class="keyword">notesMaster</span> elements.
 --------------------------------------------------------------------------------
 ## Counting the Number of Slides 
 
-The sample code consists of two overloads of the <span
-class="keyword">CountSlides</span> method. The first overload uses a
+The sample code consists of two overloads of the **CountSlides** method. The first overload uses a
 **string** parameter and the second overload
 uses a **PresentationDocument** parameter. In
 the first **CountSlides** method, the sample
-code opens the presentation document in the <span
-class="keyword">using</span> statement. Then it passes the <span
-class="keyword">PresentationDocument</span> object to the second <span
-class="keyword">CountSlides</span> method, which returns an integer
+code opens the presentation document in the **using** statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer
 number that represents the number of slides in the presentation.
 
 ```csharp
@@ -283,15 +265,11 @@ and returns it.
 --------------------------------------------------------------------------------
 ## Deleting a Specific Slide 
 
-The code for deleting a slide uses two overloads of the <span
-class="keyword">DeleteSlide</span> method. The first overloaded <span
-class="keyword">DeleteSlide</span> method takes two parameters: a string
+The code for deleting a slide uses two overloads of the **DeleteSlide** method. The first overloaded **DeleteSlide** method takes two parameters: a string
 that represents the presentation file name and path, and an integer that
 represents the zero-based index position of the slide to delete. It
-opens the presentation file for read/write access, gets a <span
-class="keyword">PresentationDocument</span> object, and then passes that
-object and the index number to the next overloaded <span
-class="keyword">DeleteSlide</span> method, which performs the deletion.
+opens the presentation file for read/write access, gets a **PresentationDocument** object, and then passes that
+object and the index number to the next overloaded **DeleteSlide** method, which performs the deletion.
 
 ```csharp
     // Get the presentation object and pass it to the next DeleteSlide method.
@@ -326,9 +304,7 @@ class="keyword">DeleteSlide</span> method, which performs the deletion.
     Return slidesCount
 ```
 
-The first section of the second overloaded <span
-class="keyword">DeleteSlide</span> method uses the <span
-class="keyword">CountSlides</span> method to get the number of slides in
+The first section of the second overloaded **DeleteSlide** method uses the **CountSlides** method to get the number of slides in
 the presentation. Then, it gets the list of slide IDs in the
 presentation, identifies the specified slide in the slide list, and
 removes the slide from the slide list.
@@ -402,8 +378,7 @@ removes the slide from the slide list.
         slideIdList.RemoveChild(slideId)
 ```
 
-The next section of the second overloaded <span
-class="keyword">DeleteSlide</span> method removes all references to the
+The next section of the second overloaded **DeleteSlide** method removes all references to the
 deleted slide from custom shows. It does that by iterating through the
 list of custom shows and through the list of slides in each custom show.
 It then declares and instantiates a linked list of slide list entries,
@@ -497,8 +472,7 @@ part for the deleted slide.
 ## Sample Code 
 
 The following is the complete sample code for the two overloaded
-methods, **CountSlides** and <span
-class="keyword">DeleteSlide</span>. To use the code, you can use the
+methods, **CountSlides** and **DeleteSlide**. To use the code, you can use the
 following call as an example to delete the slide at index 2 in the
 presentation file "Myppt6.pptx."
 

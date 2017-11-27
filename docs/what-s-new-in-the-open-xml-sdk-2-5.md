@@ -114,12 +114,9 @@ an ISO Strict Format file.
 Because the file format extension of Office 2013 extends members of the
 **\<extLst\>** element which did not have any
 member elements, Open XML SDK 2.0 classes associated with the empty
-**\<extLst\>** (e.g. <span
-class="keyword">DocumentFormat.OpenXml.Spreadsheet.PivotFilter:ExtensionList</span>)
-are updated to the new variants of <span
-class="keyword">ExtensionList</span> classes of Open XML SDK 2.5 (e.g.
-<span
-class="keyword">DocumentFormat.OpenXml.Spreadsheet.PivotFilter:PivotFilterExtensionList</span>).
+**\<extLst\>** (e.g. **DocumentFormat.OpenXml.Spreadsheet.PivotFilter:ExtensionList**)
+are updated to the new variants of **ExtensionList** classes of Open XML SDK 2.5 (e.g.
+**DocumentFormat.OpenXml.Spreadsheet.PivotFilter:PivotFilterExtensionList**).
 The following empty **ExtensionList** in each
 class are replaced with a new **ExtensionList**
 class including new **Off Open XML** child
@@ -127,51 +124,51 @@ element members.
 
 **ExtensionList:**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks</span>
+-   **DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks**
 
 -   **DocumentFormat.OpenXml.Drawing.Theme**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeDrawingProperties</span>
+-   **DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeDrawingProperties**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference</span>
+-   **DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.NumberReference</span>
+-   **DocumentFormat.OpenXml.Drawing.Charts.NumberReference**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.StringReference</span>
+-   **DocumentFormat.OpenXml.Drawing.Charts.StringReference**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries</span>
+-   **DocumentFormat.OpenXml.Drawing.Charts.SurfaceChartSeries**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot</span>
+-   **DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualDrawingProperties</span>
+-   **DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualDrawingProperties**
 
--   <span class="keyword">DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualGroupShapeDrawingProperties</span>
+-   **DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualGroupShapeDrawingProperties**
 
--   <span class="keyword">DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties</span>
+-   **DocumentFormat.OpenXml.Office.Drawing.NonVisualGroupDrawingShapeProperties**
 
--   <span class="keyword">DocumentFormat.OpenXml.Office2010.Excel.SlicerCacheDefinition</span>
+-   **DocumentFormat.OpenXml.Office2010.Excel.SlicerCacheDefinition**
 
--   <span class="keyword">DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.NonVisualGroupDrawingShapeProperties</span>
+-   **DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.NonVisualGroupDrawingShapeProperties**
 
--   <span class="keyword">DocumentFormat.OpenXml.Presentation.CommentAuthor</span>
+-   **DocumentFormat.OpenXml.Presentation.CommentAuthor**
 
--   <span class="keyword">DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeDrawingProperties</span>
+-   **DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeDrawingProperties**
 
--   <span class="keyword">DocumentFormat.OpenXml.Spreadsheet.PivotFilter</span>
+-   **DocumentFormat.OpenXml.Spreadsheet.PivotFilter**
 
--   <span class="keyword">DocumentFormat.OpenXml.Spreadsheet.QueryTable</span>
+-   **DocumentFormat.OpenXml.Spreadsheet.QueryTable**
 
 **ExtensionListWithModification:**
 
--   <span class="keyword">DocumentFormat.OpenXml.Presentation.Comment</span>
+-   **DocumentFormat.OpenXml.Presentation.Comment**
 
--   <span class="keyword">DocumentFormat.OpenXml.Presentation.HandoutMaster</span>
+-   **DocumentFormat.OpenXml.Presentation.HandoutMaster**
 
--   <span class="keyword">DocumentFormat.OpenXml.Presentation.NotesMaster</span>
+-   **DocumentFormat.OpenXml.Presentation.NotesMaster**
 
--   <span class="keyword">DocumentFormat.OpenXml.Presentation.SlideLayout</span>
+-   **DocumentFormat.OpenXml.Presentation.SlideLayout**
 
--   <span class="keyword">DocumentFormat.OpenXml.Presentation.SlideMaster</span>
+-   **DocumentFormat.OpenXml.Presentation.SlideMaster**
 
 
 --------------------------------------------------------------------------------
@@ -215,7 +212,7 @@ DocumentFormat.OpenXml.Wordprocessing:
 
 The Open XML SDK 2.0 classes for Office 2010 *beta only* Open XML tags
 are deprecated. For example, the beta only non-visual properties of
-<span class="keyword">DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing</span>,
+**DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing**,
 **DocumentFormat.OpenXml.Office2010.Word**, and
 **DocumentFormat.OpenXml.Office2010.Drawing**
 have been removed from the Open XML SDK 2.5.

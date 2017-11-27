@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -199,8 +199,7 @@ of the **cm** (comment) element.
 | text | Comment's text content. |
 | extLst | Specifies the extension list with modification ability within which all future extensions of element type ext are defined. The extension list along with corresponding future extensions is used to extend the storage capabilities of the PresentationML framework. This allows for various new kinds of data to be stored natively within the framework. |
 
-The following XML schema example defines the members of the <span
-class="keyword">cm</span> element in addition to the required and
+The following XML schema example defines the members of the **cm** element in addition to the required and
 optional attributes.
 
 ```xml

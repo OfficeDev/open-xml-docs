@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,19 +16,17 @@ ms.date: 11/01/2017
 # Working with SpreadsheetML tables (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Table"><span
-class="nolink">Table</span></span> class and how it relates to the Open
+target="T:DocumentFormat.OpenXml.Spreadsheet.Table">**Table**** class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
 overall structure of the parts and elements that make up a SpreadsheetML
 document, see <span sdata="link">[Structure of a SpreadsheetML document
-(Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
+(Open XML SDK)](structure-of-a-spreadsheetml-document.md)**.
 
 
 --------------------------------------------------------------------------------
 ## Tables in SpreadsheetML 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the **table** (\<<span
-class="keyword">table</span>\>) element.
+specification introduces the **table** (\<**table**\>) element.
 
 A table helps organize and provide structure to lists of information in
 a worksheet. Tables have clearly labeled columns, rows, and data
@@ -88,8 +86,7 @@ the Open XML File Format schema for SpreadsheetML documents. Use the
 document.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **table** (\<<span
-class="keyword">table</span>\>) element.
+introduces the **table** (\<**table**\>) element.
 
 An instance of this part type contains a description of a single table
 and its autofilter information. (The data for the table is stored in the
@@ -108,10 +105,8 @@ be empty. If you do not define any autofilter, autofiltering will be
 disabled when the document is opened in Excel.
 
 The **table** element has several attributes
-used to identify the table and the data range it covers. The <span
-class="keyword">id</span> and **name**
-attributes must be unique across all table parts. The <span
-class="keyword">displayName</span> attribute must be unique across all
+used to identify the table and the data range it covers. The **id** and **name**
+attributes must be unique across all table parts. The **displayName** attribute must be unique across all
 table parts and unique across all defined names in the workbook. The
 **name** attribute is used by the object model
 in Excel. The **displayName** attribute is used
@@ -123,14 +118,11 @@ ISO/IEC 29500 specification.
 
 ### Table Column Class
 
-To add columns to your table you add new <span
-class="keyword">tableColumn</span> elements to the <span
-class="keyword">tableColumns</span> collection. The collection has a
+To add columns to your table you add new **tableColumn** elements to the **tableColumns** collection. The collection has a
 count attribute that tracks the number of columns.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **TableColumn** (\<<span
-class="keyword">tableColumn</span>\>) element.
+introduces the **TableColumn** (\<**tableColumn**\>) element.
 
 An element representing a single column for this table.
 
@@ -139,8 +131,7 @@ An element representing a single column for this table.
 ### Auto Filter Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **AutoFilter** (\<<span
-class="keyword">autoFilter</span>\>) element.
+introduces the **AutoFilter** (\<**autoFilter**\>) element.
 
 AutoFilter temporarily hides rows based on filter criteria, which is
 applied column by column to a table of data in the worksheet. This
@@ -172,8 +163,7 @@ The table contains three columns and three rows, plus a column header.
 
 The following XML defines the worksheet and is contained in the
 "sheet1.xml" file. The worksheet XML file contains the actual data
-displayed in the table, and contains the <span
-class="keyword">tablePart</span> element that references the
+displayed in the table, and contains the **tablePart** element that references the
 "table1.xml" file, which contains the table definition.
 
 ```xml

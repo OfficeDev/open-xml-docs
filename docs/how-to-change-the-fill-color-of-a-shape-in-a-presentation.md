@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -39,16 +39,13 @@ this topic.
 
 ## Getting a Presentation Object 
 
-In the Open XML SDK, the <span
-class="keyword">PresentationDocument</span> class represents a
+In the Open XML SDK, the **PresentationDocument** class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
 **Open** method that uses a file path, and a
 Boolean value as the second parameter to specify whether a document is
-editable. To open a document for read/write, specify the value <span
-class="keyword">true</span> for this parameter as shown in the following
+editable. To open a document for read/write, specify the value **true** for this parameter as shown in the following
 **using** statement. In this code, the file
 parameter is a string that represents the path for the file from which
 you want to open the document.
@@ -70,31 +67,28 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case *ppt*.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case *ppt*.
 
 
 ## The Structure of the Shape Tree 
 
 The basic document structure of a PresentationML document consists of a
-number of parts, among which is the Shape Tree (<span class="keyword">sp
-Tree</span>) element.
+number of parts, among which is the Shape Tree (**sp
+Tree**) element.
 
 The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
-introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+introduces the overall form of a **PresentationML** package.
 
 > This element specifies all shapes within a slide. Contained within
 > here are all the shapes, either grouped or not, that can be referenced
 > on a given slide. As most objects within a slide are shapes, this
 > represents the majority of content within a slide. Text and effects
 > are attached to shapes that are contained within the <span
-> class="keyword">spTree</span> element.
+> class="keyword">spTree** element.
 
 > [*Example*: Consider the following <span
-> class="keyword">PresentationML</span> slide
+> class="keyword">PresentationML** slide
 
 ```xml
     <p:sld>
@@ -155,8 +149,7 @@ The following XML Schema fragment defines the contents of this element.
 
 ## How the Sample Code Works
 
-After opening the presentation file for read/write access in the <span
-class="keyword">using</span> statement, the code gets the presentation
+After opening the presentation file for read/write access in the **using** statement, the code gets the presentation
 part from the presentation document. Then it gets the relationship ID of
 the first slide, and gets the slide part from the relationship ID.
 

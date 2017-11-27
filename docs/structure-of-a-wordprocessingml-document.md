@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -15,22 +15,14 @@ ms.date: 11/01/2017
 ---
 # Structure of a WordprocessingML document (Open XML SDK)
 
-This topic discusses the basic structure of a <span
-class="keyword">WordprocessingML</span> document and reviews important
-Open XML SDK classes that are used most often to create <span
-class="keyword">WordprocessingML</span> documents.
+This topic discusses the basic structure of a **WordprocessingML** document and reviews important
+Open XML SDK classes that are used most often to create **WordprocessingML** documents.
 
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the \<<span
-class="keyword">document</span>\> and \<<span
-class="keyword">body</span>\> elements, followed by one or more block
+The basic document structure of a **WordProcessingML** document consists of the \<**document**\> and \<**body**\> elements, followed by one or more block
 level elements such as \<**p**\>, which
-represents a paragraph. A paragraph contains one or more \<<span
-class="keyword">r</span>\> elements. The \<<span
-class="keyword">r</span>\> stands for run, which is a region of text
+represents a paragraph. A paragraph contains one or more \<**r**\> elements. The \<**r**\> stands for run, which is a region of text
 with a common set of properties, such as formatting. A run contains one
-or more \<**t**\> elements. The \<<span
-class="keyword">t</span>\> element contains a range of text.
+or more \<**t**\> elements. The \<**t**\> element contains a range of text.
 
 **In This Section**
 
@@ -47,9 +39,7 @@ The Open XML SDK 2.5 API provides strongly-typed classes in the
 DocumentFormat.OpenXML.WordprocessingML namespace that correspond to
 **WordprocessingML** elements.
 
-The following table lists some important <span
-class="keyword">WordprocessingML</span> elements, the <span
-class="keyword">WordprocessingML</span> document package part that the
+The following table lists some important **WordprocessingML** elements, the **WordprocessingML** document package part that the
 element corresponds to (where applicable) and the managed class that
 represents the element in the Open XML SDK 2.5 API.
 
@@ -69,9 +59,7 @@ represents the element in the Open XML SDK 2.5 API.
 ## Minimum Document Scenario
 
 A **WordprocessingML** document is organized
-around the concept of stories. A story is a region of content in a <span
-class="keyword">WordprocessingML</span> document. <span
-class="keyword">WordprocessingML</span> stories include:
+around the concept of stories. A story is a region of content in a **WordprocessingML** document. **WordprocessingML** stories include:
 
 -   comment
 
@@ -91,11 +79,9 @@ class="keyword">WordprocessingML</span> stories include:
 
 -   text box
 
-Not all stories must be present in a valid <span
-class="keyword">WordprocessingML</span> document. The simplest, valid
+Not all stories must be present in a valid **WordprocessingML** document. The simplest, valid
 **WordprocessingML** document only requires a
-single story—the main document story. In <span
-class="keyword">WordprocessingML</span>, the main document story is
+single story—the main document story. In **WordprocessingML**, the main document story is
 represented by the main document part. At a minimum, to create a valid
 **WordprocessingML** document using code, add a
 main document part to the document.
@@ -123,8 +109,7 @@ t — A range of text.
 
 ### Open XML SDK Code Example
 
-The following code uses the Open XML SDK 2.5 to create a simple <span
-class="keyword">WordprocessingML</span> document that contains the text
+The following code uses the Open XML SDK 2.5 to create a simple **WordprocessingML** document that contains the text
 "Hello, Word!"
 
 ```csharp
@@ -172,13 +157,11 @@ generate a document, you can explore the contents of the .zip package to
 view the **WordprocessingML** XML code. To view
 the .zip package, rename the extension on the minimum document from
 .docx to .zip. The .zip package contains the parts that make up the
-document. In this case, since the code created a minimal <span
-class="keyword">WordprocessingML</span> document, there is only a single
+document. In this case, since the code created a minimal **WordprocessingML** document, there is only a single
 part—the main document part.The following figure shows the structure
 under the word folder of the .zip package for a minimum document that
-contains a single line of text.<span class="placeholder">Art
-placeholder</span>The document.xml file corresponds to the <span
-class="keyword">WordprocessingML</span> main document part and it is
+contains a single line of text.**Art
+placeholder**The document.xml file corresponds to the **WordprocessingML** main document part and it is
 this part that contains the content of the main body of the document.
 The following XML code is generated in the document.xml file when you
 run the Open XML SDK 2.5 code in the previous section.

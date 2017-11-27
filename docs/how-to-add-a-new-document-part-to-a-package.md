@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -51,9 +51,8 @@ a word-processing document package.
 -----------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object 
 The code starts with opening a package file by passing a file name to
-one of the overloaded <span sdata="cer" target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open"><span class="nolink">Open()</span></span> methods of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">DocumentFormat.OpenXml.Packaging.WordprocessingDocument</span></span>
+one of the overloaded <span sdata="cer" target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open">**Open()**** methods of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**DocumentFormat.OpenXml.Packaging.WordprocessingDocument****
 that takes a string and a Boolean value that specifies whether the file
 should be opened for editing or for read-only access. In this case, the
 Boolean value is **true** specifying that the
@@ -76,33 +75,21 @@ The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">wordDoc</span>. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 the **Dispose** method is automatically called
-when you exit the block; you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+when you exit the block; you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
 -----------------------------------------------------------------------------
 ## Basic Structure of a WordProcessingML Document 
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
-contains one or more **r** elements. The <span
-class="keyword">r</span> stands for run, which is a region of text with
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
+contains one or more **r** elements. The **r** stands for run, which is a region of text with
 a common set of properties, such as formatting. A run contains one or
-more **t** elements. The <span
-class="keyword">t</span> element contains a range of text. The <span
-class="keyword">WordprocessingML</span> markup for the document that the
+more **t** elements. The **t** element contains a range of text. The **WordprocessingML** markup for the document that the
 sample code creates is shown in the following code example.
 
 ```xml
@@ -118,15 +105,11 @@ sample code creates is shown in the following code example.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to <span
-class="keyword">WordprocessingML</span> elements. You can find these
+content using strongly-typed classes that correspond to **WordprocessingML** elements. You can find these
 classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+target="N:DocumentFormat.OpenXml.Wordprocessing">**DocumentFormat.OpenXml.Wordprocessing****
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements,
+correspond to the **document**, **body**, **p**, **r**, and **t** elements,
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -138,13 +121,10 @@ class="keyword">r</span>, and **t** elements,
 
 -----------------------------------------------------------------------------
 ## How the Sample Code Works 
-After opening the document for editing, in the <span
-class="keyword">using</span> statement, as a <span
-class="keyword">WordprocessingDocument</span> object, the code creates a
+After opening the document for editing, in the **using** statement, as a **WordprocessingDocument** object, the code creates a
 reference to the **MainDocumentPart** part and
 adds a new custom XML part. It then reads the contents of the external
-file that contains the custom XML and writes it to the <span
-class="keyword">CustomXmlPart</span> part.
+file that contains the custom XML and writes it to the **CustomXmlPart** part.
 
 > [!NOTE]
 > To use the new document part in the document, add a link to the document part in the relationship part for the new part.

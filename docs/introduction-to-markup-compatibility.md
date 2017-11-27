@@ -65,8 +65,7 @@ applications.
 Markup compatibility is discussed in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip),
 which is recommended reading to understand markup compatibility. The
 specification defines XML attributes to express compatibility rules, and
-XML elements to specify alternate content. For example, the <span
-class="keyword">Ignorable</span> attribute specifies namespaces that can
+XML elements to specify alternate content. For example, the **Ignorable** attribute specifies namespaces that can
 be ignored when they are not understood by the consuming application.
 Alternate-Content elements specify markup alternatives that can be
 chosen by an application at run time. For example, Word 2013 can choose
@@ -95,8 +94,7 @@ Edition: Part 3.13.
 The Open XML SDK 2.5 support for markup compatibility comes primarily in
 the form of two classes and in the manner in which content is
 preprocessed in accordance with ECMA-376, Second Edition. The two
-classes are **OpenSettings** and <span
-class="keyword">MarkupCompatibilityProcessSettings</span>. Use the
+classes are **OpenSettings** and **MarkupCompatibilityProcessSettings**. Use the
 former to provide settings that apply to SDK behavior overall. Use the
 latter to supply one part of those settings, specifically those that
 apply to markup compatibility.
@@ -107,30 +105,27 @@ apply to markup compatibility.
 When you open a document using the Open XML SDK 2.5, you have the option
 of using an overload with a signature that accepts an instance of the
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.OpenSettings"><span
-class="nolink">OpenSettings</span></span> class as a parameter. You use
+target="T:DocumentFormat.OpenXml.Packaging.OpenSettings">**OpenSettings**** class as a parameter. You use
 the open settings class to provide certain important settings that
 govern the behavior of the SDK. One set of settings in particular,
 stored in the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.OpenSettings.MarkupCompatibilityProcessSettings"><span
-class="nolink">MarkupCompatibilityProcessSettings</span></span>
+target="P:DocumentFormat.OpenXml.Packaging.OpenSettings.MarkupCompatibilityProcessSettings">**MarkupCompatibilityProcessSettings****
 property, determines how markup compatibility elements and attributes
 are processed. You set the property to an instance of the <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings"><span
-class="nolink">MarkupCompatibilityProcessSettings</span></span> class
+target="T:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings">**MarkupCompatibilityProcessSettings**** class
 prior to opening a document.
 
 The class has the following properties:
 
 -   <span sdata="cer"
     target="P:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings.ProcessMode">
-    <span class="nolink">ProcessMode</span> </span> - Determines the
+    **ProcessMode** ** - Determines the
     parts that are preprocessed.
 
 -   <span sdata="cer"
     target="P:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings.TargetFileFormatVersions">
-    <span class="nolink">TargetFileFormatVersions</span> </span> -
+    **TargetFileFormatVersions** ** -
     Specifies the context that applies to preprocessing.
 
 By default, documents are not preprocessed. If however you do specify
@@ -139,10 +134,8 @@ the document is preprocessed in accordance with those settings.
 
 The following code example demonstrates how to call the Open method with
 an instance of the open settings class as a parameter. Notice that the
-**ProcessMode** and <span
-class="keyword">TargetFileFormatVersions</span> properties are
-initialized as part of the <span
-class="keyword">MarkupCompatiblityProcessSettings</span> constructor.
+**ProcessMode** and **TargetFileFormatVersions** properties are
+initialized as part of the **MarkupCompatiblityProcessSettings** constructor.
 
 ```csharp
     // Create instance of OpenSettings
@@ -185,8 +178,7 @@ property.
 ## Understanding Process Mode 
 The process mode specifies which document parts should be preprocessed.
 You set this property to a member of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessMode"><span
-class="nolink">MarkupCompatibilityProcessMode</span></span> enumeration.
+target="T:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessMode">**MarkupCompatibilityProcessMode**** enumeration.
 The default value, **NoProcess**, indicates
 that no preprocessing is performed. Your application must be able to
 understand and handle any elements and attributes present in the
@@ -195,8 +187,7 @@ Markup Compatibility namespace.
 
 You might want to work on specific document parts while leaving the rest
 untouched. For example, you might want to ensure minimal modification to
-the file. In that case, specify <span
-class="keyword">ProcessLoadedPartsOnly</span> for the process mode. With
+the file. In that case, specify **ProcessLoadedPartsOnly** for the process mode. With
 this setting, preprocessing and the associated filtering is only applied
 to the loaded document parts, not the entire document.
 
@@ -211,8 +202,7 @@ The target file format versions property lets you choose to process
 markup compatibility content in either Office 2010 or Office 2013
 context. Set the **TargetFileFormatVersions**
 property to a member of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.FileFormatVersions"><span
-class="nolink">FileFormatVersions</span></span> enumeration.
+target="T:DocumentFormat.OpenXml.FileFormatVersions">**FileFormatVersions**** enumeration.
 
 The default value, **Office2010**, means the
 SDK will assume that namespaces defined in Office 2010 are understood,
@@ -220,8 +210,7 @@ but not namespaces defined in Office 2013. Thus, during preprocessing,
 the SDK will ignore the namespaces defined in Office 2013 and choose the
 Office 2010 compatible alternate-content.
 
-When you set the target file format versions property to <span
-class="keyword">Office2013</span>, the Open XML SDK 2.5 assumes that all
+When you set the target file format versions property to **Office2013**, the Open XML SDK 2.5 assumes that all
 of the namespaces defined in Office 2010 and Office 2013 are understood,
 does not ignore any content defined under Office 2013, and will choose
 the Office 2013 compatible alternate-content.

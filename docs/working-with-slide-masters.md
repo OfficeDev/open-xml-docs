@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,8 +16,7 @@ ms.date: 11/01/2017
 # Working with slide masters (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.SlideMaster"><span
-class="nolink">SlideMaster</span></span> class and how it relates to the
+target="T:DocumentFormat.OpenXml.Presentation.SlideMaster">**SlideMaster**** class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -78,13 +77,11 @@ preserve (Preserve Slide Master)|Specifies whether the corresponding slide layou
 
 The Open XML SDK 2.5**SlideMaster** class
 represents the \<sldMaster\> element defined in the Open XML File Format
-schema for PresentationML documents. Use the <span
-class="keyword">SlideMaster</span> class to manipulate individual
+schema for PresentationML documents. Use the **SlideMaster** class to manipulate individual
 \<sldMaster\> elements in a PresentationML document.
 
 Classes that represent child elements of the \<sldMaster\> element and
-that are therefore commonly associated with the <span
-class="keyword">SlideMaster</span> class are shown in the following
+that are therefore commonly associated with the **SlideMaster** class are shown in the following
 list.
 
 ### ColorMapOverride Class
@@ -246,64 +243,46 @@ formatting for all related slides within the presentation. end example]
 As shown in the Open XML SDK code sample that follows, every instance of
 the **SlideMaster** class is associated with an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideMasterPart"><span
-class="nolink">SlideMasterPart</span></span> class, which represents a
+target="T:DocumentFormat.OpenXml.Packaging.SlideMasterPart">**SlideMasterPart**** class, which represents a
 slide master part, one of the required parts of a PresentationML
 presentation file package. Each **SlideMaster**
 class instance must also be associated with instances of the <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.SlideLayout"><span
-class="nolink">SlideLayout</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Slide"><span
-class="nolink">Slide</span></span> classes, which are in turn associated
+target="T:DocumentFormat.OpenXml.Presentation.SlideLayout">**SlideLayout**** and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.Slide">**Slide**** classes, which are in turn associated
 with similarly named required presentation parts, represented by the
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideLayoutPart"><span
-class="nolink">SlideLayoutPart</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlidePart"><span
-class="nolink">SlidePart</span></span> classes.
+target="T:DocumentFormat.OpenXml.Packaging.SlideLayoutPart">**SlideLayoutPart**** and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.SlidePart">**SlidePart**** classes.
 
 The **SlideMaster** class, which represents the
 \<sldMaster\> element, is therefore also associated with a series of
 other classes that represent the child elements of the \<sldMaster\>
 element. Among these classes, as shown in the following code sample, are
-the **CommonSlideData** class, the <span
-class="keyword">ColorMap</span> class, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree"><span
-class="nolink">ShapeTree</span></span> class, and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape"><span
-class="nolink">Shape</span></span> class.
+the **CommonSlideData** class, the **ColorMap** class, the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, and the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
 
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example 
 
-The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> adds a new slide
+The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** adds a new slide
 master part to an existing presentation and creates an instance of an
 Open XML SDK 2.5**SlideMaster** class in the
 new slide master part. The **SlideMaster**
-class constructor creates instances of the <span
-class="keyword">CommonSlideData</span> class and the <span
-class="keyword">ColorMap</span>, <span
-class="keyword">SlideLayoutIdList</span>, and <span
-class="keyword">TextStyles</span> classes. The <span
-class="keyword">CommonSlideData</span> class constructor creates an
+class constructor creates instances of the **CommonSlideData** class and the **ColorMap**, **SlideLayoutIdList**, and **TextStyles** classes. The **CommonSlideData** class constructor creates an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree"><span
-class="nolink">ShapeTree</span></span> class, whose constructor in turn
+target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, whose constructor in turn
 creates additional class instances: an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties"><span
-class="nolink">NonVisualGroupShapeProperties</span></span> class, an
+target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties">**NonVisualGroupShapeProperties**** class, an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties"><span
-class="nolink">GroupShapeProperties</span></span> class, and an instance
+target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties">**GroupShapeProperties**** class, and an instance
 of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape"><span
-class="nolink">Shape</span></span> class, among others.
+target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class, among others.
 
 The namespace represented by the letter *P* in the code is the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace.
 
 ```csharp

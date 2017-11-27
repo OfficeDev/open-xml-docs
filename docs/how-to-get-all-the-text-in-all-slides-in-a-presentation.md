@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -47,22 +47,18 @@ this topic.
 ## Getting a PresentationDocument object 
 
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">PresentationDocument.Open(String, Boolean)</span></span>
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**PresentationDocument.Open(String, Boolean)****
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. To open a document
-for read/write access, assign the value <span
-class="keyword">true</span> to this parameter; for read-only access
+for read/write access, assign the value **true** to this parameter; for read-only access
 assign it the value **false** as shown in the
 following **using** statement. In this code,
-the <span class="term">presentationFile</span> parameter is a string
+the **presentationFile** parameter is a string
 that represents the path for the file from which you want to open the
 document.
 
@@ -84,49 +80,41 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">presentationDocument</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **presentationDocument**.
 
 
 --------------------------------------------------------------------------------
 ## Basic Presentation Document Structure 
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of a number of
+The basic document structure of a **PresentationML** document consists of a number of
 parts, among which is the main part that contains the presentation
 definition. The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
-introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+introduces the overall form of a **PresentationML** package.
 
 A **PresentationML** package's main part starts
 with a presentation root element. That element contains a presentation,
-which, in turn, refers to a <span class="term">slide</span> list, a
-<span class="term">slide master</span> list, a <span class="term">notes
-master</span> list, and a <span class="term">handout master</span> list.
+which, in turn, refers to a **slide** list, a
+**slide master** list, a **notes
+master** list, and a **handout master** list.
 The slide list refers to all of the slides in the presentation; the
 slide master list refers to the entire slide masters used in the
 presentation; the notes master contains information about the formatting
 of notes pages; and the handout master describes how a handout looks.
 
-A <span class="term">handout</span> is a printed set of slides that can
-be provided to an <span class="term">audience</span> for future
+A **handout** is a printed set of slides that can
+be provided to an **audience** for future
 reference.
 
-As well as text and graphics, each slide can contain <span
-class="term">comments</span> and <span class="term">notes</span>, can
-have a <span class="term">layout</span>, and can be part of one or more
-<span class="term">custom presentations</span>. (A comment is an
+As well as text and graphics, each slide can contain **comments** and **notes**, can
+have a **layout**, and can be part of one or more
+**custom presentations**. (A comment is an
 annotation intended for the person maintaining the presentation slide
 deck. A note is a reminder or piece of text intended for the presenter
 or the audience.)
 
 Other features that a PresentationML document can contain include the
-following: <span class="term">animation</span>, <span
-class="term">audio</span>, <span class="term">video</span>, and <span
-class="term">transitions</span> between slides.
+following: **animation**, **audio**, **video**, and **transitions** between slides.
 
 A PresentationML document is not stored as one large body in a single
 part. Instead, the elements that implement certain groupings of
@@ -165,16 +153,11 @@ two slides denoted by the ID 267 and 256.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to <span
-class="keyword">PresentationML</span> elements. You can find these
+content using strongly-typed classes that correspond to **PresentationML** elements. You can find these
 classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements.
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -188,15 +171,11 @@ class="keyword">notesMaster</span> elements.
 --------------------------------------------------------------------------------
 ## How the Sample Code Works 
 The sample code starts by counting the number of slides in the
-presentation. It does that by using two overloads of the method <span
-class="keyword">CountSlides</span>. The first overload uses a string
-parameter and the second overload uses a <span
-class="keyword">PresentationDocument</span> parameter. In the first
+presentation. It does that by using two overloads of the method **CountSlides**. The first overload uses a string
+parameter and the second overload uses a **PresentationDocument** parameter. In the first
 **CountSlides** method, the sample code opens
 the presentation document in the **using**
-statement. Then it passes the <span
-class="keyword">PresentationDocument</span> object to the second <span
-class="keyword">CountSlides</span> method, which returns an integer
+statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer
 number that represents the number of slides in the presentation.
 
 ```csharp
@@ -216,9 +195,7 @@ verifies that the **PresentationDocument**
 object passed in is not **null**, and if it is
 not, it gets a **PresentationPart** object from
 the **PresentationDocument** object. By using
-the **Count** method, which belongs to <span
-class="keyword">SlideParts</span>, the code gets the <span
-class="keyword">slidesCount</span> and returns it.
+the **Count** method, which belongs to **SlideParts**, the code gets the **slidesCount** and returns it.
 
 ```csharp
     // Check for a null document object.
@@ -260,8 +237,7 @@ class="keyword">slidesCount</span> and returns it.
     Return slidesCount
 ```
 
-After counting the number of slides, the code uses the method <span
-class="keyword">GetSlideIdAndText</span>to get the content of all the
+After counting the number of slides, the code uses the method **GetSlideIdAndText**to get the content of all the
 slides. It starts with getting the relationship ID of the first slide,
 and then gets the slide part from the relationship ID.
 
@@ -289,8 +265,7 @@ and then gets the slide part from the relationship ID.
 
 The code then declares a **StringBuilder**
 object to store the inner text of the slide. It then goes through all
-the slides and appends the text in each one to the <span
-class="keyword">StringBuilder</span> object.
+the slides and appends the text in each one to the **StringBuilder** object.
 
 ```csharp
     // Build a StringBuilder object.
@@ -321,10 +296,8 @@ class="keyword">StringBuilder</span> object.
 ## Sample Code 
 The following code gets all the text in all the slides in a specific
 presentation file. For example, you can enter the name of the
-presentation file from the keyboard, and then use a <span
-class="keyword">foreach</span> loop in your program to get the array of
-strings returned by the method <span
-class="keyword">GetSlideIdAndText</span> as shown in the following
+presentation file from the keyboard, and then use a **foreach** loop in your program to get the array of
+strings returned by the method **GetSlideIdAndText** as shown in the following
 example.
 
 ```csharp

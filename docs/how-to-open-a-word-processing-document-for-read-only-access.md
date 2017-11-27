@@ -48,23 +48,19 @@ programmatically open a read-only word processing document.
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object 
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class represents a
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class represents a
 Word document package. To work with a Word document, first create an
 instance of the **WordprocessingDocument**
 class from the document, and then work with that instance. Once you
 create the instance from the document, you can then obtain access to the
 main document part that contains the text of the document. Every Open
-XML package contains some number of parts. At a minimum, a <span
-class="keyword">WordProcessingDocument</span> must contain a main
+XML package contains some number of parts. At a minimum, a **WordProcessingDocument** must contain a main
 document part that acts as a container for the main text of the
 document. The package can also contain additional parts. Notice that in
 a Word document, the text in the main document part is represented in
 the package as XML using WordprocessingML markup.
 
-To create the class instance from the document you call one of the <span
-class="keyword">Open</span> methods. Several <span
-class="keyword">Open</span> methods are provided, each with a different
+To create the class instance from the document you call one of the **Open** methods. Several **Open** methods are provided, each with a different
 signature. The methods that let you specify whether a document is
 editable are listed in the following table.
 
@@ -83,12 +79,10 @@ you specify false for this parameter.
 Notice that two of the **Open** methods create
 an instance of the **WordprocessingDocument**
 class based on a string as the first parameter. The first example in the
-sample code uses this technique. It uses the first <span
-class="keyword">Open</span> method in the table above; with a signature
+sample code uses this technique. It uses the first **Open** method in the table above; with a signature
 that requires two parameters. The first parameter takes a string that
 represents the full path filename from which you want to open the
-document. The second parameter is either <span
-class="keyword">true</span> or **false**; this
+document. The second parameter is either **true** or **false**; this
 example uses **false** and indicates whether
 you want to open the file for editing.
 
@@ -131,14 +125,12 @@ The following code example opens a document based on a stream.
 Suppose you have an application that employs the Open XML support in the
 System.IO.Packaging namespace of the .NET Framework Class Library, and
 you want to use the Open XML SDK 2.5 to work with a package read only.
-While the Open XML SDK 2.5 includes method overloads that accept a <span
-class="keyword">Package</span> as the first parameter, there is not one
+While the Open XML SDK 2.5 includes method overloads that accept a **Package** as the first parameter, there is not one
 that takes a Boolean as the second parameter to indicate whether the
 document should be opened for editing.
 
 The recommended method is to open the package read-only to begin with
-prior to creating the instance of the <span
-class="keyword">WordprocessingDocument</span> class, as shown in the
+prior to creating the instance of the **WordprocessingDocument** class, as shown in the
 second example in the sample code. The following code example performs
 this operation.
 
@@ -177,14 +169,11 @@ code example.
 ---------------------------------------------------------------------------------
 ## Basic Document Structure 
 The basic document structure of a WordProcessingML document consists of
-the **document** and <span
-class="keyword">body</span> elements, followed by one or more block
+the **document** and **body** elements, followed by one or more block
 level elements such as **p**, which represents
-a paragraph. A paragraph contains one or more <span
-class="keyword">r</span> elements. The **r**
+a paragraph. A paragraph contains one or more **r** elements. The **r**
 stands for run, which is a region of text with a common set of
-properties, such as formatting. A run contains one or more <span
-class="keyword">t</span> elements. The **t**
+properties, such as formatting. A run contains one or more **t** elements. The **t**
 element contains a range of text. For example, the WordprocessingML
 markup for a document that contains only the text "Example text." is
 shown in the following code example.
@@ -204,12 +193,9 @@ shown in the following code example.
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
 elements. You will find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+target="N:DocumentFormat.OpenXml.Wordprocessing">**DocumentFormat.OpenXml.Wordprocessing****
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements.
+correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 WordprocessingML Element|Open XML SDK 2.5 Class|Description
 --|--|--
@@ -225,8 +211,7 @@ t|Text |A range of text.
 The sample code shows how you can add some text and attempt to save the
 changes to show that access is read-only. Once you have access to the
 body of the main document part, you add text by adding instances of the
-**Paragraph**, <span
-class="keyword">Run</span>, and **Text**
+**Paragraph**, **Run**, and **Text**
 classes. This generates the required WordprocessingML markup. The
 following code example adds the paragraph, run, and text.
 
@@ -252,8 +237,7 @@ following code example adds the paragraph, run, and text.
 
 --------------------------------------------------------------------------------
 ## Sample Code 
-The first example method shown here, <span
-class="keyword">OpenWordprocessingDocumentReadOnly</span>, opens a Word
+The first example method shown here, **OpenWordprocessingDocumentReadOnly**, opens a Word
 document for read-only access. Call it by passing a full path to the
 file that you want to open. For example, the following code example
 opens the Word12.docx file in the Public Documents folder for read-only
@@ -267,8 +251,7 @@ access.
     OpenWordprocessingDocumentReadonly("c:\Users\Public\Public Documents\Word12.docx")
 ```
 
-The second example method, <span
-class="keyword">OpenWordprocessingPackageReadonly</span>, shows how to
+The second example method, **OpenWordprocessingPackageReadonly**, shows how to
 open a Word document for read-only access from a
 System.IO.Packaging.Package. Call it by passing a full path to the file
 that you want to open. For example, the following code opens the

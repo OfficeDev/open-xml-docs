@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -39,15 +39,12 @@ this topic.
 --------------------------------------------------------------------------------
 ## Getting a Presentation Object
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method that uses a
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. In order to count the number of slides
 in a presentation, it is best to open the file for read-only access in
@@ -77,27 +74,22 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">presentationDocument</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **presentationDocument**.
 
 
 --------------------------------------------------------------------------------
 ## Basic Presentation Document Structure
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of a number of
+The basic document structure of a **PresentationML** document consists of a number of
 parts, among which is the main part that contains the presentation
 definition. The following text from the [ISO/IEC
 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
-introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part
 > starts with a presentation root element. That element contains a
 > presentation, which, in turn, refers to a <span
-> class="keyword">slide</span> list, a *slide master* list, a *notes
+> class="keyword">slide** list, a *slide master* list, a *notes
 > master* list, and a *handout master* list. The slide list refers to
 > all of the slides in the presentation; the slide master list refers to
 > the entire slide masters used in the presentation; the notes master
@@ -156,13 +148,9 @@ two slides denoted by the ID 267 and 256.
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
 elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements.
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -186,13 +174,10 @@ moving a slide to a new position.
 The sample code for counting the number of slides consists of two
 overloads of the method **CountSlides**. The
 first overload uses a **string** parameter and
-the second overload uses a <span
-class="keyword">PresentationDocument</span> parameter. In the first
+the second overload uses a **PresentationDocument** parameter. In the first
 **CountSlides** method, the sample code opens
 the presentation document in the **using**
-statement. Then it passes the <span
-class="keyword">PresentationDocument</span> object to the second <span
-class="keyword">CountSlides</span> method, which returns an integer
+statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer
 number that represents the number of slides in the presentation.
 
 ```csharp
@@ -212,8 +197,7 @@ verifies that the **PresentationDocument**
 object passed in is not **null**, and if it is
 not, it gets a **PresentationPart** object from
 the **PresentationDocument** object. By using
-the **SlideParts** the code gets the <span
-class="keyword">slideCount</span> and returns it.
+the **SlideParts** the code gets the **slideCount** and returns it.
 
 ```csharp
     // Check for a null document object.
@@ -258,17 +242,13 @@ class="keyword">slideCount</span> and returns it.
 --------------------------------------------------------------------------------
 ## Moving a Slide from one Position to Another
 Moving a slide to a new position requires opening the file for
-read/write access by specifying the value <span
-class="keyword">true</span> to the Boolean parameter as shown in the
+read/write access by specifying the value **true** to the Boolean parameter as shown in the
 following **using** statement. The code for
-moving a slide consists of two overloads of the <span
-class="keyword">MoveSlide</span> method. The first overloaded <span
-class="keyword">MoveSlide</span> method takes three parameters: a string
+moving a slide consists of two overloads of the **MoveSlide** method. The first overloaded **MoveSlide** method takes three parameters: a string
 that represents the presentation file name and path and two integers
 that represent the current index position of the slide and the index
 position to which to move the slide respectively. It opens the
-presentation file, gets a <span
-class="keyword">PresentationDocument</span> object, and then passes that
+presentation file, gets a **PresentationDocument** object, and then passes that
 object and the two integers, *from* and *to*, to the second overloaded
 **MoveSlide** method, which performs the actual
 move.
@@ -346,13 +326,8 @@ from one another.
 ```
 
 A **PresentationPart** object is declared and
-set equal to the presentation part of the <span
-class="keyword">PresentationDocument</span> object passed in. The <span
-class="keyword">PresentationPart</span> object is used to create a <span
-class="keyword">Presentation</span> object, and then create a <span
-class="keyword">SlideIdList</span> object that represents the list of
-slides in the presentation from the <span
-class="keyword">Presentation</span> object. A slide ID of the source
+set equal to the presentation part of the **PresentationDocument** object passed in. The **PresentationPart** object is used to create a **Presentation** object, and then create a **SlideIdList** object that represents the list of
+slides in the presentation from the **Presentation** object. A slide ID of the source
 slide (the slide to move) is obtained, and then the position of the
 target slide (the slide after which in the slide order to move the
 source slide) is identified.
@@ -409,11 +384,8 @@ source slide) is identified.
     End If
 ```
 
-The **Remove** method of the <span
-class="keyword">SlideID</span> object is used to remove the source slide
-from its current position, and then the <span
-class="keyword">InsertAfter</span> method of the <span
-class="keyword">SlideIdList</span> object is used to insert the source
+The **Remove** method of the **SlideID** object is used to remove the source slide
+from its current position, and then the **InsertAfter** method of the **SlideIdList** object is used to insert the source
 slide in the index position after the target slide. Finally, the
 modified presentation is saved.
 

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -44,8 +44,7 @@ part. A separate XML file is created for each slide.
 Using the Open XML SDK 2.5, you can create document structure and
 content that uses strongly-typed classes that correspond to
 PresentationML elements. You can find these classes in the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the class names of the classes that
 correspond to some of the important presentation elements.
 
@@ -808,7 +807,7 @@ to any other part defined by ISO/IEC 29500.
 Now that you are familiar with the parts of a PresentationML document,
 consider how some of these parts are implemented and connected in an
 actual presentation file. As shown in the article <span
-sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span>,
+sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)**,
 you can use the Open XML API to build up a minimum presentation file,
 part by part.
 
@@ -830,8 +829,7 @@ reference slide layouts.
 After you run the Open XML SDK 2.5 code to generate a presentation, you
 can explore the contents of the .zip package to view the PresentationML
 XML code. To view the .zip package, rename the extension on the minimum
-presentation from **.pptx** to <span
-class="keyword">.zip</span>. Inside the .zip package, there are several
+presentation from **.pptx** to **.zip**. Inside the .zip package, there are several
 parts that make up the minimum presentation.
 
 Figure 1 shows the structure under the **ppt**
@@ -844,12 +842,11 @@ Figure 1. Minimum presentation folder structure
  ![Minimum presentation folder structure](./media/odc_oxml_ppt_documentstructure_fig01.jpg)
 The presentation.xml file contains \<sld\> (Slide) elements that
 reference the slides in the presentation. Each slide is associated to
-the presentation by means of a slide ID and a relationship ID. The <span
-class="keyword">slideID</span> is the identifier (ID) used within the
+the presentation by means of a slide ID and a relationship ID. The **slideID** is the identifier (ID) used within the
 package to identify a slide and must be unique within the presentation.
 The **id** attribute is the relationship ID
 that identifies the slide part definition associated with a slide. For
-more information about the slide part, see <span sdata="link">[Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md)</span>.
+more information about the slide part, see <span sdata="link">[Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md)**.
 
 The following XML code is the PresentationML that represents the
 presentation part of a presentation document that contains a single

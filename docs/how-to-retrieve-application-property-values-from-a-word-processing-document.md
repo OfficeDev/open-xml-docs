@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -44,11 +44,9 @@ the code in this topic.
 
 To retrieve application document properties, you can retrieve the <span
 sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart"><span
-class="nolink">ExtendedFilePropertiesPart</span></span> property of a
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart**** property of a
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> object, and then
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** object, and then
 retrieve the specific application property you need. To do this, you
 must first get a reference to the document, as shown in the following
 code.
@@ -72,11 +70,9 @@ code.
     End Using
 ```
 
-Given the reference to the <span
-class="keyword">WordProcessingDocument</span> object, you can retrieve a
+Given the reference to the **WordProcessingDocument** object, you can retrieve a
 reference to the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart"><span
-class="nolink">ExtendedFilePropertiesPart</span></span> property of the
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart**** property of the
 document. This object provides its own properties, each of which exposes
 one of the application document properties.
 
@@ -88,14 +84,12 @@ one of the application document properties.
     Dim props = document.ExtendedFilePropertiesPart.Properties
 ```
 
-Once you have the reference to the properties of <span
-class="keyword">ExtendedFilePropertiesPart</span>, you can then retrieve
+Once you have the reference to the properties of **ExtendedFilePropertiesPart**, you can then retrieve
 any of the application properties, using simple code such as that shown
 in the next example. Note that the code must confirm that the reference
 to each property isn't **null** before
 retrieving its <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Text"><span
-class="nolink">Text</span></span> property. Unlike core properties,
+target="T:DocumentFormat.OpenXml.Wordprocessing.Text">**Text**** property. Unlike core properties,
 document properties aren't available if you (or the application) haven't
 specifically given them a value.
 

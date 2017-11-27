@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -93,8 +93,7 @@ and displays the key and value from each item.
 
 ## How the Code Works
 
-The code starts by creating a variable named <span
-class="code">returnValue</span> that the method will return before it
+The code starts by creating a variable named **returnValue** that the method will return before it
 exits.
 
 ```csharp
@@ -115,14 +114,12 @@ exits.
 
 The code continues by opening the spreadsheet document, using the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method and indicating that the
+target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open**** method and indicating that the
 document should be open for read-only access (the final false
 parameter). Given the open workbook, the code uses the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart"><span
-class="nolink">WorkbookPart</span></span> property to navigate to the
+target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart**** property to navigate to the
 main workbook part. The code stores this reference in a variable named
-<span class="code">wbPart</span>.
+**wbPart**.
 
 ```csharp
     // Open the spreadsheet document for read-only access.
@@ -150,12 +147,10 @@ main workbook part. The code stores this reference in a variable named
 
 Given the workbook part, the next step is simple. The code uses the
 <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook"><span
-class="nolink">Workbook</span></span> property of the workbook part to
+target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook">**Workbook**** property of the workbook part to
 retrieve a reference to the content of the workbook, and then retrieves
 the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.DefinedNames"><span
-class="nolink">DefinedNames</span></span> collection provided by the
+target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.DefinedNames">**DefinedNames**** collection provided by the
 Open XML SDK 2.5. This property returns a collection of all of the
 defined names that are contained within the workbook. If the property
 returns a non-null value, the code then iterates through the collection,
@@ -188,8 +183,7 @@ and value (range description) to the dictionary for each defined name.
 
 ## Sample Code
 
-The following is the complete <span
-class="keyword">GetDefinedNames</span> code sample in C\# and Visual
+The following is the complete **GetDefinedNames** code sample in C\# and Visual
 Basic.
 
 ```csharp

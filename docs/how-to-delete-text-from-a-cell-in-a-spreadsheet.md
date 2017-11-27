@@ -39,28 +39,22 @@ this topic.
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> class represents an
+target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
 Excel document package. To open and work with an Excel document, you
-create an instance of the <span
-class="keyword">SpreadsheetDocument</span> class from the document.
+create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
 access to the main workbook part that contains the worksheets. The text
-in the document is represented in the package as XML using <span
-class="keyword">SpreadsheetML</span> markup.
+in the document is represented in the package as XML using **SpreadsheetML** markup.
 
 To create the class instance from the document, call one of the <span
 sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open"><span
-class="nolink">Open()</span></span> methods. Several are provided, each
+target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** methods. Several are provided, each
 with a different signature. The sample code in this topic uses the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method with a
+target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
-second parameter is either **true** or <span
-class="keyword">false</span> and represents whether you want the file to
+second parameter is either **true** or **false** and represents whether you want the file to
 be opened for editing. Any changes that you make to the document will
 not be saved if this parameter is **false**.
 
@@ -86,25 +80,19 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It verifies
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case *document*.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case *document*.
 
 
 --------------------------------------------------------------------------------
 ## Basic Structure of a SpreadsheetML Document
-The basic document structure of a <span
-class="keyword">SpreadsheetML</span> document consists of the <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
-class="nolink">Sheets</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span> elements, which reference the
+The basic document structure of a **SpreadsheetML** document consists of the <span
+sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
 worksheet. For example, the **SpreadsheetML**
 for a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook"><span
-class="nolink">Workbook</span></span> that has two worksheets name
+target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**** that has two worksheets name
 MySheet1 and MySheet2 is located in the Workbook.xml file and is shown
 in the following code example.
 
@@ -120,18 +108,12 @@ in the following code example.
 
 The worksheet XML files contain one or more block level elements such as
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData"><span
-class="nolink">SheetData</span></span>. <span
-class="keyword">sheetData</span> represents the cell table and contains
+target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
 one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row"><span
-class="nolink">Row</span></span> elements. A <span
-class="keyword">row</span> contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell"><span
-class="nolink">Cell</span></span> elements. Each cell contains a <span
+target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue"><span
-class="nolink">CellValue</span></span> element that represents the value
+target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
 of the cell. For example, the **SpreadsheetML**
 for the first worksheet in a workbook, that only has the value 100 in
 cell A1, is located in the Sheet1.xml file and is shown in the following
@@ -151,15 +133,10 @@ code example.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content that uses strongly-typed classes that correspond to <span
-class="keyword">SpreadsheetML</span> elements. You can find these
-classes in the <span
-class="keyword">DocumentFormat.OpenXML.Spreadsheet</span> namespace. The
+content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
+classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
-the **workbook**, <span
-class="keyword">sheets</span>, **sheet**, <span
-class="keyword">worksheet</span>, and <span
-class="keyword">sheetData</span> elements.
+the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
 | SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -177,18 +154,13 @@ class="keyword">sheetData</span> elements.
 ## How the Sample Code Works
 In the following code example, you delete text from a cell in a <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> document package. Then,
+target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** document package. Then,
 you verify if other cells within the spreadsheet document still
 reference the text removed from the row, and if they do not, you remove
 the text from the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SharedStringTablePart"><span
-class="nolink">SharedStringTablePart</span></span> object by using the
+target="T:DocumentFormat.OpenXml.Packaging.SharedStringTablePart">**SharedStringTablePart**** object by using the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.Remove"><span
-class="nolink">Remove</span></span> method. Then you clean up the <span
-class="keyword">SharedStringTablePart</span> object by calling the <span
-class="code">RemoveSharedStringItem</span> method.
+target="M:DocumentFormat.OpenXml.OpenXmlElement.Remove">**Remove**** method. Then you clean up the **SharedStringTablePart** object by calling the **RemoveSharedStringItem** method.
 
 ```csharp
     // Given a document, a worksheet name, a column name, and a one-based row index,
@@ -294,29 +266,22 @@ otherwise, it returns **null**.
 ```
 
 In the following code example, you verify if other cells within the
-spreadsheet document reference the text specified by the <span
-class="term">shareStringId</span> parameter. If they do not reference
-the text, you remove it from the <span
-class="keyword">SharedStringTablePart</span> object. You do that by
+spreadsheet document reference the text specified by the **shareStringId** parameter. If they do not reference
+the text, you remove it from the **SharedStringTablePart** object. You do that by
 passing a parameter that represents the ID of the text to remove and a
-parameter that represents the <span
-class="keyword">SpreadsheetDocument</span> document package. Then you
+parameter that represents the **SpreadsheetDocument** document package. Then you
 iterate through each **Worksheet** object and
 compare the contents of each **Cell** object to
 the shared string ID. If other cells within the spreadsheet document
 still reference the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem"><span
-class="nolink">SharedStringItem</span></span> object, you do not remove
+target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem">**SharedStringItem**** object, you do not remove
 the item from the **SharedStringTablePart**
 object. If other cells within the spreadsheet document no longer
 reference the **SharedStringItem** object, you
-remove the item from the <span
-class="keyword">SharedStringTablePart</span> object. Then you iterate
-through each **Worksheet** object and <span
-class="keyword">Cell</span> object and refresh the shared string
+remove the item from the **SharedStringTablePart** object. Then you iterate
+through each **Worksheet** object and **Cell** object and refresh the shared string
 references. Finally, you save the worksheet and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable"><span
-class="nolink">SharedStringTable</span></span> object.
+target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable">**SharedStringTable**** object.
 
 ```csharp
     // Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 

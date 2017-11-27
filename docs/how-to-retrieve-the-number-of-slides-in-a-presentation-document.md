@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -47,8 +47,7 @@ the code in this topic.
 ## RetrieveNumberOfSlides Method
 You can use the **RetrieveNumberOfSlides**
 method to get the number of slides in a presentation document,
-optionally including the hidden slides. The <span
-class="keyword">RetrieveNumberOfSlides</span> method accepts two
+optionally including the hidden slides. The **RetrieveNumberOfSlides** method accepts two
 parameters: a string that indicates the path of the file that you want
 to examine, and an optional Boolean value that indicates whether to
 include hidden slides in the count.
@@ -86,18 +85,15 @@ values, as shown in the following code.
 
 --------------------------------------------------------------------------------
 ## How the Code Works
-The code starts by creating an integer variable, <span
-class="code">slidesCount</span>, to hold the number of slides. The code
+The code starts by creating an integer variable, **slidesCount**, to hold the number of slides. The code
 then opens the specified presentation by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">PresentationDocument.Open</span></span> method and
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**PresentationDocument.Open**** method and
 indicating that the document should be open for read-only access (the
 final **false** parameter value). Given the
 open presentation, the code uses the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.PresentationDocument.PresentationPart"><span
-class="nolink">PresentationPart</span></span> property to navigate to
+target="P:DocumentFormat.OpenXml.Packaging.PresentationDocument.PresentationPart">**PresentationPart**** property to navigate to
 the main presentation part, storing the reference in a variable named
-<span class="code">presentationPart</span>.
+**presentationPart**.
 
 ```csharp
     using (PresentationDocument doc = 
@@ -126,8 +122,7 @@ If the presentation part reference is not null (and it will not be, for
 any valid presentation that loads correctly into PowerPoint), the code
 next calls the **Count** method on the value of
 the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.PresentationPart.SlideParts"><span
-class="nolink">SlideParts</span></span> property of the presentation
+target="P:DocumentFormat.OpenXml.Packaging.PresentationPart.SlideParts">**SlideParts**** property of the presentation
 part. If you requested all slides, including hidden slides, that is all
 there is to do. There is slightly more work to be done if you want to
 exclude hidden slides, as shown in the following code.
@@ -156,17 +151,15 @@ exclude hidden slides, as shown in the following code.
 If you requested that the code should limit the return value to include
 only visible slides, the code must filter its collection of slides to
 include only those slides that have a <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Presentation.Slide.Show"><span
-class="nolink">Show</span></span> property that contains a value, and
-the value is **true**. If the <span
-class="keyword">Show</span> property is null, that also indicates that
+target="P:DocumentFormat.OpenXml.Presentation.Slide.Show">**Show**** property that contains a value, and
+the value is **true**. If the **Show** property is null, that also indicates that
 the slide is visible. This is the most likely scenario—PowerPoint does
 not set the value of this property, in general, unless the slide is to
 be hidden. The only way the **Show** property
 would exist and have a value of **true** would
 be if you had hidden and then unhidden the slide. The following code
 uses the <span sdata="cer"
-target="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">[Where](http://msdn2.microsoft.com/EN-US/library/bb301979)</span>
+target="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">[Where](http://msdn2.microsoft.com/EN-US/library/bb301979)**
 function with a lambda expression to do the work.
 
 ```csharp
@@ -188,8 +181,7 @@ function with a lambda expression to do the work.
 
 --------------------------------------------------------------------------------
 ## Sample Code
-The following is the complete <span
-class="keyword">RetrieveNumberOfSlides</span> code sample in C\# and
+The following is the complete **RetrieveNumberOfSlides** code sample in C\# and
 Visual Basic.
 
 ```csharp

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,8 +16,7 @@ ms.date: 11/01/2017
 # Working with notes slides (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NotesSlide"><span
-class="nolink">NotesSlide</span></span> class and how it relates to the
+target="T:DocumentFormat.OpenXml.Presentation.NotesSlide">**NotesSlide**** class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -80,13 +79,11 @@ showMasterSp (Show Master Shapes)|Specifies if shapes on the master slide should
 ## Open XML SDK 2.5 NotesSlide Class
 The OXML SDK **NotesSlide** class represents
 the \<notes\> element defined in the Open XML File Format schema for
-PresentationML documents. Use the <span
-class="keyword">NotesSlide</span> class to manipulate individual
+PresentationML documents. Use the **NotesSlide** class to manipulate individual
 \<notes\> elements in a PresentationML document.
 
 Classes that represent child elements of the \<notes\> element and that
-are therefore commonly associated with the <span
-class="keyword">NotesSlide</span> class are shown in the following list.
+are therefore commonly associated with the **NotesSlide** class are shown in the following list.
 
 ### ColorMapOverride Class
 
@@ -147,58 +144,45 @@ store whether this extension property has been modified. end note]
 As shown in the Open XML SDK code sample that follows, every instance of
 the **NotesSlide** class is associated with an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.NotesSlidePart"><span
-class="nolink">NotesSlidePart</span></span> class, which represents a
+target="T:DocumentFormat.OpenXml.Packaging.NotesSlidePart">**NotesSlidePart**** class, which represents a
 notes slide part, one of the parts of a PresentationML presentation file
 package, and a part that is required for each notes slide in a
 presentation file. Each **NotesSlide** class
 instance may also be associated with an instance of the <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NotesMaster"><span
-class="nolink">NotesMaster</span></span> class, which in turn is
+target="T:DocumentFormat.OpenXml.Presentation.NotesMaster">**NotesMaster**** class, which in turn is
 associated with a similarly named presentation part, represented by the
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.NotesMasterPart"><span
-class="nolink">NotesMasterPart</span></span> class.
+target="T:DocumentFormat.OpenXml.Packaging.NotesMasterPart">**NotesMasterPart**** class.
 
 The **NotesSlide** class, which represents the
 \<notes\> element, is therefore also associated with a series of other
 classes that represent the child elements of the \<notes\> element.
 Among these classes, as shown in the following code sample, are the
-**CommonSlideData** class and the <span
-class="keyword">ColorMapOverride</span> class. The <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree"><span
-class="nolink">ShapeTree</span></span> class and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape"><span
-class="nolink">Shape</span></span> classes are in turn associated with
+**CommonSlideData** class and the **ColorMapOverride** class. The <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class and the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** classes are in turn associated with
 the **CommonSlideData** class.
 
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
 The following method adds a new notes slide part to an existing
-presentation and creates an instance of an Open XML SDK 2.5<span
-class="keyword">NotesSlide</span> class in the new notes slide part. The
+presentation and creates an instance of an Open XML SDK 2.5**NotesSlide** class in the new notes slide part. The
 **NotesSlide** class constructor creates
 instances of the **CommonSlideData** class and
-the **ColorMap** class. The <span
-class="keyword">CommonSlideData</span> class constructor creates an
+the **ColorMap** class. The **CommonSlideData** class constructor creates an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree"><span
-class="nolink">ShapeTree</span></span> class, whose constructor in turn
+target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, whose constructor in turn
 creates additional class instances: an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties"><span
-class="nolink">NonVisualGroupShapeProperties</span></span> class, an
+target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties">**NonVisualGroupShapeProperties**** class, an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties"><span
-class="nolink">GroupShapeProperties</span></span> class, and an instance
+target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties">**GroupShapeProperties**** class, and an instance
 of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape"><span
-class="nolink">Shape</span></span> class.
+target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
 
 The namespace represented by the letter *P* in the code is the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace.
 
 ```csharp

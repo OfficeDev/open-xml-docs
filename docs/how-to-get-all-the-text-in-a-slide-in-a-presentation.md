@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -43,19 +43,15 @@ this topic.
 --------------------------------------------------------------------------------
 ## Getting a PresentationDocument object
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">PresentationDocument.Open(String, Boolean)</span></span>
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**PresentationDocument.Open(String, Boolean)****
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. To open a document
-for read/write access, assign the value <span
-class="keyword">true</span> to this parameter; for read-only access
+for read/write access, assign the value **true** to this parameter; for read-only access
 assign it the value **false** as shown in the
 following **using** statement. In this code,
 the **file** parameter is a string that
@@ -80,48 +76,43 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">presentationDocument</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **presentationDocument**.
 
 
 --------------------------------------------------------------------------------
 ## Basic Presentation Document Structure
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of the main part
+The basic document structure of a **PresentationML** document consists of the main part
 that contains the presentation definition. The following text from the
 [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
-specification introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+specification introduces the overall form of a **PresentationML** package.
 
 > A PresentationML package's main part starts with a presentation root
 > element. That element contains a presentation, which, in turn, refers
-> to a <span class="term">slide</span> list, a <span class="term">slide
-> master</span> list, a <span class="term">notes master</span> list, and
-> a <span class="term">handout master</span> list. The slide list refers
+> to a **slide** list, a **slide
+> master** list, a **notes master** list, and
+> a **handout master** list. The slide list refers
 > to all of the slides in the presentation; the slide master list refers
 > to the entire slide masters used in the presentation; the notes master
 > contains information about the formatting of notes pages; and the
 > handout master describes how a handout looks.
 
-> A <span class="term">handout</span> is a printed set of slides that
-> can be provided to an <span class="term">audience</span> for future
+> A **handout** is a printed set of slides that
+> can be provided to an **audience** for future
 > reference.
 
 > As well as text and graphics, each slide can contain <span
-> class="term">comments</span> and <span class="term">notes</span>, can
-> have a <span class="term">layout</span>, and can be part of one or
-> more <span class="term">custom presentations</span>. (A comment is an
+> class="term">comments** and **notes**, can
+> have a **layout**, and can be part of one or
+> more **custom presentations**. (A comment is an
 > annotation intended for the person maintaining the presentation slide
 > deck. A note is a reminder or piece of text intended for the presenter
 > or the audience.)
 
 > Other features that a PresentationML document can include the
-> following: <span class="term">animation</span>, <span
-> class="term">audio</span>, <span class="term">video</span>, and <span
-> class="term">transitions</span> between slides.
+> following: **animation**, <span
+> class="term">audio**, **video**, and <span
+> class="term">transitions** between slides.
 
 > A PresentationML document is not stored as one large body in a single
 > part. Instead, the elements that implement certain groupings of
@@ -160,16 +151,11 @@ two slides denoted by the ID 267 and 256.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to <span
-class="keyword">PresentationML</span> elements. You can find these
+content using strongly-typed classes that correspond to **PresentationML** elements. You can find these
 classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements.
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -181,8 +167,7 @@ class="keyword">notesMaster</span> elements.
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
-The sample code consists of three overloads of the <span
-class="keyword">GetAllTextInSlide</span> method. In the following
+The sample code consists of three overloads of the **GetAllTextInSlide** method. In the following
 segment, the first overloaded method opens the source presentation that
 contains the slide with text to get, and passes the presentation to the
 second overloaded method, which gets the slide part. This method returns
@@ -423,8 +408,7 @@ the specified slide in the presentation.
 Following is the complete sample code that you can use to get all the
 text in a specific slide in a presentation file. For example, you can
 use the following **foreach** loop in your
-program to get the array of strings returned by the method <span
-class="keyword">GetAllTextInSlide</span>, which represents the text in
+program to get the array of strings returned by the method **GetAllTextInSlide**, which represents the text in
 the second slide of the presentation file "Myppt8.pptx."
 
 ```csharp

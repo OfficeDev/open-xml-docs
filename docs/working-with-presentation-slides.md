@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,12 +16,11 @@ ms.date: 11/01/2017
 # Working with presentation slides (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Slide"><span
-class="nolink">Slide</span></span> class and how it relates to the Open
+target="T:DocumentFormat.OpenXml.Presentation.Slide">**Slide**** class and how it relates to the Open
 XML File Format PresentationML schema. For more information about the
 overall structure of the parts and elements that make up a
 PresentationML document, see <span sdata="link">[Structure of a
-PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)</span>.
+PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)**.
 
 
 ---------------------------------------------------------------------------------
@@ -169,60 +168,45 @@ transition is complete.
 As shown in the Open XML SDK code example that follows, every instance
 of the **Slide** class is associated with an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlidePart"><span
-class="nolink">SlidePart</span></span> class, which represents a slide
+target="T:DocumentFormat.OpenXml.Packaging.SlidePart">**SlidePart**** class, which represents a slide
 part, one of the required parts of a PresentationML presentation file
 package. Each instance of the **Slide** class
 must also be associated with instances of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.SlideLayout"><span
-class="nolink">SlideLayout</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.SlideMaster"><span
-class="nolink">SlideMaster</span></span> classes, which are in turn
+target="T:DocumentFormat.OpenXml.Presentation.SlideLayout">**SlideLayout**** and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.SlideMaster">**SlideMaster**** classes, which are in turn
 associated with similarly named required presentation parts, represented
 by the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideLayoutPart"><span
-class="nolink">SlideLayoutPart</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideMasterPart"><span
-class="nolink">SlideMasterPart</span></span> classes.
+target="T:DocumentFormat.OpenXml.Packaging.SlideLayoutPart">**SlideLayoutPart**** and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.SlideMasterPart">**SlideMasterPart**** classes.
 
 The **Slide** class, which represents the
 \<sld\> element, is therefore also associated with a series of other
 classes that represent the child elements of the \<sld\> element. Among
-these classes, as shown in the following code example, are the <span
-class="keyword">CommonSlideData</span> class, the <span
-class="keyword">ColorMapOverride</span> class, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree"><span
-class="nolink">ShapeTree</span></span> class, and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape"><span
-class="nolink">Shape</span></span> class.
+these classes, as shown in the following code example, are the **CommonSlideData** class, the **ColorMapOverride** class, the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, and the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
 
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> adds a new slide
+The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** adds a new slide
 part to an existing presentation and creates an instance of the Open XML
 SDK 2.5**Slide** class in the new slide part.
 The **Slide** class constructor creates
-instances of the **CommonSlideData** and <span
-class="keyword">ColorMapOverride</span> classes. The <span
-class="keyword">CommonSlideData</span> class constructor creates an
+instances of the **CommonSlideData** and **ColorMapOverride** classes. The **CommonSlideData** class constructor creates an
 instance of the **ShapeTree** class, whose
 constructor, in turn, creates additional class instances: an instance of
 the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties"><span
-class="nolink">NonVisualGroupShapeProperties</span></span> class, the
+target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties">**NonVisualGroupShapeProperties**** class, the
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties"><span
-class="nolink">GroupShapeProperties</span></span> class, and the <span
-class="keyword">Shape</span> class.
+target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties">**GroupShapeProperties**** class, and the **Shape** class.
 
 All of these class instances and instances of the classes that represent
 the child elements of the \<sld\> element are required to create the
 minimum number of XML elements necessary to represent a new slide.
 
 The namespace represented by the letter *P* in the code is the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace.
 
 ```csharp

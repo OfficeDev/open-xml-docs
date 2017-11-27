@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -44,13 +44,10 @@ this topic.
 --------------------------------------------------------------------------------
 ## Opening an Existing Document for Editing
 To open an existing document, instantiate the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class as shown in
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
 the following **using** statement. In the same
-statement, open the word processing file at the specified <span
-class="term">filepath</span> by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method, with the
+statement, open the word processing file at the specified **filepath** by using the <span sdata="cer"
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method, with the
 Boolean parameter set to **true** in order to
 enable editing the document.
 
@@ -74,15 +71,11 @@ that the **Dispose** method (internal method
 that is used by the Open XML SDK to clean up resources) is automatically
 called when the closing brace is reached. The block that follows the
 **using** statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case
-*wordprocessingDocument*. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
+object that is created or named in the **using** statement, in this case
+*wordprocessingDocument*. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 **Dispose** is automatically called when you
-exit the block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
@@ -116,10 +109,8 @@ The following XML Schema fragment defines the contents of this element
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
 After you have opened the document, add the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.ImagePart"><span
-class="nolink">ImagePart</span></span> object to the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.MainDocumentPart"><span
-class="nolink">MainDocumentPart</span></span> object by using a file
+target="T:DocumentFormat.OpenXml.Packaging.ImagePart">**ImagePart**** object to the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.MainDocumentPart">**MainDocumentPart**** object by using a file
 stream as shown in the following code segment.
 
 ```csharp
@@ -143,8 +134,7 @@ stream as shown in the following code segment.
 
 To add the image to the body, first define the reference of the image.
 Then, append the reference to the body. The element should be in a <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
-class="nolink">Run</span></span>.
+sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run****.
 
 ```csharp
     // Define the reference of the image.
@@ -264,8 +254,7 @@ class="nolink">Run</span></span>.
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code example adds a picture to an existing word document.
-In your code, you can call the <span
-class="keyword">InsertAPicture</span> method by passing in the path of
+In your code, you can call the **InsertAPicture** method by passing in the path of
 the word document, and the path of the file that contains the picture.
 For example, the following call inserts the picture "MyPic.jpg" into the
 file "Word9.docx," located at the specified paths.

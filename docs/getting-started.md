@@ -29,11 +29,11 @@ Using the classes in the Open XML SDK 2.5 is simple. When you have installed the
 
 ### To add a reference in a Microsoft Visual Studio 2008 project
 
-1.  In Solution Explorer, right-click <span class="ui">References</span> and then click <span class="ui">Add Reference</span>. If the <span class="ui">References</span> node is not visible, click <span class="ui">Project</span> and then click <span class="ui">Show All Files</span>.
+1.  In Solution Explorer, right-click **References** and then click **Add Reference**. If the **References** node is not visible, click **Project** and then click **Show All Files**.
 
-2.  In the <span class="ui">Add Reference</span> dialog box, click <span class="ui">.NET</span>.
+2.  In the **Add Reference** dialog box, click **.NET**.
 
-3.  In the Component Name column, select the components (scroll if you need to), and then click <span class="ui">OK</span>.
+3.  In the Component Name column, select the components (scroll if you need to), and then click **OK**.
 
 > [!TIP]  
 > To select more than one component, hold down the Ctrl key and click each component.

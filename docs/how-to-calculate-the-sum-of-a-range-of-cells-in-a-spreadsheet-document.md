@@ -45,15 +45,12 @@ this topic.
 ## Getting a SpreadsheetDocument Object 
 
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> class represents an
+target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
 Excel document package. To open and work with an Excel document, you
-create an instance of the <span
-class="keyword">SpreadsheetDocument</span> class from the document.
+create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
 access to the main <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook"><span
-class="nolink">Workbook</span></span> part that contains the worksheets.
+target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**** part that contains the worksheets.
 The text in the document is represented in the package as XML using
 **SpreadsheetML** markup.
 
@@ -61,12 +58,10 @@ To create the class instance from the document that you call one of the
 **Open** methods. Several are provided, each
 with a different signature. The sample code in this topic uses the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method with a
+target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
-second parameter is either **true** or <span
-class="keyword">false</span> and represents whether you want the file to
+second parameter is either **true** or **false** and represents whether you want the file to
 be opened for editing. Any changes that you make to the document will
 not be saved if this parameter is **false**.
 
@@ -92,22 +87,16 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="term">document</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **document**.
 
 
 ----------------------------------------------------------------------------
 ## Basic Structure of a SpreadsheetML Document 
 
-The basic document structure of a <span
-class="keyword">SpreadsheetML</span> document consists of the <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets"><span
-class="nolink">Sheets</span></span> and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span> elements, which reference the
+The basic document structure of a **SpreadsheetML** document consists of the <span
+sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
 worksheet. For example, the **SpreadsheetML**
 for a workbook that has two worksheets name MySheet1 and MySheet2 is
@@ -125,18 +114,12 @@ example.
 ```
 The worksheet XML files contain one or more block level elements such as
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData"><span
-class="nolink">SheetData</span></span>. <span
-class="keyword">sheetData</span> represents the cell table and contains
+target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
 one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row"><span
-class="nolink">Row</span></span> elements. A <span
-class="keyword">row</span> contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell"><span
-class="nolink">Cell</span></span> elements. Each cell contains a <span
+target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue"><span
-class="nolink">CellValue</span></span> element that represents the value
+target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is shown in the following code example.
@@ -155,15 +138,10 @@ Sheet1.xml file and is shown in the following code example.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content that uses strongly-typed classes that correspond to <span
-class="keyword">SpreadsheetML</span> elements. You can find these
-classes in the <span
-class="keyword">DocumentFormat.OpenXML.Spreadsheet</span> namespace. The
+content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
+classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
-the **workbook**, <span
-class="keyword">sheets</span>, **sheet**, <span
-class="keyword">worksheet</span>, and <span
-class="keyword">sheetData</span> elements.
+the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
 | SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -179,20 +157,16 @@ class="keyword">sheetData</span> elements.
 ----------------------------------------------------------------------------
 ## How the Sample Code Works 
 
-The sample code starts by passing in to the method <span
-class="keyword">CalculateSumOfCellRange</span> a parameter that
-represents the full path to the source <span
-class="keyword">SpreadsheetML</span> file, a parameter that represents
+The sample code starts by passing in to the method **CalculateSumOfCellRange** a parameter that
+represents the full path to the source **SpreadsheetML** file, a parameter that represents
 the name of the worksheet that contains the cells, a parameter that
 represents the name of the first cell in the contiguous range, a
 parameter that represent the name of the last cell in the contiguous
 range, and a parameter that represents the name of the cell where you
 want the result displayed.
 
-The code then opens the file for editing as a <span
-class="keyword">SpreadsheetDocument</span> document package for
-read/write access, the code gets the specified <span
-class="keyword">Worksheet</span> object. It then gets the index of the
+The code then opens the file for editing as a **SpreadsheetDocument** document package for
+read/write access, the code gets the specified **Worksheet** object. It then gets the index of the
 row for the first and last cell in the contiguous range by calling the
 **GetRowIndex** method. It gets the name of the
 column for the first and last cell in the contiguous range by calling
@@ -203,11 +177,9 @@ range, the code iterates through each **Cell**
 object and determines if the column of the cell is within the contiguous
 range by calling the **CompareColumn** method.
 If the cell is within the contiguous range, the code adds the value of
-the cell to the sum. Then it gets the <span
-class="keyword">SharedStringTablePart</span> object if it exists. If it
+the cell to the sum. Then it gets the **SharedStringTablePart** object if it exists. If it
 does not exist, it creates one using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.AddNewPart``1"><span
-class="nolink">AddNewPart</span></span> method. It inserts the result
+target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.AddNewPart``1">**AddNewPart**** method. It inserts the result
 into the **SharedStringTablePart** object by
 calling the **InsertSharedStringItem** method.
 
@@ -348,7 +320,7 @@ index portion of the cell name. For more information about regular
 expressions, see [Regular Expression Language
 Elements](http://msdn.microsoft.com/en-us/library/az24scfc.aspx). It
 gets the row index by calling the <span sdata="cer"
-target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6)</span>
+target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6)**
 method, and then returns the row index.
 
 ```csharp
@@ -379,7 +351,7 @@ represents the name of the cell, and creates a new regular expression to
 match the column name portion of the cell name. This regular expression
 matches any combination of uppercase or lowercase letters. It gets the
 column name by calling the <span sdata="cer"
-target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6)</span>
+target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6)**
 method, and then returns the column name.
 
 ```csharp
@@ -410,7 +382,7 @@ the columns to compare. If the first column is longer than the second
 column, it returns 1. If the second column is longer than the first
 column, it returns -1. Otherwise, it compares the values of the columns
 using the <span sdata="cer"
-target="M:System.String.Compare(System.String,System.String,System.Boolean)">[Compare](http://msdn2.microsoft.com/EN-US/library/2se42k1z)</span>
+target="M:System.String.Compare(System.String,System.String,System.Boolean)">[Compare](http://msdn2.microsoft.com/EN-US/library/2se42k1z)**
 and returns the result.
 
 ```csharp
@@ -447,21 +419,15 @@ and returns the result.
 
 To insert a **SharedStringItem**, the code
 passes in a parameter that represents the text to insert into the cell
-and a parameter that represents the <span
-class="keyword">SharedStringTablePart</span> object for the spreadsheet.
+and a parameter that represents the **SharedStringTablePart** object for the spreadsheet.
 If the **ShareStringTablePart** object does not
 contain a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable"><span
-class="nolink">SharedStringTable</span></span> object then it creates
-one. If the text already exists in the <span
-class="keyword">ShareStringTable</span> object, then it returns the
+target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable">**SharedStringTable**** object then it creates
+one. If the text already exists in the **ShareStringTable** object, then it returns the
 index for the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem"><span
-class="nolink">SharedStringItem</span></span> object that represents the
-text. If the text does not exist, create a new <span
-class="keyword">SharedStringItem</span> object that represents the text.
-It then returns the index for the <span
-class="keyword">SharedStringItem</span> object that represents the text.
+target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem">**SharedStringItem**** object that represents the
+text. If the text does not exist, create a new **SharedStringItem** object that represents the text.
+It then returns the index for the **SharedStringItem** object that represents the text.
 
 ```csharp
     // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
@@ -531,12 +497,10 @@ returns the cell. If the specified column does not exist, it creates the
 column and inserts it into the worksheet. It then determines where to
 insert the new cell in the column by iterating through the row elements
 to find the cell that comes directly after the specified row, in
-sequential order. It saves this row in the <span
-class="code">refCell</span> variable. It inserts the new cell before the
-cell referenced by <span class="code">refCell</span> using the <span
+sequential order. It saves this row in the **refCell** variable. It inserts the new cell before the
+cell referenced by **refCell** using the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertBefore``1(``0,DocumentFormat.OpenXml.OpenXmlElement)"><span
-class="nolink">InsertBefore</span></span> method. It then returns the
+target="M:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertBefore``1(``0,DocumentFormat.OpenXml.OpenXmlElement)">**InsertBefore**** method. It then returns the
 new **Cell** object.
 
 ```csharp
@@ -630,8 +594,7 @@ new **Cell** object.
 ## Sample Code 
 
 The following code sample calculates the sum of a contiguous range of
-cells in a spreadsheet document. The result is inserted into the <span
-class="keyword">SharedStringTablePart</span> object and into the
+cells in a spreadsheet document. The result is inserted into the **SharedStringTablePart** object and into the
 specified result cell. You can call the method CalculateSumOfCellRange
 by using the following example.
 

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,8 +16,7 @@ ms.date: 11/01/2017
 # Working with comments (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Comment"><span
-class="nolink">Comment</span></span> class and how it relates to the
+target="T:DocumentFormat.OpenXml.Presentation.Comment">**Comment**** class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a PresentationML
@@ -90,8 +89,7 @@ class to manipulate individual \<cm\> elements in a PresentationML
 document.
 
 Classes that represent child elements of the \<cm\> element and that are
-therefore commonly associated with the <span
-class="keyword">Comment</span> class are shown in the following list.
+therefore commonly associated with the **Comment** class are shown in the following list.
 
 ### ExtensionListWithModification Class
 
@@ -170,35 +168,27 @@ their visual appearance.
 As shown in the Open XML SDK code sample that follows, every instance of
 the **Comment** class is associated with an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideCommentsPart"><span
-class="nolink">SlideCommentsPart</span></span> class, which represents a
+target="T:DocumentFormat.OpenXml.Packaging.SlideCommentsPart">**SlideCommentsPart**** class, which represents a
 slide comments part, one of the parts of a PresentationML presentation
 file package, and a part that is required for each slide in a
-presentation file that contains comments. Each <span
-class="keyword">Comment</span> class instance is also associated with an
+presentation file that contains comments. Each **Comment** class instance is also associated with an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.CommentAuthor"><span
-class="nolink">CommentAuthor</span></span> class, which is in turn
+target="T:DocumentFormat.OpenXml.Presentation.CommentAuthor">**CommentAuthor**** class, which is in turn
 associated with a similarly named presentation part, represented by the
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.CommentAuthorsPart"><span
-class="nolink">CommentAuthorsPart</span></span> class. Comment authors
+target="T:DocumentFormat.OpenXml.Packaging.CommentAuthorsPart">**CommentAuthorsPart**** class. Comment authors
 for a presentation are specified in a comment author list, represented
 by the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.CommentAuthorList"><span
-class="nolink">CommentAuthorList</span></span> class, while comments for
+target="T:DocumentFormat.OpenXml.Presentation.CommentAuthorList">**CommentAuthorList**** class, while comments for
 each slide are listed in a comments list for that slide, represented by
 the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.CommentList"><span
-class="nolink">CommentList</span></span> class.
+target="T:DocumentFormat.OpenXml.Presentation.CommentList">**CommentList**** class.
 
 The **Comment** class, which represents the
 \<cm\> element, is therefore also associated with other classes that
 represent the child elements of the \<cm\> element. Among these classes,
-as shown in the following code sample, are the <span
-class="keyword">Position</span> class, which specifies the position of
-the comment relative to the slide, and the <span
-class="keyword">Text</span> class, which specifies the text content of
+as shown in the following code sample, are the **Position** class, which specifies the position of
+the comment relative to the slide, and the **Text** class, which specifies the text content of
 the comment.
 
 
@@ -206,17 +196,15 @@ the comment.
 ## Open XML SDK Code Example 
 The following code segment from the article <span sdata="link">[How to:
 Add a comment to a slide in a presentation (Open XML
-SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)</span> adds a new
+SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)** adds a new
 comments part to an existing slide in a presentation (if the slide does
 not already contain comments) and creates an instance of an Open XML SDK
 2.0 **Comment** class in the slide comments
 part. It also adds a comment list to the comments part by creating an
 instance of the **CommentList** class, if one
 does not already exist; assigns an ID to the comment; and then adds a
-comment to the comment list by creating an instance of the <span
-class="keyword">Comment</span> class, assigning the required attribute
-values. In addition, it creates instances of the <span
-class="keyword">Position</span> and **Text**
+comment to the comment list by creating an instance of the **Comment** class, assigning the required attribute
+values. In addition, it creates instances of the **Position** and **Text**
 classes associated with the new **Comment**
 class instance. For the complete code sample, see the aforementioned
 article.
@@ -311,7 +299,7 @@ article.
 ## Generated PresentationML 
 When the Open XML SDK 2.5 code in <span sdata="link">[How to: Add a
 comment to a slide in a presentation (Open XML
-SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)</span> is run, including
+SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)** is run, including
 the segment shown in this article, the following XML is written to a new
 CommentAuthors.xml part in the existing PresentationML document
 referenced in the code, assuming that the document contained no comments

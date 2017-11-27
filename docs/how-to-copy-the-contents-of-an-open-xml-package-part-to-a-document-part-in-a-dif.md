@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -52,14 +52,12 @@ a word-processing document package.
 --------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
 To open an existing document, instantiate the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class as shown in
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
 the following two **using** statements. In the
 same statement, you open the word processing file with the specified
 file name by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span class="nolink">Open</span></span> method, with the Boolean parameter.
-For the source file that set the parameter to <span
-class="keyword">false</span> to open it for read-only access. For the
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method, with the Boolean parameter.
+For the source file that set the parameter to **false** to open it for read-only access. For the
 target file, set the parameter to **true** in
 order to enable editing the document.
 
@@ -85,28 +83,20 @@ that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the using
 statement establishes a scope for the object that is created or named in
-the **using** statement. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
+the **using** statement. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 **Dispose** is automatically called when you
-exit the block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
 --------------------------------------------------------------------------------
 ## Structure of a WordProcessingML Document
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
-contains one or more **r** elements. The <span
-class="keyword">r</span> stands for run, which is a region of text with
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
+contains one or more **r** elements. The **r** stands for run, which is a region of text with
 a common set of properties, such as formatting. A run contains one or
-more **t** elements. The <span
-class="keyword">t</span> element contains a range of text. The following
+more **t** elements. The **t** element contains a range of text. The following
 code example shows the **WordprocessingML**
 markup for a document that contains the text "Example text."
 
@@ -123,15 +113,11 @@ markup for a document that contains the text "Example text."
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to <span
-class="keyword">WordprocessingML</span> elements. You will find these
+content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these
 classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+target="N:DocumentFormat.OpenXml.Wordprocessing">**DocumentFormat.OpenXml.Wordprocessing****
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements.
+correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -183,11 +169,9 @@ is stored in the ZIP item theme/theme1.xml:
 ## How the Sample Code Works
 To copy the contents of a document part in an Open XML package to a
 document part in a different package, the full path of the each word
-processing document is passed in as a parameter to the <span
-class="keyword">CopyThemeContent</span> method. The code then opens both
+processing document is passed in as a parameter to the **CopyThemeContent** method. The code then opens both
 documents as **WordprocessingDocument**
-objects, and creates variables that reference the <span
-class="keyword">ThemePart</span> parts in each of the packages.
+objects, and creates variables that reference the **ThemePart** parts in each of the packages.
 
 ```csharp
     public static void CopyThemeContent(string fromDocument1, string toDocument2)
@@ -208,11 +192,8 @@ class="keyword">ThemePart</span> parts in each of the packages.
           Dim themePart2 As ThemePart = wordDoc2.MainDocumentPart.ThemePart
 ```
 
-The code then reads the contents of the source <span
-class="keyword">ThemePart</span> part by using a <span
-class="keyword">StreamReader</span> object and writes to the target
-**ThemePart** part by using a <span
-class="keyword">StreamWriter</span> object.
+The code then reads the contents of the source **ThemePart** part by using a **StreamReader** object and writes to the target
+**ThemePart** part by using a **StreamWriter** object.
 
 ```csharp
     using (StreamReader streamReader = new StreamReader(themePart1.GetStream()))
@@ -233,8 +214,7 @@ class="keyword">StreamWriter</span> object.
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code copies the contents of one document part in an Open
-XML package to a document part in a different package. To call the <span
-class="keyword">CopyThemeContent</span> method, you can use the
+XML package to a document part in a different package. To call the **CopyThemeContent** method, you can use the
 following example, which copies the theme part from "MyPkg4.docx" to
 "MyPkg3.docx."
 
@@ -251,7 +231,7 @@ following example, which copies the theme part from "MyPkg4.docx" to
 ```
 
 > [!IMPORTANT]
-> Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word 2013, click the <span class="ui">Page Layout</span> tab, click <span class="ui">Themes</span>, and select one of the available themes.
+> Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word 2013, click the **Page Layout** tab, click **Themes**, and select one of the available themes.
 
 After running the program, you can inspect the file "MyPkg3.docx" to see
 the copied theme from the file "MyPkg4.docx."

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,20 +16,17 @@ ms.date: 11/01/2017
 # Working with PivotTables (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.PivotTableDefinition"><span
-class="nolink">PivotTableDefinition</span></span> class and how it
+target="T:DocumentFormat.OpenXml.Spreadsheet.PivotTableDefinition">**PivotTableDefinition**** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
 make up a SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
+SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)**.
 
 
 --------------------------------------------------------------------------------
 ## PivotTable in SpreadsheetML 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the <span
-class="keyword">PivotTableDefinition</span> (\<<span
-class="keyword">pivotTableDefinition</span>\>) element.
+specification introduces the **PivotTableDefinition** (\<**pivotTableDefinition**\>) element.
 
 PivotTables display aggregated views of data easily and in an
 understandable layout. Hundreds or thousands of pieces of underlying
@@ -109,10 +106,8 @@ pivotCacheRecords|PivotCacheRecords
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 PivotTableDefinition Class 
 The Open XML SDK 2.5**PivotTableDefinition**
-class represents the PivotTable definition (\<<span
-class="keyword">pivotTableDefinition</span>\>) element defined in the
-Open XML File Format schema for SpreadsheetML documents. Use the <span
-class="keyword">PivotTableDefinition</span> class to manipulate
+class represents the PivotTable definition (\<**pivotTableDefinition**\>) element defined in the
+Open XML File Format schema for SpreadsheetML documents. Use the **PivotTableDefinition** class to manipulate
 individual \<**pivotTableDefinition**\>
 elements in a SpreadsheetML document.
 
@@ -127,22 +122,17 @@ added to the workbook part, and defines the caption label to display
 above the data area of the PivotTable. All of these elements are
 required.
 
-The three main pieces of the <span
-class="keyword">pivotTableDefinition</span> are: the location of the
+The three main pieces of the **pivotTableDefinition** are: the location of the
 table, the display information for the cached fields, and the
 positioning information of the cached fields. For more information about
-these and other additional elements that make up the <span
-class="keyword">pivotTableDefinition</span>, see the ISO/IEC 29500
+these and other additional elements that make up the **pivotTableDefinition**, see the ISO/IEC 29500
 specification.
 
 ### PivotField Class
 
 The **PivotTableDefinition** element contains
-the **PivotField** (\<<span
-class="keyword">pivotField</span>\>) elements. The following information
-from the ISO/IEC 29500 specification introduces the <span
-class="keyword">PivotField</span> (\<<span
-class="keyword">pivotField</span>\>) element.
+the **PivotField** (\<**pivotField**\>) elements. The following information
+from the ISO/IEC 29500 specification introduces the **PivotField** (\<**pivotField**\>) element.
 
 Represents a single field in the PivotTable. This element contains
 information about the field, including the collection of items in the
@@ -153,9 +143,7 @@ field.
 First, define the collection of fields that appear on the PivotTable
 using the **pivotFields** element. Each field
 serves as a cache for the data of that field in the data source. You do
-not need to define the cache. Instead, you can set the <span
-class="keyword">item</span> element equal to <span
-class="keyword">default</span> and have the user update the table when
+not need to define the cache. Instead, you can set the **item** element equal to **default** and have the user update the table when
 they open the document. The **showAll**
 attribute is used to hide certain elements for that data dimension.
 After defining which fields are part of the table, the fields are
@@ -195,14 +183,12 @@ source using the **cacheField** element. The
 purposes: it defines the data type and formatting of the field, and it
 is used as a cache for shared strings. The pivot values are stored in
 the pivot cache records part. When a recurring string is used as a
-value, the cache record uses a reference into the <span
-class="keyword">cacheField</span> collection of shared items.
+value, the cache record uses a reference into the **cacheField** collection of shared items.
 
 ### Pivot Cache Records Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **PivotCacheRecords** (\<<span
-class="keyword">pivotCacheRecords</span>\>) element.
+introduces the **PivotCacheRecords** (\<**pivotCacheRecords**\>) element.
 
 The pivotCacheRecords part contains the underlying data to be
 aggregated. It is a cache of the source data.
@@ -211,7 +197,6 @@ aggregated. It is a cache of the source data.
 
 The cache records part can store any number of cached records. Each
 record has the same number of values defined as there are fields in the
-cache definition. Each record is defined with the <span
-class="keyword">r</span> element. This record contains value items as
+cache definition. Each record is defined with the **r** element. This record contains value items as
 child elements. You can provide certain typed values, such as Numeric,
 Boolean, or Date-Time, or you can reference into the shared items.

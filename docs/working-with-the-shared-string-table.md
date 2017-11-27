@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,8 +16,7 @@ ms.date: 11/01/2017
 # Working with the shared string table (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable"><span
-class="nolink">SharedStringTable</span></span> class and how it relates
+target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable">**SharedStringTable**** class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
@@ -26,9 +25,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK
 --------------------------------------------------------------------------------
 ## SharedStringTable in SpreadsheetML 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the <span
-class="keyword">SharedStringTable</span> (\<<span
-class="keyword">sst</span>\>) element.
+specification introduces the **SharedStringTable** (\<**sst**\>) element.
 
 An instance of this part type contains one occurrence of each unique
 string that occurs on all worksheets in a workbook.
@@ -110,13 +107,8 @@ text is stored in the shared string table. The next two strings ("Cell
 A2" and "Cell B2") contain character level formatting. The word "Cell"
 is formatted differently from "A2" and "B2", therefore the formatting
 for the cells is stored along with the text within the shared string
-item using the **RichTextRun** (\<<span
-class="keyword">r</span>\>) and <span
-class="keyword">RunProperties</span> (\<<span
-class="keyword">rPr</span>\>) elements. To preserve the white space in
-between the text that is formatted differently, the <span
-class="keyword">space</span> attribute of the <span
-class="keyword">text</span> (\<**t**\>) element
+item using the **RichTextRun** (\<**r**\>) and **RunProperties** (\<**rPr**\>) elements. To preserve the white space in
+between the text that is formatted differently, the **space** attribute of the **text** (\<**t**\>) element
 is set equal to **preserve**. For more
 information about the rich text run and run properties elements, see the
 ISO/IEC 29500 specification.
@@ -203,8 +195,7 @@ ISO/IEC 29500 specification.
 ```
 ### Text Class
 
-The **Text** class represents the text (\<<span
-class="keyword">t</span>\>) element which represents the text content
+The **Text** class represents the text (\<**t**\>) element which represents the text content
 shown as part of a string.
 
 ### Open XML SDK Code Example
@@ -214,8 +205,7 @@ The following code takes a **String** and a
 specified text exists in the shared string table. If the text does not
 exist, it is added as a shared string item to the shared string table.
 
-For more information about how to use the <span
-class="keyword">SharedStringTable</span> class to programmatically
+For more information about how to use the **SharedStringTable** class to programmatically
 insert text into a cell, see [How to: Insert text into a cell in a spreadsheet document (Open XML SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.md).
 
 ```csharp

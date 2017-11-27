@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -185,15 +185,12 @@ The following XML Schema fragment defines the contents of this element:
 
 ## How the Sample Code Works
 
-The code in this topic consists of two methods, <span
-class="keyword">MoveParagraphToPresentation</span> and <span
-class="keyword">GetFirstSlide</span>. The first method takes two string
+The code in this topic consists of two methods, **MoveParagraphToPresentation** and **GetFirstSlide**. The first method takes two string
 parameters: one that represents the source file, which contains the
 paragraph to move, and one that represents the target file, to which the
 paragraph is moved. The method opens both presentation files and then
 calls the **GetFirstSlide** method to get the
-first slide in each file. It then gets the first <span
-class="keyword">TextBody</span> shape in each slide and the first
+first slide in each file. It then gets the first **TextBody** shape in each slide and the first
 paragraph in the source shape. It performs a **deep
 clone** of the source paragraph, copying not only the source **Paragraph** object itself, but also everything
 contained in that object, including its text. It then inserts the cloned
@@ -294,8 +291,7 @@ saves the modified slides in both presentations.
     End Sub
 ```
 
-The **GetFirstSlide** method takes the <span
-class="keyword">PresentationDocument</span> object passed in, gets its
+The **GetFirstSlide** method takes the **PresentationDocument** object passed in, gets its
 presentation part, and then gets the ID of the first slide in its slide
 list. It then gets the relationship ID of the slide, gets the slide part
 from the relationship ID, and returns the slide part to the calling

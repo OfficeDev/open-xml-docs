@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -22,9 +22,7 @@ element that contains \<**sheets**\> and
 worksheets in the workbook. A separate XML file is created for each
 worksheet. These elements are the minimum elements required for a valid
 spreadsheet document. In addition, a spreadsheet document might contain
-\<**table**\>, \<<span
-class="keyword">chartsheet</span>\>, \<<span
-class="keyword">pivotTableDefinition</span>\>, or other spreadsheet
+\<**table**\>, \<**chartsheet**\>, \<**pivotTableDefinition**\>, or other spreadsheet
 related elements.
 
 **In This Section**
@@ -42,10 +40,8 @@ Scenario](structure-of-a-spreadsheetml-document.md#TypWBScenario)
 --------------------------------------------------------------------------------
 ## Important Spreadsheet Parts
 Using the Open XML SDK 2.5 for Office, you can create document structure
-and content that uses strongly-typed classes that correspond to <span
-class="keyword">SpreadsheetML</span> elements. You can find these
-classes in the <span
-class="keyword">DocumentFormat.OpenXML.Spreadsheet</span> namespace. The
+and content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
+classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 some of the important spreadsheet elements.
 
@@ -153,15 +149,14 @@ on the minimum spreadsheet from **.xlsx** to
 **.zip**. Inside the .zip package, there are
 several parts that make up the minimum workbook.
 
-The following figure shows the structure under the <span class="keyword">xl</span> folder of the .zip package for a minimum
+The following figure shows the structure under the **xl** folder of the .zip package for a minimum
 workbook.
 
 Figure 1. .zip folder structure
 
   
  ![Structure of a minimum workbook](./media/odc_oxml_xl_documentstructure_fig02.gif)
-The **workbook.xml** file contains \<<span
-class="keyword">sheet</span>\> elements that reference the worksheets in
+The **workbook.xml** file contains \<**sheet**\> elements that reference the worksheets in
 the workbook. Each worksheet is associated to the workbook via a Sheet
 ID and a relationship ID. The **sheetID** is
 the ID used within the package to identify a sheet and must be unique
@@ -197,11 +192,9 @@ when you run the Open XML SDK 2.5 to create a minimum workbook.
     </Relationships>
 ```
 
-The **sheet.xml** file contains the \<<span
-class="keyword">sheetData</span>\> element that represents the cell
-table. In this example, the workbook is blank, so the \<<span
-class="keyword">sheetData</span>\> element is empty. For more
-information about sheets, see <span sdata="link">[Working with sheets (Open XML SDK)](working-with-sheets.md)</span>.
+The **sheet.xml** file contains the \<**sheetData**\> element that represents the cell
+table. In this example, the workbook is blank, so the \<**sheetData**\> element is empty. For more
+information about sheets, see <span sdata="link">[Working with sheets (Open XML SDK)](working-with-sheets.md)**.
 
 The following XML code is the spreadsheetML that represents the
 worksheet part of the spreadsheet document. This code is generated when

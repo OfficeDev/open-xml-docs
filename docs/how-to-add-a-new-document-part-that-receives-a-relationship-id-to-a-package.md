@@ -17,8 +17,7 @@ ms.date: 11/01/2017
 # How to: Add a new document part that receives a relationship ID to a package (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
-Office to add a document part (file) that receives a relationship <span
-class="parameter" sdata="paramReference">Id</span> parameter for a word
+Office to add a document part (file) that receives a relationship **Id** parameter for a word
 processing document.
 
 The following assembly directives are required to compile the code in
@@ -57,16 +56,11 @@ a word-processing document package.
 
 -----------------------------------------------------------------------------
 ## The Structure of a WordProcessingML Document 
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
-contains one or more **r** elements. The <span
-class="keyword">r</span> stands for run, which is a region of text with
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
+contains one or more **r** elements. The **r** stands for run, which is a region of text with
 a common set of properties, such as formatting. A run contains one or
-more **t** elements. The <span
-class="keyword">t</span> element contains a range of text. The following
+more **t** elements. The **t** element contains a range of text. The following
 code example shows the **WordprocessingML**
 markup for a document that contains the text "Example text."
 
@@ -83,15 +77,11 @@ markup for a document that contains the text "Example text."
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to <span
-class="keyword">WordprocessingML</span> elements. You will find these
+content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these
 classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+target="N:DocumentFormat.OpenXml.Wordprocessing">**DocumentFormat.OpenXml.Wordprocessing****
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements.
+correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -124,10 +114,7 @@ a **WordprocessingDocument** object.
 ```
 
 It then adds the **MainDocumentPart** part in
-the new word processing document, with the relationship ID, <span
-class="keyword">rId1</span>. It also adds the <span
-class="keyword">CustomFilePropertiesPart</span> part and a <span
-class="keyword">CoreFilePropertiesPart</span> in the new word processing
+the new word processing document, with the relationship ID, **rId1**. It also adds the **CustomFilePropertiesPart** part and a **CoreFilePropertiesPart** in the new word processing
 document.
 
 ```csharp
@@ -173,10 +160,7 @@ document.
     End Using
 ```
 
-The code then adds the <span
-class="keyword">DigitalSignatureOriginPart</span> part, the <span
-class="keyword">ExtendedFilePropertiesPart</span> part, and the <span
-class="keyword">ThumbnailPart</span> part in the new word processing
+The code then adds the **DigitalSignatureOriginPart** part, the **ExtendedFilePropertiesPart** part, and the **ThumbnailPart** part in the new word processing
 document with realtionship IDs rId4, rId5, and rId6. And then it closes
 the **wordDoc** object.
 

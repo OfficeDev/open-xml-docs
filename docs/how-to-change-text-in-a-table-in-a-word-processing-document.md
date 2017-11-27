@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -38,13 +38,10 @@ this topic.
 ## Open the Existing Document
 
 To open an existing document, instantiate the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class as shown in
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
 the following **using** statement. In the same
-statement, open the word processing file at the specified <span
-class="term">filepath</span> by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method, with the Boolean parameter set
+statement, open the word processing file at the specified **filepath** by using the <span sdata="cer"
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ```csharp
@@ -65,39 +62,24 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="term">doc</span>. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **doc**. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 **Dispose** is automatically called when you
-exit the block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
 ## The Structure of a Table
 
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
-contains one or more **r** elements. The <span
-class="keyword">r</span> stands for run, which is a region of text with
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
+contains one or more **r** elements. The **r** stands for run, which is a region of text with
 a common set of properties, such as formatting. A run contains one or
-more **t** elements. The <span
-class="keyword">t</span> element contains a range of text.
+more **t** elements. The **t** element contains a range of text.
 
-The document might contain a table as in this example. A <span
-class="term">table</span> is a set of paragraphs (and other block-level
-content) arranged in <span class="term">rows</span> and <span
-class="term">columns</span>. Tables in <span
-class="keyword">WordprocessingML</span> are defined via the <span
-class="keyword">tbl</span> element, which is analogous to the HTML table
+The document might contain a table as in this example. A **table** is a set of paragraphs (and other block-level
+content) arranged in **rows** and **columns**. Tables in **WordprocessingML** are defined via the **tbl** element, which is analogous to the HTML table
 tag. Consider an empty one-cell table (that is, a table with one row and
 one column) and 1 point borders on all sides. This table is represented
 by the following **WordprocessingML** code
@@ -138,8 +120,7 @@ table row using the **tr** element.
 
 ## How the Sample Code Works
 
-In the sample code, after you open the document in the <span
-class="keyword">using</span> statement, you locate the first table in
+In the sample code, after you open the document in the **using** statement, you locate the first table in
 the document. Then you locate the second row in the table by finding the
 row whose index is 1. Next, you locate the third cell in that row whose
 index is 2, as shown in the following code example.
@@ -196,8 +177,7 @@ three columns, and that the table contains text in the cell that is
 located at the second row and the third column position. When you call
 the **ChangeTextInCell** method in your
 program, the text in the cell at the specified location will be replaced
-by the text that you pass in as the second argument to the <span
-class="keyword">ChangeTextInCell</span> method. In the following table
+by the text that you pass in as the second argument to the **ChangeTextInCell** method. In the following table
 the text "The text from the API example" was used.
 
 |  |  |  |

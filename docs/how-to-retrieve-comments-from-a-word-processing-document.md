@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -37,15 +37,11 @@ this topic.
 --------------------------------------------------------------------------------
 ## Open the Existing Document for Read-only Access
 To open an existing document, instantiate the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class as shown in
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
 the following **using** statement. In the same
-statement, open the word processing file at the specified <span
-class="term">fileName</span> by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method. To open the
-file for editing the Boolean parameter is set to <span
-class="keyword">true</span>. In this example you just need to read the
+statement, open the word processing file at the specified **fileName** by using the <span sdata="cer"
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method. To open the
+file for editing the Boolean parameter is set to **true**. In this example you just need to read the
 file; therefore, you can open the file for read-only access by setting
 the Boolean parameter to **false**.
 
@@ -66,17 +62,13 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="term">wordDoc</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **wordDoc**.
 
 
 --------------------------------------------------------------------------------
 ## Comments Element
-The **comments** and <span
-class="keyword">comment</span> elements are crucial to working with
+The **comments** and **comment** elements are crucial to working with
 comments in a word processing file. It is important in this code example
 to familiarize yourself with those elements.
 
@@ -188,8 +180,7 @@ element.
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code example shows how to retrieve comments that have been
-inserted into a word processing document. To call the method <span
-class="keyword">GetCommentsFromDocument</span> you can use the following
+inserted into a word processing document. To call the method **GetCommentsFromDocument** you can use the following
 call, which retrieves comments from a file named "Word16.docx," as an
 example.
 

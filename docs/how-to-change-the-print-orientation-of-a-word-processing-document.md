@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -52,11 +52,9 @@ You can use the **SetPrintOrientation** method
 to change the print orientation of a word processing document. The
 method accepts two parameters that indicate the name of the document to
 modify (string) and the new print orientation (<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues"><span
-class="nolink">PageOrientationValues</span></span>).
+target="T:DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues">**PageOrientationValues****).
 
-The following code shows the <span
-class="keyword">SetPrintOrientation</span> method.
+The following code shows the **SetPrintOrientation** method.
 
 ```csharp
     public static void SetPrintOrientation(
@@ -95,17 +93,14 @@ following code shows an example method call.
 ## How the Code Works
 The following code first opens the document by using the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method and sets the <span
-class="parameter" sdata="paramReference">isEditable</span> parameter to
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method and sets the **isEditable** parameter to
 **true** to indicate that the document should
 be read/write. The code maintains a Boolean variable that tracks whether
 the document has changed (so that it can save the document later, if the
 document has changed). The code retrieves a reference to the main
 document part, and then uses that reference to retrieve a collection of
 all of the descendants of type <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.SectionProperties"><span
-class="nolink">SectionProperties</span></span> within the content of the
+target="T:DocumentFormat.OpenXml.Wordprocessing.SectionProperties">**SectionProperties**** within the content of the
 document. Later code will use this collection to set the orientation for
 each section in turn.
 
@@ -141,9 +136,7 @@ the page orientation for the section was changed so the code can update
 the page size and margins. (If the new orientation matches the original
 orientation, the code will not update the page.) The code continues by
 retrieving a reference to the first <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.PageSize"><span
-class="nolink">PageSize</span></span> descendant of the <span
-class="keyword">SectionProperties</span> element. If the reference is
+target="T:DocumentFormat.OpenXml.Wordprocessing.PageSize">**PageSize**** descendant of the **SectionProperties** element. If the reference is
 not null, the code updates the orientation as required.
 
 ```csharp
@@ -175,22 +168,16 @@ not null, the code updates the orientation as required.
 -----------------------------------------------------------------------------
 ## Setting the Orientation for the Section
 The next block of code first checks whether the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.PageSize.Orient"><span
-class="nolink">Orient</span></span> property of the <span
-class="keyword">PageSize</span> element exists. As with many properties
+target="P:DocumentFormat.OpenXml.Wordprocessing.PageSize.Orient">**Orient**** property of the **PageSize** element exists. As with many properties
 of Open XML elements, the property or attribute might not exist yet. In
 that case, retrieving the property returns a null reference. By default,
 if the property does not exist, and the new orientation is Portrait, the
-code will not update the page. If the <span
-class="keyword">Orient</span> property already exists, and its value
+code will not update the page. If the **Orient** property already exists, and its value
 differs from the new orientation value supplied as a parameter to the
 method, the code sets the **Value** property of
 the **Orient** property, and sets both the
-<span class="code">pageOrientationChanged</span> and the <span
-class="code">documentChanged</span> flags. (The code uses the <span
-class="code">pageOrientationChanged</span> flag to determine whether it
-must update the page size and margins. It uses the <span
-class="code">documentChanged</span> flag to determine whether it must
+**pageOrientationChanged** and the **documentChanged** flags. (The code uses the **pageOrientationChanged** flag to determine whether it
+must update the page size and margins. It uses the **documentChanged** flag to determine whether it must
 save the document at the end.)
 
 > [!NOTE]
@@ -273,22 +260,16 @@ in the **PageSize** element.
 The next step in the sample procedure handles margins for the section.
 If the page orientation has changed, the code must rotate the margins to
 match. To do so, the code retrieves a reference to the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.PageMargin"><span
-class="nolink">PageMargin</span></span> element for the section. If the
+target="T:DocumentFormat.OpenXml.Wordprocessing.PageMargin">**PageMargin**** element for the section. If the
 element exists, the code rotates the margins. Note that the code rotates
 the margins by 90 degrees—some printers rotate the margins by 270
 degrees instead and you could modify the code to take that into account.
 Also be aware that the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Top"><span
-class="nolink">Top</span></span> and <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Bottom"><span
-class="nolink">Bottom</span></span> properties of the <span
-class="keyword">PageMargin</span> object are signed values, and the
+target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Top">**Top**** and <span sdata="cer"
+target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Bottom">**Bottom**** properties of the **PageMargin** object are signed values, and the
 <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Left"><span
-class="nolink">Left</span></span> and <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Right"><span
-class="nolink">Right</span></span> properties are unsigned values. The
+target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Left">**Left**** and <span sdata="cer"
+target="P:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Right">**Right**** properties are unsigned values. The
 code must convert between the two types of values as it rotates the
 margin settings, as shown in the following code.
 
@@ -349,8 +330,7 @@ has changed. If the document has changed, the code saves it.
 
 --------------------------------------------------------------------------------
 ## Sample Code
-The following is the complete <span
-class="keyword">SetPrintOrientation</span> code sample in C\# and Visual
+The following is the complete **SetPrintOrientation** code sample in C\# and Visual
 Basic.
 
 ```csharp

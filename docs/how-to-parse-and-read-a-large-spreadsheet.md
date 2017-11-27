@@ -17,8 +17,7 @@ ms.date: 11/01/2017
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically read a large Excel file. For more information
-about the basic structure of a <span
-class="keyword">SpreadsheetML</span> document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+about the basic structure of a **SpreadsheetML** document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 You must use the following **using** directives
 or **Imports** statements to compile the code
@@ -43,26 +42,20 @@ in this topic.
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"><span
-class="nolink">SpreadsheetDocument</span></span> class represents an
+target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
 Excel document package. To open and work with an Excel document, you
-create an instance of the <span
-class="keyword">SpreadsheetDocument</span> class from the document.
+create an instance of the **SpreadsheetDocument** class from the document.
 After you create this instance, you can use it to obtain access to the
 main workbook part that contains the worksheets. The content in the
-document is represented in the package as XML using <span
-class="keyword">SpreadsheetML</span> markup.
+document is represented in the package as XML using **SpreadsheetML** markup.
 
 To create the class instance, you call one of the overloads of the <span
 sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open"><span
-class="nolink">Open()</span></span> method. The following code sample
+target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** method. The following code sample
 shows how to use the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> overload. The first
+target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** overload. The first
 parameter takes a string that represents the full path to the document
-to open. The second parameter takes a value of <span
-class="keyword">true</span> or **false** and
+to open. The second parameter takes a value of **true** or **false** and
 represents whether or not you want the file to be opened for editing. In
 this example, the parameter is **false**
 because the document is opened as read-only.
@@ -91,7 +84,7 @@ can use the SDK Document Object Model (DOM), or the Simple API for XML
 (SAX) reading and writing features. The SDK DOM is designed to make it
 easy to query and parse Open XML files by using strongly-typed classes.
 However, the DOM approach requires loading entire Open XML parts into
-memory, which can cause an <span class="term">Out of Memory</span>
+memory, which can cause an **Out of Memory**
 exception when you are working with really large files. Using the SAX
 approach, you can employ an OpenXMLReader to read the XML in the file
 one element at a time, without having to load the entire file into

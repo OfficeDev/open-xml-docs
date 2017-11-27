@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,12 +16,11 @@ ms.date: 11/01/2017
 # Working with presentations (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Presentation"><span
-class="nolink">Presentation</span></span> class and how it relates to
+target="T:DocumentFormat.OpenXml.Presentation.Presentation">**Presentation**** class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see <span sdata="link">[Structure of a
-PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)</span>.
+PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)**.
 
 
 ---------------------------------------------------------------------------------
@@ -91,12 +90,10 @@ Open XML SDK 2.5 classes that correspond to them.
 ## Open XML SDK 2.5 Presentation Class
 The Open XML SDK 2.5**Presentation** class
 represents the \<presentation\> element defined in the Open XML File
-Format schema for PresentationML documents. Use the <span
-class="keyword">Presentation</span> class to manipulate an individual
+Format schema for PresentationML documents. Use the **Presentation** class to manipulate an individual
 \<presentation\> element in a PresentationML document.
 
-Classes commonly associated with the <span
-class="keyword">Presentation</span> class are shown in the following
+Classes commonly associated with the **Presentation** class are shown in the following
 sections.
 
 ### SlideMasterIdList Class
@@ -315,8 +312,7 @@ text within the presentation slide.
 As shown in the Open XML SDK code example that follows, every instance
 of the **Presentation** class is associated
 with an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationPart"><span
-class="nolink">PresentationPart</span></span> class, which represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationPart">**PresentationPart**** class, which represents a
 presentation part, one of the required parts of a PresentationML
 presentation file package.
 
@@ -325,45 +321,30 @@ the \<presentation\> element, is therefore also associated with a series
 of other classes that represent the child elements of the
 \<presentation\> element. Among these classes, as shown in the following
 code example, are the **SlideMasterIdList**,
-**SlideIdList**, <span
-class="keyword">SlideSize</span>, <span
-class="keyword">NotesSize</span>, and <span
-class="keyword">DefaultTextStyle</span> classes.
+**SlideIdList**, **SlideSize**, **NotesSize**, and **DefaultTextStyle** classes.
 
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)</span> uses the <span
+The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** uses the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Create(System.String,DocumentFormat.OpenXml.PresentationDocumentType)"><span
-class="nolink">Create(String, PresentationDocumentType)</span></span>
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Create(System.String,DocumentFormat.OpenXml.PresentationDocumentType)">**Create(String, PresentationDocumentType)****
 method of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class of the Open XML
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class of the Open XML
 SDK 2.5 to create an instance of that same class that has the specified
 name and file path. Then it uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.AddPresentationPart"><span
-class="nolink">AddPresentationPart()</span></span> method to add an
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.AddPresentationPart">**AddPresentationPart()**** method to add an
 instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationPart"><span
-class="nolink">PresentationPart</span></span> class to the document
+target="T:DocumentFormat.OpenXml.Packaging.PresentationPart">**PresentationPart**** class to the document
 file. Next, it creates an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Presentation"><span
-class="nolink">Presentation</span></span> class that represents the
-presentation. It passes a reference to the <span
-class="keyword">PresentationPart</span> class instance to the
+target="T:DocumentFormat.OpenXml.Presentation.Presentation">**Presentation**** class that represents the
+presentation. It passes a reference to the **PresentationPart** class instance to the
 **CreatePresentationParts** procedure, which creates the other required
 parts of the presentation file. The **CreatePresentation** procedure
-cleans up by closing the <span
-class="keyword">PresentationDocument</span> class instance that it
+cleans up by closing the **PresentationDocument** class instance that it
 opened previously.
 
-The **CreatePresentationParts** procedure creates instances of the <span
-class="keyword">SlideMasterIdList</span>, <span
-class="keyword">SlideIdList</span>, <span
-class="keyword">SlideSize</span>, <span
-class="keyword">NotesSize</span>, and <span
-class="keyword">DefaultTextStyle</span> classes and appends them to the
+The **CreatePresentationParts** procedure creates instances of the **SlideMasterIdList**, **SlideIdList**, **SlideSize**, **NotesSize**, and **DefaultTextStyle** classes and appends them to the
 presentation.
 
 ```csharp

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,11 +16,10 @@ ms.date: 11/01/2017
 # Working with conditional formatting (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatting"><span
-class="nolink">ConditionalFormatting</span></span> class and how it
+target="T:DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatting">**ConditionalFormatting**** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
-make up a SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)</span>.
+make up a SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)**.
 
 
 ---------------------------------------------------------------------------------
@@ -35,12 +34,9 @@ highs and lows. Conditional formatting is applicable to a cell in a
 worksheet directly. The value does not have to be part of a table.
 
 All conditional formatting settings are stored at the worksheet level.
-The worksheet stores one \<<span
-class="keyword">conditionalFormatting</span>\> element for each format
+The worksheet stores one \<**conditionalFormatting**\> element for each format
 applied to a cell or series of cells. The collection of cells on which
-the format is applied is defined using the <span
-class="keyword">sqref</span> attribute. The <span
-class="keyword">sqref</span> attribute specifies a cell range using the
+the format is applied is defined using the **sqref** attribute. The **sqref** attribute specifies a cell range using the
 'from:to' notation, for example 'A1:A10'.
 
 The following table lists the common Open XML SDK 2.5 classes used when
@@ -58,17 +54,13 @@ iconSet|IconSet
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 Conditional Formatting Class 
 The Open XML SDK 2.5**ConditionalFormatting**
-class represents the table (\<<span
-class="keyword">conditionalFormatting</span>\>) element defined in the
-Open XML File Format schema for SpreadsheetML documents. Use the <span
-class="keyword">ConditionalFormatting</span> class to manipulate
+class represents the table (\<**conditionalFormatting**\>) element defined in the
+Open XML File Format schema for SpreadsheetML documents. Use the **ConditionalFormatting** class to manipulate
 individual \<**conditionalFormatting**\>
 elements in a SpreadsheetML document.
 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the <span
-class="keyword">ConditionalFormatting</span> (\<<span
-class="keyword">conditionalFormatting</span>\>) element.
+specification introduces the **ConditionalFormatting** (\<**conditionalFormatting**\>) element.
 
 A Conditional Format is a format, such as cell shading or font color,
 that a spreadsheet application can automatically apply to cells if a
@@ -120,15 +112,12 @@ Each conditional format is allowed to specify various formatting rules.
 You can apply color scale and data bar formatting at the same time for
 instance. Each conditional format is represented using a separate
 \<**cfRule**\> element. To specify their user
-interface display priority you can use the <span
-class="keyword">priority</span> attribute. Because a \<<span
-class="keyword">conditionalFormatting</span>\> element can overlap other
+interface display priority you can use the **priority** attribute. Because a \<**conditionalFormatting**\> element can overlap other
 formatted areas on the worksheet the priority is global for all the
 conditional formats defined for that worksheet.
 
 The \<**cfRule**\> element has many formatting
-types, such as **cellIs** and <span
-class="keyword">top10</span>, which can be applied. Each type of
+types, such as **cellIs** and **top10**, which can be applied. Each type of
 formatting uses common elements to define its settings. For more
 information about conditional formatting rule attributes, see the
 ISO/IEC 29500 specification.
@@ -136,8 +125,7 @@ ISO/IEC 29500 specification.
 ### Data Bar Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **DataBar** (\<<span
-class="keyword">dataBar</span>\>) element.
+introduces the **DataBar** (\<**dataBar**\>) element.
 
 Describes a data bar conditional formatting rule.
 
@@ -175,8 +163,7 @@ settings. The \<**dataBar**\> element stores
 all the relevant data. A data bar requires three settings: the minimum
 and maximum values to compare cell values to, and a color. The first
 \<**cfvo**\> element, or conditional format
-value object, defines the minimum value, the second \<<span
-class="keyword">cfvo</span>\> elements defines the maximum value. You
+value object, defines the minimum value, the second \<**cfvo**\> elements defines the maximum value. You
 can use different ways to specify a value, like using a formula or
 hard-coded value. Another common option is to use the 'min' and 'max'
 types. These \<**cfvo**\> element types specify
@@ -188,8 +175,7 @@ data bar by using the \<**color**\> element.
 ### Color Scale Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **ColorScale** (\<<span
-class="keyword">colorScale</span>\>) element.
+introduces the **ColorScale** (\<**colorScale**\>) element.
 
 Describes a gradated color scale in this conditional formatting rule.
 
@@ -212,14 +198,12 @@ can specify up to three \<**cfvo**\>, or
 conditional format value object, element values: one for the start of
 the scale, one for the middle of the scale, and one for the end of the
 scale. The middle value is optional. In addition, you can specify the
-color of the color scale by using the \<<span
-class="keyword">color</span>\> element.
+color of the color scale by using the \<**color**\> element.
 
 ### Icon Set Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **IconSet** (\<<span
-class="keyword">iconSet</span>\>) element.
+introduces the **IconSet** (\<**iconSet**\>) element.
 
 Describes an icon set conditional formatting rule.
 
@@ -242,11 +226,9 @@ value is greater than or equal to the 67th percentile.
 
 Using icon sets you can apply different sets of icons to the cells that
 contain your data. The icon set uses a range of values to identify which
-set of cells to apply the formatting rule to. The first \<<span
-class="keyword">cfvo</span>\> element identifies the lowest value of the
+set of cells to apply the formatting rule to. The first \<**cfvo**\> element identifies the lowest value of the
 range, the second \<**cfvo**\>element
-identifies the middle point, and the third \<<span
-class="keyword">cfvo</span>\> element identifies the highest value. An
+identifies the middle point, and the third \<**cfvo**\> element identifies the highest value. An
 icon set identifies which icons to apply to the cells. You can choose
 from various hard coded icons. For more information about what icons are
 available, see the ISO/IEC 29500 specification.

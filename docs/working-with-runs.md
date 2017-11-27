@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,8 +16,7 @@ ms.date: 11/01/2017
 # Working with runs (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
-class="nolink">Run</span></span> class and how it relates to the Open
+target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** class and how it relates to the Open
 XML File Format WordprocessingML schema.
 
 
@@ -60,12 +59,8 @@ working with runs.
 ---------------------------------------------------------------------------------
 ## Run Class 
 The Open XML SDK 2.5<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
-class="nolink">Run</span></span> class represents the run (\<<span
-class="keyword">r</span>\>) element defined in the Open XML File Format
-schema for WordprocessingML documents as discussed above. Use a <span
-class="keyword">Run</span> object to manipulate an individual \<<span
-class="keyword">r</span>\> element in a WordprocessingML document.
+target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** class represents the run (\<**r**\>) element defined in the Open XML File Format
+schema for WordprocessingML documents as discussed above. Use a **Run** object to manipulate an individual \<**r**\> element in a WordprocessingML document.
 
 ### RunProperties Class
 
@@ -75,19 +70,14 @@ Some examples of run properties are bold, border, character style,
 color, font, font size, italic, kerning, disable spelling/grammar check,
 shading, small caps, strikethrough, text direction, and underline. Use a
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.RunProperties"><span
-class="nolink">RunProperties</span></span> object to set the properties
+target="T:DocumentFormat.OpenXml.Wordprocessing.RunProperties">**RunProperties**** object to set the properties
 for a run in a WordprocessingML document.
 
 ### Text Object
 
-With the \<**r**\> element, the text (\<<span
-class="keyword">t</span>\>) element is the container for the text that
+With the \<**r**\> element, the text (\<**t**\>) element is the container for the text that
 makes up the document content. The OXML SDK <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Text"><span
-class="nolink">Text</span></span> class represents the \<<span
-class="keyword">t</span>\> element. Use a <span
-class="keyword">Text</span> object to place text in a Wordprocessing
+target="T:DocumentFormat.OpenXml.Wordprocessing.Text">**Text**** class represents the \<**t**\> element. Use a **Text** object to place text in a Wordprocessing
 document.
 
 
@@ -95,8 +85,7 @@ document.
 ## Open XML SDK Code Example 
 The following code adds text to the main document surface of the
 specified WordprocessingML document. A **Run**
-object demarcates a region of text within the paragraph and then a <span
-class="keyword">RunProperties</span> object is used to apply bold
+object demarcates a region of text within the paragraph and then a **RunProperties** object is used to apply bold
 formatting to the run.
 
 ```csharp

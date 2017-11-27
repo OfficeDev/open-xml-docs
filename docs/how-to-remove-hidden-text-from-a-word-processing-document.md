@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -36,8 +36,7 @@ this topic.
 
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
-To open an existing document, you instantiate the <span
-class="keyword">WordprocessingDocument</span> class as shown in the
+To open an existing document, you instantiate the **WordprocessingDocument** class as shown in the
 following **using** statement. In the same
 statement, you open the word processing file with the specified
 *fileName* by using the **Open** method, with
@@ -65,28 +64,20 @@ that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the using
 statement establishes a scope for the object that is created or named in
-the using statement, in this case doc. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
+the using statement, in this case doc. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 **Dispose** is automatically called when you
-exit the block, you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
 
 --------------------------------------------------------------------------------
 ## Structure of a WordProcessingML Document
-The basic document structure of a <span
-class="keyword">WordProcessingML</span> document consists of the <span
-class="keyword">document</span> and **body**
-elements, followed by one or more block level elements such as <span
-class="keyword">p</span>, which represents a paragraph. A paragraph
-contains one or more **r** elements. The <span
-class="keyword">r</span> stands for run, which is a region of text with
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
+elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
+contains one or more **r** elements. The **r** stands for run, which is a region of text with
 a common set of properties, such as formatting. A run contains one or
-more **t** elements. The <span
-class="keyword">t</span> element contains a range of text. The following
+more **t** elements. The **t** element contains a range of text. The following
 code example shows the **WordprocessingML**
 markup for a document that contains the text "Example text."
 
@@ -103,15 +94,11 @@ markup for a document that contains the text "Example text."
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to <span
-class="keyword">WordprocessingML</span> elements. You will find these
+content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these
 classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing"><span
-class="nolink">DocumentFormat.OpenXml.Wordprocessing</span></span>
+target="N:DocumentFormat.OpenXml.Wordprocessing">**DocumentFormat.OpenXml.Wordprocessing****
 namespace. The following table lists the class names of the classes that
-correspond to the **document**, <span
-class="keyword">body</span>, **p**, <span
-class="keyword">r</span>, and **t** elements.
+correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 WordprocessingML Element|Open XML SDK 2.5 Class|Description
 --|--|--
@@ -177,8 +164,7 @@ The following XML schema segment defines the contents of this element.
 ```
 
 The **val** property in the code above is a binary value that can be
-turned on or off. If given a value of **on**, **1**, or <span
-class="keyword">true</span> the property is turned on. If given the
+turned on or off. If given a value of **on**, **1**, or **true** the property is turned on. If given the
 value **off**, **0**, or **false** the property
 is turned off.
 

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,13 +16,12 @@ ms.date: 11/01/2017
 # Working with formulas (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellFormula"><span
-class="nolink">CellFormula</span></span> class and how it relates to the
+target="T:DocumentFormat.OpenXml.Spreadsheet.CellFormula">**CellFormula**** class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
 SpreadsheetML document, see <span sdata="link">[Structure of a
 SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.md)</span>.
+SDK)](structure-of-a-spreadsheetml-document.md)**.
 
 
 --------------------------------------------------------------------------------
@@ -37,17 +36,14 @@ worksheet XML file. Use the **CellFormula**
 Formulas can contain mathematical expressions that include a wide range
 of predefined functions.
 
-The **CellValue** (\<<span
-class="keyword">v</span>\>) element, stores the cached formula value
+The **CellValue** (\<**v**\>) element, stores the cached formula value
 based on the last time the formula was calculated. This allows the user
 to postpone calculation of the formula values when the spreadsheet is
 opened, which saves time when opening a worksheet. You do not have to
 specify the value, and if you omit it, it is the responsibility of the
 Open XML reader to compute the value based on the formula definition
-when the worksheet is opened. For more information about the <span
-class="keyword">CellValue</span> class, see <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue"><span
-class="nolink">CellValue</span></span>.
+when the worksheet is opened. For more information about the **CellValue** class, see <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue****.
 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **cellFormula**

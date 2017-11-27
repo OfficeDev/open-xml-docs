@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -42,21 +42,16 @@ this topic.
 -----------------------------------------------------------------------------
 ## Getting a PresentationDocument Object
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"><span
-class="nolink">PresentationDocument</span></span> class represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the <span
-class="keyword">PresentationDocument</span> class, and then work with
+first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open(String, Boolean)</span></span> method that uses a
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. To open a document for read-only access,
 specify the value **false** for this parameter.
-To open a document for read/write access, specify the value <span
-class="keyword">true</span> for this parameter. In the following <span
-class="keyword">using</span> statement, two presentation files are
+To open a document for read/write access, specify the value **true** for this parameter. In the following **using** statement, two presentation files are
 opened, the target presentation, to which to apply a theme, and the
 source presentation, which already has that theme applied. The source
 presentation file is opened for read-only access, and the target
@@ -86,22 +81,16 @@ The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">themeDocument</span> and <span
-class="keyword">presentationDocument</span>.
+when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **themeDocument** and **presentationDocument**.
 
 
 -----------------------------------------------------------------------------
 ## Basic Presentation Document Structure
-The basic document structure of a <span
-class="keyword">PresentationML</span> document consists of the main part
+The basic document structure of a **PresentationML** document consists of the main part
 that contains the presentation definition. The following text from the
 [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
-specification introduces the overall form of a <span
-class="keyword">PresentationML</span> package.
+specification introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part
 > starts with a presentation root element. That element contains a
@@ -162,16 +151,11 @@ two slides denoted by the ID 267 and 256.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to <span
-class="keyword">PresentationML</span> elements. You can find these
+content using strongly-typed classes that correspond to **PresentationML** elements. You can find these
 classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation"><span
-class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, <span
-class="keyword">sldLayout</span>, <span
-class="keyword">sldMaster</span>, and <span
-class="keyword">notesMaster</span> elements.
+correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -219,8 +203,7 @@ element. The **themeElements** element is the
 piece that holds the main formatting defined within the theme. The other
 parts provide overrides, defaults, and additions to the information
 contained in **themeElements**. The complex
-type defining a theme, <span
-class="keyword">CT\_OfficeStyleSheet</span>, is defined in the following
+type defining a theme, **CT\_OfficeStyleSheet**, is defined in the following
 manner.
 
 ```xml
@@ -236,19 +219,15 @@ manner.
     </complexType>
 ```
 
-This complex type also holds a <span
-class="keyword">CT\_OfficeArtExtensionList</span>, which is used for
+This complex type also holds a **CT\_OfficeArtExtensionList**, which is used for
 future extensibility of this complex type.
 
 
 -----------------------------------------------------------------------------
 ## How the Sample Code Works
-The sample code consists of two overloads of the method <span
-class="keyword">ApplyThemeToPresentation</span>, and the <span
-class="keyword">GetSlideLayoutType</span> method. The following code
+The sample code consists of two overloads of the method **ApplyThemeToPresentation**, and the **GetSlideLayoutType** method. The following code
 segment shows the first overloaded method, in which the two presentation
-files, **themePresentation** and <span
-class="keyword">presentationFile</span>, are opened and passed to the
+files, **themePresentation** and **presentationFile**, are opened and passed to the
 second overloaded method as parameters.
 
 ```csharp
@@ -278,8 +257,7 @@ In the second overloaded method, the code starts by checking whether any
 of the presentation files is empty, in which case it throws an
 exception. The code then gets the presentation part of the presentation
 document by declaring a **PresentationPart**
-object and setting it equal to the presentation part of the target <span
-class="keyword">PresentationDocument</span> object passed in. It then
+object and setting it equal to the presentation part of the target **PresentationDocument** object passed in. It then
 gets the slide master parts from the presentation parts of both objects
 passed in, and gets the relationship ID of the slide master part of the
 target presentation.
@@ -460,10 +438,8 @@ adds a new slide layout part of the default type.
     Next slidePart
 ``
 
-To get the type of the slide layout, the code uses the <span
-class="keyword">GetSlideLayoutType</span> method that takes the slide
-layout part as a parameter, and returns to the second overloaded <span
-class="keyword">ApplyThemeToPresentation</span> method a string that
+To get the type of the slide layout, the code uses the **GetSlideLayoutType** method that takes the slide
+layout part as a parameter, and returns to the second overloaded **ApplyThemeToPresentation** method a string that
 represents the name of the slide layout type
 
 ``csharp

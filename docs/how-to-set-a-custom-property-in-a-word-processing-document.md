@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -468,7 +468,7 @@ the following steps:
 1.  Appends the new property as a child of the properties collection.
 
 2.  Loops through all the existing properties, and sets the <span
-    class="keyword">pid</span> attribute to increasing values, starting
+    class="keyword">pid** attribute to increasing values, starting
     at 2.
 
 3.  Saves the part.

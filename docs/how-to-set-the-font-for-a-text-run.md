@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -53,10 +53,8 @@ a word-processing document package.
 ## Create a WordprocessingDocument Object
 The code example opens a word processing document package by passing a
 file name as an argument to one of the overloaded <span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open"><span
-class="nolink">Open()</span></span> methods of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> class that takes a
+target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open">**Open()**** methods of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class that takes a
 string and a Boolean value that specifies whether the file should be
 opened in read/write mode or not. In this case, the Boolean value is
 **true** specifying that the file should be
@@ -82,17 +80,11 @@ The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
-when the closing bracket is reached. The block that follows the <span
-class="keyword">using</span> statement establishes a scope for the
-object that is created or named in the <span
-class="keyword">using</span> statement, in this case <span
-class="keyword">package</span>. Because the <span
-class="keyword">WordprocessingDocument</span> class in the Open XML SDK
-automatically saves and closes the object as part of its <span
-class="keyword">System.IDisposable</span> implementation, and because
+when the closing bracket is reached. The block that follows the **using** statement establishes a scope for the
+object that is created or named in the **using** statement, in this case **package**. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 the **Dispose** method is automatically called
-when you exit the block; you do not have to explicitly call <span
-class="keyword">Save</span> and **Close**─as
+when you exit the block; you do not have to explicitly call **Save** and **Close**─as
 long as you use using.
 
 
@@ -157,19 +149,12 @@ for all characters in the Complex Script range.
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
-After opening the package file for read/write, the code creates a <span
-class="keyword">RunProperties</span> object that contains a <span
-class="keyword">RunFonts</span> object that has its <span
-class="keyword">Ascii</span> property set to "Arial". <span
-class="keyword">RunProperties</span> and <span
-class="keyword">RunFonts</span> objects represent run properties
+After opening the package file for read/write, the code creates a **RunProperties** object that contains a **RunFonts** object that has its **Ascii** property set to "Arial". **RunProperties** and **RunFonts** objects represent run properties
 (\<**rPr**\>) elements and run fonts elements
 (\<**rFont**\>), respectively, in the Open XML
 Wordprocessing schema. Use a **RunProperties**
 object to specify the properties of a given text run. In this case, to
-set the font of the run to Arial, the code creates a <span
-class="keyword">RunFonts</span> object and then sets the <span
-class="keyword">Ascii</span> value to "Arial".
+set the font of the run to Arial, the code creates a **RunFonts** object and then sets the **Ascii** value to "Arial".
 
 ```csharp
     // Use an object initializer for RunProperties and rPr.
@@ -186,29 +171,19 @@ class="keyword">Ascii</span> value to "Arial".
 ```
 
 The code then creates a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
-class="nolink">Run</span></span> object that represents the first text
-run of the document. The code instantiates a <span
-class="keyword">Run</span> and sets it to the first text run of the
-document. The code then adds the <span
-class="keyword">RunProperties</span> object to the <span
-class="keyword">Run</span> object using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.PrependChild``1(``0)"><span
-class="nolink">PrependChild\<T\>(T)</span></span> method. The <span
-class="keyword">PrependChild</span> method adds an element as the first
+target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** object that represents the first text
+run of the document. The code instantiates a **Run** and sets it to the first text run of the
+document. The code then adds the **RunProperties** object to the **Run** object using the <span sdata="cer"
+target="M:DocumentFormat.OpenXml.OpenXmlElement.PrependChild``1(``0)">**PrependChild\<T\>(T)**** method. The **PrependChild** method adds an element as the first
 child element to the specified element in the in-memory XML structure.
 In this case, running the code sample produces an in-memory XML
 structure where the **RunProperties** element
-is added as the first child element of the <span
-class="keyword">Run</span> element. It then saves the changes back to
+is added as the first child element of the **Run** element. It then saves the changes back to
 the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)"><span
-class="nolink">Save(MainDocumentPart)</span></span> object. Calling the
+target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)">**Save(MainDocumentPart)**** object. Calling the
 **Save** method of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"><span
-class="nolink">WordprocessingDocument</span></span> object commits
-changes made to the in-memory representation of the <span
-class="keyword">MainDocumentPart</span> part back into the XML file for
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** object commits
+changes made to the in-memory representation of the **MainDocumentPart** part back into the XML file for
 the **MainDocumentPart** (the document.xml file
 in the Wordprocessing package).
 

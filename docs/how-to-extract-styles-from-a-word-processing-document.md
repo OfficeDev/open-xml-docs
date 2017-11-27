@@ -50,8 +50,7 @@ the code in this topic.
 
 ---------------------------------------------------------------------------------
 ## ExtractStylesPart Method
-You can use the **ExtractStylesPart** sample method to retrieve an <span
-class="keyword">XDocument</span> instance that contains the styles or
+You can use the **ExtractStylesPart** sample method to retrieve an **XDocument** instance that contains the styles or
 stylesWithEffects part for a Microsoft Word 2010 or Microsoft Word 2013
 document. Be aware that in a document created in Word 2010, there will
 only be a single styles part; Word 2013 adds a second stylesWithEffects
@@ -69,8 +68,7 @@ parameter contains a string indicating the path of the file from which
 you want to extract styles, and the second indicates whether you want to
 retrieve the styles part, or the newer stylesWithEffects part
 (basically, you must call this procedure two times for Word 2013
-documents, retrieving each the part). The procedure returns an <span
-class="keyword">XDocument</span> instance that contains the complete
+documents, retrieving each the part). The procedure returns an **XDocument** instance that contains the complete
 styles or stylesWithEffects part that you requested, with all the style
 information for the document (or a null reference, if the part you
 requested does not exist).
@@ -95,9 +93,7 @@ The complete code listing for the method can be found in the [Sample Code](how-t
 To call the sample method, pass a string for the first parameter that
 contains the file name of the document from which to extract the styles,
 and a Boolean for the second parameter that specifies whether the type
-of part to retrieve is the styleWithEffects part (<span
-class="code">true</span>), or the styles part (<span
-class="code">false</span>). The following sample code shows an example.
+of part to retrieve is the styleWithEffects part (**true**), or the styles part (**false**). The following sample code shows an example.
 When you have the **XDocument** instance you
 can do what you want with it; in the following sample code the content
 of the **XDocument** instance is displayed to
@@ -130,8 +126,7 @@ the console.
 
 --------------------------------------------------------------------------------
 ## How the Code Works
-The code starts by creating a variable named <span
-class="code">styles</span> that the method returns before it exits.
+The code starts by creating a variable named **styles** that the method returns before it exits.
 
 ```csharp
     // Declare a variable to hold the XDocument.
@@ -151,14 +146,11 @@ class="code">styles</span> that the method returns before it exits.
 
 The code continues by opening the document by using the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method and indicating that the
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method and indicating that the
 document should be open for read-only access (the final false
 parameter). Given the open document, the code uses the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart"><span
-class="nolink">MainDocumentPart</span></span> property to navigate to
-the main document part, and then prepares a variable named <span
-class="code">stylesPart</span> to hold a reference to the styles part.
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart**** property to navigate to
+the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ```csharp
     // Open the document for read access and get a reference.
@@ -192,10 +184,10 @@ class="code">stylesPart</span> to hold a reference to the styles part.
 --------------------------------------------------------------------------------
 ## Find the Correct Styles Part
 The code next retrieves a reference to the requested styles part by
-using the <span class="code">getStylesWithEffectsPart</span> Boolean
+using the **getStylesWithEffectsPart** Boolean
 parameter. Based on this value, the code retrieves a specific property
-of the <span class="code">docPart</span> variable, and stores it in the
-<span class="code">stylesPart</span> variable.
+of the **docPart** variable, and stores it in the
+**stylesPart** variable.
 
 ```csharp
     if (getStylesWithEffectsPart)
@@ -217,8 +209,7 @@ of the <span class="code">docPart</span> variable, and stores it in the
 If the requested styles part exists, the code must return the contents
 of the part in an **XDocument** instance. Each
 part provides a <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream(System.IO.FileMode,System.IO.FileAccess)"><span
-class="nolink">GetStream</span></span> method, which returns a Stream.
+target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream(System.IO.FileMode,System.IO.FileAccess)">**GetStream**** method, which returns a Stream.
 The code passes the Stream instance to the
 [XmlNodeReader.Create](http://msdn.microsoft.com/en-us/library/ay7fxzht(v=VS.100).aspx)
 method, and then calls the
@@ -252,8 +243,7 @@ parameter.
 
 --------------------------------------------------------------------------------
 ## Sample Code
-The following is the complete <span
-class="keyword">ExtractStylesPart</span> code sample in C\# and Visual
+The following is the complete **ExtractStylesPart** code sample in C\# and Visual
 Basic.
 
 ```csharp

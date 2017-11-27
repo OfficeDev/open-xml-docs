@@ -18,8 +18,7 @@ ms.date: 11/01/2017
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically retrieve a list of hidden rows or columns in
 a Microsoft Excel 2010 or Microsoft Excel 2013 worksheet, without
-loading the document into Excel. It contains an example <span
-class="keyword">GetHiddenRowsOrCols</span> method to illustrate this
+loading the document into Excel. It contains an example **GetHiddenRowsOrCols** method to illustrate this
 task.
 
 To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
@@ -102,8 +101,7 @@ shown in the following example code.
 
 --------------------------------------------------------------------------------
 ## How the Code Works
-The code starts by creating a variable, <span
-class="code">itemList</span>, that will contain the return value.
+The code starts by creating a variable, **itemList**, that will contain the return value.
 
 ```csharp
     List<uint> itemList = new List<uint>();
@@ -114,14 +112,12 @@ class="code">itemList</span>, that will contain the return value.
 ```
 
 Next, the code opens the document, by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)"><span
-class="nolink">SpreadsheetDocument.Open</span></span> method and
+target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**SpreadsheetDocument.Open**** method and
 indicating that the document should be open for read-only access (the
-final <span class="code">false</span> parameter value). Next the code
+final **false** parameter value). Next the code
 retrieves a reference to the workbook part, by using the <span
 sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart"><span
-class="nolink">WorkbookPart</span></span> property of the document.
+target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart**** property of the document.
 
 ```csharp
     using (SpreadsheetDocument document =
@@ -145,19 +141,15 @@ To find the hidden rows or columns, the code must first retrieve a
 reference to the specified sheet, given its name. This is not as easy as
 you might think. The code must look through all the sheet-type
 descendants of the workbook part's <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook"><span
-class="nolink">Workbook</span></span> property, examining the <span
+target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook">**Workbook**** property, examining the <span
 sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.Name"><span
-class="nolink">Name</span></span> property of each sheet that it finds.
+target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.Name">**Name**** property of each sheet that it finds.
 Note that this search simply looks through the relations of the
 workbook, and does not actually find a worksheet part. It simply finds a
 reference to a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet"><span
-class="nolink">Sheet</span></span> object, which contains information
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** object, which contains information
 such as the name and <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.Id"><span
-class="nolink">Id</span></span> property of the sheet. The simplest way
+target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.Id">**Id**** property of the sheet. The simplest way
 to accomplish this is to use a LINQ query.
 
 ```csharp
@@ -177,23 +169,18 @@ to accomplish this is to use a LINQ query.
 ```
 
 The <span sdata="cer"
-target="M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">[FirstOrDefault](http://msdn2.microsoft.com/EN-US/library/bb358452)</span>
+target="M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">[FirstOrDefault](http://msdn2.microsoft.com/EN-US/library/bb358452)**
 method returns either the first matching reference (a sheet, in this
 case) or a null reference if no match was found. The code checks for the
 null reference, and throws an exception if you passed in an invalid
 sheet name. Now that you have information about the sheet, the code must
 retrieve a reference to the corresponding worksheet part. The sheet
-information you already retrieved provides an <span
-class="keyword">Id</span> property, and given that <span
-class="keyword">Id</span> property, the code can retrieve a reference to
+information you already retrieved provides an **Id** property, and given that **Id** property, the code can retrieve a reference to
 the corresponding <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart"><span
-class="nolink">WorksheetPart</span></span> property by calling the <span
+target="P:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart">**WorksheetPart**** property by calling the <span
 sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.GetPartById(System.String)"><span
-class="nolink">GetPartById</span></span> method of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WorkbookPart"><span
-class="nolink">WorkbookPart</span></span> object.
+target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.GetPartById(System.String)">**GetPartById**** method of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.WorkbookPart">**WorkbookPart**** object.
 
 ```csharp
     else
@@ -218,7 +205,7 @@ class="nolink">WorkbookPart</span></span> object.
 
 --------------------------------------------------------------------------------
 ## Retrieving the List of Hidden Row or Column Index Values
-The code uses the <span class="code">detectRows</span> parameter that
+The code uses the **detectRows** parameter that
 you specified when you called the method to determine whether to
 retrieve information about rows or columns.
 
@@ -263,42 +250,35 @@ single line of code.
 
 This single line accomplishes a lot, however. It starts by calling the
 <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.Descendants"><span
-class="nolink">Descendants</span></span> method of the worksheet,
+target="M:DocumentFormat.OpenXml.OpenXmlElement.Descendants">**Descendants**** method of the worksheet,
 retrieving a list of all the rows. The <span sdata="cer"
-target="Overload:System.Linq.Enumerable.Where">[Where](http://msdn2.microsoft.com/EN-US/library/bb301979)</span>
+target="Overload:System.Linq.Enumerable.Where">[Where](http://msdn2.microsoft.com/EN-US/library/bb301979)**
 method limits the results to only those rows where the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Row.Hidden"><span
-class="nolink">Hidden</span></span> property of the item is not null and
-the value of the **Hidden** property is <span
-class="keyword">True</span>. The <span sdata="cer"
-target="Overload:System.Linq.Enumerable.Select">[Select](http://msdn2.microsoft.com/EN-US/library/bb357126)</span>
+target="P:DocumentFormat.OpenXml.Spreadsheet.Row.Hidden">**Hidden**** property of the item is not null and
+the value of the **Hidden** property is **True**. The <span sdata="cer"
+target="Overload:System.Linq.Enumerable.Select">[Select](http://msdn2.microsoft.com/EN-US/library/bb357126)**
 method projects the return value for each row, returning the value of
 the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Row.RowIndex"><span
-class="nolink">RowIndex</span></span> property. Finally, the <span
+target="P:DocumentFormat.OpenXml.Spreadsheet.Row.RowIndex">**RowIndex**** property. Finally, the <span
 sdata="cer"
-target="M:System.Linq.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">[ToList\<TSource\>](http://msdn2.microsoft.com/EN-US/library/bb342261)</span>
+target="M:System.Linq.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">[ToList\<TSource\>](http://msdn2.microsoft.com/EN-US/library/bb342261)**
 method converts the resulting <span sdata="cer"
-target="T:System.Collections.Generic.IEnumerable`1">[IEnumerable\<T\>](http://msdn2.microsoft.com/EN-US/library/9eekhta0)</span>
+target="T:System.Collections.Generic.IEnumerable`1">[IEnumerable\<T\>](http://msdn2.microsoft.com/EN-US/library/9eekhta0)**
 interface into a <span sdata="cer"
-target="T:System.Collections.Generic.List`1">[List\<T\>](http://msdn2.microsoft.com/EN-US/library/6sh2ey19)</span>
+target="T:System.Collections.Generic.List`1">[List\<T\>](http://msdn2.microsoft.com/EN-US/library/6sh2ey19)**
 object of unsigned integers. If there are no hidden rows, the returned
 list is empty.
 
 Retrieving the list of hidden columns is a bit trickier, because Excel
 collapses groups of hidden columns into a single element, and provides
 <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Column.Min"><span
-class="nolink">Min</span></span> and <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Column.Max"><span
-class="nolink">Max</span></span> properties that describe the first and
+target="P:DocumentFormat.OpenXml.Spreadsheet.Column.Min">**Min**** and <span sdata="cer"
+target="P:DocumentFormat.OpenXml.Spreadsheet.Column.Max">**Max**** properties that describe the first and
 last columns in the group. Therefore, the code that retrieves the list
 of hidden columns starts the same as the code that retrieves hidden
 rows. However, it must iterate through the index values (looping through
 each item in the collection of hidden columns, adding each index from
-the **Min** to the <span
-class="keyword">Max</span> value, inclusively).
+the **Min** to the **Max** value, inclusively).
 
 ```csharp
     var cols = ws.Descendants<Column>().
@@ -325,8 +305,7 @@ class="keyword">Max</span> value, inclusively).
 
 --------------------------------------------------------------------------------
 ## Sample Code
-The following is the complete <span
-class="keyword">GetHiddenRowsOrCols</span> code sample in C\# and Visual
+The following is the complete **GetHiddenRowsOrCols** code sample in C\# and Visual
 Basic.
 
 ```csharp

@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -85,8 +85,7 @@ file to convert. The following sample code shows an example.
 ## Parts and the vbaProject Part
 
 A word processing document package such as a file that has a .docx or
-.docm extension is in fact a .zip file that consists of several <span
-class="term">parts</span>. You can think of each part as being similar
+.docm extension is in fact a .zip file that consists of several **parts**. You can think of each part as being similar
 to an external file. A part has a particular content type, and can
 contain content equivalent to an external XML file, binary file, image
 file, and so on, depending on the type. The standard that defines how
@@ -118,13 +117,11 @@ the code deletes the part, it changes the document type internally and
 renames the document so that it uses the .docx extension.
 
 The code starts by opening the document by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method and indicating that the
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method and indicating that the
 document should be open for read/write access (the final true
 parameter). The code then retrieves a reference to the Document part by
 using the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart"><span
-class="nolink">MainDocumentPart</span></span> property of the word
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart**** property of the word
 processing document.
 
 ```csharp
@@ -151,14 +148,11 @@ The sample code next verifies that the vbaProject part exists, deletes
 the part and saves the document. The code has no effect if the file to
 convert does not contain a vbaProject part. To find the part, the sample
 code retrieves the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.VbaProjectPart"><span
-class="nolink">VbaProjectPart</span></span> property of the document. It
+target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.VbaProjectPart">**VbaProjectPart**** property of the document. It
 calls the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.DeletePart(DocumentFormat.OpenXml.Packaging.OpenXmlPart)"><span
-class="nolink">DeletePart</span></span> method to delete the part, and
+target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.DeletePart(DocumentFormat.OpenXml.Packaging.OpenXmlPart)">**DeletePart**** method to delete the part, and
 then calls the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)"><span
-class="nolink">Save</span></span> method of the document to save the
+target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)">**Save**** method of the document to save the
 changes.
 
 ```csharp
@@ -188,16 +182,14 @@ changes.
 It is not enough to delete the part from the document. You must also
 convert the document type, internally. The Open XML SDK 2.5 provides a
 way to perform this task: You can call the document <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ChangeDocumentType(DocumentFormat.OpenXml.WordprocessingDocumentType)"><span
-class="nolink">ChangeDocumentType</span></span> method and indicate the
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ChangeDocumentType(DocumentFormat.OpenXml.WordprocessingDocumentType)">**ChangeDocumentType**** method and indicate the
 new document type (in this case, supply the
 *WordProcessingDocumentType.Document* enumerated value).
 
 You must also rename the file. However, you cannot do that while the
 file is open. The using block closes the file at the end of the block.
 Therefore, you must have some way to indicate to the code after the
-block that you have modified the file: The <span
-class="code">fileChanged</span> Boolean variable tracks this information
+block that you have modified the file: The **fileChanged** Boolean variable tracks this information
 for you.
 
 ```csharp
@@ -264,8 +256,7 @@ old file name to the new file name.
 
 ## Sample Code
 
-The following is the complete <span
-class="keyword">ConvertDOCMtoDOCX</span> code sample in C\# and Visual
+The following is the complete **ConvertDOCMtoDOCX** code sample in C\# and Visual
 Basic.
 
 ```csharp

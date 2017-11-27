@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -16,8 +16,7 @@ ms.date: 11/01/2017
 # Working with animation (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Animate"><span
-class="nolink">Animate</span></span> class and how it relates to the
+target="T:DocumentFormat.OpenXml.Presentation.Animate">**Animate**** class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
@@ -118,8 +117,7 @@ class to manipulate individual \<anim\> elements in a PresentationML
 document.
 
 Classes that represent child elements of the \<anim\> element and that
-are therefore commonly associated with the <span
-class="keyword">Animate</span> class are shown in the following list.
+are therefore commonly associated with the **Animate** class are shown in the following list.
 
 ### CommonBehavior Class
 
@@ -190,17 +188,14 @@ The **Animate** class, which represents the
 \<anim\> element, is therefore also associated with other classes that
 represent the child elements of the \<anim\> element, including the
 **CommonBehavior** class, which describes
-common animation behaviors, and the <span
-class="keyword">TimeAnimateValueList</span> class, which specifies a
+common animation behaviors, and the **TimeAnimateValueList** class, which specifies a
 list of time-animated value elements, as shown in the previous XML code.
 Other classes associated with the **Animate**
 class are the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Timing"><span
-class="nolink">Timing</span></span> class, which specifies timing
+target="T:DocumentFormat.OpenXml.Presentation.Timing">**Timing**** class, which specifies timing
 information for all the animations on the slide, and the <span
 sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.TargetElement"><span
-class="nolink">TargetElement</span></span> class, which specifies the
+target="T:DocumentFormat.OpenXml.Presentation.TargetElement">**TargetElement**** class, which specifies the
 target child elements to which the animation effects are applied.
 
 

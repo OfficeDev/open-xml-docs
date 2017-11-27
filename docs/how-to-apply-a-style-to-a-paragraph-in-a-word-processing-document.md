@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -81,8 +81,7 @@ package as XML using WordprocessingML markup.
 To create the class instance, you call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method. The following sample code
 shows how to use the [WordprocessingDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) overload. The
 first parameter takes a string that represents the full path to the
-document to open. The second parameter takes a value of <span
-class="keyword">true</span> or **false** and
+document to open. The second parameter takes a value of **true** or **false** and
 represents whether to open the file for editing. In this example the
 parameter is **true** to enable read/write
 access to the file.
@@ -343,8 +342,7 @@ not exist, the style itself cannot exist.
 If the styles part exists, the code verifies a matching style by calling
 the **IsStyleIdInDocument** example method and
 passing the document and the styleid. If no match is found on styleid,
-the code then tries to lookup the styleid by calling the <span
-class="keyword">GetStyleIdFromStyleName</span> example method and
+the code then tries to lookup the styleid by calling the **GetStyleIdFromStyleName** example method and
 passing it the style name.
 
 If the style does not exist, either because the styles part did not
@@ -470,8 +468,7 @@ excerpt.
 ```
 
 When the style cannot be found based on the styleid, the code attempts
-to find a match based on the style name instead. The <span
-class="keyword">GetStyleIdFromStyleName</span> example method does this
+to find a match based on the style name instead. The **GetStyleIdFromStyleName** example method does this
 work, looking for a match on style name and returning the styleid for
 the matching element if found, or null if not.
 
@@ -481,8 +478,7 @@ the matching element if found, or null if not.
 The **AddNewStyle** example method takes three
 parameters. The first parameter takes a reference to the styles part.
 The second parameter takes the styleid of the style, and the third
-parameter takes the style name. The <span
-class="keyword">AddNewStyle</span> code creates the named style
+parameter takes the style name. The **AddNewStyle** code creates the named style
 definition within the specified part.
 
 To create the style, the code instantiates the [Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx) class and sets certain properties,

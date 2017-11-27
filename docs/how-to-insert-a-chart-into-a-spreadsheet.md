@@ -1,4 +1,4 @@
----
+﻿---
 ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
@@ -135,10 +135,8 @@ example.
 ```
 
 Using the Open XML SDK 2.5, you can create document structure and
-content that uses strongly-typed classes that correspond to <span
-class="keyword">SpreadsheetML</span> elements. You can find these
-classes in the <span
-class="keyword">DocumentFormat.OpenXml.Spreadsheet</span> namespace. The
+content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
+classes in the **DocumentFormat.OpenXml.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx), [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx), **worksheet**, and [SheetData<](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx) elements.
 
@@ -336,8 +334,7 @@ worksheet, and saves the worksheet part. The code then adds a new [ChartPart](ht
             .Chart)(New DocumentFormat.OpenXml.Drawing.Charts.Chart())
 ```
 
-The code creates a new clustered column chart by creating a new [BarChart](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.barchart.aspx) object with [BarDirectionValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bardirectionvalues.aspx) object set to **Column** and [BarGroupingValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bargroupingvalues.aspx) object set to <span
-class="keyword">Clustered</span>.
+The code creates a new clustered column chart by creating a new [BarChart](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.barchart.aspx) object with [BarDirectionValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bardirectionvalues.aspx) object set to **Column** and [BarGroupingValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bargroupingvalues.aspx) object set to **Clustered**.
 
 The code then iterates through each key in the **Dictionary** class. For each key, it appends a
 [BarChartSeries](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.barchartseries.aspx) object to the **BarChart** object and sets the [SeriesText](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.seriestext.aspx) object of the **BarChartSeries** object to equal the key. For each key, it appends a [NumberLiteral](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.numberliteral.aspx) object to the **Values** collection of the **BarChartSeries** object and sets the **NumberLiteral** object to equal the **Dictionary** class value corresponding to the key.

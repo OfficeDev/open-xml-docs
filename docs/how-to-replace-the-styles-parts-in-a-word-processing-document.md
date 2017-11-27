@@ -99,8 +99,7 @@ effectively completely replacing the styles.
     Public Sub ReplaceStyles(fromDoc As String, toDoc As String)
 ```
 
-The complete code listing for the <span
-class="keyword">ReplaceStyles</span> method and its supporting methods
+The complete code listing for the **ReplaceStyles** method and its supporting methods
 can be found in the [Sample Code](how-to-replace-the-styles-parts-in-a-word-processing-document.md#sampleCode) section.
 
 
@@ -155,9 +154,7 @@ target document.
         ReplaceStylesPart(toDoc, node, False)
     End If
 ```
-The final parameter in the signature for either the <span
-class="keyword">ExtractStylesPart</span> or the <span
-class="keyword">ReplaceStylesPart</span> method determines whether the
+The final parameter in the signature for either the **ExtractStylesPart** or the **ReplaceStylesPart** method determines whether the
 styles part or the stylesWithEffects part is employed. A value of false
 indicates that you want to extract and replace the styles part. The
 absence of a value (the parameter is optional), or a value of true (the
@@ -183,12 +180,10 @@ stylesWithEffects part.
         ReplaceStylesPart(toDoc, node, True)
     End If
 ```
-For more information about the <span
-class="keyword">ExtractStylesPart</span> method, see <span
+For more information about the **ExtractStylesPart** method, see <span
 sdata="link">[How to: Extract styles from a word processing document
-(Open XML SDK)](how-to-extract-styles-from-a-word-processing-document.md)</span>. The
-following section explains the <span
-class="keyword">ReplaceStylesPart</span> method.
+(Open XML SDK)](how-to-extract-styles-from-a-word-processing-document.md)**. The
+following section explains the **ReplaceStylesPart** method.
 
 
 ---------------------------------------------------------------------------------
@@ -198,8 +193,7 @@ The **ReplaceStylesPart** method can be used to
 replace the styles or styleWithEffects part in a document, given an
 **XDocument** instance that contains the same
 part for a Word 2010 or Word 2013 document (as shown in the sample code
-earlier in this topic, the <span
-class="keyword">ExtractStylesPart</span> method can be used to obtain
+earlier in this topic, the **ExtractStylesPart** method can be used to obtain
 that instance). The **ReplaceStylesPart**
 method accepts three parameters: the first parameter contains a string
 that indicates the path to the file that you want to modify. The second
@@ -227,19 +221,14 @@ from a source document).
 
 The **ReplaceStylesPart** method examines the
 document you specify, looking for the styles or stylesWithEffects part.
-If the requested part exists, the method saves the supplied <span
-class="keyword">XDocument</span> into the selected part.
+If the requested part exists, the method saves the supplied **XDocument** into the selected part.
 
 The code starts by opening the document by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)"><span
-class="nolink">Open</span></span> method and indicating that the
-document should be open for read/write access (the final <span
-class="code">true</span> parameter). Given the open document, the code
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method and indicating that the
+document should be open for read/write access (the final **true** parameter). Given the open document, the code
 uses the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart"><span
-class="nolink">MainDocumentPart</span></span> property to navigate to
-the main document part, and then prepares a variable named <span
-class="code">stylesPart</span> to hold a reference to the styles part.
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart**** property to navigate to
+the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ```csharp
     // Open the document for write access and get a reference.
@@ -270,10 +259,9 @@ class="code">stylesPart</span> to hold a reference to the styles part.
 ## Find the Correct Styles Part 
 
 The code next retrieves a reference to the requested styles part, using
-the <span class="code">setStylesWithEffectsPart</span> Boolean
+the **setStylesWithEffectsPart** Boolean
 parameter. Based on this value, the code retrieves a reference to the
-requested styles part, and stores it in the <span
-class="code">stylesPart</span> variable.
+requested styles part, and stores it in the **stylesPart** variable.
 
 ```csharp
     if (setStylesWithEffectsPart)
@@ -296,8 +284,7 @@ class="code">stylesPart</span> variable.
 Assuming that the requested part exists, the code must save the entire
 contents of the **XDocument** passed to the
 method to the part. Each part provides a <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream(System.IO.FileMode,System.IO.FileAccess)"><span
-class="nolink">GetStream</span></span> method, which returns a Stream.
+target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream(System.IO.FileMode,System.IO.FileAccess)">**GetStream**** method, which returns a Stream.
 The code passes the Stream instance to the constructor of the
 [StreamWriter](http://msdn.microsoft.com/en-us/library/wtbhzte9(v=VS.100).aspx)
 class, creating a stream writer around the stream of the part. Finally,
@@ -325,10 +312,7 @@ the XDocument, saving its contents into the styles part.
 --------------------------------------------------------------------------------
 ## Sample Code
 
-The following is the complete <span
-class="keyword">ReplaceStyles</span>, <span
-class="keyword">ReplaceStylesPart</span>, and <span
-class="keyword">ExtractStylesPart</span> methods in C\# and Visual
+The following is the complete **ReplaceStyles**, **ReplaceStylesPart**, and **ExtractStylesPart** methods in C\# and Visual
 Basic.
 
 ```csharp
