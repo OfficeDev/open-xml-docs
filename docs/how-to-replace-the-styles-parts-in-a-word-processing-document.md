@@ -182,7 +182,7 @@ stylesWithEffects part.
 ```
 For more information about the **ExtractStylesPart** method, see <span
 sdata="link">[How to: Extract styles from a word processing document
-(Open XML SDK)](how-to-extract-styles-from-a-word-processing-document.md)**. The
+(Open XML SDK)](how-to-extract-styles-from-a-word-processing-document.md). The
 following section explains the **ReplaceStylesPart** method.
 
 
@@ -223,11 +223,9 @@ The **ReplaceStylesPart** method examines the
 document you specify, looking for the styles or stylesWithEffects part.
 If the requested part exists, the method saves the supplied **XDocument** into the selected part.
 
-The code starts by opening the document by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method and indicating that the
+The code starts by opening the document by using the **[Open](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** method and indicating that the
 document should be open for read/write access (the final **true** parameter). Given the open document, the code
-uses the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart**** property to navigate to
+uses the **[MainDocumentPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx)** property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ```csharp
@@ -283,8 +281,7 @@ requested styles part, and stores it in the **stylesPart** variable.
 
 Assuming that the requested part exists, the code must save the entire
 contents of the **XDocument** passed to the
-method to the part. Each part provides a <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream(System.IO.FileMode,System.IO.FileAccess)">**GetStream**** method, which returns a Stream.
+method to the part. Each part provides a **[GetStream](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.openxmlpart.getstream.aspx)** method, which returns a Stream.
 The code passes the Stream instance to the constructor of the
 [StreamWriter](http://msdn.microsoft.com/en-us/library/wtbhzte9(v=VS.100).aspx)
 class, creating a stream writer around the stream of the part. Finally,
