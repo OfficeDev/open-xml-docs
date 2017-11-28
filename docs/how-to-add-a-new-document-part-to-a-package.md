@@ -51,8 +51,7 @@ a word-processing document package.
 -----------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object 
 The code starts with opening a package file by passing a file name to
-one of the overloaded <span sdata="cer" target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open">**Open()**** methods of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**DocumentFormat.OpenXml.Packaging.WordprocessingDocument****
+one of the overloaded **[Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)**
 that takes a string and a Boolean value that specifies whether the file
 should be opened for editing or for read-only access. In this case, the
 Boolean value is **true** specifying that the
@@ -106,8 +105,7 @@ sample code creates is shown in the following code example.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to **WordprocessingML** elements. You can find these
-classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing">**DocumentFormat.OpenXml.Wordprocessing****
+classes in the **[DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.aspx)**
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements,
 
