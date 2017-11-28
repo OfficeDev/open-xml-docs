@@ -15,8 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with handout master slides (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.HandoutMaster">**HandoutMaster**** class and how it relates to
+This topic discusses the Open XML SDK 2.5 for Office [HandoutMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see <span sdata="link">[Structure of a
@@ -46,10 +45,10 @@ SDK 2.5 classes that correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-\<clrMap\>|ColorMap
-\<cSld\>|CommonSlideData
-\<extLst\>|ExtensionListWithModification
-\<hf\>|HeaderFooter
+\<clrMap\>|[ColorMap](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormap.aspx)
+\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
+\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
+\<hf\>|[HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)
 
 
 --------------------------------------------------------------------------------
@@ -73,7 +72,7 @@ scheme definition to another. Each attribute represents a color name
 that can be referenced in this master, and the value is the
 corresponding color in the theme.
 
-[Example: Consider the following mapping of colors that applies to a
+**Example**: Consider the following mapping of colors that applies to a
 slide master:
 
 ```xml
@@ -143,8 +142,7 @@ slide numbering, and custom header and footer text.
 ## Working with the HandoutMaster Class
 As shown in the Open XML SDK code sample that follows, every instance of
 the **HandoutMaster** class is associated with
-an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.HandoutMasterPart">**HandoutMasterPart**** class, which represents a
+an instance of the [HandoutMasterPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.handoutmasterpart.aspx) class, which represents a
 handout master part, one of the parts of a PresentationML presentation
 file package, and a part that is required for a presentation file that
 contains handouts.
@@ -153,9 +151,7 @@ The **HandoutMaster** class, which represents
 the \<handoutMaster\> element, is therefore also associated with a
 series of other classes that represent the child elements of the
 \<handoutMaster\> element. Among these classes, as shown in the
-following code sample, are the **CommonSlideData** class, the **ColorMap** class, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
+following code sample, are the **CommonSlideData** class, the **ColorMap** class, the [ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx) class, and the [Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
 
 --------------------------------------------------------------------------------
@@ -165,18 +161,12 @@ presentation and creates an instance of an Open XML SDK 2.5**HandoutMaster** cla
 part. The **HandoutMaster** class constructor
 creates instances of the **CommonSlideData**
 class and the **ColorMap** class. The **CommonSlideData** class constructor creates an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, whose constructor, in
-turn, creates additional class instances: an instance of the <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties">**NonVisualGroupShapeProperties**** class, an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties">**GroupShapeProperties**** class, and an instance
-of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
+instance of the [ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor, in
+turn, creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
+instance of the [GroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
+of the [Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
-The namespace represented by the letter *P* in the code is the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)
 namespace.
 
 ```csharp

@@ -38,8 +38,7 @@ this topic:
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
+In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
 Excel document package. To open and work with an Excel document, you
 create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
@@ -47,11 +46,9 @@ access to the main workbook part that contains the worksheets. The text
 in the document is represented in the package as XML using **SpreadsheetML** markup.
 
 To create the class instance from the document that you call one of the
-<span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** overload methods. Several are
+[Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) overload methods. Several are
 provided, each with a different signature. The sample code in this topic
-uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method with a
+uses the [Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562356.aspx) method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
 second parameter is either **true** or **false** and represents whether you want the file to
@@ -86,13 +83,9 @@ object that is created or named in the **using** statement, in this case *spread
 
 --------------------------------------------------------------------------------
 ## The Basic Structure of a SpreadsheetML Document
-The basic document structure of a **SpreadsheetML** document consists of the <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
+The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet">**Worksheet****. For example, the **SpreadsheetML** for a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**** that has two worksheets name
+[Worksheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). For example, the **SpreadsheetML** for a [Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx) that has two worksheets name
 MySheet1 and MySheet2 is located in the Workbook.xml file and is shown
 in the following code example.
 
@@ -107,13 +100,8 @@ in the following code example.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
-one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
+[SheetData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
+one or more [Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is shown in the following code example.
@@ -153,11 +141,8 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
 After opening the **SpreadsheetDocument**
-document for editing, the code inserts a blank <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WorksheetPart.Worksheet">**Worksheet**** object into a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** document package. Then,
-inserts a new <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** object into the new worksheet and
+document for editing, the code inserts a blank [Worksheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.worksheetpart.worksheet.aspx) object into a [SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package. Then,
+inserts a new [Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx) object into the new worksheet and
 inserts the specified text into that cell.
 
 ```csharp
@@ -239,11 +224,9 @@ inserts the specified text into that cell.
 The code passes in a parameter that represents the text to insert into
 the cell and a parameter that represents the **SharedStringTablePart** object for the spreadsheet.
 If the **ShareStringTablePart** object does not
-contain a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable">**SharedStringTable**** object, the code creates
+contain a [SharedStringTable](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object, the code creates
 one. If the text already exists in the **ShareStringTable** object, the code returns the
-index for the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem">**SharedStringItem**** object that represents the
+index for the [SharedStringItem](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx) object that represents the
 text. Otherwise, it creates a new **SharedStringItem** object that represents the text.
 
 The following code verifies if the specified text exists in the **SharedStringTablePart** object and add the text if
@@ -309,11 +292,8 @@ it does not exist.
 ```
 
 The code adds a new **WorksheetPart** object to
-the **WorkbookPart** object by using the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.AddNewPart``1">**AddNewPart**** method. It then adds a new **Worksheet** object to the **WorksheetPart** object, and gets a unique ID for
-the new worksheet by selecting the maximum <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.SheetId">**SheetId**** object used within the spreadsheet
+the **WorkbookPart** object by using the [AddNewPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method. It then adds a new **Worksheet** object to the **WorksheetPart** object, and gets a unique ID for
+the new worksheet by selecting the maximum [SheetId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.sheetid.aspx) object used within the spreadsheet
 document and adding one to create the new sheet ID. It gives the
 worksheet a name by concatenating the word "Sheet" with the sheet ID. It
 then appends the new **Sheet** object to the
@@ -321,8 +301,7 @@ then appends the new **Sheet** object to the
 
 The following code inserts a new **Worksheet**
 object by adding a new **WorksheetPart** object
-to the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart**** object.
+to the [WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx) object.
 
 ```csharp
     // Given a WorkbookPart, inserts a new worksheet.
@@ -389,8 +368,7 @@ the new cell in the column by iterating through the row elements to find
 the cell that comes directly after the specified row, in sequential
 order. It saves that row in the **refCell**
 variable. It then inserts the new cell before the cell referenced by
-**refCell** using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertBefore``1(``0,DocumentFormat.OpenXml.OpenXmlElement)">**InsertBefore**** method.
+**refCell** using the [InsertBefore](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.openxmlcompositeelement.insertbefore.aspx) method.
 
 In the following code, insert a new **Cell**
 object into a **Worksheet** object.

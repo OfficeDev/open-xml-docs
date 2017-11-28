@@ -15,13 +15,12 @@ ms.date: 11/01/2017
 ---
 # Working with formulas (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellFormula">**CellFormula**** class and how it relates to the
+This topic discusses the Open XML SDK 2.5 [CellFormula](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
-SpreadsheetML document, see <span sdata="link">[Structure of a
+SpreadsheetML document, see [Structure of a
 SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.md)**.
+SDK)](structure-of-a-spreadsheetml-document.md).
 
 
 --------------------------------------------------------------------------------
@@ -42,8 +41,7 @@ to postpone calculation of the formula values when the spreadsheet is
 opened, which saves time when opening a worksheet. You do not have to
 specify the value, and if you omit it, it is the responsibility of the
 Open XML reader to compute the value based on the formula definition
-when the worksheet is opened. For more information about the **CellValue** class, see <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue****.
+when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx).
 
 The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **cellFormula**
@@ -57,7 +55,7 @@ based upon zero-to-many inputs.
 A formula is an expression that can contain the following: constants,
 operators, cell references, calls to functions, and names.
 
-[Example: Consider the formula PI()\*(A2^2). In this case,
+[**Example**: Consider the formula PI()\*(A2^2). In this case,
 
     PI() results in a call to the function PI, which returns the value
 of π.

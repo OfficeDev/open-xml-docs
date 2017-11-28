@@ -15,8 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with notes slides (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NotesSlide">**NotesSlide**** class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office [NotesSlide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -31,7 +30,7 @@ corresponding data. Contained within a notes slide are all the common
 slide elements along with additional properties that are specific to the
 notes element.
 
-Example: Consider the following PresentationML notes slide:
+**Example**: Consider the following PresentationML notes slide:
 
 ```xml
 <p:notes>  
@@ -60,9 +59,9 @@ that correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-<clrMapOvr>|ColorMapOverride
-<cSld>|CommonSlideData
-<extLst>|ExtensionListWithModification
+\<clrMapOvr\>|[ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)
+\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
+\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<notes\> element.
@@ -143,25 +142,19 @@ store whether this extension property has been modified. end note]
 ## Working with the NotesSlide Class
 As shown in the Open XML SDK code sample that follows, every instance of
 the **NotesSlide** class is associated with an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.NotesSlidePart">**NotesSlidePart**** class, which represents a
+instance of the [NotesSlidePart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.notesslidepart.aspx) class, which represents a
 notes slide part, one of the parts of a PresentationML presentation file
 package, and a part that is required for each notes slide in a
 presentation file. Each **NotesSlide** class
-instance may also be associated with an instance of the <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NotesMaster">**NotesMaster**** class, which in turn is
+instance may also be associated with an instance of the [NotesMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesmaster.aspx) class, which in turn is
 associated with a similarly named presentation part, represented by the
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.NotesMasterPart">**NotesMasterPart**** class.
+[NotesMasterPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.notesmasterpart.aspx) class.
 
 The **NotesSlide** class, which represents the
 \<notes\> element, is therefore also associated with a series of other
 classes that represent the child elements of the \<notes\> element.
 Among these classes, as shown in the following code sample, are the
-**CommonSlideData** class and the **ColorMapOverride** class. The <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** classes are in turn associated with
+**CommonSlideData** class and the **ColorMapOverride** class. The [ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx) class and the [Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx) classes are in turn associated with
 the **CommonSlideData** class.
 
 
@@ -172,17 +165,12 @@ presentation and creates an instance of an Open XML SDK 2.5**NotesSlide** class 
 **NotesSlide** class constructor creates
 instances of the **CommonSlideData** class and
 the **ColorMap** class. The **CommonSlideData** class constructor creates an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, whose constructor in turn
-creates additional class instances: an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties">**NonVisualGroupShapeProperties**** class, an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties">**GroupShapeProperties**** class, and an instance
-of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
+instance of the [ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn
+creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
+instance of the [GroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
+of the [Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
-The namespace represented by the letter *P* in the code is the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)
 namespace.
 
 ```csharp
