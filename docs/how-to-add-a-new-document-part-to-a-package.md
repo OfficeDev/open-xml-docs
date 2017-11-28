@@ -111,11 +111,11 @@ correspond to the **document**, **body**, **p**, **r**, and **t** elements,
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| document | Document | The root element for the main document part. |
-| body | Body | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the ISO/IEC 29500 specification. |
-| p | Paragraph | A paragraph. |
-| r | Run | A run. |
-| t | Text | A range of text. |
+| document | [Document](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
+| body | [Body](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the ISO/IEC 29500 specification. |
+| p | [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
+| r | [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
+| t | [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
 -----------------------------------------------------------------------------
 ## How the Sample Code Works 
