@@ -354,11 +354,9 @@ styles element is created and saved to the part.
 --------------------------------------------------------------------------------
 ## Creating the Style 
 
-To create the style, the code instantiates the <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Style">**Style**** class and sets certain properties,
-such as the <span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Type">**Type**** of style (paragraph), the <span
-sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId">**StyleId****, whether the style is a <span
-sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle">**CustomStyle****, and whether the style is the
-<span sdata="cer" target="P:DocumentFormat.OpenXml.Wordprocessing.Style.Default">**Default**** style for its type.
+To create the style, the code instantiates the **[Style](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.aspx)** class and sets certain properties,
+such as the **[Type](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.type.aspx)** of style (paragraph), the **[StyleId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx)**, whether the style is a **[CustomStyle](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx)**, and whether the style is the
+**[Default](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.default.aspx)** style for its type.
 
 ```csharp
     // Create a new paragraph style element and specify some of the attributes.
@@ -388,7 +386,7 @@ The code results in the following XML.
 
 The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
-corresponding class, and then call the <span sdata="cer" target="M:DocumentFormat.OpenXml.OpenXmlElement.Append(DocumentFormat.OpenXml.OpenXmlElement[])">**Append([])**** method add the child element to
+corresponding class, and then call the **[Append([])](https://msdn.microsoft.com/en-us/library/office/cc801361.aspx)** method add the child element to
 the style. For more information about these properties, see section 17.7
 of the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
 specification.
@@ -454,7 +452,7 @@ specification.
     style.Append(unhidewhenused1)
 ```
 
-Next, the code instantiates a <span sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties">**StyleRunProperties**** object to create a **rPr** (Run Properties) element. You specify the
+Next, the code instantiates a **[StyleRunProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx)** object to create a **rPr** (Run Properties) element. You specify the
 character properties that apply to the style, such as font and color, in
 this element. The properties are then appended as children of the **rPr** element.
 
