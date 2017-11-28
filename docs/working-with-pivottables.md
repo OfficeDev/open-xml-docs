@@ -15,12 +15,11 @@ ms.date: 11/01/2017
 ---
 # Working with PivotTables (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.PivotTableDefinition">**PivotTableDefinition**** class and how it
+This topic discusses the Open XML SDK 2.5 **[PivotTableDefinition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
 make up a SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)**.
+SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 
 --------------------------------------------------------------------------------
@@ -98,9 +97,9 @@ class.
 
 **SpreadsheetML Element**|**Open XML SDK 2.5 Class**
 ---|---
-pivotField|PivotField
-pivotCacheDefinition|PivotCacheDefinition
-pivotCacheRecords|PivotCacheRecords
+pivotField|[PivotField](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotfield.aspx)
+pivotCacheDefinition|[PivotCacheDefinition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx)
+pivotCacheRecords|[PivotCacheRecords](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)
 
 
 --------------------------------------------------------------------------------
