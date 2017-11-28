@@ -52,12 +52,10 @@ a word-processing document package.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object 
 In the sample code, you start by opening the word processing file by
-instantiating the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
+instantiating the **[WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
-<span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method, with the Boolean parameter set
+**[Open](https://msdn.microsoft.com/en-us/library/office/cc562234.aspx)** method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ```csharp
