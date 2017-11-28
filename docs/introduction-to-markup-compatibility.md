@@ -104,28 +104,22 @@ apply to markup compatibility.
 ## Setting the stage when you Open 
 When you open a document using the Open XML SDK 2.5, you have the option
 of using an overload with a signature that accepts an instance of the
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.OpenSettings">**OpenSettings**** class as a parameter. You use
+**[OpenSettings](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.opensettings.aspx)** class as a parameter. You use
 the open settings class to provide certain important settings that
 govern the behavior of the SDK. One set of settings in particular,
-stored in the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.OpenSettings.MarkupCompatibilityProcessSettings">**MarkupCompatibilityProcessSettings****
+stored in the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.opensettings.markupcompatibilityprocesssettings.aspx)**
 property, determines how markup compatibility elements and attributes
-are processed. You set the property to an instance of the <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings">**MarkupCompatibilityProcessSettings**** class
+are processed. You set the property to an instance of the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.aspx)** class
 prior to opening a document.
 
 The class has the following properties:
 
--   <span sdata="cer"
-    target="P:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings.ProcessMode">
-    **ProcessMode** ** - Determines the
+-   
+    **[ProcessMode](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.processmode.aspx)** - Determines the
     parts that are preprocessed.
 
--   <span sdata="cer"
-    target="P:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings.TargetFileFormatVersions">
-    **TargetFileFormatVersions** ** -
+-   
+    **[TargetFileFormatVersions](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.targetfileformatversions.aspx)** -
     Specifies the context that applies to preprocessing.
 
 By default, documents are not preprocessed. If however you do specify
@@ -177,8 +171,7 @@ property.
 ---------------------------------------------------------------------------------
 ## Understanding Process Mode 
 The process mode specifies which document parts should be preprocessed.
-You set this property to a member of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessMode">**MarkupCompatibilityProcessMode**** enumeration.
+You set this property to a member of the **[MarkupCompatibilityProcessMode](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocessmode.aspx)** enumeration.
 The default value, **NoProcess**, indicates
 that no preprocessing is performed. Your application must be able to
 understand and handle any elements and attributes present in the
@@ -201,8 +194,7 @@ document is preprocessed.
 The target file format versions property lets you choose to process
 markup compatibility content in either Office 2010 or Office 2013
 context. Set the **TargetFileFormatVersions**
-property to a member of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.FileFormatVersions">**FileFormatVersions**** enumeration.
+property to a member of the **[FileFormatVersions](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.fileformatversions.aspx)** enumeration.
 
 The default value, **Office2010**, means the
 SDK will assume that namespaces defined in Office 2010 are understood,
