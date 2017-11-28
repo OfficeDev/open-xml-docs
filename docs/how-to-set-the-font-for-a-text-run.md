@@ -52,9 +52,7 @@ a word-processing document package.
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object
 The code example opens a word processing document package by passing a
-file name as an argument to one of the overloaded <span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open">**Open()**** methods of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class that takes a
+file name as an argument to one of the overloaded [Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) methods of the [WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class that takes a
 string and a Boolean value that specifies whether the file should be
 opened in read/write mode or not. In this case, the Boolean value is
 **true** specifying that the file should be
@@ -170,19 +168,15 @@ set the font of the run to Arial, the code creates a **RunFonts** object and the
     Dim rPr As New RunProperties(New RunFonts() With {.Ascii = "Arial"})
 ```
 
-The code then creates a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** object that represents the first text
+The code then creates a [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) object that represents the first text
 run of the document. The code instantiates a **Run** and sets it to the first text run of the
-document. The code then adds the **RunProperties** object to the **Run** object using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.PrependChild``1(``0)">**PrependChild\<T\>(T)**** method. The **PrependChild** method adds an element as the first
+document. The code then adds the **RunProperties** object to the **Run** object using the [PrependChild\<T\>(T)](https://msdn.microsoft.com/en-us/library/office/cc883719.aspx) method. The **PrependChild** method adds an element as the first
 child element to the specified element in the in-memory XML structure.
 In this case, running the code sample produces an in-memory XML
 structure where the **RunProperties** element
 is added as the first child element of the **Run** element. It then saves the changes back to
-the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)">**Save(MainDocumentPart)**** object. Calling the
-**Save** method of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** object commits
+the [Save(MainDocumentPart)](https://msdn.microsoft.com/en-us/library/office/cc846392.aspx) object. Calling the
+**Save** method of the [WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) object commits
 changes made to the in-memory representation of the **MainDocumentPart** part back into the XML file for
 the **MainDocumentPart** (the document.xml file
 in the Wordprocessing package).

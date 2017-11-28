@@ -15,12 +15,11 @@ ms.date: 11/01/2017
 ---
 # Working with presentations (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Presentation">**Presentation**** class and how it relates to
+This topic discusses the Open XML SDK 2.5 for Office [Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentation.aspx) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see <span sdata="link">[Structure of a
-PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)**.
+PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md).
 
 
 ---------------------------------------------------------------------------------
@@ -33,7 +32,7 @@ follows:
 This element specifies within it fundamental presentation-wide
 properties.
 
-Example: Consider the following presentation with a single slide master
+**Example:** Consider the following presentation with a single slide master
 and two slides. In addition to these commonly used elements there can
 also be the specification of other properties such as slide size, notes
 size and default text styles.
@@ -74,16 +73,16 @@ Open XML SDK 2.5 classes that correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-\<sldMasterIdLst\>|SlideMasterIdList
-\<sldMasterId\>|SlideMasterId
-\<sldIdLst\>|SlideIdList
-\<sldId\>|SlideId
-\<notesMasterIdLst\>|NotesMasterIdList
-\<handoutMasterIdLst\>|HandoutMasterIdList
-\<custShowLst\>|CustomShowList
-\<sldSz\>|SlideSize
-\<notesSz\>|NotesSize
-\<defaultTextStyle\>|DefaultTextStyle
+\<sldMasterIdLst\>|[SlideMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemasteridlist.aspx)
+\<sldMasterId\>|[SlideMasterId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemasterid.aspx)
+\<sldIdLst\>|[SlideIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slideidlist.aspx)
+\<sldId\>|[SlideId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slideid.aspx)
+\<notesMasterIdLst\>|[NotesMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesmasteridlist.aspx)
+\<handoutMasterIdLst\>|[HandoutMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmasteridlist.aspx)
+\<custShowLst\>|[CustomShowList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.customshowlist.aspx)
+\<sldSz\>|[SlideSize](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidesize.aspx)
+\<notesSz\>|[NotesSize](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notessize.aspx)
+\<defaultTextStyle\>|[DefaultTextStyle](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.defaulttextstyle.aspx)
 
 
 --------------------------------------------------------------------------------
@@ -125,7 +124,7 @@ corresponding presentation. A slide master is a slide that is
 specifically designed to be a template for all related child layout
 slides.
 
-Example: Consider the following specification of a slide master within
+**Example**: Consider the following specification of a slide master within
 a presentation
 
 ```xml
@@ -168,7 +167,7 @@ corresponding presentation. A slide contains the information that is
 specific to a single slide such as slide-specific shape and text
 information.
 
-Example: Consider the following specification of a slide master within
+**Example**: Consider the following specification of a slide master within
 a presentation
 
 ```xml
@@ -246,7 +245,7 @@ Objects within a presentation slide can be specified outside these
 extents, but this is the size of background surface that is shown when
 the slide is presented or printed.
 
-Example: Consider the following specifying of the size of a
+**Example**: Consider the following specifying of the size of a
 presentation slide.
 
 ```xml
@@ -276,7 +275,7 @@ to specify the region to which content is fitted in any special format
 of printout the application might choose to generate, such as an outline
 handout.
 
-Example: Consider the following specifying of the size of a notes
+**Example**: Consider the following specifying of the size of a notes
 slide.
 
 ```xml
@@ -311,8 +310,7 @@ text within the presentation slide.
 ## Working with the Presentation Class
 As shown in the Open XML SDK code example that follows, every instance
 of the **Presentation** class is associated
-with an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationPart">**PresentationPart**** class, which represents a
+with an instance of the [PresentationPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, which represents a
 presentation part, one of the required parts of a PresentationML
 presentation file package.
 
@@ -326,18 +324,12 @@ code example, are the **SlideMasterIdList**,
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** uses the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Create(System.String,DocumentFormat.OpenXml.PresentationDocumentType)">**Create(String, PresentationDocumentType)****
-method of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**PresentationDocument**** class of the Open XML
+The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/en-us/library/office/cc535977.aspx)
+method of the [PresentationDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class of the Open XML
 SDK 2.5 to create an instance of that same class that has the specified
-name and file path. Then it uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.AddPresentationPart">**AddPresentationPart()**** method to add an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationPart">**PresentationPart**** class to the document
-file. Next, it creates an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Presentation">**Presentation**** class that represents the
+name and file path. Then it uses the [AddPresentationPart()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx) method to add an
+instance of the [PresentationPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationpart.aspx) class to the document
+file. Next, it creates an instance of the [Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentation.aspx) class that represents the
 presentation. It passes a reference to the **PresentationPart** class instance to the
 **CreatePresentationParts** procedure, which creates the other required
 parts of the presentation file. The **CreatePresentation** procedure

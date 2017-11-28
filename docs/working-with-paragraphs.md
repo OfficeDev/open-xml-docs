@@ -15,8 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with paragraphs (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph">**Paragraph**** class and how it relates to the
+This topic discusses the Open XML SDK 2.5 [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) class and how it relates to the
 Open XML File Format WordprocessingML schema.
 
 
@@ -54,8 +53,7 @@ working with paragraphs.
 
 ---------------------------------------------------------------------------------
 ## Paragraph Class
-The Open XML SDK 2.5<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph">**Paragraph**** class represents the paragraph
+The Open XML SDK 2.5 [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) class represents the paragraph
 (\<**p**\>) element defined in the Open XML
 File Format schema for WordprocessingML documents as discussed above.
 Use the **Paragraph** object to manipulate
@@ -68,22 +66,19 @@ In WordprocessingML, a paragraph's properties are specified via the
 paragraph properties (\<**pPr**\>) element.
 Some examples of paragraph properties are alignment, border, hyphenation
 override, indentation, line spacing, shading, text direction, and
-widow/orphan control. The OXML SDK <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties">**ParagraphProperties**** class represents the
+widow/orphan control. The OXML SDK [ParagraphProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraphproperties.aspx) class represents the
 \<**pPr**\> element.
 
 ### Run Class
 
 Paragraphs in a word-processing document most often contain text. In the
 OXML File Format schema for WordprocessingML documents, the run (\<**r**\>) element is provided to demarcate a region of
-text. The OXML SDK <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** class represents the \<**r**\> element.
+text. The OXML SDK [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) class represents the \<**r**\> element.
 
 ### Text Object
 
 With the \<**r**\> element, the text (\<**t**\>) element is the container for the text that
-makes up the document content. The OXML SDK <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Text">**Text**** class represents the \<**t**\> element.
+makes up the document content. The OXML SDK [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) class represents the \<**t**\> element.
 
 
 --------------------------------------------------------------------------------

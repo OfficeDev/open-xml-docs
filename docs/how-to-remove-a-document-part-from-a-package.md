@@ -50,9 +50,7 @@ a word-processing document package.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
 The code example starts with opening a package file by passing a file
-name as an argument to one of the overloaded <span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open">**Open()**** methods of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**DocumentFormat.OpenXml.Packaging.WordprocessingDocument****
+name as an argument to one of the overloaded [Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) methods of the [DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)
 that takes a string and a Boolean value that specifies whether the file
 should be opened in read/write mode or not. In this case, the Boolean
 value is **true** specifying that the file
@@ -108,18 +106,17 @@ sample code creates is shown in the following code example.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to **WordprocessingML** elements. You can find these
-classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Wordprocessing">**DocumentFormat.OpenXml.Wordprocessing****
+classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 WordprocessingML Element|Open XML SDK 2.5 Class|Description
 --|--|--
-document|Document |The root element for the main document part.
-body|Body |The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification.
-p|Paragraph |A paragraph.
-r|Run |A run.
-t|Text |A range of text.
+document|[Document](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.document.aspx) |The root element for the main document part.
+body|[Body](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification.
+| p | [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
+| r | [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
+| t | [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
 
 --------------------------------------------------------------------------------
@@ -130,7 +127,8 @@ introduces the settings element in a **PresentationML** package.
 
 > This element specifies the settings that are applied to a
 > WordprocessingML document. This element is the root element of the
-> Document Settings part in a WordprocessingML document.[*Example*:
+> Document Settings part in a WordprocessingML document.   
+> **Example**:
 > Consider the following WordprocessingML fragment for the settings part
 > of a document:
 
@@ -143,10 +141,8 @@ introduces the settings element in a **PresentationML** package.
 
 > The **settings** element contains all of the
 > settings for this document. In this case, the two settings applied are
-> automatic tab stop increments of 0.5" using the <span
-> class="keyword">defaultTabStop** element, and no character level
-> white space compression using the <span
-> class="keyword">characterSpacingControl** element. *end example*]
+> automatic tab stop increments of 0.5" using the **defaultTabStop** element, and no character level
+> white space compression using the **characterSpacingControl** element. 
 
 > © ISO/IEC29500: 2008.
 

@@ -144,12 +144,9 @@ The code starts by creating a variable named **styles** that the method returns 
     Return styles
 ```
 
-The code continues by opening the document by using the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method and indicating that the
+The code continues by opening the document by using the [Open](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
 document should be open for read-only access (the final false
-parameter). Given the open document, the code uses the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart**** property to navigate to
+parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ```csharp
@@ -208,8 +205,7 @@ of the **docPart** variable, and stores it in the
 ## Retrieve the Part Contents
 If the requested styles part exists, the code must return the contents
 of the part in an **XDocument** instance. Each
-part provides a <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream(System.IO.FileMode,System.IO.FileAccess)">**GetStream**** method, which returns a Stream.
+part provides a [GetStream](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.openxmlpart.getstream.aspx) method, which returns a Stream.
 The code passes the Stream instance to the
 [XmlNodeReader.Create](http://msdn.microsoft.com/en-us/library/ay7fxzht(v=VS.100).aspx)
 method, and then calls the

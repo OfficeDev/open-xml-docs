@@ -47,8 +47,7 @@ programmatically open a read-only spreadsheet document.
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
+In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
 Excel document package. To create an Excel document, you create an
 instance of the **SpreadsheetDocument** class
 and populate it with parts. At a minimum, the document must have a
@@ -57,17 +56,16 @@ one worksheet part. The text is represented in the package as XML using
 SpreadsheetML markup.
 
 To create the class instance from the document that you call one of the
-<span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** overload methods. Several **Open** methods are provided, each with a different
+[Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) overload methods. Several **Open** methods are provided, each with a different
 signature. The methods that let you specify whether a document is
 editable are listed in the following table.
 
 |Open|Class Library Reference Topic|Description|
 --|--|--
-Open(String, Boolean)|Open(String, Boolean)|Create an instance of the SpreadsheetDocument class from the specified file.
-Open(Stream, Boolean)|Open(Stream, Boolean)|Create an instance of the SpreadsheetDocument class from the specified IO stream.
-Open(String, Boolean, OpenSettings)|Open(String, Boolean, OpenSettings)|Create an instance of the SpreadsheetDocument class from the specified file.
-Open(Stream, Boolean, OpenSettings)|Open(Stream, Boolean, OpenSettings)|Create an instance of the SpreadsheetDocument class from the specified I/O stream.
+Open(String, Boolean)|[Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562356.aspx)|Create an instance of the SpreadsheetDocument class from the specified file.
+Open(Stream, Boolean)|[Open(Stream, Boolean](https://msdn.microsoft.com/en-us/library/office/cc562185.aspx)|Create an instance of the SpreadsheetDocument class from the specified IO stream.
+Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](https://msdn.microsoft.com/en-us/library/office/ee880344.aspx)|Create an instance of the SpreadsheetDocument class from the specified file.
+Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](https://msdn.microsoft.com/en-us/library/office/ee840773.aspx)|Create an instance of the SpreadsheetDocument class from the specified I/O stream.
 
 The table earlier in this topic lists only those **Open** methods that accept a Boolean value as the
 second parameter to specify whether a document is editable. To open a
@@ -165,13 +163,9 @@ to the existing workbook part, as shown in the following code example.
 ---------------------------------------------------------------------------------
 ## Basic Document Structure
 The basic document structure of a SpreadsheetML document consists of the
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
-worksheets in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook****. A separate XML file is created
-for each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet">**Worksheet****. For example, the SpreadsheetML
+[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
+worksheets in the [Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx). A separate XML file is created
+for each [Worksheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). For example, the SpreadsheetML
 for a workbook that has two worksheets name MySheet1 and MySheet2 is
 located in the Workbook.xml file and is as follows.
 
@@ -186,13 +180,8 @@ located in the Workbook.xml file and is as follows.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
-one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
+[SheetData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
+one or more [Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is as follows.
@@ -233,10 +222,8 @@ v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 The sample code shows how, when you try to add a new worksheet, you get
 an exception error because the file is read-only. When you have access
 to the body of the main document part, you add a worksheet by calling
-the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart``1(System.String,System.String)">**AddNewPart\<T\>(String, String)**** method to
-create a new <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart">**WorksheetPart****. The following code example
+the [AddNewPart\<T\>(String, String)](https://msdn.microsoft.com/en-us/library/office/cc562372.aspx) method to
+create a new [WorksheetPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx). The following code example
 attempts to add the new **WorksheetPart**.
 
 ```csharp

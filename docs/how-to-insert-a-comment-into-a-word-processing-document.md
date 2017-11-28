@@ -38,12 +38,10 @@ this topic.
 
 --------------------------------------------------------------------------------
 ## Open the Existing Document for Editing
-To open an existing document, instantiate the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
+To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
 the following **using** statement. In the same
 statement, open the word processing file at the specified *filepath* by
-using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method, with the
+using the [Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562234.aspx) method, with the
 Boolean parameter set to **true** to enable
 editing in the document.
 
@@ -76,8 +74,7 @@ After you open the document, you can find the first paragraph to attach
 a comment. The code finds the first paragraph by calling the
 [First](http://msdn.microsoft.com/en-us/library/system.linq.enumerable.first.aspx)
 extension method on all the descendant elements of the document element
-that are of type <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph">**Paragraph****. The **First** method is a member
+that are of type [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx). The **First** method is a member
 of the
 [System.Linq.Enumerable](http://msdn.microsoft.com/en-us/library/system.linq.enumerable.aspx)
 class. The **System.Linq.Enumerable** class
@@ -97,25 +94,17 @@ interface.
     Dim id As String = "0"
 ```
 
-The code first determines whether a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart">**WordprocessingCommentsPart**** part exists. To
-do this, call the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.MainDocumentPart">**MainDocumentPart**** generic method, **GetPartsCountOfType**, and specify a kind of **WordprocessingCommentsPart**.
+The code first determines whether a [WordprocessingCommentsPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingcommentspart.aspx) part exists. To
+do this, call the [MainDocumentPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) generic method, **GetPartsCountOfType**, and specify a kind of **WordprocessingCommentsPart**.
 
 If a **WordprocessingCommentsPart** part
 exists, the code obtains a new **Id** value for
-the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Comment">**Comment**** object that it will add to the
-existing **WordprocessingCommentsPart**<span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Comments">**Comments**** collection object. It does this by
+the [Comment](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.comment.aspx) object that it will add to the
+existing **WordprocessingCommentsPart** [Comments](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.comments.aspx) collection object. It does this by
 finding the highest **Id** attribute value
 given to a **Comment** in the **Comments** collection object, incrementing the
 value by one, and then storing that as the **Id** value.If no **WordprocessingCommentsPart** part exists, the code
-creates one using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.AddNewPart``1">**AddNewPart\<T\>()**** method of the <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.MainDocumentPart">**MainDocumentPart**** object and then adds a
+creates one using the [AddNewPart\<T\>()](https://msdn.microsoft.com/en-us/library/office/cc562657.aspx) method of the [MainDocumentPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) object and then adds a
 **Comments** collection object to it.
 
 ```csharp
@@ -202,23 +191,16 @@ comments part in a WordprocessingML document.
 
 With the **Comment** object instantiated, the
 code associates the **Comment** with a range in
-the Wordprocessing document. <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart">**CommentRangeStart**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd">**CommentRangeEnd**** objects correspond to the
+the Wordprocessing document. [CommentRangeStart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.commentrangestart.aspx) and [CommentRangeEnd](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.commentrangeend.aspx) objects correspond to the
 **commentRangeStart** and **commentRangeEnd** elements in the Open XML
 Wordprocessing schema. A **CommentRangeStart**
-object is given as the argument to the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertBefore``1(``0,DocumentFormat.OpenXml.OpenXmlElement)">**InsertBefore\<T\>(T, OpenXmlElement)**** method
-of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph">**Paragraph**** object and a **CommentRangeEnd** object is passed to the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertAfter``1(``0,DocumentFormat.OpenXml.OpenXmlElement)">**InsertAfter\<T\>(T, OpenXmlElement)**** method.
+object is given as the argument to the [InsertBefore\<T\>(T, OpenXmlElement)](https://msdn.microsoft.com/en-us/library/office/cc863927.aspx) method
+of the [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) object and a **CommentRangeEnd** object is passed to the [InsertAfter\<T\>(T, OpenXmlElement)](https://msdn.microsoft.com/en-us/library/office/cc865786.aspx) method.
 This creates a comment range that extends from immediately before the
 first character of the first paragraph in the Wordprocessing document to
 immediately after the last character of the first paragraph.
 
-A <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.CommentReference">**CommentReference**** object represents a
+A [CommentReference](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.commentreference.aspx) object represents a
 **commentReference** element in the Open XML Wordprocessing schema. A
 commentReference links a specific comment in the **WordprocessingCommentsPart** part (the Comments.xml
 file in the Wordprocessing package) to a specific location in the
@@ -230,9 +212,7 @@ a given comment, so the commentReference **id**
 attribute must match the comment **id** attribute
 value that it links to. In the sample, the code adds a **commentReference** element by using the API, and
 instantiates a **CommentReference** object,
-specifying the **Id** value, and then adds it to a
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** object.
+specifying the **Id** value, and then adds it to a [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) object.
 
 ```csharp
     firstParagraph.InsertBefore(new CommentRangeStart() 
