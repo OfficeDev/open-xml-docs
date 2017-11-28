@@ -121,11 +121,9 @@ initializes it to null.
 --------------------------------------------------------------------------------
 ## Accessing the Cell 
 
-Next, the code opens the document by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open**** method, indicating that the document
+Next, the code opens the document by using the **[Open](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx)** method, indicating that the document
 should be open for read-only access (the final **false** parameter). Next, the code retrieves a
-reference to the workbook part by using the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart**** property of the document.
+reference to the workbook part by using the **[WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)** property of the document.
 
 ```csharp
     // Open the spreadsheet document for read-only access.
@@ -147,15 +145,11 @@ target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**W
 
 To find the requested cell, the code must first retrieve a reference to
 the sheet, given its name. The code must search all the sheet-type
-descendants of the workbook part workbook element and examine the <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.Name">**Name**** property of each sheet that it finds.
+descendants of the workbook part workbook element and examine the **[Name](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.name.aspx)** property of each sheet that it finds.
 Be aware that this search looks through the relations of the workbook,
 and does not actually find a worksheet part. It finds a reference to a
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet****, which contains information such as
-the name and <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.Id">**Id**** of the sheet. The simplest way to do
+**[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)**, which contains information such as
+the name and **[Id](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.id.aspx)** of the sheet. The simplest way to do
 this is to use a LINQ query, as shown in the following code example.
 
 ```csharp
@@ -190,12 +184,9 @@ case) or a null reference if no match was found. The code checks for the
 null reference, and throws an exception if you passed in an invalid
 sheet name.Now that you have information about the sheet, the code must
 retrieve a reference to the corresponding worksheet part. The sheet
-information that you already retrieved provides an <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.Id">**Id**** property, and given that **Id** property, the code can retrieve a reference to
-the corresponding <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart">**WorksheetPart**** by calling the workbook part
-<span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.GetPartById(System.String)">**GetPartById**** method.
+information that you already retrieved provides an **[Id](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.id.aspx)** property, and given that **Id** property, the code can retrieve a reference to
+the corresponding **[WorksheetPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx)** by calling the workbook part
+**[GetPartById](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid.aspx)** method.
 
 ```csharp
     // Retrieve a reference to the worksheet part.
@@ -210,10 +201,8 @@ target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.GetPartById(Syst
 ```
 
 Just as when locating the named sheet, when locating the named cell, the
-code uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.Descendants``1">**Descendants**** method, searching for the first
-match in which the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.CellType.CellReference">**CellReference**** property equals the specified
+code uses the **[Descendants](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.openxmlelement.descendants.aspx)** method, searching for the first
+match in which the **[CellReference](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.celltype.cellreference.aspx)** property equals the specified
 **addressName**
 parameter. After this method call, the variable named **theCell** will either contain a reference to the cell,
 or will contain a null reference.
@@ -246,8 +235,7 @@ such as the following.
     </x:c>
 ```
 
-The <span sdata="cer"
-target="P:DocumentFormat.OpenXml.OpenXmlElement.InnerText">**InnerText**** property contains the content for
+The **[InnerText](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.openxmlelement.innertext.aspx)** property contains the content for
 the cell, and so the next block of code retrieves this value.
 
 ```csharp
@@ -269,9 +257,7 @@ the cell, and so the next block of code retrieves this value.
 
 Now, the sample method must interpret the value. As it is, the code
 handles numeric and date, string, and Boolean values. You can extend the
-sample as necessary. The <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** type provides a <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.CellType.DataType">**DataType**** property that indicates the type
+sample as necessary. The **[Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx)** type provides a **[DataType](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.celltype.datatype.aspx)** property that indicates the type
 of the data within the cell. The value of the **DataType** property is null for numeric and date
 types. It contains the value **CellValues.SharedString** for strings, and **CellValues.Boolean** for Boolean values. If the
 **DataType** property is null, the code returns
@@ -311,8 +297,7 @@ continues by branching based on the data type.
 ```
 
 If the **DataType** property contains **CellValues.SharedString**, the code must retrieve a
-reference to the single <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.SharedStringTablePart">**SharedStringTablePart****.
+reference to the single **[SharedStringTablePart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.workbookpart.sharedstringtablepart.aspx)**.
 
 ```csharp
     // For shared strings, look up the value in the
