@@ -15,8 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with runs (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** class and how it relates to the Open
+This topic discusses the Open XML SDK 2.5 **[Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx)** class and how it relates to the Open
 XML File Format WordprocessingML schema.
 
 
@@ -58,8 +57,7 @@ working with runs.
 
 ---------------------------------------------------------------------------------
 ## Run Class 
-The Open XML SDK 2.5<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Run">**Run**** class represents the run (\<**r**\>) element defined in the Open XML File Format
+The Open XML SDK 2.5**[Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx)** class represents the run (\<**r**\>) element defined in the Open XML File Format
 schema for WordprocessingML documents as discussed above. Use a **Run** object to manipulate an individual \<**r**\> element in a WordprocessingML document.
 
 ### RunProperties Class
@@ -69,15 +67,13 @@ using the run properties (\<**rPr**\>) element.
 Some examples of run properties are bold, border, character style,
 color, font, font size, italic, kerning, disable spelling/grammar check,
 shading, small caps, strikethrough, text direction, and underline. Use a
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.RunProperties">**RunProperties**** object to set the properties
+**[RunProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.runproperties.aspx)** object to set the properties
 for a run in a WordprocessingML document.
 
 ### Text Object
 
 With the \<**r**\> element, the text (\<**t**\>) element is the container for the text that
-makes up the document content. The OXML SDK <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Text">**Text**** class represents the \<**t**\> element. Use a **Text** object to place text in a Wordprocessing
+makes up the document content. The OXML SDK **[Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx)** class represents the \<**t**\> element. Use a **Text** object to place text in a Wordprocessing
 document.
 
 
