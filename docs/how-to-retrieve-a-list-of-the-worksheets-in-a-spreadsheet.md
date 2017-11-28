@@ -59,10 +59,8 @@ examine.
 ```
 
 The method works with the workbook you specify, returning an instance of
-the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** object, from which you can retrieve
-a reference to each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** object.
+the **[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** object, from which you can retrieve
+a reference to each **[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** object.
 
 
 --------------------------------------------------------------------------------
@@ -119,8 +117,7 @@ workbook).
 ```
 
 The code then continues by opening the document in read-only mode, and
-retrieving a reference to the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart****.
+retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)**.
 
 ```csharp
     using (SpreadsheetDocument document = 
@@ -139,15 +136,11 @@ target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**W
     End Using
 ```
 
-To get access to the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**** object, the code retrieves the
-value of the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook">**Workbook**** property from the **WorkbookPart**, and then retrieves a reference to
-the **Sheets** object from the <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.Sheets">**Sheets**** property of the **Workbook**. The **Sheets**
+To get access to the **[Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** object, the code retrieves the
+value of the **[Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx)** property from the **WorkbookPart**, and then retrieves a reference to
+the **Sheets** object from the **[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.sheets.aspx)** property of the **Workbook**. The **Sheets**
 object contains the collection of <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** objects that provide the method's
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** objects that provide the method's
 return value.
 
 ```csharp
