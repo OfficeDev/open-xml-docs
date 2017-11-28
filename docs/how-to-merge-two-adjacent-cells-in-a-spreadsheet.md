@@ -45,8 +45,7 @@ this topic.
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
+In the Open XML SDK, the **[SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx)** class represents an
 Excel document package. To open and work with an Excel document, you
 create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
@@ -54,11 +53,9 @@ access to the main workbook part that contains the worksheets. The text
 in the document is represented in the package as XML using **SpreadsheetML** markup.
 
 To create the class instance from the document that you call one of the
-<span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** overload methods. Several are
+**[Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx)** overload methods. Several are
 provided, each with a different signature. The sample code in this topic
-uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method with a
+uses the **[Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562356.aspx)** method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
 second parameter is either **true** or **false** and represents whether you want the file to
@@ -94,13 +91,11 @@ object that is created or named in the **using** statement, in this case **docum
 --------------------------------------------------------------------------------
 ## Basic Structure of a SpreadsheetML Document 
 
-The basic document structure of a **SpreadsheetML** document consists of the <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
+The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** and **[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** elements, which reference the
 worksheets in the <span sdata="cer"
-target="T:DocumentFormat.OpenXML.Spreadsheet.Workbook">**Workbook****.
+target="T:DocumentFormat.OpenXML.Spreadsheet.Workbook">**Workbook**.
 A separate XML file is created for each <span sdata="cer"
-target="T:DocumentFormat.OpenXML.Spreadsheet.Worksheet">**Worksheet****.
+target="T:DocumentFormat.OpenXML.Spreadsheet.Worksheet">**Worksheet**.
 For example, the **SpreadsheetML** for a
 workbook that has two worksheets name MySheet1 and MySheet2 is located
 in the Workbook.xml file and is shown in the following code example.
@@ -116,13 +111,8 @@ in the Workbook.xml file and is shown in the following code example.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
-one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
+**[SheetData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx)**. **sheetData** represents the cell table and contains
+one or more **[Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx)** elements. A **row** contains one or more **[Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx)** elements. Each cell contains a **[CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx)** element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is shown in the following code example.
@@ -164,8 +154,7 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 After you have opened the spreadsheet file for editing, the code
 verifies that the specified cells exist, and if they do not exist, it
 creates them by calling the **CreateSpreadsheetCellIfNotExist** method and append
-it to the appropriate <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** object.
+it to the appropriate **[Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx)** object.
 
 ```csharp
     // Given a Worksheet and a cell name, verifies that the specified cell exists.
@@ -248,7 +237,7 @@ For more information about regular expressions, see [Regular Expression
 Language
 Elements](http://msdn.microsoft.com/en-us/library/az24scfc.aspx). The
 code gets the column name by calling the <span sdata="cer"
-target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6)**.
+target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6).
 
 ```csharp
     // Given a cell name, parses the specified cell to get the column name.
@@ -303,8 +292,7 @@ decimal digits.
 --------------------------------------------------------------------------------
 ## Sample Code 
 
-The following code merges two adjacent cells in a <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** document package. When
+The following code merges two adjacent cells in a **[SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx)** document package. When
 merging two cells, only the content from one of the cells is preserved.
 In left-to-right languages, the content in the upper-left cell is
 preserved. In right-to-left languages, the content in the upper-right
