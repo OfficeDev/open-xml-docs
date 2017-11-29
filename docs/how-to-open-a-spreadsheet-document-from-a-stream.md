@@ -52,8 +52,7 @@ Open XML SDK 2.5.
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument**** class represents an
+In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
 Excel document package. To open and work with an Excel document, you
 create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
@@ -62,11 +61,8 @@ in the document is represented in the package as XML using SpreadsheetML
 markup.
 
 To create the class instance from the document, you call one of the
-<span sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** methods. Several are provided, each
-with a different signature. The sample code in this topic uses the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method with a
+[Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) methods. Several are provided, each
+with a different signature. The sample code in this topic uses the [Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562356.aspx) method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
 second parameter is either **true** or **false** and represents whether you want the file to
@@ -88,11 +84,8 @@ shown in the following example.
 
 After you have opened the spreadsheet document package, you can add a
 row to a sheet in the workbook. Each workbook has a workbook part and at
-least one <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet">**Worksheet****. To access the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**** assign a reference to the existing
-document body, represented by the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.WorkbookPart">**WorkbookPart****, as shown in the following
+least one [Worksheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). To access the [Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx) assign a reference to the existing
+document body, represented by the [WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.workbookpart.aspx), as shown in the following
 code example.
 
 ```csharp
@@ -104,9 +97,7 @@ code example.
 ```
 
 The basic document structure of a SpreadsheetML document consists of the
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
+[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
 worksheet. For example, the SpreadsheetML for a workbook that has two
 worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
@@ -123,13 +114,8 @@ file and is shown in the following code example.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
-one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
+[SheetData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
+one or more [Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the value
 of the cell. For example, the **SpreadsheetML**
 for the first worksheet in a workbook, that only has the value 100 in
 cell A1, is located in the Sheet1.xml file and is shown in the following
@@ -169,10 +155,8 @@ v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 --------------------------------------------------------------------------------
 ## Generating the SpreadsheetML Markup to Add a Worksheet 
 When you have access to the body of the main document part, you add a
-worksheet by calling <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart``1(System.String,System.String)">**AddNewPart\<T\>(String, String)**** method to
-create a new <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart">**WorksheetPart****. The following code example
+worksheet by calling [AddNewPart\<T\>(String, String)](https://msdn.microsoft.com/en-us/library/office/cc562372.aspx) method to
+create a new [WorksheetPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx). The following code example
 adds the new **WorksheetPart**.
 
 ```csharp
