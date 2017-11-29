@@ -94,15 +94,11 @@ the parameter values, as shown in the following code.
 --------------------------------------------------------------------------------
 ## How the Code Works 
 
-The following code starts by opening the document, using the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**WordprocessingDocument.Open**** method and
+The following code starts by opening the document, using the [WordprocessingDocument.Open](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and
 indicating that the document should be open for read/write access (the
 final **true** parameter value). Next the code
 retrieves a reference to the root element of the main document part,
-using the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.Document">**Document**** property of the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart**** of the word processing
+using the [Document](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.maindocumentpart.document.aspx) property of the [MainDocumentPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) of the word processing
 document.
 
 ```csharp
@@ -123,17 +119,9 @@ document.
 -----------------------------------------------------------------------------
 ## Creating the Table Object and Setting Its Properties 
 
-Before you can insert a table into a document, you must create the <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Wordprocessing.Table">**Table**** object and set its properties. To set
-a table's properties, you create and supply values for a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableProperties">**TableProperties**** object. The **TableProperties** class provides many
-table-oriented properties, like <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.TableProperties.Shading">**Shading****, <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.TableProperties.TableBorders">**TableBorders****, <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.TableProperties.TableCaption">**TableCaption****, <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.TableProperties.TableCellSpacing">**TableCellSpacing****, <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.TableProperties.TableJustification">**TableJustification****, and more. The sample
+Before you can insert a table into a document, you must create the [Table](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.table.aspx) object and set its properties. To set
+a table's properties, you create and supply values for a [TableProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tableproperties.aspx) object. The **TableProperties** class provides many
+table-oriented properties, like [Shading](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tableproperties.shading.aspx), [TableBorders](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tableproperties.tableborders.aspx), [TableCaption](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tableproperties.tablecaption.aspx), [TableCellSpacing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tableproperties.tablecellspacing.aspx), [TableJustification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tableproperties.tablejustification.aspx), and more. The sample
 method includes the following code.
 
 ```csharp
@@ -204,29 +192,18 @@ method includes the following code.
 The constructor for the **TableProperties**
 class allows you to specify as many child elements as you like (much
 like the <span sdata="cer"
-target="M:System.Xml.Linq.XElement.#ctor(System.Xml.Linq.XName,System.Object[])">[XElement](http://msdn2.microsoft.com/EN-US/library/bb358354)**
-constructor). In this case, the code creates <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TopBorder">**TopBorder****, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.BottomBorder">**BottomBorder****, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.LeftBorder">**LeftBorder****, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.RightBorder">**RightBorder****, <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder">**InsideHorizontalBorder****, and <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder">**InsideVerticalBorder**** child elements, each
+target="M:System.Xml.Linq.XElement.#ctor(System.Xml.Linq.XName,System.Object[])">[XElement](http://msdn2.microsoft.com/EN-US/library/bb358354)
+constructor). In this case, the code creates [TopBorder](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.topborder.aspx), [BottomBorder](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.bottomborder.aspx), [LeftBorder](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.leftborder.aspx), [RightBorder](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.rightborder.aspx), [InsideHorizontalBorder](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.insidehorizontalborder.aspx), and [InsideVerticalBorder](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.insideverticalborder.aspx) child elements, each
 describing one of the border elements for the table. For each element,
 the code sets the **Val** and **Size** properties as part of calling the
 constructor. Setting the size is simple, but setting the **Val** property requires a bit more effort: this
 property, for this particular object, represents the border style, and
 you must set it to an enumerated value. To do that, you create an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.EnumValue`1">**EnumValue\<T\>**** generic type, passing the
-specific border type (<span sdata="cer"
-target="F:DocumentFormat.OpenXml.Wordprocessing.BorderValues.Single">**Single****) as a parameter to the constructor.
+instance of the [EnumValue\<T\>](https://msdn.microsoft.com/en-us/library/office/cc801792.aspx) generic type, passing the
+specific border type ([Single](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.bordervalues.aspx)) as a parameter to the constructor.
 Once the code has set all the table border value it needs to set, it
-calls the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.OpenXmlElement.AppendChild``1(``0)">**AppendChild\<T\>**** method of the table,
-indicating that the generic type is <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableProperties">**TableProperties****—that is, it is appending an
+calls the [AppendChild\<T\>](https://msdn.microsoft.com/en-us/library/office/cc846487.aspx) method of the table,
+indicating that the generic type is [TableProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tableproperties.aspx)—that is, it is appending an
 instance of the **TableProperties** class,
 using the variable **props** as the value.
 
@@ -236,9 +213,7 @@ using the variable **props** as the value.
 
 Given that table and its properties, now it is time to fill the table
 with data. The sample procedure iterates first through all the rows of
-data in the array of strings that you specified, creating a new <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableRow">**TableRow**** instance for each row of data. The
+data in the array of strings that you specified, creating a new [TableRow](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tablerow.aspx) instance for each row of data. The
 following code leaves out the details of filling in the row with data,
 but it shows how you create and append the row to the table:
 
@@ -260,9 +235,7 @@ but it shows how you create and append the row to the table:
 ```
 
 For each row, the code iterates through all the columns in the array of
-strings you specified. For each column, the code creates a new <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableCell">**TableCell**** object, fills it with data, and
+strings you specified. For each column, the code creates a new [TableCell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tablecell.aspx) object, fills it with data, and
 appends it to the row. The following code leaves out the details of
 filling each cell with data, but it shows how you create and append the
 column to the table:
@@ -286,31 +259,16 @@ column to the table:
 
 Next, the code does the following:
 
--   Creates a new <span sdata="cer"
-    target="T:DocumentFormat.OpenXml.Wordprocessing.Text"><span
-    class="nolink">Text**** object that contains a value from
+-   Creates a new [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) object that contains a value from
     the array of strings.
 
--   Passes the <span sdata="cer"
-    target="T:DocumentFormat.OpenXml.Wordprocessing.Text"><span
-    class="nolink">Text**** object to the constructor for a
-    new <span sdata="cer"
-    target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
-    class="nolink">Run**** object.
+-   Passes the [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) object to the constructor for a
+    new [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) object.
 
--   Passes the <span sdata="cer"
-    target="T:DocumentFormat.OpenXml.Wordprocessing.Run"><span
-    class="nolink">Run**** object to the constructor for a new
-    <span sdata="cer"
-    target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph"><span
-    class="nolink">Paragraph**** object.
+-   Passes the [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) object to the constructor for a new
+    [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) object.
 
--   Passes the <span sdata="cer"
-    target="T:DocumentFormat.OpenXml.Wordprocessing.Paragraph"><span
-    class="nolink">Paragraph**** object to the <span
-    sdata="cer"
-    target="M:DocumentFormat.OpenXml.OpenXmlElement.Append(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})"><span
-    class="nolink">Append**** method of the cell.
+-   Passes the [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) object to the [Append](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.openxmlelement.append.aspx)method of the cell.
 
 In other words, the following code appends the text to the new **TableCell** object.
 
@@ -322,16 +280,11 @@ In other words, the following code appends the text to the new **TableCell** obj
     tc.Append(New Paragraph(New Run(New Text(data(i, j)))))
 ```
 
-The code then appends a new <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableCellProperties">**TableCellProperties**** object to the cell.
+The code then appends a new [TableCellProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tablecellproperties.aspx) object to the cell.
 This **TableCellProperties** object, like the
 **TableProperties** object you already saw, can
 accept as many objects in its constructor as you care to supply. In this
-case, the code passes only a new <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.TableCellWidth">**TableCellWidth**** object, with its <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Wordprocessing.TableWidthType.Type">**Type**** property set to <span sdata="cer"
-target="F:DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues.Auto">**Auto**** (so that the table automatically sizes
+case, the code passes only a new [TableCellWidth](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tablecellwidth.aspx) object, with its [Type](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tablewidthtype.type.aspx) property set to [Auto](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.tablewidthunitvalues.aspx) (so that the table automatically sizes
 the width of each column).
 
 ```csharp
