@@ -15,8 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with comments (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Comment">**Comment**** class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office [Comment](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a PresentationML
@@ -64,16 +63,16 @@ correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-\<extLst\>|ExtensionListWithModification
-\<pos\>|Position
-\<text\>|Text
+\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
+\<pos\>|[Position](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.position.aspx)
+\<text\>|[Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.text.aspx)
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<cm\> element.
 
 **Attributes**|**Description**
 ---|---
-authorId|This attribute specifies the author of the comment.It refers to the ID of an author in the comment author list for the document.<br/>The possible values for this attribute are defined by the W3C XML Schema unsignedInt datatype.
+authorId|This attribute specifies the author of the comment.It refers to the ID of an author in the comment author list for the document.<br/>The possible values for this attribute are defined by the W3C XML Schema **unsignedInt** datatype.
 dt|This attribute specifies the date and time this comment was last modified.<br/>The possible values for this attribute are defined by the W3C XML Schema **datetime** datatype.
 idx|This attribute specifies an identifier for this comment that is unique within a list of all comments by this author in this document. An author's first comment in a document has index 1.<br/>[Note: Because the index is unique only for the comment author, a document can contain multiple comments with the same index created by different authors. end note]<br/>The possible values for this attribute are defined by the ST_Index simple type (§19.7.3).
 
@@ -167,22 +166,17 @@ their visual appearance.
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **Comment** class is associated with an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideCommentsPart">**SlideCommentsPart**** class, which represents a
+instance of the [SlideCommentsPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidecommentspart.aspx) class, which represents a
 slide comments part, one of the parts of a PresentationML presentation
 file package, and a part that is required for each slide in a
 presentation file that contains comments. Each **Comment** class instance is also associated with an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.CommentAuthor">**CommentAuthor**** class, which is in turn
+instance of the [CommentAuthor](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentauthor.aspx) class, which is in turn
 associated with a similarly named presentation part, represented by the
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.CommentAuthorsPart">**CommentAuthorsPart**** class. Comment authors
+[CommentAuthorsPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.commentauthorspart.aspx) class. Comment authors
 for a presentation are specified in a comment author list, represented
-by the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.CommentAuthorList">**CommentAuthorList**** class, while comments for
+by the [CommentAuthorList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentauthorlist.aspx) class, while comments for
 each slide are listed in a comments list for that slide, represented by
-the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.CommentList">**CommentList**** class.
+the [CommentList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentlist.aspx) class.
 
 The **Comment** class, which represents the
 \<cm\> element, is therefore also associated with other classes that
@@ -196,7 +190,7 @@ the comment.
 ## Open XML SDK Code Example 
 The following code segment from the article <span sdata="link">[How to:
 Add a comment to a slide in a presentation (Open XML
-SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)** adds a new
+SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md) adds a new
 comments part to an existing slide in a presentation (if the slide does
 not already contain comments) and creates an instance of an Open XML SDK
 2.0 **Comment** class in the slide comments
@@ -299,7 +293,7 @@ article.
 ## Generated PresentationML 
 When the Open XML SDK 2.5 code in <span sdata="link">[How to: Add a
 comment to a slide in a presentation (Open XML
-SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)** is run, including
+SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md) is run, including
 the segment shown in this article, the following XML is written to a new
 CommentAuthors.xml part in the existing PresentationML document
 referenced in the code, assuming that the document contained no comments
