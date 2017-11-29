@@ -15,8 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with the shared string table (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable">**SharedStringTable**** class and how it relates
+This topic discusses the Open XML SDK 2.5 [SharedStringTable](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
@@ -73,8 +72,8 @@ working with the **SharedStringTable** class.
 
 **SpreadsheetML Element**|**Open XML SDK 2.5 Class**
 ---|---
-si|SharedStringItem
-t|Text
+si|[SharedStringItem](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx)
+t|[Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.text.aspx)
 
 
 --------------------------------------------------------------------------------
