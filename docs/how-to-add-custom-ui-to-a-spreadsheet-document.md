@@ -94,7 +94,7 @@ button's Click action to call.
 2.  Press Alt+F11 to open the Visual Basic Editor.
 
 3.  On the **Insert** tab, click <span
-    class="ui">Module** to create a new module.
+    class="ui">**Module** to create a new module.
 
 4.  Add code such as the following to the new module.
 
@@ -113,12 +113,12 @@ button's Click action to call.
 The **AddCustomUI** method accepts two
 parameters:
 
--   **filename**—A
+-   *filename*—A
     string that contains a file name that specifies the workbook to
     modify.
 
 -   <span class="parameter"
-    sdata="paramReference">customUIContent**—A string that contains
+    sdata="paramReference">*customUIContent*—A string that contains
     the custom content (that is, the XML markup that describes the
     customization).
 
@@ -200,10 +200,8 @@ the new part.
 -----------------------------------------------------------------------------
 ## Add the Customization 
 Given a reference to the ribbon extensibility part, the following code
-finishes by setting the part's <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.CustomUiPart.CustomUI">**CustomUI****
-property to a new <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Office.CustomUI.CustomUI">**CustomUI**** object that contains the supplied
+finishes by setting the part's **CustomUI**
+property to a new [CustomUI](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.office.customui.customui.aspx) object that contains the supplied
 customization. Once the customization is in place, the code saves the
 custom UI.
 
