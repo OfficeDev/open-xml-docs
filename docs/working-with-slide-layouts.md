@@ -15,8 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with slide layouts (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.SlideLayout">**SlideLayout**** class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office [SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -45,12 +44,12 @@ classes that correspond to them.
 
 **PresentationML Element**|**Open XML SDK 2.5 Class**
 ---|---
-\<clrMapOvr\>|ColorMapOverride
-\<cSld\>|CommonSlideData
-\<extLst\>|ExtensionListWithModification
-\<hf\>|HeaderFooter
-\<timing\>|Timing
-\<transition\>|Transition
+\<clrMapOvr\>|[ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)
+\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
+\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
+\<hf\>|[HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)
+\<timing\>|[Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)
+\<transition\>|[Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<sldLayout\> element.
@@ -177,46 +176,33 @@ transition is complete.
 ## Working with the SlideLayout Class 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **SlideLayout** class is associated with an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideLayoutPart">**SlideLayoutPart**** class, which represents a
+instance of the [SlideLayoutPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidelayoutpart.aspx) class, which represents a
 slide layout part, one of the required parts of a PresentationML
 presentation file package. Each **SlideLayout**
-class instance must also be associated with instances of the <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.SlideMaster">**SlideMaster**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Slide">**Slide**** classes, which are in turn associated
+class instance must also be associated with instances of the [SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx) and [Slide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.aspx) classes, which are in turn associated
 with similarly named required presentation parts, represented by the
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlideMasterPart">**SlideMasterPart**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SlidePart">**SlidePart****classes.
+[SlideMasterPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidemasterpart.aspx) and [SlidePart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidepart.aspx)classes.
 
 The **SlideLayout** class, which represents the
 \<sldLayout\> element, is therefore also associated with a series of
 other classes that represent the child elements of the \<sldLayout\>
 element. Among these classes, as shown in the following code sample, are
-the **CommonSlideData** class, the **ColorMapOverride** class, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
+the **CommonSlideData** class, the **ColorMapOverride** class, the [ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx) class, and the [Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example 
-The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** adds a new slide
+The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide
 layout part to an existing presentation and creates an instance of an
 Open XML SDK 2.5**SlideLayout** class in the
 new slide layout part. The **SlideLayout**
 class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.ShapeTree">**ShapeTree**** class, whose constructor in turn
-creates additional class instances: an instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties">**NonVisualGroupShapeProperties**** class, an
-instance of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties">**GroupShapeProperties**** class, and an instance
-of the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Presentation.Shape">**Shape**** class.
+instance of the [ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn
+creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
+instance of the [GroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
+of the [Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
-The namespace represented by the letter *P* in the code is the <span
-sdata="cer" target="N:DocumentFormat.OpenXml.Presentation">**DocumentFormat.OpenXml.Presentation****
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)
 namespace.
 
 ```csharp
