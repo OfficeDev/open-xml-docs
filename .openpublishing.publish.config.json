@@ -8,6 +8,11 @@
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
+      "customized_tasks": {
+       "docset_prebuild": [
+         "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
+       ]
+      },
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -26,17 +31,12 @@
        "version": "latest"
     }
   ],
-  "customized_tasks": {
-   "docset_prebuild": [
-     "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
-   ]
-  },
   "JoinTOCPlugin": [
    {
      "ConceptualTOC": "docs/toc.yml",
      "ReferenceTOCUrl": "/dotnet/api/open-xml-docs-ref-dotnet/toc.json"
    }
- ],
+  ],
   "notification_subscribers": [],
   "branches_to_filter": [],
   "skip_source_output_uploading": false,
