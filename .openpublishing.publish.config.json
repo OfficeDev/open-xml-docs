@@ -34,7 +34,7 @@
   "JoinTOCPlugin": [
    {
      "ConceptualTOC": "docs/toc.yml",
-     "ReferenceTOCUrl": "/dotnet/api/open-xml-docs-ref-dotnet/_splitted/DocumentFormat.OpenXml.AdditionalCharacteristics/toc.json"
+     "ReferenceTOCUrl": "/dotnet/api/open-xml-docs-ref-dotnet/toc.json"
    }
  ],
   "notification_subscribers": [],
