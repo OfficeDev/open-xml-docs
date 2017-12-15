@@ -1,4 +1,4 @@
-﻿---
+---
 ms.prod: OPENXML
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
