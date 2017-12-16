@@ -33,7 +33,7 @@
   ],
   "JoinTOCPlugin": [
    {
-     "ConceptualTOC": "open-xml-docs/toc.yml",
+     "ConceptualTOC": "docs/toc.md",
      "ReferenceTOCUrl": "/dotnet/api/open-xml-docs-ref-dotnet/toc.json"
    }
   ],
