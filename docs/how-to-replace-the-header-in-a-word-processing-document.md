@@ -62,7 +62,7 @@ the **id** attribute, which specifies an explicit relationship to the
 appropriate Header part in the WordprocessingML package.
 
 If the relationship type of the relationship specified by this element
-is not **http://schemas.openxmlformats.org/officeDocument/2006/header**,
+is not `http://schemas.openxmlformats.org/officeDocument/2006/header`,
 is not present, or does not have a **TargetMode** attribute value of
 **Internal**, then the document shall be
 considered non-conformant.
