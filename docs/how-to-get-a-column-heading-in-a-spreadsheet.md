@@ -76,7 +76,7 @@ object that is created or named in the **using** statement, in this case **mySpr
 ## Basic Structure of a SpreadsheetML Document
 
 The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
-worksheets in the [Workbook](https://msdn.microsoft.comlibrary/office/documentformat.openxml.spreadsheet.workbook.aspx). A separate XML file is created
+worksheets in the [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx). A separate XML file is created
 for each [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). For example, the **SpreadsheetML** for a workbook that has two
 worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
 file and is shown in the following code example.
