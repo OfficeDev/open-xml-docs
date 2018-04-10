@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: c9b2ce55-548c-4443-8d2e-08fe1f06b7d7
-title: 'How to: Add a new document part that receives a relationship ID to a package (Open XML SDK)'
+title: 'How to: Add a new document part that receives a relationship ID to a package'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ---
 
-# How to: Add a new document part that receives a relationship ID to a package (Open XML SDK)
+# How to: Add a new document part that receives a relationship ID to a package
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to add a document part (file) that receives a relationship **Id** parameter for a word
