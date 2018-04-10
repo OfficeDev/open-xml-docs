@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 41c001da-204e-4669-a722-76c9f7928281
-title: 'How to: Calculate the sum of a range of cells in a spreadsheet document (Open XML SDK)'
+title: 'How to: Calculate the sum of a range of cells in a spreadsheet document'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ---
 
-# How to: Calculate the sum of a range of cells in a spreadsheet document (Open XML SDK)
+# How to: Calculate the sum of a range of cells in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to calculate the sum of a contiguous range of cells in a
