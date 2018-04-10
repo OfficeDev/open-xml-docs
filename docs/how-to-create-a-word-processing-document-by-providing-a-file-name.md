@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 1771fc05-dd94-40e3-a788-6a13809d64f3
-title: 'How to: Create a word processing document by providing a file name (Open XML SDK)'
+title: 'Create a word processing document by providing a file name'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -13,7 +13,7 @@ author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
 ---
-# How to: Create a word processing document by providing a file name (Open XML SDK)
+# Create a word processing document by providing a file name
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically create a word processing document.
