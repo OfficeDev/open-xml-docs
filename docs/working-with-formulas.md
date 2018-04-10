@@ -55,24 +55,16 @@ based upon zero-to-many inputs.
 A formula is an expression that can contain the following: constants,
 operators, cell references, calls to functions, and names.
 
-\[**Example**: Consider the formula PI()\*(A2^2). In this case,
-
-    PI() results in a call to the function PI, which returns the value
+**Example**: Consider the formula PI()\*(A2^2). In this case,
+- PI() results in a call to the function PI, which returns the value
 of π.
-
-    The cell reference A2 returns the value in that cell.
-
-    2 is a numeric constant.
-
-    The caret (^) operator raises its left operand to the power of its
+- The cell reference A2 returns the value in that cell.
+- 2 is a numeric constant.
+- The caret (^) operator raises its left operand to the power of its
 right operand.
-
-    The parentheses, ( and ), are used for grouping.
-
-    The asterisk (\*) operator performs multiplication of its two
+- The parentheses, ( and ), are used for grouping.
+- The asterisk (\*) operator performs multiplication of its two
 operands.
-
-end example\]
 
 An operator is a symbol that specifies the type of operation to perform
 on one or more operands. There are arithmetic, comparison, text, and
@@ -84,13 +76,10 @@ designates the location of that cell.
 
 A cell reference designates one or more cells on the same worksheet.
 Using references, one can:
-
-    Use data contained in different parts of the same worksheet in a
+- Use data contained in different parts of the same worksheet in a
 single formula.
-
-    Use the value from a single cell in several formulas.
-
-    Refer to cells on other sheets in the same workbook, and even to
+- Use the value from a single cell in several formulas.
+- Refer to cells on other sheets in the same workbook, and even to
 other workbooks. (References to cells in other workbooks are called
 links.)
 
