@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 7dbfd93c-a9e3-4465-9b57-4a043b07b807
-title: 'How to: Copy the contents of an Open XML package part to a document part in a different package (Open XML SDK)'
+title: 'Copy contents of an Open XML package part to a document part in a different package'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ---
 
-# How to: Copy the contents of an Open XML package part to a document part in a different package (Open XML SDK)
+# Copy contents of an Open XML package part to a document part in a different package
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to copy the contents of an Open XML Wordprocessing document part
