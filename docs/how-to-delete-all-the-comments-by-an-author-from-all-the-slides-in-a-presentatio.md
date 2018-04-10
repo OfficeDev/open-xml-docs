@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 3b892a6a-2972-461e-94a9-0a1ede854bda
-title: 'How to: Delete all the comments by an author from all the slides in a presentation (Open XML SDK)'
+title: 'Delete all the comments by an author from all the slides in a presentation'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -13,7 +13,7 @@ author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
 ---
-# How to: Delete all the comments by an author from all the slides in a presentation (Open XML SDK)
+# Delete all the comments by an author from all the slides in a presentation
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to delete all of the comments by a specific author in a
