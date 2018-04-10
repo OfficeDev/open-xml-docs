@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 8d465a77-6c1b-453a-8375-ecf80d2f1bdc
-title: 'How to: Apply a style to a paragraph in a word processing document (Open XML SDK)'
+title: 'How to: Apply a style to a paragraph in a word processing document'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ---
 
-# How to: Apply a style to a paragraph in a word processing document (Open XML SDK)
+# How to: Apply a style to a paragraph in a word processing document
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically apply a style to a paragraph within a word processing document. It contains an example **ApplyStyleToParagraph** method to illustrate this task, plus several supplemental example methods to check whether a style exists, add a new style, and add the styles part.
 
