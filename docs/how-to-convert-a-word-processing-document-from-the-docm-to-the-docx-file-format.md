@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 80cdc1e8-d023-4886-b8d6-ee26327df739
-title: 'How to: Convert a word processing document from the DOCM to the DOCX file format (Open XML SDK)'
+title: 'How to: Convert a word processing document from the DOCM to the DOCX file format'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ---
 
-# How to: Convert a word processing document from the DOCM to the DOCX file format (Open XML SDK)
+# How to: Convert a word processing document from the DOCM to the DOCX file format
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically convert a Microsoft Word 2010 or Microsoft
