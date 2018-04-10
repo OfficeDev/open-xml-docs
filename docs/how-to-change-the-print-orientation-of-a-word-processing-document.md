@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: bb5319c8-ee99-4862-937b-94dcae8deaca
-title: 'How to: Change the print orientation of a word processing document (Open XML SDK)'
+title: 'How to: Change the print orientation of a word processing document'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ---
 
-# How to: Change the print orientation of a word processing document (Open XML SDK)
+# How to: Change the print orientation of a word processing document
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically set the print orientation of a Microsoft Word
