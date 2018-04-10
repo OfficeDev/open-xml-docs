@@ -180,12 +180,13 @@ program, the text in the cell at the specified location will be replaced
 by the text that you pass in as the second argument to the **ChangeTextInCell** method. In the following table
 the text "The text from the API example" was used.
 
-|  |  |  |
-|---|---|---|
-| Some text | Some text | Some text |
-| Some text | Some text | The text from the API example |
-
-
+<table style="border: 1px solid black;">
+<tr>
+<td style="border: 1px solid black;">Some text</td><td style="border: 1px solid black;">Some text</td><td style="border: 1px solid black;">Some text</td>
+</tr><tr>
+<td>Some text</td><td>Some text</td><td>The text from the API example</td>
+</tr>
+</table>
 
 ## Sample Code
 
