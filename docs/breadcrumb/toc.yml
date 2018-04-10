@@ -1,7 +1,3 @@
 - name: Office
   tocHref: /office/
   topicHref: /office/index
-  items:
-  - name: Open XML
-    tocHref: /office/open-xml/
-    topicHref: /office/open-xml/open-xml-sdk-2-5
