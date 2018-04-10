@@ -65,7 +65,7 @@
         - name: Working with runs
           href: working-with-runs.md
         - name: Working with tables
-          href: working-with-tables.md
+          href: working-with-wordprocessingml-tables.md
     - name: How do I...
       href: how-do-i.md
       items:
