@@ -64,7 +64,7 @@
           href: working-with-paragraphs.md
         - name: Working with runs
           href: working-with-runs.md
-        - name: Working with tables
+        - name: Working with WordprocessingML tables
           href: working-with-wordprocessingml-tables.md
     - name: How do I...
       href: how-do-i.md
