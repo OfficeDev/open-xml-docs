@@ -35,4 +35,4 @@ documents.
 
 [Working with sheets (Open XML SDK)](working-with-sheets.md)  
 
-[Working with SpreadsheetML tables (Open XML SDK)](working-with-tables-1.md)  
+[Working with SpreadsheetML tables (Open XML SDK)](working-with-tables.md)  
