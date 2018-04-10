@@ -55,7 +55,7 @@ based upon zero-to-many inputs.
 A formula is an expression that can contain the following: constants,
 operators, cell references, calls to functions, and names.
 
-[**Example**: Consider the formula PI()\*(A2^2). In this case,
+\[**Example**: Consider the formula PI()\*(A2^2). In this case,
 
     PI() results in a call to the function PI, which returns the value
 of π.
@@ -72,7 +72,7 @@ right operand.
     The asterisk (\*) operator performs multiplication of its two
 operands.
 
-end example]
+end example\]
 
 An operator is a symbol that specifies the type of operation to perform
 on one or more operands. There are arithmetic, comparison, text, and
