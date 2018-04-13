@@ -20,7 +20,8 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.jpg",
+          "**/*.gif"
         ],
         "exclude": [
           "**/obj/**",
@@ -32,7 +33,14 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/office/open-xml/breadcrumb/toc.json",
-      "extendBreadcrumb": true
+      "extendBreadcrumb": true,
+      "uhfHeaderId": "MSDocsHeader-Dev_Office",
+      "ms.suite": "office365",
+      "ms.author": "o365devx",
+      "author": "o365devx",
+      "ms.topic": "conceptual",
+      "ms.prod": "office",
+      "ms.technology": "open-xml"
     },
     "fileMetadata": {},
     "template": [],

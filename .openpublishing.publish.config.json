@@ -8,6 +8,11 @@
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
+      "customized_tasks": {
+       "docset_prebuild": [
+         "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
+       ]
+      },
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -15,6 +20,21 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
+    }
+  ],
+  "JoinTOCPlugin": [
+   {
+     "ConceptualTOC": "docs/toc.yml",
+     "ReferenceTOCUrl": "/dotnet/api/open-xml-docs-ref-dotnet/toc.json"
+   }
+  ],
+  "dependent_packages" :[
+    {
+       "id": "Microsoft.OpenPublishing.CommonPlugins",
+       "nuget_feed": "https://www.myget.org/F/op/api/v2",
+       "path_to_root": "_dependentPackages/CommonPlugins",
+       "target_framework": "net45",
+       "version": "latest"
     }
   ],
   "notification_subscribers": [],
