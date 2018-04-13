@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 620e86b5-49f2-43dc-85d4-9c7456c09552
-title: About the Open XML SDK 2.5 for Office
+title: About the Open XML SDK for Office
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ---
 
-# About the Open XML SDK 2.5 for Office
+# About the Open XML SDK for Office
 
 Open XML is an open standard for word-processing documents, presentations, and spreadsheets that can be freely implemented by multiple applications on different platforms. Open XML is designed to faithfully represent existing word-processing documents, presentations, and spreadsheets that are encoded in binary formats defined by Microsoft Office applications. The reason for Open XML is simple: billions of documents now exist but, unfortunately, the information in those documents is tightly coupled with the programs that created them. The purpose of the Open XML standard is to de-couple documents created by Microsoft Office applications so that they can be manipulated by other applications independent of proprietary formats and without the loss of data.
 
@@ -94,17 +94,17 @@ The SDK supports the following common tasks/scenarios:
 -   **Validation**—The Open XML SDK 2.0 for Microsoft Office provides validation functionality, enabling you to validate Open XML documents against different variations of the Open XML Format.
 
 
-## Open XML SDK 2.5 for Office
+## Open XML SDK for Office
 
-The Open XML SDK 2.5 provides the namespaces and members to support the Microsoft Office 2013. The Open XML SDK 2.5 can also read ISO/IEC 29500 Strict Format files. The Strict format is a subset of the Transitional format that does not include legacy features - this makes it theoretically easier for a new implementer to support since it has a smaller technical footprint.
+The Open XML SDK provides the namespaces and members to support the Microsoft Office 2013. The Open XML SDK  can also read ISO/IEC 29500 Strict Format files. The Strict format is a subset of the Transitional format that does not include legacy features - this makes it theoretically easier for a new implementer to support since it has a smaller technical footprint.
 
 The SDK supports the following common tasks/scenarios:
 
--   **Support of Office 2013 Preview file format**—In addition to the Open XML SDK 2.0 for Microsoft Office classes, Open XML SDK 2.5 provides new classes that enable you to write and build applications to manipulate Open XML file extensions of the new Office 2013 features.
+-   **Support of Office 2013 Preview file format**—In addition to the Open XML SDK 2.0 for Microsoft Office classes, Open XML SDK provides new classes that enable you to write and build applications to manipulate Open XML file extensions of the new Office 2013 features.
 
--   **Reads ISO Strict Document File**—Open XML SDK 2.5 can read ISO/IEC 29500 Strict Format files. When the Open XML SDK 2.5 API opens a Strict Format file, each Open XML part in the file is loaded to an **OpenXmlPart**  class of the Open XML SDK 2.5 by mapping `http://purl.oclc.org/ooxml/` namespaces to the corresponding `http://schemas.openxmlformats.org/` namespaces.
+-   **Reads ISO Strict Document File**—Open XML SDK can read ISO/IEC 29500 Strict Format files. When the Open XML SDK API opens a Strict Format file, each Open XML part in the file is loaded to an **OpenXmlPart**  class of the Open XML SDK by mapping `http://purl.oclc.org/ooxml/` namespaces to the corresponding `http://schemas.openxmlformats.org/` namespaces.
 
--   **Fixes to the Open XML SDK 2.0 for Microsoft Office**—Open XML SDK 2.5 includes fixes to known issues in the Open XML SDK 2.0 for Microsoft Office. These include lost whitespaces in PowerPoint presentations and an issue with the Custom UI in Word documents where a specified argument was reported as being out of the range of valid values.
+-   **Fixes to the Open XML SDK 2.0 for Microsoft Office**—Open XML SDK includes fixes to known issues in the Open XML SDK 2.0 for Microsoft Office. These include lost whitespaces in PowerPoint presentations and an issue with the Custom UI in Word documents where a specified argument was reported as being out of the range of valid values.
 
-You can find more information about these and other new features of the Open XML SDK 2.5 in the [What's new in the Open XML SDK 2.5 for Office](what-s-new-in-the-open-xml-sdk-2-5.md) article.
+You can find more information about these and other new features of the Open XML SDK in the [What's new in the Open XML SDK for Office](what-s-new-in-the-open-xml-sdk.md) article.
 
