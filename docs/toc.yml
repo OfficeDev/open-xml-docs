@@ -1,14 +1,14 @@
-- name: Open XML SDK 2.5
+- name: Open XML SDK
   href: open-xml-sdk.md
   items:
     - name: Getting started
       href: getting-started.md
       items:
-      - name: About the Open XML SDK 2.5
+      - name: About the Open XML SDK 
         href: about-the-open-xml-sdk.md
-      - name: What's new in the Open XML SDK 2.5
+      - name: What's new in the Open XML SDK 
         href: what-s-new-in-the-open-xml-sdk.md
-      - name: Open XML SDK 2.5 design considerations
+      - name: Open XML SDK  design considerations
         href: open-xml-sdk-design-considerations.md
     - name: Understanding the Open XML file formats
       href: understanding-the-open-xml-file-formats.md
