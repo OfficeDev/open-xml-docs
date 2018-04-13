@@ -106,5 +106,5 @@ The SDK supports the following common tasks/scenarios:
 
 -   **Fixes to the Open XML SDK 2.0 for Microsoft Office**—Open XML SDK 2.5 includes fixes to known issues in the Open XML SDK 2.0 for Microsoft Office. These include lost whitespaces in PowerPoint presentations and an issue with the Custom UI in Word documents where a specified argument was reported as being out of the range of valid values.
 
-You can find more information about these and other new features of the Open XML SDK 2.5 in the [What's new in the Open XML SDK 2.5 for Office](what-s-new-in-the-open-xml-sdk-2-5.md) article.
+You can find more information about these and other new features of the Open XML SDK 2.5 in the [What's new in the Open XML SDK 2.5 for Office](what-s-new-in-the-open-xml-sdk.md) article.
 
