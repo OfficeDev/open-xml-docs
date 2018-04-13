@@ -7,7 +7,7 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "customized_tasks": {
        "docset_prebuild": [
          "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
