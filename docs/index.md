@@ -1,3 +1,3 @@
 ---
-redirect_url: /office/dev/open-xml/open-xml-sdk-2-5/
+redirect_url: /office/open-xml/open-xml-sdk/
 ---
