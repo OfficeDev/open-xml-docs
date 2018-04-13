@@ -199,7 +199,7 @@ When this code is run, the following XML is written to the WordprocessingML docu
 
 ## See also
 
-- [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)
+- [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)
 - [Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.md)
 - [Working with paragraphs (Open XML SDK)](working-with-paragraphs.md)
 - [Working with runs (Open XML SDK)](working-with-runs.md)

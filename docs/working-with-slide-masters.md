@@ -408,7 +408,7 @@ PresentationML document referenced in the code.
 
 #### Concepts
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk-2-5.md)  
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
 
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
