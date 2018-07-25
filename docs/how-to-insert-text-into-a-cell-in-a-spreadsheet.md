@@ -405,7 +405,7 @@ object into a **Worksheet** object.
             Cell refCell = null;
             foreach (Cell cell in row.Elements<Cell>())
             {
-                if (cell.CellReference.Value.Length, == cellReference.Length)
+                if (cell.CellReference.Value.Length == cellReference.Length)
                 {
                   if (string.Compare(cell.CellReference.Value, cellReference, true) > 0)
                   {
