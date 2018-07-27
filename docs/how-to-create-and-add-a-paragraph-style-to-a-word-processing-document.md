@@ -233,7 +233,7 @@ applies the style to the paragraph.
 
 WordprocessingML supports six style types, four of which you can specify
 using the type attribute on the style element. The following
-information, from section 17.7.4.17 in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification,
+information, from section 17.7.4.17 in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification,
 introduces style types.
 
 *Style types* refers to the property on a style which defines the type
@@ -388,7 +388,7 @@ The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
 corresponding class, and then call the **[Append([])](https://msdn.microsoft.com/en-us/library/office/cc801361.aspx)** method add the child element to
 the style. For more information about these properties, see section 17.7
-of the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
+of the [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 specification.
 
 ```csharp

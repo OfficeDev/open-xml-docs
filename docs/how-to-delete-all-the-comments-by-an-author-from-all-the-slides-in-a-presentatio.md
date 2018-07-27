@@ -85,7 +85,7 @@ object that is created or named in the **using** statement, in this case *doc*.
 
 The basic document structure of a **PresentationML** document consists of the main part
 that contains the presentation definition. The following text from the
-[ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
+[ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 specification introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part
@@ -162,7 +162,7 @@ correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** ele
 
 ## The Structure of the Comment Element
 
-The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces comments in a presentation package.
 
 > A comment is a text note attached to a slide, with the primary purpose

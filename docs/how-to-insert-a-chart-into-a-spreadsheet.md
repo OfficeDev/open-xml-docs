@@ -143,7 +143,7 @@ the **workbook**, [Sheets](https://msdn.microsoft.com/library/office/documentfor
 | SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
 | workbook | DocumentFormat.OpenXml.Spreadsheet.Workbook | The root element for the main document part. |
-| sheets | DocumentFormat.OpenXml.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
+| sheets | DocumentFormat.OpenXml.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
 | sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
 | worksheet | DocumentFormat.OpenXml.Spreadsheet.Worksheet | A sheet definition file that contains the sheet data. |
 | sheetData | DocumentFormat.OpenXml.Spreadsheet.SheetData | The cell table, grouped together by rows. |
@@ -156,7 +156,7 @@ the **workbook**, [Sheets](https://msdn.microsoft.com/library/office/documentfor
 
 In this how-to, you are going to deal with the row, cell, and cell value
 elements. Therefore it is useful to familiarize yourself with these
-elements. The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+elements. The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces row (\<**row**\>) element.
 
 > The row element expresses information about an entire row of a
@@ -209,7 +209,7 @@ element.
 
 ## Cell Element
 
-The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces cell (\<**c**\>) element.
 
 > This collection represents a cell in the worksheet. Information about
@@ -252,7 +252,7 @@ element.
 
 ## Cell Value Element
 
-The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces Cell Value (\<**c**\>) element.
 
 > This element expresses the value contained in a cell. If the cell

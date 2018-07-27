@@ -77,7 +77,7 @@ Using the Open XML SDK 2.5, you can create document structure and content using 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
 | document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
-| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification. |
+| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
 | p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
 | r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
 | t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
@@ -86,7 +86,7 @@ Using the Open XML SDK 2.5, you can create document structure and content using 
 
 When you accept a revision mark, you change the properties of a paragraph either by deleting an existing text or inserting a new text. In the following sections, you read about three elements that are used in the code to change the paragraph contents, mainly, `<w: pPrChange\>` (Revision Information for Paragraph Properties), **`<w:del>`** (Deleted Paragraph), and **`<w:ins>`** (Inserted Table Row) elements.
 
-The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification introduces the **ParagraphPropertiesChange** element (**pPrChange**).
+The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification introduces the **ParagraphPropertiesChange** element (**pPrChange**).
 
 **pPrChange (Revision Information for Paragraph Properties)**
 
@@ -116,7 +116,7 @@ The element specifies that there was a revision to the paragraph properties at 0
 
 ## Deleted Element
 
-The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces the Deleted element (**del**).
 
 **del (Deleted Paragraph)**
@@ -157,7 +157,7 @@ and this deletion was tracked as a revision.
 
 ## The Inserted Element
 
-The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces the Inserted element (**ins**).
 
 **ins (Inserted Table Row)**
