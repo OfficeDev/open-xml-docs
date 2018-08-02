@@ -35,7 +35,7 @@ this topic.
 ## Packages and Document Parts
 
 An Open XML document is stored as a package, whose format is defined by
-[ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
+[ISO/IEC 29500-2](https://www.iso.org/standard/71691.html). The
 package can have multiple parts with relationships between them. The
 relationship between parts controls the category of the document. A
 document can be defined as a word-processing document if its
@@ -98,7 +98,7 @@ in your computer.
 The theme element constitutes of color, font, and format schemes. In
 this how-to you learn how to change the theme programmatically.
 Therefore, it is useful to familiarize yourself with the theme element.
-The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification can
+The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification can
 be useful when working with this element.
 
 This element defines the root level complex type associated with a

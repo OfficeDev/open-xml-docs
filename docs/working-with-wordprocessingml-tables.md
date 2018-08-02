@@ -19,7 +19,7 @@ This topic discusses the Open XML SDK 2.5 [Table](https://msdn.microsoft.com/en-
 
 ## Tables in WordprocessingML
 
-The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification introduces the Open XML WordprocessingML table element.
+The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification introduces the Open XML WordprocessingML table element.
 
 Another type of block-level content in WordprocessingML, A table is a set of paragraphs (and other block-level content) arranged in rows and columns.
 

@@ -35,7 +35,7 @@ this topic.
 --------------------------------------------------------------------------------
 ## Packages and Document Parts
 An Open XML document is stored as a package, whose format is defined by
-[ISO/IEC 29500-2](http://go.microsoft.com/fwlink/?LinkId=194337). The
+[ISO/IEC 29500-2](https://www.iso.org/standard/71691.html). The
 package can have multiple parts with relationships between them. The
 relationship between parts controls the category of the document. A
 document can be defined as a word-processing document if its
@@ -113,7 +113,7 @@ correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 WordprocessingML Element|Open XML SDK 2.5 Class|Description
 --|--|--
 document|[Document](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.document.aspx) |The root element for the main document part.
-body|[Body](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification.
+body|[Body](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
 | p | [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
 | r | [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
 | t | [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
@@ -122,7 +122,7 @@ body|[Body](https://msdn.microsoft.com/en-us/library/office/documentformat.openx
 --------------------------------------------------------------------------------
 ## Settings Element
 The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+29500](https://www.iso.org/standard/71691.html) specification
 introduces the settings element in a **PresentationML** package.
 
 > This element specifies the settings that are applied to a
