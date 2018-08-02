@@ -86,7 +86,7 @@ introduces the overall form of a **PresentationML** package.
 > represents the majority of content within a slide. Text and effects
 > are attached to shapes that are contained within the <span
 > class="keyword">spTree** element.
-
+> 
 > [*Example*: Consider the following <span
 > class="keyword">PresentationML** slide
 
@@ -111,7 +111,7 @@ introduces the overall form of a **PresentationML** package.
 
 > In the above example the shape tree specifies all the shape properties
 > for this slide. *end example*]
-
+> 
 > © ISO/IEC29500: 2008.
 
 The following table lists the child elements of the Shape Tree along

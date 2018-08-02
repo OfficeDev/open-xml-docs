@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with notes slides (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [NotesSlide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office [NotesSlide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -34,10 +34,10 @@ notes element.
 
 ```xml
 <p:notes>  
-    <p:cSld>  
-        …  
-    </p:cSld>  
-    …  
+    <p:cSld>  
+        …  
+    </p:cSld>  
+    …  
 </p:notes>
 ```
 
@@ -57,19 +57,21 @@ The following table lists the child elements of the \<notes\> element
 used when working with notes slides and the Open XML SDK 2.5 classes
 that correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<clrMapOvr\>|[ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)
-\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
-\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
+
+| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
+|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<notes\> element.
 
-**Attributes**|**Description**
----|---
-showMasterPhAnim (Show Master Placeholder Animations)|Specifies whether or not to display animations on placeholders from the master slide.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.
-showMasterSp (Show Master Shapes)|Specifies if shapes on the master slide should be shown on slides or not.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.
+
+|                    **Attributes**                     |                                                                                     **Description**                                                                                      |
+|-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| showMasterPhAnim (Show Master Placeholder Animations) | Specifies whether or not to display animations on placeholders from the master slide.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype. |
+|           showMasterSp (Show Master Shapes)           |       Specifies if shapes on the master slide should be shown on slides or not.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.       |
 
 © ISO/IEC29500: 2008.
 

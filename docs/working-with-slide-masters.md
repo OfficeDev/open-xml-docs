@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with slide masters (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office **[SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office **[SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -49,24 +49,25 @@ The following table lists the child elements of the \<sldMaster\>
 element used when working with slide masters and the Open XML SDK 2.5
 classes that correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<clrMap\>|[ColorMap](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormap.aspx)
-\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
-\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
-\<hf\>|[HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)
-\<sldLayoutIdLst\>|[SlideLayoutIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayoutidlist.aspx)
-\<timing\>|[Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)
-\<transition\>|[Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)
-\<txStyles\>|[TextStyles](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.textstyles.aspx)
+
+| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         \<clrMap\>         |                      [ColorMap](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormap.aspx)                      |
+|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
+|     \<sldLayoutIdLst\>     |             [SlideLayoutIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayoutidlist.aspx)             |
+|         \<timing\>         |                        [Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)                        |
+|       \<transition\>       |                    [Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)                    |
+|        \<txStyles\>        |                    [TextStyles](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.textstyles.aspx)                    |
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<sldMaster\> element.
 
-**Attributes**|**Description**
----|---
-preserve (Preserve Slide Master)|Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of **false** should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br/>The possible values for this attribute are defined by the W3C XML Schema **Boolean** data type.
 
+|          **Attributes**          |                                                                                                                                                                                                                     **Description**                                                                                                                                                                                                                     |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| preserve (Preserve Slide Master) | Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of **false** should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br/>The possible values for this attribute are defined by the W3C XML Schema **Boolean** data type. |
 
 © ISO/IEC29500: 2008.
 
@@ -211,22 +212,22 @@ text for a master slide.
 
 ```xml
 <p:txStyles>  
-    <p:titleStyle>
-        <a:lvl1pPr algn="ctr" rtl="0" latinLnBrk="0">  
-            <a:spcBef>  
-                <a:spcPct val="0"/>  
-            </a:spcBef>  
-            <a:buNone/>  
-            <a:defRPr sz="4400" kern="1200">  
-                <a:solidFill>vv  
-                    <a:schemeClr val="tx1"/>  
-                </a:solidFill\>  
-                <a:latin typeface="+mj-lt"/>  
-                <a:ea typeface="+mj-ea"/>  
-                <a:cs typeface="+mj-cs"/>  
-            </a:defRPr>  
-        </a:lvl1pPr>  
-    </p:titleStyle>  
+    <p:titleStyle>
+        <a:lvl1pPr algn="ctr" rtl="0" latinLnBrk="0">  
+            <a:spcBef>  
+                <a:spcPct val="0"/>  
+            </a:spcBef>  
+            <a:buNone/>  
+            <a:defRPr sz="4400" kern="1200">  
+                <a:solidFill>vv  
+                    <a:schemeClr val="tx1"/>  
+                </a:solidFill\>  
+                <a:latin typeface="+mj-lt"/>  
+                <a:ea typeface="+mj-ea"/>  
+                <a:cs typeface="+mj-cs"/>  
+            </a:defRPr>  
+        </a:lvl1pPr>  
+    </p:titleStyle>  
 </p:txStyles>
 ```
 

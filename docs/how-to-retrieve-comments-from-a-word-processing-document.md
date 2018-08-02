@@ -75,11 +75,11 @@ The following information from the [ISO/IEC
 introduces the comments element.
 
 > **comments (Comments Collection)**
-
+> 
 > This element specifies all of the comments defined in the current
 > document. It is the root element of the comments part of a
 > WordprocessingML document.
-
+> 
 > Consider the following WordprocessingML fragment for the content of a
 > comments part in a WordprocessingML document:
 
@@ -111,16 +111,16 @@ The following information from the [ISO/IEC
 introduces the comment element.
 
 > **comment (Comment Content)**
-
+> 
 > This element specifies the content of a single comment stored in the
 > comments part of a WordprocessingML document.
-
+> 
 > If a comment is not referenced by document content via a matching
 > **id** attribute on a valid use of the **commentReference** element,
 > then it may be ignored when loading the document. If more than one
 > comment shares the same value for the **id** attribute, then only one
 > comment shall be loaded and the others may be ignored.
-
+> 
 > Consider a document with text with an annotated comment as follows:
 
 ![Document text with annotated comment](./media/w-comment01.gif)
@@ -134,7 +134,7 @@ introduces the comment element.
 ```
 > The **comment** element specifies the presence of a single comment
 > within the comments part.
-
+> 
 > © ISO/IEC29500: 2008.
 
   

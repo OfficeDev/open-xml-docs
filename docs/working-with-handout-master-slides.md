@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with handout master slides (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [HandoutMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to
+This topic discusses the Open XML SDK 2.5 for Office [HandoutMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see <span sdata="link">[Structure of a
@@ -43,13 +43,13 @@ The following table lists the child elements of the \<handoutMaster\>
 element used when working with handout master slides and the Open XML
 SDK 2.5 classes that correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<clrMap\>|[ColorMap](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormap.aspx)
-\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
-\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
-\<hf\>|[HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)
 
+| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         \<clrMap\>         |                      [ColorMap](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormap.aspx)                      |
+|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 HandoutMaster Class
@@ -238,7 +238,6 @@ namespace.
             })
             Return handoutMasterPart1
         End Function
-
 ```
 ---------------------------------------------------------------------------------
 ## Generated PresentationML
@@ -295,7 +294,6 @@ the PresentationML document referenced in the code.
                 hlink="hlink"
                 folHlink="folHlink" />
     </p:handoutMaster>
-
 ```
 --------------------------------------------------------------------------------
 ## See also

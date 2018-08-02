@@ -39,18 +39,18 @@ size and default text styles.
 
 ```xml
 <p:presentation xmlns:a="" xmlns:r="" xmlns:p="">  
-    <p:sldMasterIdLst>  
-        <p:sldMasterId id="2147483648" r:id="rId1">  
-    </p:sldMasterIdLst>  
-    <p:sldIdLst>  
-        <p:sldId id="256" r:id="rId3"/>  
-        <p:sldId id="257" r:id="rId4"/>  
-    </p:sldIdLst>  
-    <p:sldSz cx="9144000" cy="6858000" type="screen4x3"/>  
-    <p:notesSz cx="6858000" cy="9144000"/>  
-    <p:defaultTextStyle>  
-        …  
-    </p:defaultTextStyle>  
+    <p:sldMasterIdLst>  
+        <p:sldMasterId id="2147483648" r:id="rId1">  
+    </p:sldMasterIdLst>  
+    <p:sldIdLst>  
+        <p:sldId id="256" r:id="rId3"/>  
+        <p:sldId id="257" r:id="rId4"/>  
+    </p:sldIdLst>  
+    <p:sldSz cx="9144000" cy="6858000" type="screen4x3"/>  
+    <p:notesSz cx="6858000" cy="9144000"/>  
+    <p:defaultTextStyle>  
+        …  
+    </p:defaultTextStyle>  
 </p:presentation>
 ```
 
@@ -71,19 +71,19 @@ The following table lists some of the most common child elements of the
 \<presentation\> element used when working with presentations and the
 Open XML SDK 2.5 classes that correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<sldMasterIdLst\>|[SlideMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemasteridlist.aspx)
-\<sldMasterId\>|[SlideMasterId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemasterid.aspx)
-\<sldIdLst\>|[SlideIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slideidlist.aspx)
-\<sldId\>|[SlideId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slideid.aspx)
-\<notesMasterIdLst\>|[NotesMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesmasteridlist.aspx)
-\<handoutMasterIdLst\>|[HandoutMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmasteridlist.aspx)
-\<custShowLst\>|[CustomShowList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.customshowlist.aspx)
-\<sldSz\>|[SlideSize](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidesize.aspx)
-\<notesSz\>|[NotesSize](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notessize.aspx)
-\<defaultTextStyle\>|[DefaultTextStyle](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.defaulttextstyle.aspx)
 
+| **PresentationML Element** |                                                     **Open XML SDK 2.5 Class**                                                      |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+|     \<sldMasterIdLst\>     |   [SlideMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemasteridlist.aspx)   |
+|      \<sldMasterId\>       |       [SlideMasterId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemasterid.aspx)       |
+|        \<sldIdLst\>        |         [SlideIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slideidlist.aspx)         |
+|         \<sldId\>          |             [SlideId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slideid.aspx)             |
+|    \<notesMasterIdLst\>    |   [NotesMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesmasteridlist.aspx)   |
+|   \<handoutMasterIdLst\>   | [HandoutMasterIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmasteridlist.aspx) |
+|      \<custShowLst\>       |      [CustomShowList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.customshowlist.aspx)      |
+|         \<sldSz\>          |           [SlideSize](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidesize.aspx)           |
+|        \<notesSz\>         |           [NotesSize](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notessize.aspx)           |
+|    \<defaultTextStyle\>    |    [DefaultTextStyle](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.defaulttextstyle.aspx)    |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 Presentation Class
@@ -130,11 +130,11 @@ a presentation
 ```xml
 <p:presentation xmlns:a="" xmlns:r="" xmlns:p=""
 embedTrueTypeFonts="1">  
-    …  
-    <p:sldMasterIdLst>  
-        <p:sldMasterId id="2147483648" r:id="rId1"/>  
-    </p:sldMasterIdLst>  
-    …  
+    …  
+    <p:sldMasterIdLst>  
+        <p:sldMasterId id="2147483648" r:id="rId1"/>  
+    </p:sldMasterIdLst>  
+    …  
 </p:presentation>
 ```
 
@@ -173,15 +173,15 @@ a presentation
 ```xml
 <p:presentation xmlns:a="" xmlns:r="" xmlns:p=""
 embedTrueTypeFonts="1">  
-    …  
-    <p:sldIdLst>  
-        <p:sldId id="256" r:id="rId3"/>  
-        <p:sldId id="257" r:id="rId4"/>  
-        <p:sldId id="258" r:id="rId5"/>  
-        <p:sldId id="259" r:id="rId6"/>  
-        <p:sldId id="260" r:id="rId7"/>  
-    </p:sldIdLst>  
-    ...  
+    …  
+    <p:sldIdLst>  
+        <p:sldId id="256" r:id="rId3"/>  
+        <p:sldId id="257" r:id="rId4"/>  
+        <p:sldId id="258" r:id="rId5"/>  
+        <p:sldId id="259" r:id="rId6"/>  
+        <p:sldId id="260" r:id="rId7"/>  
+    </p:sldIdLst>  
+    ...  
 </p:presentation>
 ```
 
@@ -251,9 +251,9 @@ presentation slide.
 ```xml
 <p:presentation xmlns:a="" xmlns:r="" xmlns:p=""
 embedTrueTypeFonts="1">  
-    …  
-    <p:sldSz cx="9144000" cy="6858000" type="screen4x3"/>  
-    …  
+    …  
+    <p:sldSz cx="9144000" cy="6858000" type="screen4x3"/>  
+    …  
 </p:presentation>  
 ```
 
@@ -281,9 +281,9 @@ slide.
 ```xml
 <p:presentation xmlns:a="" xmlns:r="" xmlns:p=""
 embedTrueTypeFonts="1">  
-    …  
-    <p:notesSz cx="9144000" cy="6858000"/>  
-    …  
+    …  
+    <p:notesSz cx="9144000" cy="6858000"/>  
+    …  
 </p:presentation>
 ```
 

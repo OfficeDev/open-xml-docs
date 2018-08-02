@@ -48,16 +48,16 @@ caps, strikethrough, text direction, and underline.
 The following table lists the most common Open XML SDK classes used when
 working with runs.
 
-**XML element**|**Open XML SDK 2.0 Class**
----|---
-**p**|Paragraph
-**rPr**|RunProperties
-**t**|Text
 
+| **XML element** | **Open XML SDK 2.0 Class** |
+|-----------------|----------------------------|
+|      **p**      |         Paragraph          |
+|     **rPr**     |       RunProperties        |
+|      **t**      |            Text            |
 
 ---------------------------------------------------------------------------------
 ## Run Class 
-The Open XML SDK 2.5**[Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx)** class represents the run (\<**r**\>) element defined in the Open XML File Format
+The Open XML SDK 2.5<strong>[Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx)</strong> class represents the run (\<**r**\>) element defined in the Open XML File Format
 schema for WordprocessingML documents as discussed above. Use a **Run** object to manipulate an individual \<**r**\> element in a WordprocessingML document.
 
 ### RunProperties Class

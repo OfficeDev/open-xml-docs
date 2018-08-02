@@ -126,7 +126,7 @@ These relationships are then referenced in the section's properties
 using the following WordprocessingML:
 
 <span codelanguage="other"> **
- 
+ 
 ```xml
     <w:sectPr>  
       …  

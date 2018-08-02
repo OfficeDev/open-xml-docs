@@ -95,12 +95,12 @@ The following table lists the common Open XML SDK 2.5 classes used when
 working with the **PivotTableDefinition**
 class.
 
-**SpreadsheetML Element**|**Open XML SDK 2.5 Class**
----|---
-pivotField|[PivotField](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotfield.aspx)
-pivotCacheDefinition|[PivotCacheDefinition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx)
-pivotCacheRecords|[PivotCacheRecords](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)
 
+| **SpreadsheetML Element** |                                                      **Open XML SDK 2.5 Class**                                                      |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+|        pivotField         |           [PivotField](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotfield.aspx)           |
+|   pivotCacheDefinition    | [PivotCacheDefinition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx) |
+|     pivotCacheRecords     |    [PivotCacheRecords](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)    |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 PivotTableDefinition Class 

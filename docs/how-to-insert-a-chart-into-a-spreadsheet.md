@@ -162,7 +162,7 @@ introduces row (\<**row**\>) element.
 > The row element expresses information about an entire row of a
 > worksheet, and contains all cell definitions for a particular row in
 > the worksheet.
-
+> 
 > This row expresses information about row 2 in the worksheet, and
 > contains 3 cell definitions.
 
@@ -215,7 +215,7 @@ introduces cell (\<**c**\>) element.
 > This collection represents a cell in the worksheet. Information about
 > the cell's location (reference), value, data type, formatting, and
 > formula is expressed here.
-
+> 
 > This example shows the information stored for a cell whose address in
 > the grid is C6, whose style index is 6, and whose value metadata index
 > is 15. The cell contains a formula as well as a calculated result of
@@ -261,11 +261,11 @@ introduces Cell Value (\<**c**\>) element.
 > the cell is expressed directly in this element. Cells containing
 > formulas express the last calculated result of the formula in this
 > element.
-
+> 
 > For applications not wanting to implement the shared string table, an
 > "inline string" may be expressed in an \<**is**\> element under \<**c**\> (instead of a \<**v**\> element under \<**c**\>), in the same way a string would be
 > expressed in the shared string table.
-
+> 
 > © ISO/IEC29500: 2008.
 
 In the following example cell B4 contains the number 360.

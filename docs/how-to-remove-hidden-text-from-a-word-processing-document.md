@@ -125,19 +125,19 @@ The following information from the [ISO/IEC 29500](http://go.microsoft.com/fwlin
 introduces the **vanish** element.
 
 > **vanish (Hidden Text)**
-
+> 
 > This element specifies whether the contents of this run shall be
 > hidden from display at display time in a document. [*Note*: The
 > setting should affect the normal display of text, but an application
 > can have settings to force hidden text to be displayed. *end note*]
-
+> 
 > This formatting property is a *toggle property* (§17.7.3).
-
+> 
 > If this element is not present, the default value is to leave the
 > formatting applied at previous level in the *style hierarchy* .If this
 > element is never applied in the style hierarchy, then this text shall
 > not be hidden when displayed in a document.
-
+> 
 > [*Example*: Consider a run of text which shall have the hidden text
 > property turned on for the contents of the run. This constraint is
 > specified using the following WordprocessingML:
@@ -151,7 +151,7 @@ introduces the **vanish** element.
 > This run declares that the **vanish** property is set for the contents
 > of this run, so the contents of this run will be hidden when the
 > document contents are displayed. *end example*]
-
+> 
 > © ISO/IEC29500: 2008.
 
 The following XML schema segment defines the contents of this element.

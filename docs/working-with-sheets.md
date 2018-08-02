@@ -68,7 +68,7 @@ The smallest possible (blank) sheet is as follows:
 
 ```xml
 <worksheet>
-    <sheetData/>
+    <sheetData/>
 </worksheet>
 ```
 
@@ -318,10 +318,10 @@ relationship in the Chartsheet part's relationship item:
 
 ```xml
 <chartsheet xmlns:r="…" …>
-    <sheetViews>
-        <sheetView scale="64"/>
-    </sheetViews\>
-    <drawing r:id="rId1">
+    <sheetViews>
+        <sheetView scale="64"/>
+    </sheetViews\>
+    <drawing r:id="rId1">
 </chartsheet>
 ```
 
@@ -367,14 +367,14 @@ Example: sheet1.xml contains the following:
 
 ```xml
 <dialogsheet xmlns:r="…" …>
-    <sheetPr>
-        <pageSetUpPr/>
-    </sheetPr>
-    <sheetViews>
-        …
-    </sheetViews>
-    …
-    <legacyDrawing r:id="rId1"/>
+    <sheetPr>
+        <pageSetUpPr/>
+    </sheetPr>
+    <sheetViews>
+        …
+    </sheetViews>
+    …
+    <legacyDrawing r:id="rId1"/>
 </dialogsheet>
 ```
 

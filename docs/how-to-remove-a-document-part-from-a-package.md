@@ -143,7 +143,7 @@ introduces the settings element in a **PresentationML** package.
 > settings for this document. In this case, the two settings applied are
 > automatic tab stop increments of 0.5" using the **defaultTabStop** element, and no character level
 > white space compression using the **characterSpacingControl** element. 
-
+> 
 > © ISO/IEC29500: 2008.
 
 
