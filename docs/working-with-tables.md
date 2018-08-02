@@ -69,11 +69,11 @@ information about data is stored in the worksheet, see [Working with sheets (Ope
 The following table lists the common Open XML SDK 2.5 classes used when
 working with the **Table** class.
 
-**SpreadsheetML Element**|**Open XML SDK 2.5 Class**
----|---
-tableColumn|[TableColumn](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)
-autoFilter|[AutoFilter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx)
 
+| **SpreadsheetML Element** |                                               **Open XML SDK 2.5 Class**                                               |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+|        tableColumn        |   [TableColumn](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
+|        autoFilter         | [AutoFilter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx) |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 Table Class 
@@ -145,11 +145,11 @@ than or equal to 0.5.
 
 ```xml
 <autoFilter ref="B3:E8">
-    <filterColumn colId="1">
-        <customFilters>
-            <customFilter operator="greaterThan" val="0.5"/>
-        </customFilters>
-    </filterColumn>
+    <filterColumn colId="1">
+        <customFilters>
+            <customFilter operator="greaterThan" val="0.5"/>
+        </customFilters>
+    </filterColumn>
 </autoFilter>
 ```
 

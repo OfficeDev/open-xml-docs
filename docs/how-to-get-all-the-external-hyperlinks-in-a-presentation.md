@@ -92,26 +92,26 @@ specification introduces the overall form of a **PresentationML** package.
 > the entire slide masters used in the presentation; the notes master
 > contains information about the formatting of notes pages; and the
 > handout master describes how a handout looks.
-
+> 
 > A *handout* is a printed set of slides that can be provided to an
 > *audience* for future reference.
-
+> 
 > As well as text and graphics, each slide can contain *comments* and
 > *notes*, can have a *layout*, and can be part of one or more *custom
 > presentations*. (A comment is an annotation intended for the person
 > maintaining the presentation slide deck. A note is a reminder or piece
 > of text intended for the presenter or the audience.)
-
+> 
 > Other features that a **PresentationML**
 > document can include the following: *animation*, *audio*, *video*, and
 > *transitions* between slides.
-
+> 
 > A **PresentationML** document is not stored
 > as one large body in a single part. Instead, the elements that
 > implement certain groupings of functionality are stored in separate
 > parts. For example, all comments in a document are stored in one
 > comment part while each slide has its own part.
-
+> 
 > © ISO/IEC29500: 2008.
 
 The following XML code segment represents a presentation that contains
@@ -166,13 +166,13 @@ introduces the **id** (Hyperlink Target).
 
 > Specifies the ID of the relationship whose target shall be used as the
 > target for thishyperlink.
-
+> 
 > If this attribute is omitted, then there shall be no external
 > hyperlink target for the current hyperlink - a location in the current
 > document can still be target via the anchor attribute. If this
 > attribute exists, it shall supersede the value in the anchor
 > attribute.
-
+> 
 > [*Example*: Consider the following <span
 > class="keyword">PresentationML** fragment for a hyperlink:
 
@@ -200,10 +200,10 @@ introduces the **id** (Hyperlink Target).
 > The target of this hyperlink would therefore be the target of
 > relationship **rId9** - in this case,
 > http://www.example.com. *end example*]
-
+> 
 > The possible values for this attribute are defined by the
 > ST\_RelationshipId simple type(§22.8.2.1).
-
+> 
 > © ISO/IEC29500: 2008.
 
 

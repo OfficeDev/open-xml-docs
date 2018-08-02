@@ -42,13 +42,13 @@ The following table lists the common Open XML SDK 2.5 classes used when
 working with the **ConditionalFormatting**
 class.
 
-**SpreadsheetML Element**|**Open XML SDK 2.5 Class**
----|---
-cfRule|[ConditionalFormattingRule](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.conditionalformattingrule.aspx)
-dataBar|[DataBar](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.databar.aspx)
-colorScale|[ColorScale](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.colorscale.aspx)
-iconSet|[IconSet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.iconset.aspx)
 
+| **SpreadsheetML Element** |                                                           **Open XML SDK 2.5 Class**                                                           |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+|          cfRule           | [ConditionalFormattingRule](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.conditionalformattingrule.aspx) |
+|          dataBar          |                   [DataBar](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.databar.aspx)                   |
+|        colorScale         |                [ColorScale](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.colorscale.aspx)                |
+|          iconSet          |                   [IconSet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.iconset.aspx)                   |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 Conditional Formatting Class 
@@ -71,9 +71,9 @@ Example: This example applies a 'top10' rule to the cells C3:C8. The
 applied to cells that match the criteria.
 
 ```xml
-    <conditionalFormatting sqref="C3:C8">
-        <cfRule type="top10" dxfId="1" priority="3" rank="2"/>
-    </conditionalFormatting>
+    <conditionalFormatting sqref="C3:C8">
+        <cfRule type="top10" dxfId="1" priority="3" rank="2"/>
+    </conditionalFormatting>
 ```
 
 © ISO/IEC29500: 2008.
@@ -94,11 +94,11 @@ whose values are greater than 0.5. Note that in this case the content of
 \<formula\> is a static value, but can also be a formula expression.
 
 ```xml
-    <conditionalFormatting sqref="E3:E9">
-        <cfRule type="cellIs" dxfId="0" priority="1" operator="greaterThan">
-            <formula>0.5</formula>
-        </cfRule>
-    <conditionalFormatting>
+    <conditionalFormatting sqref="E3:E9">
+        <cfRule type="cellIs" dxfId="0" priority="1" operator="greaterThan">
+            <formula>0.5</formula>
+        </cfRule>
+    <conditionalFormatting>
 ```
 
 
@@ -135,11 +135,11 @@ spreads across all cell values in the cell range, and whose color is
 blue.
 
 ```xml
-    <dataBar>
-        <cfvo type="min" val="0"/>
-        <cfvo type="max" val="0"/>
-        <color rgb="FF638EC6"/>
-    </dataBar>
+    <dataBar>
+        <cfvo type="min" val="0"/>
+        <cfvo type="max" val="0"/>
+        <color rgb="FF638EC6"/>
+    </dataBar>
 ```
 
 The length of the data bar for any cell can be calculated as follows:
@@ -180,12 +180,12 @@ Describes a gradated color scale in this conditional formatting rule.
 
 Example:
 ```xml
-    <colorScale>
-        <cfvo type="min" val="0"/>
-        <cfvo type="max" val="0"/>
-        <color theme="5"/>
-        <color rgb="FFFFEF9C"/>
-    </colorScale>
+    <colorScale>
+        <cfvo type="min" val="0"/>
+        <cfvo type="max" val="0"/>
+        <color theme="5"/>
+        <color rgb="FFFFEF9C"/>
+    </colorScale>
 ```
 
 © ISO/IEC29500: 2008.
@@ -214,11 +214,11 @@ value is less than the 67th percentile, and greater than or equal to the
 value is greater than or equal to the 67th percentile.
 
 ```xml
-    <iconSet iconSet="3Arrows">
-        <cfvo type="percentile" val="0"/>
-        <cfvo type="percentile" val="33"/>
-        <cfvo type="percentile" val="67"/>
-    </iconSet>
+    <iconSet iconSet="3Arrows">
+        <cfvo type="percentile" val="0"/>
+        <cfvo type="percentile" val="33"/>
+        <cfvo type="percentile" val="67"/>
+    </iconSet>
 ```
 
 © ISO/IEC29500: 2008.
