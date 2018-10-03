@@ -77,7 +77,7 @@ The basic document structure of a PresentationML document consists of a
 number of parts, among which is the Shape Tree (**sp
 Tree**) element.
 
-The following text from the [ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces the overall form of a **PresentationML** package.
 
 > This element specifies all shapes within a slide. Contained within

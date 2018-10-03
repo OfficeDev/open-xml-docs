@@ -22,7 +22,7 @@ Open XML File Format WordprocessingML schema.
 --------------------------------------------------------------------------------
 ## Paragraphs in WordprocessingML
 The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+29500](https://www.iso.org/standard/71691.html) specification
 introduces the Open XML WordprocessingML element used to represent a
 paragraph in a WordprocessingML document.
 

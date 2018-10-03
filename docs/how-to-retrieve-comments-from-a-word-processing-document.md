@@ -71,7 +71,7 @@ comments in a word processing file. It is important in this code example
 to familiarize yourself with those elements.
 
 The following information from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+29500](https://www.iso.org/standard/71691.html) specification
 introduces the comments element.
 
 > **comments (Comments Collection)**
@@ -107,7 +107,7 @@ element.
 ---------------------------------------------------------------------------------
 ## Comment Element
 The following information from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+29500](https://www.iso.org/standard/71691.html) specification
 introduces the comment element.
 
 > **comment (Comment Content)**

@@ -80,7 +80,7 @@ long as you use **using**.
 --------------------------------------------------------------------------------
 ## The XML Representation of the Graphic Object
 The following text from the [ISO/IEC
-29500](http://go.microsoft.com/fwlink/?LinkId=194337) specification
+29500](https://www.iso.org/standard/71691.html) specification
 introduces the Graphic Object Data element.
 
 > This element specifies the reference to a graphic object within the

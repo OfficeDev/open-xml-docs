@@ -116,7 +116,7 @@ object that is created or named in the **using** statement, in this case **prese
 
 The basic document structure of a **PresentationML** document consists of the main part
 that contains the presentation definition. The following text from the
-[ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
+[ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 specification introduces the overall form of a **PresentationML** package.
 
 > A **PresentationML** package's main part

@@ -51,7 +51,7 @@ file and create another header part. You are also going to delete the
 reference to the existing header and create a reference to the new
 header. Therefore it is useful to familarize yourself with headers and
 the header reference element. The following information from the
-[ISO/IEC 29500](http://go.microsoft.com/fwlink/?LinkId=194337)
+[ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 specification introduces the header reference element.
 
 **headerReference (Header Reference)**
