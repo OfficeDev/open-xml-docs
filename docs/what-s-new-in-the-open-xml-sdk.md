@@ -13,32 +13,12 @@ author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
 ---
+
 # What's new in the Open XML SDK 2.5 for Office
 
 This topic describes the new and improved features included in the Open
 XML SDK 2.5 for Office in addition to known issues and limitations.
-
-
----------------------------------------------------------------------------------
-## In this Topic 
--   [Introduction](#BKMK_Introduction)
-
--   [System Requirements](#BKMK_Requirements)
-
--   [New Software Requirements](#BKMK_OpenXMLSDK2.0ImprovedArchitecture)
-
--   [Support of Office 2013 Preview File
-    Format](#BKMK_OpenXMLProductivityToolforMicrosoftOffice)
-
--   [Reads ISO Strict Document Files](#BKMK_MarkupCompatibility)
-
--   [Deprecated API Information](#BKMK_DocumentValidation)
-
--   [Updated API information](#BKMK_StreamReadingandWriting)
-
-
---------------------------------------------------------------------------------
-## Introduction 
+ 
 The Open XML SDK 2.5 is a collection of classes that let you create and
 manipulate Open XML documents - documents that adhere to the [Office Open XML File Formats Standard](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463).
 Because the SDK provides an application program interface that lets you
@@ -53,26 +33,26 @@ while adding new features.
 
 
 --------------------------------------------------------------------------------
-## System Requirements 
+## System requirements 
 The Open XML SDK 2.5 has the following system requirements:
 
 **Supported operating systems:** Windows 8 Preview, Windows 7, Windows
 Server 2003 Service Pack 2, Windows Server 2008 R2, Windows Server 2008
 Service Pack 2, Windows Vista Service Pack 2, Windows XP Service Pack 3
 
-**System Prerequisites:** .NET Framework version 4.0, Up to 300 MB of
+**System prerequisites:** .NET Framework version 4.0, Up to 300 MB of
 available disk space
 
 
 --------------------------------------------------------------------------------
-## New Software Requirements 
+## New software requirements 
 Open XML SDK 2.5 requires .NET Framework 4.0 or the greater version.
 Accordingly, the supported operating systems are updated to be the same
 as the requirements of the .NET Framework 4.0.
 
 
 --------------------------------------------------------------------------------
-## Support of Office 2013 Preview File Format 
+## Support of Office 2013 Preview file format 
 In addition to offering compatibility with the Open XML SDK 1.0 classes
 and the Open XML SDK 2.0 for Microsoft Office classes, Open XML SDK 2.5
 provides new classes that enable you to write and build applications to
@@ -97,7 +77,7 @@ the Microsoft Developer Network.
 
 
 --------------------------------------------------------------------------------
-## Reads ISO Strict Document Files 
+## Reads ISO Strict document files 
 The Open XML SDK 2.5 can read ISO/IEC 29500 Strict Format files. Its
 document contents are recognized as an Open XML Transitional Format file
 when the document is opened. When the file is saved, the document is
@@ -172,10 +152,10 @@ element members.
 
 
 --------------------------------------------------------------------------------
-## Deprecated API Information 
+## Deprecated API information 
 The following section discusses deprecated API members:
 
-**Smart Tags**
+### Smart tags
 
 Because *smart tags* were deprecated in Office 2010, the Open XML SDK
 2.5 doesn't support smart tag related Open XML elements. The Open XML
@@ -208,7 +188,7 @@ DocumentFormat.OpenXml.Wordprocessing:
 
 -   **SmartTagType**
 
-**Office 2010 Beta only tags**
+### Office 2010 Beta only tags
 
 The Open XML SDK 2.0 classes for Office 2010 *beta only* Open XML tags
 are deprecated. For example, the beta only non-visual properties of
