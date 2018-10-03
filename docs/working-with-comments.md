@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with comments (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [Comment](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office [Comment](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a PresentationML
@@ -50,8 +50,8 @@ referring to its author and date.
 Example:
 ```xml
 <p:cm authorId="0" dt="2006-08-28T17:26:44.129" idx="1">  
-   <p:pos x="10" y="10"/>  
-   <p:text\>Add diagram to clarify.</p:text>  
+   <p:pos x="10" y="10"/>  
+   <p:text\>Add diagram to clarify.</p:text>  
 </p:cm>
 ```
 
@@ -61,20 +61,22 @@ The following table lists the child elements of the \<cm \> element used
 when working with comments and the Open XML SDK 2.5 classes that
 correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
-\<pos\>|[Position](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.position.aspx)
-\<text\>|[Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.text.aspx)
+
+| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|          \<pos\>           |                      [Position](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.position.aspx)                      |
+|          \<text\>          |                          [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.text.aspx)                          |
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<cm\> element.
 
-**Attributes**|**Description**
----|---
-authorId|This attribute specifies the author of the comment.It refers to the ID of an author in the comment author list for the document.<br/>The possible values for this attribute are defined by the W3C XML Schema **unsignedInt** datatype.
-dt|This attribute specifies the date and time this comment was last modified.<br/>The possible values for this attribute are defined by the W3C XML Schema **datetime** datatype.
-idx|This attribute specifies an identifier for this comment that is unique within a list of all comments by this author in this document. An author's first comment in a document has index 1.<br/>[Note: Because the index is unique only for the comment author, a document can contain multiple comments with the same index created by different authors. end note]<br/>The possible values for this attribute are defined by the ST_Index simple type (§19.7.3).
+
+| **Attributes** |                                                                                                                                                                                                                          **Description**                                                                                                                                                                                                                          |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    authorId    |                                                                                                              This attribute specifies the author of the comment.It refers to the ID of an author in the comment author list for the document.<br/>The possible values for this attribute are defined by the W3C XML Schema **unsignedInt** datatype.                                                                                                              |
+|       dt       |                                                                                                                                          This attribute specifies the date and time this comment was last modified.<br/>The possible values for this attribute are defined by the W3C XML Schema **datetime** datatype.                                                                                                                                           |
+|      idx       | This attribute specifies an identifier for this comment that is unique within a list of all comments by this author in this document. An author's first comment in a document has index 1.<br/>[Note: Because the index is unique only for the comment author, a document can contain multiple comments with the same index created by different authors. end note]<br/>The possible values for this attribute are defined by the ST_Index simple type (§19.7.3). |
 
 © ISO/IEC29500: 2008.
 
@@ -286,7 +288,6 @@ article.
           ' Add the position child node to the comment element.
           comment.Append(New Position() With _
                {.X = 100, .Y = 200}, New Text() With {.Text = text})
-
 ```
 
 ---------------------------------------------------------------------------------

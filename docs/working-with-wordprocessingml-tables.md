@@ -30,6 +30,7 @@ A tbl element has two elements that define its properties: tblPr, which defines 
 © ISO/IEC29500: 2008.
 
 The following table lists some of the most common Open XML SDK classes used when working with tables.
+
 | XML element  | Open XML SDK 2.5 Class |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
@@ -86,7 +87,7 @@ public static void InsertTableInDoc(string filepath)
 
         // Make the table width 100% of the page width.
         TableWidth tableWidth = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-        
+
         // Apply
         tableProp.Append(tableStyle, tableWidth);
         tbl.AppendChild(tableProp);
@@ -94,7 +95,7 @@ public static void InsertTableInDoc(string filepath)
         // Add 3 columns to the table.
         TableGrid tg = new TableGrid(new GridColumn(), new GridColumn(), new GridColumn());
         tbl.AppendChild(tg);
-        
+
         // Create 1 row to the table.
         TableRow tr1 = new TableRow();
 
@@ -103,7 +104,7 @@ public static void InsertTableInDoc(string filepath)
         TableCell tc2 = new TableCell(new Paragraph(new Run(new Text("2"))));
         TableCell tc3 = new TableCell(new Paragraph(new Run(new Text("3"))));
         tr1.Append(tc1, tc2, tc3);
-        
+
         // Add row to the table.
         tbl.AppendChild(tr1);
 

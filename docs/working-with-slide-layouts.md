@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with slide layouts (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office [SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -42,26 +42,28 @@ The following table lists the child elements of the \<sldLayout\>
 element used when working with slide layouts and the Open XML SDK 2.5
 classes that correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<clrMapOvr\>|[ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)
-\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
-\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
-\<hf\>|[HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)
-\<timing\>|[Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)
-\<transition\>|[Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)
+
+| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
+|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
+|         \<timing\>         |                        [Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)                        |
+|       \<transition\>       |                    [Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)                    |
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<sldLayout\> element.
 
-**Attributes**|**Description**
----|---
-matchingName (Matching Name)|Specifies a name to be used in place of the name attribute within the cSld element. This is used for layout matching in response to layout changes and template applications.  <br/>The possible values for this attribute are defined by the W3C XML Schema **string** datatype.
-preserve (Preserve Slide Layout)|Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of **false** should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.
-showMasterPhAnim (Show Master Placeholder Animations)|Specifies whether or not to display animations on placeholders from the master slide.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.
-showMasterSp (Show Master Shapes)|Specifies if shapes on the master slide should be shown on slides or not.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.
-type (Slide Layout Type)|Specifies the slide layout type that is used by this slide.<br/>The possible values for this attribute are defined by the ST_SlideLayoutType simple type (§19.7.15).
-userDrawn (Is User Drawn)|Specifies if the corresponding object has been drawn by the user and should thus not be deleted. This allows for the flagging of slides that contain user drawn data.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.
+
+|                    **Attributes**                     |                                                                                                                                                                                                                    **Description**                                                                                                                                                                                                                     |
+|-------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|             matchingName (Matching Name)              |                                                                                   Specifies a name to be used in place of the name attribute within the cSld element. This is used for layout matching in response to layout changes and template applications.  <br/>The possible values for this attribute are defined by the W3C XML Schema **string** datatype.                                                                                    |
+|           preserve (Preserve Slide Layout)            | Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of **false** should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype. |
+| showMasterPhAnim (Show Master Placeholder Animations) |                                                                                                                                Specifies whether or not to display animations on placeholders from the master slide.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.                                                                                                                                |
+|           showMasterSp (Show Master Shapes)           |                                                                                                                                      Specifies if shapes on the master slide should be shown on slides or not.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.                                                                                                                                      |
+|               type (Slide Layout Type)                |                                                                                                                                          Specifies the slide layout type that is used by this slide.<br/>The possible values for this attribute are defined by the ST_SlideLayoutType simple type (§19.7.15).                                                                                                                                          |
+|               userDrawn (Is User Drawn)               |                                                                                        Specifies if the corresponding object has been drawn by the user and should thus not be deleted. This allows for the flagging of slides that contain user drawn data.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.                                                                                        |
 
 © ISO/IEC29500: 2008.
 

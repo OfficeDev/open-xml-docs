@@ -43,13 +43,13 @@ widow/orphan control.
 The following table lists the most common Open XML SDK classes used when
 working with paragraphs.
 
-**WordprocessingML element**|**Open XML SDK 2.5 Class**
----|---
-**p**|Paragraph
-**pPr**|ParagraphProperties
-**r**|Run
-**t**|Text
 
+| **WordprocessingML element** | **Open XML SDK 2.5 Class** |
+|------------------------------|----------------------------|
+|            **p**             |         Paragraph          |
+|           **pPr**            |    ParagraphProperties     |
+|            **r**             |            Run             |
+|            **t**             |            Text            |
 
 ---------------------------------------------------------------------------------
 ## Paragraph Class

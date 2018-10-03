@@ -70,11 +70,11 @@ sheets.
 The following table lists the common Open XML SDK 2.5 classes used when
 working with the **SharedStringTable** class.
 
-**SpreadsheetML Element**|**Open XML SDK 2.5 Class**
----|---
-si|[SharedStringItem](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx)
-t|[Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.text.aspx)
 
+| **SpreadsheetML Element** |                                                  **Open XML SDK 2.5 Class**                                                  |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------|
+|            si             | [SharedStringItem](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx) |
+|             t             |             [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.text.aspx)             |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 SharedStringTable Class 

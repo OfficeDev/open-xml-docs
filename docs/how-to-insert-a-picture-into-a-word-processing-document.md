@@ -86,11 +86,11 @@ introduces the Graphic Object Data element.
 > This element specifies the reference to a graphic object within the
 > document. This graphic object is provided entirely by the document
 > authors who choose to persist this data within the document.
-
+> 
 > [*Note*: Depending on the type of graphical object used not every
 > generating application that supports the OOXML framework will have the
 > ability to render the graphical object. *end note*]
-
+> 
 > © ISO/IEC29500: 2008.
 
 The following XML Schema fragment defines the contents of this element

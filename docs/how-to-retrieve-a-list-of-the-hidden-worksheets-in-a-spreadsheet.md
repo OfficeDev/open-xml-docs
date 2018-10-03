@@ -167,9 +167,9 @@ by right-clicking the worksheets tab and opting to hide the worksheet.
 For these worksheets, the <span sdata="cer"
 target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.State">**State**** property of the **Sheet** object contains an enumerated value of
 <span sdata="cer"
-target="F:DocumentFormat.OpenXml.Spreadsheet.SheetStateValues.Hidden">**Hidden****. You can also make a worksheet very
+target="F:DocumentFormat.OpenXml.Spreadsheet.SheetStateValues.Hidden">**Hidden**<strong>. You can also make a worksheet very
 hidden by writing code (either in VBA or in another language) that sets
-the sheet's **Visible** property to the
+the sheet's **Visible</strong> property to the
 enumerated value **xlSheetVeryHidden**. For
 worksheets hidden in this manner, the **State**
 property of the **Sheet** object contains the

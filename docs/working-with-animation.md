@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ---
 # Working with animation (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
+This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Presentation.Animate">**Animate**** class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
@@ -44,10 +44,10 @@ as shown below:
 
 ```xml
 <p:sld>  
-    <p:cSld> … </p:cSld>  
-    <p:clrMapOvr> … </p:clrMapOvr>  
-    <p:transition> … </p:transition>  
-    <p:timing> … </p:timing>  
+    <p:cSld> … </p:cSld>  
+    <p:clrMapOvr> … </p:clrMapOvr>  
+    <p:transition> … </p:transition>  
+    <p:timing> … </p:timing>  
 </p:sld>
 ```
 
@@ -67,19 +67,19 @@ to emphasize text within a shape by changing the size of its font by
 
 ```xml
 <p:anim to="1.5" calcmode="lin" valueType="num">  
-    <p:cBhvr override="childStyle">  
-        <p:cTn id="1" dur="2000" fill="hold">  
-        <p:tgtEl>  
-            <p:spTgt spid="1">  
-                <p:txEl>  
-                    <p:charRg st="1" end="4">  
-                </p:txEl>  
-            </p:spTgt>  
-        </p:tgtEl>  
-        <p:attrNameLst>  
-            <p:attrName>style.fontSize</p:attrName>  
-        </p:attrNameLst>  
-    </p:cBhvr>  
+    <p:cBhvr override="childStyle">  
+        <p:cTn id="1" dur="2000" fill="hold">  
+        <p:tgtEl>  
+            <p:spTgt spid="1">  
+                <p:txEl>  
+                    <p:charRg st="1" end="4">  
+                </p:txEl>  
+            </p:spTgt>  
+        </p:tgtEl>  
+        <p:attrNameLst>  
+            <p:attrName>style.fontSize</p:attrName>  
+        </p:attrNameLst>  
+    </p:cBhvr>  
 </p:anim>
 ```
 
@@ -89,21 +89,23 @@ The following table lists the child elements of the \<anim\> element
 used when working with animation and the Open XML SDK 2.5 classes that
 correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<cBhvr\>|CommonBehavior
-\<tavLst\>|TimeAnimateValueList
+
+| **PresentationML Element** | **Open XML SDK 2.5 Class** |
+|----------------------------|----------------------------|
+|         \<cBhvr\>          |       CommonBehavior       |
+|         \<tavLst\>         |    TimeAnimateValueList    |
 
 The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<anim\> element.
 
-**Attributes**|**Description**
----|---
-by|This attribute specifies a relative offset value for the animation with respect to its position before the start of the animation.The possible values for this attribute are defined by the W3C XML Schema string data type.
-calcmode|This attribute specifies the interpolation mode for the animation.The possible values for this attribute are defined by theST_TLAnimateBehaviorCalcMode simple type (§19.7.20).
-from|This attribute specifies the starting value of the animation.The possible values for this attribute are defined by the W3C XML Schema string data type.
-to|This attribute specifies the ending value for the animation as a percentage.The possible values for this attribute are defined by the W3C XML Schema string data type.
-valueType|This attribute specifies the type of property value.The possible values for this attribute are defined by theST_TLAnimateBehaviorValueType simple type (§19.7.21).
+
+| **Attributes** |                                                                                                       **Description**                                                                                                        |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       by       | This attribute specifies a relative offset value for the animation with respect to its position before the start of the animation.The possible values for this attribute are defined by the W3C XML Schema string data type. |
+|    calcmode    |                       This attribute specifies the interpolation mode for the animation.The possible values for this attribute are defined by theST_TLAnimateBehaviorCalcMode simple type (§19.7.20).                        |
+|      from      |                                   This attribute specifies the starting value of the animation.The possible values for this attribute are defined by the W3C XML Schema string data type.                                    |
+|       to       |                            This attribute specifies the ending value for the animation as a percentage.The possible values for this attribute are defined by the W3C XML Schema string data type.                            |
+|   valueType    |                              This attribute specifies the type of property value.The possible values for this attribute are defined by theST_TLAnimateBehaviorValueType simple type (§19.7.21).                              |
 
 © ISO/IEC29500: 2008.
 
@@ -132,19 +134,19 @@ the size of its font. The \<anim\> element should be used as follows:
 
 ```xml
 <p:anim to="1.5" calcmode="lin" valueType="num">  
-    <p:cBhvr override="childStyle">  
-        <p:cTn id="6" dur="2000" fill="hold">  
-        <p:tgtEl>  
-            <p:spTgt spid="3">  
-                <p:txEl>  
-                   <p:charRg st="4294967295" end="4294967295"/>  
-                </p:txEl>  
-           </p:spTgt>  
-        </p:tgtEl>  
-        <p:attrNameLst>  
-            <p:attrName>style.fontSize</p:attrName>  
-        </p:attrNameLst>  
-    </p:cBhvr>  
+    <p:cBhvr override="childStyle">  
+        <p:cTn id="6" dur="2000" fill="hold">  
+        <p:tgtEl>  
+            <p:spTgt spid="3">  
+                <p:txEl>  
+                   <p:charRg st="4294967295" end="4294967295"/>  
+                </p:txEl>  
+           </p:spTgt>  
+        </p:tgtEl>  
+        <p:attrNameLst>  
+            <p:attrName>style.fontSize</p:attrName>  
+        </p:attrNameLst>  
+    </p:cBhvr>  
 </p:anim>
 ```
 
@@ -163,19 +165,19 @@ element should be used as follows:
 
 ```xml
 <p:anim calcmode="lin" valueType="num">  
-    <p:cBhvr additive="base"> … </p:cBhvr>  
-    <p:tavLst>  
-        <p:tav tm="0">  
-            <p:val>  
-                <p:strVal val="1+#ppt_h/2"/>  
-            </p:val>  
-        </p:tav>  
-        <p:tav tm="100000"\>  
-            <p:val>  
-                <p:strVal val="#ppt_y">  
-            </p:val>  
-        </p:tav>  
-    </p:tavLst>  
+    <p:cBhvr additive="base"> … </p:cBhvr>  
+    <p:tavLst>  
+        <p:tav tm="0">  
+            <p:val>  
+                <p:strVal val="1+#ppt_h/2"/>  
+            </p:val>  
+        </p:tav>  
+        <p:tav tm="100000"\>  
+            <p:val>  
+                <p:strVal val="#ppt_y">  
+            </p:val>  
+        </p:tav>  
+    </p:tavLst>  
 </p:anim>
 ```
 

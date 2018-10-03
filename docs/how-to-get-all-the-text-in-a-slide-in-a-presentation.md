@@ -94,11 +94,11 @@ specification introduces the overall form of a **PresentationML** package.
 > to the entire slide masters used in the presentation; the notes master
 > contains information about the formatting of notes pages; and the
 > handout master describes how a handout looks.
-
+> 
 > A **handout** is a printed set of slides that
 > can be provided to an **audience** for future
 > reference.
-
+> 
 > As well as text and graphics, each slide can contain <span
 > class="term">comments** and **notes**, can
 > have a **layout**, and can be part of one or
@@ -106,18 +106,18 @@ specification introduces the overall form of a **PresentationML** package.
 > annotation intended for the person maintaining the presentation slide
 > deck. A note is a reminder or piece of text intended for the presenter
 > or the audience.)
-
+> 
 > Other features that a PresentationML document can include the
 > following: **animation**, <span
-> class="term">audio**, **video**, and <span
+> class="term">audio<strong>, **video</strong>, and <span
 > class="term">transitions** between slides.
-
+> 
 > A PresentationML document is not stored as one large body in a single
 > part. Instead, the elements that implement certain groupings of
 > functionality are stored in separate parts. For example, all comments
 > in a document are stored in one comment part while each slide has its
 > own part.
-
+> 
 > © ISO/IEC29500: 2008.
 
 The following XML code segment represents a presentation that contains

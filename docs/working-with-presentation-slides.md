@@ -36,14 +36,14 @@ Example: Consider the following custom show with an ordering of slides.
 
 ```xml
 <p:custShowLst>  
-    <p:custShow name="Custom Show 1" id="0">  
-        <p:sldLst>  
-            <p:sld r:id="rId4"/>  
-            <p:sld r:id="rId3"/>  
-            <p:sld r:id="rId2"/>  
-            <p:sld r:id="rId5"/>  
-        </p:sldLst>  
-    </p:custShow>  
+    <p:custShow name="Custom Show 1" id="0">  
+        <p:sldLst>  
+            <p:sld r:id="rId4"/>  
+            <p:sld r:id="rId3"/>  
+            <p:sld r:id="rId2"/>  
+            <p:sld r:id="rId5"/>  
+        </p:sldLst>  
+    </p:custShow>  
 </p:custShowLst>
 ```
 
@@ -61,14 +61,14 @@ The following table lists the child elements of the \<sld\> element used
 when working with presentation slides and the Open XML SDK 2.5 classes
 that correspond to them.
 
-**PresentationML Element**|**Open XML SDK 2.5 Class**
----|---
-\<clrMapOvr\>|[ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)
-\<cSld\>|[CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)
-\<extLst\>|[ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx)
-\<timing\>|[Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)
-\<transition\>|[Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)
 
+| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
+|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|         \<timing\>         |                        [Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)                        |
+|       \<transition\>       |                    [Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)                    |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 Slide Class
@@ -284,37 +284,37 @@ is written to the PresentationML document file referenced in the code.
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
-            <p:cNvPr id="1" name="" /> 
-            <p:cNvGrpSpPr /> 
-            <p:nvPr /> 
-          </p:nvGrpSpPr>
+            <p:cNvPr id="1" name="" /> 
+            <p:cNvGrpSpPr /> 
+            <p:nvPr /> 
+          </p:nvGrpSpPr>
             <p:grpSpPr>
-              <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
-            </p:grpSpPr>
+              <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
+            </p:grpSpPr>
             <p:sp>
               <p:nvSpPr>
-              <p:cNvPr id="2" name="Title 1" /> 
+              <p:cNvPr id="2" name="Title 1" /> 
               <p:cNvSpPr>
-                <a:spLocks noGrp="1" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
-              </p:cNvSpPr>
+                <a:spLocks noGrp="1" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
+              </p:cNvSpPr>
                 <p:nvPr>
-                  <p:ph /> 
-                </p:nvPr>
-                </p:nvSpPr>
-                <p:spPr /> 
+                  <p:ph /> 
+                </p:nvPr>
+                </p:nvSpPr>
+                <p:spPr /> 
                 <p:txBody>
-                 <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
-             <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
+                 <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
+             <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
                  <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
-                   <a:endParaRPr lang="en-US" /> 
-          </a:p>
-                </p:txBody>
-             </p:sp>
-           </p:spTree>
-        </p:cSld>
+                   <a:endParaRPr lang="en-US" /> 
+          </a:p>
+                </p:txBody>
+             </p:sp>
+           </p:spTree>
+        </p:cSld>
         <p:clrMapOvr>
-          <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
-        </p:clrMapOvr>
+          <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
+        </p:clrMapOvr>
     </p:sld>
 ```
 

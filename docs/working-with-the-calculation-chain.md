@@ -71,10 +71,10 @@ performed at runtime.
 The following table lists the common Open XML SDK 2.5 classes used when
 working with the **CalculationChain** class.
 
-**SpreadsheetML Element**|**Open XML SDK 2.5 Class**
----|---
-c|CalculationCell 
 
+| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** |
+|---------------------------|----------------------------|
+|             c             |      CalculationCell       |
 
 ## Open XML SDK 2.5 CalculationChain Class
 
@@ -110,25 +110,25 @@ calculation.
 
 ```xml
 <calcChain xmlns="…">
-    <c r="B2" i="1"/>
-    <c r="B3" s="1"/>
-    <c r="B4" s="1"/>
-    <c r="B5" s="1"/>
-    <c r="B6" s="1"/>
-    <c r="B7" s="1"/>
-    <c r="B8" s="1"/>
-    <c r="B9" s="1"/>
-    <c r="B10" s="1"/>
-    <c r="C10" s="1"/>
-    <c r="D10" s="1"/>
-    <c r="A2"/>
-    <c r="A3" s="1"/>
-    <c r="A4" s="1"/>
-    <c r="A5" s="1"/>
-    <c r="A6" s="1"/>
-    <c r="A7" s="1"/>
-    <c r="A8" s="1"/>
-    <c r="A9" s="1"/>
-    <c r="A10" s="1"/>
+    <c r="B2" i="1"/>
+    <c r="B3" s="1"/>
+    <c r="B4" s="1"/>
+    <c r="B5" s="1"/>
+    <c r="B6" s="1"/>
+    <c r="B7" s="1"/>
+    <c r="B8" s="1"/>
+    <c r="B9" s="1"/>
+    <c r="B10" s="1"/>
+    <c r="C10" s="1"/>
+    <c r="D10" s="1"/>
+    <c r="A2"/>
+    <c r="A3" s="1"/>
+    <c r="A4" s="1"/>
+    <c r="A5" s="1"/>
+    <c r="A6" s="1"/>
+    <c r="A7" s="1"/>
+    <c r="A8" s="1"/>
+    <c r="A9" s="1"/>
+    <c r="A10" s="1"/>
 </calcChain>
 ```

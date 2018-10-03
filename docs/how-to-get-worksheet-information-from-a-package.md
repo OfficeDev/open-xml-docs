@@ -40,8 +40,8 @@ this topic.
 
 ## Create SpreadsheetDocument Object
 
-In the Open XML SDK, the **<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">**SpreadsheetDocument****** class represents an
+In the Open XML SDK, the <strong><span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"></strong>SpreadsheetDocument****** class represents an
 Excel document package. To create an Excel document, you create an
 instance of the **SpreadsheetDocument** class
 and populate it with parts. At a minimum, the document must have a
@@ -84,9 +84,9 @@ The basic document structure of a **SpreadsheetML** document consists of the <sp
 sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
 worksheets in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook****. A separate XML file is created
+target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**<strong>. A separate XML file is created
 for each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet">**Worksheet****. For example, the **SpreadsheetML** for a workbook that has two
+target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet"></strong>Worksheet*<strong><em>. For example, the *</em>SpreadsheetML</strong> for a workbook that has two
 worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
 file and is shown in the following code example.
 
@@ -102,7 +102,7 @@ file and is shown in the following code example.
 
 The worksheet XML files contain one or more block level elements such as
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData****. **sheetData** represents the cell table and contains
+target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData**<strong>. **sheetData</strong> represents the cell table and contains
 one or more <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
