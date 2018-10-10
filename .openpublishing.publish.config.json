@@ -25,7 +25,7 @@
   "JoinTOCPlugin": [
    {
      "ConceptualTOC": "docs/toc.yml",
-     "ReferenceTOCUrl": "/dotnet/api/open-xml-docs-ref-dotnet/toc.json"
+     "ReferenceTOCUrl": "/dotnet/openxml_ref_toc/toc.json"
    }
   ],
   "dependent_packages" :[
