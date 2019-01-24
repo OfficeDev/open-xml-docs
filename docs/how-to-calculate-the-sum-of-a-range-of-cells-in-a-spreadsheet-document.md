@@ -12,6 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
+localization_priority: Priority
 ---
 
 # How to: Calculate the sum of a range of cells in a spreadsheet document

@@ -12,6 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
+localization_priority: Priority
 ---
 # Create and add a paragraph style to a word processing document
 

@@ -12,6 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
+localization_priority: Priority
 ---
 # How to: Open a word processing document from a stream (Open XML SDK)
 
