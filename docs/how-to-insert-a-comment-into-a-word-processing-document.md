@@ -12,6 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
+localization_priority: Normal
 ---
 # How to: Insert a comment into a word processing document (Open XML SDK)
 

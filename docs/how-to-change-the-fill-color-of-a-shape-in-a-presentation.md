@@ -12,6 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
+localization_priority: Normal
 ---
 
 # How to: Change the fill color of a shape in a presentation (Open XML SDK)
