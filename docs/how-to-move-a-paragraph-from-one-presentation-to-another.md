@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Normal
 ---
-# How to: Move a paragraph from one presentation to another (Open XML SDK)
+# Move a paragraph from one presentation to another (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to move a paragraph from one presentation to another presentation

@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Priority
 ---
 
-# How to: Apply a style to a paragraph in a word processing document
+# Apply a style to a paragraph in a word processing document
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically apply a style to a paragraph within a word processing document. It contains an example **ApplyStyleToParagraph** method to illustrate this task, plus several supplemental example methods to check whether a style exists, add a new style, and add the styles part.
 

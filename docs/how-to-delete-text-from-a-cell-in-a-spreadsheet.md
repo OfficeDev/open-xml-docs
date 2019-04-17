@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Priority
 ---
-# How to: Delete text from a cell in a spreadsheet document (Open XML SDK)
+# Delete text from a cell in a spreadsheet document (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to delete text from a cell in a spreadsheet document

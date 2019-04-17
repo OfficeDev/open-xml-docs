@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Priority
 ---
-# How to: Insert a table into a word processing document (Open XML SDK)
+# Insert a table into a word processing document (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically insert a table into a word processing

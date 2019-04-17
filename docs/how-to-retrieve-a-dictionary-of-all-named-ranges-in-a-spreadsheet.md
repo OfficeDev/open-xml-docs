@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Normal
 ---
-# How to: Retrieve a dictionary of all named ranges in a spreadsheet document (Open XML SDK)
+# Retrieve a dictionary of all named ranges in a spreadsheet document (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically retrieve a dictionary that contains the names

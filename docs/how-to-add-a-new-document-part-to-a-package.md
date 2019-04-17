@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Normal
 ---
 
-# How to: Add a new document part to a package (Open XML SDK)
+# Add a new document part to a package (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to add a document part (file) to a word processing document

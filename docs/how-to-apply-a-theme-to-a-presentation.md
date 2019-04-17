@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Normal
 ---
 
-# How to: Apply a theme to a presentation (Open XML SDK)
+# Apply a theme to a presentation (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to apply the theme from one presentation to another presentation

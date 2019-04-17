@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Priority
 ---
 
-# How to: Calculate the sum of a range of cells in a spreadsheet document
+# Calculate the sum of a range of cells in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to calculate the sum of a contiguous range of cells in a

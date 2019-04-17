@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Priority
 ---
 
-# How to: Convert a word processing document from the DOCM to the DOCX file format
+# Convert a word processing document from the DOCM to the DOCX file format
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically convert a Microsoft Word 2010 or Microsoft

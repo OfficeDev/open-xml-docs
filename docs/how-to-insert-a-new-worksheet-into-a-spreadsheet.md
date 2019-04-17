@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Priority
 ---
-# How to: Insert a new worksheet into a spreadsheet document (Open XML SDK)
+# Insert a new worksheet into a spreadsheet document (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to insert a new worksheet into a spreadsheet document

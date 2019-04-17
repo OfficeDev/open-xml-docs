@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Priority
 ---
-# How to: Open a word processing document for read-only access (Open XML SDK)
+# Open a word processing document for read-only access (Open XML SDK)
 
 This topic describes how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically open a word processing document for read only

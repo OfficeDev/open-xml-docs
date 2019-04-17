@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Normal
 ---
-# How to: Replace the theme part in a word processing document (Open XML SDK)
+# Replace the theme part in a word processing document (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically replace a document part in a word processing

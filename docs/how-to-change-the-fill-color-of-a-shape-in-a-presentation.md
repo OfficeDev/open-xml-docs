@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Normal
 ---
 
-# How to: Change the fill color of a shape in a presentation (Open XML SDK)
+# Change the fill color of a shape in a presentation (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 to
 change the fill color of a shape on the first slide in a presentation

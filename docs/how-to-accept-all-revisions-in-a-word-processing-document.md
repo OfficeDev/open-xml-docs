@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Priority
 ---
 
-# How to: Accept all revisions in a word processing document (Open XML SDK)
+# Accept all revisions in a word processing document (Open XML SDK)
 
 This topic shows how to use the Open XML SDK 2.5 for Office to accept all revisions in a word processing document programmatically.
 

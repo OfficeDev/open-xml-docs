@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 localization_priority: Normal
 ---
 
-# How to: Change the print orientation of a word processing document
+# Change the print orientation of a word processing document
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically set the print orientation of a Microsoft Word
