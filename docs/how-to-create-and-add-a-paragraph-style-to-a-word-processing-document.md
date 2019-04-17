@@ -53,7 +53,7 @@ The **CreateAndAddParagraphStyle** sample method can be used to add a
 style to a word processing document. You must first obtain a reference
 to the style definitions part in the document to which you want to add
 the style. For more information and an example of how to do this, see
-the [Calling the Sample Method](how-to-create-and-add-a-paragraph-style-to-a-word-processing-document.md#CallSampleMethod)
+the [Calling the Sample Method](#calling-the-sample-method)
 section.
 
 The method accepts four parameters that indicate: a reference to the
@@ -72,8 +72,7 @@ in the user interface).
     ByVal styleid As String, ByVal stylename As String, Optional ByVal aliases As String = "")
 ```
 
-The complete code listing for the method can be found in the [Sample
-Code](how-to-create-and-add-a-paragraph-style-to-a-word-processing-document.md#sampleCode) section.
+The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
 
 ---------------------------------------------------------------------------------
@@ -727,10 +726,5 @@ C\# and Visual Basic.
 --------------------------------------------------------------------------------
 ## See also 
 
-#### Concepts
-
-[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
-
-#### Other resources
-
-[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+- [Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
+- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)

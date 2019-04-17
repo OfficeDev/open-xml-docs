@@ -204,7 +204,7 @@ target child elements to which the animation effects are applied.
 
 ## See also
 
-#### Concepts
+
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
 

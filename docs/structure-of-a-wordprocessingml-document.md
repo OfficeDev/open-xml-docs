@@ -25,13 +25,7 @@ represents a paragraph. A paragraph contains one or more \<**r**\> elements. The
 with a common set of properties, such as formatting. A run contains one
 or more \<**t**\> elements. The \<**t**\> element contains a range of text.
 
-**In This Section**
 
-[Important WordprocessingML Parts](structure-of-a-wordprocessingml-document.md#ImpWPParts)
-
-[Minimum Document Scenario](structure-of-a-wordprocessingml-document.md#MinDocScen)
-
-[Typical Document Scenario](structure-of-a-wordprocessingml-document.md#TypDocScen)
 
 
 ## Important WordprocessingML Parts

@@ -25,9 +25,7 @@ To use the sample code in this topic, you must install the [Open XML SDK 2.5](ht
 
 -   DocumentFormat.OpenXml (installed by the Open XML SDK)
 
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
+You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
 
 ```csharp
     using System;
@@ -41,15 +39,9 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Wordprocessing
 ```
 
-## ApplyStyleToParagraph Method
+## ApplyStyleToParagraph method
 
-The **ApplyStyleToParagraph** example method can be used to apply a
-style to a paragraph. You must first obtain a reference to the document
-as well as a reference to the paragraph that you want to style. The
-method accepts four parameters that indicate: the reference to the
-opened word processing document, the styleid of the style to be applied,
-the name of the style to be applied, and the reference to the paragraph
-to which to apply the style.
+The **ApplyStyleToParagraph** example method can be used to apply a style to a paragraph. You must first obtain a reference to the document as well as a reference to the paragraph that you want to style. The method accepts four parameters that indicate: the reference to the opened word processing document, the styleid of the style to be applied, the name of the style to be applied, and the reference to the paragraph to which to apply the style.
 
 ```csharp
     public static void ApplyStyleToParagraph(WordprocessingDocument doc, string styleid, string stylename, Paragraph p)
@@ -60,10 +52,7 @@ to which to apply the style.
     ByVal styleid As String, ByVal stylename As String, ByVal p As Paragraph)
 ```
 
-The following sections in this topic explain the implementation of this
-method and the supporting code, as well as how to call it. The complete
-sample code listing can be found in the [Sample Code](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md#sampleCode) section at
-the end of this topic.
+The following sections in this topic explain the implementation of this method and the supporting code, as well as how to call it. The complete sample code listing can be found in the [Sample Code](#sample-code) section at the end of this topic.
 
 
 ## Getting a WordprocessingDocument Object
@@ -935,7 +924,5 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-#### Other resources
-
-[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
 

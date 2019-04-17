@@ -408,7 +408,7 @@ PresentationML document referenced in the code.
 --------------------------------------------------------------------------------
 ## See also 
 
-#### Concepts
+
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
 

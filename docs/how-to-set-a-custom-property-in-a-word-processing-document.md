@@ -79,7 +79,7 @@ processing document. You can use the Productivity Tool for Microsoft
 Office, shown in Figure 1, to discover how they are stored. This tool
 enables you to open a document and view its parts and the hierarchy of
 parts. Figure 1 shows a test document after you run the code in the
-[Calling the SetCustomProperty Method](how-to-set-a-custom-property-in-a-word-processing-document.md#Calling) section of
+[Calling the SetCustomProperty Method](#calling-the-setcustomproperty-method) section of
 this article. The tool displays in the right-hand panes both the XML for
 the part and the reflected C\# code that you can use to generate the
 contents of the part.
@@ -120,7 +120,7 @@ If you examine the XML content, you will find the following:
 The sample method that is provided here includes the code that is
 required to create or modify a custom document property in a Microsoft
 Word 2010 or Microsoft Word 2013 document. You can find the complete
-code listing for the method in the [Sample Code](how-to-set-a-custom-property-in-a-word-processing-document.md#SampleCode) section.
+code listing for the method in the [Sample Code](#sample-code) section.
 
 
 ## SetCustomProperty Method
@@ -772,6 +772,6 @@ Basic.
 
 ## See also
 
-#### Other resources
 
-[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+
+- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
