@@ -258,7 +258,7 @@ attempts to add the new **WorksheetPart**.
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code sample is used to open a Spreadsheet Document for
-Read-only Access. You can call the **OpenSpreadsheetDocumentReadonl** method by using
+Read-only Access. You can call the **OpenSpreadsheetDocumentReadonly** method by using
 the following code, which opens the file "Sheet10.xlsx," as an example.
 
 ```csharp
