@@ -140,7 +140,7 @@ WordprocessingML document specified in the preceding code.
 
 --------------------------------------------------------------------------------
 ## See also 
-#### Concepts
+
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
 

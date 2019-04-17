@@ -963,7 +963,7 @@ Figure 2. Elements of a PresentationML file
 --------------------------------------------------------------------------------
 ## See also 
 
-#### Concepts
+
 
 [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 

@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Priority
 ---
-# How to: Insert text into a cell in a spreadsheet document (Open XML SDK)
+# Insert text into a cell in a spreadsheet document (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to insert text into a cell in a new worksheet in a spreadsheet
@@ -760,9 +760,9 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 --------------------------------------------------------------------------------
 ## See also
-#### Other resources
 
-[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+
+- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
 
 [Language-Integrated Query (LINQ)](http://msdn.microsoft.com/en-us/library/bb397926.aspx)
 

@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Priority
 ---
-# How to: Get worksheet information from an Open XML package (Open XML SDK)
+# Get worksheet information from an Open XML package (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically retrieve information from a worksheet in a
@@ -240,7 +240,7 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-#### Other resources
+
 
 [Open XML SDK 2.5 class library
 reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

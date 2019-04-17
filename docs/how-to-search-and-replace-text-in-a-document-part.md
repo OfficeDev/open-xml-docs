@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Priority
 ---
-# How to: Search and replace text in a document part (Open XML SDK)
+# Search and replace text in a document part (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically search and replace a text value in a word
@@ -197,8 +197,8 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 --------------------------------------------------------------------------------
 ## See also 
-#### Other resources
 
-[Open XML SDK 2.5 class library reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+
+- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
 
 [Regular Expressions](http://msdn.microsoft.com/en-us/library/hs600312.aspx)

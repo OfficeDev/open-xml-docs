@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 localization_priority: Normal
 ---
-# How to: Get all the text in all slides in a presentation (Open XML SDK)
+# Get all the text in all slides in a presentation (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 to get
 all of the text in all of the slides in a presentation programmatically.
@@ -444,7 +444,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 --------------------------------------------------------------------------------
 ## See also 
-#### Other resources
+
 
 [Open XML SDK 2.5 class library
 reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
