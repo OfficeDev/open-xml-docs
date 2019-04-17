@@ -1,9 +1,11 @@
 - name: Open XML SDK
-  href: open-xml-sdk.md
   items:
+    - name: Overview
+      href: open-xml-sdk.md
     - name: Getting started
-      href: getting-started.md
       items:
+      - name: Overview
+        href: getting-started.md    
       - name: About the Open XML SDK 
         href: about-the-open-xml-sdk.md
       - name: What's new in the Open XML SDK 
@@ -11,13 +13,15 @@
       - name: Open XML SDK  design considerations
         href: open-xml-sdk-design-considerations.md
     - name: Understanding the Open XML file formats
-      href: understanding-the-open-xml-file-formats.md
       items:
+      - name: Overview
+        href: understanding-the-open-xml-file-formats.md    
       - name: Introduction to markup compatibility
         href: introduction-to-markup-compatibility.md
       - name: Working with PresentationML documents
-        href: working-with-presentationml-documents.md
         items:
+        - name: Overview
+          href: working-with-presentationml-documents.md      
         - name: Structure of a PresentationML document
           href: structure-of-a-presentationml-document.md
         - name: Working with animation
@@ -37,8 +41,9 @@
         - name: Working with slide masters
           href: working-with-slide-masters.md
       - name: Working with SpreadsheetML documents
-        href: working-with-spreadsheetml-documents.md
         items:
+        - name: Overview
+          href: working-with-spreadsheetml-documents.md      
         - name: Structure of a SpreadsheetML document
           href: structure-of-a-spreadsheetml-document.md
         - name: Working with the calculation chain
@@ -56,8 +61,9 @@
         - name: Working with tables
           href: working-with-tables.md
       - name: Working with WordprocessingML documents
-        href: working-with-wordprocessingml-documents.md
         items:
+        - name: Overview
+          href: working-with-wordprocessingml-documents.md      
         - name: Structure of a WordprocessingML document
           href: structure-of-a-wordprocessingml-document.md
         - name: Working with paragraphs
@@ -67,151 +73,156 @@
         - name: Working with WordprocessingML tables
           href: working-with-wordprocessingml-tables.md
     - name: How do I...
-      href: how-do-i.md
       items:
+      - name: Overview
+        href: how-do-i.md    
       - name: Presentations
-        href: presentations.md
         items:
-        - name: 'How to: Add a comment to a slide in a presentation'
+        - name: Overview
+          href: presentations.md      
+        - name: Add a comment to a slide in a presentation
           href: how-to-add-a-comment-to-a-slide-in-a-presentation.md
-        - name: 'How to: Apply a theme to a presentation'
+        - name: Apply a theme to a presentation
           href: how-to-apply-a-theme-to-a-presentation.md
-        - name: 'How to: Change the fill color of a shape in a presentation'
+        - name: Change the fill color of a shape in a presentation
           href: how-to-change-the-fill-color-of-a-shape-in-a-presentation.md
-        - name: 'How to: Create a presentation document by providing a file name'
+        - name: Create a presentation document by providing a file name
           href: how-to-create-a-presentation-document-by-providing-a-file-name.md
-        - name: 'How to: Delete all the comments by an author from all the slides in a presentation'
+        - name: Delete all the comments by an author from all the slides in a presentation
           href: how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md
-        - name: 'How to: Delete a slide from a presentation'
+        - name: Delete a slide from a presentation
           href: how-to-delete-a-slide-from-a-presentation.md
-        - name: 'How to: Get all the external hyperlinks in a presentation'
+        - name: Get all the external hyperlinks in a presentation
           href: how-to-get-all-the-external-hyperlinks-in-a-presentation.md
-        - name: 'How to: Get all the text in a slide in a presentation'
+        - name: Get all the text in a slide in a presentation
           href: how-to-get-all-the-text-in-a-slide-in-a-presentation.md
-        - name: 'How to: Get all the text in all slides in a presentation'
+        - name: Get all the text in all slides in a presentation
           href: how-to-get-all-the-text-in-all-slides-in-a-presentation.md
-        - name: 'How to: Get the titles of all the slides in a presentation'
+        - name: Get the titles of all the slides in a presentation
           href: how-to-get-the-titles-of-all-the-slides-in-a-presentation.md
-        - name: 'How to: Insert a new slide into a presentation'
+        - name: Insert a new slide into a presentation
           href: how-to-insert-a-new-slide-into-a-presentation.md
-        - name: 'How to: Move a slide to a new position in a presentation'
+        - name: Move a slide to a new position in a presentation
           href: how-to-move-a-slide-to-a-new-position-in-a-presentation.md
-        - name: 'How to: Move a paragraph from one presentation to another'
+        - name: Move a paragraph from one presentation to another
           href: how-to-move-a-paragraph-from-one-presentation-to-another.md
-        - name: 'How to: Open a presentation document for read-only access'
+        - name: Open a presentation document for read-only access
           href: how-to-open-a-presentation-document-for-read-only-access.md
-        - name: 'How to: Retrieve the number of slides in a presentation document'
+        - name: Retrieve the number of slides in a presentation document
           href: how-to-retrieve-the-number-of-slides-in-a-presentation-document.md
       - name: Packages and general
-        href: packages-and-general.md
         items:
-        - name: 'How to: Add a new document part that receives a relationship ID to a package'
+        - name: Overview
+          href: packages-and-general.md      
+        - name: Add a new document part that receives a relationship ID to a package
           href: how-to-add-a-new-document-part-that-receives-a-relationship-id-to-a-package.md
-        - name: 'How to: Add a new document part to a package'
+        - name: Add a new document part to a package
           href: how-to-add-a-new-document-part-to-a-package.md
-        - name: 'How to: Copy the contents of an Open XML package part to a document part in a different package'
+        - name: Copy the contents of an Open XML package part to a document part in a different package
           href: how-to-copy-the-contents-of-an-open-xml-package-part-to-a-document-part-in-a-dif.md
-        - name: 'How to: Create a package'
+        - name: Create a package
           href: how-to-create-a-package.md
-        - name: 'How to: Get the contents of a document part from a package'
+        - name: Get the contents of a document part from a package
           href: how-to-get-the-contents-of-a-document-part-from-a-package.md
-        - name: 'How to: Remove a document part from a package'
+        - name: Remove a document part from a package
           href: how-to-remove-a-document-part-from-a-package.md
-        - name: 'How to: Replace the theme part in a word processing document'
+        - name: Replace the theme part in a word processing document
           href: how-to-replace-the-theme-part-in-a-word-processing-document.md
-        - name: 'How to: Search and replace text in a document part'
+        - name: Search and replace text in a document part
           href: how-to-search-and-replace-text-in-a-document-part.md
       - name: Spreadsheets
-        href: spreadsheets.md
         items:
-        - name: 'How to: Add custom UI to a spreadsheet document'
+        - name: Overview
+          href: spreadsheets.md      
+        - name: Add custom UI to a spreadsheet document
           href: how-to-add-custom-ui-to-a-spreadsheet-document.md
-        - name: 'How to: Calculate the sum of a range of cells in a spreadsheet document'
+        - name: Calculate the sum of a range of cells in a spreadsheet document
           href: how-to-calculate-the-sum-of-a-range-of-cells-in-a-spreadsheet-document.md
-        - name: 'How to: Create a spreadsheet document by providing a file name'
+        - name: Create a spreadsheet document by providing a file name
           href: how-to-create-a-spreadsheet-document-by-providing-a-file-name.md
-        - name: 'How to: Delete text from a cell in a spreadsheet'
+        - name: Delete text from a cell in a spreadsheet
           href: how-to-delete-text-from-a-cell-in-a-spreadsheet.md
-        - name: 'How to: Get a column heading in a spreadsheet'
+        - name: Get a column heading in a spreadsheet
           href: how-to-get-a-column-heading-in-a-spreadsheet.md
-        - name: 'How to: Get worksheet information from a package'
+        - name: Get worksheet information from a package
           href: how-to-get-worksheet-information-from-a-package.md
-        - name: 'How to: Insert a chart into a spreadsheet'
+        - name: Insert a chart into a spreadsheet
           href: how-to-insert-a-chart-into-a-spreadsheet.md
-        - name: 'How to: Insert a new worksheet into a spreadsheet'
+        - name: Insert a new worksheet into a spreadsheet
           href: how-to-insert-a-new-worksheet-into-a-spreadsheet.md
-        - name: 'How to: Insert text into a cell in a spreadsheet'
+        - name: Insert text into a cell in a spreadsheet
           href: how-to-insert-text-into-a-cell-in-a-spreadsheet.md
-        - name: 'How to: Merge two adjacent cells in a spreadsheet'
+        - name: Merge two adjacent cells in a spreadsheet
           href: how-to-merge-two-adjacent-cells-in-a-spreadsheet.md
-        - name: 'How to: Open a spreadsheet document for read-only access'
+        - name: Open a spreadsheet document for read-only access
           href: how-to-open-a-spreadsheet-document-for-read-only-access.md
-        - name: 'How to: Open a spreadsheet document from a stream'
+        - name: Open a spreadsheet document from a stream
           href: how-to-open-a-spreadsheet-document-from-a-stream.md
-        - name: 'How to: Parse and read a large spreadsheet'
+        - name: Parse and read a large spreadsheet
           href: how-to-parse-and-read-a-large-spreadsheet.md
-        - name: 'How to: Retrieve a dictionary of all named ranges in a spreadsheet'
+        - name: Retrieve a dictionary of all named ranges in a spreadsheet
           href: how-to-retrieve-a-dictionary-of-all-named-ranges-in-a-spreadsheet.md
-        - name: 'How to: Retrieve a list of the hidden rows or columns in a spreadsheet'
+        - name: Retrieve a list of the hidden rows or columns in a spreadsheet
           href: how-to-retrieve-a-list-of-the-hidden-rows-or-columns-in-a-spreadsheet.md
-        - name: 'How to: Retrieve a list of the hidden worksheets in a spreadsheet'
+        - name: Retrieve a list of the hidden worksheets in a spreadsheet
           href: how-to-retrieve-a-list-of-the-hidden-worksheets-in-a-spreadsheet.md
-        - name: 'How to: Retrieve the values of cells in a spreadsheet'
+        - name: Retrieve the values of cells in a spreadsheet
           href: how-to-retrieve-the-values-of-cells-in-a-spreadsheet.md
-        - name: 'How to: Retrieve a list of the worksheets in a spreadsheet'
+        - name: Retrieve a list of the worksheets in a spreadsheet
           href: how-to-retrieve-a-list-of-the-worksheets-in-a-spreadsheet.md
       - name: Word processing
-        href: word-processing.md
         items:
-        - name: 'How to: Accept all revisions in a word processing document'
+        - name: Overview
+          href: word-processing.md      
+        - name: Accept all revisions in a word processing document
           href: how-to-accept-all-revisions-in-a-word-processing-document.md
-        - name: 'How to: Add tables to word processing documents'
+        - name: Add tables to word processing documents
           href: how-to-add-tables-to-word-processing-documents.md
-        - name: 'How to: Apply a style to a paragraph in a word processing document'
+        - name: Apply a style to a paragraph in a word processing document
           href: how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md
-        - name: 'How to: Change the print orientation of a word processing document'
+        - name: Change the print orientation of a word processing document
           href: how-to-change-the-print-orientation-of-a-word-processing-document.md
-        - name: 'How to: Change text in a table in a word processing document'
+        - name: Change text in a table in a word processing document
           href: how-to-change-text-in-a-table-in-a-word-processing-document.md
-        - name: 'How to: Convert a word processing document from the DOCM to the DOCX file format'
+        - name: Convert a word processing document from the DOCM to the DOCX file format
           href: how-to-convert-a-word-processing-document-from-the-docm-to-the-docx-file-format.md
-        - name: 'How to: Create and add a character style to a word processing document'
+        - name: Create and add a character style to a word processing document
           href: how-to-create-and-add-a-character-style-to-a-word-processing-document.md
-        - name: 'How to: Create and add a paragraph style to a word processing document'
+        - name: Create and add a paragraph style to a word processing document
           href: how-to-create-and-add-a-paragraph-style-to-a-word-processing-document.md
-        - name: 'How to: Create a word processing document by providing a file name'
+        - name: Create a word processing document by providing a file name
           href: how-to-create-a-word-processing-document-by-providing-a-file-name.md
-        - name: 'How to: Delete comments by all or a specific author in a word processing document'
+        - name: Delete comments by all or a specific author in a word processing document
           href: how-to-delete-comments-by-all-or-a-specific-author-in-a-word-processing-document.md
-        - name: 'How to: Extract styles from a word processing document'
+        - name: Extract styles from a word processing document
           href: how-to-extract-styles-from-a-word-processing-document.md
-        - name: 'How to: Insert a comment into a word processing document'
+        - name: Insert a comment into a word processing document
           href: how-to-insert-a-comment-into-a-word-processing-document.md
-        - name: 'How to: Insert a picture into a word processing document'
+        - name: Insert a picture into a word processing document
           href: how-to-insert-a-picture-into-a-word-processing-document.md
-        - name: 'How to: Insert a table into a word processing document'
+        - name: Insert a table into a word processing document
           href: how-to-insert-a-table-into-a-word-processing-document.md
-        - name: 'How to: Open and add text to a word processing document'
+        - name: Open and add text to a word processing document
           href: how-to-open-and-add-text-to-a-word-processing-document.md
-        - name: 'How to: Open a word processing document for read-only access'
+        - name: Open a word processing document for read-only access
           href: how-to-open-a-word-processing-document-for-read-only-access.md
-        - name: 'How to: Open a word processing document from a stream'
+        - name: Open a word processing document from a stream
           href: how-to-open-a-word-processing-document-from-a-stream.md
-        - name: 'How to: Remove hidden text from a word processing document'
+        - name: Remove hidden text from a word processing document
           href: how-to-remove-hidden-text-from-a-word-processing-document.md
-        - name: 'How to: Remove the headers and footers from a word processing document'
+        - name: Remove the headers and footers from a word processing document
           href: how-to-remove-the-headers-and-footers-from-a-word-processing-document.md
-        - name: 'How to: Replace the header in a word processing document'
+        - name: Replace the header in a word processing document
           href: how-to-replace-the-header-in-a-word-processing-document.md
-        - name: 'How to: Replace the styles parts in a word processing document'
+        - name: Replace the styles parts in a word processing document
           href: how-to-replace-the-styles-parts-in-a-word-processing-document.md
-        - name: 'How to: Retrieve application property values from a word processing document'
+        - name: Retrieve application property values from a word processing document
           href: how-to-retrieve-application-property-values-from-a-word-processing-document.md
-        - name: 'How to: Retrieve comments from a word processing document'
+        - name: Retrieve comments from a word processing document
           href: how-to-retrieve-comments-from-a-word-processing-document.md
-        - name: 'How to: Set a custom property in a word processing document'
+        - name: Set a custom property in a word processing document
           href: how-to-set-a-custom-property-in-a-word-processing-document.md
-        - name: 'How to: Set the font for a text run'
+        - name: Set the font for a text run
           href: how-to-set-the-font-for-a-text-run.md
-        - name: 'How to: Validate a word processing document'
+        - name: Validate a word processing document
           href: how-to-validate-a-word-processing-document.md
