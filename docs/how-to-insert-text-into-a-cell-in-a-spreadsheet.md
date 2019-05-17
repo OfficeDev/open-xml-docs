@@ -391,8 +391,18 @@ object into a **Worksheet** object.
         }
         else
         {
-            row = new Row() { RowIndex = rowIndex };
-            sheetData.Append(row);
+            newRow = new Row() { RowIndex = rowIndex };
+            // Rows must be in sequential order according to RowIndex. Determine where to insert the new row.
+            Row refRow = null;
+            foreach (Row row in sheetData.Elements<Row>())
+            {
+                if (row.RowIndex > rowIndex)
+                {
+                    refRow = row;
+                    break;
+                }
+            }
+            sheetData.InsertBefore(newRow, refRow);
         }
 
         // If there is not a cell with the specified column name, insert one.  
@@ -438,9 +448,17 @@ object into a **Worksheet** object.
         If (sheetData.Elements(Of Row).Where(Function(r) r.RowIndex.Value = rowIndex).Count() <> 0) Then
             row = sheetData.Elements(Of Row).Where(Function(r) r.RowIndex.Value = rowIndex).First()
         Else
-            row = New Row()
-            row.RowIndex = rowIndex
-            sheetData.Append(row)
+            newRow = New Row()
+            newRow.RowIndex = rowIndex
+            Dim refRow As Row = Nothing
+            For Each row As Row In sheetData.Elements(Of Row)()
+                If (row.RowIndex > rowIndex) Then
+                    refRow = row
+                    Exit For
+                End If
+            Next
+            
+            sheetData.InsertBefore(newRow, refRow)
         End If
 
         ' If there is not a cell with the specified column name, insert one.  
