@@ -348,7 +348,7 @@ source slide) is identified.
     {
         targetSlide = null;
     }
-    if (from < to)
+    else if (from < to)
     {
         targetSlide = slideIdList.ChildElements[to] as SlideId;
     }
@@ -374,8 +374,7 @@ source slide) is identified.
     ' Identify the position of the target slide after which to move the source slide.
     If to = 0 Then
         targetSlide = Nothing
-    End If
-    If From < to Then
+    ElseIf From < to Then
         targetSlide = TryCast(slideIdList.ChildElements(to), SlideId)
     Else
         targetSlide = TryCast(slideIdList.ChildElements(to - 1), SlideId)
@@ -514,7 +513,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         {
             targetSlide = null;
         }
-        if (from < to)
+        else if (from < to)
         {
             targetSlide = slideIdList.ChildElements[to] as SlideId;
         }
@@ -616,9 +615,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         ' Identify the position of the target slide after which to move the source slide.
         If (moveTo = 0) Then
             targetSlide = Nothing
-        End If
-
-        If (from < moveTo) Then
+        ElseIf (from < moveTo) Then
             targetSlide = CType(slideIdList.ChildElements(moveTo), SlideId)
         Else
             targetSlide = CType(slideIdList.ChildElements((moveTo - 1)), SlideId)
