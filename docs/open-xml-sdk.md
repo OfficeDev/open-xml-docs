@@ -41,7 +41,7 @@ with just a few lines of code.
 
 Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
-[!include[Addins note](../includes/addinsnote.md)]
+[!include[Add-ins note](../includes/addinsnote.md)]
 
 ## In this section 
 
