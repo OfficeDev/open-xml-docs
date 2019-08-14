@@ -19,7 +19,7 @@ localization_priority: Priority
 
 Open XML is an open standard for word-processing documents, presentations, and spreadsheets that can be freely implemented by multiple applications on different platforms. Open XML is designed to faithfully represent existing word-processing documents, presentations, and spreadsheets that are encoded in binary formats defined by Microsoft Office applications. The reason for Open XML is simple: billions of documents now exist but, unfortunately, the information in those documents is tightly coupled with the programs that created them. The purpose of the Open XML standard is to de-couple documents created by Microsoft Office applications so that they can be manipulated by other applications independent of proprietary formats and without the loss of data.
 
-[!include[Add-ins note](../includes/addinsnote.md)]
+[!include[Add-ins note](./includes/addinsnote.md)]
 
 ## Structure of an Open XML Package
 

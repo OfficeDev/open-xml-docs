@@ -26,7 +26,7 @@ spreadsheet document. In addition, a spreadsheet document might contain
 \<**table**\>, \<**chartsheet**\>, \<**pivotTableDefinition**\>, or other spreadsheet
 related elements.
 
-[!include[Add-ins note](../includes/addinsnote.md)]
+[!include[Add-ins note](./includes/addinsnote.md)]
 
 --------------------------------------------------------------------------------
 ## Important Spreadsheet Parts
