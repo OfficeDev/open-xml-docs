@@ -20,6 +20,8 @@ This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically read a large Excel file. For more information
 about the basic structure of a **SpreadsheetML** document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
+[!include[Add-ins note](./includes/addinsnote.md)]
+
 You must use the following **using** directives
 or **Imports** statements to compile the code
 in this topic.

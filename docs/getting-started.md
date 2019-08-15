@@ -19,6 +19,7 @@ localization_priority: Priority
 
 The Open XML SDK 2.5 for Office simplifies the task of manipulating Open XML packages and the underlying Open XML schema elements within a package. The classes in the Open XML SDK 2.5 encapsulate many common tasks that developers perform on Open XML packages, so that you can perform complex operations with just a few lines of code.
 
+[!include[Add-ins note](./includes/addinsnote.md)]
 
 ------------------------------------------------------------
 ## Using the Classes in the Open XML SDK
