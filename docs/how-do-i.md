@@ -19,6 +19,7 @@ localization_priority: Priority
 This section provides how-to topics for working with the Open XML SDK
 2.5 for Office.
 
+[!include[Add-ins note](./includes/addinsnote.md)]
 
 ## In this section
 
