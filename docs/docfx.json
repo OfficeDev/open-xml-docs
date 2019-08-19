@@ -41,6 +41,10 @@
       "ms.topic": "conceptual",
       "ms.prod": "office",
       "ms.technology": "open-xml"
+    },    
+      "langs": {
+        "api/**.yml": ["csharp", "vb", "fsharp", "cpp"]
+      }
     },
     "fileMetadata": {},
     "template": [],
