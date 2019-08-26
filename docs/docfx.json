@@ -43,7 +43,7 @@
       "ms.technology": "open-xml"
     },    
       "langs": {
-        "api/**.yml": ["csharp", "vb", "fsharp", "cpp"]
+      "**/*.yml": ["csharp", "vb"]
       }
     },
     "fileMetadata": {},
