@@ -278,7 +278,7 @@ Following is the complete sample code in both C\# and Visual Basic.
                 if (comments.HasChildren)
                 {
                     // Obtain an unused ID.
-                    id = comments.Descendants<Comment>().Select(e => e.Id.Value).Max();
+                    id = (comments.Descendants<Comment>().Select(e => int.Parse(e.Id.Value)).Max() + 1).ToString();
                 }
             }
             else
