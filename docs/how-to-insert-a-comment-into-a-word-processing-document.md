@@ -116,6 +116,8 @@ creates one using the [AddNewPart\<T\>()](https://msdn.microsoft.com/en-us/libra
         if (comments.HasChildren)
         {
             id = comments.Descendants<Comment>().Select(e => e.Id.Value).Max();
+            var i = Int32.Parse(id);
+            id = (++i).ToString();
         }
     }
     else
@@ -279,6 +281,8 @@ Following is the complete sample code in both C\# and Visual Basic.
                 {
                     // Obtain an unused ID.
                     id = comments.Descendants<Comment>().Select(e => e.Id.Value).Max();
+                    var i = Int32.Parse(id);
+                    id = (++i).ToString();
                 }
             }
             else
