@@ -311,9 +311,10 @@ to the [WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentfo
         // Add a new worksheet part to the workbook.
         WorksheetPart newWorksheetPart = workbookPart.AddNewPart<WorksheetPart>();
         newWorksheetPart.Worksheet = new Worksheet(new SheetData());
+        Sheets sheets = workbookPart.Workbook.AppendChild<Sheets>(new Sheets());
+        
         newWorksheetPart.Worksheet.Save();
-
-        Sheets sheets = workbookPart.Workbook.GetFirstChild<Sheets>();
+        
         string relationshipId = workbookPart.GetIdOfPart(newWorksheetPart);
 
         // Get a unique ID for the new sheet.
