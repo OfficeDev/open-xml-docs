@@ -16,14 +16,14 @@ localization_priority: Normal
 ---
 # Working with slide masters (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office **[SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office **[SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
 ---------------------------------------------------------------------------------
 ## Slide Masters in PresentationML 
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<sldMaster\>
 element used to represent slide layouts in a PresentationML document as
 follows.
@@ -53,16 +53,16 @@ classes that correspond to them.
 
 | **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         \<clrMap\>         |                      [ColorMap](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.colormap.aspx)                      |
-|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
-|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
-|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
-|     \<sldLayoutIdLst\>     |             [SlideLayoutIdList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayoutidlist.aspx)             |
-|         \<timing\>         |                        [Timing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.timing.aspx)                        |
-|       \<transition\>       |                    [Transition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.transition.aspx)                    |
-|        \<txStyles\>        |                    [TextStyles](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.textstyles.aspx)                    |
+|         \<clrMap\>         |                      [ColorMap](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormap.aspx)                      |
+|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
+|     \<sldLayoutIdLst\>     |             [SlideLayoutIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayoutidlist.aspx)             |
+|         \<timing\>         |                        [Timing](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.timing.aspx)                        |
+|       \<transition\>       |                    [Transition](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.transition.aspx)                    |
+|        \<txStyles\>        |                    [TextStyles](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.textstyles.aspx)                    |
 
-The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<sldMaster\> element.
 
 
@@ -88,7 +88,7 @@ list.
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -103,7 +103,7 @@ slide, presentation slide, or slide layout.
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -123,7 +123,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -141,7 +141,7 @@ store whether this extension property has been modified. end note]
 ### HeaderFooter Class
 
 The **HeaderFooter** class corresponds to the
-\<hf\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<hf\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<hf\> element:
 
 This element specifies the header and footer information for a slide.
@@ -155,7 +155,7 @@ slide numbering, and custom header and footer text.
 
 The **SlideLayoutIdList** class corresponds to
 the \<sldLayoutIdLst\> element. The following information from the
-[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<sldLayoutIdLst\> element:
 
 This element specifies the existence of the slide layout identification
@@ -171,7 +171,7 @@ which it is used.
 ### Timing Class
 
 The **Timing** class corresponds to the
-\<timing\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<timing\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<timing\> element:
 
 This element specifies the timing information for handling all
@@ -186,7 +186,7 @@ PresentationML framework.
 ### Transition Class
 
 The **Transition** class corresponds to the
-\<transition\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<transition\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<transition\> element:
 
 This element specifies the kind of slide transition that should be used
@@ -199,7 +199,7 @@ transition is complete.
 ### TextStyles Class
 
 The **TextStyles** class corresponds to the
-\<txStyles\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<txStyles\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<txStyles\> element:
 
 This element specifies the text styles within a slide master. Within
@@ -243,18 +243,18 @@ formatting for all related slides within the presentation. end example]
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **SlideMaster** class is associated with an
-instance of the **[SlideMasterPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidemasterpart.aspx)** class, which represents a
+instance of the **[SlideMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidemasterpart.aspx)** class, which represents a
 slide master part, one of the required parts of a PresentationML
 presentation file package. Each **SlideMaster**
-class instance must also be associated with instances of the **[SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx)** and <**[Slide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.aspx)** classes, which are in turn associated
+class instance must also be associated with instances of the **[SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx)** and <**[Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx)** classes, which are in turn associated
 with similarly named required presentation parts, represented by the
-**[SlideLayoutPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidelayoutpart.aspx)** and **[SlidePart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidepart.aspx)** classes.
+**[SlideLayoutPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidelayoutpart.aspx)** and **[SlidePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidepart.aspx)** classes.
 
 The **SlideMaster** class, which represents the
 \<sldMaster\> element, is therefore also associated with a series of
 other classes that represent the child elements of the \<sldMaster\>
 element. Among these classes, as shown in the following code sample, are
-the **CommonSlideData** class, the **ColorMap** class, the **[ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, and the **[Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx)** class.
+the **CommonSlideData** class, the **ColorMap** class, the **[ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, and the **[Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx)** class.
 
 
 --------------------------------------------------------------------------------
@@ -265,12 +265,12 @@ master part to an existing presentation and creates an instance of an
 Open XML SDK 2.5**SlideMaster** class in the
 new slide master part. The **SlideMaster**
 class constructor creates instances of the **CommonSlideData** class and the **ColorMap**, **SlideLayoutIdList**, and **TextStyles** classes. The **CommonSlideData** class constructor creates an
-instance of the **[ShapeTree](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, whose constructor in turn
-creates additional class instances: an instance of the **[NonVisualGroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx)** class, an
-instance of the **[GroupShapeProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx)** class, and an instance
-of the **[Shape](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.shape.aspx)** class, among others.
+instance of the **[ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, whose constructor in turn
+creates additional class instances: an instance of the **[NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx)** class, an
+instance of the **[GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx)** class, and an instance
+of the **[Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx)** class, among others.
 
-The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)**
+The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)**
 namespace.
 
 ```csharp
@@ -347,7 +347,7 @@ PresentationML document referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:sldMaster xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:sldMaster xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -357,7 +357,7 @@ PresentationML document referenced in the code.
             <p:nvPr />
           </p:nvGrpSpPr>
           <p:grpSpPr>
-            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
           </p:grpSpPr>
           <p:sp>
             <p:nvSpPr>
@@ -365,7 +365,7 @@ PresentationML document referenced in the code.
                        name="Title Placeholder 1" />
               <p:cNvSpPr>
                 <a:spLocks noGrp="1"
-                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
               </p:cNvSpPr>
               <p:nvPr>
                 <p:ph type="title" />
@@ -373,9 +373,9 @@ PresentationML document referenced in the code.
             </p:nvSpPr>
             <p:spPr />
             <p:txBody>
-              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
             </p:txBody>
           </p:sp>
         </p:spTree>
@@ -395,7 +395,7 @@ PresentationML document referenced in the code.
       <p:sldLayoutIdLst>
         <p:sldLayoutId id="2147483649"
                        r:id="rId1"
-                       xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+                       xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
       </p:sldLayoutIdLst>
       <p:txStyles>
         <p:titleStyle />

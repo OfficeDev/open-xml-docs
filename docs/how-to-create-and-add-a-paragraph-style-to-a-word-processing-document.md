@@ -23,7 +23,7 @@ processing document. It contains an example
 supplemental example method to add the styles part when necessary.
 
 To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must also explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -354,9 +354,9 @@ styles element is created and saved to the part.
 --------------------------------------------------------------------------------
 ## Creating the Style 
 
-To create the style, the code instantiates the **[Style](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.aspx)** class and sets certain properties,
-such as the **[Type](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.type.aspx)** of style (paragraph), the **[StyleId](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx)**, whether the style is a **[CustomStyle](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx)**, and whether the style is the
-**[Default](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.style.default.aspx)** style for its type.
+To create the style, the code instantiates the **[Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx)** class and sets certain properties,
+such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx)** of style (paragraph), the **[StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx)**, whether the style is a **[CustomStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx)**, and whether the style is the
+**[Default](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.default.aspx)** style for its type.
 
 ```csharp
     // Create a new paragraph style element and specify some of the attributes.
@@ -378,7 +378,7 @@ such as the **[Type](https://msdn.microsoft.com/en-us/library/office/documentfor
 The code results in the following XML.
 
 ```xml
-    <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:styles xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:style w:type="paragraph" w:styleId="OverdueAmountPara" w:default="false" w:customStyle="true">
       </w:style>
     </w:styles>
@@ -386,7 +386,7 @@ The code results in the following XML.
 
 The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
-corresponding class, and then call the **[Append([])](https://msdn.microsoft.com/en-us/library/office/cc801361.aspx)** method add the child element to
+corresponding class, and then call the **[Append([])](https://msdn.microsoft.com/library/office/cc801361.aspx)** method add the child element to
 the style. For more information about these properties, see section 17.7
 of the [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 specification.
@@ -452,7 +452,7 @@ specification.
     style.Append(unhidewhenused1)
 ```
 
-Next, the code instantiates a **[StyleRunProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx)** object to create a **rPr** (Run Properties) element. You specify the
+Next, the code instantiates a **[StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx)** object to create a **rPr** (Run Properties) element. You specify the
 character properties that apply to the style, such as font and color, in
 this element. The properties are then appended as children of the **rPr** element.
 

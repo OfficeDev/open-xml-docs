@@ -43,11 +43,11 @@ this topic.
 
 --------------------------------------------------------------------------------
 ## Getting a PresentationDocument object
-In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
+In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562287.aspx)
+[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx)
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. To open a document
 for read/write access, assign the value **true** to this parameter; for read-only access
@@ -128,21 +128,21 @@ two slides denoted by the ID 267 and 256.
     <p:presentation xmlns:p="…" … > 
        <p:sldMasterIdLst>
           <p:sldMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId1"/>
+             xmlns:rel="https://…/relationships" rel:id="rId1"/>
        </p:sldMasterIdLst>
        <p:notesMasterIdLst>
           <p:notesMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId4"/>
+             xmlns:rel="https://…/relationships" rel:id="rId4"/>
        </p:notesMasterIdLst>
        <p:handoutMasterIdLst>
           <p:handoutMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId5"/>
+             xmlns:rel="https://…/relationships" rel:id="rId5"/>
        </p:handoutMasterIdLst>
        <p:sldIdLst>
           <p:sldId id="267"
-             xmlns:rel="http://…/relationships" rel:id="rId2"/>
+             xmlns:rel="https://…/relationships" rel:id="rId2"/>
           <p:sldId id="256"
-             xmlns:rel="http://…/relationships" rel:id="rId3"/>
+             xmlns:rel="https://…/relationships" rel:id="rId3"/>
        </p:sldIdLst>
            <p:sldSz cx="9144000" cy="6858000"/>
        <p:notesSz cx="6858000" cy="9144000"/>
@@ -151,7 +151,7 @@ two slides denoted by the ID 267 and 256.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to **PresentationML** elements. You can find these
-classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)
+classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 

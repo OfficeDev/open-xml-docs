@@ -21,7 +21,7 @@ This topic describes the new and improved features included in the Open
 XML SDK 2.5 for Office in addition to known issues and limitations.
  
 The Open XML SDK 2.5 is a collection of classes that let you create and
-manipulate Open XML documents - documents that adhere to the [Office Open XML File Formats Standard](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463).
+manipulate Open XML documents - documents that adhere to the [Office Open XML File Formats Standard](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463).
 Because the SDK provides an application program interface that lets you
 manipulate Open XML documents directly, you can do so without the need
 for the Office client products themselves in both client and server
@@ -73,7 +73,7 @@ documentation in the left pane.
 | **DocumentFormat.OpenXml.Office15.WebExtension, WebExtentionPane** | Supports app for Office and Task Pane app for Office features. The classes are viable for inserting or modifying app for Office into Word and Excel document files |
 
 For code samples demonstrating how to use these new classes, please
-refer to new articles posted to [Open XML Format SDK Forum](http://social.msdn.microsoft.com/Forums/en-US/oxmlsdk/threads) in
+refer to new articles posted to [Open XML Format SDK Forum](https://social.msdn.microsoft.com/Forums/oxmlsdk/threads) in
 the Microsoft Developer Network.
 
 

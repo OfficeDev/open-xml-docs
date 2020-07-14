@@ -36,7 +36,7 @@ understand and support a feature employed in a document produced by Word
 
 Open XML anticipates these scenarios. The Office Open XML File Formats
 specification describes facilities for achieving the above desired
-outcomes in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip).
+outcomes in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip).
 
 The Open XML SDK 2.5 supports markup compatibility in a way that makes
 it easy for you to achieve the above desired outcomes for and Office
@@ -63,7 +63,7 @@ applications.
 
 --------------------------------------------------------------------------------
 ## Markup Compatibility in the Open XML File Formats Specification 
-Markup compatibility is discussed in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip),
+Markup compatibility is discussed in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip),
 which is recommended reading to understand markup compatibility. The
 specification defines XML attributes to express compatibility rules, and
 XML elements to specify alternate content. For example, the **Ignorable** attribute specifies namespaces that can
@@ -105,22 +105,22 @@ apply to markup compatibility.
 ## Setting the stage when you Open 
 When you open a document using the Open XML SDK 2.5, you have the option
 of using an overload with a signature that accepts an instance of the
-**[OpenSettings](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.opensettings.aspx)** class as a parameter. You use
+**[OpenSettings](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.opensettings.aspx)** class as a parameter. You use
 the open settings class to provide certain important settings that
 govern the behavior of the SDK. One set of settings in particular,
-stored in the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.opensettings.markupcompatibilityprocesssettings.aspx)**
+stored in the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.opensettings.markupcompatibilityprocesssettings.aspx)**
 property, determines how markup compatibility elements and attributes
-are processed. You set the property to an instance of the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.aspx)** class
+are processed. You set the property to an instance of the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.aspx)** class
 prior to opening a document.
 
 The class has the following properties:
 
 -   
-    **[ProcessMode](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.processmode.aspx)** - Determines the
+    **[ProcessMode](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.processmode.aspx)** - Determines the
     parts that are preprocessed.
 
 -   
-    **[TargetFileFormatVersions](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.targetfileformatversions.aspx)** -
+    **[TargetFileFormatVersions](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.targetfileformatversions.aspx)** -
     Specifies the context that applies to preprocessing.
 
 By default, documents are not preprocessed. If however you do specify
@@ -172,7 +172,7 @@ property.
 ---------------------------------------------------------------------------------
 ## Understanding Process Mode 
 The process mode specifies which document parts should be preprocessed.
-You set this property to a member of the **[MarkupCompatibilityProcessMode](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.markupcompatibilityprocessmode.aspx)** enumeration.
+You set this property to a member of the **[MarkupCompatibilityProcessMode](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocessmode.aspx)** enumeration.
 The default value, **NoProcess**, indicates
 that no preprocessing is performed. Your application must be able to
 understand and handle any elements and attributes present in the
@@ -195,7 +195,7 @@ document is preprocessed.
 The target file format versions property lets you choose to process
 markup compatibility content in either Office 2010 or Office 2013
 context. Set the **TargetFileFormatVersions**
-property to a member of the **[FileFormatVersions](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.fileformatversions.aspx)** enumeration.
+property to a member of the **[FileFormatVersions](https://msdn.microsoft.com/library/office/documentformat.openxml.fileformatversions.aspx)** enumeration.
 
 The default value, **Office2010**, means the
 SDK will assume that namespaces defined in Office 2010 are understood,

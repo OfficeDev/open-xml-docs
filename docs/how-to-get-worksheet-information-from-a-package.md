@@ -93,7 +93,7 @@ file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=http://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
         <sheets>
             <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
             <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
@@ -115,7 +115,7 @@ Sheet1.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
                 <c r="A1">
@@ -243,4 +243,4 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 
 [Open XML SDK 2.5 class library
-reference](http://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+reference](https://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)

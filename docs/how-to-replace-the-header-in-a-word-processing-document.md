@@ -20,7 +20,7 @@ This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to replace the header in word processing document
 programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -63,7 +63,7 @@ the **id** attribute, which specifies an explicit relationship to the
 appropriate Header part in the WordprocessingML package.
 
 If the relationship type of the relationship specified by this element
-is not `http://schemas.openxmlformats.org/officeDocument/2006/header`,
+is not `https://schemas.openxmlformats.org/officeDocument/2006/header`,
 is not present, or does not have a **TargetMode** attribute value of
 **Internal**, then the document shall be
 considered non-conformant.
@@ -114,11 +114,11 @@ from the document part with a unique relationship ID, as shown in the
 following packaging markup:
 
 ```xml
-    <Relationships xmlns=http://schemas.openxmlformats.org/package/2006/relationships>
+    <Relationships xmlns=https://schemas.openxmlformats.org/package/2006/relationships>
       …
-      <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml" />
-      <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header2.xml" />
-      <Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header3.xml" />
+      <Relationship Id="rId2" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml" />
+      <Relationship Id="rId3" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header2.xml" />
+      <Relationship Id="rId5" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header3.xml" />
       …
     </Relationships>
 ```

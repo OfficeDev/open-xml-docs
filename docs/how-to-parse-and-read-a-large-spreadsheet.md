@@ -44,15 +44,15 @@ in this topic.
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
-In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
+In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
 Excel document package. To open and work with an Excel document, you
 create an instance of the **SpreadsheetDocument** class from the document.
 After you create this instance, you can use it to obtain access to the
 main workbook part that contains the worksheets. The content in the
 document is represented in the package as XML using **SpreadsheetML** markup.
 
-To create the class instance, you call one of the overloads of the [Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) method. The following code sample
-shows how to use the [Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562356.aspx) overload. The first
+To create the class instance, you call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) method. The following code sample
+shows how to use the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) overload. The first
 parameter takes a string that represents the full path to the document
 to open. The second parameter takes a value of **true** or **false** and
 represents whether or not you want the file to be opened for editing. In

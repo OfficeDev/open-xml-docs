@@ -24,7 +24,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK
 
 ## CalculationChain in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **CalculationChain** (\<**calcChain**\>) element.
 
 An instance of this part type contains an ordered set of references to

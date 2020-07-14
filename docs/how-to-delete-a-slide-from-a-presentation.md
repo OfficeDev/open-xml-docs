@@ -50,13 +50,13 @@ this topic.
 ## Getting a Presentation Object 
 
 In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**[PresentationDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.aspx)** class represents a
+target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**[PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx)** class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call one
 of the **Open** method overloads. The code in
 this topic uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562287.aspx)**
+target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx)**
 method, which takes a file path as the first parameter to specify the
 file to open, and a Boolean value as the second parameter to specify
 whether a document is editable. Set this second parameter to **false** to open the file for read-only access, or
@@ -158,21 +158,21 @@ two slides denoted by the IDs 267 and 256.
     <p:presentation xmlns:p="…" … > 
        <p:sldMasterIdLst>
           <p:sldMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId1"/>
+             xmlns:rel="https://…/relationships" rel:id="rId1"/>
        </p:sldMasterIdLst>
        <p:notesMasterIdLst>
           <p:notesMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId4"/>
+             xmlns:rel="https://…/relationships" rel:id="rId4"/>
        </p:notesMasterIdLst>
        <p:handoutMasterIdLst>
           <p:handoutMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId5"/>
+             xmlns:rel="https://…/relationships" rel:id="rId5"/>
        </p:handoutMasterIdLst>
        <p:sldIdLst>
           <p:sldId id="267"
-             xmlns:rel="http://…/relationships" rel:id="rId2"/>
+             xmlns:rel="https://…/relationships" rel:id="rId2"/>
           <p:sldId id="256"
-             xmlns:rel="http://…/relationships" rel:id="rId3"/>
+             xmlns:rel="https://…/relationships" rel:id="rId3"/>
        </p:sldIdLst>
            <p:sldSz cx="9144000" cy="6858000"/>
        <p:notesSz cx="6858000" cy="9144000"/>
@@ -182,16 +182,16 @@ two slides denoted by the IDs 267 and 256.
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
 elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation">**[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)**
+target="N:DocumentFormat.OpenXml.Presentation">**[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)**
 namespace. The following table lists the class names of the classes that
 correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| sld | [Slide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.aspx) | Presentation Slide. It is the root element of SlidePart. |
-| sldLayout | [SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx) | Slide Layout. It is the root element of SlideLayoutPart. |
-| sldMaster | [SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx) | Slide Master. It is the root element of SlideMasterPart. |
-| notesMaster | [NotesMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesmaster.aspx) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
+| sld | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) | Presentation Slide. It is the root element of SlidePart. |
+| sldLayout | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) | Slide Layout. It is the root element of SlideLayoutPart. |
+| sldMaster | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) | Slide Master. It is the root element of SlideMasterPart. |
+| notesMaster | [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
 --------------------------------------------------------------------------------
 ## Counting the Number of Slides 

@@ -16,7 +16,7 @@ localization_priority: Normal
 ---
 # Working with conditional formatting (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[ConditionalFormatting](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)** class and how it
+This topic discusses the Open XML SDK 2.5 **[ConditionalFormatting](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
 make up a SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)**.
@@ -46,10 +46,10 @@ class.
 
 | **SpreadsheetML Element** |                                                           **Open XML SDK 2.5 Class**                                                           |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-|          cfRule           | [ConditionalFormattingRule](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.conditionalformattingrule.aspx) |
-|          dataBar          |                   [DataBar](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.databar.aspx)                   |
-|        colorScale         |                [ColorScale](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.colorscale.aspx)                |
-|          iconSet          |                   [IconSet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.iconset.aspx)                   |
+|          cfRule           | [ConditionalFormattingRule](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformattingrule.aspx) |
+|          dataBar          |                   [DataBar](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.databar.aspx)                   |
+|        colorScale         |                [ColorScale](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.colorscale.aspx)                |
+|          iconSet          |                   [IconSet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.iconset.aspx)                   |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 Conditional Formatting Class 
@@ -59,7 +59,7 @@ Open XML File Format schema for SpreadsheetML documents. Use the **ConditionalFo
 individual \<**conditionalFormatting**\>
 elements in a SpreadsheetML document.
 
-The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **ConditionalFormatting** (\<**conditionalFormatting**\>) element.
 
 A Conditional Format is a format, such as cell shading or font color,

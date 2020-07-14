@@ -36,7 +36,7 @@ this topic.
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
-In the Open XML SDK, the **[SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx)** class represents an
+In the Open XML SDK, the **[SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx)** class represents an
 Excel document package. To create an Excel document, create an instance
 of the **SpreadsheetDocument** class and
 populate it with parts. At a minimum, the document must have a workbook
@@ -44,14 +44,14 @@ part that serves as a container for the document, and at least one
 worksheet part. The text is represented in the package as XML using
 **SpreadsheetML** markup.
 
-To create the class instance, call the [Create(Package, SpreadsheetDocumentType)](https://msdn.microsoft.com/en-us/library/office/cc562706.aspx)
+To create the class instance, call the [Create(Package, SpreadsheetDocumentType)](https://msdn.microsoft.com/library/office/cc562706.aspx)
 method. Several **Create** methods are
 provided, each with a different signature. The sample code in this topic
 uses the **Create** method with a signature
 that requires two parameters. The first parameter, **package**, takes a full
 path string that represents the document that you want to create. The
 second parameter, <span class="parameter"
-sdata="paramReference">*type*, is a member of the [SpreadsheetDocumentType](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheetdocumenttype.aspx) enumeration. This
+sdata="paramReference">*type*, is a member of the [SpreadsheetDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheetdocumenttype.aspx) enumeration. This
 parameter represents the document type. For example, there are different
 members of the **SpreadsheetDocumentType**
 enumeration for add-ins, templates, workbooks, and macro-enabled
@@ -75,10 +75,10 @@ method.
 ```
 
 When you have created the Excel document package, you can add parts to
-it. To add the workbook part you call the [AddWorkbookPart()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.addworkbookpart.aspx) method of the **SpreadsheetDocument** class. A workbook part must
-have at least one worksheet. To add a worksheet, create a new **Sheet**. When you create a new **Sheet**, associate the **Sheet** with the [Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx) by passing the **Id**, **SheetId** and **Name** parameters. Use the
-[GetIdOfPart(OpenXmlPart)](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getidofpart.aspx) method to get the
-**Id** of the **Sheet**. Then add the new sheet to the **Sheet** collection by calling the [Append([])](https://msdn.microsoft.com/en-us/library/office/cc801361.aspx) method of the [Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx) class. The following code example
+it. To add the workbook part you call the [AddWorkbookPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.addworkbookpart.aspx) method of the **SpreadsheetDocument** class. A workbook part must
+have at least one worksheet. To add a worksheet, create a new **Sheet**. When you create a new **Sheet**, associate the **Sheet** with the [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx) by passing the **Id**, **SheetId** and **Name** parameters. Use the
+[GetIdOfPart(OpenXmlPart)](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getidofpart.aspx) method to get the
+**Id** of the **Sheet**. Then add the new sheet to the **Sheet** collection by calling the [Append([])](https://msdn.microsoft.com/library/office/cc801361.aspx) method of the [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) class. The following code example
 creates a new worksheet, associates the worksheet, and appends the
 worksheet to the workbook.
 
@@ -100,23 +100,23 @@ The following code example is the **SpreadsheetML** markup for the workbook that
 sample code creates.
 
 ```xml
-    <x:workbook xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:workbook xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:sheets>
         <x:sheet name="mySheet" sheetId="1" r:id="R47fd958b504b4526" />
       </x:sheets>
     </x:workbook>
 ```
 
-The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
+The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
 worksheet. The worksheet XML files contain one or more block level
-elements such as [SheetData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
-one or more [Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the cell
+elements such as [SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
+one or more [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the cell
 value. The following code example is the SpreadsheetML markup for the
 worksheet created by the sample code.
 
 ```xml
-    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:sheetData />
     </x:worksheet>
 ```
@@ -140,8 +140,8 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 ## Generating the SpreadsheetML Markup 
 To create the basic document structure using the Open XML SDK,
 instantiate the **Workbook** class, assign it
-to the [WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.workbookpart.aspx) property of the main document
-part, and then add instances of the [WorksheetPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx), **Worksheet**, and **Sheet**
+to the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.workbookpart.aspx) property of the main document
+part, and then add instances of the [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx), **Worksheet**, and **Sheet**
 classes. This is shown in the sample code and generates the required
 **SpreadsheetML** markup.
 

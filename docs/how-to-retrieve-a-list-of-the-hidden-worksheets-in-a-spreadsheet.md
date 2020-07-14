@@ -21,7 +21,7 @@ Office to programmatically retrieve a list of hidden worksheets in a
 Microsoft Excel 2010 or Microsoft Excel 2010 workbook, without loading
 the document into Excel. It contains an example **GetHiddenSheets** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -63,7 +63,7 @@ examine.
 
 The method works with the workbook you specify, filling a <span
 sdata="cer"
-target="T:System.Collections.Generic.List`1">[List\<T\>](http://msdn2.microsoft.com/EN-US/library/6sh2ey19)**
+target="T:System.Collections.Generic.List`1">[List\<T\>](https://msdn2.microsoft.com/library/6sh2ey19)**
 instance with a reference to each hidden <span sdata="cer"
 target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** object.
 
@@ -179,7 +179,7 @@ target="F:DocumentFormat.OpenXml.Spreadsheet.SheetStateValues.VeryHidden">**Very
 
 Given the collection that contains information about all the sheets, the
 following code uses the <span sdata="cer"
-target="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean})">[Where](http://msdn2.microsoft.com/EN-US/library/bb301979)**
+target="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean})">[Where](https://msdn2.microsoft.com/library/bb301979)**
 function to filter the collection so that it contains only the sheets in
 which the **State** property is not null. If
 the **State** property is not null, the code
@@ -202,7 +202,7 @@ value is either **SheetStateValues.Hidden** or
             item.State.Value = SheetStateValues.VeryHidden))
 ```
 Finally, the following code calls the <span sdata="cer"
-target="M:System.Linq.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">[ToList\<TSource\>](http://msdn2.microsoft.com/EN-US/library/bb342261)**
+target="M:System.Linq.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">[ToList\<TSource\>](https://msdn2.microsoft.com/library/bb342261)**
 method to execute the LINQ query that retrieves the list of hidden
 sheets, placing the result into the return value for the function.
 

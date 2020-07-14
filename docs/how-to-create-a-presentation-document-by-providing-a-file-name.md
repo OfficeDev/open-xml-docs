@@ -20,7 +20,7 @@ localization_priority: Priority
 This topic shows how to use the classes in the Open XML SDK 2.5 to
 create a presentation document programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -54,28 +54,28 @@ the code in this topic.
 A presentation file, like all files defined by the Open XML standard,
 consists of a package file container. This is the file that users see in
 their file explorer; it usually has a .pptx extension. The package file
-is represented in the Open XML SDK 2.5 by the [PresentationDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class. The
+is represented in the Open XML SDK 2.5 by the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class. The
 presentation document contains, among other parts, a presentation part.
-The presentation part, represented in the Open XML SDK 2.5 by the [PresentationPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, contains the basic
+The presentation part, represented in the Open XML SDK 2.5 by the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, contains the basic
 *PresentationML* definition for the slide presentation. PresentationML
 is the markup language used for creating presentations. Each package can
 contain only one presentation part, and its root element must be
 \<presentation\>.
 
 The API calls used to create a new presentation document package are
-relatively simple. The first step is to call the static [Create(String,PresentationDocumentType)](https://msdn.microsoft.com/en-us/library/office/cc535977.aspx)
-method of the [PresentationDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class, as shown here
+relatively simple. The first step is to call the static [Create(String,PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
+method of the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class, as shown here
 in the **CreatePresentation** procedure, which is the first part of the
 complete code sample presented later in the article. The
 **CreatePresentation** code calls the override of the **Create** method that takes as arguments the path to
 the new document and the type of presentation document to be created.
 The types of presentation documents available in that argument are
-defined by a [PresentationDocumentType](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentationdocumenttype.aspx) enumerated value.
+defined by a [PresentationDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.presentationdocumenttype.aspx) enumerated value.
 
-Next, the code calls [AddPresentationPart()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx), which creates and
+Next, the code calls [AddPresentationPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx), which creates and
 returns a **PresentationPart**. After the **PresentationPart** class instance is created, a new
-root element for the presentation is added by setting the [Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationpart.presentation.aspx) property equal to the instance
-of the [Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentation.aspx) class returned from a call to
+root element for the presentation is added by setting the [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.presentation.aspx) property equal to the instance
+of the [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class returned from a call to
 the **Presentation** class constructor.
 
 In order to create a complete, useable, and valid presentation, the code
@@ -103,20 +103,20 @@ slide layout, slide master, and theme parts.
 
 Using the Open XML SDK 2.5, you can create presentation structure and
 content by using strongly-typed classes that correspond to
-PresentationML elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)
+PresentationML elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace. The following table lists the names of the classes that
 correspond to the presentation, slide, slide master, slide layout, and
 theme elements. The class that corresponds to the theme element is
-actually part of the [DocumentFormat.OpenXml.Drawing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.drawing.aspx) namespace.
+actually part of the [DocumentFormat.OpenXml.Drawing](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.aspx) namespace.
 Themes are common to all Open XML markup languages.
 
 | PresentationML Element | Open XML SDK 2.5 Class |
 |---|---|
-| &lt;presentation&gt; | [Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentation.aspx) |
-| &lt;sld&gt; | [Slide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.aspx) |
-| &lt;sldMaster&gt; | [SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx) |
-| &lt;sldLayout&gt; | [SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx) |
-| &lt;theme&gt; | [Theme](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.drawing.theme.aspx) |
+| &lt;presentation&gt; | [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) |
+| &lt;sld&gt; | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) |
+| &lt;sldMaster&gt; | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) |
+| &lt;sldLayout&gt; | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) |
+| &lt;theme&gt; | [Theme](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.aspx) |
 
 The PresentationML code that follows is the XML in the presentation part
 (in the file presentation.xml) for a simple presentation that contains
@@ -125,17 +125,17 @@ two slides.
 ```xml
     <p:presentation xmlns:p="…" … >
       <p:sldMasterIdLst>
-        <p:sldMasterId xmlns:rel="http://…/relationships" rel:id="rId1"/>
+        <p:sldMasterId xmlns:rel="https://…/relationships" rel:id="rId1"/>
       </p:sldMasterIdLst>
       <p:notesMasterIdLst>
-        <p:notesMasterId xmlns:rel="http://…/relationships" rel:id="rId4"/>
+        <p:notesMasterId xmlns:rel="https://…/relationships" rel:id="rId4"/>
       </p:notesMasterIdLst>
       <p:handoutMasterIdLst>
-        <p:handoutMasterId xmlns:rel="http://…/relationships" rel:id="rId5"/>
+        <p:handoutMasterId xmlns:rel="https://…/relationships" rel:id="rId5"/>
       </p:handoutMasterIdLst>
       <p:sldIdLst>
-        <p:sldId id="267" xmlns:rel="http://…/relationships" rel:id="rId2"/>
-        <p:sldId id="256" xmlns:rel="http://…/relationships" rel:id="rId3"/>
+        <p:sldId id="267" xmlns:rel="https://…/relationships" rel:id="rId2"/>
+        <p:sldId id="256" xmlns:rel="https://…/relationships" rel:id="rId3"/>
       </p:sldIdLst>
       <p:sldSz cx="9144000" cy="6858000"/>
       <p:notesSz cx="6858000" cy="9144000"/>

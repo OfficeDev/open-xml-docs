@@ -25,7 +25,7 @@ PresentationML document, see [Structure of a PresentationML Document](structure-
 
 ## Animation in PresentationML
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Animation section of the Open XML
 PresentationML framework as follows:
 
@@ -55,7 +55,7 @@ as shown below:
 © ISO/IEC29500: 2008.
 
 Animation consists of several behaviors, the most basic of which is the
-Animate behavior, represented by the \<anim\> element. The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+Animate behavior, represented by the \<anim\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<anim\> element
 used to represent basic animation behavior in a PresentationML document
 as follows:
@@ -96,7 +96,7 @@ correspond to them.
 |         \<cBhvr\>          |       CommonBehavior       |
 |         \<tavLst\>         |    TimeAnimateValueList    |
 
-The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<anim\> element.
 
 
@@ -125,7 +125,7 @@ are therefore commonly associated with the **Animate** class are shown in the fo
 ### CommonBehavior Class
 
 The **CommonBehavior** class corresponds to the
-\<cBhvr\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<cBhvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<cBhvr\>element:
 
 This element describes the common behaviors of animations.  
@@ -156,7 +156,7 @@ the size of its font. The \<anim\> element should be used as follows:
 ### TimeAnimateValueList Class
 
 The **TimeAnimateValueList** class corresponds
-to the \<tavLst\> element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+to the \<tavLst\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<tavLst\> element:
 
 This element specifies a list of time animated value elements.
