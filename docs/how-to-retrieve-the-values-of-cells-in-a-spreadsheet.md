@@ -416,7 +416,7 @@ code sample in C\# and Visual Basic.
               Where(c => c.CellReference == addressName).FirstOrDefault();
 
             // If the cell does not exist, return an empty string.
-            if (theCell != null)
+            if (theCell.InnerText.Length > 0)
             {
                 value = theCell.InnerText;
 
