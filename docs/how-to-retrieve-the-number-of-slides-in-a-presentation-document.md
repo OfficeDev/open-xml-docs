@@ -23,7 +23,7 @@ loading the document into Microsoft PowerPoint. It contains an example
 **RetrieveNumberOfSlides** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -87,10 +87,10 @@ values, as shown in the following code.
 --------------------------------------------------------------------------------
 ## How the Code Works
 The code starts by creating an integer variable, **slidesCount**, to hold the number of slides. The code
-then opens the specified presentation by using the [PresentationDocument.Open](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.open.aspx) method and
+then opens the specified presentation by using the [PresentationDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.open.aspx) method and
 indicating that the document should be open for read-only access (the
 final **false** parameter value). Given the
-open presentation, the code uses the [PresentationPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationdocument.presentationpart.aspx) property to navigate to
+open presentation, the code uses the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.presentationpart.aspx) property to navigate to
 the main presentation part, storing the reference in a variable named
 **presentationPart**.
 
@@ -120,7 +120,7 @@ the main presentation part, storing the reference in a variable named
 If the presentation part reference is not null (and it will not be, for
 any valid presentation that loads correctly into PowerPoint), the code
 next calls the **Count** method on the value of
-the [SlideParts](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.presentationpart.slideparts.aspx) property of the presentation
+the [SlideParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.slideparts.aspx) property of the presentation
 part. If you requested all slides, including hidden slides, that is all
 there is to do. There is slightly more work to be done if you want to
 exclude hidden slides, as shown in the following code.
@@ -148,14 +148,14 @@ exclude hidden slides, as shown in the following code.
 ## Retrieving the Count of Visible Slides
 If you requested that the code should limit the return value to include
 only visible slides, the code must filter its collection of slides to
-include only those slides that have a [Show](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.show.aspx) property that contains a value, and
+include only those slides that have a [Show](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.show.aspx) property that contains a value, and
 the value is **true**. If the **Show** property is null, that also indicates that
 the slide is visible. This is the most likely scenario—PowerPoint does
 not set the value of this property, in general, unless the slide is to
 be hidden. The only way the **Show** property
 would exist and have a value of **true** would
 be if you had hidden and then unhidden the slide. The following code
-uses the [Where](http://msdn2.microsoft.com/EN-US/library/bb301979)**
+uses the [Where](https://msdn2.microsoft.com/library/bb301979)**
 function with a lambda expression to do the work.
 
 ```csharp
