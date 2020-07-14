@@ -1,0 +1,9 @@
+{
+  "redirections": [
+    {
+      "source_path": "docs/index.md",
+      "redirect_url": "/office/open-xml/open-xml-sdk/",
+      "redirect_document_id": false
+    }
+  ]
+}
