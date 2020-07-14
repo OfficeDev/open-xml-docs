@@ -81,7 +81,7 @@ represented by the main document part. At a minimum, to create a valid
 **WordprocessingML** document using code, add a
 main document part to the document.
 
-The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 introduces the WordprocessingML elements required in the main document
 part in order to complete the minimum document scenario.
 
@@ -163,7 +163,7 @@ run the Open XML SDK 2.5 code in the previous section.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>

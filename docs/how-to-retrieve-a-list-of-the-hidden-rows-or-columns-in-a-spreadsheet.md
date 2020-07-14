@@ -22,7 +22,7 @@ a Microsoft Excel 2010 or Microsoft Excel 2013 worksheet, without
 loading the document into Excel. It contains an example **GetHiddenRowsOrCols** method to illustrate this
 task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -112,10 +112,10 @@ The code starts by creating a variable, **itemList**, that will contain the retu
     Dim itemList As New List(Of UInteger)
 ```
 
-Next, the code opens the document, by using the [SpreadsheetDocument.Open](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) method and
+Next, the code opens the document, by using the [SpreadsheetDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) method and
 indicating that the document should be open for read-only access (the
 final **false** parameter value). Next the code
-retrieves a reference to the workbook part, by using the [WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx) property of the document.
+retrieves a reference to the workbook part, by using the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx) property of the document.
 
 ```csharp
     using (SpreadsheetDocument document =
@@ -138,11 +138,11 @@ retrieves a reference to the workbook part, by using the [WorkbookPart](https://
 To find the hidden rows or columns, the code must first retrieve a
 reference to the specified sheet, given its name. This is not as easy as
 you might think. The code must look through all the sheet-type
-descendants of the workbook part's [Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx) property, examining the [Name](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.name.aspx) property of each sheet that it finds.
+descendants of the workbook part's [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx) property, examining the [Name](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.name.aspx) property of each sheet that it finds.
 Note that this search simply looks through the relations of the
 workbook, and does not actually find a worksheet part. It simply finds a
-reference to a [Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx) object, which contains information
-such as the name and [Id](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.id.aspx) property of the sheet. The simplest way
+reference to a [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) object, which contains information
+such as the name and [Id](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.id.aspx) property of the sheet. The simplest way
 to accomplish this is to use a LINQ query.
 
 ```csharp
@@ -161,14 +161,14 @@ to accomplish this is to use a LINQ query.
         Throw New ArgumentException("sheetName")
 ```
 
-The [FirstOrDefault](http://msdn2.microsoft.com/EN-US/library/bb358452)
+The [FirstOrDefault](https://msdn2.microsoft.com/library/bb358452)
 method returns either the first matching reference (a sheet, in this
 case) or a null reference if no match was found. The code checks for the
 null reference, and throws an exception if you passed in an invalid
 sheet name. Now that you have information about the sheet, the code must
 retrieve a reference to the corresponding worksheet part. The sheet
 information you already retrieved provides an **Id** property, and given that **Id** property, the code can retrieve a reference to
-the corresponding [WorksheetPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx) property by calling the [GetPartById](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid.aspx) method of the [WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.workbookpart.aspx) object.
+the corresponding [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx) property by calling the [GetPartById](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid.aspx) method of the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.aspx) object.
 
 ```csharp
     else
@@ -237,20 +237,20 @@ single line of code.
 ```
 
 This single line accomplishes a lot, however. It starts by calling the
-[Descendants](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.openxmlelement.descendants.aspx) method of the worksheet,
-retrieving a list of all the rows. The [Where](http://msdn2.microsoft.com/EN-US/library/bb301979)
-method limits the results to only those rows where the [Hidden](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.hidden.aspx) property of the item is not null and
-the value of the **Hidden** property is **True**. The [Select](http://msdn2.microsoft.com/EN-US/library/bb357126)
+[Descendants](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.descendants.aspx) method of the worksheet,
+retrieving a list of all the rows. The [Where](https://msdn2.microsoft.com/library/bb301979)
+method limits the results to only those rows where the [Hidden](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.hidden.aspx) property of the item is not null and
+the value of the **Hidden** property is **True**. The [Select](https://msdn2.microsoft.com/library/bb357126)
 method projects the return value for each row, returning the value of
-the [RowIndex](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.rowindex.aspx) property. Finally, the [ToList\<TSource\>](http://msdn2.microsoft.com/EN-US/library/bb342261)**
-method converts the resulting [IEnumerable\<T\>](http://msdn2.microsoft.com/EN-US/library/9eekhta0)
-interface into a [List\<T\>](http://msdn2.microsoft.com/EN-US/library/6sh2ey19)
+the [RowIndex](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.rowindex.aspx) property. Finally, the [ToList\<TSource\>](https://msdn2.microsoft.com/library/bb342261)**
+method converts the resulting [IEnumerable\<T\>](https://msdn2.microsoft.com/library/9eekhta0)
+interface into a [List\<T\>](https://msdn2.microsoft.com/library/6sh2ey19)
 object of unsigned integers. If there are no hidden rows, the returned
 list is empty.
 
 Retrieving the list of hidden columns is a bit trickier, because Excel
 collapses groups of hidden columns into a single element, and provides
-[Min](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column.min.aspx) and [Max](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column.max.aspx) properties that describe the first and
+[Min](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.column.min.aspx) and [Max](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.column.max.aspx) properties that describe the first and
 last columns in the group. Therefore, the code that retrieves the list
 of hidden columns starts the same as the code that retrieves hidden
 rows. However, it must iterate through the index values (looping through

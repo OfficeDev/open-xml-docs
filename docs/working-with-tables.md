@@ -16,7 +16,7 @@ localization_priority: Priority
 ---
 # Working with SpreadsheetML tables (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[Table](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
+This topic discusses the Open XML SDK 2.5 **[Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
 overall structure of the parts and elements that make up a SpreadsheetML
 document, see <span sdata="link">[Structure of a SpreadsheetML document
@@ -25,7 +25,7 @@ document, see <span sdata="link">[Structure of a SpreadsheetML document
 
 --------------------------------------------------------------------------------
 ## Tables in SpreadsheetML 
-The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **table** (\<**table**\>) element.
 
 A table helps organize and provide structure to lists of information in
@@ -73,8 +73,8 @@ working with the **Table** class.
 
 | **SpreadsheetML Element** |                                               **Open XML SDK 2.5 Class**                                               |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------|
-|        tableColumn        |   [TableColumn](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
-|        autoFilter         | [AutoFilter](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx) |
+|        tableColumn        |   [TableColumn](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
+|        autoFilter         | [AutoFilter](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx) |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK 2.5 Table Class 
@@ -168,7 +168,7 @@ displayed in the table, and contains the **tablePart** element that references t
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
+    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
         <dimension ref="A1:C4"/>
         <sheetViews>
             <sheetView tabSelected="1" workbookViewId="0">
@@ -237,7 +237,7 @@ table looks, and defines any autofilters for the table.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <table xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" id="1" name="Table1" displayName="Table1" ref="A1:C4" totalsRowShown="0">
+    <table xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" id="1" name="Table1" displayName="Table1" ref="A1:C4" totalsRowShown="0">
         <autoFilter ref="A1:C4"/>
         <tableColumns count="3">
             <tableColumn id="1" name="Column1"/>

@@ -40,22 +40,22 @@ some of the important spreadsheet elements.
 
 | Package Part| Top Level SpreadsheetML Element | Open XML SDK 2.5 Class | Description|
 |:------------|:--------------------------------|:-----------------------|:-----------|
-| Workbook  |   workbook  |  [Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx)   |   The root element for the main document part.|  
-| Worksheet  |  worksheet     |    [Worksheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.worksheet.aspx) | A type of sheet that represent a grid of cells that contains text, numbers, dates or formulas. For more information, see [Working with sheets (Open XML SDK)](working-with-sheets.md).  |
-|Chart Sheet |  chartsheet  | [Chartsheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx) | A sheet that represents a chart that is stored as its own sheet. For more information, see [Working with sheets (Open XML SDK)](working-with-sheets.md).  | 
-| Table    |    table    |     [Table](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.table.aspx)  | A logical construct that specifies that a range of data belongs to a single dataset. For more information, see [Working with SpreadsheetML tables (Open XML SDK)](working-with-spreadsheetml-documents.md).  | 
-|Pivot Table       | [pivotTableDefinition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx) |  [PivotTableDefinition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)  |  A logical construct that displays aggregated view of data in an understandable layout. For more information, see [Working with PivotTables (Open XML SDK)](working-with-pivottables.md).  | 
-|Pivot Cache  |   pivotCacheDefinition  | [PivotCacheDefinition](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx) |  A construct that defines the source of the data in the PivotTable. For more information, see [Working with PivotTables (Open XML SDK)](working-with-pivottables.md).  | 
-|Pivot Cache Records |  pivotCacheRecords  |  [PivotCacheRecords](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)  |  A cache of the source data of the PivotTable. For more information, see [Working with PivotTables (Open XML SDK)](working-with-pivottables.md). | 
-| Calculation Chain | calcChain  |  [CalculationChain](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.calculationchain.aspx) | A construct that specifies the order in which cells in the workbook were last calculated. For more information, see [Working with the calculation chain (Open XML SDK)](working-with-the-calculation-chain.md).  | 
-|Shared String Table |  sst  |  [SharedStringTable](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx)     | A construct that contains one occurrence of each unique string that occurs on all worksheets in a workbook. For more information, see [Working with the shared string table (Open XML SDK)](working-with-the-shared-string-table.md). |
-|Conditional Formatting |   conditionalFormatting   | [ConditionalFormatting](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)  |  A construct that defines a format applied to a cell or series of cells. For more information, see [Working with conditional formatting (Open XML SDK)](working-with-conditional-formatting.md).   | 
-| Formulas  |      f    |  [CellFormula](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellformula.aspx)  |  A construct that defines the formula text for a cell that contains a formula. For more information, see [Working with formulas (Open XML SDK)](working-with-formulas.md).  | 
+| Workbook  |   workbook  |  [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)   |   The root element for the main document part.|  
+| Worksheet  |  worksheet     |    [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx) | A type of sheet that represent a grid of cells that contains text, numbers, dates or formulas. For more information, see [Working with sheets (Open XML SDK)](working-with-sheets.md).  |
+|Chart Sheet |  chartsheet  | [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx) | A sheet that represents a chart that is stored as its own sheet. For more information, see [Working with sheets (Open XML SDK)](working-with-sheets.md).  | 
+| Table    |    table    |     [Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)  | A logical construct that specifies that a range of data belongs to a single dataset. For more information, see [Working with SpreadsheetML tables (Open XML SDK)](working-with-spreadsheetml-documents.md).  | 
+|Pivot Table       | [pivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx) |  [PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)  |  A logical construct that displays aggregated view of data in an understandable layout. For more information, see [Working with PivotTables (Open XML SDK)](working-with-pivottables.md).  | 
+|Pivot Cache  |   pivotCacheDefinition  | [PivotCacheDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx) |  A construct that defines the source of the data in the PivotTable. For more information, see [Working with PivotTables (Open XML SDK)](working-with-pivottables.md).  | 
+|Pivot Cache Records |  pivotCacheRecords  |  [PivotCacheRecords](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)  |  A cache of the source data of the PivotTable. For more information, see [Working with PivotTables (Open XML SDK)](working-with-pivottables.md). | 
+| Calculation Chain | calcChain  |  [CalculationChain](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.calculationchain.aspx) | A construct that specifies the order in which cells in the workbook were last calculated. For more information, see [Working with the calculation chain (Open XML SDK)](working-with-the-calculation-chain.md).  | 
+|Shared String Table |  sst  |  [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx)     | A construct that contains one occurrence of each unique string that occurs on all worksheets in a workbook. For more information, see [Working with the shared string table (Open XML SDK)](working-with-the-shared-string-table.md). |
+|Conditional Formatting |   conditionalFormatting   | [ConditionalFormatting](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)  |  A construct that defines a format applied to a cell or series of cells. For more information, see [Working with conditional formatting (Open XML SDK)](working-with-conditional-formatting.md).   | 
+| Formulas  |      f    |  [CellFormula](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellformula.aspx)  |  A construct that defines the formula text for a cell that contains a formula. For more information, see [Working with formulas (Open XML SDK)](working-with-formulas.md).  | 
 
 --------------------------------------------------------------------------------
 ## Minimum Workbook Scenario
 
-The following text from the [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
+The following text from the [Standard ECMA-376](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
 introduces the minimum workbook scenario.
 
 The smallest possible (blank) workbook must contain the following:
@@ -164,9 +164,9 @@ the Open XML SDK 2.5 code to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:workbook xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:workbook xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheets>
-            <x:sheet name="mySheet" sheetId="1" r:id="Rddc7711f116045e5" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+            <x:sheet name="mySheet" sheetId="1" r:id="Rddc7711f116045e5" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
         </x:sheets>
     </x:workbook>
 ```
@@ -181,8 +181,8 @@ when you run the Open XML SDK 2.5 to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-        <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="/xl/worksheets/sheet.xml" Id="Rddc7711f116045e5" />
+    <Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="/xl/worksheets/sheet.xml" Id="Rddc7711f116045e5" />
     </Relationships>
 ```
 
@@ -196,7 +196,7 @@ you run the Open XML SDK 2.5 to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheetData />
     </x:worksheet>
 ```

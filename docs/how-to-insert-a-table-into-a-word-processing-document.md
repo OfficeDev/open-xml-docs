@@ -401,6 +401,6 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
 
-[Object Initializers: Named and Anonymous Types (Visual Basic .NET)](http://msdn.microsoft.com/en-us/library/bb385125.aspx)
+[Object Initializers: Named and Anonymous Types (Visual Basic .NET)](https://msdn.microsoft.com/library/bb385125.aspx)
 
-[Object and Collection Initializers (C\# Programming Guide)](http://msdn.microsoft.com/en-us/library/bb384062.aspx)
+[Object and Collection Initializers (C\# Programming Guide)](https://msdn.microsoft.com/library/bb384062.aspx)

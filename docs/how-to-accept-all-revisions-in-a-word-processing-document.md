@@ -62,7 +62,7 @@ The **using** statement provides a recommended alternative to the typical .Open,
 The basic document structure of a **WordProcessingML** document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The following code example shows the **WordprocessingML** markup for a document that contains the text "Example text."
 
 ```xml
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>
@@ -312,9 +312,9 @@ same as accepting the inserted text.
             }
         }
         insertion.RemoveAttribute("rsidR",
-            "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
+            "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
         insertion.RemoveAttribute("rsidRPr",
-            "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
+            "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
         insertion.Remove();
     }
 ```
@@ -346,9 +346,9 @@ same as accepting the inserted text.
             End If
         Next
         insertion.RemoveAttribute("rsidR", _
-            "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
+            "https://schemas.openxmlformats.org/wordprocessingml/2006/main")
         insertion.RemoveAttribute("rsidRPr", _
-            "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
+            "https://schemas.openxmlformats.org/wordprocessingml/2006/main")
         insertion.Remove()
     Next
 ```
@@ -439,9 +439,9 @@ The following is the complete sample code in both C\# and Visual Basic.
                     }
                 }
                 insertion.RemoveAttribute("rsidR", 
-                    "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
+                    "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
                 insertion.RemoveAttribute("rsidRPr", 
-                    "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
+                    "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
                 insertion.Remove();
             }
         }
@@ -500,9 +500,9 @@ The following is the complete sample code in both C\# and Visual Basic.
                     End If
                 Next
                 insertion.RemoveAttribute("rsidR", _
-                    "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
+                    "https://schemas.openxmlformats.org/wordprocessingml/2006/main")
                 insertion.RemoveAttribute("rsidRPr", _
-                    "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
+                    "https://schemas.openxmlformats.org/wordprocessingml/2006/main")
                 insertion.Remove()
             Next
         End Using

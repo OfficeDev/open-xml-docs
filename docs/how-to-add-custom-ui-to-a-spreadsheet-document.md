@@ -23,7 +23,7 @@ Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an
 example **AddCustomUI** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.0](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=5124).
+To use the sample code in this topic, you must install the [Open XML SDK 2.0](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=5124).
 You must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -53,9 +53,9 @@ the scope of this topic. In addition, you will find it far easier to use
 the Ribbon Designer in Visual Studio 2010 to create the customization
 for you. For more information about customizing the ribbon by using the
 Visual Studio Ribbon Designer, see [Ribbon
-Designer](http://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx)
+Designer](https://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx)
 and [Walkthrough: Creating a Custom Tab by Using the Ribbon
-Designer](http://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx).
+Designer](https://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx).
 For the purposes of this demonstration, you will need an XML file that
 contains a customization, and the following code provides a simple
 customization (or you can create your own by using the Visual Studio
@@ -68,7 +68,7 @@ in Excel. When you click the button, it attempts to run a macro named
 **SampleMacro** in the host workbook.
 
 ```xml
-    <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+    <customUI xmlns="https://schemas.microsoft.com/office/2006/01/customui">
         <ribbon>
             <tabs>
                 <tab idMso="TabAddIns">
@@ -202,7 +202,7 @@ the new part.
 ## Add the Customization 
 Given a reference to the ribbon extensibility part, the following code
 finishes by setting the part's **CustomUI**
-property to a new [CustomUI](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.office.customui.customui.aspx) object that contains the supplied
+property to a new [CustomUI](https://msdn.microsoft.com/library/office/documentformat.openxml.office.customui.customui.aspx) object that contains the supplied
 customization. Once the customization is in place, the code saves the
 custom UI.
 
@@ -226,7 +226,7 @@ code sample in C\# and Visual Basic.
     {
         // Add a custom UI part to the document.
         // Use this sample XML to test:
-        //<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+        //<customUI xmlns="https://schemas.microsoft.com/office/2006/01/customui">
         //    <ribbon>
         //        <tabs>
         //            <tab idMso="TabAddIns">
@@ -268,7 +268,7 @@ code sample in C\# and Visual Basic.
         ' Add a custom UI part to the document.
         ' Use this sample XML to test:
 
-        '<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+        '<customUI xmlns="https://schemas.microsoft.com/office/2006/01/customui">
         '    <ribbon>
         '        <tabs>
         '            <tab idMso="TabAddIns">
@@ -307,7 +307,7 @@ code sample in C\# and Visual Basic.
 
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
-- [Ribbon Designer](http://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx)
-- [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](http://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx)
+- [Ribbon Designer](https://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx)
+- [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](https://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx)
 
 

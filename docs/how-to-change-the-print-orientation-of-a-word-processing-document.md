@@ -23,7 +23,7 @@ Office to programmatically set the print orientation of a Microsoft Word
 **SetPrintOrientation** method to illustrate this task.
 
 To use the sample code in this topic, you must install the [Open XML SDK
-2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -52,7 +52,7 @@ the code in this topic.
 You can use the **SetPrintOrientation** method
 to change the print orientation of a word processing document. The
 method accepts two parameters that indicate the name of the document to
-modify (string) and the new print orientation ([PageOrientationValues](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pageorientationvalues.aspx)).
+modify (string) and the new print orientation ([PageOrientationValues](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pageorientationvalues.aspx)).
 
 The following code shows the **SetPrintOrientation** method.
 
@@ -91,13 +91,13 @@ following code shows an example method call.
 
 -----------------------------------------------------------------------------
 ## How the Code Works
-The following code first opens the document by using the [Open](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and sets the **isEditable** parameter to
+The following code first opens the document by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and sets the **isEditable** parameter to
 **true** to indicate that the document should
 be read/write. The code maintains a Boolean variable that tracks whether
 the document has changed (so that it can save the document later, if the
 document has changed). The code retrieves a reference to the main
 document part, and then uses that reference to retrieve a collection of
-all of the descendants of type [SectionProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.sectionproperties.aspx) within the content of the
+all of the descendants of type [SectionProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.sectionproperties.aspx) within the content of the
 document. Later code will use this collection to set the orientation for
 each section in turn.
 
@@ -132,7 +132,7 @@ For each section, the code initializes a variable that tracks whether
 the page orientation for the section was changed so the code can update
 the page size and margins. (If the new orientation matches the original
 orientation, the code will not update the page.) The code continues by
-retrieving a reference to the first [PageSize](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pagesize.aspx) descendant of the **SectionProperties** element. If the reference is
+retrieving a reference to the first [PageSize](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagesize.aspx) descendant of the **SectionProperties** element. If the reference is
 not null, the code updates the orientation as required.
 
 ```csharp
@@ -163,7 +163,7 @@ not null, the code updates the orientation as required.
 
 -----------------------------------------------------------------------------
 ## Setting the Orientation for the Section
-The next block of code first checks whether the [Orient](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pagesize.orient.aspx) property of the **PageSize** element exists. As with many properties
+The next block of code first checks whether the [Orient](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagesize.orient.aspx) property of the **PageSize** element exists. As with many properties
 of Open XML elements, the property or attribute might not exist yet. In
 that case, retrieving the property returns a null reference. By default,
 if the property does not exist, and the new orientation is Portrait, the
@@ -176,7 +176,7 @@ must update the page size and margins. It uses the **documentChanged** flag to d
 save the document at the end.)
 
 > [!NOTE]
-> If the code must create the **Orient** property, it must also create the value to store in the property, as a new [EnumValue\<T\>](https://msdn.microsoft.com/en-us/library/office/cc801792.aspx) instance, supplying the new orientation in the **EnumValue** constructor.
+> If the code must create the **Orient** property, it must also create the value to store in the property, as a new [EnumValue\<T\>](https://msdn.microsoft.com/library/office/cc801792.aspx) instance, supplying the new orientation in the **EnumValue** constructor.
 
 ```csharp
     if (pgSz.Orient == null)
@@ -254,12 +254,12 @@ in the **PageSize** element.
 ## Updating the Margins
 The next step in the sample procedure handles margins for the section.
 If the page orientation has changed, the code must rotate the margins to
-match. To do so, the code retrieves a reference to the [PageMargin](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pagemargin.aspx) element for the section. If the
+match. To do so, the code retrieves a reference to the [PageMargin](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagemargin.aspx) element for the section. If the
 element exists, the code rotates the margins. Note that the code rotates
 the margins by 90 degrees—some printers rotate the margins by 270
 degrees instead and you could modify the code to take that into account.
-Also be aware that the [Top](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pagemargin.top.aspx) and [Bottom](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pagemargin.bottom.aspx) properties of the **PageMargin** object are signed values, and the
-[Left](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pagemargin.left.aspx) and [Right](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.pagemargin.right.aspx) properties are unsigned values. The
+Also be aware that the [Top](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagemargin.top.aspx) and [Bottom](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagemargin.bottom.aspx) properties of the **PageMargin** object are signed values, and the
+[Left](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagemargin.left.aspx) and [Right](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagemargin.right.aspx) properties are unsigned values. The
 code must convert between the two types of values as it rotates the
 margin settings, as shown in the following code.
 

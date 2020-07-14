@@ -16,7 +16,7 @@ localization_priority: Priority
 ---
 # Working with formulas (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 [CellFormula](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
+This topic discusses the Open XML SDK 2.5 [CellFormula](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a
@@ -42,9 +42,9 @@ to postpone calculation of the formula values when the spreadsheet is
 opened, which saves time when opening a worksheet. You do not have to
 specify the value, and if you omit it, it is the responsibility of the
 Open XML reader to compute the value based on the formula definition
-when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx).
+when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx).
 
-The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **cellFormula**
 (\<**f**\>) element.
 
@@ -116,7 +116,7 @@ and is contained in the "sheet1.xml" file.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
+    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
         <dimension ref="A1:A6"/>
         <sheetViews>
             <sheetView tabSelected="1" workbookViewId="0">

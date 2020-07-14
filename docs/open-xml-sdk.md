@@ -27,8 +27,8 @@ The SDK is built on the **System.IO.Packaging**
 API and provides strongly-typed classes to manipulate documents that
 adhere to the Office Open XML File Formats specification. The Office
 Open XML File Formats specification is an open, international,
-[ECMA-376, Second Edition](http://www.ecma-international.org/publications/standards/Ecma-376.htm)
-and [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ECMA-376, Second Edition](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
+and [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 standard. The Open XML file formats are useful for developers because
 they are an open standard and are based on well-known technologies: ZIP
 and XML.
@@ -53,11 +53,11 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
 ## See also
 
-- [Open XML SDK 2.5 for Microsoft Office](http://www.microsoft.com/download/details.aspx?id=30425)
+- [Open XML SDK 2.5 for Microsoft Office](https://www.microsoft.com/download/details.aspx?id=30425)
 - [Microsoft Office Developer Center](https://developer.microsoft.com/office/docs)
 - [Samples on GitHub](https://github.com/OfficeDev)
-- [Open XML SDK copyright notice](http://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)
+- [Open XML SDK copyright notice](https://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)
 - [Accessibility features in the Microsoft Office System](https://www.microsoft.com/accessibility/)
-- [Document conventions in Office Developer documentation](http://msdn.microsoft.com/en-us/office/aa905365.aspx)
+- [Document conventions in Office Developer documentation](https://msdn.microsoft.com/office/aa905365.aspx)
 
 <sup>1</sup>© ISO/IEC2900:2008. This material is reproduced from ISO/IEC 29500:2008 with permission of the American National Standards Institute (ANSI) on behalf of ISO.

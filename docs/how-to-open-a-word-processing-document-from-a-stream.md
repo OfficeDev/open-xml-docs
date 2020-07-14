@@ -95,7 +95,7 @@ the WordprocessingML markup for a document that contains only the text
 "Example text." is shown in the following code example.
 
 ```xml
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>

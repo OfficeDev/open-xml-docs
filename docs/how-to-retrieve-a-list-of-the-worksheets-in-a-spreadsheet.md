@@ -21,7 +21,7 @@ Office to programmatically retrieve a list of the worksheets in a
 Microsoft Excel 2010 or Microsoft Excel 2013 workbook, without loading
 the document into Excel. It contains an example **GetAllWorksheets** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -60,8 +60,8 @@ examine.
 ```
 
 The method works with the workbook you specify, returning an instance of
-the **[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** object, from which you can retrieve
-a reference to each **[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** object.
+the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** object, from which you can retrieve
+a reference to each **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** object.
 
 
 --------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ workbook).
 ```
 
 The code then continues by opening the document in read-only mode, and
-retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)**.
+retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)**.
 
 ```csharp
     using (SpreadsheetDocument document = 
@@ -137,11 +137,11 @@ retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/en-us/
     End Using
 ```
 
-To get access to the **[Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** object, the code retrieves the
-value of the **[Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx)** property from the **WorkbookPart**, and then retrieves a reference to
-the **Sheets** object from the **[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.sheets.aspx)** property of the **Workbook**. The **Sheets**
+To get access to the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** object, the code retrieves the
+value of the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx)** property from the **WorkbookPart**, and then retrieves a reference to
+the **Sheets** object from the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.sheets.aspx)** property of the **Workbook**. The **Sheets**
 object contains the collection of <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** objects that provide the method's
+target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** objects that provide the method's
 return value.
 
 ```csharp

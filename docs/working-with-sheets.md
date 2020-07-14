@@ -24,7 +24,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK
 
 ## Sheets in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the **sheet** (\<**sheet**\>) element.
 
 Sheets are the central structures within a workbook, and are where the
@@ -294,7 +294,7 @@ the "sheet.xml" file in the "worksheets" folder of the .zip file.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheetData>
             <x:row r="1">
                 <x:c r="A1" t="n">

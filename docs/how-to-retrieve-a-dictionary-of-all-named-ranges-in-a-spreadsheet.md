@@ -22,7 +22,7 @@ and ranges of all defined names in an Microsoft Excel 2010 or Microsoft
 Excel 2013 workbook. It contains an example **GetDefinedNames** method
 to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -50,7 +50,7 @@ the code in this topic.
 The **GetDefinedNames** procedure accepts a
 single parameter that indicates the name of the document from which to
 retrieve the defined names. The procedure returns an
-[Dictionary](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
+[Dictionary](https://msdn.microsoft.com/library/xfhwa508.aspx)
 instance that contains information about the defined names within the
 specified workbook, which may be empty if there are no defined names.
 
