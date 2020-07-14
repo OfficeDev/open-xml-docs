@@ -116,7 +116,7 @@ the main presentation part, storing the reference in a variable named
 ```
 
 --------------------------------------------------------------------------------
-## Retrieving the Count of All Sheets
+## Retrieving the Count of All Slides
 If the presentation part reference is not null (and it will not be, for
 any valid presentation that loads correctly into PowerPoint), the code
 next calls the **Count** method on the value of
@@ -145,7 +145,7 @@ exclude hidden slides, as shown in the following code.
 ```
 
 --------------------------------------------------------------------------------
-## Retrieving the Count of Visible Sheets
+## Retrieving the Count of Visible Slides
 If you requested that the code should limit the return value to include
 only visible slides, the code must filter its collection of slides to
 include only those slides that have a [Show](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.show.aspx) property that contains a value, and
