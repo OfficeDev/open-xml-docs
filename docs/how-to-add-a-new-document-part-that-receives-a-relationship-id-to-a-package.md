@@ -66,7 +66,7 @@ code example shows the **WordprocessingML**
 markup for a document that contains the text "Example text."
 
 ```xml
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>
@@ -79,17 +79,17 @@ markup for a document that contains the text "Example text."
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these
-classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.aspx)
+classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 | WordprocessingML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
-| document | [Document](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
-| body | [Body](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the ISO/IEC 29500 specification. |
-| p | [Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
-| r | [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
-| t | [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
+| document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
+| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the ISO/IEC 29500 specification. |
+| p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
+| r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
+| t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
 -----------------------------------------------------------------------------
 ## How the Sample Code Works 
@@ -135,7 +135,7 @@ document.
     {
         writer.WriteRaw("<?xml version=\"1.0\" encoding=\"UTF-
     8\"?>\r\n<cp:coreProperties xmlns:cp=\
-    "http://schemas.openxmlformats.org/package/2006/metadata/core-properties\"></cp:coreProperties>");
+    "https://schemas.openxmlformats.org/package/2006/metadata/core-properties\"></cp:coreProperties>");
         writer.Flush();
     }
 ```
@@ -155,7 +155,7 @@ document.
 
     Using writer As New XmlTextWriter(coreFilePropPart.GetStream(FileMode.Create), System.Text.Encoding.UTF8)
         writer.WriteRaw("<?xml version=""1.0"" encoding=""UTF-8""?>" _
-    & vbCrLf & "<cp:coreProperties xmlns:cp=""http://schemas.openxmlformats.org/package/2006/metadata/core-properties""></cp:coreProperties>")
+    & vbCrLf & "<cp:coreProperties xmlns:cp=""https://schemas.openxmlformats.org/package/2006/metadata/core-properties""></cp:coreProperties>")
         writer.Flush()
     End Using
 ```
@@ -193,7 +193,7 @@ the **wordDoc** object.
 ```
 
 > [!NOTE]
-> The **AddNewPart&lt;T&gt;** method creates a relationship from the current document part to the new document part. This method returns the new document part. Also, you can use the **[DataPart.FeedData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.datapart.feeddata.aspx)** method to fill the document part.
+> The **AddNewPart&lt;T&gt;** method creates a relationship from the current document part to the new document part. This method returns the new document part. Also, you can use the **[DataPart.FeedData](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.datapart.feeddata.aspx)** method to fill the document part.
 
 -----------------------------------------------------------------------------
 ## Sample Code 
@@ -238,7 +238,7 @@ The following is the complete code example in both C\# and Visual Basic.
         {
             writer.WriteRaw("<?xml version=
     \"1.0\" encoding=\"UTF-8\"?>\r\n<cp:coreProperties xmlns:cp=\
-    "http://schemas.openxmlformats.org/package/2006/metadata/core-properties\"></cp:coreProperties>");
+    "https://schemas.openxmlformats.org/package/2006/metadata/core-properties\"></cp:coreProperties>");
             writer.Flush();
         }
 
@@ -278,7 +278,7 @@ The following is the complete code example in both C\# and Visual Basic.
     System.Text.Encoding.UTF8)
             writer.WriteRaw( _
     "<?xml version=""1.0"" encoding=""UTF-8""?>" & vbCr & vbLf & _
-    "<cp:coreProperties xmlns:cp=""http://schemas.openxmlformats.org/package/2006/metadata/core-properties""></cp:coreProperties>")
+    "<cp:coreProperties xmlns:cp=""https://schemas.openxmlformats.org/package/2006/metadata/core-properties""></cp:coreProperties>")
             writer.Flush()
         End Using
         

@@ -44,7 +44,7 @@ after running the validation check. The second method, **ValidateCorruptedWordDo
 inserting some text into the body, which causes a schema error. It then
 validates the Word file, in which case the method throws an exception on
 trying to open the corrupted file. The validation is done by using the
-[Validate](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.validation.openxmlvalidator.validate.aspx) method. The code displays
+[Validate](https://msdn.microsoft.com/library/office/documentformat.openxml.validation.openxmlvalidator.validate.aspx) method. The code displays
 information about any errors that are found, in addition to the count of
 errors.
 

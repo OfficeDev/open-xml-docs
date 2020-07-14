@@ -46,7 +46,7 @@ this topic.
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
 
-In the Open XML SDK, the **[SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx)** class represents an
+In the Open XML SDK, the **[SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx)** class represents an
 Excel document package. To open and work with an Excel document, you
 create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
@@ -54,9 +54,9 @@ access to the main workbook part that contains the worksheets. The text
 in the document is represented in the package as XML using **SpreadsheetML** markup.
 
 To create the class instance from the document that you call one of the
-**[Open()](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx)** overload methods. Several are
+**[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx)** overload methods. Several are
 provided, each with a different signature. The sample code in this topic
-uses the **[Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562356.aspx)** method with a
+uses the **[Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx)** method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
 second parameter is either **true** or **false** and represents whether you want the file to
@@ -92,7 +92,7 @@ object that is created or named in the **using** statement, in this case **docum
 --------------------------------------------------------------------------------
 ## Basic Structure of a SpreadsheetML Document 
 
-The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** and **[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** elements, which reference the
+The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** and **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** elements, which reference the
 worksheets in the <span sdata="cer"
 target="T:DocumentFormat.OpenXML.Spreadsheet.Workbook">**Workbook**.
 A separate XML file is created for each <span sdata="cer"
@@ -103,7 +103,7 @@ in the Workbook.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=http://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
         <sheets>
             <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
             <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
@@ -112,15 +112,15 @@ in the Workbook.xml file and is shown in the following code example.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-**[SheetData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx)**. **sheetData** represents the cell table and contains
-one or more **[Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx)** elements. A **row** contains one or more **[Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx)** elements. Each cell contains a **[CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx)** element that represents the value
+**[SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx)**. **sheetData** represents the cell table and contains
+one or more **[Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx)** elements. A **row** contains one or more **[Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx)** elements. Each cell contains a **[CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx)** element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
                 <c r="A1">
@@ -155,7 +155,7 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 After you have opened the spreadsheet file for editing, the code
 verifies that the specified cells exist, and if they do not exist, it
 creates them by calling the **CreateSpreadsheetCellIfNotExist** method and append
-it to the appropriate **[Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx)** object.
+it to the appropriate **[Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx)** object.
 
 ```csharp
     // Given a Worksheet and a cell name, verifies that the specified cell exists.
@@ -236,9 +236,9 @@ to match the column name portion of the cell name. This regular
 expression matches any combination of uppercase or lowercase letters.
 For more information about regular expressions, see [Regular Expression
 Language
-Elements](http://msdn.microsoft.com/en-us/library/az24scfc.aspx). The
+Elements](https://msdn.microsoft.com/library/az24scfc.aspx). The
 code gets the column name by calling the <span sdata="cer"
-target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6).
+target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6).
 
 ```csharp
     // Given a cell name, parses the specified cell to get the column name.
@@ -293,7 +293,7 @@ decimal digits.
 --------------------------------------------------------------------------------
 ## Sample Code 
 
-The following code merges two adjacent cells in a **[SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx)** document package. When
+The following code merges two adjacent cells in a **[SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx)** document package. When
 merging two cells, only the content from one of the cells is preserved.
 In left-to-right languages, the content in the upper-left cell is
 preserved. In right-to-left languages, the content in the upper-right
@@ -585,8 +585,8 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
 
-[Language-Integrated Query (LINQ)](http://msdn.microsoft.com/en-us/library/bb397926.aspx)
+[Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 
-[Lambda Expressions](http://msdn.microsoft.com/en-us/library/bb531253.aspx)
+[Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
 
-[Lambda Expressions (C\# Programming Guide)](http://msdn.microsoft.com/en-us/library/bb397687.aspx)
+[Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)

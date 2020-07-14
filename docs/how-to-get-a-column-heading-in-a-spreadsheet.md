@@ -84,7 +84,7 @@ file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=http://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
         <sheets>
             <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
             <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
@@ -101,7 +101,7 @@ Sheet1.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
     <c r="A1">
@@ -139,7 +139,7 @@ within the **GetColumnHeading** method.
 The **GetColumnName** method takes the cell
 name as a parameter. It parses the cell name to get the column name by
 creating a regular expression to match the column name portion of the
-cell name. For more information about regular expressions, see [Regular Expression Language Elements](http://msdn.microsoft.com/en-us/library/az24scfc.aspx).
+cell name. For more information about regular expressions, see [Regular Expression Language Elements](https://msdn.microsoft.com/library/az24scfc.aspx).
 
 ```csharp
     // Create a regular expression to match the column name portion of the cell name.
@@ -205,7 +205,7 @@ gets the cells in the column and orders them by row using the **GetRowIndex** me
 
 If the specified column exists, it gets the first cell in the column
 using the
-[IEnumerable(T).First](http://msdn.microsoft.com/en-us/library/bb291976.aspx)
+[IEnumerable(T).First](https://msdn.microsoft.com/library/bb291976.aspx)
 method. The first cell contains the heading.
 
 ```csharp
@@ -221,7 +221,7 @@ method. The first cell contains the heading.
 If the content of the cell is stored in the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object, it gets the
 shared string items and returns the content of the column heading using
 the
-[M:System.Int32.Parse(System.String)](http://msdn.microsoft.com/en-us/library/b3h1hf19.aspx)
+[M:System.Int32.Parse(System.String)](https://msdn.microsoft.com/library/b3h1hf19.aspx)
 method. If the content of the cell is not in the [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object, it returns the
 content of the cell.
 
@@ -412,8 +412,8 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)  
 
-[Language-Integrated Query (LINQ)](http://msdn.microsoft.com/en-us/library/bb397926.aspx)  
+[Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)  
 
-[Lambda Expressions](http://msdn.microsoft.com/en-us/library/bb531253.aspx)  
+[Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)  
 
-[Lambda Expressions (C\# Programming Guide)](http://msdn.microsoft.com/en-us/library/bb397687.aspx)  
+[Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)  

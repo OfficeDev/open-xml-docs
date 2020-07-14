@@ -104,7 +104,7 @@ The SDK supports the following common tasks/scenarios:
 
 -   **Support of Office 2013 Preview file format**—In addition to the Open XML SDK 2.0 for Microsoft Office classes, Open XML SDK 2.5 provides new classes that enable you to write and build applications to manipulate Open XML file extensions of the new Office 2013 features.
 
--   **Reads ISO Strict Document File**—Open XML SDK 2.5 can read ISO/IEC 29500 Strict Format files. When the Open XML SDK 2.5 API opens a Strict Format file, each Open XML part in the file is loaded to an **OpenXmlPart**  class of the Open XML SDK 2.5 by mapping `http://purl.oclc.org/ooxml/` namespaces to the corresponding `http://schemas.openxmlformats.org/` namespaces.
+-   **Reads ISO Strict Document File**—Open XML SDK 2.5 can read ISO/IEC 29500 Strict Format files. When the Open XML SDK 2.5 API opens a Strict Format file, each Open XML part in the file is loaded to an **OpenXmlPart**  class of the Open XML SDK 2.5 by mapping `https://purl.oclc.org/ooxml/` namespaces to the corresponding `https://schemas.openxmlformats.org/` namespaces.
 
 -   **Fixes to the Open XML SDK 2.0 for Microsoft Office**—Open XML SDK 2.5 includes fixes to known issues in the Open XML SDK 2.0 for Microsoft Office. These include lost whitespaces in PowerPoint presentations and an issue with the Custom UI in Word documents where a specified argument was reported as being out of the range of valid values.
 

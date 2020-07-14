@@ -48,7 +48,7 @@ programmatically open a read-only word processing document.
 
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object 
-In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
+In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
 Word document package. To work with a Word document, first create an
 instance of the **WordprocessingDocument**
 class from the document, and then work with that instance. Once you
@@ -66,10 +66,10 @@ editable are listed in the following table.
 
 Open Method|Class Library Reference Topic|Description
 --|--|--
-Open(String, Boolean)|[Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562234.aspx) |Create an instance of the **WordprocessingDocument** class from the specified file.
-Open(Stream, Boolean)|[Open(Stream, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc536138.aspx) |Create an instance of the **WordprocessingDocument** class from the specified IO stream.
-Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](https://msdn.microsoft.com/en-us/library/office/ee857385.aspx) |Create an instance of the **WordprocessingDocument** class from the specified file.
-Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](https://msdn.microsoft.com/en-us/library/office/ee863626.aspx) |Create an instance of the **WordprocessingDocument** class from the specified I/O stream.
+Open(String, Boolean)|[Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) |Create an instance of the **WordprocessingDocument** class from the specified file.
+Open(Stream, Boolean)|[Open(Stream, Boolean)](https://msdn.microsoft.com/library/office/cc536138.aspx) |Create an instance of the **WordprocessingDocument** class from the specified IO stream.
+Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](https://msdn.microsoft.com/library/office/ee857385.aspx) |Create an instance of the **WordprocessingDocument** class from the specified file.
+Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](https://msdn.microsoft.com/library/office/ee863626.aspx) |Create an instance of the **WordprocessingDocument** class from the specified I/O stream.
 
 The table above lists only those **Open**
 methods that accept a Boolean value as the second parameter to specify
@@ -179,7 +179,7 @@ markup for a document that contains only the text "Example text." is
 shown in the following code example.
 
 ```xml
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>
@@ -192,17 +192,17 @@ shown in the following code example.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
-elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.aspx)
+elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 WordprocessingML Element|Open XML SDK 2.5 Class|Description
 --|--|--
-document|[Document](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.document.aspx) |The root element for the main document part.
-body|[Body](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
-p|[Paragraph](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) |A paragraph.
-r|[Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx) |A run.
-t|[Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.text.aspx) |A range of text.
+document|[Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) |The root element for the main document part.
+body|[Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
+p|[Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) |A paragraph.
+r|[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) |A run.
+t|[Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) |A range of text.
 
 
 --------------------------------------------------------------------------------

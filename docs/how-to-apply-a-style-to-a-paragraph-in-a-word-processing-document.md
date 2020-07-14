@@ -19,7 +19,7 @@ localization_priority: Priority
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically apply a style to a paragraph within a word processing document. It contains an example **ApplyStyleToParagraph** method to illustrate this task, plus several supplemental example methods to check whether a style exists, add a new style, and add the styles part.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
 
@@ -104,7 +104,7 @@ WordprocessingML markup for a document that contains the text "Example
 text."
 
 ```xml
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>
@@ -146,7 +146,7 @@ After opening the file, the sample code retrieves a reference to the
 first paragraph. Because a typical word processing document body
 contains many types of elements, the code filters the descendants in the
 body of the document to those of type **Paragraph**. The
-[ElementAtOrDefault](http://msdn.microsoft.com/en-us/library/bb494386.aspx)
+[ElementAtOrDefault](https://msdn.microsoft.com/library/bb494386.aspx)
 method is then employed to retrieve a reference to the paragraph.
 Because the elements are indexed starting at zero, you pass a zero to
 retrieve the reference to the first paragraph, as shown in the following
@@ -177,7 +177,7 @@ code example.
 
 The reference to the found paragraph is stored in a variable named p. If
 a paragraph is not found at the specified index, the
-[ElementAtOrDefault](http://msdn.microsoft.com/en-us/library/bb494386.aspx)
+[ElementAtOrDefault](https://msdn.microsoft.com/library/bb494386.aspx)
 method returns null as the default value. This provides an opportunity
 to test for null and throw an error with an appropriate error message.
 
@@ -216,7 +216,7 @@ following sample markup shows a pStyle element that specifies the
 "OverdueAmount" style.
 
 ```xml
-    <w:p  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:p  xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:pPr>
         <w:pStyle w:val="OverdueAmount" />
       </w:pPr>
@@ -402,7 +402,7 @@ styleid is an attribute of the style that is used in many places in the
 document to refer to the style, and can be thought of as its primary
 identifier. Typically you use the styleid to identify a style in code.
 The
-[FirstOrDefault](http://msdn.microsoft.com/en-us/library/bb340482.aspx)
+[FirstOrDefault](https://msdn.microsoft.com/library/bb340482.aspx)
 method defaults to null if no match is found, so the code verifies for
 null to see whether a style was matched, as shown in the following
 excerpt.

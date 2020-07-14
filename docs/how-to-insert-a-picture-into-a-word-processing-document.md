@@ -44,9 +44,9 @@ this topic.
 
 --------------------------------------------------------------------------------
 ## Opening an Existing Document for Editing
-To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
+To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
 the following **using** statement. In the same
-statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562234.aspx) method, with the
+statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) method, with the
 Boolean parameter set to **true** in order to
 enable editing the document.
 
@@ -107,7 +107,7 @@ The following XML Schema fragment defines the contents of this element
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
-After you have opened the document, add the [ImagePart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.imagepart.aspx) object to the [MainDocumentPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) object by using a file
+After you have opened the document, add the [ImagePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.imagepart.aspx) object to the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) object by using a file
 stream as shown in the following code segment.
 
 ```csharp
@@ -130,7 +130,7 @@ stream as shown in the following code segment.
 ```
 
 To add the image to the body, first define the reference of the image.
-Then, append the reference to the body. The element should be in a [Run](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.wordprocessing.run.aspx).
+Then, append the reference to the body. The element should be in a [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx).
 
 ```csharp
     // Define the reference of the image.
@@ -185,7 +185,7 @@ Then, append the reference to the body. The element should be in a [Run](https:/
                                  new A.PresetGeometry(
                                      new A.AdjustValueList()
                                  ) { Preset = A.ShapeTypeValues.Rectangle }))
-                     ) { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" })
+                     ) { Uri = "https://schemas.openxmlformats.org/drawingml/2006/picture" })
              )
              {
                  DistanceFromTop = (UInt32Value)0U,
@@ -234,7 +234,7 @@ Then, append the reference to the body. The element should be in a [Run](https:/
                                                 ) With {.Preset = A.ShapeTypeValues.Rectangle} _
                                             ) _
                                         ) _
-                                    ) With {.Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture"} _
+                                    ) With {.Uri = "https://schemas.openxmlformats.org/drawingml/2006/picture"} _
                                 ) _
                             ) With {.DistanceFromTop = 0UI, _
                                     .DistanceFromBottom = 0UI, _
@@ -331,7 +331,7 @@ The following is the complete sample code in both C\# and Visual Basic.
                                      new A.PresetGeometry(
                                          new A.AdjustValueList()
                                      ) { Preset = A.ShapeTypeValues.Rectangle }))
-                         ) { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" })
+                         ) { Uri = "https://schemas.openxmlformats.org/drawingml/2006/picture" })
                  ) { DistanceFromTop = (UInt32Value)0U, 
                      DistanceFromBottom = (UInt32Value)0U, 
                      DistanceFromLeft = (UInt32Value)0U, 
@@ -391,7 +391,7 @@ The following is the complete sample code in both C\# and Visual Basic.
                                                     ) With {.Preset = A.ShapeTypeValues.Rectangle} _
                                                 ) _
                                             ) _
-                                        ) With {.Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture"} _
+                                        ) With {.Uri = "https://schemas.openxmlformats.org/drawingml/2006/picture"} _
                                     ) _
                                 ) With {.DistanceFromTop = 0UI, _
                                         .DistanceFromBottom = 0UI, _

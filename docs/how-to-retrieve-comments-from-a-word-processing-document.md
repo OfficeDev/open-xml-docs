@@ -37,9 +37,9 @@ this topic.
 
 --------------------------------------------------------------------------------
 ## Open the Existing Document for Read-only Access
-To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
+To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
 the following **using** statement. In the same
-statement, open the word processing file at the specified **fileName** by using the [Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562234.aspx) method. To open the
+statement, open the word processing file at the specified **fileName** by using the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) method. To open the
 file for editing the Boolean parameter is set to **true**. In this example you just need to read the
 file; therefore, you can open the file for read-only access by setting
 the Boolean parameter to **false**.

@@ -21,7 +21,7 @@ Office to programmatically remove all headers and footers in a word
 processing document. It contains an example **RemoveHeadersAndFooters** method to illustrate this
 task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must then explicitly reference the following assemblies in your project.
 
 -   WindowsBase
@@ -116,7 +116,7 @@ has any work to do─that is, if the document contains any headers or
 footers. To decide, the code calls the **Count** method of both the [HeaderParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.headerparts.aspx) and [FooterParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.footerparts.aspx) properties of the document
 part, and if either returns a value greater than 0, the code continues.
 Be aware that the **HeaderParts** and **FooterParts** properties each return an
-[IEnumerable](http://msdn.microsoft.com/en-us/library/9eekhta0.aspx) of
+[IEnumerable](https://msdn.microsoft.com/library/9eekhta0.aspx) of
 [HeaderPart](https://msdn.microsoft.com/library/9eekhta0.aspx) or [FooterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.footerpart.aspx) objects, respectively.
 
 ```csharp

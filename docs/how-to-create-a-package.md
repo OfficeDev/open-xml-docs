@@ -114,7 +114,7 @@ more **t** elements. The **t** element contains a range of text. The **Wordproce
 sample code creates is shown in the following code example.
 
 ```xml
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>
@@ -182,7 +182,7 @@ main document part.
     {
         const string docXml =
          @"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?> 
-    <w:document xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">
+    <w:document xmlns:w=""https://schemas.openxmlformats.org/wordprocessingml/2006/main"">
     <w:body>
         <w:p>
             <w:r>
@@ -204,7 +204,7 @@ main document part.
     ' Set the content of MainDocumentPart.
     Public Sub SetMainDocumentContent(ByVal part As MainDocumentPart)
         Const docXml As String = "<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>" & _
-            "<w:document xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">" & _
+            "<w:document xmlns:w=""https://schemas.openxmlformats.org/wordprocessingml/2006/main"">" & _
                 "<w:body>" & _
                     "<w:p>" & _
                         "<w:r>" & _
@@ -260,7 +260,7 @@ Following is the complete sample code in both C\# and Visual Basic.
     {
        const string docXml =
         @"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?> 
-        <w:document xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">
+        <w:document xmlns:w=""https://schemas.openxmlformats.org/wordprocessingml/2006/main"">
             <w:body>
                 <w:p>
                     <w:r>
@@ -291,7 +291,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 
     Public Sub SetMainDocumentContent(ByVal part As MainDocumentPart)
         Const docXml As String = "<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>" & _
-            "<w:document xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">" & _
+            "<w:document xmlns:w=""https://schemas.openxmlformats.org/wordprocessingml/2006/main"">" & _
                 "<w:body>" & _
                     "<w:p>" & _
                         "<w:r>" & _

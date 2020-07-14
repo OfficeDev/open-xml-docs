@@ -116,21 +116,21 @@ two slides denoted by the Id's 267 and 256.
     <p:presentation xmlns:p="…" … > 
        <p:sldMasterIdLst>
           <p:sldMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId1"/>
+             xmlns:rel="https://…/relationships" rel:id="rId1"/>
        </p:sldMasterIdLst>
        <p:notesMasterIdLst>
           <p:notesMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId4"/>
+             xmlns:rel="https://…/relationships" rel:id="rId4"/>
        </p:notesMasterIdLst>
        <p:handoutMasterIdLst>
           <p:handoutMasterId
-             xmlns:rel="http://…/relationships" rel:id="rId5"/>
+             xmlns:rel="https://…/relationships" rel:id="rId5"/>
        </p:handoutMasterIdLst>
        <p:sldIdLst>
           <p:sldId id="267"
-             xmlns:rel="http://…/relationships" rel:id="rId2"/>
+             xmlns:rel="https://…/relationships" rel:id="rId2"/>
           <p:sldId id="256"
-             xmlns:rel="http://…/relationships" rel:id="rId3"/>
+             xmlns:rel="https://…/relationships" rel:id="rId3"/>
        </p:sldIdLst>
            <p:sldSz cx="9144000" cy="6858000"/>
        <p:notesSz cx="6858000" cy="9144000"/>

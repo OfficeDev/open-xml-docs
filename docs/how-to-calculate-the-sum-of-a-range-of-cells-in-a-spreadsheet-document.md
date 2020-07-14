@@ -45,17 +45,17 @@ this topic.
 ----------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
 
-In the Open XML SDK, the **[SpreadsheetDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx)** class represents an
+In the Open XML SDK, the **[SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx)** class represents an
 Excel document package. To open and work with an Excel document, you
 create an instance of the **SpreadsheetDocument** class from the document.
 After you create the instance from the document, you can then obtain
-access to the main **[Workbook](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** part that contains the worksheets.
+access to the main **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** part that contains the worksheets.
 The text in the document is represented in the package as XML using
 **SpreadsheetML** markup.
 
 To create the class instance from the document that you call one of the
 **Open** methods. Several are provided, each
-with a different signature. The sample code in this topic uses the **[Open(String, Boolean)](https://msdn.microsoft.com/en-us/library/office/cc562356.aspx)** method with a
+with a different signature. The sample code in this topic uses the **[Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx)** method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
 second parameter is either **true** or **false** and represents whether you want the file to
@@ -91,7 +91,7 @@ object that is created or named in the **using** statement, in this case **docum
 ----------------------------------------------------------------------------
 ## Basic Structure of a SpreadsheetML Document 
 
-The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** and **[Sheet](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** elements, which reference the
+The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** and **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
 worksheet. For example, the **SpreadsheetML**
 for a workbook that has two worksheets name MySheet1 and MySheet2 is
@@ -100,7 +100,7 @@ example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=http://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
         <sheets>
             <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
             <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
@@ -108,15 +108,15 @@ example.
     </workbook>
 ```
 The worksheet XML files contain one or more block level elements such as
-**[SheetData](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx)**. **sheetData** represents the cell table and contains
-one or more **[Row](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.row.aspx)** elements. A **row** contains one or more **[Cell](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cell.aspx)** elements. Each cell contains a **[CellValue](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx)** element that represents the value
+**[SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx)**. **sheetData** represents the cell table and contains
+one or more **[Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx)** elements. A **row** contains one or more **[Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx)** elements. Each cell contains a **[CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx)** element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
                 <c r="A1">
@@ -168,7 +168,7 @@ object and determines if the column of the cell is within the contiguous
 range by calling the **CompareColumn** method.
 If the cell is within the contiguous range, the code adds the value of
 the cell to the sum. Then it gets the **SharedStringTablePart** object if it exists. If it
-does not exist, it creates one using the **[AddNewPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx)** method. It inserts the result
+does not exist, it creates one using the **[AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx)** method. It inserts the result
 into the **SharedStringTablePart** object by
 calling the **InsertSharedStringItem** method.
 
@@ -307,8 +307,8 @@ To get the row index the code passes a parameter that represents the
 name of the cell, and creates a new regular expression to match the row
 index portion of the cell name. For more information about regular
 expressions, see [Regular Expression Language
-Elements](http://msdn.microsoft.com/en-us/library/az24scfc.aspx). It
-gets the row index by calling the **[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6)**
+Elements](https://msdn.microsoft.com/library/az24scfc.aspx). It
+gets the row index by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)**
 method, and then returns the row index.
 
 ```csharp
@@ -338,7 +338,7 @@ The code then gets the column name by passing a parameter that
 represents the name of the cell, and creates a new regular expression to
 match the column name portion of the cell name. This regular expression
 matches any combination of uppercase or lowercase letters. It gets the
-column name by calling the **[Regex.Match](http://msdn2.microsoft.com/EN-US/library/3zy662f6)**
+column name by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)**
 method, and then returns the column name.
 
 ```csharp
@@ -369,7 +369,7 @@ the columns to compare. If the first column is longer than the second
 column, it returns 1. If the second column is longer than the first
 column, it returns -1. Otherwise, it compares the values of the columns
 using the <span sdata="cer"
-target="M:System.String.Compare(System.String,System.String,System.Boolean)">**[Compare](http://msdn2.microsoft.com/EN-US/library/2se42k1z)**
+target="M:System.String.Compare(System.String,System.String,System.Boolean)">**[Compare](https://msdn2.microsoft.com/library/2se42k1z)**
 and returns the result.
 
 ```csharp
@@ -408,10 +408,10 @@ To insert a **SharedStringItem**, the code
 passes in a parameter that represents the text to insert into the cell
 and a parameter that represents the **SharedStringTablePart** object for the spreadsheet.
 If the **ShareStringTablePart** object does not
-contain a **[SharedStringTable](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx)** object then it creates
+contain a **[SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx)** object then it creates
 one. If the text already exists in the **ShareStringTable** object, then it returns the
 index for the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem">**[SharedStringItem](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx)** object that represents the
+target="T:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem">**[SharedStringItem](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx)** object that represents the
 text. If the text does not exist, create a new **SharedStringItem** object that represents the text.
 It then returns the index for the **SharedStringItem** object that represents the text.
 
@@ -484,7 +484,7 @@ column and inserts it into the worksheet. It then determines where to
 insert the new cell in the column by iterating through the row elements
 to find the cell that comes directly after the specified row, in
 sequential order. It saves this row in the **refCell** variable. It inserts the new cell before the
-cell referenced by **refCell** using the **[InsertBefore](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.openxmlcompositeelement.insertbefore.aspx)** method. It then returns the
+cell referenced by **refCell** using the **[InsertBefore](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlcompositeelement.insertbefore.aspx)** method. It then returns the
 new **Cell** object.
 
 ```csharp
@@ -929,9 +929,9 @@ The following is the complete sample code in both C\# and Visual Basic.
 ## See also 
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
-- [Language-Integrated Query (LINQ)](http://msdn.microsoft.com/en-us/library/bb397926.aspx)
-- [Lambda Expressions](http://msdn.microsoft.com/en-us/library/bb531253.aspx)
-- [Lambda Expressions (C\# Programming Guide)](http://msdn.microsoft.com/en-us/library/bb397687.aspx)
+- [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
+- [Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
+- [Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)
 
 
 

@@ -44,26 +44,26 @@ part. A separate XML file is created for each slide.
 
 Using the Open XML SDK 2.5, you can create document structure and
 content that uses strongly-typed classes that correspond to
-PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.aspx)**
+PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)**
 namespace. The following table lists the class names of the classes that
 correspond to some of the important presentation elements.
 
 
 |    **Package Part**     | **Top Level PresentationML Element** |                                                        **Open XML SDK 2.5 Class**                                                         |                                                                                                                                                                               **Description**\*                                                                                                                                                                                |
 |-------------------------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      Presentation       |           \<presentation\>           |           [Presentation](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentation.aspx)           |                                                                                                                             The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.                                                                                                                             |
-| Presentation Properties |          \<presentationPr\>          | [PresentationProperties](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.presentationproperties.aspx) |                                                                                                 The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.                                                                                                 |
-|      Slide Master       |            \<sldMaster\>             |            [SlideMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidemaster.aspx)            |                                     The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see [Working with slide masters (Open XML SDK)](working-with-slide-masters.md).                                     |
-|      Slide Layout       |            \<sldLayout\>             |            [SlideLayout](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slidelayout.aspx)            |                                                       The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see [Working with slide layouts (Open XML SDK)](working-with-slide-layouts.md).                                                        |
-|          Theme          |         \<officeStyleSheet\>         |                    [Theme](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.drawing.theme.aspx)                     |                                                                  The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.                                                                  |
-|          Slide          |               \<sld\>                |                  [Slide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.slide.aspx)                  |                                                                                   The root element for the Slide part. This element specifies a slide within a slide list. For more information, see [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md).                                                                                   |
-|      Notes Master       |           \<notesMaster\>            |            [NotesMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesmaster.aspx)            |                                                                                           The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.                                                                                            |
-|       Notes Slide       |              \<notes\>               |             [NotesSlide](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.notesslide.aspx)             | The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see [Working with notes slides (Open XML SDK)](working-with-notes-slides.md). |
-|     Handout Master      |          \<handoutMaster\>           |          [HandoutMaster](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.handoutmaster.aspx)          |                              The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see [Working with handout master slides (Open XML SDK)](working-with-handout-master-slides.md).                              |
-|        Comments         |              \<cmLst\>               |            [CommentList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentlist.aspx)            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                                      |
-|     Comments Author     |           \<cmAuthorLst\>            |      [CommentAuthorList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentauthorlist.aspx)      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                            |
+|      Presentation       |           \<presentation\>           |           [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx)           |                                                                                                                             The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.                                                                                                                             |
+| Presentation Properties |          \<presentationPr\>          | [PresentationProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentationproperties.aspx) |                                                                                                 The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.                                                                                                 |
+|      Slide Master       |            \<sldMaster\>             |            [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx)            |                                     The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see [Working with slide masters (Open XML SDK)](working-with-slide-masters.md).                                     |
+|      Slide Layout       |            \<sldLayout\>             |            [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx)            |                                                       The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see [Working with slide layouts (Open XML SDK)](working-with-slide-layouts.md).                                                        |
+|          Theme          |         \<officeStyleSheet\>         |                    [Theme](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.aspx)                     |                                                                  The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.                                                                  |
+|          Slide          |               \<sld\>                |                  [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx)                  |                                                                                   The root element for the Slide part. This element specifies a slide within a slide list. For more information, see [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md).                                                                                   |
+|      Notes Master       |           \<notesMaster\>            |            [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx)            |                                                                                           The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.                                                                                            |
+|       Notes Slide       |              \<notes\>               |             [NotesSlide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesslide.aspx)             | The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see [Working with notes slides (Open XML SDK)](working-with-notes-slides.md). |
+|     Handout Master      |          \<handoutMaster\>           |          [HandoutMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmaster.aspx)          |                              The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see [Working with handout master slides (Open XML SDK)](working-with-handout-master-slides.md).                              |
+|        Comments         |              \<cmLst\>               |            [CommentList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentlist.aspx)            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                                      |
+|     Comments Author     |           \<cmAuthorLst\>            |      [CommentAuthorList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentauthorlist.aspx)      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                            |
 
-*Descriptions adapted from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+*Descriptions adapted from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification, © ISO/IEC29500: 2008.
 
 ### Presentation Part
@@ -83,7 +83,7 @@ out to an audience for future reference.)
 The root element of the Presentation Properties part is the
 \<presentationPr\> element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Presentation
 Properties part as follows:
 
@@ -101,7 +101,7 @@ ZIP item presProps.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId6"  
-        Type="http://…/presProps" Target="presProps.xml"/>  
+        Type="https://…/presProps" Target="presProps.xml"/>  
 </Relationships>
 ```
 
@@ -132,7 +132,7 @@ relationships to any other part defined by ISO/IEC 29500.
 
 The root element of the Slide Master part is the \<sldMaster\> element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Slide Master part as
 follows:
 
@@ -154,7 +154,7 @@ slideMasters/slideMaster1.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId1"  
-        Type="http://…/slideMaster"
+        Type="https://…/slideMaster"
 Target="slideMasters/slideMaster1.xml"/>  
 </Relationships>
 ```
@@ -210,7 +210,7 @@ any other part defined by ISO/IEC 29500.
 
 The root element of the Slide Layout part is the \<sldLayout\> element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Slide Layout part as
 follows:
 
@@ -231,13 +231,13 @@ items ../slideLayouts/slideLayoutN.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId1"  
-        Type="http://…/slideLayout"  
+        Type="https://…/slideLayout"  
         Target="../slideLayouts/slideLayout1.xml"/>  
     <Relationship Id="rId2"  
-        Type="http://…/slideLayout"  
+        Type="https://…/slideLayout"  
         Target="../slideLayouts/slideLayout2.xml"/>  
     <Relationship Id="rId3"  
-        Type="http://…/slideLayout"  
+        Type="https://…/slideLayout"  
         Target="../slideLayouts/slideLayout3.xml"/>  
 </Relationships>
 ```
@@ -299,7 +299,7 @@ A comment is an annotation intended for the person maintaining the
 presentation slide deck. A note is a reminder or piece of text intended
 for the presenter or the audience.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Slide part as
 follows:
 
@@ -317,9 +317,9 @@ slides/slide1.xml and slides/slide2.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId2"  
-        Type="http://…/slide" Target="slides/slide1.xml"/>  
+        Type="https://…/slide" Target="slides/slide1.xml"/>  
     <Relationship Id="rId3"  
-        Type="http://…/slide" Target="slides/slide2.xml"/>  
+        Type="https://…/slide" Target="slides/slide2.xml"/>  
 </Relationships>
 ```
 
@@ -388,7 +388,7 @@ other part defined by ISO/IEC 29500.
 
 The root element of the Theme part is the \<officeStyleSheet\> element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML DrawingML Theme part as follows:
 
 An instance of this part type contains information about a document's
@@ -415,7 +415,7 @@ ZIP item theme/theme1.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId4"  
-        Type="http://…/theme" Target="theme/theme1.xml"/>  
+        Type="https://…/theme" Target="theme/theme1.xml"/>  
     </Relationships>
 ```
 
@@ -462,7 +462,7 @@ other parts defined by ISO/IEC 29500.
 The root element of the Notes Master part is the \<notesMaster\>
 element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Notes Master part as
 follows:
 
@@ -481,7 +481,7 @@ notesMasters/notesMaster1.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId4"  
-        Type="http://…/notesMaster"
+        Type="https://…/notesMaster"
 Target="notesMasters/notesMaster1.xml"/>  
 </Relationships>
 ```
@@ -536,7 +536,7 @@ to any other part defined by ISO/IEC 29500.
 
 The root element of the Notes Slide part is the \<notes\> element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Notes Slide part as
 follows:
 
@@ -553,7 +553,7 @@ relationship to a Notes Slide part, which is stored in the ZIP item
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId3"  
-        Type="http://…/notesSlide"
+        Type="https://…/notesSlide"
 Target="../notesSlides/notesSlide1.xml"/>  
 </Relationships>
 ```
@@ -612,7 +612,7 @@ to any other part defined by ISO/IEC 29500.
 The root element of the Handout Master part is the \<handoutMaster\>
 element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Handout Master part
 as follows:
 
@@ -631,7 +631,7 @@ handoutMasters/handoutMaster1.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId5"  
-        Type="http://…/handoutMaster"  
+        Type="https://…/handoutMaster"  
         Target="handoutMasters/handoutMaster1.xml"/>  
 </Relationships>
 ```
@@ -686,7 +686,7 @@ to any other part defined by ISO/IEC 29500.
 
 The root element of the Comments part is the \<cmLst\> element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Comments part as
 follows:
 
@@ -705,7 +705,7 @@ relationship to a Comments part, which is stored in the ZIP item
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId4"  
-        Type="http://…/comments"  
+        Type="https://…/comments"  
         Target="../comments/comment2.xml"/>  
 </Relationships>
 ```
@@ -748,7 +748,7 @@ other part defined by ISO/IEC 29500.
 The root element of the Comments Author part is the \<cmAuthorLst\>
 element.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML Comments Author part
 as follows:
 
@@ -769,7 +769,7 @@ item commentAuthors.xml:
 ```xml
 <Relationships xmlns="…">  
     <Relationship Id="rId8"  
-        Type="http://…/commentAuthors" Target="commentAuthors.xml"/>  
+        Type="https://…/commentAuthors" Target="commentAuthors.xml"/>  
 </Relationships>
 ```
 
@@ -856,16 +856,16 @@ create a minimum presentation
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:presentation xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:presentation xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
       <p:sldMasterIdLst>
         <p:sldMasterId id="2147483648"
                        r:id="rId1"
-                       xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+                       xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
       </p:sldMasterIdLst>
       <p:sldIdLst>
         <p:sldId id="256"
                  r:id="rId2"
-                 xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+                 xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
       </p:sldIdLst>
       <p:sldSz cx="9144000"
                cy="6858000"
@@ -881,14 +881,14 @@ when you run the Open XML SDK 2.5 to create a minimum presentation.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-      <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide"
+    <Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+      <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/slide"
                     Target="/ppt/slides/slide.xml"
                     Id="rId2" />
-      <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideMaster"
+      <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/slideMaster"
                     Target="/ppt/slideLayouts/slideMasters/slideMaster.xml"
                     Id="rId1" />
-      <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme"
+      <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/theme"
                     Target="/ppt/slideLayouts/slideMasters/theme/theme.xml"
                     Id="rId5" />
     </Relationships>
@@ -900,7 +900,7 @@ Open XML SDK 2.5 to create a minimum presentation.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:sld xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:sld xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -910,7 +910,7 @@ Open XML SDK 2.5 to create a minimum presentation.
             <p:nvPr />
           </p:nvGrpSpPr>
           <p:grpSpPr>
-            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
           </p:grpSpPr>
           <p:sp>
             <p:nvSpPr>
@@ -918,7 +918,7 @@ Open XML SDK 2.5 to create a minimum presentation.
                        name="Title 1" />
               <p:cNvSpPr>
                 <a:spLocks noGrp="1"
-                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
               </p:cNvSpPr>
               <p:nvPr>
                 <p:ph />
@@ -926,9 +926,9 @@ Open XML SDK 2.5 to create a minimum presentation.
             </p:nvSpPr>
             <p:spPr />
             <p:txBody>
-              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main">
                 <a:endParaRPr lang="en-US" />
               </a:p>
             </p:txBody>
@@ -936,7 +936,7 @@ Open XML SDK 2.5 to create a minimum presentation.
         </p:spTree>
       </p:cSld>
       <p:clrMapOvr>
-        <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:masterClrMapping xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
       </p:clrMapOvr>
     </p:sld>
 ```

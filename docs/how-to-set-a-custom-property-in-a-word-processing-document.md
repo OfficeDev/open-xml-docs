@@ -21,7 +21,7 @@ Office to programmatically set a custom property in a word processing
 document. It contains an example **SetCustomProperty** method to
 illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](http://www.microsoft.com/en-us/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
@@ -92,7 +92,7 @@ Figure 1. Open XML SDK Productivity Tool for Microsoft Office
 The relevant XML is also extracted and shown here for ease of reading.
 
 ```xml
-    <op:Properties xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes" xmlns:op="http://schemas.openxmlformats.org/officeDocument/2006/custom-properties">
+    <op:Properties xmlns:vt="https://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes" xmlns:op="https://schemas.openxmlformats.org/officeDocument/2006/custom-properties">
       <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="2" name="Manager">
         <vt:lpwstr>Mary</vt:lpwstr>
       </op:property>

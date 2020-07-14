@@ -16,7 +16,7 @@ localization_priority: Normal
 ---
 # Working with comments (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [Comment](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
+This topic discusses the Open XML SDK 2.5 for Office [Comment](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
 Open XML File Format PresentationML schema. For more information about
 the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a PresentationML
@@ -25,7 +25,7 @@ Document](structure-of-a-presentationml-document.md).
 
 ---------------------------------------------------------------------------------
 ## Comments in PresentationML 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Comments section of the Open XML
 PresentationML framework as follows:
 
@@ -40,7 +40,7 @@ their visual appearance.
 
 © ISO/IEC29500: 2008.
 
-The [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<cm\> element used
 to represent comments in a PresentationML document as follows:
 
@@ -65,11 +65,11 @@ correspond to them.
 
 | **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
-|          \<pos\>           |                      [Position](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.position.aspx)                      |
-|          \<text\>          |                          [Text](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.text.aspx)                          |
+|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|          \<pos\>           |                      [Position](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.position.aspx)                      |
+|          \<text\>          |                          [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.text.aspx)                          |
 
-The following table from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<cm\> element.
 
 
@@ -97,7 +97,7 @@ therefore commonly associated with the **Comment** class are shown in the follow
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -116,7 +116,7 @@ store whether this extension property has been modified. end note
 ### Position Class
 
 The **Position** class corresponds to the
-\<pos\>element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<pos\>element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<pos\> element:
 
 This element specifies the positioning information for the placement of
@@ -142,7 +142,7 @@ application chooses to display comments. end note]
 ### Text class
 
 The **Text** class corresponds to the
-\<text\>element. The following information from the [ISO/IEC 29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<text\>element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification introduces the \<text\> element:
 
 This element specifies the content of a comment. This is the text with
@@ -169,17 +169,17 @@ their visual appearance.
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **Comment** class is associated with an
-instance of the [SlideCommentsPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.slidecommentspart.aspx) class, which represents a
+instance of the [SlideCommentsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidecommentspart.aspx) class, which represents a
 slide comments part, one of the parts of a PresentationML presentation
 file package, and a part that is required for each slide in a
 presentation file that contains comments. Each **Comment** class instance is also associated with an
-instance of the [CommentAuthor](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentauthor.aspx) class, which is in turn
+instance of the [CommentAuthor](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentauthor.aspx) class, which is in turn
 associated with a similarly named presentation part, represented by the
-[CommentAuthorsPart](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.commentauthorspart.aspx) class. Comment authors
+[CommentAuthorsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.commentauthorspart.aspx) class. Comment authors
 for a presentation are specified in a comment author list, represented
-by the [CommentAuthorList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentauthorlist.aspx) class, while comments for
+by the [CommentAuthorList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentauthorlist.aspx) class, while comments for
 each slide are listed in a comments list for that slide, represented by
-the [CommentList](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation.commentlist.aspx) class.
+the [CommentList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentlist.aspx) class.
 
 The **Comment** class, which represents the
 \<cm\> element, is therefore also associated with other classes that
@@ -303,7 +303,7 @@ or comment authors before the code was run.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:cmAuthorLst xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:cmAuthorLst xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cmAuthor id="1"
                   name="userName"
                   initials="userInitials"
@@ -318,7 +318,7 @@ article.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:cmLst xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:cmLst xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cm authorId="1"
             dt="2010-09-07T16:01:18.5351166-07:00"
             idx="1">

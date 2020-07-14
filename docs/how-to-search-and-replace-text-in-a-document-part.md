@@ -53,10 +53,10 @@ a word-processing document package.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object 
 In the sample code, you start by opening the word processing file by
-instantiating the **[WordprocessingDocument](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** class as shown in
+instantiating the **[WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
-**[Open](https://msdn.microsoft.com/en-us/library/office/cc562234.aspx)** method, with the Boolean parameter set
+**[Open](https://msdn.microsoft.com/library/office/cc562234.aspx)** method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ```csharp
@@ -109,7 +109,7 @@ After you have opened the file for editing, you read it by using a **StreamReade
 The code then creates a regular expression object that contains the
 string "Hello world!" It then replaces the text value with the text "Hi
 Everyone!." For more information about regular expressions, see [Regular
-Expressions](http://msdn.microsoft.com/en-us/library/hs600312.aspx)
+Expressions](https://msdn.microsoft.com/library/hs600312.aspx)
 
 ```csharp
     Regex regexText = new Regex("Hello world!");
@@ -201,4 +201,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
 
-[Regular Expressions](http://msdn.microsoft.com/en-us/library/hs600312.aspx)
+[Regular Expressions](https://msdn.microsoft.com/library/hs600312.aspx)

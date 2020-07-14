@@ -97,7 +97,7 @@ worksheets named MySheet1, MySheet2, and Chart1 is located in the
 Workbook.xml file and is shown in the following code example.
 
 ```xml
-    <x:workbook xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:workbook xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:fileVersion appName="xl" lastEdited="5" lowestEdited="4" rupBuild="9302" />
       <x:workbookPr filterPrivacy="1" defaultThemeVersion="124226" />
       <x:bookViews>
@@ -124,7 +124,7 @@ example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
                 <c r="A1">
@@ -414,7 +414,7 @@ The code then iterates through each key in the **Dictionary** class. For each ke
 ```
 
 The code adds the [CategoryAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.categoryaxis.aspx) object and [ValueAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.valueaxis.aspx) object to the chart and sets the
-value of the following properties: [Scaling](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.drawing.charts.scaling.aspx), [AxisPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.axisposition.aspx), [TickLabelPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.ticklabelposition.aspx), [CrossingAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crossingaxis.aspx), [Crosses](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crosses.aspx), [AutoLabeled](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.autolabeled.aspx), [LabelAlignment](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labelalignment.aspx), and [LabelOffset](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labeloffset.aspx). It also adds the [Legend](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chart.legend.aspx) object to the chart and saves the chart part.
+value of the following properties: [Scaling](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.scaling.aspx), [AxisPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.axisposition.aspx), [TickLabelPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.ticklabelposition.aspx), [CrossingAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crossingaxis.aspx), [Crosses](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crosses.aspx), [AutoLabeled](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.autolabeled.aspx), [LabelAlignment](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labelalignment.aspx), and [LabelOffset](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labeloffset.aspx). It also adds the [Legend](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chart.legend.aspx) object to the chart and saves the chart part.
 
 ```csharp
     barChart.Append(new AxisId() { Val = new UInt32Value(48650112u) });
@@ -536,7 +536,7 @@ and names the chart "Chart 1," and saves the worksheet drawing.
                         new Extents() { Cx = 0L, Cy = 0L }));
 
     graphicFrame.Append(new Graphic(new GraphicData(new ChartReference() { Id = drawingsPart.GetIdOfPart(chartPart)})
-    { Uri = "http://schemas.openxmlformats.org/drawingml/2006/chart" }));
+    { Uri = "https://schemas.openxmlformats.org/drawingml/2006/chart" }));
 
     twoCellAnchor.Append(new ClientData());
 
@@ -570,7 +570,7 @@ and names the chart "Chart 1," and saves the worksheet drawing.
 
     graphicFrame.Append(New Graphic(New GraphicData(New ChartReference() With _
         {.Id = drawingsPart.GetIdOfPart(chartPart)}) With {.Uri = _
-        "http://schemas.openxmlformats.org/drawingml/2006/chart"}))
+        "https://schemas.openxmlformats.org/drawingml/2006/chart"}))
 
     twoCellAnchor.Append(New ClientData())
 
@@ -581,7 +581,7 @@ and names the chart "Chart 1," and saves the worksheet drawing.
 ## Sample Code
 
 In the following code, you add a clustered column chart to a [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package using
-the data from a [Dictionary\<TKey, TValue\>](http://msdn2.microsoft.com/EN-US/library/xfhwa508)
+the data from a [Dictionary\<TKey, TValue\>](https://msdn2.microsoft.com/library/xfhwa508)
 class. For instance, you can call the method **InsertChartInSpreadsheet** by using this code segment.
 
 ```csharp
@@ -736,7 +736,7 @@ The following is the complete sample code in both C\# and Visual Basic.
                                                                     new Extents() { Cx = 0L, Cy = 0L }));
 
             graphicFrame.Append(new Graphic(new GraphicData(new ChartReference()            { Id = drawingsPart.GetIdOfPart(chartPart) }) 
-    { Uri = "http://schemas.openxmlformats.org/drawingml/2006/chart" }));
+    { Uri = "https://schemas.openxmlformats.org/drawingml/2006/chart" }));
 
             twoCellAnchor.Append(new ClientData());
 
@@ -868,7 +868,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
             graphicFrame.Append(New Graphic(New GraphicData(New ChartReference() With _
                 {.Id = drawingsPart.GetIdOfPart(chartPart)}) With {.Uri = _
-                "http://schemas.openxmlformats.org/drawingml/2006/chart"}))
+                "https://schemas.openxmlformats.org/drawingml/2006/chart"}))
 
             twoCellAnchor.Append(New ClientData())
 
@@ -885,8 +885,8 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
 
-[Language-Integrated Query (LINQ)](http://msdn.microsoft.com/en-us/library/bb397926.aspx)
+[Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 
-[Lambda Expressions](http://msdn.microsoft.com/en-us/library/bb531253.aspx)
+[Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
 
-[Lambda Expressions (C\# Programming Guide)](http://msdn.microsoft.com/en-us/library/bb397687.aspx)
+[Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)
