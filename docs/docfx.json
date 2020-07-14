@@ -41,12 +41,12 @@
       "ms.topic": "conceptual",
       "ms.prod": "office",
       "ms.technology": "open-xml"
-    },    
+    },
+    "fileMetadata": {
       "langs": {
-      "**/*.yml": ["csharp", "vb"]
+        "**/*.yml": ["csharp", "vb"]
       }
     },
-    "fileMetadata": {},
     "template": [],
     "dest": "open-xml-docs",
     "markdownEngineName": "markdig"
