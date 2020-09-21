@@ -185,7 +185,7 @@ Then, append the reference to the body. The element should be in a [Run](https:/
                                  new A.PresetGeometry(
                                      new A.AdjustValueList()
                                  ) { Preset = A.ShapeTypeValues.Rectangle }))
-                     ) { Uri = "https://schemas.openxmlformats.org/drawingml/2006/picture" })
+                     ) { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" })
              )
              {
                  DistanceFromTop = (UInt32Value)0U,
