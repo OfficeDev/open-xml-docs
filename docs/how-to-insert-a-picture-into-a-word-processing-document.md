@@ -331,7 +331,7 @@ The following is the complete sample code in both C\# and Visual Basic.
                                      new A.PresetGeometry(
                                          new A.AdjustValueList()
                                      ) { Preset = A.ShapeTypeValues.Rectangle }))
-                         ) { Uri = "https://schemas.openxmlformats.org/drawingml/2006/picture" })
+                         ) { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" })
                  ) { DistanceFromTop = (UInt32Value)0U, 
                      DistanceFromBottom = (UInt32Value)0U, 
                      DistanceFromLeft = (UInt32Value)0U, 
@@ -391,7 +391,7 @@ The following is the complete sample code in both C\# and Visual Basic.
                                                     ) With {.Preset = A.ShapeTypeValues.Rectangle} _
                                                 ) _
                                             ) _
-                                        ) With {.Uri = "https://schemas.openxmlformats.org/drawingml/2006/picture"} _
+                                        ) With {.Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture"} _
                                     ) _
                                 ) With {.DistanceFromTop = 0UI, _
                                         .DistanceFromBottom = 0UI, _
