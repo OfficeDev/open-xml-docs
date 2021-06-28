@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+ms.prod: office365
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -19,16 +19,13 @@ localization_priority: Priority
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically add a table to a word processing document. It contains an example **AddTable** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
-must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
+You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
 
 ```csharp
     using DocumentFormat.OpenXml;
@@ -43,13 +40,14 @@ the code in this topic.
 ```
 
 -----------------------------------------------------------------------------
-## AddTable Method 
+
+## AddTable Method
 
 You can use the **AddTable** method to add a simple table to a word processing document. The **AddTable** method accepts two parameters, indicating the following:
 
--   The name of the document to modify (string).
+- The name of the document to modify (string).
 
--   A two-dimensional array of strings to insert into the document as a
+- A two-dimensional array of strings to insert into the document as a
     table.
 
 ```csharp
@@ -62,7 +60,8 @@ You can use the **AddTable** method to add a simple table to a word processing d
 ```
 
 -----------------------------------------------------------------------------
-## Calling the AddTable Method 
+
+## Calling the AddTable Method
 
 The **AddTable** method modifies the document you specify, adding a table that contains the information in the two-dimensional array that you provide. To call the method, pass both of the parameter values, as shown in the following code.
 
@@ -85,11 +84,12 @@ The **AddTable** method modifies the document you specify, adding a table that c
         {"Massachusetts", "MA"}})
 ```
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
 ## How the Code Works 
 
-The following code starts by opening the document, using the [WordprocessingDocument.Open](https://docs.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open?view=openxml-2.8.1) method and
-indicating that the document should be open for read/write access (the final **true** parameter value). Next the code retrieves a reference to the root element of the main document part, using the [Document](https://docs.microsoft.com/dotnet/api/documentformat.openxml.packaging.maindocumentpart.document?view=openxml-2.8.1) property of the [MainDocumentPart](https://docs.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart?view=openxml-2.8.1) of the word processing
+The following code starts by opening the document, using the [WordprocessingDocument.Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open.md) method and
+indicating that the document should be open for read/write access (the final **true** parameter value). Next the code retrieves a reference to the root element of the main document part, using the [Document](/dotnet/api/documentformat.openxml.packaging.maindocumentpart.document.md) property of the [MainDocumentPart](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.md) of the word processing
 document.
 
 ```csharp
@@ -108,9 +108,10 @@ document.
 ```
 
 -----------------------------------------------------------------------------
+
 ## Creating the Table Object and Setting Its Properties 
 
-Before you can insert a table into a document, you must create the [Table](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.table?view=openxml-2.8.1) object and set its properties. To set a table's properties, you create and supply values for a [TableProperties](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tableproperties?view=openxml-2.8.1) object. The **TableProperties** class provides many table-oriented properties, like [Shading](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.shading?view=openxml-2.8.1), [TableBorders](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tableborders?view=openxml-2.8.1), [TableCaption](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tablecaption?view=openxml-2.8.1), [TableCellSpacing](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tablecellspacing?view=openxml-2.8.1), [TableJustification](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tablejustification?view=openxml-2.8.1), and more. The sample method includes the following code.
+Before you can insert a table into a document, you must create the [Table](/dotnet/api/documentformat.openxml.wordprocessing.table.md) object and set its properties. To set a table's properties, you create and supply values for a [TableProperties](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.md) object. The **TableProperties** class provides many table-oriented properties, like [Shading](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.shading.md), [TableBorders](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tableborders.md), [TableCaption](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tablecaption.md), [TableCellSpacing](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tablecellspacing.md), [TableJustification](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.tablejustification.md), and more. The sample method includes the following code.
 
 ```csharp
     Table table = new Table();
@@ -178,15 +179,16 @@ Before you can insert a table into a document, you must create the [Table](https
 ```
 
 The constructor for the **TableProperties** class allows you to specify as many child elements as you like (much like the <span sdata="cer"
-target="M:System.Xml.Linq.XElement.#ctor(System.Xml.Linq.XName,System.Object[])">[XElement](https://docs.microsoft.com/dotnet/api/system.xml.linq.xelement?view=net-5.0)
-constructor). In this case, the code creates [TopBorder](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.topborder?view=openxml-2.8.1), [BottomBorder](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.bottomborder?view=openxml-2.8.1), [LeftBorder](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.leftborder?view=openxml-2.8.1), [RightBorder](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.rightborder?view=openxml-2.8.1), [InsideHorizontalBorder](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.insidehorizontalborder?view=openxml-2.8.1), and [InsideVerticalBorder](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.insideverticalborder?view=openxml-2.8.1) child elements, each
-describing one of the border elements for the table. For each element, the code sets the **Val** and **Size** properties as part of calling the constructor. Setting the size is simple, but setting the **Val** property requires a bit more effort: this property, for this particular object, represents the border style, and you must set it to an enumerated value. To do that, you create an instance of the [EnumValue\<T\>](https://docs.microsoft.com/dotnet/api/documentformat.openxml.enumvalue-1?view=openxml-2.8.1) generic type, passing the specific border type ([Single](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.bordervalues?view=openxml-2.8.1) as a parameter to the constructor.
-Once the code has set all the table border value it needs to set, it calls the [AppendChild\<T\>](https://docs.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.appendchild) method of the table, indicating that the generic type is [TableProperties](https://docs.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.tableproperties?view=openxml-2.8.1)—that is, it is appending an instance of the **TableProperties** class, using the variable **props** as the value.
+target="M:System.Xml.Linq.XElement.#ctor(System.Xml.Linq.XName,System.Object[])">[XElement](/dotnet/api/system.xml.linq.xelement.md)
+constructor). In this case, the code creates [TopBorder](/dotnet/api/documentformat.openxml.wordprocessing.topborder.md), [BottomBorder](/dotnet/api/documentformat.openxml.wordprocessing.bottomborder.md), [LeftBorder](/dotnet/api/documentformat.openxml.wordprocessing.leftborder.md), [RightBorder](/dotnet/api/documentformat.openxml.wordprocessing.rightborder.md), [InsideHorizontalBorder](/dotnet/api/documentformat.openxml.wordprocessing.insidehorizontalborder.md), and [InsideVerticalBorder](/dotnet/api/documentformat.openxml.wordprocessing.insideverticalborder.md) child elements, each
+describing one of the border elements for the table. For each element, the code sets the **Val** and **Size** properties as part of calling the constructor. Setting the size is simple, but setting the **Val** property requires a bit more effort: this property, for this particular object, represents the border style, and you must set it to an enumerated value. To do that, you create an instance of the [EnumValue\<T\>](/dotnet/api/documentformat.openxml.enumvalue-1.md) generic type, passing the specific border type ([Single](/dotnet/api/documentformat.openxml.wordprocessing.bordervalues.md) as a parameter to the constructor.
+Once the code has set all the table border value it needs to set, it calls the [AppendChild\<T\>](/dotnet/api/documentformat.openxml.openxmlelement.appendchild.md) method of the table, indicating that the generic type is [TableProperties](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.md)—that is, it is appending an instance of the **TableProperties** class, using the variable **props** as the value.
 
 -----------------------------------------------------------------------------
+
 ## Filling the Table with Data 
 
-Given that table and its properties, now it is time to fill the table with data. The sample procedure iterates first through all the rows of data in the array of strings that you specified, creating a new [TableRow](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablerow?view=openxml-2.8.1) instance for each row of data. The following code leaves out the details of filling in the row with data, but it shows how you create and append the row to the table:
+Given that table and its properties, now it is time to fill the table with data. The sample procedure iterates first through all the rows of data in the array of strings that you specified, creating a new [TableRow](/dotnet/api/documentformat.openxml.wordprocessing.tablerow.md) instance for each row of data. The following code leaves out the details of filling in the row with data, but it shows how you create and append the row to the table:
 
 ```csharp
     for (var i = 0; i <= data.GetUpperBound(0); i++)
@@ -205,7 +207,7 @@ Given that table and its properties, now it is time to fill the table with data.
     Next
 ```
 
-For each row, the code iterates through all the columns in the array of strings you specified. For each column, the code creates a new [TableCell](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablecell?view=openxml-2.8.1) object, fills it with data, and appends it to the row. The following code leaves out the details of filling each cell with data, but it shows how you create and append the column to the table:
+For each row, the code iterates through all the columns in the array of strings you specified. For each column, the code creates a new [TableCell](/dotnet/api/documentformat.openxml.wordprocessing.tablecell.md) object, fills it with data, and appends it to the row. The following code leaves out the details of filling each cell with data, but it shows how you create and append the column to the table:
 
 ```csharp
     for (var j = 0; j <= data.GetUpperBound(1); j++)
@@ -226,16 +228,16 @@ For each row, the code iterates through all the columns in the array of strings 
 
 Next, the code does the following:
 
--   Creates a new [Text](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.text?view=openxml-2.8.1) object that contains a value from
+- Creates a new [Text](/dotnet/api/documentformat.openxml.wordprocessing.text.md) object that contains a value from
     the array of strings.
 
--   Passes the [Text](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.text?view=openxml-2.8.1) object to the constructor for a
-    new [Run](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run?redirectedfrom=MSDN&view=openxml-2.8.1) object.
+- Passes the [Text](/dotnet/api/documentformat.openxml.wordprocessing.text.md) object to the constructor for a
+    new [Run](/dotnet/api/documentformat.openxml.wordprocessing.run.md) object.
 
--   Passes the [Run](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run?view=openxml-2.8.1) object to the constructor for a new
-    [Paragraph](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.paragraph?view=openxml-2.8.1) object.
+- Passes the [Run](/dotnet/api/documentformat.openxml.wordprocessing.run.md) object to the constructor for a new
+    [Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph.md) object.
 
--   Passes the [Paragraph](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.paragraph?view=openxml-2.8.1) object to the [Append](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.append.aspx)method of the cell.
+- Passes the [Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph.md) object to the [Append](/dotnet/api/documentformat.openxml.openxmlelement.append.md)method of the cell.
 
 In other words, the following code appends the text to the new **TableCell** object.
 
@@ -247,8 +249,8 @@ In other words, the following code appends the text to the new **TableCell** obj
     tc.Append(New Paragraph(New Run(New Text(data(i, j)))))
 ```
 
-The code then appends a new [TableCellProperties](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablecellproperties?view=openxml-2.8.1) object to the cell. This **TableCellProperties** object, like the **TableProperties** object you already saw, can accept as many objects in its constructor as you care to supply. In this
-case, the code passes only a new [TableCellWidth](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablecellwidth?view=openxml-2.8.1) object, with its [Type](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablewidthtype.type?view=openxml-2.8.1) property set to [Auto](https://docs.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablewidthunitvalues?view=openxml-2.8.1) (so that the table automatically sizes
+The code then appends a new [TableCellProperties](/dotnet/api/documentformat.openxml.wordprocessing.tablecellproperties.md) object to the cell. This **TableCellProperties** object, like the **TableProperties** object you already saw, can accept as many objects in its constructor as you care to supply. In this
+case, the code passes only a new [TableCellWidth](/dotnet/api/documentformat.openxml.wordprocessing.tablecellwidth.md) object, with its [Type](/dotnet/api/documentformat.openxml.wordprocessing.tablewidthtype.type.md) property set to [Auto](/dotnet/api/documentformat.openxml.wordprocessing.tablewidthunitvalues.md) (so that the table automatically sizes
 the width of each column).
 
 ```csharp
@@ -264,6 +266,7 @@ the width of each column).
 ```
 
 -----------------------------------------------------------------------------
+
 ## Finishing Up 
 
 The following code concludes by appending the table to the body of the document, and then saving the document.
@@ -279,7 +282,8 @@ The following code concludes by appending the table to the body of the document,
 ```
 
 -----------------------------------------------------------------------------
-## Sample Code 
+
+## Sample Code
 
 The following is the complete **AddTable** code sample in C\# and Visual Basic.
 
@@ -406,12 +410,7 @@ The following is the complete **AddTable** code sample in C\# and Visual Basic.
 ```
 
 -----------------------------------------------------------------------------
-## See also 
 
+## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
-
-
-
-
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
