@@ -5,13 +5,14 @@ api_name:
 api_type:
 - schema
 ms.assetid: bb5319c8-ee99-4862-937b-94dcae8deaca
-title: 'How to: Change the print orientation of a word processing document'
+title: 'How to: Change the print orientation of a word processing document (Open XML SDK)'
+description: 'Learn how to change the print orientation of a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Normal
 ---
 
@@ -23,12 +24,12 @@ Office to programmatically set the print orientation of a Microsoft Word
 **SetPrintOrientation** method to illustrate this task.
 
 To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -48,7 +49,9 @@ the code in this topic.
 ```
 
 -----------------------------------------------------------------------------
+
 ## SetPrintOrientation Method
+
 You can use the **SetPrintOrientation** method
 to change the print orientation of a word processing document. The
 method accepts two parameters that indicate the name of the document to
@@ -72,9 +75,10 @@ the section's current print orientation, the code modifies the print
 orientation for the section. In addition, the code must manually update
 the width, height, and margins for each section.
 
-
 -----------------------------------------------------------------------------
+
 ## Calling the Sample SetPrintOrientation Method
+
 To call the sample **SetPrintOrientation**
 method, pass a string that contains the name of the file to convert. The
 following code shows an example method call.
@@ -90,7 +94,9 @@ following code shows an example method call.
 ```
 
 -----------------------------------------------------------------------------
+
 ## How the Code Works
+
 The following code first opens the document by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and sets the **isEditable** parameter to
 **true** to indicate that the document should
 be read/write. The code maintains a Boolean variable that tracks whether
@@ -125,15 +131,10 @@ each section in turn.
 ```
 
 -----------------------------------------------------------------------------
+
 ## Iterating Through All the Sections
-The next block of code iterates through all the sections in the
-collection of **SectionProperties** elements.
-For each section, the code initializes a variable that tracks whether
-the page orientation for the section was changed so the code can update
-the page size and margins. (If the new orientation matches the original
-orientation, the code will not update the page.) The code continues by
-retrieving a reference to the first [PageSize](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagesize.aspx) descendant of the **SectionProperties** element. If the reference is
-not null, the code updates the orientation as required.
+
+The next block of code iterates through all the sections in the collection of **SectionProperties** elements. For each section, the code initializes a variable that tracks whether the page orientation for the section was changed so the code can update the page size and margins. (If the new orientation matches the original orientation, the code will not update the page.) The code continues by retrieving a reference to the first [PageSize](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagesize.aspx) descendant of the **SectionProperties** element. If the reference is not null, the code updates the orientation as required.
 
 ```csharp
     foreach (SectionProperties sectPr in sections)
@@ -162,7 +163,9 @@ not null, the code updates the orientation as required.
 ```
 
 -----------------------------------------------------------------------------
+
 ## Setting the Orientation for the Section
+
 The next block of code first checks whether the [Orient](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagesize.orient.aspx) property of the **PageSize** element exists. As with many properties
 of Open XML elements, the property or attribute might not exist yet. In
 that case, retrieving the property returns a null reference. By default,
@@ -218,7 +221,9 @@ save the document at the end.)
 ```
 
 -----------------------------------------------------------------------------
+
 ## Updating the Page Size
+
 At this point in the code, the page orientation may have changed. If so,
 the code must complete two more tasks. It must update the page size, and
 update the page margins for the section. The first task is easy—the
@@ -251,7 +256,9 @@ in the **PageSize** element.
 ```
 
 -----------------------------------------------------------------------------
+
 ## Updating the Margins
+
 The next step in the sample procedure handles margins for the section.
 If the page orientation has changed, the code must rotate the margins to
 match. To do so, the code retrieves a reference to the [PageMargin](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagemargin.aspx) element for the section. If the
@@ -301,7 +308,9 @@ margin settings, as shown in the following code.
 ```
 
 -----------------------------------------------------------------------------
+
 ## Saving the Document
+
 After all the modifications, the code determines whether the document
 has changed. If the document has changed, the code saves it.
 
@@ -318,8 +327,10 @@ has changed. If the document has changed, the code saves it.
     End If
 ```
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
 ## Sample Code
+
 The following is the complete **SetPrintOrientation** code sample in C\# and Visual
 Basic.
 
@@ -513,10 +524,8 @@ Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
 ## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
-
-
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

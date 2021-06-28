@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: 20258c39-9411-41f2-8463-e94a4b0fa326
 title: 'How to: Extract styles from a word processing document (Open XML SDK)'
+description: 'Learn how to extract styles from a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Normal
 ---
 # Extract styles from a word processing document (Open XML SDK)
@@ -24,12 +25,12 @@ instance. It contains an example **ExtractStylesPart** method to
 illustrate this task.
 
 To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -50,7 +51,9 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
+
 ## ExtractStylesPart Method
+
 You can use the **ExtractStylesPart** sample method to retrieve an **XDocument** instance that contains the styles or
 stylesWithEffects part for a Microsoft Word 2010 or Microsoft Word 2013
 document. Be aware that in a document created in Word 2010, there will
@@ -88,9 +91,10 @@ requested does not exist).
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
+---------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
 ## Calling the Sample Method
+
 To call the sample method, pass a string for the first parameter that
 contains the file name of the document from which to extract the styles,
 and a Boolean for the second parameter that specifies whether the type
@@ -125,8 +129,10 @@ the console.
     End If
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## How the Code Works
+
 The code starts by creating a variable named **styles** that the method returns before it exits.
 
 ```csharp
@@ -179,8 +185,10 @@ the main document part, and then prepares a variable named **stylesPart** to hol
     End Using
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## Find the Correct Styles Part
+
 The code next retrieves a reference to the requested styles part by
 using the **getStylesWithEffectsPart** Boolean
 parameter. Based on this value, the code retrieves a specific property
@@ -203,7 +211,9 @@ of the **docPart** variable, and stores it in the
 ```
 
 ---------------------------------------------------------------------------------
+
 ## Retrieve the Part Contents
+
 If the requested styles part exists, the code must return the contents
 of the part in an **XDocument** instance. Each
 part provides a [GetStream](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpart.getstream.aspx) method, which returns a Stream.
@@ -238,10 +248,11 @@ parameter.
     End If
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## Sample Code
-The following is the complete **ExtractStylesPart** code sample in C\# and Visual
-Basic.
+
+The following is the complete **ExtractStylesPart** code sample in C\# and Visual Basic.
 
 ```csharp
     // Extract the styles or stylesWithEffects part from a 
@@ -323,8 +334,8 @@ Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

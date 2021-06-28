@@ -5,13 +5,14 @@ api_name:
 api_type:
 - schema
 ms.assetid: 73cbca2d-3603-45a5-8a73-c2e718376b01
-title: 'Create and add a paragraph style to a word processing document'
+title: 'How to: Create and add a paragraph style to a word processing document (Open XML SDK)'
+description: 'Learn how to create and add a paragraph style to a word processing document using hte Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 # Create and add a paragraph style to a word processing document
@@ -23,12 +24,12 @@ processing document. It contains an example
 supplemental example method to add the styles part when necessary.
 
 To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must also explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -47,7 +48,8 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
-## CreateAndAddParagraphStyle Method 
+
+## CreateAndAddParagraphStyle Method
 
 The **CreateAndAddParagraphStyle** sample method can be used to add a
 style to a word processing document. You must first obtain a reference
@@ -74,8 +76,8 @@ in the user interface).
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
-
 ---------------------------------------------------------------------------------
+
 ## About Style IDs, Style Names, and Aliases
 
 The style ID is used by the document to refer to the style, and can be
@@ -106,9 +108,9 @@ commas. Finally, the name element specifies the primary style name,
 which is the one typically shown in the user interface of an
 application.
 
+---------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
-## Calling the Sample Method 
+## Calling the Sample Method
 
 Use the **CreateAndAddParagraphStyle** example
 method to create and add a named style to a word processing document
@@ -228,8 +230,9 @@ applies the style to the paragraph.
     End Using
 ```
 
---------------------------------------------------------------------------------
-## Style Types 
+---------------------------------------------------------------------------------
+
+## Style Types
 
 WordprocessingML supports six style types, four of which you can specify
 using the type attribute on the style element. The following
@@ -241,18 +244,18 @@ of style created with this style definition. WordprocessingML supports
 six types of style definitions by the values for the style definition's
 type attribute:
 
--   Paragraph styles
+- Paragraph styles
 
--   Character styles
+- Character styles
 
--   Linked styles (paragraph + character) [*Note*: Accomplished via the
+- Linked styles (paragraph + character) [*Note*: Accomplished via the
     link element (§17.7.4.6). *end note*]
 
--   Table styles
+- Table styles
 
--   Numbering styles
+- Numbering styles
 
--   Default paragraph + character properties
+- Default paragraph + character properties
 
 *Example*: Consider a style called Heading 1 in a document as follows:
 
@@ -278,9 +281,9 @@ You can set the paragraph, character, table and numbering styles types
 by specifying the corresponding value in the type attribute of the style
 element.
 
-
 ---------------------------------------------------------------------------------
-## Paragraph Style Type 
+
+## Paragraph Style Type
 
 You specify paragraph as the style type by setting the value of the type
 attribute on the style element to "paragraph".
@@ -289,7 +292,7 @@ The following information from section 17.7.8 of the ISO/IEC 29500
 specification discusses paragraph styles. Note that section numbers
 preceded by § indicate sections in the ISO specification.
 
-**17.7.8 Paragraph Styles**
+## 17.7.8 Paragraph Styles
 
 *Paragraph styles* are styles which apply to the contents of an entire
 paragraph as well as the paragraph mark. This definition implies that
@@ -322,9 +325,9 @@ styleId attribute value for this style in the paragraph properties'
 
 © ISO/IEC29500: 2008.
 
+---------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
-## How the Code Works 
+## How the Code Works
 
 The **CreateAndAddParagraphStyle** method
 begins by retrieving a reference to the styles element in the styles
@@ -351,8 +354,9 @@ styles element is created and saved to the part.
         End If
 ```
 
---------------------------------------------------------------------------------
-## Creating the Style 
+---------------------------------------------------------------------------------
+
+## Creating the Style
 
 To create the style, the code instantiates the **[Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx)** class and sets certain properties,
 such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx)** of style (paragraph), the **[StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx)**, whether the style is a **[CustomStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx)**, and whether the style is the
@@ -452,12 +456,9 @@ specification.
     style.Append(unhidewhenused1)
 ```
 
-Next, the code instantiates a **[StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx)** object to create a **rPr** (Run Properties) element. You specify the
-character properties that apply to the style, such as font and color, in
-this element. The properties are then appended as children of the **rPr** element.
+Next, the code instantiates a **[StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx)** object to create a **rPr** (Run Properties) element. You specify the character properties that apply to the style, such as font and color, in this element. The properties are then appended as children of the **rPr** element.
 
-When the run properties are created, the code appends the **rPr** element to the style, and the style element
-to the styles root element in the styles part.
+When the run properties are created, the code appends the **rPr** element to the style, and the style element to the styles root element in the styles part.
 
 ```csharp
     // Create the StyleRunProperties object and specify some of the run properties.
@@ -506,8 +507,9 @@ to the styles root element in the styles part.
     styles.Append(style)
 ```
 
---------------------------------------------------------------------------------
-## Applying the Paragraph Style 
+---------------------------------------------------------------------------------
+
+## Applying the Paragraph Style
 
 When you have the style created, you can apply it to a paragraph by
 referencing the styleId attribute value for this style in the paragraph
@@ -552,8 +554,9 @@ ParagraphStyleId property represents the paragraph properties' **pStyle** elemen
     pPr.ParagraphStyleId.Val = parastyleid
 ```
 
---------------------------------------------------------------------------------
-## Sample Code 
+---------------------------------------------------------------------------------
+
+## Sample Code
 
 The following is the complete **CreateAndAddParagraphStyle** code sample in both
 C\# and Visual Basic.
@@ -723,8 +726,9 @@ C\# and Visual Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
-## See also 
+---------------------------------------------------------------------------------
+
+## See also
 
 - [Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

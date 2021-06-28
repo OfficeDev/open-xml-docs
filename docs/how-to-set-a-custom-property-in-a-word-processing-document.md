@@ -6,27 +6,24 @@ api_type:
 - schema
 ms.assetid: how-to-set-a-custom-property-in-a-word-processing-document
 title: 'How to: Set a custom property in a word processing document (Open XML SDK)'
+description: 'Learn how to use the classes in the Open XML SDK 2.5 for Office to programmatically set a custom property in a word processing document.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 # Set a custom property in a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
-Office to programmatically set a custom property in a word processing
-document. It contains an example **SetCustomProperty** method to
-illustrate this task.
+This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically set a custom property in a word processing document. It contains an example **SetCustomProperty** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
-must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -47,6 +44,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Packaging
     Imports DocumentFormat.OpenXml.VariantTypes
 ```
+
 The sample code also includes an enumeration that defines the possible
 types of custom properties. The **SetCustomProperty** method requires that you supply
 one of these values when you call the method.
@@ -774,4 +772,4 @@ Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

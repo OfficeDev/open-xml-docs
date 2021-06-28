@@ -5,13 +5,15 @@ api_name:
 api_type:
 - schema
 ms.assetid: 80cdc1e8-d023-4886-b8d6-ee26327df739
-title: 'How to: Convert a word processing document from the DOCM to the DOCX file format'
+title: 'How to: Convert a word processing document from the DOCM to the DOCX file format (Open XML SDK)'
+description: 'Learn how to convert a word processing document from the DOCM to the DOCX file format using the Open XML SDK.'
+
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 
@@ -24,12 +26,12 @@ a standard document (with a .docx extension). It contains an example
 **ConvertDOCMtoDOCX** method to illustrate this task.
 
 To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (Installed by the Open XML SDK)
+- DocumentFormat.OpenXml (Installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -66,7 +68,6 @@ parameter that indicates the file name of the file to convert.
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
-
 ## Calling the Sample Method
 
 To call the sample method, pass a string that contains the name of the
@@ -101,13 +102,11 @@ document parts in a sample document that contains a macro. The
 vbaProject part is highlighted.
 
 Figure 1. The vbaProject part
-
   
  ![vbaProject part shown in the Document Explorer](media/OpenXMLCon_HowToConvertDOCMtoDOCX_Fig1.gif)
 The task of converting a macro enabled document to one that is not macro
 enabled therefore consists largely of removing the vbaProject part from
 the document package.
-
 
 ## How the Code Works
 
@@ -359,9 +358,4 @@ Basic.
 
 ## See also
 
-
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
-
-
-
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

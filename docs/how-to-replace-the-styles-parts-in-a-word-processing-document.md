@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: 67edb37c-cfec-461c-b616-5a8b7d074c91
 title: 'How to: Replace the styles parts in a word processing document (Open XML SDK)'
+description: 'Learn how to replace the styles parts in a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Normal
 ---
 # Replace the styles parts in a word processing document (Open XML SDK)
@@ -23,12 +24,12 @@ contains an example **ReplaceStyles** method to illustrate this task, as
 well as the **ReplaceStylesPart** and **ExtractStylesPart** supporting
 methods.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -48,7 +49,8 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
-## About Styles Storage 
+
+## About Styles Storage
 
 A word processing document package, such as a file that has a .docx
 extension, is in fact a .zip file that consists of several parts. You
@@ -68,8 +70,7 @@ document that contains styles.
 
 Figure 1. Styles parts in a word processing document
 
-  
- ![Styles parts in a word processing document.](./media/OpenXmlCon_HowToReplaceStyles_Fig1.gif)
+![Styles parts in a word processing document.](./media/OpenXmlCon_HowToReplaceStyles_Fig1.gif)
 In order to provide for "round-tripping" a document from Word 2013 to
 Word 2010 and back, Word 2013 maintains both the original styles part
 and the new styles part. (The Office Open XML File Formats specification
@@ -80,9 +81,9 @@ Word 2013 adds to the document.)
 The code example provided in this topic can be used to replace these
 styles parts.
 
-
 ---------------------------------------------------------------------------------
-## ReplaceStyles Method 
+
+## ReplaceStyles Method
 
 You can use the **ReplaceStyles** sample method to replace the styles in
 a word processing document with the styles in another word processing
@@ -103,9 +104,9 @@ effectively completely replacing the styles.
 The complete code listing for the **ReplaceStyles** method and its supporting methods
 can be found in the [Sample Code](#sample-code) section.
 
+---------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
-## Calling the Sample Method 
+## Calling the Sample Method
 
 To call the sample method, you pass a string for the first parameter
 that indicates the path of the file with the styles to extract, and a
@@ -127,8 +128,9 @@ document will reflect the new styles.
     ReplaceStyles(fromDoc, toDoc)
 ```
 
---------------------------------------------------------------------------------
-## How the Code Works 
+---------------------------------------------------------------------------------
+
+## How the Code Works
 
 The code extracts and replaces the styles part first, and then the
 stylesWithEffects part second, and relies on two supporting methods to
@@ -155,6 +157,7 @@ target document.
         ReplaceStylesPart(toDoc, node, False)
     End If
 ```
+
 The final parameter in the signature for either the **ExtractStylesPart** or the **ReplaceStylesPart** method determines whether the
 styles part or the stylesWithEffects part is employed. A value of false
 indicates that you want to extract and replace the styles part. The
@@ -186,9 +189,9 @@ sdata="link">[How to: Extract styles from a word processing document
 (Open XML SDK)](how-to-extract-styles-from-a-word-processing-document.md). The
 following section explains the **ReplaceStylesPart** method.
 
-
 ---------------------------------------------------------------------------------
-## ReplaceStylesPart Method 
+
+## ReplaceStylesPart Method
 
 The **ReplaceStylesPart** method can be used to
 replace the styles or styleWithEffects part in a document, given an
@@ -217,8 +220,9 @@ from a source document).
       Optional ByVal setStylesWithEffectsPart As Boolean = True)
 ```
 
---------------------------------------------------------------------------------
-## How the ReplaceStylesPart Code Works 
+---------------------------------------------------------------------------------
+
+## How the ReplaceStylesPart Code Works
 
 The **ReplaceStylesPart** method examines the
 document you specify, looking for the styles or stylesWithEffects part.
@@ -254,8 +258,9 @@ the main document part, and then prepares a variable named **stylesPart** to hol
         Dim stylesPart As StylesPart = Nothing
 ```
 
---------------------------------------------------------------------------------
-## Find the Correct Styles Part 
+---------------------------------------------------------------------------------
+
+## Find the Correct Styles Part
 
 The code next retrieves a reference to the requested styles part, using
 the **setStylesWithEffectsPart** Boolean
@@ -278,7 +283,8 @@ requested styles part, and stores it in the **stylesPart** variable.
 ```
 
 ---------------------------------------------------------------------------------
-## Save the Part Contents 
+
+## Save the Part Contents
 
 Assuming that the requested part exists, the code must save the entire
 contents of the **XDocument** passed to the
@@ -307,7 +313,8 @@ the XDocument, saving its contents into the styles part.
     End If
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## Sample Code
 
 The following is the complete **ReplaceStyles**, **ReplaceStylesPart**, and **ExtractStylesPart** methods in C\# and Visual
@@ -489,9 +496,8 @@ Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
-## See also 
+---------------------------------------------------------------------------------
 
+## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

@@ -9,12 +9,13 @@ api_type:
 - schema
 ms.assetid: f6a9ae68-7989-4208-97f5-3c945137a0ab
 title: Welcome to the Open XML SDK 2.5 for Office
+description: 'Documentation and guidance for the strongly-typed classes in the Open XML SDK 2.5 for Office.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 
@@ -43,17 +44,16 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
 [!include[Add-ins note](./includes/addinsnote.md)]
 
-## In this section 
+## In this section
 
 - [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
 - [Understanding the Open XML file formats](understanding-the-open-xml-file-formats.md)  
 - [How do I... (Open XML SDK)](how-do-i.md)  
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/dotnet/api/overview/openxml/)  
-
+- [Open XML SDK 2.5 class library reference](/dotnet/api/overview/openxml/)  
 
 ## See also
 
-- [Open XML SDK 2.5 for Microsoft Office](https://www.microsoft.com/download/details.aspx?id=30425)
+- [Open XML SDK 2.5 for Microsoft Office](https://www.nuget.org/packages/Open-XML-SDK/2.5.0)
 - [Microsoft Office Developer Center](https://developer.microsoft.com/office/docs)
 - [Samples on GitHub](https://github.com/OfficeDev)
 - [Open XML SDK copyright notice](https://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)

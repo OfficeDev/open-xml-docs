@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: d57e9b7d-b271-4c8d-998f-b7ca3eb6c850
 title: 'How to: Replace the header in a word processing document (Open XML SDK)'
+description: 'Learn how to replace the header in a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 # Replace the header in a word processing document (Open XML SDK)
@@ -20,12 +21,12 @@ This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to replace the header in word processing document
 programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -55,7 +56,7 @@ the header reference element. The following information from the
 [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 specification introduces the header reference element.
 
-**headerReference (Header Reference)**
+## headerReference (Header Reference)
 
 This element specifies a single header which shall be associated with
 the current section in the document. This header shall be referenced via
@@ -71,11 +72,11 @@ considered non-conformant.
 Within each section of a document there may be up to three different
 types of headers:
 
--   First page header
+- First page header
 
--   Odd page header
+- Odd page header
 
--   Even page header
+- Even page header
 
 The header type specified by the current **headerReference** is
 specified via the **type** attribute.
@@ -83,26 +84,11 @@ specified via the **type** attribute.
 If any type of header is omitted for a given section, then the following
 rules shall apply.
 
--   If no **headerReference** for the first page header is specified and
-    the **titlePg** element is specified, then the first page header
-    shall be inherited from the previous section or, if this is the
-    first section in the document, a new blank header shall be created.
-    If the **titlePg** element is not specified, then no first page
-    header shall be shown, and the odd page header shall be used in its
-    place.
+- If no **headerReference** for the first page header is specified and  the **titlePg** element is specified, then the first page header shall be inherited from the previous section or, if this is the first section in the document, a new blank header shall be created. If the **titlePg** element is not specified, then no first page header shall be shown, and the odd page header shall be used in its place.
 
--   If no **headerReference** for the even page header is specified and
-    the **evenAndOddHeaders** element is specified, then the even page
-    header shall be inherited from the previous section or, if this is
-    the first section in the document, a new blank header shall be
-    created. If the **evenAndOddHeaders** element is not specified, then
-    no even page header shall be shown, and the odd page header shall be
-    used in its place.
+- If no **headerReference** for the even page header is specified and the **evenAndOddHeaders** element is specified, then the even page header shall be inherited from the previous section or, if this is the first section in the document, a new blank header shall be created. If the **evenAndOddHeaders** element is not specified, then no even page header shall be shown, and the odd page header shall be used in its place.
 
--   If no **headerReference** for the odd page header is specified then
-    the even page header shall be inherited from the previous section
-    or, if this is the first section in the document, a new blank header
-    shall be created.
+- If no **headerReference** for the odd page header is specified then the even page header shall be inherited from the previous section or, if this is the first section in the document, a new blank header shall be created.
 
 *Example*: Consider a three page document with different first, odd,
 and even page header defined as follows:
@@ -126,8 +112,6 @@ following packaging markup:
 These relationships are then referenced in the section's properties
 using the following WordprocessingML:
 
-<span codelanguage="other"> **
- 
 ```xml
     <w:sectPr>  
       …  
@@ -144,7 +128,6 @@ relationship id **rId2** for all subsequent even
 pages, and the header part with relationship id **rId5** for all subsequent odd pages. *end example*]
 
 © ISO/IEC29500: 2008.
-
 
 ## Sample Code
 
@@ -257,6 +240,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 ## See also
 
-
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference]/office/open-xml/open-xml-sdk.md)
