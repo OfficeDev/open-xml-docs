@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: 22f973f4-58d1-4dd4-943e-a15ac2571b7c
 title: 'How to: Remove the headers and footers from a word processing document (Open XML SDK)'
+description: 'Learn how to remove the headers and footers from a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Normal
 ---
 # Remove the headers and footers from a word processing document (Open XML SDK)
@@ -21,12 +22,12 @@ Office to programmatically remove all headers and footers in a word
 processing document. It contains an example **RemoveHeadersAndFooters** method to illustrate this
 task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must then explicitly reference the following assemblies in your project.
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -65,7 +66,6 @@ modify.
 ```
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
-
 
 ## Calling the Sample Method
 
@@ -366,6 +366,4 @@ Visual Basic.
 
 ## See also
 
-
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

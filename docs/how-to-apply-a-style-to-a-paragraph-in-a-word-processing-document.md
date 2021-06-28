@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: 8d465a77-6c1b-453a-8375-ecf80d2f1bdc
 title: 'How to: Apply a style to a paragraph in a word processing document'
+description: 'Learn how to apply a style to a paragraph in a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 
@@ -19,11 +20,11 @@ localization_priority: Priority
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically apply a style to a paragraph within a word processing document. It contains an example **ApplyStyleToParagraph** method to illustrate this task, plus several supplemental example methods to check whether a style exists, add a new style, and add the styles part.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
 
@@ -53,7 +54,6 @@ The **ApplyStyleToParagraph** example method can be used to apply a style to a p
 ```
 
 The following sections in this topic explain the implementation of this method and the supporting code, as well as how to call it. The complete sample code listing can be found in the [Sample Code](#sample-code) section at the end of this topic.
-
 
 ## Getting a WordprocessingDocument Object
 
@@ -925,4 +925,3 @@ The following is the complete code sample in both C\# and Visual Basic.
 ## See also
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
-

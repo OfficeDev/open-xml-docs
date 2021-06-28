@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: c38f2c94-f0b5-4bb5-8c95-02e556d4e9f1
 title: 'Create and add a character style to a word processing document'
+description: 'Learn how to create and add a character style to a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Normal
 ---
 # Create and add a character style to a word processing document
@@ -22,12 +23,12 @@ processing document. It contains an example
 **CreateAndAddCharacterStyle** method to illustrate this task, plus a
 supplemental example method to add the styles part when it is necessary.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -72,8 +73,7 @@ in the user interface).
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
-
-## About Style IDs, Style Names, and Aliases 
+## About Style IDs, Style Names, and Aliases
 
 The style ID is used by the document to refer to the style, and can be
 thought of as its primary identifier. Typically, you use the style ID to
@@ -101,7 +101,6 @@ specifies two alternate style names, Late Due, and Late Amount, which
 are comma separated. Each name must be separated by one or more commas.
 Finally, the name element specifies the primary style name, which is the
 one typically shown in an application's user interface.
-
 
 ## Calling the Sample Method
 
@@ -248,18 +247,18 @@ of style created with this style definition. WordprocessingML supports
 six types of style definitions by the values for the style definition's
 type attribute:
 
--   Paragraph styles
+- Paragraph styles
 
--   Character styles
+- Character styles
 
--   Linked styles (paragraph + character) [*Note*: Accomplished via the
+- Linked styles (paragraph + character) [*Note*: Accomplished via the
     link element (§17.7.4.6). *end note*]
 
--   Table styles
+- Table styles
 
--   Numbering styles
+- Numbering styles
 
--   Default paragraph + character properties
+- Default paragraph + character properties
 
 *Example*: Consider a style called Heading 1 in a document as shown in
 the following code example.
@@ -286,7 +285,6 @@ You can set the paragraph, character, table and numbering styles types
 by specifying the corresponding value in the style element's type
 attribute.
 
-
 ## Character Style Type
 
 You specify character as the style type by setting the value of the type
@@ -296,7 +294,7 @@ The following information from section 17.7.9 of the ISO/IEC 29500
 specification discusses character styles. Be aware that section numbers
 preceded by § indicate sections in the ISO specification.
 
-**17.7.9 Run (Character) Styles**
+### 17.7.9 Run (Character) Styles
 
 *Character styles* are styles which apply to the contents of one or more
 runs of text within a document's contents. This definition implies that
@@ -308,12 +306,9 @@ propertieselement.
 
 A character style has two defining style type-specific characteristics:
 
--   The type attribute on the style has a value of character, which
-    indicates that the following style definition is a character style.
+- The type attribute on the style has a value of character, which indicates that the following style definition is a character style.
 
--   The style specifies only character-level properties using the rPr
-    element. In this case, the run properties are the set of properties
-    applied to each run which is of this style.
+- The style specifies only character-level properties using the rPr element. In this case, the run properties are the set of properties applied to each run which is of this style.
 
 The character style is then applied to runs by referencing the styleId
 attribute value for this style in the run properties' rStyle element.
@@ -326,9 +321,7 @@ range of text.
 
 Figure 1. Text with a character style applied
 
-  
- ![A character style applied to some text](./media/OpenXmlCon_CreateCharacterStyle_Fig1.gif)
-
+![A character style applied to some text](./media/OpenXmlCon_CreateCharacterStyle_Fig1.gif)
 
 ## How the Code Works
 
@@ -654,10 +647,6 @@ C\# and Visual Basic.
 
 ## See also
 
-
-
 [How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
 
-
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

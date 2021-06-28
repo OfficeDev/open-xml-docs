@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: a0c1e144-2080-4470-bd4b-ed98f1399374
 title: 'How to: Retrieve a list of the worksheets in a spreadsheet document (Open XML SDK)'
+description: 'Learn how to retrieve a list of the worksheets in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 # Retrieve a list of the worksheets in a spreadsheet document (Open XML SDK)
@@ -21,12 +22,12 @@ Office to programmatically retrieve a list of the worksheets in a
 Microsoft Excel 2010 or Microsoft Excel 2013 workbook, without loading
 the document into Excel. It contains an example **GetAllWorksheets** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -44,7 +45,9 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
-## GetAllWorksheets Method 
+
+## GetAllWorksheets Method
+
 You can use the **GetAllWorksheets** method,
 which is shown in the following code, to retrieve a list of the
 worksheets in a workbook. The **GetAllWorksheets** method accepts a single
@@ -63,9 +66,9 @@ The method works with the workbook you specify, returning an instance of
 the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** object, from which you can retrieve
 a reference to each **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** object.
 
-
 --------------------------------------------------------------------------------
-## Calling the GetAllWorksheets Method 
+## Calling the GetAllWorksheets Method
+
 To call the **GetAllWorksheets** method, pass
 the required value, as shown in the following code.
 
@@ -97,7 +100,9 @@ the required value, as shown in the following code.
 ```
 
 --------------------------------------------------------------------------------
-## How the Code Works 
+
+## How the Code Works
+
 The sample method, **GetAllWorksheets**,
 creates a variable that will contain a reference to the **Sheets** collection of the workbook. At the end of
 its work, the method returns the variable, which contains either a
@@ -233,7 +238,7 @@ Basic.
 ```
 
 --------------------------------------------------------------------------------
-## See also
 
+## See also
 
 - [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
