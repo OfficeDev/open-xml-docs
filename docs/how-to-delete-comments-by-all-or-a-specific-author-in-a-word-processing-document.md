@@ -21,7 +21,7 @@ Office to programmatically delete comments by all or a specific author
 in a word processing document, without having to load the document into
 Microsoft Word. It contains an example **DeleteComments** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase

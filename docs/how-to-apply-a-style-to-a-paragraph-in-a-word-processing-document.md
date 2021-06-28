@@ -19,7 +19,7 @@ localization_priority: Priority
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically apply a style to a paragraph within a word processing document. It contains an example **ApplyStyleToParagraph** method to illustrate this task, plus several supplemental example methods to check whether a style exists, add a new style, and add the styles part.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
 
