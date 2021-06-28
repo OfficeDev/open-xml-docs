@@ -6,21 +6,20 @@ api_type:
 - schema
 ms.assetid: ae8c98d9-dd11-4b75-804c-165095d60ffd
 title: 'How to: Insert a picture into a word processing document (Open XML SDK)'
+description: 'Learn how to insert a picture into a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 # Insert a picture into a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
-Office to programmatically add a picture to a word processing document.
+This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically add a picture to a word processing document.
 
-The following assembly directives are required to compile the code in
-this topic.
+The following assembly directives are required to compile the code in this topic.
 
 ```csharp
     using System.IO;
@@ -43,7 +42,9 @@ this topic.
 ```
 
 --------------------------------------------------------------------------------
+
 ## Opening an Existing Document for Editing
+
 To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
 the following **using** statement. In the same
 statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) method, with the
@@ -77,7 +78,6 @@ automatically saves and closes the object as part of its **System.IDisposable** 
 exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
 
-
 --------------------------------------------------------------------------------
 ## The XML Representation of the Graphic Object
 The following text from the [ISO/IEC
@@ -106,7 +106,9 @@ The following XML Schema fragment defines the contents of this element
 ```
 
 --------------------------------------------------------------------------------
+
 ## How the Sample Code Works
+
 After you have opened the document, add the [ImagePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.imagepart.aspx) object to the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) object by using a file
 stream as shown in the following code segment.
 
@@ -248,6 +250,7 @@ Then, append the reference to the body. The element should be in a [Run](https:/
 ```
 
 --------------------------------------------------------------------------------
+
 ## Sample Code
 The following code example adds a picture to an existing word document.
 In your code, you can call the **InsertAPicture** method by passing in the path of
@@ -405,7 +408,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
+
 ## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
