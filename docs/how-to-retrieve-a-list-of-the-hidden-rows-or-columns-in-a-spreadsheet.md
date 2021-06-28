@@ -363,4 +363,4 @@ The following is the complete **GetHiddenRowsOrCols** code sample in C\# and Vis
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

@@ -49,7 +49,7 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 - [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
 - [Understanding the Open XML file formats](understanding-the-open-xml-file-formats.md)  
 - [How do I... (Open XML SDK)](how-do-i.md)  
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/dotnet/api/overview/openxml/)  
+- [Open XML SDK 2.5 class library reference](/dotnet/api/overview/openxml/)  
 
 ## See also
 
