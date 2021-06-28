@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: 15e26fbd-fc23-466a-a7cc-b7584ba8f821
 title: 'How to: Retrieve the values of cells in a spreadsheet document (Open XML SDK)'
+description: 'Learn how to retrieve the values of cells in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 # Retrieve the values of cells in a spreadsheet document (Open XML SDK)
@@ -21,12 +22,12 @@ Office to programmatically retrieve the values of cells in a spreadsheet
 document. It contains an example **GetCellValue** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (Installed by the Open XML SDK)
+- DocumentFormat.OpenXml (Installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -43,17 +44,18 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
-## GetCellValue Method 
+
+## GetCellValue Method
 
 You can use the **GetCellValue** method to
 retrieve the value of a cell in a workbook. The method requires the
 following three parameters:
 
--   A string that contains the name of the document to examine.
+- A string that contains the name of the document to examine.
 
--   A string that contains the name of the sheet to examine.
+- A string that contains the name of the sheet to examine.
 
--   A string that contains the cell address (such as A1, B12) from which
+- A string that contains the cell address (such as A1, B12) from which
     to retrieve a value.
 
 The method returns the value of the specified cell, if it could be
@@ -72,7 +74,8 @@ found. The following code example shows the method signature.
 ```
 
 --------------------------------------------------------------------------------
-## Calling the GetCellValue Sample Method 
+
+## Calling the GetCellValue Sample Method
 
 To call the **GetCellValue** method, pass the
 file name, sheet name, and cell address, as shown in the following code
@@ -106,7 +109,8 @@ example.
 ```
 
 --------------------------------------------------------------------------------
-## How the Code Works 
+
+## How the Code Works
 
 The code starts by creating a variable to hold the return value, and
 initializes it to null.
@@ -120,7 +124,8 @@ initializes it to null.
 ```
 
 --------------------------------------------------------------------------------
-## Accessing the Cell 
+
+## Accessing the Cell
 
 Next, the code opens the document by using the **[Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx)** method, indicating that the document
 should be open for read-only access (the final **false** parameter). Next, the code retrieves a
@@ -222,8 +227,9 @@ or will contain a null reference.
         Where(Function(c) c.CellReference = addressName).FirstOrDefault
 ```
 
----------------------------------------------------------------------------------
-## Retrieving the Value 
+--------------------------------------------------------------------------------
+
+## Retrieving the Value
 
 At this point, the variable named **theCell**
 contains either a null reference, or a reference to the cell that you
@@ -372,9 +378,9 @@ it finds in the cell value into the appropriate text string.
 
 Finally, the procedure returns the variable **value**, which contains the requested information.
 
-
 --------------------------------------------------------------------------------
-## Sample Code 
+
+## Sample Code
 
 The following is the complete **GetCellValue**
 code sample in C\# and Visual Basic.
@@ -548,8 +554,7 @@ code sample in C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
-## See also 
 
+## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

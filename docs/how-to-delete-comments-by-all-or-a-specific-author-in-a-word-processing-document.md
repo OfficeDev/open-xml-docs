@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: c66a64ca-cb0d-4acc-9d05-535b5bbb8c96
 title: 'How to: Delete comments by all or a specific author in a word processing document (Open XML SDK)'
+description: 'Learn how to delete comments by all or a specific author in a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Normal
 ---
 # Delete comments by all or a specific author in a word processing document (Open XML SDK)
@@ -21,12 +22,12 @@ Office to programmatically delete comments by all or a specific author
 in a word processing document, without having to load the document into
 Microsoft Word. It contains an example **DeleteComments** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -46,7 +47,9 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
+
 ## DeleteComments Method
+
 You can use the **DeleteComments** method to
 delete all of the comments from a word processing document, or only
 those written by a specific author. As shown in the following code, the
@@ -71,7 +74,9 @@ an author name, the code deletes all comments.
 ```
 
 --------------------------------------------------------------------------------
+
 ## Calling the DeleteComments Method
+
 To call the **DeleteComments** method, provide
 the required parameters as shown in the following code.
 
@@ -135,7 +140,9 @@ in proceeding, as there cannot be any comments to delete.
 ```
 
 --------------------------------------------------------------------------------
+
 ## Creating the List of Comments
+
 The code next performs two tasks: creating a list of all the comments to
 delete, and creating a list of comment IDs that correspond to the
 comments to delete. Given these lists, the code can both delete the
@@ -191,7 +198,9 @@ of strings that contain all the comment ID values.
 ```
 
 --------------------------------------------------------------------------------
+
 ## Deleting Comments and Saving the Part
+
 Given the **commentsToDelete** collection, to
 the following code loops through all the comments that require deleting
 and performs the deletion. The code then saves the comments part.
@@ -220,7 +229,9 @@ and performs the deletion. The code then saves the comments part.
 ```
 
 --------------------------------------------------------------------------------
+
 ## Deleting Comment References in the Document
+
 Although the code has successfully removed all the comments by this
 point, that is not enough. The code must also remove references to the
 comments from the document part. This action requires three steps
@@ -310,7 +321,9 @@ saving the document.
 ```
 
 --------------------------------------------------------------------------------
+
 ## Sample Code
+
 The following is the complete code sample in both C\# and Visual Basic.
 
 ```csharp
@@ -467,7 +480,7 @@ The following is the complete code sample in both C\# and Visual Basic.
 ```
 
 --------------------------------------------------------------------------------
+
 ## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: 3d4a800e-64f0-4715-919f-a8f7d92a5c37
 title: 'How to: Create a presentation document by providing a file name (Open XML SDK)'
+description: 'Learn how to create a presentation document by providing a file name using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Priority
 ---
 
@@ -20,12 +21,12 @@ localization_priority: Priority
 This topic shows how to use the classes in the Open XML SDK 2.5 to
 create a presentation document programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (Installed by the Open XML SDK)
+- DocumentFormat.OpenXml (Installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -50,7 +51,9 @@ the code in this topic.
 ```
 
 --------------------------------------------------------------------------------
-## Create a Presentation 
+
+## Create a Presentation
+
 A presentation file, like all files defined by the Open XML standard,
 consists of a package file container. This is the file that users see in
 their file explorer; it usually has a .pptx extension. The package file
@@ -143,7 +146,9 @@ two slides.
 ```
 
 --------------------------------------------------------------------------------
-## Sample Code 
+
+## Sample Code
+
 Following is the complete sample C\# and VB code to create a
 presentation, given a file path.
 
@@ -767,8 +772,8 @@ presentation, given a file path.
 ```
 
 --------------------------------------------------------------------------------
-## See also 
 
+## See also 
 
 [About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
 
@@ -782,6 +787,4 @@ presentation, given a file path.
 
 [How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
 
-
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

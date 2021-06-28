@@ -6,12 +6,13 @@ api_type:
 - schema
 ms.assetid: b6f429a7-4489-4155-b713-2139f3add8c2
 title: 'How to: Retrieve the number of slides in a presentation document (Open XML SDK)'
+description: 'Learn how to retrieve the number of slides in a presentation document using the Open XML SDK.'
 ms.suite: office
 ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/28/2021
 localization_priority: Normal
 ---
 # Retrieve the number of slides in a presentation document (Open XML SDK)
@@ -23,12 +24,12 @@ loading the document into Microsoft PowerPoint. It contains an example
 **RetrieveNumberOfSlides** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
--   WindowsBase
+- WindowsBase
 
--   DocumentFormat.OpenXml (installed by the Open XML SDK)
+- DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
 directives or **Imports** statements to compile
@@ -45,7 +46,9 @@ the code in this topic.
 ```
 
 ---------------------------------------------------------------------------------
+
 ## RetrieveNumberOfSlides Method
+
 You can use the **RetrieveNumberOfSlides**
 method to get the number of slides in a presentation document,
 optionally including the hidden slides. The **RetrieveNumberOfSlides** method accepts two
@@ -65,6 +68,7 @@ include hidden slides in the count.
 
 ---------------------------------------------------------------------------------
 ## Calling the RetrieveNumberOfSlides Method
+
 The method returns an integer that indicates the number of slides,
 counting either all the slides or only visible slides, depending on the
 second parameter value. To call the method, pass all the parameter
@@ -84,15 +88,12 @@ values, as shown in the following code.
     Console.WriteLine(RetrieveNumberOfSlides(DEMOPATH))
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## How the Code Works
-The code starts by creating an integer variable, **slidesCount**, to hold the number of slides. The code
-then opens the specified presentation by using the [PresentationDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.open.aspx) method and
-indicating that the document should be open for read-only access (the
-final **false** parameter value). Given the
-open presentation, the code uses the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.presentationpart.aspx) property to navigate to
-the main presentation part, storing the reference in a variable named
-**presentationPart**.
+
+The code starts by creating an integer variable, **slidesCount**, to hold the number of slides. The code then opens the specified presentation by using the [PresentationDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.open.aspx) method and indicating that the document should be open for read-only access (the
+final **false** parameter value). Given the open presentation, the code uses the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.presentationpart.aspx) property to navigate to the main presentation part, storing the reference in a variable named **presentationPart**.
 
 ```csharp
     using (PresentationDocument doc = 
@@ -115,15 +116,11 @@ the main presentation part, storing the reference in a variable named
     Return slidesCount
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## Retrieving the Count of All Slides
-If the presentation part reference is not null (and it will not be, for
-any valid presentation that loads correctly into PowerPoint), the code
-next calls the **Count** method on the value of
-the [SlideParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.slideparts.aspx) property of the presentation
-part. If you requested all slides, including hidden slides, that is all
-there is to do. There is slightly more work to be done if you want to
-exclude hidden slides, as shown in the following code.
+
+If the presentation part reference is not null (and it will not be, for any valid presentation that loads correctly into PowerPoint), the code next calls the **Count** method on the value of the [SlideParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.slideparts.aspx) property of the presentation part. If you requested all slides, including hidden slides, that is all there is to do. There is slightly more work to be done if you want to exclude hidden slides, as shown in the following code.
 
 ```csharp
     if (includeHidden)
@@ -144,8 +141,10 @@ exclude hidden slides, as shown in the following code.
     End If
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## Retrieving the Count of Visible Slides
+
 If you requested that the code should limit the return value to include
 only visible slides, the code must filter its collection of slides to
 include only those slides that have a [Show](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.show.aspx) property that contains a value, and
@@ -175,8 +174,10 @@ function with a lambda expression to do the work.
     slidesCount = slides.Count()
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## Sample Code
+
 The following is the complete **RetrieveNumberOfSlides** code sample in C\# and
 Visual Basic.
 
@@ -243,8 +244,8 @@ Visual Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
 ## See also
 
-
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
