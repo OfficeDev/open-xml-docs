@@ -21,7 +21,7 @@ This topic shows how to use the classes in the Open XML SDK 2.5 for
 Office to programmatically add a table to a word processing document. It
 contains an example **AddTable** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase

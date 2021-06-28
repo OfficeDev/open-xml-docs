@@ -22,7 +22,7 @@ processing document. It contains an example
 **CreateAndAddCharacterStyle** method to illustrate this task, plus a
 supplemental example method to add the styles part when it is necessary.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase

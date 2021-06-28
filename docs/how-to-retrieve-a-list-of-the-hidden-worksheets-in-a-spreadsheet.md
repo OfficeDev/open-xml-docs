@@ -21,7 +21,7 @@ Office to programmatically retrieve a list of hidden worksheets in a
 Microsoft Excel 2010 or Microsoft Excel 2010 workbook, without loading
 the document into Excel. It contains an example **GetHiddenSheets** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase

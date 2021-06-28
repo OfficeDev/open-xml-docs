@@ -21,7 +21,7 @@ Office to programmatically retrieve the values of cells in a spreadsheet
 document. It contains an example **GetCellValue** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
 -   WindowsBase
