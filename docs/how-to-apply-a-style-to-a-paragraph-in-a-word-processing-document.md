@@ -139,7 +139,6 @@ correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 For more information about the overall structure of the parts and
 elements of a WordprocessingML document, see [Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.md).
 
-
 ## Getting the Paragraph to Style
 
 After opening the file, the sample code retrieves a reference to the
@@ -188,7 +187,6 @@ reference to the document as the first parameter, the styleid of the
 style to apply as the second parameter, the name of the style as the
 third parameter, and the reference to the paragraph to which to apply
 the style, as the fourth parameter.
-
 
 ## Adding the Paragraph Properties Element
 
@@ -924,4 +922,4 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](\/office/open-xml/open-xml-sdk.md)
