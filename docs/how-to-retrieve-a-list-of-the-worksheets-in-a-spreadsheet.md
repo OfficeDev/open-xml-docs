@@ -67,6 +67,7 @@ the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.
 a reference to each **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** object.
 
 --------------------------------------------------------------------------------
+
 ## Calling the GetAllWorksheets Method
 
 To call the **GetAllWorksheets** method, pass
@@ -142,12 +143,7 @@ retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/librar
     End Using
 ```
 
-To get access to the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** object, the code retrieves the
-value of the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx)** property from the **WorkbookPart**, and then retrieves a reference to
-the **Sheets** object from the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.sheets.aspx)** property of the **Workbook**. The **Sheets**
-object contains the collection of <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** objects that provide the method's
-return value.
+To get access to the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** object, the code retrieves the value of the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx)** property from the **WorkbookPart**, and then retrieves a reference to the **Sheets** object from the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.sheets.aspx)** property of the **Workbook**. The **Sheets** object contains the collection of **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** objects that provide the method's return value.
 
 ```csharp
     theSheets = wbPart.Workbook.Sheets;
@@ -158,7 +154,9 @@ return value.
 ```
 
 --------------------------------------------------------------------------------
-## Sample Code 
+
+## Sample Code
+
 The following is the complete **GetAllWorksheets** code sample in C\# and Visual
 Basic.
 
@@ -241,4 +239,4 @@ Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
