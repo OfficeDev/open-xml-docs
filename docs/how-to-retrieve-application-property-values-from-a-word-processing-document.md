@@ -22,7 +22,7 @@ Office to programmatically retrieve an application property from a
 Microsoft Word 2013 document, without loading the document into Word. It
 contains example code to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase

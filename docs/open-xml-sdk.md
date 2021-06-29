@@ -53,7 +53,7 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
 ## See also
 
-- [Open XML SDK 2.5 for Microsoft Office](https://www.nuget.org/packages/Open-XML-SDK/2.5.0)
+- [Open XML SDK 2.5 for Microsoft Office](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0)
 - [Microsoft Office Developer Center](https://developer.microsoft.com/office/docs)
 - [Samples on GitHub](https://github.com/OfficeDev)
 - [Open XML SDK copyright notice](https://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)

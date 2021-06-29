@@ -24,7 +24,7 @@ Office to programmatically set the print orientation of a Microsoft Word
 **SetPrintOrientation** method to illustrate this task.
 
 To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
+2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
