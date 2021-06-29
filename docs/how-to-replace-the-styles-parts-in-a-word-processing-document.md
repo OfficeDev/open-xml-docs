@@ -24,7 +24,7 @@ contains an example **ReplaceStyles** method to illustrate this task, as
 well as the **ReplaceStylesPart** and **ExtractStylesPart** supporting
 methods.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/Open-XML-SDK/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
