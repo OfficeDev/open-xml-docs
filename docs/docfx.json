@@ -40,7 +40,8 @@
       "author": "o365devx",
       "ms.topic": "conceptual",
       "ms.prod": "office",
-      "ms.technology": "open-xml"
+      "ms.technology": "open-xml",
+      "description": "Use the Open XML SDK to programmatically create Office Word, Excel, and PowerPoint documents, and manipulate their content."
     },
     "fileMetadata": {
       "langs": {
