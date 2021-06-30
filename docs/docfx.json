@@ -40,7 +40,8 @@
       "author": "o365devx",
       "ms.topic": "conceptual",
       "ms.prod": "office",
-      "ms.technology": "open-xml"
+      "ms.technology": "open-xml",
+      "description": "Simplify tasks in Office Word, Excel, and PowerPoint using the Open XML SDK."
     },
     "fileMetadata": {
       "langs": {
