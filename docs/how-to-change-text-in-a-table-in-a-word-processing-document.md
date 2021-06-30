@@ -275,7 +275,7 @@ Following is the complete code example.
 
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 
 [How to: Change Text in a Table in a Word Processing Document](https://msdn.microsoft.com/library/documentformat.openxml.wordprocessing.table(office.14).aspx)
 
