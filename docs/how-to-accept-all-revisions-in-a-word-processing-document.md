@@ -1,17 +1,16 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
 - schema
 ms.assetid: b3406fcc-f10b-4075-a18f-116400f35faf
 title: 'How to: Accept all revisions in a word processing document (Open XML SDK)'
+description: 'Learn how to accept all revisions in a word processing document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 06/30/2021
 localization_priority: Priority
 ---
 
@@ -56,7 +55,6 @@ To open an existing document, you can instantiate the [WordprocessingDocument](h
 
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case *wdDoc*. Because the **WordprocessingDocument** class in the Open XML SDK automatically saves and closes the object as part of its **System.IDisposable** implementation, and because **Dispose** is automatically called when you exit the block, you do not have to explicitly call **Save** and **Close** as long as you use **using**.
 
-
 ## Structure of a WordProcessingML Document
 
 The basic document structure of a **WordProcessingML** document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The following code example shows the **WordprocessingML** markup for a document that contains the text "Example text."
@@ -89,15 +87,15 @@ When you accept a revision mark, you change the properties of a paragraph either
 
 The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification introduces the **ParagraphPropertiesChange** element (**pPrChange**).
 
-**pPrChange (Revision Information for Paragraph Properties)**
+### *pPrChange (Revision Information for Paragraph Properties)
 
 This element specifies the details about a single revision to a set of paragraph properties in a WordprocessingML document.
 
 This element stores this revision as follows:
 
--   The child element of this element contains the complete set of paragraph properties which were applied to this paragraph before this revision.
+- The child element of this element contains the complete set of paragraph properties which were applied to this paragraph before this revision.
 
--   The attributes of this element contain information about when this revision took place (in other words, when these properties became a "former" set of paragraph properties).
+- The attributes of this element contain information about when this revision took place (in other words, when these properties became a "former" set of paragraph properties).
 
 Consider a paragraph in a WordprocessingML document which is centered, and this change in the paragraph properties is tracked as a revision. This revision would be specified using the following WordprocessingML markup.
 
@@ -114,13 +112,12 @@ The element specifies that there was a revision to the paragraph properties at 0
 
 © ISO/IEC29500: 2008.
 
-
 ## Deleted Element
 
 The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces the Deleted element (**del**).
 
-**del (Deleted Paragraph)**
+### del (Deleted Paragraph)
 
 This element specifies that the paragraph mark delimiting the end of a paragraph within a WordprocessingML document shall be treated as deleted (in other words, the contents of this paragraph are no longer delimited by this paragraph mark, and are combined with the following paragraph—but those contents shall not automatically be marked as deleted) as part of a tracked revision.
 
@@ -155,13 +152,12 @@ and this deletion was tracked as a revision.
 
 © ISO/IEC29500: 2008.
 
-
 ## The Inserted Element
 
 The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces the Inserted element (**ins**).
 
-**ins (Inserted Table Row)**
+### ins (Inserted Table Row)
 
 This element specifies that the parent table row shall be treated as an
 inserted row whose insertion has been tracked as a revision. This
@@ -202,7 +198,6 @@ specifies that this row was inserted, and this insertion was tracked as
 a revision.
 
 © ISO/IEC29500: 2008.
-
 
 ## How the Sample Code Works
 
@@ -511,6 +506,5 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 - [Accepting Revisions in Open XML Word-Processing Documents](https://docs.microsoft.com/previous-versions/office/developer/office-2007/ee836138(v=office.12))
-

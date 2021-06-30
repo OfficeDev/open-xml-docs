@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: 73747a65-0857-4fd4-8362-3613f4169203
 title: 'How to: Merge two adjacent cells in a spreadsheet document (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -583,7 +583,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 

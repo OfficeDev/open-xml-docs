@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: ffdf5bd3-53f5-4f48-8946-11a0287fb107
 title: Working with the calculation chain (Open XML SDK)
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

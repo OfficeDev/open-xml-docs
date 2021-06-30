@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: b7d5d1fd-dcdf-4f88-9d57-884562c8144f
 title: 'How to: Get the titles of all the slides in a presentation (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

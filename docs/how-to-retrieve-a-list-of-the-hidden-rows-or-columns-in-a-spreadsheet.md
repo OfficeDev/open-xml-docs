@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 5adddb6e-545e-4fba-ae35-cc4682e3eda7
 title: 'How to: Retrieve a list of the hidden rows or columns in a spreadsheet document (Open XML SDK)'
 description: 'Learn how to retrieve a list of the hidden rows or columns in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: d6daf04e-3e45-4570-a184-8f0449c7ab91
 title: 'How to: Get all the external hyperlinks in a presentation (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -356,4 +356,4 @@ get the list of URIs in your presentation.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

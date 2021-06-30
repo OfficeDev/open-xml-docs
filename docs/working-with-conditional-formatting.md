@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: b6f5afca-5feb-4003-b803-55dd2f9bf6d2
 title: Working with conditional formatting (Open XML SDK)
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: bead244f-b551-477f-a296-41ead7bfcf5c
 title: Working with WordprocessingML documents (Open XML SDK)
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

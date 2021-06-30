@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 3e9ca812-460e-442e-8257-38f523a53dc6
 title: 'How to: Retrieve application property values from a word processing document (Open XML SDK)'
 description: 'Learn how to retrieve application property values from a word processing document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

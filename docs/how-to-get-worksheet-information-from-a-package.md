@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: 124cb0a0-cc47-433f-bad0-06b793890650
 title: 'How to: Get worksheet information from an Open XML package (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

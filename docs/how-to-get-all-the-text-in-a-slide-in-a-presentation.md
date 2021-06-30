@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: 6de46612-f864-413f-a504-11ea85f1f88f
 title: 'How to: Get all the text in a slide in a presentation (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -631,4 +631,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

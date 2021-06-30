@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 0aa2aef3-b329-4ccc-8f25-9660c083e14e
 title: 'How to: Retrieve a dictionary of all named ranges in a spreadsheet document (Open XML SDK)'
 description: 'Learn how to retrieve a dictionary of all named ranges in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

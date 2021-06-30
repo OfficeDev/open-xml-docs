@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 15e26fbd-fc23-466a-a7cc-b7584ba8f821
 title: 'How to: Retrieve the values of cells in a spreadsheet document (Open XML SDK)'
 description: 'Learn how to retrieve the values of cells in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

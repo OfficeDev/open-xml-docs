@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: c811c2c7-1066-45a5-a724-33d0fbfd5284
 title: 'How to: Open a word processing document for read-only access (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -359,4 +359,4 @@ The following is the complete sample code in C\# and VB.
 ## See also 
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)

@@ -1,6 +1,6 @@
 # Open XML documentation
 
-This repo is the source markdown for documentation published at https://docs.microsoft.com/office/open-xml/open-xml-sdk.
+This repo is the source markdown for documentation published at /office/open-xml/open-xml-sdk.md.
 
 ## Contributing
 

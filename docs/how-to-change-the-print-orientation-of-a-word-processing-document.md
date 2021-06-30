@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: bb5319c8-ee99-4862-937b-94dcae8deaca
 title: 'How to: Change the print orientation of a word processing document (Open XML SDK)'
 description: 'Learn how to change the print orientation of a word processing document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: 474f0a6c-62c8-4f04-b3f9-cd613a6e48d0
 title: 'How to: Insert a comment into a word processing document (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -364,7 +364,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 

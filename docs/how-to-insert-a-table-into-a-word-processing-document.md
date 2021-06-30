@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: 9d390cf8-1654-4a75-b3b8-4aba86ed1476
 title: 'How to: Insert a table into a word processing document (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -399,7 +399,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 
 [Object Initializers: Named and Anonymous Types (Visual Basic .NET)](https://msdn.microsoft.com/library/bb385125.aspx)
 
