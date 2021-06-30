@@ -2,7 +2,7 @@
 keywords: system.io.packaging
 f1_keywords:
 - system.io.packaging
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -11,7 +11,7 @@ ms.assetid: f6a9ae68-7989-4208-97f5-3c945137a0ab
 title: Welcome to the Open XML SDK 2.5 for Office
 description: 'Documentation and guidance for the strongly-typed classes in the Open XML SDK 2.5 for Office.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

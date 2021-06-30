@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: how-to-set-a-custom-property-in-a-word-processing-document
 title: 'How to: Set a custom property in a word processing document (Open XML SDK)'
 description: 'Learn how to use the classes in the Open XML SDK 2.5 for Office to programmatically set a custom property in a word processing document.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

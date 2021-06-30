@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: d57e9b7d-b271-4c8d-998f-b7ca3eb6c850
 title: 'How to: Replace the header in a word processing document (Open XML SDK)'
 description: 'Learn how to replace the header in a word processing document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

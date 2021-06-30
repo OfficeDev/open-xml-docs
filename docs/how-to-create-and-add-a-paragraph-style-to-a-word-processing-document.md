@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 73cbca2d-3603-45a5-8a73-c2e718376b01
 title: 'How to: Create and add a paragraph style to a word processing document (Open XML SDK)'
 description: 'Learn how to create and add a paragraph style to a word processing document using hte Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
