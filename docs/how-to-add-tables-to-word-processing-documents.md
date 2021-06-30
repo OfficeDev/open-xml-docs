@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 65c377d2-1763-4bb6-8915-bc6839ccf62d
 title: 'How to: Add tables to word processing documents (Open XML SDK)'
 description: 'Learn how to add tables to word processing documents using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

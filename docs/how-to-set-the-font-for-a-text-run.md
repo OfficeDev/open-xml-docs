@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: e4e5a2e5-a97e-47b9-a263-6723bd4230a1
 title: 'How to: Set the font for a text run (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -269,7 +269,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 
 [Object Initializers: Named and Anonymous Types](https://msdn.microsoft.com/library/bb385125.aspx)
 

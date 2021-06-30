@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: c66a64ca-cb0d-4acc-9d05-535b5bbb8c96
 title: 'How to: Delete comments by all or a specific author in a word processing document (Open XML SDK)'
 description: 'Learn how to delete comments by all or a specific author in a word processing document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

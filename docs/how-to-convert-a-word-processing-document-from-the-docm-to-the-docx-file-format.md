@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -9,7 +9,7 @@ title: 'How to: Convert a word processing document from the DOCM to the DOCX fil
 description: 'Learn how to convert a word processing document from the DOCM to the DOCX file format using the Open XML SDK.'
 
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 3d4a800e-64f0-4715-919f-a8f7d92a5c37
 title: 'How to: Create a presentation document by providing a file name (Open XML SDK)'
 description: 'Learn how to create a presentation document by providing a file name using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

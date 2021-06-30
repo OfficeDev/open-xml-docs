@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: a0c1e144-2080-4470-bd4b-ed98f1399374
 title: 'How to: Retrieve a list of the worksheets in a spreadsheet document (Open XML SDK)'
 description: 'Learn how to retrieve a list of the worksheets in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

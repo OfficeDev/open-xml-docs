@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +8,7 @@ ms.assetid: 22f973f4-58d1-4dd4-943e-a15ac2571b7c
 title: 'How to: Remove the headers and footers from a word processing document (Open XML SDK)'
 description: 'Learn how to remove the headers and footers from a word processing document using the Open XML SDK.'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

@@ -1,5 +1,5 @@
 ---
-ms.prod: MULTIPLEPRODUCTS
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: 41c001da-204e-4669-a722-76c9f7928281
 title: 'How to: Calculate the sum of a range of cells in a spreadsheet document'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -928,7 +928,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 -----------------------------------------------------------------------------
 ## See also 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 - [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 - [Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
 - [Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)

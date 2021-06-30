@@ -1,5 +1,5 @@
 ---
-ms.prod: OPENXML
+
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +7,7 @@ api_type:
 ms.assetid: 56ba8cee-d789-4a03-b8ff-b161af0788ff
 title: 'How to: Get a column heading in a spreadsheet document (Open XML SDK)'
 ms.suite: office
-ms.technology: open-xml
+
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -410,7 +410,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](https://docs.microsoft.com/office/open-xml/open-xml-sdk)  
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)  
 
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)  
 
