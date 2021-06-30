@@ -41,7 +41,7 @@
       "ms.topic": "conceptual",
       "ms.prod": "office",
       "ms.technology": "open-xml",
-      "description": "Simplify tasks in Office Word, Excel, and PowerPoint using the Open XML SDK."
+      "description": "Use the Open XML SDK to programmatically create Office Word, Excel, and PowerPoint documents, and manipulate their content."
     },
     "fileMetadata": {
       "langs": {
