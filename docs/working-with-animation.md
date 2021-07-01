@@ -173,9 +173,9 @@ element should be used as follows:
                 <p:strVal val="1+#ppt_h/2"/>  
             </p:val>  
         </p:tav>  
-        <p:tav tm="100000"\>  
+        <p:tav tm="100000">  
             <p:val>  
-                <p:strVal val="#ppt_y">  
+                <p:strVal val="#ppt_y"/>  
             </p:val>  
         </p:tav>  
     </p:tavLst>  
