@@ -12,7 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 # Working with slide layouts (Open XML SDK)
 

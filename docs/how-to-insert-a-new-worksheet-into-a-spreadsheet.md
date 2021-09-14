@@ -12,7 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 # Insert a new worksheet into a spreadsheet document (Open XML SDK)
 
