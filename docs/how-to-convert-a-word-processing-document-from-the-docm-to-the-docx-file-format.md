@@ -14,7 +14,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 06/28/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Convert a word processing document from the DOCM to the DOCX file format
