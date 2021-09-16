@@ -56,9 +56,9 @@ The **using** statement provides a recommended alternative to the typical .Open,
 
 ## Basic Structure of a SpreadsheetML
 
-The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheets?view=openxml-2.8.1)** and **[Sheet](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet?view=openxml-2.8.1)** elements, which reference the
-worksheets in the **[Workbook](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.workbook?view=openxml-2.8.1)**. A separate XML file is created
-for each **[Worksheet](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.worksheet?view=openxml-2.8.1)**. For example, the **SpreadsheetML** for a workbook that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
+The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheets?view=openxml-2.8.1&preserve-view=true)** and **[Sheet](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet?view=openxml-2.8.1&preserve-view=true)** elements, which reference the
+worksheets in the **[Workbook](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.workbook?view=openxml-2.8.1&preserve-view=true)**. A separate XML file is created
+for each **[Worksheet](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.worksheet?view=openxml-2.8.1&preserve-view=true)**. For example, the **SpreadsheetML** for a workbook that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
@@ -70,7 +70,7 @@ for each **[Worksheet](https://docs.microsoft.com/dotnet/api/documentformat.open
     </workbook>
 ```
 
-The worksheet XML files contain one or more block level elements such as **SheetData**. **[SheetData](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheetdata?view=openxml-2.8.1)** represents the cell table and contains one or more **[Row](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.row?view=openxml-2.8.1)** elements. A **row** contains one or more **[Cell](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cell?view=openxml-2.8.1)** elements. Each cell contains a **[CellValue](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cellvalue?view=openxml-2.8.1)** element that represents the value of the cell. For example, the SpreadsheetML for the first worksheet in a workbook, that only has the value 100 in cell A1, is located in the Sheet1.xml file and is shown in the following code example.
+The worksheet XML files contain one or more block level elements such as **SheetData**. **[SheetData](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheetdata?view=openxml-2.8.1&preserve-view=true)** represents the cell table and contains one or more **[Row](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.row?view=openxml-2.8.1)&preserve-view=true** elements. A **row** contains one or more **[Cell](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cell?view=openxml-2.8.1&preserve-view=true)** elements. Each cell contains a **[CellValue](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cellvalue?view=openxml-2.8.1&preserve-view=true)** element that represents the value of the cell. For example, the SpreadsheetML for the first worksheet in a workbook, that only has the value 100 in cell A1, is located in the Sheet1.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
@@ -99,7 +99,6 @@ classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The following t
 | c | DocumentFormat.OpenXml.Spreadsheet.Cell | A cell in a row. |
 | v | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell. |
 
-
 ## How the Sample Code Works
 
 After you have opened the file for read-only access, you instantiate the **Sheets** class.
@@ -112,7 +111,7 @@ After you have opened the file for read-only access, you instantiate the **Sheet
     Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
 ```
 
-You then you iterate through the **Sheets** collection and display **[OpenXmlElement](https://docs.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement?view=openxml-2.8.1)** and the **[OpenXmlAttribute](https://docs.microsoft.com/dotnet/api/documentformat.openxml.openxmlattribute?view=openxml-2.8.1)** in each element.
+You then you iterate through the **Sheets** collection and display **[OpenXmlElement](https://docs.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement?view=openxml-2.8.1&preserve-view=true)** and the **[OpenXmlAttribute](https://docs.microsoft.com/dotnet/api/documentformat.openxml.openxmlattribute?view=openxml-2.8.1&preserve-view=true)** in each element.
 
 ```csharp
     foreach (E sheet in sheets)
@@ -133,7 +132,6 @@ You then you iterate through the **Sheets** collection and display **[OpenXmlEle
 ```
 
 By displaying the attribute information you get the name and ID for each worksheet in the spreadsheet file.
-
 
 ## Sample Code
 
@@ -187,5 +185,4 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-[Open XML SDK 2.5 class library
-reference](/office/open-xml/open-xml-sdk.md)
+[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
