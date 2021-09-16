@@ -1,5 +1,4 @@
 ---
-
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -43,20 +42,17 @@ Using the Open XML SDK 2.5, you can create document structure and content that u
 |        Comments         |              \<cmLst\>               |            [CommentList](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentlist?redirectedfrom=MSDN&view=openxml-2.8.1)            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                                      |
 |     Comments Author     |           \<cmAuthorLst\>            |      [CommentAuthorList](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentauthorlist?redirectedfrom=MSDN&view=openxml-2.8.1)      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                            |
 
-*Descriptions adapted from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification, © ISO/IEC29500: 2008.
+*Descriptions adapted from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification, © ISO/IEC29500: 2008.
 
 ### Presentation Part
 
-A PresentationML package's main part starts with a \<presentation\> root element. That element contains a presentation, which, in turn, refers to a slide list, a slide master list, a notes master list, and a handout master list. The slide list refers to all of the slides in the presentation. The slide master list refers to the entire set of slide
-masters used in the presentation. The notes master contains information about the formatting of notes pages. The handout master describes how a handout looks. (A handout is a printed set of slides that can be handed out to an audience for future reference.)
+A PresentationML package's main part starts with a \<presentation\> root element. That element contains a presentation, which, in turn, refers to a slide list, a slide master list, a notes master list, and a handout master list. The slide list refers to all of the slides in the presentation. The slide master list refers to the entire set of slide masters used in the presentation. The notes master contains information about the formatting of notes pages. The handout master describes how a handout looks. (A handout is a printed set of slides that can be handed out to an audience for future reference.)
 
 ### Presentation Properties Part
 
 The root element of the Presentation Properties part is the \<presentationPr\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Presentation
-Properties part as follows:
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Presentation Properties part as follows:
 
 An instance of this part type contains all the presentation's properties.
 
@@ -71,9 +67,7 @@ Example: The following Presentation part-relationship item contains a relationsh
 </Relationships>
 ```
 
-The root element for a part of this content type shall be presentationPr.
-
-Example:
+The root element for a part of this content type shall be presentationPr. Example:
 
 ```xml
 <p:presentationPr xmlns:p="…" …>  
@@ -222,8 +216,7 @@ The root element of the Slide part is the \<sld\> element.
 
 As well as text and graphics, each slide can contain comments and notes, can have a layout, and can be part of one or more custom presentations. A comment is an annotation intended for the person maintaining the presentation slide deck. A note is a reminder or piece of text intended for the presenter or the audience.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Slide part as
-follows:
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Slide part as follows:
 
 A Slide part contains the contents of a single slide.
 
@@ -335,8 +328,7 @@ Example: theme1.xml contains the following, where the name attributes of the clr
 </a:officeStyleSheet>
 ```
 
-A Theme part shall be located within the package containing the relationships part (expressed syntactically, the TargetMode attribute of
-the Relationship element shall be Internal).  
+A Theme part shall be located within the package containing the relationships part (expressed syntactically, the TargetMode attribute of the Relationship element shall be Internal).  
 
 A Theme part is permitted to contain explicit relationships to the following parts defined by ISO/IEC 29500:
 
@@ -437,12 +429,9 @@ The root element for a part of this content type shall be notes. Example:
 </p:notes>
 ```
 
-A Notes Slide part shall be located within the package containing the
-relationships part (expressed syntactically, the TargetMode attribute of
-the Relationship element shall be Internal).
+A Notes Slide part shall be located within the package containing the relationships part (expressed syntactically, the TargetMode attribute of the Relationship element shall be Internal).
 
-A Notes Slide part is permitted to have implicit relationships to the
-following parts defined by ISO/IEC 29500:
+A Notes Slide part is permitted to have implicit relationships to the following parts defined by ISO/IEC 29500:
 
 - Additional Characteristics (§15.2.1)  
 - Bibliography (§15.2.3)  
@@ -510,8 +499,7 @@ A Handout Master part is permitted to have implicit relationships to the followi
 - Theme (§14.2.7)  
 - Thumbnail (§15.2.16)
 
-A Handout Master part is permitted to have explicit relationships to the
-following parts defined by ISO/IEC 29500:
+A Handout Master part is permitted to have explicit relationships to the following parts defined by ISO/IEC 29500:
 
 - Audio (§15.2.2)  
 - Chart (§14.2.1)  
@@ -532,21 +520,14 @@ A Handout Master part shall not have implicit or explicit relationships to any o
 
 The root element of the Comments part is the \<cmLst\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification describes the Open XML PresentationML Comments part as
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Comments part as
 follows:
 
-An instance of this part type contains the comments for a single slide.
-Each comment is tied to its author via an author-ID. Each comment's
-index number and author-ID combination are unique.
+An instance of this part type contains the comments for a single slide. Each comment is tied to its author via an author-ID. Each comment's index number and author-ID combination are unique.
 
-A package shall contain one Comments part for each slide containing one
-or more comments, and each of those parts shall be the target of an
-implicit relationship from its corresponding Slide (§13.3.8) part.
+A package shall contain one Comments part for each slide containing one or more comments, and each of those parts shall be the target of an implicit relationship from its corresponding Slide (§13.3.8) part.
 
-Example: The following Slide part-relationship item contains a
-relationship to a Comments part, which is stored in the ZIP item
-../comments/comment2.xml:
+Example: The following Slide part-relationship item contains a relationship to a Comments part, which is stored in the ZIP item ../comments/comment2.xml:
 
 ```xml
 <Relationships xmlns="…">  
@@ -558,10 +539,7 @@ relationship to a Comments part, which is stored in the ZIP item
 
 The root element for a part of this content type shall be cmLst.
 
-Example: The Comments part contains three comments, two created by one
-author, and one created by another, all at the dates and times shown.
-The index numbers are assigned on a per-author basis, starting at 1 for
-an author's first comment:
+Example: The Comments part contains three comments, two created by one author, and one created by another, all at the dates and times shown. The index numbers are assigned on a per-author basis, starting at 1 for an author's first comment:
 
 ```xml
 <p:cmLst xmlns:p="…" …>  
@@ -580,12 +558,9 @@ an author's first comment:
 </p:cmLst>
 ```
 
-A Comments part shall be located within the package containing the
-relationships part (expressed syntactically, the TargetMode attribute of
-the Relationship element shall be Internal).
+A Comments part shall be located within the package containing the relationships part (expressed syntactically, the TargetMode attribute of the Relationship element shall be Internal).
 
-A Comments part shall not have implicit or explicit relationships to any
-other part defined by ISO/IEC 29500.
+A Comments part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
 © ISO/IEC29500: 2008.
 
@@ -594,23 +569,13 @@ other part defined by ISO/IEC 29500.
 The root element of the Comments Author part is the \<cmAuthorLst\>
 element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification describes the Open XML PresentationML Comments Author part
-as follows:
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Comments Author part as follows:
 
-An instance of this part type contains information about each author who
-has added a comment to the document. That information includes the
-author's name, initials, a unique author-ID, a last-comment-index-used
-count, and a display color. (The color can be used when displaying
-comments to distinguish comments from different authors.)
+An instance of this part type contains information about each author who has added a comment to the document. That information includes the author's name, initials, a unique author-ID, a last-comment-index-used count, and a display color. (The color can be used when displaying comments to distinguish comments from different authors.)
 
-A package shall contain at most one Comment Authors part. If it exists,
-that part shall be the target of an implicit relationship from the
-Presentation (§13.3.6) part.
+A package shall contain at most one Comment Authors part. If it exists, that part shall be the target of an implicit relationship from the Presentation (§13.3.6) part.
 
-Example: The following Presentation part relationship item contains a
-relationship to the Comment Authors part, which is stored in the ZIP
-item commentAuthors.xml:
+Example: The following Presentation part relationship item contains a relationship to the Comment Authors part, which is stored in the ZIP item commentAuthors.xml:
 
 ```xml
 <Relationships xmlns="…">  
@@ -621,13 +586,7 @@ item commentAuthors.xml:
 
 The root element for a part of this content type shall be cmAuthorLst.
 
-Example: Two people have authored comments in this document: Mary Smith
-and Peter Jones. Her initials are "mas", her author-ID is 0, and her
-comments' display color index is 0. Since Mary's last-comment-index-used
-value is 3, the next comment-index to be used for her is 4. His initials
-are "pjj", his author-ID is 1, and his comments' display color index is
-1. Since Peter's last-comment-index-used value is 1, the next
-comment-index to be used for him is 2:
+Example: Two people have authored comments in this document: Mary Smith and Peter Jones. Her initials are "mas", her author-ID is 0, and her comments' display color index is 0. Since Mary's last-comment-index-used value is 3, the next comment-index to be used for her is 4. His initials are "pjj", his author-ID is 1, and his comments' display color index is 1. Since Peter's last-comment-index-used value is 1, the next comment-index to be used for him is 2:
 
 ```xml
 <p:cmAuthorLst xmlns:p="…" …>  
@@ -638,12 +597,9 @@ clrIdx="1"/>
 </p:cmAuthorLst>
 ```
 
-A Comment Authors part shall be located within the package containing
-the relationships part (expressed syntactically, the TargetMode
-attribute of the Relationship element shall be Internal).
+A Comment Authors part shall be located within the package containing the relationships part (expressed syntactically, the TargetMode attribute of the Relationship element shall be Internal).
 
-A Comment Authors part shall not have implicit or explicit relationships
-to any other part defined by ISO/IEC 29500.
+A Comment Authors part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
 © ISO/IEC29500: 2008.
 
@@ -664,6 +620,7 @@ Figure 1 shows the structure under the **ppt** folder of the .zip package for a 
 Figure 1. Minimum presentation folder structure
 
  ![Minimum presentation folder structure](./media/odc_oxml_ppt_documentstructure_fig01.jpg)
+ 
 The presentation.xml file contains \<sld\> (Slide) elements that reference the slides in the presentation. Each slide is associated to the presentation by means of a slide ID and a relationship ID. The **slideID** is the identifier (ID) used within the package to identify a slide and must be unique within the presentation. The **id** attribute is the relationship ID that identifies the slide part definition associated with a slide. For more information about the slide part, see [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md).
 
 The following XML code is the PresentationML that represents the presentation part of a presentation document that contains a single slide. This code is generated when you run the Open XML SDK 2.5 code to create a minimum presentation.
@@ -705,8 +662,7 @@ The following XML code is the PresentationML that represents the relationship pa
                     Id="rId5" />
     </Relationships>
 ```
-The following XML code is the PresentationML that represents the slide part of the presentation document. Each slide in a presentation has a
-slide part associated with it. This code is generated when you run the Open XML SDK 2.5 to create a minimum presentation.
+The following XML code is the PresentationML that represents the slide part of the presentation document. Each slide in a presentation has a slide part associated with it. This code is generated when you run the Open XML SDK 2.5 to create a minimum presentation.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
