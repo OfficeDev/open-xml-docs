@@ -1,5 +1,4 @@
 ---
-
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,7 +6,6 @@ api_type:
 ms.assetid: 124cb0a0-cc47-433f-bad0-06b793890650
 title: 'How to: Get worksheet information from an Open XML package (Open XML SDK)'
 ms.suite: office
-
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -16,12 +14,9 @@ ms.localizationpriority: high
 ---
 # Get worksheet information from an Open XML package (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
-Office to programmatically retrieve information from a worksheet in a
-Spreadsheet document.
+This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically retrieve information from a worksheet in a Spreadsheet document.
 
-The following assembly directives are required to compile the code in
-this topic.
+The following assembly directives are required to compile the code in this topic.
 
 ```csharp
     using System;
@@ -41,25 +36,11 @@ this topic.
 
 ## Create SpreadsheetDocument Object
 
-In the Open XML SDK, the <strong><span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"></strong>SpreadsheetDocument****** class represents an
-Excel document package. To create an Excel document, you create an
-instance of the **SpreadsheetDocument** class
-and populate it with parts. At a minimum, the document must have a
-workbook part that serves as a container for the document, and at least
-one worksheet part. The text is represented in the package as XML using
-**SpreadsheetML** markup.
+In the Open XML SDK, the **[SpreadsheetDocument](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.md)** class represents an Excel document package. To create an Excel document, you create an instance of the **SpreadsheetDocument** class and populate it with parts. At a minimum, the document must have a workbook part that serves as a container for the document, and at least one worksheet part. The text is represented in the package as XML using **SpreadsheetML** markup.
 
-To create the class instance from the document you call one of the <span
-sdata="cer"
-target="Overload:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open">**Open()**** methods. In this example, you must
-open the file for read access only. Therefore, you can use the <span
-sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open(String, Boolean)**** method, and set the
-Boolean parameter to **false**.
+To create the class instance from the document you call one of the **[Open](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open.md)** methods. In this example, you must open the file for read access only. Therefore, you can use the **[Open(String, Boolean)](https://docs.microsoft.com/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?view=openxml-2.8.1#DocumentFormat_OpenXml_Packaging_SpreadsheetDocument_Open_System_String_System_Boolean_)** method, and set the Boolean parameter to **false**.
 
-The following code example calls the **Open**
-method to open the file specified by the **filepath** for read-only access.
+The following code example calls the **Open** method to open the file specified by the **filepath** for read-only access.
 
 ```csharp
     // Open file as read-only.
@@ -71,25 +52,13 @@ method to open the file specified by the **filepath** for read-only access.
     Using mySpreadsheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
 ```
 
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **mySpreadsheet**.
-
+The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **mySpreadsheet**.
 
 ## Basic Structure of a SpreadsheetML
 
-The basic document structure of a **SpreadsheetML** document consists of the <span
-sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheets">**Sheets**** and <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**** elements, which reference the
-worksheets in the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Workbook">**Workbook**<strong>. A separate XML file is created
-for each <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Worksheet"></strong>Worksheet*<strong><em>. For example, the *</em>SpreadsheetML</strong> for a workbook that has two
-worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
-file and is shown in the following code example.
+The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheets?view=openxml-2.8.1)** and **[Sheet](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet?view=openxml-2.8.1)** elements, which reference the
+worksheets in the **[Workbook](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.workbook?view=openxml-2.8.1)**. A separate XML file is created
+for each **[Worksheet](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.worksheet?view=openxml-2.8.1)**. For example, the **SpreadsheetML** for a workbook that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
@@ -101,17 +70,7 @@ file and is shown in the following code example.
     </workbook>
 ```
 
-The worksheet XML files contain one or more block level elements such as
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.SheetData">**SheetData**<strong>. **sheetData</strong> represents the cell table and contains
-one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Row">**Row**** elements. A **row** contains one or more <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.Cell">**Cell**** elements. Each cell contains a <span
-sdata="cer"
-target="T:DocumentFormat.OpenXml.Spreadsheet.CellValue">**CellValue**** element that represents the value
-of the cell. For example, the SpreadsheetML for the first worksheet in a
-workbook, that only has the value 100 in cell A1, is located in the
-Sheet1.xml file and is shown in the following code example.
+The worksheet XML files contain one or more block level elements such as **SheetData**. **[SheetData](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheetdata?view=openxml-2.8.1)** represents the cell table and contains one or more **[Row](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.row?view=openxml-2.8.1)** elements. A **row** contains one or more **[Cell](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cell?view=openxml-2.8.1)** elements. Each cell contains a **[CellValue](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cellvalue?view=openxml-2.8.1)** element that represents the value of the cell. For example, the SpreadsheetML for the first worksheet in a workbook, that only has the value 100 in cell A1, is located in the Sheet1.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
@@ -126,11 +85,8 @@ Sheet1.xml file and is shown in the following code example.
     </worksheet>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
-content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
-classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
-following table lists the class names of the classes that correspond to
-the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
+Using the Open XML SDK 2.5, you can create document structure and content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
+classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The following table lists the class names of the classes that correspond to the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
 | SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -146,9 +102,7 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 
 ## How the Sample Code Works
 
-After you have opened the file for read-only access, you instantiate the
-<span sdata="cer"
-target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.Sheets">**Sheets**** class.
+After you have opened the file for read-only access, you instantiate the **Sheets** class.
 
 ```csharp
     S sheets = mySpreadsheet.WorkbookPart.Workbook.Sheets;
@@ -158,10 +112,7 @@ target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.Sheets">**Sheets**** class
     Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
 ```
 
-You then you iterate through the **Sheets**
-collection and display <span sdata="cer"
-target="T:DocumentFormat.OpenXml.OpenXmlElement">**OpenXmlElement**** and the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.OpenXmlAttribute">**OpenXmlAttribute**** in each element.
+You then you iterate through the **Sheets** collection and display **[OpenXmlElement](https://docs.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement?view=openxml-2.8.1)** and the **[OpenXmlAttribute](https://docs.microsoft.com/dotnet/api/documentformat.openxml.openxmlattribute?view=openxml-2.8.1)** in each element.
 
 ```csharp
     foreach (E sheet in sheets)
@@ -181,16 +132,12 @@ target="T:DocumentFormat.OpenXml.OpenXmlAttribute">**OpenXmlAttribute**** in eac
     Next
 ```
 
-By displaying the attribute information you get the name and ID for each
-worksheet in the spreadsheet file.
+By displaying the attribute information you get the name and ID for each worksheet in the spreadsheet file.
 
 
 ## Sample Code
 
-In the following code example, you retrieve and display the attributes
-of the all sheets in the specified workbook contained in a **SpreadsheetDocument** document. The following code
-example shows how to call the **GetSheetInfo**
-method.
+In the following code example, you retrieve and display the attributes of the all sheets in the specified workbook contained in a **SpreadsheetDocument** document. The following code example shows how to call the **GetSheetInfo** method.
 
 ```csharp
     GetSheetInfo(@"C:\Users\Public\Documents\Sheet5.xlsx");
@@ -240,7 +187,5 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-
-
 [Open XML SDK 2.5 class library
-reference](https://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+reference](/office/open-xml/open-xml-sdk.md)
