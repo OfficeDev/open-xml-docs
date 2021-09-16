@@ -13,7 +13,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 06/28/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Apply a style to a paragraph in a word processing document

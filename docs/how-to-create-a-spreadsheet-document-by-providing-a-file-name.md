@@ -12,7 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 # Create a spreadsheet document by providing a file name (Open XML SDK)
 

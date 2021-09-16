@@ -13,7 +13,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 06/28/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 # Create and add a character style to a word processing document
 

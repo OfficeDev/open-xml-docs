@@ -16,7 +16,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 06/28/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Welcome to the Open XML SDK 2.5 for Office

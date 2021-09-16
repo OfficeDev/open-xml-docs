@@ -13,7 +13,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 06/28/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 # Set a custom property in a word processing document (Open XML SDK)
 

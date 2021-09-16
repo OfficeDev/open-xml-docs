@@ -12,7 +12,7 @@ ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Copy contents of an Open XML package part to a document part in a different package
