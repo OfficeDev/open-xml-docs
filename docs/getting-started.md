@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 7b729dda-bbb6-437e-93d6-7bfe7b8183fa
-title: Getting started with the Open XML SDK 2.5 for Office</td>
+title: Getting started with the Open XML SDK 2.5 for Office
 ms.suite: office
 
 ms.author: o365devx
