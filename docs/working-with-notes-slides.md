@@ -209,13 +209,13 @@ namespace.
             Dim notesSlide As New NotesSlide(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
              .Id = DirectCast(1UI, UInt32Value), _
              .Name = "" _
-            }, New P.NonVisualGroupShapeDrawingProperties(), New ApplicationNonVisualDrawingProperties()), New  _
+            }, New P.NonVisualGroupShapeDrawingProperties(), New ApplicationNonVisualDrawingProperties()), New _
                 GroupShapeProperties(New TransformGroup()), New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
              .Id = DirectCast(2UI, UInt32Value), _
              .Name = "" _
             }, New P.NonVisualShapeDrawingProperties(New ShapeLocks() With { _
              .NoGrouping = True _
-            }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New  _
+            }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New _
                 P.TextBody(New BodyProperties(), New ListStyle(), New Paragraph(New EndParagraphRunProperties()))))),
             New ColorMapOverride(New MasterColorMapping()))
             notesSlidePart1.NotesSlide = notesSlide

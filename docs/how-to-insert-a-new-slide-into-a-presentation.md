@@ -291,7 +291,7 @@ slide and sets its properties, including its text
     drawingObjectId = (drawingObjectId + 1)
 
     ' Specify the required shape properties for the title shape. 
-    titleShape.NonVisualShapeProperties = New DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties(New  _
+    titleShape.NonVisualShapeProperties = New DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties(New _
         DocumentFormat.OpenXml.Presentation.NonVisualDrawingProperties() With {.Id = drawingObjectId, .Name = "Title"}, _
         New DocumentFormat.OpenXml.Presentation.NonVisualShapeDrawingProperties _
         (New Drawing.ShapeLocks() With {.NoGrouping = True}), _
@@ -653,7 +653,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
         ' Construct the slide content.
         ' Specify the non-visual properties of the new slide.
-        Dim nonVisualProperties As DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties = slide.CommonSlideData.ShapeTree.AppendChild(New  _
+        Dim nonVisualProperties As DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties = slide.CommonSlideData.ShapeTree.AppendChild(New _
             DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties())
         nonVisualProperties.NonVisualDrawingProperties = New DocumentFormat.OpenXml.Presentation.NonVisualDrawingProperties() With {.Id = 1, .Name = ""}
         nonVisualProperties.NonVisualGroupShapeDrawingProperties = New DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeDrawingProperties()
@@ -667,7 +667,7 @@ The following is the complete sample code in both C\# and Visual Basic.
         drawingObjectId = (drawingObjectId + 1)
 
         ' Specify the required shape properties for the title shape. 
-        titleShape.NonVisualShapeProperties = New DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties(New  _
+        titleShape.NonVisualShapeProperties = New DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties(New _
             DocumentFormat.OpenXml.Presentation.NonVisualDrawingProperties() With {.Id = drawingObjectId, .Name = "Title"}, _
             New DocumentFormat.OpenXml.Presentation.NonVisualShapeDrawingProperties _
             (New Drawing.ShapeLocks() With {.NoGrouping = True}), _

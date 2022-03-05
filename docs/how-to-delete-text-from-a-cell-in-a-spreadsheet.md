@@ -399,7 +399,7 @@ a spreadsheet document. You can run the program by calling the method
     string sheetName  = "Jane";
     string colName = "B";
     uint rowIndex = 2;
-    DeleteTextFromCell( docName,  sheetName,  colName, rowIndex);
+    DeleteTextFromCell( docName, sheetName, colName, rowIndex);
 ```
 
 ```vb

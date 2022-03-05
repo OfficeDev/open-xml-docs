@@ -210,17 +210,17 @@ namespace.
 ```vb
     Private Shared Function CreateHandoutMasterPart(ByVal presentationPart As PresentationPart) As HandoutMasterPart
             Dim handoutMasterPart1 As HandoutMasterPart = presentationPart.AddNewPart(Of HandoutMasterPart)("rId3")
-            handoutMasterPart1.HandoutMaster = New HandoutMaster(New CommonSlideData(New ShapeTree(New  _
+            handoutMasterPart1.HandoutMaster = New HandoutMaster(New CommonSlideData(New ShapeTree(New _
                 P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
              .Id = DirectCast(1UI, UInt32Value), _
              .Name = "" _
-            }, New P.NonVisualGroupShapeDrawingProperties(), New ApplicationNonVisualDrawingProperties()), New  _
+            }, New P.NonVisualGroupShapeDrawingProperties(), New ApplicationNonVisualDrawingProperties()), New _
                 GroupShapeProperties(New TransformGroup()), New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
              .Id = DirectCast(2UI, UInt32Value), _
              .Name = "Title 1" _
             }, New P.NonVisualShapeDrawingProperties(New ShapeLocks() With { _
              .NoGrouping = True _
-            }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New  _
+            }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New _
                 P.TextBody(New BodyProperties(), New ListStyle(), New Paragraph(New EndParagraphRunProperties() With { _
              .Language = "en-US" _
             }))))), New P.ColorMap() With { _
