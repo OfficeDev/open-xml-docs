@@ -25,9 +25,7 @@ To use the sample code in this topic, you must install the [Open XML SDK 2.5](ht
 
 - DocumentFormat.OpenXml (installed by the Open XML SDK)
 
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
+You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
 
 ```csharp
     using System;
@@ -45,9 +43,7 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.VariantTypes
 ```
 
-The sample code also includes an enumeration that defines the possible
-types of custom properties. The **SetCustomProperty** method requires that you supply
-one of these values when you call the method.
+The sample code also includes an enumeration that defines the possible types of custom properties. The **SetCustomProperty** method requires that you supply one of these values when you call the method.
 
 ```csharp
     public enum PropertyTypes : int
@@ -84,7 +80,6 @@ contents of the part.
 
 Figure 1. Open XML SDK Productivity Tool for Microsoft Office
 
-  
  ![Open XML SDK 2.0 Productivity Tool](./media/OpenXmlCon_HowToSetCustomProperty_Fig1.gif)
   
 The relevant XML is also extracted and shown here for ease of reading.
@@ -102,37 +97,24 @@ The relevant XML is also extracted and shown here for ease of reading.
 
 If you examine the XML content, you will find the following:
 
--   Each property in the XML content consists of an XML element that
-    includes the name and the value of the property.
+- Each property in the XML content consists of an XML element that includes the name and the value of the property.
+- For each property, the XML content includes an **fmtid** attribute, which is always set to the same string value: `{D5CDD505-2E9C-101B-9397-08002B2CF9AE}`.
+- Each property in the XML content includes a **pid** attribute, which must include an integer starting at 2 for the first property and incrementing for each successive property.
+- Each property tracks its type (in the figure, the **vt:lpwstr** and **vt:filetime** element names define the types for each property).
 
--   For each property, the XML content includes an **fmtid** attribute, which is always set to the
-    same string value: `{D5CDD505-2E9C-101B-9397-08002B2CF9AE}`.
-
--   Each property in the XML content includes a **pid** attribute, which must include an integer
-    starting at 2 for the first property and incrementing for each
-    successive property.
-
--   Each property tracks its type (in the figure, the **vt:lpwstr** and **vt:filetime** element names define the types
-    for each property).
-
-The sample method that is provided here includes the code that is
-required to create or modify a custom document property in a Microsoft
-Word 2010 or Microsoft Word 2013 document. You can find the complete
-code listing for the method in the [Sample Code](#sample-code) section.
-
+The sample method that is provided here includes the code that is required to create or modify a custom document property in a Microsoft Word 2010 or Microsoft Word 2013 document. You can find the complete code listing for the method in the [Sample Code](#sample-code) section.
 
 ## SetCustomProperty Method
 
-You can use the **SetCustomProperty** method to
-set a custom property in a word processing document. The **SetCustomProperty** method accepts four parameters:
+Use the **SetCustomProperty** method to set a custom property in a word processing document. The **SetCustomProperty** method accepts four parameters:
 
--   The name of the document to modify (string).
+- The name of the document to modify (string).
 
--   The name of the property to add or modify (string).
+- The name of the property to add or modify (string).
 
--   The value of the property (object).
+- The value of the property (object).
 
--   The kind of property (one of the values in the **PropertyTypes** enumeration).
+- The kind of property (one of the values in the **PropertyTypes** enumeration).
 
 ```csharp
     public static string SetCustomProperty(
@@ -152,11 +134,7 @@ set a custom property in a word processing document. The **SetCustomProperty** m
 
 ## Calling the SetCustomProperty Method
 
-The **SetCustomProperty** method enables you to
-set a custom property, and returns the current value of the property, if
-it exists. To call the sample method, pass the file name, property name,
-property value, and property type parameters. The following sample code
-shows an example.
+The **SetCustomProperty** method enables you to set a custom property, and returns the current value of the property, if it exists. To call the sample method, pass the file name, property name, property value, and property type parameters. The following sample code shows an example.
 
 ```csharp
     const string fileName = @"C:\Users\Public\Documents\SetCustomProperty.docx";
@@ -185,36 +163,24 @@ shows an example.
         SetCustomProperty(fileName, "ReviewDate",
         #12/21/2010#, PropertyTypes.DateTime))
 ```
-After running this code, use the following procedure to view the custom
-properties from Word.
 
-1.  Open the **SetCustomProperty.docx** file in Word.
+After running this code, use the following procedure to view the custom properties from Word.
 
-2.  On the **File** tab, click **Info**.
+1. Open the **SetCustomProperty.docx** file in Word.
+2. On the **File** tab, click **Info**.
+3. Click **Properties**.
+4. Click **Advanced Properties**.
 
-3.  Click **Properties**.
-
-4.  Click **Advanced Properties**.
-
-The custom properties will display in the dialog box that appears, as
-shown in Figure 2.
+The custom properties will display in the dialog box that appears, as shown in Figure 2.
 
 Figure 2. Custom Properties in the Advanced Properties dialog box
 
-  
  ![Advanced Properties dialog with custom properties](./media/OpenXmlCon_HowToSetCustomPropertyFig2.gif)
 
+## How the Code Works
 
-## How the Code Works 
-
-The **SetCustomProperty** method starts by
-setting up some internal variables. Next, it examines the information
-about the property, and creates a new [CustomDocumentProperty](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.aspx) based on the
-parameters that you have specified. The code also maintains a variable
-named **propSet** to indicate whether it
-successfully created the new property object. This code verifies the
-type of the property value, and then converts the input to the correct
-type, setting the appropriate property of the **CustomDocumentProperty** object.
+The **SetCustomProperty** method starts by setting up some internal variables. Next, it examines the information about the property, and creates a new [CustomDocumentProperty](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.aspx) based on the parameters that you have specified. The code also maintains a variable named **propSet** to indicate whether it successfully created the new property object. This code verifies the
+type of the property value, and then converts the input to the correct type, setting the appropriate property of the **CustomDocumentProperty** object.
 
 > [!NOTE]
 > The **CustomDocumentProperty** type works much like a VBA Variant type. It maintains separate placeholders as properties for the various types of data it might contain.
@@ -339,8 +305,8 @@ type, setting the appropriate property of the **CustomDocumentProperty** object.
         Throw New InvalidDataException("propertyValue")
     End If
 ```
-At this point, if the code has not thrown an exception, you can assume
-that the property is valid, and the code sets the [FormatId](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.formatid.aspx) and [Name](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.name.aspx) properties of the new custom property.
+
+At this point, if the code has not thrown an exception, you can assume that the property is valid, and the code sets the [FormatId](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.formatid.aspx) and [Name](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.name.aspx) properties of the new custom property.
 
 ```csharp
     // Now that you have handled the parameters, start
@@ -358,14 +324,8 @@ that the property is valid, and the code sets the [FormatId](https://msdn.micros
 
 ## Working with the Document
 
-Given the **CustomDocumentProperty** object,
-the code next interacts with the document that you supplied in the
-parameters to the **SetCustomProperty**
-procedure. The code starts by opening the document in read/write mode by
-using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class. The code
-attempts to retrieve a reference to the custom file properties part by
-using the [CustomFilePropertiesPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart.aspx) property of the
-document.
+Given the **CustomDocumentProperty** object, the code next interacts with the document that you supplied in the parameters to the **SetCustomProperty** procedure. The code starts by opening the document in read/write mode by
+using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class. The code attempts to retrieve a reference to the custom file properties part by using the [CustomFilePropertiesPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart.aspx) property of the document.
 
 ```csharp
     using (var document = WordprocessingDocument.Open(fileName, true))
@@ -381,6 +341,7 @@ document.
         ' Code removed here...
     End Using
 ```
+
 If the code cannot find a custom properties part, it creates a new part, and adds a new set of properties to the part.
 
 ```csharp
@@ -402,6 +363,7 @@ If the code cannot find a custom properties part, it creates a new part, and add
         customProps.Properties = New Properties
     End If
 ```
+
 Next, the code retrieves a reference to the [Properties](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.customfilepropertiespart.properties.aspx) property of the custom
 properties part (that is, a reference to the properties themselves). If
 the code had to create a new custom properties part, you know that this
@@ -423,6 +385,7 @@ cannot continue.
       ' Code removed here...
     End If
 ```
+
 If the property already exists, the code retrieves its current value,
 and then deletes the property. Why delete the property? If the new type
 for the property matches the existing type for the property, the code
@@ -459,18 +422,14 @@ find the first match for the property name.
         prop.Remove()
     End If
 ```
-Now, you will know for sure that the custom property part exists, a
-property that has the same name as the new property does not exist, and
-that there may be other existing custom properties. The code performs
-the following steps:
 
-1.  Appends the new property as a child of the properties collection.
+Now, you will know for sure that the custom property part exists, a property that has the same name as the new property does not exist, and that there may be other existing custom properties. The code performs the following steps:
 
-2.  Loops through all the existing properties, and sets the <span
-    class="keyword">pid** attribute to increasing values, starting
-    at 2.
+1. Appends the new property as a child of the properties collection.
 
-3.  Saves the part.
+2. Loops through all the existing properties, and sets the <span class="keyword">**pid** attribute to increasing values, starting at 2.
+
+3. Saves the part.
 
 ```csharp
     // Append the new property, and 
@@ -510,8 +469,7 @@ Finally, the code returns the stored original property value.
 
 ## Sample Code
 
-The following is the complete **SetCustomProperty** code sample in C\# and Visual
-Basic.
+The following is the complete **SetCustomProperty** code sample in C\# and Visual Basic.
 
 ```csharp
     public enum PropertyTypes : int
@@ -769,7 +727,5 @@ Basic.
 ```
 
 ## See also
-
-
 
 - [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
