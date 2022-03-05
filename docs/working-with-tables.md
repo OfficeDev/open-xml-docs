@@ -14,6 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
+
 # Working with SpreadsheetML tables (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 **[Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
@@ -22,11 +23,9 @@ overall structure of the parts and elements that make up a SpreadsheetML
 document, see <span sdata="link">[Structure of a SpreadsheetML document
 (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
+## Tables in SpreadsheetML
 
---------------------------------------------------------------------------------
-## Tables in SpreadsheetML 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the **table** (\<**table**\>) element.
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the **table** (\<**table**\>) element.
 
 A table helps organize and provide structure to lists of information in
 a worksheet. Tables have clearly labeled columns, rows, and data
@@ -52,8 +51,6 @@ elements to a worksheet range.
 The sheet XML stores the numeric and textual data. The table XML records
 the various attributes for the particular table object.
 
-© ISO/IEC29500: 2008.
-
 A SpreadsheetML table is a logical construct that specifies that a range
 of data belongs to a single dataset. SpreadsheetML already uses a
 table-like model for specifying values in rows and columns, but you can
@@ -67,17 +64,15 @@ in a separate part inside the package. The table part does not contain
 any table data. The data is maintained in the worksheet cells. For more
 information about data is stored in the worksheet, see [Working with sheets (Open XML SDK)](working-with-sheets.md).
 
-The following table lists the common Open XML SDK 2.5 classes used when
-working with the **Table** class.
+The following table lists the common Open XML SDK 2.5 classes used when working with the **Table** class.
 
-
-| **SpreadsheetML Element** |                                               **Open XML SDK 2.5 Class**                                               |
+| **SpreadsheetML Element** | **Open XML SDK 2.5 Class**                                               |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------|
-|        tableColumn        |   [TableColumn](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
+|        tableColumn        | [TableColumn](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
 |        autoFilter         | [AutoFilter](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx) |
 
---------------------------------------------------------------------------------
-## Open XML SDK 2.5 Table Class 
+## Open XML SDK 2.5 Table Class
+
 The Open XML SDK 2.5**Table** class represents
 the table (\<**table**\>) element defined in
 the Open XML File Format schema for SpreadsheetML documents. Use the
@@ -85,16 +80,13 @@ the Open XML File Format schema for SpreadsheetML documents. Use the
 \<**table**\> elements in a SpreadsheetML
 document.
 
-The following information from the ISO/IEC 29500 specification
-introduces the **table** (\<**table**\>) element.
+The following information from the ISO/IEC 29500 specification introduces the **table** (\<**table**\>) element.
 
 An instance of this part type contains a description of a single table
 and its autofilter information. (The data for the table is stored in the
 corresponding Worksheet part.)
 
 The root element for a part of this content type shall be table.
-
-© ISO/IEC29500: 2008.
 
 The table part contains the definition of a single table. When there are
 multiple tables on a worksheet there are multiple table parts. The root
@@ -126,8 +118,6 @@ introduces the **TableColumn** (\<**tableColumn**\>) element.
 
 An element representing a single column for this table.
 
-© ISO/IEC29500: 2008.
-
 ### Auto Filter Class
 
 The following information from the ISO/IEC 29500 specification
@@ -153,8 +143,6 @@ than or equal to 0.5.
     </filterColumn>
 </autoFilter>
 ```
-
-© ISO/IEC29500: 2008.
 
 ### SpreadsheetML Example
 
@@ -231,6 +219,7 @@ displayed in the table, and contains the **tablePart** element that references t
         </tableParts>
     </worksheet>
 ```
+
 The following XML defines the table and is contained in the "table1.xml"
 file. The table XML file defines how the range of the table and how the
 table looks, and defines any autofilters for the table.
