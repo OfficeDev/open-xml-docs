@@ -481,7 +481,7 @@ value of the following properties: [Scaling](https://msdn.microsoft.com/library/
 
     ' Add the Value Axis.
     Dim valAx As ValueAxis = plotArea.AppendChild(Of ValueAxis)(New ValueAxis _
-        (New AxisId() With {.Val = New UInt32Value(48672768UI)}, New Scaling(New  _
+        (New AxisId() With {.Val = New UInt32Value(48672768UI)}, New Scaling(New _
         Orientation() With {.Val = New EnumValue(Of DocumentFormat.OpenXml.Drawing _
         .Charts.OrientationValues)(DocumentFormat.OpenXml.Drawing.Charts.OrientationValues.MinMax)}), _
         New AxisPosition() With {.Val = New EnumValue(Of AxisPositionValues)(AxisPositionValues.Left)}, _
@@ -547,11 +547,11 @@ and names the chart "Chart 1," and saves the worksheet drawing.
 ```vb
     ' Position the chart on the worksheet using a TwoCellAnchor object.
     drawingsPart.WorksheetDrawing = New WorksheetDrawing()
-    Dim twoCellAnchor As TwoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(Of  _
+    Dim twoCellAnchor As TwoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(Of _
         TwoCellAnchor)(New TwoCellAnchor())
-    twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker(New  _
+    twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker(New _
         ColumnId("9"), New ColumnOffset("581025"), New RowId("17"), New RowOffset("114300")))
-    twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.ToMarker(New  _
+    twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.ToMarker(New _
         ColumnId("17"), New ColumnOffset("276225"), New RowId("32"), New RowOffset("0")))
 
     ' Append a GraphicFrame to the TwoCellAnchor object.
@@ -823,7 +823,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
             ' Add the Value Axis.
             Dim valAx As ValueAxis = plotArea.AppendChild(Of ValueAxis)(New ValueAxis _
-                (New AxisId() With {.Val = New UInt32Value(48672768UI)}, New Scaling(New  _
+                (New AxisId() With {.Val = New UInt32Value(48672768UI)}, New Scaling(New _
                 Orientation() With {.Val = New EnumValue(Of DocumentFormat.OpenXml.Drawing _
                 .Charts.OrientationValues)(DocumentFormat.OpenXml.Drawing.Charts.OrientationValues.MinMax)}), _
                 New AxisPosition() With {.Val = New EnumValue(Of AxisPositionValues)(AxisPositionValues.Left)}, _
@@ -845,11 +845,11 @@ The following is the complete sample code in both C\# and Visual Basic.
 
             ' Position the chart on the worksheet using a TwoCellAnchor object.
             drawingsPart.WorksheetDrawing = New WorksheetDrawing()
-            Dim twoCellAnchor As TwoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(Of  _
+            Dim twoCellAnchor As TwoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(Of _
                 TwoCellAnchor)(New TwoCellAnchor())
-            twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker(New  _
+            twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker(New _
                 ColumnId("9"), New ColumnOffset("581025"), New RowId("17"), New RowOffset("114300")))
-            twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.ToMarker(New  _
+            twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.ToMarker(New _
                 ColumnId("17"), New ColumnOffset("276225"), New RowId("32"), New RowOffset("0")))
 
             ' Append a GraphicFrame to the TwoCellAnchor object.

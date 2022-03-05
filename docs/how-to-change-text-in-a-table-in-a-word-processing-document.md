@@ -17,12 +17,9 @@ ms.localizationpriority: high
 
 # Change text in a table in a word processing document (Open XML SDK)
 
-This topic shows how to use the Open XML SDK 2.5 for Office to
-programmatically change text in a table in an existing word processing
-document.
+This topic shows how to use the Open XML SDK 2.5 for Office to programmatically change text in a table in an existing word processing document.
 
-The following assembly directives are required to compile the code in
-this topic.
+The following assembly directives are required to compile the code in this topic.
 
 ```csharp
     using System.Linq;
@@ -39,10 +36,10 @@ this topic.
 ## Open the Existing Document
 
 To open an existing document, instantiate the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** class as shown in
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument** class as shown in
 the following **using** statement. In the same
 statement, open the word processing file at the specified **filepath** by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method, with the Boolean parameter set
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open** method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ```csharp
@@ -69,7 +66,6 @@ automatically saves and closes the object as part of its **System.IDisposable** 
 **Dispose** is automatically called when you
 exit the block, you do not have to explicitly call **Save** and **Close**─as
 long as you use **using**.
-
 
 ## The Structure of a Table
 
@@ -117,7 +113,6 @@ using the **tblBorders** element, the table
 grid, which defines a set of shared vertical edges within the table
 using the **tblGrid** element, and a single
 table row using the **tr** element.
-
 
 ## How the Sample Code Works
 
@@ -181,13 +176,9 @@ program, the text in the cell at the specified location will be replaced
 by the text that you pass in as the second argument to the **ChangeTextInCell** method. In the following table
 the text "The text from the API example" was used.
 
-<table style="border: 1px solid black;">
-<tr>
-<td style="border: 1px solid black;">Some text</td><td style="border: 1px solid black;">Some text</td><td style="border: 1px solid black;">Some text</td>
-</tr><tr>
-<td>Some text</td><td>Some text</td><td>The text from the API example</td>
-</tr>
-</table>
+| **Some text** | **Some text** | **Some text** |
+|---------------|---------------|---------------|
+| Some text     | Some text     |The text from the API example |
 
 ## Sample Code
 
@@ -273,19 +264,8 @@ Following is the complete code example.
 
 ## See also
 
-
-
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
-
+[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
 [How to: Change Text in a Table in a Word Processing Document](https://msdn.microsoft.com/library/documentformat.openxml.wordprocessing.table(office.14).aspx)
-
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
-
 [Extension Methods (C\# Programming Guide)](https://msdn.microsoft.com/library/bb383977.aspx)
-
 [Extension Methods (Visual Basic)](https://msdn.microsoft.com/library/bb384936.aspx)
-
-
-
-
-

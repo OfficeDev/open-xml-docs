@@ -139,7 +139,7 @@ segment as an example.
 ```csharp
     string filepathFrom = @"C:\Users\Public\Documents\Word15a.docx";
     string filepathTo=@"C:\Users\Public\Documents\Word15b.docx";
-    AddHeaderFromTo(filepathFrom,  filepathTo);
+    AddHeaderFromTo(filepathFrom, filepathTo);
 ```
 
 ```vb

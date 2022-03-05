@@ -12,6 +12,7 @@ ms.topic: conceptual
 ms.date: 09/16/2021
 ms.localizationpriority: high
 ---
+
 # Structure of a PresentationML document (Open XML SDK)
 
 The document structure of a PresentationML document consists of the \<presentation\> (Presentation) element that contains \<sldMaster\> (Slide Master), \<sldLayout\> (Slide Layout), \<sld \> (Slide), and \<theme\> (Theme) elements that reference the slides in the presentation. (The Theme element is the root element of the DrawingMLTheme part.) These elements are the minimum elements required for a valid presentation document.
@@ -22,25 +23,23 @@ Other features that a PresentationML document can contain include the following:
 
 A PresentationML document is not stored as one large body in a single part. Instead, the elements that implement certain groupings of functionality are stored in separate parts. For example, all comments in a document are stored in one comment part, while each slide has its own part. A separate XML file is created for each slide.
 
+## Important Presentation Parts
 
-## Important Presentation Parts 
-
-Using the Open XML SDK 2.5, you can create document structure and content that uses strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace. The following table lists the class names of the classes that correspond to some of the important presentation elements.
-
+Using the Open XML SDK 2.5, you can create document structure and content that uses strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation?view=openxml-2.8.1&preserve-view=true)** namespace. The following table lists the class names of the classes that correspond to some of the important presentation elements.
 
 |    **Package Part**     | **Top Level PresentationML Element** |                                                        **Open XML SDK 2.5 Class**                                                         |                                                                                                                                                                               **Description**\*                                                                                                                                                                                |
 |-------------------------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      Presentation       |           \<presentation\>           |           [Presentation](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentation?view=openxml-2.8.1)           |                                                                                                                             The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.                                                                                                                             |
-| Presentation Properties |          \<presentationPr\>          | [PresentationProperties](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentationproperties?view=openxml-2.8.1) |                                                                                                 The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.                                                                                                 |
-|      Slide Master       |            \<sldMaster\>             |            [SlideMaster](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemaster?view=openxml-2.8.1)            |                                     The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see [Working with slide masters (Open XML SDK)](working-with-slide-masters.md).                                     |
-|      Slide Layout       |            \<sldLayout\>             |            [SlideLayout](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidelayout?view=openxml-2.8.1)            |                                                       The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see [Working with slide layouts (Open XML SDK)](working-with-slide-layouts.md).                                                        |
-|          Theme          |         \<officeStyleSheet\>         |                    [Theme](https://docs.microsoft.com/dotnet/api/documentformat.openxml.drawing.theme?view=openxml-2.8.1)                     |                                                                  The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.                                                                  |
-|          Slide          |               \<sld\>                |                  [Slide](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.slide?view=openxml-2.8.1)                  |                                                                                   The root element for the Slide part. This element specifies a slide within a slide list. For more information, see [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md).                                                                                   |
-|      Notes Master       |           \<notesMaster\>            |            [NotesMaster](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesmaster?view=openxml-2.8.1)            |                                                                                           The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.                                                                                            |
-|       Notes Slide       |              \<notes\>               |             [NotesSlide](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesslide?view=openxml-2.8.1)             | The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see [Working with notes slides (Open XML SDK)](working-with-notes-slides.md). |
-|     Handout Master      |          \<handoutMaster\>           |          [HandoutMaster](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.handoutmaster?redirectedfrom=MSDN&view=openxml-2.8.1)          |                              The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see [Working with handout master slides (Open XML SDK)](working-with-handout-master-slides.md).                              |
-|        Comments         |              \<cmLst\>               |            [CommentList](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentlist?redirectedfrom=MSDN&view=openxml-2.8.1)            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                                      |
-|     Comments Author     |           \<cmAuthorLst\>            |      [CommentAuthorList](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentauthorlist?redirectedfrom=MSDN&view=openxml-2.8.1)      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                            |
+|      Presentation       |           \<presentation\>           |           [Presentation](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentation?view=openxml-2.8.1&preserve-view=true)           |                                                                                                                             The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.                                                                                                                             |
+| Presentation Properties |          \<presentationPr\>          | [PresentationProperties](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentationproperties?view=openxml-2.8.1&preserve-view=true) |                                                                                                 The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.                                                                                                 |
+|      Slide Master       |            \<sldMaster\>             |            [SlideMaster](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemaster?view=openxml-2.8.1&preserve-view=true)            |                                     The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see [Working with slide masters (Open XML SDK)](working-with-slide-masters.md).                                     |
+|      Slide Layout       |            \<sldLayout\>             |            [SlideLayout](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidelayout?view=openxml-2.8.1&preserve-view=true)            |                                                       The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see [Working with slide layouts (Open XML SDK)](working-with-slide-layouts.md).                                                        |
+|          Theme          |         \<officeStyleSheet\>         |                    [Theme](https://docs.microsoft.com/dotnet/api/documentformat.openxml.drawing.theme?view=openxml-2.8.1&preserve-view=true)                     |                                                                  The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.                                                                  |
+|          Slide          |               \<sld\>                |                  [Slide](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.slide?view=openxml-2.8.1&preserve-view=true)                  |                                                                                   The root element for the Slide part. This element specifies a slide within a slide list. For more information, see [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md).                                                                                   |
+|      Notes Master       |           \<notesMaster\>            |            [NotesMaster](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesmaster?view=openxml-2.8.1&preserve-view=true)            |                                                                                           The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.                                                                                            |
+|       Notes Slide       |              \<notes\>               |             [NotesSlide](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesslide?view=openxml-2.8.1&preserve-view=true)             | The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see [Working with notes slides (Open XML SDK)](working-with-notes-slides.md). |
+|     Handout Master      |          \<handoutMaster\>           |          [HandoutMaster](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.handoutmaster?redirectedfrom=MSDN&view=openxml-2.8.1&preserve-view=true )          |                              The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see [Working with handout master slides (Open XML SDK)](working-with-handout-master-slides.md).                              |
+|        Comments         |              \<cmLst\>               |            [CommentList](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentlist?redirectedfrom=MSDN&view=openxml-2.8.1&preserve-view=true )            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                                      |
+|     Comments Author     |           \<cmAuthorLst\>            |      [CommentAuthorList](https://docs.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentauthorlist?redirectedfrom=MSDN&view=openxml-2.8.1&preserve-view=true )      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments (Open XML SDK)](working-with-comments.md).                                                                            |
 
 *Descriptions adapted from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification, © ISO/IEC29500: 2008.
 
@@ -603,7 +602,7 @@ A Comment Authors part shall not have implicit or explicit relationships to any 
 
 © ISO/IEC29500: 2008.
 
-## The Structure of a Minimum Presentation File 
+## The Structure of a Minimum Presentation File
 
 Now that you are familiar with the parts of a PresentationML document, consider how some of these parts are implemented and connected in an actual presentation file. As shown in the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md), you can use the Open XML API to build up a minimum presentation file, part by part.
 
@@ -611,7 +610,7 @@ A minimum presentation file consists of a presentation part, represented by the 
 
 The packaging structure of a presentation document contains several references between the parts, including some circular references. For example, slide layouts reference slide masters, and slide masters reference slide layouts.
 
-## Generated PresentationML XML Code 
+## Generated PresentationML XML Code
 
 After you run the Open XML SDK 2.5 code to generate a presentation, you can explore the contents of the .zip package to view the PresentationML XML code. To view the .zip package, rename the extension on the minimum presentation from **.pptx** to **.zip**. Inside the .zip package, there are several parts that make up the minimum presentation.
 
@@ -620,7 +619,7 @@ Figure 1 shows the structure under the **ppt** folder of the .zip package for a 
 Figure 1. Minimum presentation folder structure
 
  ![Minimum presentation folder structure](./media/odc_oxml_ppt_documentstructure_fig01.jpg)
- 
+
 The presentation.xml file contains \<sld\> (Slide) elements that reference the slides in the presentation. Each slide is associated to the presentation by means of a slide ID and a relationship ID. The **slideID** is the identifier (ID) used within the package to identify a slide and must be unique within the presentation. The **id** attribute is the relationship ID that identifies the slide part definition associated with a slide. For more information about the slide part, see [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md).
 
 The following XML code is the PresentationML that represents the presentation part of a presentation document that contains a single slide. This code is generated when you run the Open XML SDK 2.5 code to create a minimum presentation.
@@ -646,6 +645,7 @@ The following XML code is the PresentationML that represents the presentation pa
       <p:defaultTextStyle />
     </p:presentation>
 ```
+
 The following XML code is the PresentationML that represents the relationship part of the presentation document. This code is generated when you run the Open XML SDK 2.5 to create a minimum presentation.
 
 ```xml
@@ -662,6 +662,7 @@ The following XML code is the PresentationML that represents the relationship pa
                     Id="rId5" />
     </Relationships>
 ```
+
 The following XML code is the PresentationML that represents the slide part of the presentation document. Each slide in a presentation has a slide part associated with it. This code is generated when you run the Open XML SDK 2.5 to create a minimum presentation.
 
 ```xml
@@ -707,7 +708,7 @@ The following XML code is the PresentationML that represents the slide part of t
     </p:sld>
 ```
 
-## Typical Presentation Scenario 
+## Typical Presentation Scenario
 
 A typical presentation does not have a minimum configuration. A typical presentation might contain several slides, each of which references slide layouts and slide masters, and which might contain comments. In addition, a presentation might contain handouts and notes slides, each of which is represented by separate parts. These additional parts are contained within the .zip package of the presentation document.
 
@@ -717,7 +718,7 @@ Figure 2. Elements of a PresentationML file
 
  ![Elements of a PresentationML file](./media/odc_oxml_ppt_documentstructure_fig02.jpg)
 
-## See also 
+## See also
 
 [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 [Working with presentations (Open XML SDK)](working-with-presentations.md)
