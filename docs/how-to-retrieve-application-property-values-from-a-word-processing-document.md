@@ -15,18 +15,14 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
+
 # Retrieve application property values from a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
-Office to programmatically retrieve an application property from a
-Microsoft Word 2013 document, without loading the document into Word. It
-contains example code to illustrate this task.
+This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically retrieve an application property from a Microsoft Word 2013 document, without loading the document into Word. It contains example code to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
-must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You must explicitly reference the following assemblies in your project:
 
 - WindowsBase
-
 - DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using**
@@ -46,9 +42,9 @@ the code in this topic.
 
 To retrieve application document properties, you can retrieve the <span
 sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart**** property of a
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart** property of a
 <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument**** object, and then
+target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument** object, and then
 retrieve the specific application property you need. To do this, you
 must first get a reference to the document, as shown in the following
 code.
@@ -74,7 +70,7 @@ code.
 
 Given the reference to the **WordProcessingDocument** object, you can retrieve a
 reference to the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart**** property of the
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart** property of the
 document. This object provides its own properties, each of which exposes
 one of the application document properties.
 
@@ -91,7 +87,7 @@ any of the application properties, using simple code such as that shown
 in the next example. Note that the code must confirm that the reference
 to each property isn't **null** before
 retrieving its <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Text">**Text**** property. Unlike core properties,
+target="T:DocumentFormat.OpenXml.Wordprocessing.Text">**Text** property. Unlike core properties,
 document properties aren't available if you (or the application) haven't
 specifically given them a value.
 

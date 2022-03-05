@@ -14,14 +14,14 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
+
 # Working with slide layouts (Open XML SDK)
 
 This topic discusses the Open XML SDK 2.5 for Office [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the
 Open XML File Format PresentationML schema.
 
+## Slide Layouts in PresentationML
 
----------------------------------------------------------------------------------
-## Slide Layouts in PresentationML 
 The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the Open XML PresentationML \<sldLayout\>
 element used to represent slide layouts in a PresentationML document as
@@ -32,8 +32,6 @@ contains in essence a template slide design that can be applied to any
 existing slide. When applied to an existing slide all corresponding
 content should be mapped to the new slide layout.
 
-© ISO/IEC29500: 2008.
-
 The \<sldLayout\> element is the root element of the PresentationML
 Slide Layout part. For more information about the overall structure of
 the parts and elements that make up a PresentationML document, see
@@ -42,7 +40,6 @@ the parts and elements that make up a PresentationML document, see
 The following table lists the child elements of the \<sldLayout\>
 element used when working with slide layouts and the Open XML SDK 2.5
 classes that correspond to them.
-
 
 | **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,11 +63,8 @@ specification describes the attributes of the \<sldLayout\> element.
 |               type (Slide Layout Type)                |                                                                                                                                          Specifies the slide layout type that is used by this slide.<br/>The possible values for this attribute are defined by the ST_SlideLayoutType simple type (§19.7.15).                                                                                                                                          |
 |               userDrawn (Is User Drawn)               |                                                                                        Specifies if the corresponding object has been drawn by the user and should thus not be deleted. This allows for the flagging of slides that contain user drawn data.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.                                                                                        |
 
-© ISO/IEC29500: 2008.
+## The Open XML SDK 2.5 SlideLayout Class
 
-
---------------------------------------------------------------------------------
-## The Open XML SDK 2.5 SlideLayout Class 
 The OXML SDK **SlideLayout** class represents
 the \<sldLayout\> element defined in the Open XML File Format schema for
 PresentationML documents. Use the **SlideLayout** class to manipulate individual
@@ -93,8 +87,6 @@ by the master is used. If the \<overrideClrMapping\> child element is
 present, it defines a new color scheme specific to the parent notes
 slide, presentation slide, or slide layout.
 
-© ISO/IEC29500: 2008.
-
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
@@ -112,8 +104,6 @@ The actual data in \<cSld\> describe only the particular parent slide;
 it is only the type of information stored that is common across all
 slides.
 
-© ISO/IEC29500: 2008.
-
 ### ExtensionListWithModification Class
 
 The **ExtensionListWithModification** class
@@ -128,10 +118,8 @@ extend the storage capabilities of the PresentationML framework. This
 allows for various new kinds of data to be stored natively within the
 framework.
 
-[Note: Using this extLst element allows the generating application to
-store whether this extension property has been modified. end note]
-
-© ISO/IEC29500: 2008.
+> [!NOTE]
+> Using this extLst element allows the generating application to store whether this extension property has been modified.
 
 ### HeaderFooter Class
 
@@ -143,8 +131,6 @@ This element specifies the header and footer information for a slide.
 Headers and footers consist of placeholders for text that should be
 consistent across all slides and slide types, such as a date and time,
 slide numbering, and custom header and footer text.
-
-© ISO/IEC29500: 2008.
 
 ### Timing Class
 
@@ -159,24 +145,14 @@ More information on the specifics of these time nodes and how they are
 to be defined can be found within the Animation section of the
 PresentationML framework.
 
-© ISO/IEC29500: 2008.
-
 ### Transition Class
 
-The **Transition** class corresponds to the
-\<transition\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the \<transition\> element:
+The **Transition** class corresponds to the \<transition\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<transition\> element:
 
-This element specifies the kind of slide transition that should be used
-to transition to the current slide from the previous slide. That is, the
-transition information is stored on the slide that appears after the
-transition is complete.
+This element specifies the kind of slide transition that should be used to transition to the current slide from the previous slide. That is, the transition information is stored on the slide that appears after the transition is complete.
 
-© ISO/IEC29500: 2008.
+## Working with the SlideLayout Class
 
-
---------------------------------------------------------------------------------
-## Working with the SlideLayout Class 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **SlideLayout** class is associated with an
 instance of the [SlideLayoutPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidelayoutpart.aspx) class, which represents a
@@ -192,18 +168,10 @@ other classes that represent the child elements of the \<sldLayout\>
 element. Among these classes, as shown in the following code sample, are
 the **CommonSlideData** class, the **ColorMapOverride** class, the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, and the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
+## Open XML SDK Code Example
 
---------------------------------------------------------------------------------
-## Open XML SDK Code Example 
-The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide
-layout part to an existing presentation and creates an instance of an
-Open XML SDK 2.5**SlideLayout** class in the
-new slide layout part. The **SlideLayout**
-class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an
-instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn
-creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
-instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
-of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an
+Open XML SDK 2.5**SlideLayout** class in the new slide layout part. The **SlideLayout** class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
 The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace.
@@ -254,10 +222,9 @@ namespace.
             End Function
 ```
 
----------------------------------------------------------------------------------
-## Generated PresentationML 
-When the Open XML SDK code is run, the following XML is written to the
-PresentationML document file referenced in the code.
+## Generated PresentationML
+
+When the Open XML SDK code is run, the following XML is written to the PresentationML document file referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -302,12 +269,8 @@ PresentationML document file referenced in the code.
     </p:sldLayout>
 ```
 
---------------------------------------------------------------------------------
-## See also 
+## See also
 
-
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
-
-[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md) 
-
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)
+[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 [How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  

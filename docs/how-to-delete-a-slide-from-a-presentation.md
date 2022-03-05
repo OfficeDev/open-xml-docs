@@ -710,7 +710,7 @@ Following is the complete sample code in both C\# and Visual Basic.
         If (Not (presentation.CustomShowList) Is Nothing) Then
 
             ' Iterate through the list of custom shows.
-            For Each customShow As System.Object In presentation.CustomShowList.Elements(Of  _
+            For Each customShow As System.Object In presentation.CustomShowList.Elements(Of _
                                    DocumentFormat.OpenXml.Presentation.CustomShow)()
 
                 If (Not (customShow.SlideList) Is Nothing) Then
