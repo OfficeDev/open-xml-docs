@@ -135,7 +135,7 @@ Consider the case where we would like to specify the title text for a master sli
 </p:txStyles>
 ```
 
-In the previous example,  the title text is set according to the above formatting for all related slides within the presentation.
+In the previous example the title text is set according to the above formatting for all related slides within the presentation.
 
 ## Working with the SlideMaster Class
 

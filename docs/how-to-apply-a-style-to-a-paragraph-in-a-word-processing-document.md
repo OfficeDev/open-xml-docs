@@ -204,7 +204,7 @@ Within the paragraph, all rich formatting at the paragraph level is
 stored within the **pPr** element (§17.3.1.25; §17.3.1.26). [Note: Some
 examples of paragraph properties are alignment, border, hyphenation
 override, indentation, line spacing, shading, text direction, and
-widow/orphan control. end note]
+widow/orphan control. 
 
 © ISO/IEC29500: 2008.
 

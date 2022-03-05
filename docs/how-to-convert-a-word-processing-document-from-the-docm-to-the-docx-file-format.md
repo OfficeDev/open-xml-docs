@@ -116,11 +116,11 @@ the code deletes the part, it changes the document type internally and
 renames the document so that it uses the .docx extension.
 
 The code starts by opening the document by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open**** method and indicating that the
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open** method and indicating that the
 document should be open for read/write access (the final true
 parameter). The code then retrieves a reference to the Document part by
 using the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart**** property of the word
+target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart** property of the word
 processing document.
 
 ```csharp
@@ -147,11 +147,11 @@ The sample code next verifies that the vbaProject part exists, deletes
 the part and saves the document. The code has no effect if the file to
 convert does not contain a vbaProject part. To find the part, the sample
 code retrieves the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.VbaProjectPart">**VbaProjectPart**** property of the document. It
+target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.VbaProjectPart">**VbaProjectPart** property of the document. It
 calls the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.DeletePart(DocumentFormat.OpenXml.Packaging.OpenXmlPart)">**DeletePart**** method to delete the part, and
+target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.DeletePart(DocumentFormat.OpenXml.Packaging.OpenXmlPart)">**DeletePart** method to delete the part, and
 then calls the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)">**Save**** method of the document to save the
+target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)">**Save** method of the document to save the
 changes.
 
 ```csharp
@@ -181,7 +181,7 @@ changes.
 It is not enough to delete the part from the document. You must also
 convert the document type, internally. The Open XML SDK 2.5 provides a
 way to perform this task: You can call the document <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ChangeDocumentType(DocumentFormat.OpenXml.WordprocessingDocumentType)">**ChangeDocumentType**** method and indicate the
+target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ChangeDocumentType(DocumentFormat.OpenXml.WordprocessingDocumentType)">**ChangeDocumentType** method and indicate the
 new document type (in this case, supply the
 *WordProcessingDocumentType.Document* enumerated value).
 
