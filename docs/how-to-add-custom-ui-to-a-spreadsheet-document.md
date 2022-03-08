@@ -64,8 +64,7 @@ For this demonstration, the ribbon customization includes a button that attempts
 
 2. Press Alt+F11 to open the Visual Basic Editor.
 
-3. On the **Insert** tab, click <span
-    class="ui">**Module** to create a new module.
+3. On the **Insert** tab, click **Module** to create a new module.
 
 4. Add code such as the following to the new module.
 
@@ -81,14 +80,9 @@ For this demonstration, the ribbon customization includes a button that attempts
 
 The **AddCustomUI** method accepts two parameters:
 
-- *filename*—A
-    string that contains a file name that specifies the workbook to
-    modify.
+- *filename* — A string that contains a file name that specifies the workbook to modify.
 
-- <span class="parameter"
-    sdata="paramReference">*customUIContent*—A string that contains
-    the custom content (that is, the XML markup that describes the
-    customization).
+- customUIContent*—A string that contains the custom content (that is, the XML markup that describes the customization).
 
 The following code shows the two parameters.
 

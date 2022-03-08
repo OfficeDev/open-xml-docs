@@ -17,8 +17,7 @@ ms.localizationpriority: high
 
 # Working with PivotTables (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more
-information about the overall structure of the parts and elements that make up a SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+This topic discusses the Open XML SDK 2.5 **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 ## PivotTable in SpreadsheetML
 
