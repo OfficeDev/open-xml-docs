@@ -115,13 +115,7 @@ the document contains a vbaProject part, and deleting the part. After
 the code deletes the part, it changes the document type internally and
 renames the document so that it uses the .docx extension.
 
-The code starts by opening the document by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open** method and indicating that the
-document should be open for read/write access (the final true
-parameter). The code then retrieves a reference to the Document part by
-using the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart">**MainDocumentPart** property of the word
-processing document.
+The code starts by opening the document by using the **Open** method and indicating that the document should be open for read/write access (the final true parameter). The code then retrieves a reference to the Document part by using the **MainDocumentPart** property of the word  processing document.
 
 ```csharp
     using (WordprocessingDocument document = 
