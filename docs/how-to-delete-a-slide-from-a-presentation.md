@@ -49,26 +49,7 @@ this topic.
 --------------------------------------------------------------------------------
 ## Getting a Presentation Object 
 
-In the Open XML SDK, the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.PresentationDocument">**[PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx)** class represents a
-presentation document package. To work with a presentation document,
-first create an instance of the **PresentationDocument** class, and then work with
-that instance. To create the class instance from the document call one
-of the **Open** method overloads. The code in
-this topic uses the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open(System.String,System.Boolean)">**[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx)**
-method, which takes a file path as the first parameter to specify the
-file to open, and a Boolean value as the second parameter to specify
-whether a document is editable. Set this second parameter to **false** to open the file for read-only access, or
-**true** if you want to open the file for
-read/write access. The code in this topic opens the file twice, once to
-count the number of slides and once to delete a specific slide. When you
-count the number of slides in a presentation, it is best to open the
-file for read-only access to protect the file against accidental
-writing. The following **using** statement
-opens the file for read-only access. In this code example, the **presentationFile** parameter is a string that
-represents the path for the file from which you want to open the
-document.
+In the Open XML SDK, the **[PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx)** class represents a presentation document package. To work with a presentation document, first create an instance of the **PresentationDocument** class, and then work with that instance. To create the class instance from the document call one of the **Open** method overloads. The code in this topic uses the **[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx)** method, which takes a file path as the first parameter to specify the file to open, and a Boolean value as the second parameter to specify whether a document is editable. Set this second parameter to **false** to open the file for read-only access, or **true** if you want to open the file for read/write access. The code in this topic opens the file twice, once to count the number of slides and once to delete a specific slide. When you count the number of slides in a presentation, it is best to open the file for read-only access to protect the file against accidental writing. The following **using** statement opens the file for read-only access. In this code example, the **presentationFile** parameter is a string that represents the path for the file from which you want to open the document.
 
 ```csharp
     // Open the presentation as read-only.
@@ -104,15 +85,8 @@ statement.
     End Using
 ```
 
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **presentationDocument**.
+The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **presentationDocument**.
 
-
---------------------------------------------------------------------------------
 ## Basic Presentation Document Structure 
 
 The basic document structure of a **PresentationML** document consists of the main part
@@ -179,12 +153,7 @@ two slides denoted by the IDs 267 and 256.
     </p:presentation>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
-content using strongly-typed classes that correspond to PresentationML
-elements. You can find these classes in the <span sdata="cer"
-target="N:DocumentFormat.OpenXml.Presentation">**[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)**
-namespace. The following table lists the class names of the classes that
-correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
+Using the Open XML SDK 2.5, you can create document structure and content using strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace. The following table lists the class names of the classes that correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK 2.5 Class | Description |
 |---|---|---|
@@ -193,15 +162,9 @@ correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** ele
 | sldMaster | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) | Slide Master. It is the root element of SlideMasterPart. |
 | notesMaster | [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
 
---------------------------------------------------------------------------------
 ## Counting the Number of Slides 
 
-The sample code consists of two overloads of the **CountSlides** method. The first overload uses a
-**string** parameter and the second overload
-uses a **PresentationDocument** parameter. In
-the first **CountSlides** method, the sample
-code opens the presentation document in the **using** statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer
-number that represents the number of slides in the presentation.
+The sample code consists of two overloads of the **CountSlides** method. The first overload uses a **string** parameter and the second overload uses a **PresentationDocument** parameter. In the first **CountSlides** method, the sample code opens the presentation document in the **using** statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer number that represents the number of slides in the presentation.
 
 ```csharp
     // Pass the presentation to the next CountSlides method

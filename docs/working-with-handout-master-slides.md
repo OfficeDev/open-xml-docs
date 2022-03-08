@@ -16,19 +16,11 @@ ms.localizationpriority: medium
 ---
 # Working with handout master slides (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [HandoutMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to
-the Open XML File Format PresentationML schema. For more information
-about the overall structure of the parts and elements that make up a
-PresentationML document, see <span sdata="link">[Structure of a
-PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)**.
+This topic discusses the Open XML SDK 2.5 for Office [HandoutMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md).
 
-
----------------------------------------------------------------------------------
 ## Handout Master Slides in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification describes the Open XML PresentationML \<handoutMaster\>
-element used to represent a handout master slide in a PresentationML
-document as follows:
+The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<handoutMaster\>
+element used to represent a handout master slide in a PresentationML document as follows:
 
 This element specifies an instance of a handout master slide. Within a
 handout master slide are contained all elements that describe the
@@ -46,27 +38,21 @@ SDK 2.5 classes that correspond to them.
 
 
 | **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
-|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 |         \<clrMap\>         |                      [ColorMap](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormap.aspx)                      |
 |          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
 |         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
 |           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
 
---------------------------------------------------------------------------------
 ## Open XML SDK 2.5 HandoutMaster Class
-The Open XML SDK 2.5**HandoutMaster** class
-represents the \<handoutMaster\> element defined in the Open XML File
-Format schema for PresentationML documents. Use the **HandoutMaster** class to manipulate individual
-\<handoutMaster\> elements in a PresentationML document.
 
-Classes commonly associated with the **HandoutMaster** class are shown in the following
-sections.
+The Open XML SDK 2.5 **HandoutMaster** class represents the \<handoutMaster\> element defined in the Open XML File Format schema for PresentationML documents. Use the **HandoutMaster** class to manipulate individual \<handoutMaster\> elements in a PresentationML document.
+
+Classes commonly associated with the **HandoutMaster** class are shown in the following sections.
 
 ### ColorMap Class
 
-The **ColorMap** class corresponds to the
-\<clrMap\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the \<clrMap\> element:
+The **ColorMap** class corresponds to the \<clrMap\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<clrMap\> element:
 
 This element specifies the mapping layer that transforms one color
 scheme definition to another. Each attribute represents a color name
@@ -82,9 +68,6 @@ accent2="accent2" accent3="accent3" accent4="accent4"
 accent5="accent5"  
 accent6="accent6" hlink="hlink" folHlink="folHlink"/>
 ```
-
-
-© ISO/IEC29500: 2008.
 
 ### CommonSlideData Class
 
@@ -102,8 +85,6 @@ indicated by the parent element is stored elsewhere.
 The actual data in \<cSld\> describe only the particular parent slide;
 it is only the type of information stored that is common across all
 slides.
-
-© ISO/IEC29500: 2008.
 
 ### ExtensionListWithModification Class
 
@@ -123,8 +104,6 @@ framework.
 > Using this extLst element allows the generating application to
 store whether this extension property has been modified.
 
-© ISO/IEC29500: 2008.
-
 ### HeaderFooter Class
 
 The **HeaderFooter** class corresponds to the
@@ -136,11 +115,9 @@ Headers and footers consist of placeholders for text that should be
 consistent across all slides and slide types, such as a date and time,
 slide numbering, and custom header and footer text.
 
-© ISO/IEC29500: 2008.
 
-
---------------------------------------------------------------------------------
 ## Working with the HandoutMaster Class
+
 As shown in the Open XML SDK code sample that follows, every instance of
 the **HandoutMaster** class is associated with
 an instance of the [HandoutMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.handoutmasterpart.aspx) class, which represents a
@@ -154,9 +131,8 @@ series of other classes that represent the child elements of the
 \<handoutMaster\> element. Among these classes, as shown in the
 following code sample, are the **CommonSlideData** class, the **ColorMap** class, the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, and the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
-
---------------------------------------------------------------------------------
 ## Open XML SDK Code Example
+
 The following method adds a new handout master part to an existing
 presentation and creates an instance of an Open XML SDK 2.5**HandoutMaster** class in the new handout master
 part. The **HandoutMaster** class constructor
@@ -240,8 +216,9 @@ namespace.
             Return handoutMasterPart1
         End Function
 ```
----------------------------------------------------------------------------------
+
 ## Generated PresentationML
+
 When the Open XML SDK 2.5 code is run, the following XML is written to
 the PresentationML document referenced in the code.
 
@@ -296,18 +273,12 @@ the PresentationML document referenced in the code.
                 folHlink="folHlink" />
     </p:handoutMaster>
 ```
---------------------------------------------------------------------------------
+
 ## See also
 
-
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
-
-[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
-
-[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
-
-[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
-
-[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
-
-[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
+[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)
+[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)
+[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)
+[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)
+[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)
+[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)
