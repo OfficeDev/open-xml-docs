@@ -40,14 +40,7 @@ the code in this topic.
 
 ## Retrieving Application Properties
 
-To retrieve application document properties, you can retrieve the <span
-sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart** property of a
-<span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument** object, and then
-retrieve the specific application property you need. To do this, you
-must first get a reference to the document, as shown in the following
-code.
+To retrieve application document properties, you can retrieve the **ExtendedFilePropertiesPart** property of a **WordprocessingDocument** object, and then retrieve the specific application property you need. To do this, you must first get a reference to the document, as shown in the following code.
 
 ```csharp
     const string FILENAME = "DocumentProperties.docx";
@@ -68,11 +61,7 @@ code.
     End Using
 ```
 
-Given the reference to the **WordProcessingDocument** object, you can retrieve a
-reference to the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ExtendedFilePropertiesPart">**ExtendedFilePropertiesPart** property of the
-document. This object provides its own properties, each of which exposes
-one of the application document properties.
+Given the reference to the **WordProcessingDocument** object, you can retrieve a reference to the **ExtendedFilePropertiesPart** property of the document. This object provides its own properties, each of which exposes one of the application document properties.
 
 ```csharp
     var props = document.ExtendedFilePropertiesPart.Properties;
@@ -82,14 +71,9 @@ one of the application document properties.
     Dim props = document.ExtendedFilePropertiesPart.Properties
 ```
 
-Once you have the reference to the properties of **ExtendedFilePropertiesPart**, you can then retrieve
-any of the application properties, using simple code such as that shown
-in the next example. Note that the code must confirm that the reference
-to each property isn't **null** before
-retrieving its <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Wordprocessing.Text">**Text** property. Unlike core properties,
-document properties aren't available if you (or the application) haven't
-specifically given them a value.
+Once you have the reference to the properties of **ExtendedFilePropertiesPart**, you can then retrieve any of the application properties, using simple code such as that shown
+in the next example. Note that the code must confirm that the reference to each property isn't **null** before retrieving its **Text** property. Unlike core properties,
+document properties aren't available if you (or the application) haven't specifically given them a value.
 
 ```csharp
     if (props.Company != null)
