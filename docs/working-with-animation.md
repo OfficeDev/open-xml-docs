@@ -17,14 +17,13 @@ ms.localizationpriority: medium
 
 # Working with animation (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer" target="T:DocumentFormat.OpenXml.Presentation.Animate">**Animate** class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
+This topic discusses the Open XML SDK 2.5 for Office **Animate** class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 ## Animation in PresentationML
 
 The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Animation section of the Open XML PresentationML framework as follows:
 
-The Animation section of the PresentationML framework stores the movement and related information of objects. This schema is loosely based on the syntax and concepts from the Synchronized Multimedia Integration Language (SMIL), a W3C Recommendation for describing multimedia presentations using XML. The schema describes all the animations effects that reside on a slide and also the animation that occurs when going from slide to slide (slide transition). Animations on a slide are inherently time-based and consist of an animation effects on
-an object or text. Slide transitions however do not follow this concept and always appear before any animation on a slide. All elements described in this schema are contained within the slide XML file. More specifically they are in the \<transition\> and the \<timing\> element as shown below:
+The Animation section of the PresentationML framework stores the movement and related information of objects. This schema is loosely based on the syntax and concepts from the Synchronized Multimedia Integration Language (SMIL), a W3C Recommendation for describing multimedia presentations using XML. The schema describes all the animations effects that reside on a slide and also the animation that occurs when going from slide to slide (slide transition). Animations on a slide are inherently time-based and consist of an animation effects on an object or text. Slide transitions however do not follow this concept and always appear before any animation on a slide. All elements described in this schema are contained within the slide XML file. More specifically they are in the \<transition\> and the \<timing\> element as shown below:
 
 ```xml
 <p:sld>  
@@ -135,8 +134,7 @@ Example: Consider a shape with a "fly-in" animation. The \<tav\> element should 
 
 ## Working with the Animate Class
 
-The **Animate** class, which represents the \<anim\> element, is therefore also associated with other classes that represent the child elements of the \<anim\> element, including the
-**CommonBehavior** class, which describes common animation behaviors, and the **TimeAnimateValueList** class, which specifies a list of time-animated value elements, as shown in the previous XML code. Other classes associated with the **Animate** class are the <span sdata="cer" target="T:DocumentFormat.OpenXml.Presentation.Timing">**Timing** class, which specifies timing information for all the animations on the slide, and the <span sdata="cer" target="T:DocumentFormat.OpenXml.Presentation.TargetElement">**TargetElement** class, which specifies the target child elements to which the animation effects are applied.
+The **Animate** class, which represents the \<anim\> element, is therefore also associated with other classes that represent the child elements of the \<anim\> element, including the **CommonBehavior** class, which describes common animation behaviors, and the **TimeAnimateValueList** class, which specifies a list of time-animated value elements, as shown in the previous XML code. Other classes associated with the **Animate** class are the **Timing** class, which specifies timing information for all the animations on the slide, and the **TargetElement** class, which specifies the target child elements to which the animation effects are applied.
 
 ## See also
 
