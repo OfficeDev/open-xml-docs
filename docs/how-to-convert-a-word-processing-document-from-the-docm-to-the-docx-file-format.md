@@ -137,16 +137,7 @@ The code starts by opening the document by using the **Open** method and indicat
     End Using
 ```
 
-The sample code next verifies that the vbaProject part exists, deletes
-the part and saves the document. The code has no effect if the file to
-convert does not contain a vbaProject part. To find the part, the sample
-code retrieves the <span sdata="cer"
-target="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.VbaProjectPart">**VbaProjectPart** property of the document. It
-calls the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.DeletePart(DocumentFormat.OpenXml.Packaging.OpenXmlPart)">**DeletePart** method to delete the part, and
-then calls the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Wordprocessing.Document.Save(DocumentFormat.OpenXml.Packaging.MainDocumentPart)">**Save** method of the document to save the
-changes.
+The sample code next verifies that the vbaProject part exists, deletes the part and saves the document. The code has no effect if the file to convert does not contain a vbaProject part. To find the part, the sample code retrieves the **VbaProjectPart** property of the document. It calls the **DeletePart** method to delete the part, and then calls the **Save** method of the document to save the changes.
 
 ```csharp
     // Look for the vbaProject part. If it is there, delete it.
@@ -172,18 +163,9 @@ changes.
     End If
 ```
 
-It is not enough to delete the part from the document. You must also
-convert the document type, internally. The Open XML SDK 2.5 provides a
-way to perform this task: You can call the document <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.ChangeDocumentType(DocumentFormat.OpenXml.WordprocessingDocumentType)">**ChangeDocumentType** method and indicate the
-new document type (in this case, supply the
-*WordProcessingDocumentType.Document* enumerated value).
+It is not enough to delete the part from the document. You must also convert the document type, internally. The Open XML SDK 2.5 provides a way to perform this task: You can call the document **ChangeDocumentType** method and indicate the new document type (in this case, supply the *WordProcessingDocumentType.Document* enumerated value).
 
-You must also rename the file. However, you cannot do that while the
-file is open. The using block closes the file at the end of the block.
-Therefore, you must have some way to indicate to the code after the
-block that you have modified the file: The **fileChanged** Boolean variable tracks this information
-for you.
+You must also rename the file. However, you cannot do that while the file is open. The using block closes the file at the end of the block. Therefore, you must have some way to indicate to the code after the block that you have modified the file: The **fileChanged** Boolean variable tracks this information for you.
 
 ```csharp
     // Change the document type to
