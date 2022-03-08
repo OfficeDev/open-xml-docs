@@ -14,19 +14,15 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
+
 # Working with PivotTables (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it
-relates to the Open XML File Format SpreadsheetML schema. For more
-information about the overall structure of the parts and elements that
-make up a SpreadsheetML document, see <span sdata="link">[Structure of a
-SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+This topic discusses the Open XML SDK 2.5 **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more
+information about the overall structure of the parts and elements that make up a SpreadsheetML document, see <span sdata="link">[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
+## PivotTable in SpreadsheetML
 
---------------------------------------------------------------------------------
-## PivotTable in SpreadsheetML 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the **PivotTableDefinition** (\<**pivotTableDefinition**\>) element.
+The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the **PivotTableDefinition** (\<**pivotTableDefinition**\>) element.
 
 PivotTables display aggregated views of data easily and in an
 understandable layout. Hundreds or thousands of pieces of underlying
@@ -59,8 +55,6 @@ also indicates formatting information about the PivotTable. If
 conditional formatting has been applied to the PivotTable, that is also
 expressed in the pivotTable part.
 
-© ISO/IEC29500: 2008.
-
 The pivot cache definition contains the definitions of all fields in the
 PivotTable. If you create a PivotTable based on a regular table, each
 column in the table becomes a field of the pivot cache definition. The
@@ -92,24 +86,18 @@ is displayed in the cells of a worksheet and therefore you need to
 construct them as well. You can also have the user update the PivotTable
 cells when opening the document.
 
-The following table lists the common Open XML SDK 2.5 classes used when
-working with the **PivotTableDefinition**
-class.
+The following table lists the common Open XML SDK 2.5 classes used when working with the **PivotTableDefinition** class.
 
+| **SpreadsheetML Element** | **Open XML SDK 2.5 Class**                                                      |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------|
+|  pivotField            | [PivotField](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotfield.aspx)           |
+|  pivotCacheDefinition  | [PivotCacheDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx) |
+|  pivotCacheRecords     | [PivotCacheRecords](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)    |
 
-| **SpreadsheetML Element** |                                                      **Open XML SDK 2.5 Class**                                                      |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-|        pivotField         |           [PivotField](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotfield.aspx)           |
-|   pivotCacheDefinition    | [PivotCacheDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx) |
-|     pivotCacheRecords     |    [PivotCacheRecords](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)    |
+## Open XML SDK 2.5 PivotTableDefinition Class
 
---------------------------------------------------------------------------------
-## Open XML SDK 2.5 PivotTableDefinition Class 
 The Open XML SDK 2.5**PivotTableDefinition**
-class represents the PivotTable definition (\<**pivotTableDefinition**\>) element defined in the
-Open XML File Format schema for SpreadsheetML documents. Use the **PivotTableDefinition** class to manipulate
-individual \<**pivotTableDefinition**\>
-elements in a SpreadsheetML document.
+class represents the PivotTable definition (\<**pivotTableDefinition**\>) element defined in the Open XML File Format schema for SpreadsheetML documents. Use the **PivotTableDefinition** class to manipulate individual \<**pivotTableDefinition**\> elements in a SpreadsheetML document.
 
 The main function of the PivotTable definition is to store information
 about which field is displayed on which axis of the PivotTable and in
@@ -130,15 +118,9 @@ specification.
 
 ### PivotField Class
 
-The **PivotTableDefinition** element contains
-the **PivotField** (\<**pivotField**\>) elements. The following information
-from the ISO/IEC 29500 specification introduces the **PivotField** (\<**pivotField**\>) element.
+The **PivotTableDefinition** element contains the **PivotField** (\<**pivotField**\>) elements. The following information from the ISO/IEC 29500 specification introduces the **PivotField** (\<**pivotField**\>) element.
 
-Represents a single field in the PivotTable. This element contains
-information about the field, including the collection of items in the
-field.
-
-© ISO/IEC29500: 2008.
+Represents a single field in the PivotTable. This element contains information about the field, including the collection of items in the field.
 
 First, define the collection of fields that appear on the PivotTable
 using the **pivotFields** element. Each field
@@ -151,16 +133,12 @@ applied to the four areas of the PivotTable.
 
 ### Pivot Cache Definition Class
 
-The following information from the ISO/IEC 29500 specification
-introduces the **PivotCacheDefinition**
-(\<**pivotCacheDefinition**\>) element.
+The following information from the ISO/IEC 29500 specification introduces the **PivotCacheDefinition** (\<**pivotCacheDefinition**\>) element.
 
 The pivotCacheDefinition part defines each field in the
 pivotCacheRecords part, including field name and information about the
 data contained in the field. The pivotCacheDefinition part also defines
 pivot items that are shared among the pivotTable and pivotRecords parts.
-
-© ISO/IEC29500: 2008.
 
 The pivot cache defines the source of the data in the PivotTable, which
 allows it to be updated, and it defines the list of fields in that data.
@@ -187,16 +165,8 @@ value, the cache record uses a reference into the **cacheField** collection of s
 
 ### Pivot Cache Records Class
 
-The following information from the ISO/IEC 29500 specification
-introduces the **PivotCacheRecords** (\<**pivotCacheRecords**\>) element.
+The following information from the ISO/IEC 29500 specification introduces the **PivotCacheRecords** (\<**pivotCacheRecords**\>) element.
 
-The pivotCacheRecords part contains the underlying data to be
-aggregated. It is a cache of the source data.
+The pivotCacheRecords part contains the underlying data to be aggregated. It is a cache of the source data.
 
-© ISO/IEC29500: 2008.
-
-The cache records part can store any number of cached records. Each
-record has the same number of values defined as there are fields in the
-cache definition. Each record is defined with the **r** element. This record contains value items as
-child elements. You can provide certain typed values, such as Numeric,
-Boolean, or Date-Time, or you can reference into the shared items.
+The cache records part can store any number of cached records. Each record has the same number of values defined as there are fields in the cache definition. Each record is defined with the **r** element. This record contains value items as child elements. You can provide certain typed values, such as Numeric, Boolean, or Date-Time, or you can reference into the shared items.
