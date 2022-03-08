@@ -35,12 +35,7 @@ The following assembly directives are required to compile the code in this topic
 
 ## Open the Existing Document
 
-To open an existing document, instantiate the <span sdata="cer"
-target="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument">**WordprocessingDocument** class as shown in
-the following **using** statement. In the same
-statement, open the word processing file at the specified **filepath** by using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)">**Open** method, with the Boolean parameter set
-to **true** to enable editing the document.
+To open an existing document, instantiate the **WordprocessingDocument** class as shown in the following **using** statement. In the same statement, open the word processing file at the specified **filepath** by using the **Open** method, with the Boolean parameter set to **true** to enable editing the document.
 
 ```csharp
     using (WordprocessingDocument doc =
