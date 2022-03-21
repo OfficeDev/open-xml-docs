@@ -9,9 +9,10 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 09/17/2021
+ms.date: 03/22/2022
 ms.localizationpriority: high
 ---
+
 # Get worksheet information from an Open XML package (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically retrieve information from a worksheet in a Spreadsheet document.
@@ -34,9 +35,9 @@ The following assembly directives are required to compile the code in this topic
     Imports A = DocumentFormat.OpenXml.OpenXmlAttribute
 ```
 
-## Create SpreadsheetDocument Object
+## Create SpreadsheetDocument object
 
-In the Open XML SDK, the **[SpreadsheetDocument](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.md)** class represents an Excel document package. To create an Excel document, you create an instance of the **SpreadsheetDocument** class and populate it with parts. At a minimum, the document must have a workbook part that serves as a container for the document, and at least one worksheet part. The text is represented in the package as XML using **SpreadsheetML** markup.
+In the Open XML SDK, the **[SpreadsheetDocument](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument?view=openxml-2.8.1)** class represents an Excel document package. To create an Excel document, you create an instance of the **SpreadsheetDocument** class and populate it with parts. At a minimum, the document must have a workbook part that serves as a container for the document, and at least one worksheet part. The text is represented in the package as XML using **SpreadsheetML** markup.
 
 To create the class instance from the document you call one of the **[Open](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open.md)** methods. In this example, you must open the file for read access only. Therefore, you can use the **[Open(String, Boolean)](https://docs.microsoft.com/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?view=openxml-2.8.1&preserve-view=true #DocumentFormat_OpenXml_Packaging_SpreadsheetDocument_Open_System_String_System_Boolean_)** method, and set the Boolean parameter to **false**.
 
@@ -54,7 +55,7 @@ The following code example calls the **Open** method to open the file specified 
 
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **mySpreadsheet**.
 
-## Basic Structure of a SpreadsheetML
+## Basic structure of a SpreadsheetML
 
 The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheets?view=openxml-2.8.1&preserve-view=true)** and **[Sheet](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet?view=openxml-2.8.1&preserve-view=true)** elements, which reference the
 worksheets in the **[Workbook](https://docs.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.workbook?view=openxml-2.8.1&preserve-view=true)**. A separate XML file is created
@@ -133,7 +134,7 @@ You then you iterate through the **Sheets** collection and display **[OpenXmlEle
 
 By displaying the attribute information you get the name and ID for each worksheet in the spreadsheet file.
 
-## Sample Code
+## Sample code
 
 In the following code example, you retrieve and display the attributes of the all sheets in the specified workbook contained in a **SpreadsheetDocument** document. The following code example shows how to call the **GetSheetInfo** method.
 
@@ -185,4 +186,4 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
+[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
