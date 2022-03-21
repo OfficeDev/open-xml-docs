@@ -1,5 +1,4 @@
 ---
-
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,19 +6,16 @@ api_type:
 ms.assetid: ec83a076-9d71-49d1-915f-e7090f74c13a
 title: 'How to: Add a new document part to a package (Open XML SDK)'
 ms.suite: office
-
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 03/22/2022
 ms.localizationpriority: medium
 ---
 
 # Add a new document part to a package (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
-Office to add a document part (file) to a word processing document
-programmatically.
+This topic shows how to use the classes in the Open XML SDK 2.5 for Office to add a document part (file) to a word processing document programmatically.
 
 The following assembly directives are required to compile the code in
 this topic.
@@ -34,8 +30,8 @@ this topic.
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
------------------------------------------------------------------------------
-## Packages and Document Parts 
+## Packages and Document Parts
+
 An Open XML document is stored as a package, whose format is defined by
 [ISO/IEC 29500-2](https://www.iso.org/standard/71691.html). The
 package can have multiple parts with relationships between them. The
@@ -48,15 +44,9 @@ package-relationship item contains a relationship to a workbook part, it
 is defined as a spreadsheet document. In this how-to topic, you will use
 a word-processing document package.
 
+## Getting a WordprocessingDocument Object
 
------------------------------------------------------------------------------
-## Getting a WordprocessingDocument Object 
-The code starts with opening a package file by passing a file name to
-one of the overloaded **[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)**
-that takes a string and a Boolean value that specifies whether the file
-should be opened for editing or for read-only access. In this case, the
-Boolean value is **true** specifying that the
-file should be opened in read/write mode.
+The code starts with opening a package file by passing a file name to one of the overloaded **[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is **true** specifying that the file should be opened in read/write mode.
 
 ```csharp
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
@@ -71,26 +61,13 @@ file should be opened in read/write mode.
     End Using
 ```
 
-The **using** statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-the **Dispose** method is automatically called
-when you exit the block; you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
+The **using** statement provides a recommended alternative to the typical .Create, .Save, .Close sequence. It ensures that the **Dispose** method (internal method
+used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
+automatically saves and closes the object as part of its **System.IDisposable** implementation, and because the **Dispose** method is automatically called when you exit the block; you do not have to explicitly call **Save** and **Close**, as long as you use **using**.
 
-
------------------------------------------------------------------------------
 ## Basic Structure of a WordProcessingML Document 
-The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
-elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
-contains one or more **r** elements. The **r** stands for run, which is a region of text with
-a common set of properties, such as formatting. A run contains one or
-more **t** elements. The **t** element contains a range of text. The **WordprocessingML** markup for the document that the
-sample code creates is shown in the following code example.
+
+The basic document structure of a **WordProcessingML** document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The **WordprocessingML** markup for the document that the sample code creates is shown in the following code example.
 
 ```xml
     <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -110,15 +87,14 @@ classes in the **[DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements,
 
-| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
-|---|---|---|
+|**WordprocessingML Element** | **Open XML SDK 2.5 Class** | **Description** |
+|:---|:---|:---|
 | document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
 | body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the ISO/IEC 29500 specification. |
 | p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
 | r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
 | t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
------------------------------------------------------------------------------
 ## How the Sample Code Works 
 After opening the document for editing, in the **using** statement, as a **WordprocessingDocument** object, the code creates a
 reference to the **MainDocumentPart** part and
@@ -148,7 +124,6 @@ file that contains the custom XML and writes it to the **CustomXmlPart** part.
     End Using
 ```
 
------------------------------------------------------------------------------
 ## Sample Code 
 The following code adds a new document part that contains custom XML
 from an external file and then populates the part. To call the
@@ -206,11 +181,7 @@ Following is the complete code example in both C\# and Visual Basic.
     End Sub
 ```
 
------------------------------------------------------------------------------
+
 ## See also 
 
-
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
-
-
-
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
