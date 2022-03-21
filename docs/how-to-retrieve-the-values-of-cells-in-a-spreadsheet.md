@@ -1,5 +1,4 @@
 ---
-
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,13 +7,13 @@ ms.assetid: 15e26fbd-fc23-466a-a7cc-b7584ba8f821
 title: 'How to: Retrieve the values of cells in a spreadsheet document (Open XML SDK)'
 description: 'Learn how to retrieve the values of cells in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
-
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
+
 # Retrieve the values of cells in a spreadsheet document (Open XML SDK)
 
 This topic shows how to use the classes in the Open XML SDK 2.5 for
@@ -43,8 +42,6 @@ the code in this topic.
     Imports DocumentFormat.OpenXml.Spreadsheet
 ```
 
---------------------------------------------------------------------------------
-
 ## GetCellValue Method
 
 You can use the **GetCellValue** method to
@@ -72,8 +69,6 @@ found. The following code example shows the method signature.
         ByVal sheetName As String,
         ByVal addressName As String) As String
 ```
-
---------------------------------------------------------------------------------
 
 ## Calling the GetCellValue Sample Method
 
@@ -108,8 +103,6 @@ example.
         DateTime.FromOADate(Double.Parse(value)).ToShortDateString())
 ```
 
---------------------------------------------------------------------------------
-
 ## How the Code Works
 
 The code starts by creating a variable to hold the return value, and
@@ -122,8 +115,6 @@ initializes it to null.
 ```vb
     Dim value as String = Nothing
 ```
-
---------------------------------------------------------------------------------
 
 ## Accessing the Cell
 
@@ -183,8 +174,7 @@ this is to use a LINQ query, as shown in the following code example.
     End If
 ```
 
-Be aware that the
-[FirstOrDefault](https://msdn.microsoft.com/library/bb340482.aspx)
+Be aware that the [FirstOrDefault](https://msdn.microsoft.com/library/bb340482.aspx)
 method returns either the first matching reference (a sheet, in this
 case) or a null reference if no match was found. The code checks for the
 null reference, and throws an exception if you passed in an invalid
@@ -226,8 +216,6 @@ or will contain a null reference.
     Dim theCell As Cell = wsPart.Worksheet.Descendants(Of Cell).
         Where(Function(c) c.CellReference = addressName).FirstOrDefault
 ```
-
---------------------------------------------------------------------------------
 
 ## Retrieving the Value
 
@@ -378,12 +366,9 @@ it finds in the cell value into the appropriate text string.
 
 Finally, the procedure returns the variable **value**, which contains the requested information.
 
---------------------------------------------------------------------------------
-
 ## Sample Code
 
-The following is the complete **GetCellValue**
-code sample in C\# and Visual Basic.
+The following is the complete **GetCellValue** code sample in C\# and Visual Basic.
 
 ```csharp
     // Retrieve the value of a cell, given a file name, sheet name, 
@@ -553,8 +538,6 @@ code sample in C\# and Visual Basic.
     End Function
 ```
 
---------------------------------------------------------------------------------
-
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdkd)

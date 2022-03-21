@@ -1,5 +1,4 @@
 ---
-
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -11,7 +10,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 03/22/2022
 ms.localizationpriority: high
 ---
 # Delete text from a cell in a spreadsheet document (Open XML SDK)
@@ -37,25 +36,14 @@ this topic.
     Imports DocumentFormat.OpenXml.Spreadsheet
 ```
 
---------------------------------------------------------------------------------
-## Getting a SpreadsheetDocument Object
-In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
-Excel document package. To open and work with an Excel document, you
-create an instance of the **SpreadsheetDocument** class from the document.
-After you create the instance from the document, you can then obtain
-access to the main workbook part that contains the worksheets. The text
-in the document is represented in the package as XML using **SpreadsheetML** markup.
 
-To create the class instance from the document, call one of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) methods. Several are provided, each
-with a different signature. The sample code in this topic uses the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) method with a
-signature that requires two parameters. The first parameter takes a full
-path string that represents the document that you want to open. The
-second parameter is either **true** or **false** and represents whether you want the file to
-be opened for editing. Any changes that you make to the document will
-not be saved if this parameter is **false**.
+## Get a SpreadsheetDocument object
 
-The following **using** statement code example
-calls the **Open** method.
+In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an Excel document package. To open and work with an Excel document, create an instance of the **SpreadsheetDocument** class from the document. After you create the instance from the document, obtain access to the main workbook part that contains the worksheets. The text in the document is represented in the package as XML using **SpreadsheetML** markup.
+
+To create the class instance from the document, call one of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) methods. Several are provided, each with a different signature. The sample code in this topic uses the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) method with a signature that requires two parameters. The first parameter takes a full path string that represents the document that you want to open. The second parameter is either **true** or **false** and represents whether you want the file to be opened for editing. Any changes that you make to the document will not be saved if this parameter is **false**.
+
+The following **using** statement code example calls the **Open** method.
 
 ```csharp
     // Open the document for editing.
@@ -79,15 +67,9 @@ used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
 object that is created or named in the **using** statement, in this case *document*.
 
+## Basic structure of a spreadsheetML document
 
---------------------------------------------------------------------------------
-## Basic Structure of a SpreadsheetML Document
-The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
-worksheets in the workbook. A separate XML file is created for each
-worksheet. For example, the **SpreadsheetML**
-for a [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx) that has two worksheets name
-MySheet1 and MySheet2 is located in the Workbook.xml file and is shown
-in the following code example.
+The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the worksheets in the workbook. A separate XML file is created for each worksheet. For example, the **SpreadsheetML** for a [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx) that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
@@ -126,8 +108,8 @@ classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
-| SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
-|---|---|---|
+| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** | **Description** |
+|:---|:---|:---|
 | workbook | DocumentFormat.OpenXML.Spreadsheet.Workbook | The root element for the main document part. |
 | sheets | DocumentFormat.OpenXML.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
 | sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
@@ -137,14 +119,9 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 | c | DocumentFormat.OpenXml.Spreadsheet.Cell | A cell in a row. |
 | v | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell. |
 
+## How the sample code works
 
---------------------------------------------------------------------------------
-## How the Sample Code Works
-In the following code example, you delete text from a cell in a [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package. Then,
-you verify if other cells within the spreadsheet document still
-reference the text removed from the row, and if they do not, you remove
-the text from the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object by using the
-[Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method. Then you clean up the **SharedStringTablePart** object by calling the **RemoveSharedStringItem** method.
+In the following code example, you delete text from a cell in a [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package. Then, you verify if other cells within the spreadsheet document still reference the text removed from the row, and if they do not, you remove the text from the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object by using the [Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method. Then you clean up the **SharedStringTablePart** object by calling the **RemoveSharedStringItem** method.
 
 ```csharp
     // Given a document, a worksheet name, a column name, and a one-based row index,
@@ -204,9 +181,7 @@ the text from the [SharedStringTablePart](https://msdn.microsoft.com/library/off
     End Sub
 ```
 
-In the following code example, you verify that the cell specified by the
-column name and row index exists. If so, the code returns the cell;
-otherwise, it returns **null**.
+In the following code example, you verify that the cell specified by the column name and row index exists. If so, the code returns the cell; otherwise, it returns **null**.
 
 ```csharp
     // Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
@@ -386,8 +361,8 @@ references. Finally, you save the worksheet and the [SharedStringTable](https://
     End Sub
 ```
 
---------------------------------------------------------------------------------
-## Sample Code
+## Sample code
+
 The following code sample is used to delete text from a specific cell in
 a spreadsheet document. You can run the program by calling the method
 **DeleteTextFromCell** from the file
@@ -408,7 +383,8 @@ a spreadsheet document. You can run the program by calling the method
     Dim colName As String = "B"
     Dim rowIndex As UInteger = 2
     DeleteTextFromCell(docName, sheetName, colName, rowIndex)
-``` 
+```
+
 The following is the complete code sample in both C\# and Visual Basic.
 
 ```csharp
@@ -627,14 +603,9 @@ The following is the complete code sample in both C\# and Visual Basic.
     End Sub
 ```
 
---------------------------------------------------------------------------------
 ## See also
 
-
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)  
-
-[Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)  
-
-[Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)  
-
+[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+[Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
+[Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
 [Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)  

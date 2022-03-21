@@ -29,11 +29,11 @@ The following assembly directives are required to compile the code in this topic
     Imports DocumentFormat.OpenXml.Packaging
 ```
 
-## Packages and Document Parts
+## Packages and document parts
 
 An Open XML document is stored as a package, whose format is defined by [ISO/IEC 29500-2](https://www.iso.org/standard/71691.html). The package can have multiple parts with relationships between them. The relationship between parts controls the category of the document. A document can be defined as a word-processing document if its package-relationship item contains a relationship to a main document part. If its package-relationship item contains a relationship to a presentation part it can be defined as a presentation document. If its package-relationship item contains a relationship to a workbook part, it is defined as a spreadsheet document. In this how-to topic, you'll use a word-processing document package.
 
-## Getting a WordprocessingDocument Object
+## Get a WordprocessingDocument object
 
 The code starts with opening a package file by passing a file name to one of the overloaded **[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is **true** specifying that the file should be opened in read/write mode.
 
@@ -53,7 +53,7 @@ The code starts with opening a package file by passing a file name to one of the
 The **using** statement provides a recommended alternative to the typical .Create, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
 automatically saves and closes the object as part of its **System.IDisposable** implementation, and because the **Dispose** method is automatically called when you exit the block; you do not have to explicitly call **Save** and **Close**, as long as you use **using**.
 
-## Basic Structure of a WordProcessingML Document
+## Basic structure of a WordProcessingML document
 
 The basic document structure of a **WordProcessingML** document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The **WordprocessingML** markup for the document that the sample code creates is shown in the following code example.
 
@@ -79,10 +79,10 @@ Using the Open XML SDK 2.5, you can create document structure and content using 
 | r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
 | t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
-## How the Sample Code Works
+## How the sample code works
 
 After opening the document for editing, in the **using** statement, as a **WordprocessingDocument** object, the code creates a reference to the **MainDocumentPart** part and adds a new custom XML part. It then reads the contents of the external
-file that contains the custom XML and writes it to the **CustomXmlPart** part. 
+file that contains the custom XML and writes it to the **CustomXmlPart** part.
 
 > [!NOTE]
 > To use the new document part in the document, add a link to the document part in the relationship part for the new part.
@@ -107,7 +107,7 @@ file that contains the custom XML and writes it to the **CustomXmlPart** part.
     End Using
 ```
 
-## Sample Code
+## Sample code
 
 The following code adds a new document part that contains custom XML from an external file and then populates the part. To call the AddCustomXmlPart method in your program, use the following example that modifies the file "myPkg2.docx" by adding a new document part to it.
 

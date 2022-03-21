@@ -1,5 +1,4 @@
 ---
-
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -7,20 +6,18 @@ api_type:
 ms.assetid: 281776d0-be75-46eb-8fdc-a1f656291175
 title: 'How to: Insert a chart into a spreadsheet document (Open XML SDK)'
 ms.suite: office
-
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
+
 # Insert a chart into a spreadsheet document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
-Office to insert a chart into a spreadsheet document programmatically.
+This topic shows how to use the classes in the Open XML SDK 2.5 for Office to insert a chart into a spreadsheet document programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
+The following assembly directives are required to compile the code in this topic.
 
 ```csharp
     using System.Collections.Generic;
@@ -44,7 +41,7 @@ this topic.
     Imports DocumentFormat.OpenXml.Drawing.Spreadsheet
 ```
 
-## Getting a SpreadsheetDocument Object 
+## Get a SpreadsheetDocument object
 
 In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
 Excel document package. To open and work with an Excel document, you
@@ -62,8 +59,7 @@ second parameter is either **true** or **false** and represents whether you want
 be opened for editing. Any changes to the document will not be saved if
 this parameter is **false**.
 
-The code that calls the **Open** method is
-shown in the following **using** statement.
+The code that calls the **Open** method is shown in the following **using** statement.
 
 ```csharp
     // Open the document for editing.
@@ -80,15 +76,9 @@ shown in the following **using** statement.
     End Using
 ```
 
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case *document*.
+The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case *document*.
 
-
-## Basic Structure of a SpreadsheetML Document 
+## Basic structure of a SpreadsheetML document
 
 The basic document structure of a **SpreadsheetML** document consists of the \<**sheets**\> and \<**sheet**\> elements, which reference the worksheets
 in the [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx). A separate XML file is created
@@ -141,8 +131,8 @@ classes in the **DocumentFormat.OpenXml.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx), [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx), **worksheet**, and [SheetData<](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx) elements.
 
-| SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
-|---|---|---|
+| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** | **Description** |
+|:---|:---|:---|
 | workbook | DocumentFormat.OpenXml.Spreadsheet.Workbook | The root element for the main document part. |
 | sheets | DocumentFormat.OpenXml.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
 | sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
@@ -152,8 +142,7 @@ the **workbook**, [Sheets](https://msdn.microsoft.com/library/office/documentfor
 | c | [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) | A cell in a row. |
 | v | [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) | The value of a cell. |
 
-
-## Row Element
+## Row element
 
 In this how-to, you are going to deal with the row, cell, and cell value
 elements. Therefore it is useful to familiarize yourself with these
@@ -163,7 +152,7 @@ introduces row (\<**row**\>) element.
 > The row element expresses information about an entire row of a
 > worksheet, and contains all cell definitions for a particular row in
 > the worksheet.
-> 
+>
 > This row expresses information about row 2 in the worksheet, and
 > contains 3 cell definitions.
 
@@ -208,7 +197,7 @@ element.
     </complexType>
 ```
 
-## Cell Element
+## Cell element
 
 The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces cell (\<**c**\>) element.
@@ -216,7 +205,7 @@ introduces cell (\<**c**\>) element.
 > This collection represents a cell in the worksheet. Information about
 > the cell's location (reference), value, data type, formatting, and
 > formula is expressed here.
-> 
+>
 > This example shows the information stored for a cell whose address in
 > the grid is C6, whose style index is 6, and whose value metadata index
 > is 15. The cell contains a formula as well as a calculated result of
@@ -251,7 +240,7 @@ element.
     </complexType>
 ```
 
-## Cell Value Element
+## Cell value element
 
 The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
 introduces Cell Value (\<**c**\>) element.
@@ -262,11 +251,11 @@ introduces Cell Value (\<**c**\>) element.
 > the cell is expressed directly in this element. Cells containing
 > formulas express the last calculated result of the formula in this
 > element.
-> 
+>
 > For applications not wanting to implement the shared string table, an
 > "inline string" may be expressed in an \<**is**\> element under \<**c**\> (instead of a \<**v**\> element under \<**c**\>), in the same way a string would be
 > expressed in the shared string table.
-> 
+>
 > © ISO/IEC29500: 2008.
 
 In the following example cell B4 contains the number 360.
@@ -277,11 +266,9 @@ In the following example cell B4 contains the number 360.
     </c>
 ```
 
-## How the Sample Code Works
+## How the sample code works
 
-After opening the spreadsheet file for read/write access, the code
-verifies if the specified worksheet exists. It then adds a new [DrawingsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.aspx) object using the [AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method, appends it to the
-worksheet, and saves the worksheet part. The code then adds a new [ChartPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.aspx) object, appends a new [ChartSpace](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.chartspace.aspx) object to the **ChartPart** object, and then appends a new [EditingLanguage](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chartspace.editinglanguage.aspx) object to the **ChartSpace*** object that specifies the language for the chart is English-US.
+After opening the spreadsheet file for read/write access, the code verifies if the specified worksheet exists. It then adds a new [DrawingsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.aspx) object using the [AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method, appends it to the worksheet, and saves the worksheet part. The code then adds a new [ChartPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.aspx) object, appends a new [ChartSpace](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.chartspace.aspx) object to the **ChartPart** object, and then appends a new [EditingLanguage](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chartspace.editinglanguage.aspx) object to the **ChartSpace*** object that specifies the language for the chart is English-US.
 
 ```csharp
     IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook.Descendants<Sheet>().Where
@@ -413,8 +400,7 @@ The code then iterates through each key in the **Dictionary** class. For each ke
     Next key
 ```
 
-The code adds the [CategoryAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.categoryaxis.aspx) object and [ValueAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.valueaxis.aspx) object to the chart and sets the
-value of the following properties: [Scaling](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.scaling.aspx), [AxisPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.axisposition.aspx), [TickLabelPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.ticklabelposition.aspx), [CrossingAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crossingaxis.aspx), [Crosses](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crosses.aspx), [AutoLabeled](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.autolabeled.aspx), [LabelAlignment](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labelalignment.aspx), and [LabelOffset](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labeloffset.aspx). It also adds the [Legend](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chart.legend.aspx) object to the chart and saves the chart part.
+The code adds the [CategoryAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.categoryaxis.aspx) object and [ValueAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.valueaxis.aspx) object to the chart and sets the value of the following properties: [Scaling](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.scaling.aspx), [AxisPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.axisposition.aspx), [TickLabelPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.ticklabelposition.aspx), [CrossingAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crossingaxis.aspx), [Crosses](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crosses.aspx), [AutoLabeled](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.autolabeled.aspx), [LabelAlignment](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labelalignment.aspx), and [LabelOffset](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labeloffset.aspx). It also adds the [Legend](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chart.legend.aspx) object to the chart and saves the chart part.
 
 ```csharp
     barChart.Append(new AxisId() { Val = new UInt32Value(48650112u) });
@@ -502,12 +488,7 @@ value of the following properties: [Scaling](https://msdn.microsoft.com/library/
     chartPart.ChartSpace.Save()
 ```
 
-The code positions the chart on the worksheet by creating a [WorksheetDrawing](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.worksheetdrawing.aspx) object and appending a
-**TwoCellAnchor**
-object. The **TwoCellAnchor** object specifies
-how to move or resize the chart if you move the rows and columns between
-the [FromMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.frommarker.aspx) and [ToMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.tomarker.aspx) anchors. The code then creates a [GraphicFrame](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.graphicframe.aspx) object to contain the chart
-and names the chart "Chart 1," and saves the worksheet drawing.
+The code positions the chart on the worksheet by creating a [WorksheetDrawing](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.worksheetdrawing.aspx) object and appending a **TwoCellAnchor** object. The **TwoCellAnchor** object specifies how to move or resize the chart if you move the rows and columns between the [FromMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.frommarker.aspx) and [ToMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.tomarker.aspx) anchors. The code then creates a [GraphicFrame](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.graphicframe.aspx) object to contain the chart and names the chart "Chart 1," and saves the worksheet drawing.
 
 ```csharp
     // Position the chart on the worksheet using a TwoCellAnchor object.
@@ -602,8 +583,7 @@ class. For instance, you can call the method **InsertChartInSpreadsheet** by usi
     InsertChartInSpreadsheet(docName, worksheetName, title, data)
 ```
 
-After you have run the program, take a look the file named "Sheet6.xlsx"
-to see the inserted chart.
+After you have run the program, take a look the file named "Sheet6.xlsx" to see the inserted chart.
 
 > [!NOTE]
 > This code can be run only once. You cannot create more than one instance of the chart.
@@ -881,12 +861,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ## See also
 
-
-
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
-
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
-
 [Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
-
 [Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)
