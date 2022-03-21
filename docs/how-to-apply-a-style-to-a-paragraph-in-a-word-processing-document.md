@@ -1,5 +1,4 @@
 ---
-
 api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
@@ -8,7 +7,6 @@ ms.assetid: 8d465a77-6c1b-453a-8375-ecf80d2f1bdc
 title: 'How to: Apply a style to a paragraph in a word processing document'
 description: 'Learn how to apply a style to a paragraph in a word processing document using the Open XML SDK.'
 ms.suite: office
-
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
@@ -23,7 +21,6 @@ This topic shows how to use the classes in the Open XML SDK 2.5 for Office to pr
 To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You must explicitly reference the following assemblies in your project:
 
 - WindowsBase
-
 - DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
@@ -55,26 +52,11 @@ The **ApplyStyleToParagraph** example method can be used to apply a style to a p
 
 The following sections in this topic explain the implementation of this method and the supporting code, as well as how to call it. The complete sample code listing can be found in the [Sample Code](#sample-code) section at the end of this topic.
 
-## Getting a WordprocessingDocument Object
+## Get a WordprocessingDocument object
 
-The Sample Code section also shows the code required to set up for
-calling the sample method. To use the method to apply a style to a
-paragraph in a document, you first need a reference to the open
-document. In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
-Word document package. To open and work with a Word document, you create
-an instance of the **WordprocessingDocument**
-class from the document. After you create the instance, you can use it
-to obtain access to the main document part that contains the text of the
-document. The content in the main document part is represented in the
-package as XML using WordprocessingML markup.
+The Sample Code section also shows the code required to set up for calling the sample method. To use the method to apply a style to a paragraph in a document, you first need a reference to the open document. In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a Word document package. To open and work with a Word document, create an instance of the **WordprocessingDocument** class from the document. After you create the instance, use it to obtain access to the main document part that contains the text of the document. The content in the main document part is represented in the package as XML using WordprocessingML markup.
 
-To create the class instance, you call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method. The following sample code
-shows how to use the [WordprocessingDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) overload. The
-first parameter takes a string that represents the full path to the
-document to open. The second parameter takes a value of **true** or **false** and
-represents whether to open the file for editing. In this example the
-parameter is **true** to enable read/write
-access to the file.
+To create the class instance, call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method. The following sample code shows how to use the [WordprocessingDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) overload. The first parameter takes a string that represents the full path to the document to open. The second parameter takes a value of **true** or **false** and represents whether to open the file for editing. In this example the parameter is **true** to enable read/write access to the file.
 
 ```csharp
     using (WordprocessingDocument doc = 
@@ -91,17 +73,9 @@ access to the file.
     End Using
 ```
 
-## Understanding the Structure of a WordprocessingML Document
+## Understand the structure of a WordprocessingML document
 
-The basic document structure of a WordprocessingML document consists of
-the **document** and **body** elements, followed by one or more block
-level elements such as **p**, which represents
-a paragraph. A paragraph contains one or more **r** elements. The **r**
-stands for run, which is a region of text with a common set of
-properties, such as formatting. A run contains one or more **t** elements. The **t**
-element contains a range of text. The following code example shows the
-WordprocessingML markup for a document that contains the text "Example
-text."
+The basic document structure of a WordprocessingML document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The following code example shows the WordprocessingML markup for a document that contains the text "Example text."
 
 ```xml
     <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -115,41 +89,23 @@ text."
     </w:document>
 ```
 
-The XML namespace declaration ("xmlns") is the standard namespace
-declaration for WordprocessingML, which allows the file to reference
-elements and attributes that are part of WordprocessingML. By
-convention, the namespace is associated with the "w" prefix.
+The XML namespace declaration ("xmlns") is the standard namespace declaration for WordprocessingML, which allows the file to reference elements and attributes that are part of WordprocessingML. By convention, the namespace is associated with the "w" prefix.
 
-The root element is document, which specifies the contents of the main
-document part in a WordprocessingML document. Using the Open XML SDK
-2.5, you can create document structure and content using strongly-typed
-classes that correspond to WordprocessingML elements. You will find
-these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
-namespace. The following table lists the class names of the classes that
-correspond to the **document**, **body**, **p**, **r**, and **t** elements.
+The root element is document, which specifies the contents of the main document part in a WordprocessingML document. Using the Open XML SDK 2.5, you can create document structure and content using strongly-typed classes that correspond to WordprocessingML elements. You'll find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx) namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
-| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
-|---|---|---|
+| **WordprocessingML Element** | **Open XML SDK 2.5 Class** | **Description** |
+|:---|:---|:---|
 | document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
 | body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
 | p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
 | r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
 | t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
-For more information about the overall structure of the parts and
-elements of a WordprocessingML document, see [Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.md).
+For more information about the overall structure of the parts and elements of a WordprocessingML document, see [Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.md).
 
-## Getting the Paragraph to Style
+## Get the paragraph to style
 
-After opening the file, the sample code retrieves a reference to the
-first paragraph. Because a typical word processing document body
-contains many types of elements, the code filters the descendants in the
-body of the document to those of type **Paragraph**. The
-[ElementAtOrDefault](https://msdn.microsoft.com/library/bb494386.aspx)
-method is then employed to retrieve a reference to the paragraph.
-Because the elements are indexed starting at zero, you pass a zero to
-retrieve the reference to the first paragraph, as shown in the following
-code example.
+After opening the file, the sample code retrieves a reference to the first paragraph. Because a typical word processing document body contains many types of elements, the code filters the descendants in the body of the document to those of type **Paragraph**. The [ElementAtOrDefault](https://msdn.microsoft.com/library/bb494386.aspx) method is then employed to retrieve a reference to the paragraph. Because the elements are indexed starting at zero, you pass a zero to retrieve the reference to the first paragraph, as shown in the following code example.
 
 ```csharp
     // Get the first paragraph.
@@ -188,7 +144,7 @@ style to apply as the second parameter, the name of the style as the
 third parameter, and the reference to the paragraph to which to apply
 the style, as the fourth parameter.
 
-## Adding the Paragraph Properties Element
+## Add the paragraph properties element
 
 The first step of the example method is to ensure that the paragraph has
 a paragraph properties element. The paragraph properties element is a
@@ -204,9 +160,7 @@ Within the paragraph, all rich formatting at the paragraph level is
 stored within the **pPr** element (§17.3.1.25; §17.3.1.26). [Note: Some
 examples of paragraph properties are alignment, border, hyphenation
 override, indentation, line spacing, shading, text direction, and
-widow/orphan control. 
-
-© ISO/IEC29500: 2008.
+widow/orphan control.
 
 Among the properties is the **pStyle** element
 to specify the style to apply to the paragraph. For example, the
@@ -250,7 +204,7 @@ the instance, as shown in the following code example.
     Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties)().First()
 ```
 
-## Adding the Styles Part
+## Add the atyles part
 
 With the paragraph found and the paragraph properties element present,
 now ensure that the prerequisites are in place for applying the style.
@@ -319,7 +273,7 @@ the code saves the part.
     End Function
 ```
 
-## Verifying that the Style Exists
+## Verify that the style exists
 
 Applying a style that does not exist to a paragraph has no effect; there
 is no exception generated and no formatting changes occur. The example
@@ -460,8 +414,7 @@ to find a match based on the style name instead. The **GetStyleIdFromStyleName**
 work, looking for a match on style name and returning the styleid for
 the matching element if found, or null if not.
 
-
-## Adding the Style to the Styles Part
+## Add the style to the styles part
 
 The **AddNewStyle** example method takes three
 parameters. The first parameter takes a reference to the styles part.
@@ -589,7 +542,7 @@ example.
     End Sub
 ```
 
-## Applying the Style to the Paragraph
+## Apply the style to the paragraph
 
 Now, the example code has located the paragraph, added the required
 paragraph properties element if required, checked for the styles part
@@ -611,7 +564,7 @@ properties object. This creates and assigns the appropriate value to the
          .Val = styleid}
 ```
 
-## Sample Code
+## Sample code
 
 You can use the **ApplyStyleToParagraph**
 example method to apply a named style to a paragraph in a word
@@ -922,4 +875,4 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](\/office/open-xml/open-xml-sdk.md)
+- [Open XML SDK 2.5 class library reference](\/office/open-xml/open-xml-sdk)
