@@ -240,7 +240,6 @@ The code inserts a new cell for the result into the worksheet by calling the **I
         End Using
     End Sub
 ```
-
 To get the row index the code passes a parameter that represents the name of the cell, and creates a new regular expression to match the row
 index portion of the cell name. For more information about regular expressions, see [Regular Expression Language Elements](/dotnet/standard/base-types/regular-expression-language-quick-reference.md). It gets the row index by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)** method, and then returns the row index.
 
