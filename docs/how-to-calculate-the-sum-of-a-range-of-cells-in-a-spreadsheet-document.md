@@ -308,7 +308,7 @@ name of the cell, and creates a new regular expression to match the row
 index portion of the cell name. For more information about regular
 expressions, see [Regular Expression Language
 Elements](https://msdn.microsoft.com/library/az24scfc.aspx). It
-gets the row index by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)**
+gets the row index by calling the **[Regex.Match](https://msdn.microsoft.com/library/3zy662f6)**
 method, and then returns the row index.
 
 ```csharp
@@ -338,7 +338,7 @@ The code then gets the column name by passing a parameter that
 represents the name of the cell, and creates a new regular expression to
 match the column name portion of the cell name. This regular expression
 matches any combination of uppercase or lowercase letters. It gets the
-column name by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)**
+column name by calling the **[Regex.Match](https://msdn.microsoft.com/library/3zy662f6)**
 method, and then returns the column name.
 
 ```csharp
@@ -369,7 +369,7 @@ the columns to compare. If the first column is longer than the second
 column, it returns 1. If the second column is longer than the first
 column, it returns -1. Otherwise, it compares the values of the columns
 using the <span sdata="cer"
-target="M:System.String.Compare(System.String,System.String,System.Boolean)">**[Compare](https://msdn2.microsoft.com/library/2se42k1z)**
+target="M:System.String.Compare(System.String,System.String,System.Boolean)">**[Compare](https://msdn.microsoft.com/library/2se42k1z)**
 and returns the result.
 
 ```csharp
@@ -928,7 +928,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 -----------------------------------------------------------------------------
 ## See also 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
+- [Open XML SDK 2.5 class library reference](/dotnet/api/overview/openxml/)
 - [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 - [Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
 - [Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)
