@@ -540,4 +540,4 @@ The following is the complete **GetCellValue** code sample in C\# and Visual Bas
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdkd)
+- [Open XML SDK 2.5 class library reference](/dotnet/api/overview/openxml/)
