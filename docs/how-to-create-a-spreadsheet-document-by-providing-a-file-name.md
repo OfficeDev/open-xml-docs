@@ -50,8 +50,7 @@ provided, each with a different signature. The sample code in this topic
 uses the **Create** method with a signature
 that requires two parameters. The first parameter, **package**, takes a full
 path string that represents the document that you want to create. The
-second parameter, <span class="parameter"
-sdata="paramReference">*type*, is a member of the [SpreadsheetDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheetdocumenttype.aspx) enumeration. This
+second parameter, <span class="parameter"></span>*type*, is a member of the [SpreadsheetDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheetdocumenttype.aspx) enumeration. This
 parameter represents the document type. For example, there are different
 members of the **SpreadsheetDocumentType**
 enumeration for add-ins, templates, workbooks, and macro-enabled
