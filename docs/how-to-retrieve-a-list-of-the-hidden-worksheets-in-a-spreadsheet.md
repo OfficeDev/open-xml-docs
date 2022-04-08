@@ -50,7 +50,7 @@ You can use the **GetHiddenSheets** method, which is shown in the following code
     Public Function GetHiddenSheets(ByVal fileName As String) As List(Of Sheet)
 ```
 
-The method works with the workbook you specify, filling a <span sdata="cer" target="T:System.Collections.Generic.List`1">**[List\<T\>](https://msdn2.microsoft.com/library/6sh2ey19)** instance with a reference to each hidden <span sdata="cer" target="T:DocumentFormat.OpenXml.Spreadsheet.Sheet">**Sheet**</span> object.
+The method works with the workbook you specify, filling a **[List\<T\>](https://msdn2.microsoft.com/library/6sh2ey19)** instance with a reference to each hidden **Sheet** object.
 
 ## Calling the GetHiddenSheets method
 
@@ -89,7 +89,7 @@ The following code starts by creating a generic list that will contain informati
     Dim returnVal As New List(Of Sheet)
 ```
 
-Next, the following code opens the specified workbook by using the <span sdata="cer" target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**SpreadsheetDocument.Open**</span> method and indicating that the document should be open for read-only access (the final **false** parameter value). Given the open workbook, the code uses the <span sdata="cer" target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart**</span> property to navigate to the main workbook part, storing the reference in a variable named **wbPart**.
+Next, the following code opens the specified workbook by using the **SpreadsheetDocument.Open** method and indicating that the document should be open for read-only access (the final **false** parameter value). Given the open workbook, the code uses the **WorkbookPart** property to navigate to the main workbook part, storing the reference in a variable named **wbPart**.
 
 ```csharp
     using (SpreadsheetDocument document = 
@@ -111,8 +111,8 @@ Next, the following code opens the specified workbook by using the <span sdata="
 
 ## Retrieve the collection of worksheets
 
-The <span sdata="cer" target="T:DocumentFormat.OpenXml.Packaging.WorkbookPart">**WorkbookPart**</span> class provides a <span sdata="cer" target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook">**Workbook**</span> property, which in turn contains the XML content of the workbook. Although the Open XML SDK 2.5 provides the <span sdata="cer" target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.Sheets">**Sheets**</span> property, which returns a collection of the **Sheet** parts, all the information that you need is provided by the **Sheet** elements within the **Workbook** XML content.
-The following code uses the <span sdata="cer" target="M:DocumentFormat.OpenXml.OpenXmlElement.Descendants``1">**Descendants**</span> generic method of the **Workbook** object to retrieve a collection of **Sheet** objects that contain information about all the sheet child elements of the workbook's XML content.
+The **WorkbookPart** class provides a **Workbook** property, which in turn contains the XML content of the workbook. Although the Open XML SDK 2.5 provides the **Sheets** property, which returns a collection of the **Sheet** parts, all the information that you need is provided by the **Sheet** elements within the **Workbook** XML content.
+The following code uses the **Descendants** generic method of the **Workbook** object to retrieve a collection of **Sheet** objects that contain information about all the sheet child elements of the workbook's XML content.
 
 ```csharp
     var sheets = wbPart.Workbook.Descendants<Sheet>();
@@ -125,9 +125,9 @@ The following code uses the <span sdata="cer" target="M:DocumentFormat.OpenXml.O
 ## Retrieve hidden sheets
 
 It's important to be aware that Excel supports two levels of worksheets. You can hide a worksheet by using the Excel user interface by right-clicking the worksheets tab and opting to hide the worksheet.
-For these worksheets, the <span sdata="cer" target="P:DocumentFormat.OpenXml.Spreadsheet.Sheet.State">**State**</span> property of the **Sheet** object contains an enumerated value of <span sdata="cer" target="F:DocumentFormat.OpenXml.Spreadsheet.SheetStateValues.Hidden">**Hidden**</span>. You can also make a worksheet very hidden by writing code (either in VBA or in another language) that sets the sheet's **Visible** property to the enumerated value **xlSheetVeryHidden**. For worksheets hidden in this manner, the **State** property of the **Sheet** object contains the enumerated value <span sdata="cer" target="F:DocumentFormat.OpenXml.Spreadsheet.SheetStateValues.VeryHidden">**VeryHidden**</span>.
+For these worksheets, the **State** property of the **Sheet** object contains an enumerated value of **Hidden**. You can also make a worksheet very hidden by writing code (either in VBA or in another language) that sets the sheet's **Visible** property to the enumerated value **xlSheetVeryHidden**. For worksheets hidden in this manner, the **State** property of the **Sheet** object contains the enumerated value **VeryHidden**.
 
-Given the collection that contains information about all the sheets, the following code uses the <span sdata="cer" target="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean})">**[Where](https://msdn2.microsoft.com/library/bb301979)**</span> function to filter the collection so that it contains only the sheets in which the **State** property is not null. If the **State** property is not null, the code looks for the **Sheet** objects in which the **State** property as a value, and where the value is either **SheetStateValues.Hidden** or **SheetStateValues.VeryHidden**.
+Given the collection that contains information about all the sheets, the following code uses the **[Where](https://msdn2.microsoft.com/library/bb301979)** function to filter the collection so that it contains only the sheets in which the **State** property is not null. If the **State** property is not null, the code looks for the **Sheet** objects in which the **State** property as a value, and where the value is either **SheetStateValues.Hidden** or **SheetStateValues.VeryHidden**.
 
 ```csharp
     var hiddenSheets = sheets.Where((item) => item.State != null && 
@@ -143,7 +143,7 @@ Given the collection that contains information about all the sheets, the followi
             item.State.Value = SheetStateValues.VeryHidden))
 ```
 
-Finally, the following code calls the <span sdata="cer" target="M:System.Linq.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">**[ToList\<TSource\>](https://msdn2.microsoft.com/library/bb342261)**</span> method to execute the LINQ query that retrieves the list of hidden sheets, placing the result into the return value for the function.
+Finally, the following code calls the **[ToList\<TSource\>](https://msdn2.microsoft.com/library/bb342261)** method to execute the LINQ query that retrieves the list of hidden sheets, placing the result into the return value for the function.
 
 ```csharp
     returnVal = hiddenSheets.ToList();

@@ -112,9 +112,8 @@ The code starts by creating a variable named **returnValue** that the method wil
     Return returnValue
 ```
 
-The code continues by opening the spreadsheet document, using the <span sdata="cer"
-target="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)">**Open**</span> method and indicating that the
-document should be open for read-only access (the final false parameter). Given the open workbook, the code uses the <span sdata="cer" target="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart">**WorkbookPart**</span> property to navigate to the main workbook part. The code stores this reference in a variable named **wbPart**.
+The code continues by opening the spreadsheet document, using the **Open** method and indicating that the
+document should be open for read-only access (the final false parameter). Given the open workbook, the code uses the **WorkbookPart** property to navigate to the main workbook part. The code stores this reference in a variable named **wbPart**.
 
 ```csharp
     // Open the spreadsheet document for read-only access.
@@ -141,7 +140,7 @@ document should be open for read-only access (the final false parameter). Given 
 ## Retrieving the Defined Names
 
 Given the workbook part, the next step is simple. The code uses the
-<span sdata="cer" target="P:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook">**Workbook**</span> property of the workbook part to retrieve a reference to the content of the workbook, and then retrieves the <span sdata="cer" target="P:DocumentFormat.OpenXml.Spreadsheet.Workbook.DefinedNames">**DefinedNames**</span> collection provided by the Open XML SDK 2.5. This property returns a collection of all of the
+**Workbook** property of the workbook part to retrieve a reference to the content of the workbook, and then retrieves the **DefinedNames** collection provided by the Open XML SDK 2.5. This property returns a collection of all of the
 defined names that are contained within the workbook. If the property returns a non-null value, the code then iterates through the collection, retrieving information about each named part and adding the key  name) and value (range description) to the dictionary for each defined name.
 
 ```csharp
