@@ -182,7 +182,7 @@ these classes, as shown in the following code example, are the **CommonSlideData
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following method from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** adds a new slide
+The following method from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** adds a new slide
 part to an existing presentation and creates an instance of the Open XML
 SDK 2.5**Slide** class in the new slide part.
 The **Slide** class constructor creates

@@ -19,7 +19,7 @@ ms.localizationpriority: medium
 This topic discusses the Open XML SDK 2.5 for Office [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
-PresentationML document, see <span sdata="link">[Structure of a
+PresentationML document, see [Structure of a
 PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md).
 
 
@@ -325,7 +325,7 @@ code example, are the **SlideMasterIdList**,
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following code example from the article <span sdata="link">[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
+The following code example from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
 method of the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class of the Open XML
 SDK 2.5 to create an instance of that same class that has the specified
 name and file path. Then it uses the [AddPresentationPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx) method to add an
