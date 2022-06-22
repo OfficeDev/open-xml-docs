@@ -302,5 +302,6 @@ The following is the complete code example in both C\# and Visual Basic.
 
 
 - [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+  
 
 
