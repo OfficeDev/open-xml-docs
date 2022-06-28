@@ -60,7 +60,7 @@ this example, the parameter is **false**
 because the document is opened as read-only.
 
 ```csharp
-    // Open the document for editing.
+    // Open the document as read-only.
     using (SpreadsheetDocument spreadsheetDocument = 
         SpreadsheetDocument.Open(fileName, false))
     {
@@ -69,7 +69,7 @@ because the document is opened as read-only.
 ```
 
 ```vb
-    ' Open the document for editing.
+    ' Open the document as read-only.
     Using spreadsheetDocument As SpreadsheetDocument = _
     SpreadsheetDocument.Open(filename, False)
         ' Code removed here.
