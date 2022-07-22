@@ -731,4 +731,4 @@ C\# and Visual Basic.
 ## See also
 
 - [Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
