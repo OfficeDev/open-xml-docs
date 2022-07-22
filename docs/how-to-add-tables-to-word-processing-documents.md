@@ -382,3 +382,4 @@ The following is the complete **AddTable** code sample in C\# and Visual Basic.
 ## See also
 
 - [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+

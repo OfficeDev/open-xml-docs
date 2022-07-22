@@ -506,5 +506,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
-- [Accepting Revisions in Open XML Word-Processing Documents](/previous-versions/office/developer/office-2007/ee836138)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
