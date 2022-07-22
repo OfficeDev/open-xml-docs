@@ -93,10 +93,8 @@ object that is created or named in the **using** statement, in this case **docum
 ## Basic Structure of a SpreadsheetML Document 
 
 The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** and **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** elements, which reference the
-worksheets in the <span sdata="cer"
-target="T:DocumentFormat.OpenXML.Spreadsheet.Workbook">**Workbook**.
-A separate XML file is created for each <span sdata="cer"
-target="T:DocumentFormat.OpenXML.Spreadsheet.Worksheet">**Worksheet**.
+worksheets in the **Workbook**.
+A separate XML file is created for each **Worksheet**.
 For example, the **SpreadsheetML** for a
 workbook that has two worksheets name MySheet1 and MySheet2 is located
 in the Workbook.xml file and is shown in the following code example.
@@ -237,8 +235,7 @@ expression matches any combination of uppercase or lowercase letters.
 For more information about regular expressions, see [Regular Expression
 Language
 Elements](https://msdn.microsoft.com/library/az24scfc.aspx). The
-code gets the column name by calling the <span sdata="cer"
-target="M:System.Text.RegularExpressions.Regex.Match(System.String)">[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6).
+code gets the column name by calling the [Regex.Match](https://msdn2.microsoft.com/library/3zy662f6).
 
 ```csharp
     // Given a cell name, parses the specified cell to get the column name.
@@ -583,7 +580,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
 
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 
