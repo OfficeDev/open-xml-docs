@@ -227,6 +227,8 @@ its properties.
 
         // Specify the group shape properties of the new slide.
         slide.CommonSlideData.ShapeTree.AppendChild(new GroupShapeProperties());
+        
+    }
 ```
 
 ```vb
