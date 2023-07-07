@@ -25,7 +25,7 @@ Suppose you have a Microsoft Word 2013 document that employs a feature introduce
 
 Consider also what should happen if you open that document in a hypothetical later version of Office. Here too, you want the document to work as expected. That is, you want the later version of Office to understand and support a feature employed in a document produced by Word 2013.
 
-Open XML anticipates these scenarios. The Office Open XML File Formats specification describes facilities for achieving the above desired outcomes in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition,%20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip).
+Open XML anticipates these scenarios. The Office Open XML File Formats specification describes facilities for achieving the above desired outcomes in [ECMA-376, Fifth Edition, Part 3 - Markup Compatibility and Extensibility](https://www.ecma-international.org/wp-content/uploads/ECMA-376-3_5th_edition_december_2015.zip).
 
 The Open XML SDK 2.5 supports markup compatibility in a way that makes it easy for you to achieve the above desired outcomes for and Office 2013 without having to necessarily become an expert in the specification details.
 
@@ -35,7 +35,7 @@ Open XML defines formats for word-processing, spreadsheet and presentation docum
 
 ## Markup compatibility in the Open XML file formats specification
 
-Markup compatibility is discussed in [ECMA-376, Second Edition, Part 3 - Markup Compatibility and Extensibility](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-376,%20Second%20Edition, 20Part%203%20-%20Markup%20Compatibility%20and%20Extensibility.zip), which is recommended reading to understand markup compatibility. The specification defines XML attributes to express compatibility rules, and XML elements to specify alternate content. For example, the **Ignorable** attribute specifies namespaces that can be ignored when they are not understood by the consuming application. Alternate-Content elements specify markup alternatives that can be chosen by an application at run time. For example, Word 2013 can choose only the markup alternative that it recognizes. The complete list of compatibility-rule attributes and alternate-content elements and their details can be found in the specification.
+Markup compatibility is discussed in [ECMA-376, Fifth Edition, Part 3 - Markup Compatibility and Extensibility](https://www.ecma-international.org/wp-content/uploads/ECMA-376-3_5th_edition_december_2015.zip), which is recommended reading to understand markup compatibility. The specification defines XML attributes to express compatibility rules, and XML elements to specify alternate content. For example, the **Ignorable** attribute specifies namespaces that can be ignored when they are not understood by the consuming application. Alternate-Content elements specify markup alternatives that can be chosen by an application at run time. For example, Word 2013 can choose only the markup alternative that it recognizes. The complete list of compatibility-rule attributes and alternate-content elements and their details can be found in the specification.
 
 ## Open XML SDK 2.5 support for markup compatibility
 
