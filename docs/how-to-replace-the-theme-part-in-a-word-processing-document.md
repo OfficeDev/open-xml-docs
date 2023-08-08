@@ -289,4 +289,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
