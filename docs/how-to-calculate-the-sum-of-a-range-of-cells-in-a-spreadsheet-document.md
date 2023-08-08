@@ -241,7 +241,7 @@ The code inserts a new cell for the result into the worksheet by calling the **I
     End Sub
 ```
 To get the row index the code passes a parameter that represents the name of the cell, and creates a new regular expression to match the row
-index portion of the cell name. For more information about regular expressions, see [Regular Expression Language Elements](/dotnet/standard/base-types/regular-expression-language-quick-reference.md). It gets the row index by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)** method, and then returns the row index.
+index portion of the cell name. For more information about regular expressions, see [Regular Expression Language Elements](/dotnet/standard/base-types/regular-expression-language-quick-reference). It gets the row index by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)** method, and then returns the row index.
 
 ```csharp
     // Given a cell name, parses the specified cell to get the row index.
@@ -266,7 +266,7 @@ index portion of the cell name. For more information about regular expressions, 
     End Function
 ```
 
-The code then gets the column name by passing a parameter that represents the name of the cell, and creates a new regular expression to match the column name portion of the cell name. This regular expression matches any combination of uppercase or lowercase letters. It gets the column name by calling the **[Regex.Match](/dotnet/api/system.text.regularexpressions.regex.match.md)** method, and then returns the column name.
+The code then gets the column name by passing a parameter that represents the name of the cell, and creates a new regular expression to match the column name portion of the cell name. This regular expression matches any combination of uppercase or lowercase letters. It gets the column name by calling the **[Regex.Match](/dotnet/api/system.text.regularexpressions.regex.match)** method, and then returns the column name.
 
 ```csharp
     // Given a cell name, parses the specified cell to get the column name.
@@ -325,7 +325,7 @@ To compare two columns the code passes in two parameters that represent the colu
     End Function
 ```
 
-To insert a **SharedStringItem**, the code passes in a parameter that represents the text to insert into the cell and a parameter that represents the  **SharedStringTablePart** object for the spreadsheet. If the **ShareStringTablePart** object does not contain a **[SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx)** object then it creates one. If the text already exists in the **ShareStringTable** object, then it returns the index for the **[SharedStringItem](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem.md)** object that represents the text. If the text does not exist, create a new **SharedStringItem** object that represents the text. It then returns the index for the **SharedStringItem** object that represents the text.
+To insert a **SharedStringItem**, the code passes in a parameter that represents the text to insert into the cell and a parameter that represents the  **SharedStringTablePart** object for the spreadsheet. If the **ShareStringTablePart** object does not contain a **[SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx)** object then it creates one. If the text already exists in the **ShareStringTable** object, then it returns the index for the **[SharedStringItem](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem)** object that represents the text. If the text does not exist, create a new **SharedStringItem** object that represents the text. It then returns the index for the **SharedStringItem** object that represents the text.
 
 ```csharp
     // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
@@ -385,7 +385,7 @@ To insert a **SharedStringItem**, the code passes in a parameter that represents
     End Function
 ```
 
-The final step is to insert a cell into the worksheet. The code does that by passing in parameters that represent the name of the column and the number of the row of the cell, and a parameter that represents the worksheet that contains the cell. If the specified row does not exist, it creates the row and append it to the worksheet. If the specified column exists, it finds the cell that matches the row in that column and returns the cell. If the specified column does not exist, it creates the column and inserts it into the worksheet. It then determines where to insert the new cell in the column by iterating through the row elements to find the cell that comes directly after the specified row, in sequential order. It saves this row in the **refCell** variable. It inserts the new cell before the cell referenced by **refCell** using the **[InsertBefore](/dotnet/api/documentformat.openxml.openxmlcompositeelement.insertbefore.md)** method. It then returns the new **Cell** object.
+The final step is to insert a cell into the worksheet. The code does that by passing in parameters that represent the name of the column and the number of the row of the cell, and a parameter that represents the worksheet that contains the cell. If the specified row does not exist, it creates the row and append it to the worksheet. If the specified column exists, it finds the cell that matches the row in that column and returns the cell. If the specified column does not exist, it creates the column and inserts it into the worksheet. It then determines where to insert the new cell in the column by iterating through the row elements to find the cell that comes directly after the specified row, in sequential order. It saves this row in the **refCell** variable. It inserts the new cell before the cell referenced by **refCell** using the **[InsertBefore](/dotnet/api/documentformat.openxml.openxmlcompositeelement.insertbefore)** method. It then returns the new **Cell** object.
 
 ```csharp
     // Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
@@ -824,5 +824,5 @@ The following is the complete sample code in both C\# and Visual Basic.
 - [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
 - [Language-Integrated Query (LINQ) (C#)](/dotnet/csharp/programming-guide/concepts/linq/)
 - [Language-Integrated Query (LINQ) (Visual Basic)](/dotnet/visual-basic/programming-guide/concepts/linq/)
-- [Lambda Expressions (C#)](/dotnet/csharp/language-reference/operators/lambda-expressions.md)
-- [Lambda Expressions (Visual Basic)](/dotnet/visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+- [Lambda Expressions (C#)](/dotnet/csharp/language-reference/operators/lambda-expressions)
+- [Lambda Expressions (Visual Basic)](/dotnet/visual-basic/programming-guide/language-features/procedures/lambda-expressions)
