@@ -821,7 +821,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk.md)
+- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
 - [Language-Integrated Query (LINQ) (C#)](/dotnet/csharp/programming-guide/concepts/linq/)
 - [Language-Integrated Query (LINQ) (Visual Basic)](/dotnet/visual-basic/programming-guide/concepts/linq/)
 - [Lambda Expressions (C#)](/dotnet/csharp/language-reference/operators/lambda-expressions.md)
