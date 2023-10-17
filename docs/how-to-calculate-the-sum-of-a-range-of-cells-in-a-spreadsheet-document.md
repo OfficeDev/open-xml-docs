@@ -291,7 +291,7 @@ The code then gets the column name by passing a parameter that represents the na
     End Function
 ```
 
-To compare two columns the code passes in two parameters that represent the columns to compare. If the first column is longer than the second column, it returns 1. If the second column is longer than the first column, it returns -1. Otherwise, it compares the values of the columns using the **[Compare](/dotnet/api/system.string.compare?view=net-6.0)** and returns the result.
+To compare two columns the code passes in two parameters that represent the columns to compare. If the first column is longer than the second column, it returns 1. If the second column is longer than the first column, it returns -1. Otherwise, it compares the values of the columns using the **[Compare](/dotnet/api/system.string.compare)** and returns the result.
 
 ```csharp
     // Given two columns, compares the columns.

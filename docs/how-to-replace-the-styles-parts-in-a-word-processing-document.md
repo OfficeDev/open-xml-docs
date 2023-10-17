@@ -184,9 +184,7 @@ stylesWithEffects part.
         ReplaceStylesPart(toDoc, node, True)
     End If
 ```
-For more information about the **ExtractStylesPart** method, see <span
-sdata="link">[How to: Extract styles from a word processing document
-(Open XML SDK)](how-to-extract-styles-from-a-word-processing-document.md). The
+For more information about the **ExtractStylesPart** method, see [the associated sample](how-to-extract-styles-from-a-word-processing-document.md). The
 following section explains the **ReplaceStylesPart** method.
 
 ---------------------------------------------------------------------------------
