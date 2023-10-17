@@ -55,7 +55,7 @@ some of the important spreadsheet elements.
 --------------------------------------------------------------------------------
 ## Minimum Workbook Scenario
 
-The following text from the [Standard ECMA-376](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
+The following text from the [Standard ECMA-376](https://www.ecma-international.org/publications-and-standards/standards/ecma-376/)
 introduces the minimum workbook scenario.
 
 The smallest possible (blank) workbook must contain the following:

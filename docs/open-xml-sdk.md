@@ -28,7 +28,7 @@ The SDK is built on the **System.IO.Packaging**
 API and provides strongly-typed classes to manipulate documents that
 adhere to the Office Open XML File Formats specification. The Office
 Open XML File Formats specification is an open, international,
-[ECMA-376, Second Edition](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
+[ECMA-376, 5th Edition](https://www.ecma-international.org/publications-and-standards/standards/ecma-376/)
 and [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 standard. The Open XML file formats are useful for developers because
 they are an open standard and are based on well-known technologies: ZIP

@@ -39,7 +39,7 @@ The following assembly directives are required to compile the code in this topic
 
 In the Open XML SDK, the **[SpreadsheetDocument](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument)** class represents an Excel document package. To create an Excel document, you create an instance of the **SpreadsheetDocument** class and populate it with parts. At a minimum, the document must have a workbook part that serves as a container for the document, and at least one worksheet part. The text is represented in the package as XML using **SpreadsheetML** markup.
 
-To create the class instance from the document you call one of the **[Open](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open.md)** methods. In this example, you must open the file for read access only. Therefore, you can use the **[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open#DocumentFormat_OpenXml_Packaging_SpreadsheetDocument_Open_System_String_System_Boolean_)** method, and set the Boolean parameter to **false**.
+To create the class instance from the document you call one of the **[Open](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open)** methods. In this example, you must open the file for read access only. Therefore, you can use the **[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open#DocumentFormat_OpenXml_Packaging_SpreadsheetDocument_Open_System_String_System_Boolean_)** method, and set the Boolean parameter to **false**.
 
 The following code example calls the **Open** method to open the file specified by the **filepath** for read-only access.
 
@@ -112,7 +112,7 @@ After you have opened the file for read-only access, you instantiate the **Sheet
     Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
 ```
 
-You then you iterate through the **Sheets** collection and display **[OpenXmlElement](/dotnet/api/documentformat.openxml.openxmlelement)** and the **[OpenXmlAttribute](/api/documentformat.openxml.openxmlattribute)** in each element.
+You then you iterate through the **Sheets** collection and display **[OpenXmlElement](/dotnet/api/documentformat.openxml.openxmlelement)** and the **[OpenXmlAttribute](/dotnet/api/documentformat.openxml.openxmlattribute)** in each element.
 
 ```csharp
     foreach (E sheet in sheets)
