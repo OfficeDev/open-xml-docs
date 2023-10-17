@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Change text in a table in a word processing document (Open XML SDK)
 
-This topic shows how to use the Open XML SDK 2.5 for Office to programmatically change text in a table in an existing word processing document.
+This topic shows how to use the Open XML SDK for Office to programmatically change text in a table in an existing word processing document.
 
 The following assembly directives are required to compile the code in this topic.
 
@@ -259,7 +259,7 @@ Following is the complete code example.
 
 ## See also
 
-[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+[Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 [How to: Change Text in a Table in a Word Processing Document](https://msdn.microsoft.com/library/documentformat.openxml.wordprocessing.table(office.14).aspx)
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 [Extension Methods (C\# Programming Guide)](https://msdn.microsoft.com/library/bb383977.aspx)

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with the calculation chain (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 [CalculationChain](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.calculationchain.aspx) class and how it relates
+This topic discusses the Open XML SDK [CalculationChain](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.calculationchain.aspx) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
@@ -69,17 +69,17 @@ performed at runtime.
 
 © ISO/IEC29500: 2008.
 
-The following table lists the common Open XML SDK 2.5 classes used when
+The following table lists the common Open XML SDK classes used when
 working with the **CalculationChain** class.
 
 
-| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** |
+| **SpreadsheetML Element** | **Open XML SDK Class** |
 |---------------------------|----------------------------|
 |             c             |      CalculationCell       |
 
-## Open XML SDK 2.5 CalculationChain Class
+## Open XML SDK CalculationChain Class
 
-The Open XML SDK 2.5**CalculationChain** class
+The Open XML SDK**CalculationChain** class
 represents the paragraph (\<**calcChain**\>)
 element defined in the Open XML File Format schema for SpreadsheetML
 documents. Use the **CalculationChain** class

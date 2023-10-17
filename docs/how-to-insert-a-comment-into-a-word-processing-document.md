@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Insert a comment into a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically add a comment to the first paragraph in a
 word processing document.
 
@@ -364,7 +364,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 

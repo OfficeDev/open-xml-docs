@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Create a package (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create a word processing document package
 from content in the form of **WordprocessingML** XML markup.
 
@@ -125,13 +125,13 @@ sample code creates is shown in the following code example.
     </w:document>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
 elements. You can find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements:
 
-| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
+| WordprocessingML Element | Open XML SDK Class | Description |
 |---|---|---|
 | document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
 | body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
@@ -311,7 +311,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
 
 

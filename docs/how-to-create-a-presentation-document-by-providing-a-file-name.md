@@ -18,10 +18,10 @@ ms.localizationpriority: high
 
 # Create a presentation document by providing a file name (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 to
+This topic shows how to use the classes in the Open XML SDK to
 create a presentation document programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -57,9 +57,9 @@ the code in this topic.
 A presentation file, like all files defined by the Open XML standard,
 consists of a package file container. This is the file that users see in
 their file explorer; it usually has a .pptx extension. The package file
-is represented in the Open XML SDK 2.5 by the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class. The
+is represented in the Open XML SDK by the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class. The
 presentation document contains, among other parts, a presentation part.
-The presentation part, represented in the Open XML SDK 2.5 by the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, contains the basic
+The presentation part, represented in the Open XML SDK by the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, contains the basic
 *PresentationML* definition for the slide presentation. PresentationML
 is the markup language used for creating presentations. Each package can
 contain only one presentation part, and its root element must be
@@ -104,7 +104,7 @@ slide layout, slide master, and theme parts.
     }
 ```
 
-Using the Open XML SDK 2.5, you can create presentation structure and
+Using the Open XML SDK, you can create presentation structure and
 content by using strongly-typed classes that correspond to
 PresentationML elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace. The following table lists the names of the classes that
@@ -113,7 +113,7 @@ theme elements. The class that corresponds to the theme element is
 actually part of the [DocumentFormat.OpenXml.Drawing](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.aspx) namespace.
 Themes are common to all Open XML markup languages.
 
-| PresentationML Element | Open XML SDK 2.5 Class |
+| PresentationML Element | Open XML SDK Class |
 |---|---|
 | &lt;presentation&gt; | [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) |
 | &lt;sld&gt; | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) |
@@ -775,7 +775,7 @@ presentation, given a file path.
 
 ## See also 
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)  
 
 [Structure of a PresentationML Document](structure-of-a-presentationml-document.md)  
 
@@ -787,4 +787,4 @@ presentation, given a file path.
 
 [How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

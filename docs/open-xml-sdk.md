@@ -8,8 +8,8 @@ api_name:
 api_type:
 - schema
 ms.assetid: f6a9ae68-7989-4208-97f5-3c945137a0ab
-title: Welcome to the Open XML SDK 2.5 for Office
-description: 'Documentation and guidance for the strongly-typed classes in the Open XML SDK 2.5 for Office.'
+title: Welcome to the Open XML SDK for Office
+description: 'Documentation and guidance for the strongly-typed classes in the Open XML SDK for Office.'
 ms.suite: office
 
 ms.author: o365devx
@@ -19,10 +19,10 @@ ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
 
-# Welcome to the Open XML SDK 2.5 for Office
+# Welcome to the Open XML SDK for Office
 
 This content set provides documentation and guidance for the
-strongly-typed classes in the Open XML SDK 2.5 for Office.
+strongly-typed classes in the Open XML SDK for Office.
 
 The SDK is built on the **System.IO.Packaging**
 API and provides strongly-typed classes to manipulate documents that
@@ -34,9 +34,9 @@ standard. The Open XML file formats are useful for developers because
 they are an open standard and are based on well-known technologies: ZIP
 and XML.
 
-The Open XML SDK 2.5 simplifies the task of manipulating Open XML
+The Open XML SDK simplifies the task of manipulating Open XML
 packages and the underlying Open XML schema elements within a package.
-The Open XML SDK 2.5 encapsulates many common tasks that developers
+The Open XML SDK encapsulates many common tasks that developers
 perform on Open XML packages, so that you can perform complex operations
 with just a few lines of code.
 
@@ -46,14 +46,14 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
 ## In this section
 
-- [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
+- [Getting started with the Open XML SDK for Office](getting-started.md)  
 - [Understanding the Open XML file formats](understanding-the-open-xml-file-formats.md)  
 - [How do I... (Open XML SDK)](how-do-i.md)  
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)  
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)  
 
 ## See also
 
-- [Open XML SDK 2.5 for Microsoft Office](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0)
+- [Open XML SDK for Microsoft Office](https://www.nuget.org/packages/DocumentFormat.OpenXml)
 - [Microsoft Office Developer Center](https://developer.microsoft.com/office/docs)
 - [Samples on GitHub](https://github.com/OfficeDev)
 - [Open XML SDK copyright notice](https://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)

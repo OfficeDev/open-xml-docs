@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with comments (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [Comment](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
+This topic discusses the Open XML SDK for Office [Comment](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
 Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML
 Document](structure-of-a-presentationml-document.md).
 
@@ -48,9 +48,9 @@ Example:
 </p:cm>
 ```
 
-The following table lists the child elements of the \<cm \> element used when working with comments and the Open XML SDK 2.5 classes that correspond to them.
+The following table lists the child elements of the \<cm \> element used when working with comments and the Open XML SDK classes that correspond to them.
 
-| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                 |
+| **PresentationML Element** |                                                               **Open XML SDK Class**                                                 |
 |----------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | \<extLst\>        | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
 | \<pos\>           | [Position](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.position.aspx)                  |
@@ -65,7 +65,7 @@ specification describes the attributes of the \<cm\> element.
 |       dt       | This attribute specifies the date and time this comment was last modified.<br/>The possible values for this attribute are defined by the W3C XML Schema **datetime** datatype.           |
 |      idx       | This attribute specifies an identifier for this comment that is unique within a list of all comments by this author in this document. An author's first comment in a document has index 1.<br/>Note: Because the index is unique only for the comment author, a document can contain multiple comments with the same index created by different authors.<br/>The possible values for this attribute are defined by the ST_Index simple type (§19.7.3). |
 
-## Open XML SDK 2.5 Comment Class
+## Open XML SDK Comment Class
 
 The OXML SDK **Comment** class represents the \<cm\> element defined in the Open XML File Format schema for PresentationML documents. Use the **Comment**
 class to manipulate individual \<cm\> elements in a PresentationML document.
@@ -148,7 +148,7 @@ The **Comment** class, which represents the \<cm\> element, is therefore also as
 
 ## Open XML SDK Code Example
 
-The following code segment from the article [How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md) adds a new comments part to an existing slide in a presentation (if the slide does not already contain comments) and creates an instance of an Open XML SDK 2.0 **Comment** class in the slide comments part. It also adds a comment list to the comments part by creating an instance of the **CommentList** class, if one does not already exist; assigns an ID to the comment; and then adds a comment to the comment list by creating an instance of the **Comment** class, assigning the required attribute values. In addition, it creates instances of the **Position** and **Text** classes associated with the new **Comment** class instance. For the complete code sample, see the aforementioned article.
+The following code segment from the article [How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md) adds a new comments part to an existing slide in a presentation (if the slide does not already contain comments) and creates an instance of an Open XML SDK **Comment** class in the slide comments part. It also adds a comment list to the comments part by creating an instance of the **CommentList** class, if one does not already exist; assigns an ID to the comment; and then adds a comment to the comment list by creating an instance of the **Comment** class, assigning the required attribute values. In addition, it creates instances of the **Position** and **Text** classes associated with the new **Comment** class instance. For the complete code sample, see the aforementioned article.
 
 ```csharp
        // Declare a comments part.
@@ -237,7 +237,7 @@ The following code segment from the article [How to: Add a comment to a slide in
 
 ## Generated PresentationML
 
-When the Open XML SDK 2.5 code in [How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md) is run, including
+When the Open XML SDK code in [How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md) is run, including
 the segment shown in this article, the following XML is written to a new CommentAuthors.xml part in the existing PresentationML document referenced in the code, assuming that the document contained no comments
 or comment authors before the code was run.
 
@@ -271,7 +271,7 @@ article.
 
 ## See also
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 [How to: Add a comment to a slide in a presentation (Open XML SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)
 [How to: Delete all the comments by an author from all the slides in a presentation (Open XML SDK)](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md)  

@@ -25,9 +25,9 @@ A PresentationML document is not stored as one large body in a single part. Inst
 
 ## Important Presentation Parts
 
-Using the Open XML SDK 2.5, you can create document structure and content that uses strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation?view=openxml-2.8.1&preserve-view=true)** namespace. The following table lists the class names of the classes that correspond to some of the important presentation elements.
+Using the Open XML SDK, you can create document structure and content that uses strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation?view=openxml-2.8.1&preserve-view=true)** namespace. The following table lists the class names of the classes that correspond to some of the important presentation elements.
 
-|    **Package Part**     | **Top Level PresentationML Element** |                                                        **Open XML SDK 2.5 Class**                                                         |                                                                                                                                                                               **Description**\*                                                                                                                                                                                |
+|    **Package Part**     | **Top Level PresentationML Element** |                                                        **Open XML SDK Class**                                                         |                                                                                                                                                                               **Description**\*                                                                                                                                                                                |
 |-------------------------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      Presentation       |           \<presentation\>           |           [Presentation](/dotnet/api/documentformat.openxml.presentation.presentation?view=openxml-2.8.1&preserve-view=true)           |                                                                                                                             The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.                                                                                                                             |
 | Presentation Properties |          \<presentationPr\>          | [PresentationProperties](/dotnet/api/documentformat.openxml.presentation.presentationproperties?view=openxml-2.8.1&preserve-view=true) |                                                                                                 The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.                                                                                                 |
@@ -612,7 +612,7 @@ The packaging structure of a presentation document contains several references b
 
 ## Generated PresentationML XML Code
 
-After you run the Open XML SDK 2.5 code to generate a presentation, you can explore the contents of the .zip package to view the PresentationML XML code. To view the .zip package, rename the extension on the minimum presentation from **.pptx** to **.zip**. Inside the .zip package, there are several parts that make up the minimum presentation.
+After you run the Open XML SDK code to generate a presentation, you can explore the contents of the .zip package to view the PresentationML XML code. To view the .zip package, rename the extension on the minimum presentation from **.pptx** to **.zip**. Inside the .zip package, there are several parts that make up the minimum presentation.
 
 Figure 1 shows the structure under the **ppt** folder of the .zip package for a minimum presentation that contains a single slide.
 
@@ -622,7 +622,7 @@ Figure 1. Minimum presentation folder structure
 
 The presentation.xml file contains \<sld\> (Slide) elements that reference the slides in the presentation. Each slide is associated to the presentation by means of a slide ID and a relationship ID. The **slideID** is the identifier (ID) used within the package to identify a slide and must be unique within the presentation. The **id** attribute is the relationship ID that identifies the slide part definition associated with a slide. For more information about the slide part, see [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md).
 
-The following XML code is the PresentationML that represents the presentation part of a presentation document that contains a single slide. This code is generated when you run the Open XML SDK 2.5 code to create a minimum presentation.
+The following XML code is the PresentationML that represents the presentation part of a presentation document that contains a single slide. This code is generated when you run the Open XML SDK code to create a minimum presentation.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -646,7 +646,7 @@ The following XML code is the PresentationML that represents the presentation pa
     </p:presentation>
 ```
 
-The following XML code is the PresentationML that represents the relationship part of the presentation document. This code is generated when you run the Open XML SDK 2.5 to create a minimum presentation.
+The following XML code is the PresentationML that represents the relationship part of the presentation document. This code is generated when you run the Open XML SDK to create a minimum presentation.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -663,7 +663,7 @@ The following XML code is the PresentationML that represents the relationship pa
     </Relationships>
 ```
 
-The following XML code is the PresentationML that represents the slide part of the presentation document. Each slide in a presentation has a slide part associated with it. This code is generated when you run the Open XML SDK 2.5 to create a minimum presentation.
+The following XML code is the PresentationML that represents the slide part of the presentation document. Each slide in a presentation has a slide part associated with it. This code is generated when you run the Open XML SDK to create a minimum presentation.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>

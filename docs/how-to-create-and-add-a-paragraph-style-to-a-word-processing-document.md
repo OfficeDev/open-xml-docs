@@ -17,14 +17,14 @@ ms.localizationpriority: high
 ---
 # Create and add a paragraph style to a word processing document
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create and add a paragraph style to a word
 processing document. It contains an example
 **CreateAndAddParagraphStyle** method to illustrate this task, plus a
 supplemental example method to add the styles part when necessary.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK]
+(https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must also explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -731,4 +731,4 @@ C\# and Visual Basic.
 ## See also
 
 - [Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

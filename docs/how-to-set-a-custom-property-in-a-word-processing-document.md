@@ -6,7 +6,7 @@ api_type:
 - schema
 ms.assetid: how-to-set-a-custom-property-in-a-word-processing-document
 title: 'How to: Set a custom property in a word processing document (Open XML SDK)'
-description: 'Learn how to use the classes in the Open XML SDK 2.5 for Office to programmatically set a custom property in a word processing document.'
+description: 'Learn how to use the classes in the Open XML SDK for Office to programmatically set a custom property in a word processing document.'
 ms.suite: office
 
 ms.author: o365devx
@@ -17,9 +17,9 @@ ms.localizationpriority: high
 ---
 # Set a custom property in a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically set a custom property in a word processing document. It contains an example **SetCustomProperty** method to illustrate this task.
+This topic shows how to use the classes in the Open XML SDK for Office to programmatically set a custom property in a word processing document. It contains an example **SetCustomProperty** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
 - WindowsBase
 
@@ -80,7 +80,7 @@ contents of the part.
 
 Figure 1. Open XML SDK Productivity Tool for Microsoft Office
 
- ![Open XML SDK 2.0 Productivity Tool](./media/OpenXmlCon_HowToSetCustomProperty_Fig1.gif)
+ ![Open XML SDK Productivity Tool](./media/OpenXmlCon_HowToSetCustomProperty_Fig1.gif)
   
 The relevant XML is also extracted and shown here for ease of reading.
 
@@ -728,4 +728,4 @@ The following is the complete **SetCustomProperty** code sample in C\# and Visua
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

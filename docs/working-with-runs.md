@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with runs (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx)** class and how it relates to the Open
+This topic discusses the Open XML SDK **[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx)** class and how it relates to the Open
 XML File Format WordprocessingML schema.
 
 
@@ -50,7 +50,7 @@ The following table lists the most common Open XML SDK classes used when
 working with runs.
 
 
-| **XML element** | **Open XML SDK 2.0 Class** |
+| **XML element** | **Open XML SDK Class** |
 |-----------------|----------------------------|
 |      **p**      |         Paragraph          |
 |     **rPr**     |       RunProperties        |
@@ -58,7 +58,7 @@ working with runs.
 
 ---------------------------------------------------------------------------------
 ## Run Class 
-The Open XML SDK 2.5<strong>[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx)</strong> class represents the run (\<**r**\>) element defined in the Open XML File Format
+The Open XML SDK<strong>[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx)</strong> class represents the run (\<**r**\>) element defined in the Open XML File Format
 schema for WordprocessingML documents as discussed above. Use a **Run** object to manipulate an individual \<**r**\> element in a WordprocessingML document.
 
 ### RunProperties Class
@@ -142,7 +142,7 @@ WordprocessingML document specified in the preceding code.
 ## See also 
 
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)  
 
 [Working with paragraphs (Open XML SDK)](working-with-paragraphs.md)  
 

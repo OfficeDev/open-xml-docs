@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with formulas (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 [CellFormula](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
+This topic discusses the Open XML SDK [CellFormula](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Search and replace text in a document part (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically search and replace a text value in a word
 processing document.
 
@@ -199,6 +199,6 @@ The following is the complete sample code in both C\# and Visual Basic.
 ## See also 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
 [Regular Expressions](https://msdn.microsoft.com/library/hs600312.aspx)

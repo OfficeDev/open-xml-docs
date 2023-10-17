@@ -16,7 +16,7 @@ ms.localizationpriority: high
 
 # Accept all revisions in a word processing document (Open XML SDK)
 
-This topic shows how to use the Open XML SDK 2.5 for Office to accept all revisions in a word processing document programmatically.
+This topic shows how to use the Open XML SDK for Office to accept all revisions in a word processing document programmatically.
 
 The following assembly directives are required to compile the code in this topic.
 
@@ -71,9 +71,9 @@ The basic document structure of a **WordProcessingML** document consists of the 
     </w:document>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx) namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements.
+Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx) namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
-| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
+| WordprocessingML Element | Open XML SDK Class | Description |
 |---|---|---|
 | document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
 | body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
@@ -506,4 +506,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

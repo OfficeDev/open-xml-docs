@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Open a word processing document for read-only access (Open XML SDK)
 
-This topic describes how to use the classes in the Open XML SDK 2.5 for
+This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a word processing document for read only
 access.
 
@@ -105,7 +105,7 @@ instance of the **WordprocessingDocument**
 class based on an input/output stream. You might employ this approach,
 for instance, if you have a Microsoft SharePoint Foundation 2010
 application that uses stream input/output, and you want to use the Open
-XML SDK 2.5 to work with a document.
+XML SDK to work with a document.
 
 The following code example opens a document based on a stream.
 
@@ -124,8 +124,8 @@ The following code example opens a document based on a stream.
 
 Suppose you have an application that employs the Open XML support in the
 System.IO.Packaging namespace of the .NET Framework Class Library, and
-you want to use the Open XML SDK 2.5 to work with a package read only.
-While the Open XML SDK 2.5 includes method overloads that accept a **Package** as the first parameter, there is not one
+you want to use the Open XML SDK to work with a package read only.
+While the Open XML SDK includes method overloads that accept a **Package** as the first parameter, there is not one
 that takes a Boolean as the second parameter to indicate whether the
 document should be opened for editing.
 
@@ -190,13 +190,13 @@ shown in the following code example.
     </w:document>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
 elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
-WordprocessingML Element|Open XML SDK 2.5 Class|Description
+WordprocessingML Element|Open XML SDK Class|Description
 --|--|--
 document|[Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) |The root element for the main document part.
 body|[Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
@@ -359,4 +359,4 @@ The following is the complete sample code in C\# and VB.
 ## See also 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with presentation slides (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) class and how it relates to the Open
+This topic discusses the Open XML SDK for Office [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) class and how it relates to the Open
 XML File Format PresentationML schema. For more information about the
 overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a
@@ -59,11 +59,11 @@ part. For more information about the overall structure of the parts and
 elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 The following table lists the child elements of the \<sld\> element used
-when working with presentation slides and the Open XML SDK 2.5 classes
+when working with presentation slides and the Open XML SDK classes
 that correspond to them.
 
 
-| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+| **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
 |          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
@@ -72,8 +72,8 @@ that correspond to them.
 |       \<transition\>       |                    [Transition](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.transition.aspx)                    |
 
 --------------------------------------------------------------------------------
-## Open XML SDK 2.5 Slide Class
-The Open XML SDK 2.5**Slide** class represents the \<sld\> element
+## Open XML SDK Slide Class
+The Open XML SDK**Slide** class represents the \<sld\> element
 defined in the Open XML File Format schema for PresentationML documents.
 Use the **Slide** object to manipulate
 individual \<sld\> elements in a PresentationML document.
@@ -184,7 +184,7 @@ these classes, as shown in the following code example, are the **CommonSlideData
 ## Open XML SDK Code Example
 The following method from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)** adds a new slide
 part to an existing presentation and creates an instance of the Open XML
-SDK 2.5**Slide** class in the new slide part.
+SDK **Slide** class in the new slide part.
 The **Slide** class constructor creates
 instances of the **CommonSlideData** and **ColorMapOverride** classes. The **CommonSlideData** class constructor creates an
 instance of the **ShapeTree** class, whose
@@ -323,7 +323,7 @@ is written to the PresentationML document file referenced in the code.
 ## See also
 
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)  
 
 [How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
 

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with paragraphs (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) class and how it relates to the
+This topic discusses the Open XML SDK [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) class and how it relates to the
 Open XML File Format WordprocessingML schema.
 
 
@@ -45,7 +45,7 @@ The following table lists the most common Open XML SDK classes used when
 working with paragraphs.
 
 
-| **WordprocessingML element** | **Open XML SDK 2.5 Class** |
+| **WordprocessingML element** | **Open XML SDK Class** |
 |------------------------------|----------------------------|
 |            **p**             |         Paragraph          |
 |           **pPr**            |    ParagraphProperties     |
@@ -54,7 +54,7 @@ working with paragraphs.
 
 ---------------------------------------------------------------------------------
 ## Paragraph Class
-The Open XML SDK 2.5 [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) class represents the paragraph
+The Open XML SDK [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) class represents the paragraph
 (\<**p**\>) element defined in the Open XML
 File Format schema for WordprocessingML documents as discussed above.
 Use the **Paragraph** object to manipulate
@@ -84,7 +84,7 @@ makes up the document content. The OXML SDK [Text](https://msdn.microsoft.com/li
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following code instantiates an Open XML SDK 2.5**Paragraph** object and then uses it to add text to
+The following code instantiates an Open XML SDK**Paragraph** object and then uses it to add text to
 a WordprocessingML document.
 
 ```csharp
@@ -137,7 +137,7 @@ WordprocessingML document referenced in the code.
 ## See also
 
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)  
 
 [Working with runs (Open XML SDK)](working-with-runs.md)  
 

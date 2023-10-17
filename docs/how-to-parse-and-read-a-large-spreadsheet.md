@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Parse and read a large spreadsheet document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically read a large Excel file. For more information
 about the basic structure of a **SpreadsheetML** document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
@@ -282,4 +282,4 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

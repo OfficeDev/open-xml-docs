@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Open a presentation document for read-only access (Open XML SDK)
 
-This topic describes how to use the classes in the Open XML SDK 2.5 for
+This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a presentation document for read-only
 access.
 
@@ -101,7 +101,7 @@ You can also use the second overload of the **Open** method, in the table above,
 instance of the **PresentationDocument** class
 based on an I/O stream. You might use this approach if you have a
 Microsoft SharePoint Foundation 2010 application that uses stream I/O
-and you want to use the Open XML SDK 2.5 to work with a document. The
+and you want to use the Open XML SDK to work with a document. The
 following code segment opens a document based on a stream.
 
 ```csharp
@@ -122,8 +122,8 @@ following code segment opens a document based on a stream.
 
 Suppose you have an application that employs the Open XML support in the
 **System.IO.Packaging** namespace of the .NET
-Framework Class Library, and you want to use the Open XML SDK 2.5 to
-work with a package read-only. The Open XML SDK 2.5 includes a method
+Framework Class Library, and you want to use the Open XML SDK to
+work with a package read-only. The Open XML SDK includes a method
 overload that accepts a **Package** as the only
 parameter. There is no Boolean parameter to indicate whether the
 document should be opened for editing. The recommended approach is to
@@ -379,4 +379,4 @@ The following is the complete code listing in C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

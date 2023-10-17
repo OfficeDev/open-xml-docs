@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Open a spreadsheet document for read-only access (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to open a spreadsheet document for read-only access
 programmatically.
 
@@ -99,7 +99,7 @@ The other two **Open** methods create an
 instance of the SpreadsheetDocument class based on an input/output
 stream. You might use this approach, for example, if you have a
 Microsoft SharePoint Foundation 2010 application that uses stream
-input/output, and you want to use the Open XML SDK 2.5 to work with a
+input/output, and you want to use the Open XML SDK to work with a
 document.
 
 The following code example opens a document based on a stream.
@@ -119,8 +119,8 @@ The following code example opens a document based on a stream.
 
 Suppose you have an application that uses the Open XML support in the
 System.IO.Packaging namespace of the .NET Framework Class Library, and
-you want to use the Open XML SDK 2.5 to work with a package as
-read-only. Whereas the Open XML SDK 2.5 includes method overloads that
+you want to use the Open XML SDK to work with a package as
+read-only. Whereas the Open XML SDK includes method overloads that
 accept a **Package** as the first parameter,
 there is not one that takes a Boolean as the second parameter to
 indicate whether the document should be opened for editing.
@@ -200,13 +200,13 @@ Sheet1.xml file and is as follows.
     </worksheet>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content that uses strongly-typed classes that correspond to
 SpreadsheetML elements. You can find these classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
-SpreadsheetML Element|Open XML SDK 2.5 Class|Description
+SpreadsheetML Element|Open XML SDK Class|Description
 --|--|--
 workbook|DocumentFormat.OpenXml.Spreadsheet.Workbook|The root element for the main document part.
 sheets|DocumentFormat.OpenXml.Spreadsheet.Sheets|The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
@@ -302,4 +302,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

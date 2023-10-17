@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Working with SpreadsheetML tables (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
+This topic discusses the Open XML SDK **[Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
 overall structure of the parts and elements that make up a SpreadsheetML
 document, see [Structure of a SpreadsheetML document
@@ -64,16 +64,16 @@ in a separate part inside the package. The table part does not contain
 any table data. The data is maintained in the worksheet cells. For more
 information about data is stored in the worksheet, see [Working with sheets (Open XML SDK)](working-with-sheets.md).
 
-The following table lists the common Open XML SDK 2.5 classes used when working with the **Table** class.
+The following table lists the common Open XML SDK classes used when working with the **Table** class.
 
-| **SpreadsheetML Element** | **Open XML SDK 2.5 Class**                                               |
+| **SpreadsheetML Element** | **Open XML SDK Class**                                               |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------|
 |        tableColumn        | [TableColumn](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
 |        autoFilter         | [AutoFilter](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx) |
 
-## Open XML SDK 2.5 Table Class
+## Open XML SDK Table Class
 
-The Open XML SDK 2.5**Table** class represents
+The Open XML SDK**Table** class represents
 the table (\<**table**\>) element defined in
 the Open XML File Format schema for SpreadsheetML documents. Use the
 **Table** class to manipulate individual

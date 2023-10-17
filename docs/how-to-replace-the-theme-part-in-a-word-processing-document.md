@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Replace the theme part in a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically replace a document part in a word processing
 document.
 
@@ -122,7 +122,7 @@ backgrounds, fills, and effects for different objects in a presentation.
 
 The following table lists the possible child types of the Theme class.
 
-| PresentationML Element | Open XML SDK 2.5 Class | Description |
+| PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
 | custClrLst | [CustomColorList](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.customcolorlist.aspx) |Custom Color List |
 | extLst | [ExtensionList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlist.aspx) | Extension List |
@@ -289,4 +289,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Get the contents of a document part from a package (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to retrieve the contents of a document part in a Wordprocessing
 document programmatically.
 
@@ -108,13 +108,13 @@ sample code creates is shown in the following code example.
     </w:document>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to **WordprocessingML** elements. You can find these
 classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
-| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
+| WordprocessingML Element | Open XML SDK Class | Description |
 |---|---|---|
 | document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
 | body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
@@ -263,5 +263,5 @@ Following is the complete code example in both C\# and Visual Basic.
 ## See also
 
 
-[Open XML SDK 2.5 class library
+[Open XML SDK class library
 reference](https://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
