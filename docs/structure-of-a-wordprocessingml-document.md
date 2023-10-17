@@ -26,8 +26,6 @@ with a common set of properties, such as formatting. A run contains one
 or more \<**t**\> elements. The \<**t**\> element contains a range of text.
 
 
-
-
 ## Important WordprocessingML Parts
 
 The Open XML SDK API provides strongly-typed classes in the
