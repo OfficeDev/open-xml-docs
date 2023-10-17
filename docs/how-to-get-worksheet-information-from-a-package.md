@@ -55,50 +55,7 @@ The following code example calls the **Open** method to open the file specified 
 
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **mySpreadsheet**.
 
-## Basic structure of a SpreadsheetML
-
-The basic document structure of a **SpreadsheetML** document consists of the **[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets)** and **[Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet)** elements, which reference the
-worksheets in the **[Workbook](/dotnet/api/documentformat.openxml.spreadsheet.workbook)**. A separate XML file is created
-for each **[Worksheet](/dotnet/api/documentformat.openxml.spreadsheet.worksheet)**. For example, the **SpreadsheetML** for a workbook that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
-
-```xml
-    <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
-        <sheets>
-            <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
-            <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
-        </sheets>
-    </workbook>
-```
-
-The worksheet XML files contain one or more block level elements such as **SheetData**. **[SheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata)** represents the cell table and contains one or more **[Row](/dotnet/api/documentformat.openxml.spreadsheet.row )** elements. A **row** contains one or more **[Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell)** elements. Each cell contains a **[CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue)** element that represents the value of the cell. For example, the SpreadsheetML for the first worksheet in a workbook, that only has the value 100 in cell A1, is located in the Sheet1.xml file and is shown in the following code example.
-
-```xml
-    <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
-        <sheetData>
-            <row r="1">
-                <c r="A1">
-                    <v>100</v> 
-                </c>
-            </row>
-        </sheetData>
-    </worksheet>
-```
-
-Using the Open XML SDK, you can create document structure and content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
-classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The following table lists the class names of the classes that correspond to the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
-
-| SpreadsheetML Element | Open XML SDK Class | Description |
-|---|---|---|
-| workbook | DocumentFormat.OpenXml.Spreadsheet.Workbook | The root element for the main document part. |
-| sheets | DocumentFormat.OpenXml.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
-| sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
-| worksheet | DocumentFormat.OpenXml.Spreadsheet.Worksheet | A sheet definition file that contains the sheet data. |
-| sheetData | DocumentFormat.OpenXml.Spreadsheet.SheetData | The cell table, grouped together by rows. |
-| row | DocumentFormat.OpenXml.Spreadsheet.Row | A row in the cell table. |
-| c | DocumentFormat.OpenXml.Spreadsheet.Cell | A cell in a row. |
-| v | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell. |
+[!include[Structure](./includes/spreadsheet/structure.md)]
 
 ## How the Sample Code Works
 
