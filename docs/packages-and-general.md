@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Packages and general (Open XML SDK)
 
-This section provides how-to topics for working with documents and packages using the Open XML SDK 2.5.
+This section provides how-to topics for working with documents and packages using the Open XML SDK.
 
 
 ## In this section
@@ -41,4 +41,4 @@ This section provides how-to topics for working with documents and packages usin
 ## Related sections 
 
 - [How do I...](how-do-i.md)  
-- [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
+- [Getting started with the Open XML SDK for Office](getting-started.md)  

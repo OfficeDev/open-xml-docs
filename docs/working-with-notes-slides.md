@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with notes slides (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [NotesSlide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
+This topic discusses the Open XML SDK for Office [NotesSlide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -55,11 +55,11 @@ parts and elements that make up a PresentationML document, see
 [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 The following table lists the child elements of the \<notes\> element
-used when working with notes slides and the Open XML SDK 2.5 classes
+used when working with notes slides and the Open XML SDK classes
 that correspond to them.
 
 
-| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+| **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
 |          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
@@ -78,7 +78,7 @@ specification describes the attributes of the \<notes\> element.
 
 
 ---------------------------------------------------------------------------------
-## Open XML SDK 2.5 NotesSlide Class
+## Open XML SDK NotesSlide Class
 The OXML SDK **NotesSlide** class represents
 the \<notes\> element defined in the Open XML File Format schema for
 PresentationML documents. Use the **NotesSlide** class to manipulate individual
@@ -164,7 +164,7 @@ the **CommonSlideData** class.
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
 The following method adds a new notes slide part to an existing
-presentation and creates an instance of an Open XML SDK 2.5**NotesSlide** class in the new notes slide part. The
+presentation and creates an instance of an Open XML SDK**NotesSlide** class in the new notes slide part. The
 **NotesSlide** class constructor creates
 instances of the **CommonSlideData** class and
 the **ColorMap** class. The **CommonSlideData** class constructor creates an
@@ -225,7 +225,7 @@ namespace.
 
 ---------------------------------------------------------------------------------
 ## Generated PresentationML
-When the Open XML SDK 2.0 code is run, the following XML is written to
+When the Open XML SDK code is run, the following XML is written to
 the PresentationML document referenced in the code.
 
 ```xml
@@ -275,7 +275,7 @@ the PresentationML document referenced in the code.
 ## See also
 
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)  
 
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 

@@ -17,14 +17,14 @@ ms.localizationpriority: medium
 ---
 # Replace the styles parts in a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically replace the styles in a word processing
 document with the styles from another word processing document. It
 contains an example **ReplaceStyles** method to illustrate this task, as
 well as the **ReplaceStylesPart** and **ExtractStylesPart** supporting
 methods.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -64,7 +64,7 @@ information about the Open Packaging Conventions, see [ISO/IEC 29500-2](https://
 Styles are stored in dedicated parts within a word processing document
 package. An Microsoft Word 2010 document contains a single styles part.
 Microsoft Word 2013 adds a second stylesWithEffects part. The following
-image from the Document Explorer in the Open XML SDK 2.5 Productivity
+image from the Document Explorer in the Open XML SDK Productivity
 Tool for Microsoft Office shows the document parts in a sample Word 2013
 document that contains styles.
 
@@ -184,9 +184,7 @@ stylesWithEffects part.
         ReplaceStylesPart(toDoc, node, True)
     End If
 ```
-For more information about the **ExtractStylesPart** method, see <span
-sdata="link">[How to: Extract styles from a word processing document
-(Open XML SDK)](how-to-extract-styles-from-a-word-processing-document.md). The
+For more information about the **ExtractStylesPart** method, see [the associated sample](how-to-extract-styles-from-a-word-processing-document.md). The
 following section explains the **ReplaceStylesPart** method.
 
 ---------------------------------------------------------------------------------
@@ -500,4 +498,4 @@ Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

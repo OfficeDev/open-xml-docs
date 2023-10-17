@@ -17,12 +17,12 @@ ms.localizationpriority: high
 ---
 # Retrieve a list of the worksheets in a spreadsheet document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve a list of the worksheets in a
 Microsoft Excel 2010 or Microsoft Excel 2013 workbook, without loading
 the document into Excel. It contains an example **GetAllWorksheets** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -239,4 +239,4 @@ Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

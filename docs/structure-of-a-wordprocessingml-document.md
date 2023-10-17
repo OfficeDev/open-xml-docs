@@ -30,15 +30,15 @@ or more \<**t**\> elements. The \<**t**\> element contains a range of text.
 
 ## Important WordprocessingML Parts
 
-The Open XML SDK 2.5 API provides strongly-typed classes in the
+The Open XML SDK API provides strongly-typed classes in the
 DocumentFormat.OpenXML.WordprocessingML namespace that correspond to
 **WordprocessingML** elements.
 
 The following table lists some important **WordprocessingML** elements, the **WordprocessingML** document package part that the
 element corresponds to (where applicable) and the managed class that
-represents the element in the Open XML SDK 2.5 API.
+represents the element in the Open XML SDK API.
 
-| **Package Part** | **WordprocessingML Element** | **Open XML SDK 2.5 Class** | **Description** |
+| **Package Part** | **WordprocessingML Element** | **Open XML SDK Class** | **Description** |
 |---|---|---|---|
 | Main Document|document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
 | Comments | comments | [Comments](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.comments.aspx) | The root element for the comments part. |
@@ -104,7 +104,7 @@ t — A range of text.
 
 ### Open XML SDK Code Example
 
-The following code uses the Open XML SDK 2.5 to create a simple **WordprocessingML** document that contains the text
+The following code uses the Open XML SDK to create a simple **WordprocessingML** document that contains the text
 "Hello, Word!"
 
 ```csharp
@@ -147,7 +147,7 @@ The following code uses the Open XML SDK 2.5 to create a simple **Wordprocessing
 
 ### Generated WordprocessingML
 
-After you run the Open XML SDK 2.5 code in the previous section to
+After you run the Open XML SDK code in the previous section to
 generate a document, you can explore the contents of the .zip package to
 view the **WordprocessingML** XML code. To view
 the .zip package, rename the extension on the minimum document from
@@ -159,7 +159,7 @@ contains a single line of text.**Art
 placeholder**The document.xml file corresponds to the **WordprocessingML** main document part and it is
 this part that contains the content of the main body of the document.
 The following XML code is generated in the document.xml file when you
-run the Open XML SDK 2.5 code in the previous section.
+run the Open XML SDK code in the previous section.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>

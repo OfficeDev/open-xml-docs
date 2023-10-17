@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Insert a table into a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically insert a table into a word processing
 document.
 
@@ -399,7 +399,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
 [Object Initializers: Named and Anonymous Types (Visual Basic .NET)](https://msdn.microsoft.com/library/bb385125.aspx)
 

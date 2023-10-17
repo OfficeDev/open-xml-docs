@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with the shared string table (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) class and how it relates
+This topic discusses the Open XML SDK [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
@@ -68,18 +68,18 @@ workbook contains only one shared string table part that contains
 strings that can appear multiple times in one sheet or in multiple
 sheets.
 
-The following table lists the common Open XML SDK 2.5 classes used when
+The following table lists the common Open XML SDK classes used when
 working with the **SharedStringTable** class.
 
 
-| **SpreadsheetML Element** |                                                  **Open XML SDK 2.5 Class**                                                  |
+| **SpreadsheetML Element** |                                                  **Open XML SDK Class**                                                  |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |            si             | [SharedStringItem](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx) |
 |             t             |             [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.text.aspx)             |
 
 --------------------------------------------------------------------------------
-## Open XML SDK 2.5 SharedStringTable Class 
-The Open XML SDK 2.5**SharedStringTable** class
+## Open XML SDK SharedStringTable Class 
+The Open XML SDK**SharedStringTable** class
 represents the paragraph (\<**sst**\>) element
 defined in the Open XML File Format schema for SpreadsheetML documents.
 Use the **SharedStringTable** class to
@@ -268,7 +268,7 @@ insert text into a cell, see [How to: Insert text into a cell in a spreadsheet d
 ```
 ### Generated SpreadsheetML
 
-If you run the Open XML SDK 2.5 in the [How to: Insert text into a cell in a spreadsheet document (Open XML SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.md) topic and insert
+If you run the Open XML SDK in the [How to: Insert text into a cell in a spreadsheet document (Open XML SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.md) topic and insert
 the word "hello" into cell A1, the following XML is written to the
 "sharedStrings.xml" file in the .zip file of the SpreadsheetML document
 referenced in the code.

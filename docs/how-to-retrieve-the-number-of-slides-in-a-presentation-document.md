@@ -17,14 +17,14 @@ ms.localizationpriority: medium
 ---
 # Retrieve the number of slides in a presentation document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve the number of slides in a
 presentation document, either including hidden slides or not, without
 loading the document into Microsoft PowerPoint. It contains an example
 **RetrieveNumberOfSlides** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -248,4 +248,4 @@ Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

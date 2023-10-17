@@ -15,7 +15,7 @@ ms.localizationpriority: high
 
 # Insert a chart into a spreadsheet document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for Office to insert a chart into a spreadsheet document programmatically.
+This topic shows how to use the classes in the Open XML SDK for Office to insert a chart into a spreadsheet document programmatically.
 
 The following assembly directives are required to compile the code in this topic.
 
@@ -125,13 +125,13 @@ example.
     </worksheet>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
 classes in the **DocumentFormat.OpenXml.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx), [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx), **worksheet**, and [SheetData<](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx) elements.
 
-| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** | **Description** |
+| **SpreadsheetML Element** | **Open XML SDK Class** | **Description** |
 |:---|:---|:---|
 | workbook | DocumentFormat.OpenXml.Spreadsheet.Workbook | The root element for the main document part. |
 | sheets | DocumentFormat.OpenXml.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
@@ -861,7 +861,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 [Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
 [Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)

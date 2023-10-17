@@ -19,14 +19,14 @@ ms.localizationpriority: high
 
 # Convert a word processing document from the DOCM to the DOCX file format
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically convert a Microsoft Word 2010 or Microsoft
 Word 2013 document that contains VBA code (and has a .docm extension) to
 a standard document (with a .docx extension). It contains an example
 **ConvertDOCMtoDOCX** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK]
+(https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -97,7 +97,7 @@ see [ISO/IEC 29500-2](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalog
 When you create and save a VBA macro in a document, Word adds a new
 binary part named vbaProject that contains the internal representation
 of your macro project. The following image from the Document Explorer in
-the Open XML SDK 2.5 Productivity Tool for Microsoft Office shows the
+the Open XML SDK Productivity Tool for Microsoft Office shows the
 document parts in a sample document that contains a macro. The
 vbaProject part is highlighted.
 
@@ -163,7 +163,7 @@ The sample code next verifies that the vbaProject part exists, deletes the part 
     End If
 ```
 
-It is not enough to delete the part from the document. You must also convert the document type, internally. The Open XML SDK 2.5 provides a way to perform this task: You can call the document **ChangeDocumentType** method and indicate the new document type (in this case, supply the *WordProcessingDocumentType.Document* enumerated value).
+It is not enough to delete the part from the document. You must also convert the document type, internally. The Open XML SDK provides a way to perform this task: You can call the document **ChangeDocumentType** method and indicate the new document type (in this case, supply the *WordProcessingDocumentType.Document* enumerated value).
 
 You must also rename the file. However, you cannot do that while the file is open. The using block closes the file at the end of the block. Therefore, you must have some way to indicate to the code after the block that you have modified the file: The **fileChanged** Boolean variable tracks this information for you.
 
@@ -334,4 +334,4 @@ Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

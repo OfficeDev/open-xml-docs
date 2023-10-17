@@ -16,9 +16,9 @@ ms.localizationpriority: medium
 
 # Retrieve a list of the hidden worksheets in a spreadsheet document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically retrieve a list of hidden worksheets in a Microsoft Excel 2010 or Microsoft Excel 2010 workbook, without loading the document into Excel. It contains an example **GetHiddenSheets** method to illustrate this task.
+This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve a list of hidden worksheets in a Microsoft Excel 2010 or Microsoft Excel 2010 workbook, without loading the document into Excel. It contains an example **GetHiddenSheets** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
 - WindowsBase
 - DocumentFormat.OpenXml (installed by the Open XML SDK)
@@ -111,7 +111,7 @@ Next, the following code opens the specified workbook by using the **Spreadsheet
 
 ## Retrieve the collection of worksheets
 
-The **WorkbookPart** class provides a **Workbook** property, which in turn contains the XML content of the workbook. Although the Open XML SDK 2.5 provides the **Sheets** property, which returns a collection of the **Sheet** parts, all the information that you need is provided by the **Sheet** elements within the **Workbook** XML content.
+The **WorkbookPart** class provides a **Workbook** property, which in turn contains the XML content of the workbook. Although the Open XML SDK provides the **Sheets** property, which returns a collection of the **Sheet** parts, all the information that you need is provided by the **Sheet** elements within the **Workbook** XML content.
 The following code uses the **Descendants** generic method of the **Workbook** object to retrieve a collection of **Sheet** objects that contain information about all the sheet child elements of the workbook's XML content.
 
 ```csharp
@@ -208,4 +208,4 @@ The following is the complete **GetHiddenSheets** code sample in C\# and Visual 
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

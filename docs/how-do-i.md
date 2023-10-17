@@ -16,8 +16,7 @@ ms.localizationpriority: high
 ---
 # How do I... (Open XML SDK)
 
-This section provides how-to topics for working with the Open XML SDK
-2.5 for Office.
+This section provides how-to topics for working with the Open XML SDK for Office.
 
 [!include[Add-ins note](./includes/addinsnote.md)]
 

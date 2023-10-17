@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Working with animation (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office **Animate** class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
+This topic discusses the Open XML SDK for Office **Animate** class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 ## Animation in PresentationML
 
@@ -56,9 +56,9 @@ This element is a generic animation element that requires little or no semantic 
 </p:anim>
 ```
 
-The following table lists the child elements of the \<anim\> element used when working with animation and the Open XML SDK 2.5 classes that correspond to them.
+The following table lists the child elements of the \<anim\> element used when working with animation and the Open XML SDK classes that correspond to them.
 
-| **PresentationML Element** | **Open XML SDK 2.5 Class** |
+| **PresentationML Element** | **Open XML SDK Class** |
 |:---------------------------|:----------------------------|
 |         \<cBhvr\>          |       CommonBehavior       |
 |         \<tavLst\>         |    TimeAnimateValueList    |
@@ -73,7 +73,7 @@ The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalog
 | to        | This attribute specifies the ending value for the animation as a percentage.The possible values for this attribute are defined by the W3C XML Schema string data type.       |
 | valueType | This attribute specifies the type of property value.The possible values for this attribute are defined by the ST_TLAnimateBehaviorValueType simple type (§19.7.21).           |
 
-## Open XML SDK 2.5 Animate Class
+## Open XML SDK Animate Class
 
 The OXML SDK **Animate** class represents the \<anim\> element defined in the Open XML File Format schema for PresentationML documents. Use the **Animate**
 class to manipulate individual \<anim\> elements in a PresentationML document.
@@ -138,7 +138,7 @@ The **Animate** class, which represents the \<anim\> element, is therefore also 
 
 ## See also
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 [How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)
 [How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)

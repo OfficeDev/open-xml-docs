@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Working with slide layouts (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the Open XML File Format PresentationML schema.
+This topic discusses the Open XML SDK for Office [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the Open XML File Format PresentationML schema.
 
 ## Slide Layouts in PresentationML
 
@@ -34,10 +34,10 @@ the parts and elements that make up a PresentationML document, see
 [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 The following table lists the child elements of the \<sldLayout\>
-element used when working with slide layouts and the Open XML SDK 2.5
+element used when working with slide layouts and the Open XML SDK
 classes that correspond to them.
 
-| **PresentationML Element** |                                                               **Open XML SDK 2.5 Class**                                                                |
+| **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
 |          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
@@ -59,7 +59,7 @@ specification describes the attributes of the \<sldLayout\> element.
 |               type (Slide Layout Type)                |                                                                                                                                          Specifies the slide layout type that is used by this slide.<br/>The possible values for this attribute are defined by the ST_SlideLayoutType simple type (§19.7.15).                                                                                                                                          |
 |               userDrawn (Is User Drawn)               |                                                                                        Specifies if the corresponding object has been drawn by the user and should thus not be deleted. This allows for the flagging of slides that contain user drawn data.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.                                                                                        |
 
-## The Open XML SDK 2.5 SlideLayout Class
+## The Open XML SDK SlideLayout Class
 
 The OXML SDK **SlideLayout** class represents
 the \<sldLayout\> element defined in the Open XML File Format schema for
@@ -166,7 +166,7 @@ the **CommonSlideData** class, the **ColorMapOverride** class, the [ShapeTree](h
 
 ## Open XML SDK Code Example
 
-The following method from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an Open XML SDK 2.5**SlideLayout** class in the new slide layout part. The **SlideLayout** class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn creates additional class instances: an instance of the [NonVisualGroupShapeProperties (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+The following method from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an Open XML SDK**SlideLayout** class in the new slide layout part. The **SlideLayout** class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn creates additional class instances: an instance of the [NonVisualGroupShapeProperties (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
 The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx) namespace.
 
@@ -265,6 +265,6 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
 
 ## See also
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 [How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  

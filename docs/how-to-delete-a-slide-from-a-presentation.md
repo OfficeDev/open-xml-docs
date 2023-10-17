@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Delete a slide from a presentation (Open XML SDK)
 
-This topic shows how to use the Open XML SDK 2.5 for Office to delete a
+This topic shows how to use the Open XML SDK for Office to delete a
 slide from a presentation programmatically. It also shows how to delete
 all references to the slide from any custom shows that may exist. To
 delete a specific slide in a presentation file you need to know first
@@ -153,9 +153,9 @@ two slides denoted by the IDs 267 and 256.
     </p:presentation>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and content using strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace. The following table lists the class names of the classes that correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
+Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace. The following table lists the class names of the classes that correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
-| PresentationML Element | Open XML SDK 2.5 Class | Description |
+| PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
 | sld | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) | Presentation Slide. It is the root element of SlidePart. |
 | sldLayout | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) | Slide Layout. It is the root element of SlideLayoutPart. |
@@ -718,4 +718,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

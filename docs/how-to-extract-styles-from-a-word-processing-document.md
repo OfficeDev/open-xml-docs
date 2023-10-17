@@ -17,15 +17,15 @@ ms.localizationpriority: medium
 ---
 # Extract styles from a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically extract the styles or stylesWithEffects part
 from a word processing document to an
 [XDocument](https://msdn.microsoft.com/library/Bb345449(v=VS.100).aspx)
 instance. It contains an example **ExtractStylesPart** method to
 illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK]
+(https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -338,4 +338,4 @@ The following is the complete **ExtractStylesPart** code sample in C\# and Visua
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
