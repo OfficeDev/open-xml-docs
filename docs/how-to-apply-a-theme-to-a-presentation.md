@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Apply a theme to a presentation (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to apply the theme from one presentation to another presentation
 programmatically.
 
@@ -149,13 +149,13 @@ two slides denoted by the ID 267 and 256.
     </p:presentation>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to **PresentationML** elements. You can find these
 classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
-| PresentationML Element | Open XML SDK 2.5 Class | Description |
+| PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
 | sld | Slide | Presentation Slide. It is the root element of SlidePart. |
 | sldLayout | SlideLayout | Slide Layout. It is the root element of SlideLayoutPart. |
@@ -187,7 +187,7 @@ be useful when working with this element.
 
 The following table lists the possible child types of the Theme class.
 
-| PresentationML Element | Open XML SDK 2.5 Class | Description |
+| PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
 | custClrLst | CustomColorList | Custom Color List |
 | extLst | ExtensionList | Extension List |
@@ -674,7 +674,7 @@ would see the same theme of the file Myppt9-theme.pptx.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
 
 

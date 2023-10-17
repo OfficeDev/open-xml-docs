@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Set the font for a text run (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to set the font for a portion of text within a word processing
 document programmatically.
 
@@ -269,7 +269,7 @@ The following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
 [Object Initializers: Named and Anonymous Types](https://msdn.microsoft.com/library/bb385125.aspx)
 

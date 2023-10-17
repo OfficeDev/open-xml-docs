@@ -17,13 +17,13 @@ ms.localizationpriority: medium
 ---
 # Create and add a character style to a word processing document
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create and add a character style to a word
 processing document. It contains an example
 **CreateAndAddCharacterStyle** method to illustrate this task, plus a
 supplemental example method to add the styles part when it is necessary.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -629,4 +629,4 @@ The following is the complete **CreateAndAddCharacterStyle** code sample in both
 ## See also
 
 [How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
-[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+[Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with sheets (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx), [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx), and [DialogSheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.dialogsheet.aspx) classes and how they relate to
+This topic discusses the Open XML SDK [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx), [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx), and [DialogSheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.dialogsheet.aspx) classes and how they relate to
 the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
@@ -43,9 +43,9 @@ Other types of sheets include chart sheets and dialog sheets.
 © ISO/IEC29500: 2008.
 
 
-## Open XML SDK 2.5 Worksheet Class
+## Open XML SDK Worksheet Class
 
-The Open XML SDK 2.5**Worksheet** class
+The Open XML SDK**Worksheet** class
 represents the **worksheet** (\<**worksheet**\>) element defined in the Open XML File
 Format schema for SpreadsheetML documents. Use the **Worksheet** class to manipulate individual \<**worksheet**\> elements in a SpreadsheetML document.
 
@@ -104,10 +104,10 @@ the XML file. If the value is a string value, it is stored in a shared
 string table. For more information about using the shared string table
 to store string values, see [Working with the shared string table (Open XML SDK)](working-with-the-shared-string-table.md).
 
-The following table lists the common Open XML SDK 2.5 classes used when
+The following table lists the common Open XML SDK classes used when
 working with the [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx) class.
 
-| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** |
+| **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
 | sheetData | [SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx) |
 | row | [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) |
@@ -328,10 +328,10 @@ relationship in the Chartsheet part's relationship item:
 
 © ISO/IEC29500: 2008.
 
-The following table lists the common Open XML SDK 2.5 classes used when
+The following table lists the common Open XML SDK classes used when
 working with the [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx) class.
 
-| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** |
+| **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
 | drawing | [Drawing](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.drawing.aspx) |
 
@@ -352,7 +352,7 @@ be only one Drawings part per worksheet or chartsheet.
 © ISO/IEC29500: 2008.
 
 
-## Open XML SDK 2.5 Dialogsheet Class
+## Open XML SDK Dialogsheet Class
 
 The following information from the ISO/IEC 29500 specification
 introduces the **dialogsheet** (\<**dialogsheet**\>) element.

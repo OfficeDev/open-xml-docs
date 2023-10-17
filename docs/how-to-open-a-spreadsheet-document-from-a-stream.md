@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Open a spreadsheet document from a stream (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to open a spreadsheet document from a stream programmatically.
 
 The following assembly directives are required to compile the code in
@@ -40,14 +40,14 @@ this topic.
 ## When to Open From a Stream 
 If you have an application, such as Microsoft SharePoint Foundation
 2010, that works with documents by using stream input/output, and you
-want to use the Open XML SDK 2.5 to work with one of the documents, this
+want to use the Open XML SDK to work with one of the documents, this
 is designed to be easy to do. This is especially true if the document
-exists and you can open it using the Open XML SDK 2.5. However, suppose
+exists and you can open it using the Open XML SDK. However, suppose
 that the document is an open stream at the point in your code where you
 must use the SDK to work with it? That is the scenario for this topic.
 The sample method in the sample code accepts an open stream as a
 parameter and then adds text to the document behind the stream using the
-Open XML SDK 2.5.
+Open XML SDK.
 
 
 --------------------------------------------------------------------------------
@@ -135,13 +135,13 @@ code example.
     </worksheet>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content that uses strongly-typed classes that correspond to
 SpreadsheetML elements. You can find these classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
-SpreadsheetML Element|Open XML SDK 2.5 Class|Description
+SpreadsheetML Element|Open XML SDK Class|Description
 --|--|--
 workbook|DocumentFormat.OpenXml.Spreadsheet.Workbook|The root element for the main document part.
 sheets|DocumentFormat.OpenXml.Spreadsheet.Sheets|The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
@@ -280,4 +280,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 ## See also 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

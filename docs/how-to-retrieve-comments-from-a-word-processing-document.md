@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Retrieve comments from a word processing document (Open XML SDK)
 
-This topic describes how to use the classes in the Open XML SDK 2.5 for
+This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically retrieve the comments from the main document
 part in a word processing document.
 
@@ -238,4 +238,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

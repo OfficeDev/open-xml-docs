@@ -18,9 +18,9 @@ ms.localizationpriority: medium
 
 # Retrieve application property values from a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically retrieve an application property from a Microsoft Word 2013 document, without loading the document into Word. It contains example code to illustrate this task.
+This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve an application property from a Microsoft Word 2013 document, without loading the document into Word. It contains example code to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You must explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
 - WindowsBase
 - DocumentFormat.OpenXml (installed by the Open XML SDK)
@@ -167,4 +167,4 @@ The following is the complete code sample in C\# and Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

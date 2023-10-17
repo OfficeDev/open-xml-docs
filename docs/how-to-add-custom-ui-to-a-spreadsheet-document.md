@@ -17,12 +17,11 @@ ms.localizationpriority: high
 
 # Add custom UI to a spreadsheet document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for Office to programmatically add custom UI, modifying the ribbon, to an Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an example **AddCustomUI** method to illustrate
+This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to an Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an example **AddCustomUI** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.0](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). Explicitly reference the following assemblies in your project:
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). Explicitly reference the following assemblies in your project:
 
-- WindowsBase
 - DocumentFormat.OpenXml (installed by the Open XML SDK)
 
 You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
@@ -39,7 +38,7 @@ You must also use the following **using** directives or **Imports** statements t
 
 ## Creating Custom UI
 
-Before using the Open XML SDK 2.5 to create a ribbon customization in an Excel workbook, you must first create the customization content. Describing the XML required to create a ribbon customization is beyond the scope of this topic. In addition, you will find it far easier to use the Ribbon Designer in Visual Studio 2010 to create the customization for you. For more information about customizing the ribbon by using the Visual Studio Ribbon Designer, see [Ribbon Designer](https://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx) and [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](https://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx).
+Before using the Open XML SDK to create a ribbon customization in an Excel workbook, you must first create the customization content. Describing the XML required to create a ribbon customization is beyond the scope of this topic. In addition, you will find it far easier to use the Ribbon Designer in Visual Studio 2010 to create the customization for you. For more information about customizing the ribbon by using the Visual Studio Ribbon Designer, see [Ribbon Designer](https://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx) and [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](https://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx).
 For the purposes of this demonstration, you will need an XML file that contains a customization, and the following code provides a simple customization (or you can create your own by using the Visual Studio Ribbon Designer, and then right-click to export the customization to an XML file). Copy the following content into a text file that is named AddCustomUI.xml for use as part of this example. This XML content describes a ribbon customization that includes a button labeled "Click Me!" in a group named Group1 on the **Add-Ins** tab in Excel. When you click the button, it attempts to run a macro named **SampleMacro** in the host workbook.
 
 ```xml
@@ -253,6 +252,6 @@ The following is the complete **AddCustomUI** code sample in C\# and Visual Basi
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 - [Ribbon Designer](https://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx)
 - [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](https://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx)

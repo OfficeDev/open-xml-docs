@@ -17,12 +17,12 @@ ms.localizationpriority: medium
 ---
 # Remove the headers and footers from a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically remove all headers and footers in a word
 processing document. It contains an example **RemoveHeadersAndFooters** method to illustrate this
 task.
 
-To use the sample code in this topic, you must install the [Open XML SDK 2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must then explicitly reference the following assemblies in your project.
 
 - WindowsBase
@@ -148,7 +148,7 @@ Be aware that the **HeaderParts** and **FooterParts** properties each return an
 
 Given a collection of references to header and footer parts, you could
 write code to delete each one individually, but that is not necessary
-because of the Open XML SDK 2.5. Instead, you can call the [DeleteParts\<T\>](https://msdn.microsoft.com/library/office/cc562335.aspx) method, passing in the
+because of the Open XML SDK. Instead, you can call the [DeleteParts\<T\>](https://msdn.microsoft.com/library/office/cc562335.aspx) method, passing in the
 collection of parts to be deleted─this simple method provides a shortcut
 for deleting a collection of parts. Therefore, the following few lines
 of code take the place of the loop that you would otherwise have to
@@ -203,7 +203,7 @@ loops through the collection, calling the [Remove](https://msdn.microsoft.com/li
 that the code converts the **IEnumerable**
 returned by the [Descendants](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.descendants.aspx) method into a List so that it
 can delete items from the list, and that the [HeaderReference](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.headerreference.aspx) type that is provided by
-the Open XML SDK 2.5 makes it easy to refer to elements of type **HeaderReference** in the XML content. (Without that
+the Open XML SDK makes it easy to refer to elements of type **HeaderReference** in the XML content. (Without that
 additional help, you would have to work with the details of the XML
 content directly.) Once it has removed all the headers, the code repeats
 the operation with the footer elements.
@@ -366,4 +366,4 @@ Visual Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

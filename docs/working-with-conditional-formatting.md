@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with conditional formatting (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[ConditionalFormatting](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)** class and how it
+This topic discusses the Open XML SDK **[ConditionalFormatting](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
 make up a SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)**.
@@ -39,12 +39,12 @@ applied to a cell or series of cells. The collection of cells on which
 the format is applied is defined using the **sqref** attribute. The **sqref** attribute specifies a cell range using the
 'from:to' notation, for example 'A1:A10'.
 
-The following table lists the common Open XML SDK 2.5 classes used when
+The following table lists the common Open XML SDK classes used when
 working with the **ConditionalFormatting**
 class.
 
 
-| **SpreadsheetML Element** |                                                           **Open XML SDK 2.5 Class**                                                           |
+| **SpreadsheetML Element** |                                                           **Open XML SDK Class**                                                           |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 |          cfRule           | [ConditionalFormattingRule](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformattingrule.aspx) |
 |          dataBar          |                   [DataBar](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.databar.aspx)                   |
@@ -52,8 +52,8 @@ class.
 |          iconSet          |                   [IconSet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.iconset.aspx)                   |
 
 --------------------------------------------------------------------------------
-## Open XML SDK 2.5 Conditional Formatting Class 
-The Open XML SDK 2.5**ConditionalFormatting**
+## Open XML SDK Conditional Formatting Class 
+The Open XML SDK**ConditionalFormatting**
 class represents the table (\<**conditionalFormatting**\>) element defined in the
 Open XML File Format schema for SpreadsheetML documents. Use the **ConditionalFormatting** class to manipulate
 individual \<**conditionalFormatting**\>

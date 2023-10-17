@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Working with PivotTables (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+This topic discusses the Open XML SDK **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 ## PivotTable in SpreadsheetML
 
@@ -85,17 +85,17 @@ is displayed in the cells of a worksheet and therefore you need to
 construct them as well. You can also have the user update the PivotTable
 cells when opening the document.
 
-The following table lists the common Open XML SDK 2.5 classes used when working with the **PivotTableDefinition** class.
+The following table lists the common Open XML SDK classes used when working with the **PivotTableDefinition** class.
 
-| **SpreadsheetML Element** | **Open XML SDK 2.5 Class**                                                      |
+| **SpreadsheetML Element** | **Open XML SDK Class**                                                      |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------|
 |  pivotField            | [PivotField](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotfield.aspx)           |
 |  pivotCacheDefinition  | [PivotCacheDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx) |
 |  pivotCacheRecords     | [PivotCacheRecords](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)    |
 
-## Open XML SDK 2.5 PivotTableDefinition Class
+## Open XML SDK PivotTableDefinition Class
 
-The Open XML SDK 2.5**PivotTableDefinition**
+The Open XML SDK**PivotTableDefinition**
 class represents the PivotTable definition (\<**pivotTableDefinition**\>) element defined in the Open XML File Format schema for SpreadsheetML documents. Use the **PivotTableDefinition** class to manipulate individual \<**pivotTableDefinition**\> elements in a SpreadsheetML document.
 
 The main function of the PivotTable definition is to store information

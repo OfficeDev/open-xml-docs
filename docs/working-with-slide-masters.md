@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Working with slide masters (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office **[SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the Open XML File Format PresentationML schema.
+This topic discusses the Open XML SDK for Office **[SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the Open XML File Format PresentationML schema.
 
 ## Slide Masters in PresentationML
 
@@ -27,9 +27,9 @@ This element specifies an instance of a slide master slide. Within a slide maste
 
 The \<sldMaster\> element is the root element of the PresentationML Slide Master part. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
-The following table lists the child elements of the \<sldMaster\> element used when working with slide masters and the Open XML SDK 2.5 classes that correspond to them.
+The following table lists the child elements of the \<sldMaster\> element used when working with slide masters and the Open XML SDK classes that correspond to them.
 
-| **PresentationML Element** | **Open XML SDK 2.5 Class**                                                                                                 |
+| **PresentationML Element** | **Open XML SDK Class**                                                                                                 |
 |:---------------------------|:---------------------------------------------------------------------------------------------------------------------------|
 | \<clrMap\>                 | [ColorMap](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormap.aspx)                    |
 | \<cSld\>                   | [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)      |
@@ -47,9 +47,9 @@ specification describes the attributes of the \<sldMaster\> element.
 |----------------------------|----------------------------------------------------|
 | preserve (Preserve Slide Master) | Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of **false** should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br/>The possible values for this attribute are defined by the W3C XML Schema **Boolean** data type. |
 
-## Open XML SDK 2.5 SlideMaster Class
+## Open XML SDK SlideMaster Class
 
-The Open XML SDK 2.5**SlideMaster** class
+The Open XML SDK**SlideMaster** class
 represents the \<sldMaster\> element defined in the Open XML File Format
 schema for PresentationML documents. Use the **SlideMaster** class to manipulate individual
 \<sldMaster\> elements in a PresentationML document.
@@ -146,7 +146,7 @@ element. Among these classes, as shown in the following code sample, are the **C
 
 ## Open XML SDK Code Example
 
-The following method from the article [How to: Create a presentation document by providing a file name](/office/open-xml/how-to-create-a-presentation-document-by-providing-a-file-name) adds a new slidemaster part to an existing presentation and creates an instance of an Open XML SDK 2.5**SlideMaster** class in the new slide master part. The **SlideMaster** class constructor creates instances of the **CommonSlideData** class and the **ColorMap**, **SlideLayoutIdList**, and **TextStyles** classes. The **CommonSlideData** class constructor creates an instance of the **[ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, whose constructor in turn creates additional class instances: an instance of the **[NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx)** class, an instance of the **[GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx)** class, and an instance of the **[Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx)** class, among others.
+The following method from the article [How to: Create a presentation document by providing a file name](/office/open-xml/how-to-create-a-presentation-document-by-providing-a-file-name) adds a new slidemaster part to an existing presentation and creates an instance of an Open XML SDK**SlideMaster** class in the new slide master part. The **SlideMaster** class constructor creates instances of the **CommonSlideData** class and the **ColorMap**, **SlideLayoutIdList**, and **TextStyles** classes. The **CommonSlideData** class constructor creates an instance of the **[ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, whose constructor in turn creates additional class instances: an instance of the **[NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx)** class, an instance of the **[GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx)** class, and an instance of the **[Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx)** class, among others.
 
 The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace.
 
@@ -282,7 +282,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
 
 ## See also
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 [How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)
 [How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Validate a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically validate a word processing document.
 
 The following assembly directives are required to compile the code in
@@ -219,4 +219,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

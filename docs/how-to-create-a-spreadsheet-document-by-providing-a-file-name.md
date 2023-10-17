@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Create a spreadsheet document by providing a file name (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create a spreadsheet document.
 
 The following assembly directives are required to compile the code in
@@ -120,13 +120,13 @@ worksheet created by the sample code.
     </x:worksheet>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content by using strongly-typed classes that correspond to SpreadsheetML
 elements. You can find these classes in the **DocumentFormat.OpenXml.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
-| SpreadsheetML Element | Open XML SDK 2.5 Class | Description |
+| SpreadsheetML Element | Open XML SDK Class | Description |
 |---|---|---|
 | workbook | DocumentFormat.OpenXml.Spreadsheet.Workbook | The root element for the main document part. |
 | sheets | DocumentFormat.OpenXml.Spreadsheet.Sheets | The container for the block-level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
@@ -236,4 +236,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 ## See also 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

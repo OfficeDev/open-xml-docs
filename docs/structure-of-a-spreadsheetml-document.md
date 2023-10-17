@@ -31,14 +31,14 @@ related elements.
 --------------------------------------------------------------------------------
 ## Important Spreadsheet Parts
 
-Using the Open XML SDK 2.5 for Office, you can create document structure
+Using the Open XML SDK for Office, you can create document structure
 and content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
 classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 some of the important spreadsheet elements.
 
 
-| Package Part| Top Level SpreadsheetML Element | Open XML SDK 2.5 Class | Description|
+| Package Part| Top Level SpreadsheetML Element | Open XML SDK Class | Description|
 |:------------|:--------------------------------|:-----------------------|:-----------|
 | Workbook  |   workbook  |  [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)   |   The root element for the main document part.|  
 | Worksheet  |  worksheet     |    [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx) | A type of sheet that represent a grid of cells that contains text, numbers, dates or formulas. For more information, see [Working with sheets (Open XML SDK)](working-with-sheets.md).  |
@@ -55,7 +55,7 @@ some of the important spreadsheet elements.
 --------------------------------------------------------------------------------
 ## Minimum Workbook Scenario
 
-The following text from the [Standard ECMA-376](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
+The following text from the [Standard ECMA-376](https://www.ecma-international.org/publications-and-standards/standards/ecma-376/)
 introduces the minimum workbook scenario.
 
 The smallest possible (blank) workbook must contain the following:
@@ -70,7 +70,7 @@ A relationship Id that points to the location of the sheet definition
 
 ### Open XML SDK Code Example
 
-This code example uses the classes in the Open XML SDK 2.5 to create a
+This code example uses the classes in the Open XML SDK to create a
 minimum, blank workbook.
 
 ```csharp
@@ -136,7 +136,7 @@ minimum, blank workbook.
 
 ### Generated SpreadsheetML
 
-After you run the Open XML SDK 2.5 code to generate a minimum workbook,
+After you run the Open XML SDK code to generate a minimum workbook,
 you can explore the contents of the .zip package to view the
 SpreadsheetML XML code. To view the .zip package, rename the extension
 on the minimum spreadsheet from **.xlsx** to
@@ -160,7 +160,7 @@ with a sheet.
 
 The following XML code is the spreadsheetML that represents the workbook
 part of the spreadsheet document. This code is generated when you run
-the Open XML SDK 2.5 code to create a minimum workbook.
+the Open XML SDK code to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -177,7 +177,7 @@ relationships between the workbook and the worksheets it contains.
 
 The following XML code is the spreadsheetML that represents the
 relationship part of the spreadsheet document. This code is generated
-when you run the Open XML SDK 2.5 to create a minimum workbook.
+when you run the Open XML SDK to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -192,7 +192,7 @@ information about sheets, see [Working with sheets (Open XML SDK)](working-with-
 
 The following XML code is the spreadsheetML that represents the
 worksheet part of the spreadsheet document. This code is generated when
-you run the Open XML SDK 2.5 to create a minimum workbook.
+you run the Open XML SDK to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>

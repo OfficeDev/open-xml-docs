@@ -15,7 +15,7 @@ ms.localizationpriority: high
 ---
 # Delete text from a cell in a spreadsheet document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to delete text from a cell in a spreadsheet document
 programmatically.
 
@@ -102,13 +102,13 @@ code example.
     </worksheet>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
 classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
 following table lists the class names of the classes that correspond to
 the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
 
-| **SpreadsheetML Element** | **Open XML SDK 2.5 Class** | **Description** |
+| **SpreadsheetML Element** | **Open XML SDK Class** | **Description** |
 |:---|:---|:---|
 | workbook | DocumentFormat.OpenXML.Spreadsheet.Workbook | The root element for the main document part. |
 | sheets | DocumentFormat.OpenXML.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
@@ -605,7 +605,7 @@ The following is the complete code sample in both C\# and Visual Basic.
 
 ## See also
 
-[Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+[Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 [Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
 [Lambda Expressions](https://msdn.microsoft.com/library/bb531253.aspx)
 [Lambda Expressions (C\# Programming Guide)](https://msdn.microsoft.com/library/bb397687.aspx)  

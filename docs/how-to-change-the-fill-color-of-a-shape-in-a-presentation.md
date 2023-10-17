@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Change the fill color of a shape in a presentation (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 to
+This topic shows how to use the classes in the Open XML SDK to
 change the fill color of a shape on the first slide in a presentation
 programmatically.
 
@@ -347,7 +347,7 @@ change in the fill color.
 
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
 
 

@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Open and add text to a word processing document (Open XML SDK)
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically open and add text to a Word processing
 document.
 
@@ -35,9 +35,9 @@ this topic.
 
 --------------------------------------------------------------------------------
 ## How to Open and Add Text to a Document
-The Open XML SDK 2.5 helps you create Word processing document structure
+The Open XML SDK helps you create Word processing document structure
 and content using strongly-typed classes that correspond to **WordprocessingML** elements. This topic shows how
-to use the classes in the Open XML SDK 2.5 to open a Word processing
+to use the classes in the Open XML SDK to open a Word processing
 document and add text to it. In addition, this topic introduces the
 basic document structure of a **WordprocessingML** document, the associated XML
 elements, and their corresponding Open XML SDK classes.
@@ -114,13 +114,13 @@ text."
     </w:document>
 ```
 
-Using the Open XML SDK 2.5, you can create document structure and
+Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to WordprocessingML
 elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
-| WordprocessingML Element | Open XML SDK 2.5 Class | Description |
+| WordprocessingML Element | Open XML SDK Class | Description |
 |---|---|---|
 | document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
 | body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
@@ -222,4 +222,4 @@ of **OpenSettings**.
 ## See also
 
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

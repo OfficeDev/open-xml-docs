@@ -18,13 +18,13 @@ ms.localizationpriority: medium
 
 # Change the print orientation of a word processing document
 
-This topic shows how to use the classes in the Open XML SDK 2.5 for
+This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically set the print orientation of a Microsoft Word
 2010 or Microsoft Word 2013 document. It contains an example
 **SetPrintOrientation** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK
-2.5](https://www.nuget.org/packages/DocumentFormat.OpenXml/2.5.0). You
+To use the sample code in this topic, you must install the [Open XML SDK]
+(https://www.nuget.org/packages/DocumentFormat.OpenXml). You
 must explicitly reference the following assemblies in your project:
 
 - WindowsBase
@@ -528,4 +528,4 @@ Basic.
 
 ## See also
 
-- [Open XML SDK 2.5 class library reference](/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

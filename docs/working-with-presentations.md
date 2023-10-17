@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with presentations (Open XML SDK)
 
-This topic discusses the Open XML SDK 2.5 for Office [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class and how it relates to
+This topic discusses the Open XML SDK for Office [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a
@@ -70,10 +70,10 @@ the parts and elements that make up a PresentationML document, see
 
 The following table lists some of the most common child elements of the
 \<presentation\> element used when working with presentations and the
-Open XML SDK 2.5 classes that correspond to them.
+Open XML SDK classes that correspond to them.
 
 
-| **PresentationML Element** |                                                     **Open XML SDK 2.5 Class**                                                      |
+| **PresentationML Element** |                                                     **Open XML SDK Class**                                                      |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 |     \<sldMasterIdLst\>     |   [SlideMasterIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemasteridlist.aspx)   |
 |      \<sldMasterId\>       |       [SlideMasterId](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemasterid.aspx)       |
@@ -87,8 +87,8 @@ Open XML SDK 2.5 classes that correspond to them.
 |    \<defaultTextStyle\>    |    [DefaultTextStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.defaulttextstyle.aspx)    |
 
 --------------------------------------------------------------------------------
-## Open XML SDK 2.5 Presentation Class
-The Open XML SDK 2.5**Presentation** class
+## Open XML SDK Presentation Class
+The Open XML SDK**Presentation** class
 represents the \<presentation\> element defined in the Open XML File
 Format schema for PresentationML documents. Use the **Presentation** class to manipulate an individual
 \<presentation\> element in a PresentationML document.
@@ -327,7 +327,7 @@ code example, are the **SlideMasterIdList**,
 ## Open XML SDK Code Example
 The following code example from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
 method of the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class of the Open XML
-SDK 2.5 to create an instance of that same class that has the specified
+SDK to create an instance of that same class that has the specified
 name and file path. Then it uses the [AddPresentationPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx) method to add an
 instance of the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class to the document
 file. Next, it creates an instance of the [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class that represents the
@@ -430,7 +430,7 @@ PresentationML document referenced in the code.
 ## See also
 
 
-[About the Open XML SDK 2.5 for Office](about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](about-the-open-xml-sdk.md)  
 
 [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 

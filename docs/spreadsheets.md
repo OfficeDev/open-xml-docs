@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Spreadsheets (Open XML SDK)
 
-This section provides how-to topics for working with spreadsheet documents using the Open XML SDK 2.5 for Office.
+This section provides how-to topics for working with spreadsheet documents using the Open XML SDK for Office.
 
 ## In this section
 
@@ -57,4 +57,4 @@ This section provides how-to topics for working with spreadsheet documents using
 ## Related sections
 
 - [How do I...](how-do-i.md)  
-- [Getting started with the Open XML SDK 2.5 for Office](getting-started.md)  
+- [Getting started with the Open XML SDK for Office](getting-started.md)  
