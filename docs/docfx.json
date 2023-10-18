@@ -48,7 +48,10 @@
         "**/*.yml": ["csharp", "vb"]
       }
     },
-    "template": [],
+    "template": [
+      "default",
+      "modern"
+    ],
     "dest": "open-xml-docs",
     "markdownEngineName": "markdig"
 }
