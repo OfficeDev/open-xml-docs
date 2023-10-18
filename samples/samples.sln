@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "add_comment_cs", "presentat
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "add_comment_vb", "presentation\add_comment\vb\add_comment_vb.vbproj", "{F5204024-B0D0-4106-AE8B-8CB1552C1F87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migrator", "tools\migrator\migrator.csproj", "{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{F5204024-B0D0-4106-AE8B-8CB1552C1F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5204024-B0D0-4106-AE8B-8CB1552C1F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5204024-B0D0-4106-AE8B-8CB1552C1F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
