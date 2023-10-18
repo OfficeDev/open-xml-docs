@@ -92,50 +92,8 @@ worksheet to the workbook.
     sheets.Append(sheet)
 ```
 
+[!include[Structure](./includes/spreadsheet/structure.md)]
 
---------------------------------------------------------------------------------
-## Basic Structure of a SpreadsheetML Document 
-The following code example is the **SpreadsheetML** markup for the workbook that the
-sample code creates.
-
-```xml
-    <x:workbook xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
-      <x:sheets>
-        <x:sheet name="mySheet" sheetId="1" r:id="R47fd958b504b4526" />
-      </x:sheets>
-    </x:workbook>
-```
-
-The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
-worksheets in the workbook. A separate XML file is created for each
-worksheet. The worksheet XML files contain one or more block level
-elements such as [SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
-one or more [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the cell
-value. The following code example is the SpreadsheetML markup for the
-worksheet created by the sample code.
-
-```xml
-    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
-      <x:sheetData />
-    </x:worksheet>
-```
-
-Using the Open XML SDK, you can create document structure and
-content by using strongly-typed classes that correspond to SpreadsheetML
-elements. You can find these classes in the **DocumentFormat.OpenXml.Spreadsheet** namespace. The
-following table lists the class names of the classes that correspond to
-the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
-
-| SpreadsheetML Element | Open XML SDK Class | Description |
-|---|---|---|
-| workbook | DocumentFormat.OpenXml.Spreadsheet.Workbook | The root element for the main document part. |
-| sheets | DocumentFormat.OpenXml.Spreadsheet.Sheets | The container for the block-level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
-| sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
-| worksheet | DocumentFormat.OpenXml.Spreadsheet.Worksheet | A sheet definition file that contains the sheet data. |
-| sheetData | DocumentFormat.OpenXml.Spreadsheet.SheetData | The cell table, grouped together by rows. |
-
-
---------------------------------------------------------------------------------
 ## Generating the SpreadsheetML Markup 
 To create the basic document structure using the Open XML SDK,
 instantiate the **Workbook** class, assign it

@@ -53,31 +53,7 @@ The code starts with opening a package file by passing a file name to one of the
 The **using** statement provides a recommended alternative to the typical .Create, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
 automatically saves and closes the object as part of its **System.IDisposable** implementation, and because the **Dispose** method is automatically called when you exit the block; you do not have to explicitly call **Save** and **Close**, as long as you use **using**.
 
-## Basic structure of a WordProcessingML document
-
-The basic document structure of a **WordProcessingML** document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The **WordprocessingML** markup for the document that the sample code creates is shown in the following code example.
-
-```xml
-    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
-      <w:body>
-        <w:p>
-          <w:r>
-            <w:t>Create text in body - CreateWordprocessingDocument</w:t>
-          </w:r>
-        </w:p>
-      </w:body>
-    </w:document>
-```
-
-Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to **WordprocessingML** elements. Find these classes in the **[DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)** namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements,
-
-|**WordprocessingML Element** | **Open XML SDK Class** | **Description** |
-|:---|:---|:---|
-| document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
-| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations, and others specified in the ISO/IEC 29500 specification. |
-| p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
-| r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
-| t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
+[!include[Structure](./includes/word/structure.md)]
 
 ## How the sample code works
 

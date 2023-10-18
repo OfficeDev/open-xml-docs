@@ -1,0 +1,5 @@
+<Project>
+    <ItemGroup>
+        <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
+    </ItemGroup>
+</Project>

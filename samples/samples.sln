@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "word", "word", "{D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "accept_all_revisions_cs", "word\accept_all_revisions\cs\accept_all_revisions_cs.csproj", "{93E0FE7B-9437-449F-852D-25C5F183BBCF}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "accept_all_revisions_vb", "word\accept_all_revisions\vb\accept_all_revisions_vb.vbproj", "{E079BD07-B6BB-441C-8FB6-3FFC8B30E6B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "add_comment_cs", "presentation\add_comment\cs\add_comment_cs.csproj", "{B87B46CC-6642-4754-AA32-2AD057D877DC}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "add_comment_vb", "presentation\add_comment\vb\add_comment_vb.vbproj", "{F5204024-B0D0-4106-AE8B-8CB1552C1F87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migrator", "tools\migrator\migrator.csproj", "{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93E0FE7B-9437-449F-852D-25C5F183BBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E0FE7B-9437-449F-852D-25C5F183BBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E0FE7B-9437-449F-852D-25C5F183BBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E0FE7B-9437-449F-852D-25C5F183BBCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E079BD07-B6BB-441C-8FB6-3FFC8B30E6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E079BD07-B6BB-441C-8FB6-3FFC8B30E6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E079BD07-B6BB-441C-8FB6-3FFC8B30E6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E079BD07-B6BB-441C-8FB6-3FFC8B30E6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B87B46CC-6642-4754-AA32-2AD057D877DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87B46CC-6642-4754-AA32-2AD057D877DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87B46CC-6642-4754-AA32-2AD057D877DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B87B46CC-6642-4754-AA32-2AD057D877DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5204024-B0D0-4106-AE8B-8CB1552C1F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5204024-B0D0-4106-AE8B-8CB1552C1F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5204024-B0D0-4106-AE8B-8CB1552C1F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5204024-B0D0-4106-AE8B-8CB1552C1F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93E0FE7B-9437-449F-852D-25C5F183BBCF} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}
+		{E079BD07-B6BB-441C-8FB6-3FFC8B30E6B0} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}
+		{B87B46CC-6642-4754-AA32-2AD057D877DC} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
+		{F5204024-B0D0-4106-AE8B-8CB1552C1F87} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {721B3030-08D7-4412-9087-D1CFBB3F5046}
+	EndGlobalSection
+EndGlobal
