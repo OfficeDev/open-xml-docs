@@ -1,3 +1,3 @@
 param($path)
 
-dotnet run "$(PSScriptRoot)\tools\migrator.csproj" -- $path
+dotnet run --project "$PSScriptRoot\tools\migrator\migrator.csproj" -- $path
