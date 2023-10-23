@@ -250,29 +250,11 @@ instantiate a second **Shape** object by
 passing an additional parameter that contains the following code to the
 **ShapeTree** constructor.
 
-```csharp
-    new P.Shape(
-              new P.NonVisualShapeProperties(
-                  new P.NonVisualDrawingProperties() { Id = (UInt32Value)2U, Name = "Title 1" },
-                  new P.NonVisualShapeDrawingProperties(new ShapeLocks() { NoGrouping = true }),
-                  new ApplicationNonVisualDrawingProperties(new PlaceholderShape())),
-              new P.ShapeProperties(),
-              new P.TextBody(
-                  new BodyProperties(),
-                  new ListStyle(),
-                  new Paragraph(new EndParagraphRunProperties() { Language = "en-US" })))
-```
+### [C#](#tab/cs)
+[!code-csharp[](../samples/presentation/working_with_presentation_slides/cs/Program.cs)]
 
-```vb
-    New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
-                  .Id = CType(2UI, UInt32Value), _
-                  .Name = "Title 1" _
-                }, New P.NonVisualShapeDrawingProperties(New ShapeLocks() With { _
-                  .NoGrouping = True _
-                }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New P.TextBody(New BodyProperties(), _
-                   New ListStyle(), New Paragraph(New EndParagraphRunProperties() With { _
-                  .Language = "en-US" })))
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/presentation/working_with_presentation_slides/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 ## Generated PresentationML

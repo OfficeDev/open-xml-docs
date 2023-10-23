@@ -150,71 +150,11 @@ The following method from the article [How to: Create a presentation document by
 
 The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace.
 
-```csharp
-    private static SlideMasterPart CreateSlideMasterPart(SlideLayoutPart slideLayoutPart1)
-       {
-           SlideMasterPart slideMasterPart1 = slideLayoutPart1.AddNewPart<SlideMasterPart>("rId1");
-           SlideMaster slideMaster = new SlideMaster(
-           new CommonSlideData(new ShapeTree(
-             new P.NonVisualGroupShapeProperties(
-             new P.NonVisualDrawingProperties() { Id = (UInt32Value)1U, Name = "" },
-             new P.NonVisualGroupShapeDrawingProperties(),
-             new ApplicationNonVisualDrawingProperties()),
-             new GroupShapeProperties(new TransformGroup()),
-             new P.Shape(
-             new P.NonVisualShapeProperties(
-               new P.NonVisualDrawingProperties() { Id = (UInt32Value)2U, Name = "Title Placeholder 1" },
-               new P.NonVisualShapeDrawingProperties(new ShapeLocks() { NoGrouping = true }),
-               new ApplicationNonVisualDrawingProperties(new PlaceholderShape() { Type = PlaceholderValues.Title })),
-             new P.ShapeProperties(),
-             new P.TextBody(
-               new BodyProperties(),
-               new ListStyle(),
-               new Paragraph())))),
-           new P.ColorMap() { Background1 = D.ColorSchemeIndexValues.Light1, Text1 = D.ColorSchemeIndexValues.Dark1, Background2 = D.ColorSchemeIndexValues.Light2, Text2 = D.ColorSchemeIndexValues.Dark2, Accent1 = D.ColorSchemeIndexValues.Accent1, Accent2 = D.ColorSchemeIndexValues.Accent2, Accent3 = D.ColorSchemeIndexValues.Accent3, Accent4 = D.ColorSchemeIndexValues.Accent4, Accent5 = D.ColorSchemeIndexValues.Accent5, Accent6 = D.ColorSchemeIndexValues.Accent6, Hyperlink = D.ColorSchemeIndexValues.Hyperlink, FollowedHyperlink = D.ColorSchemeIndexValues.FollowedHyperlink },
-           new SlideLayoutIdList(new SlideLayoutId() { Id = (UInt32Value)2147483649U, RelationshipId = "rId1" }),
-           new TextStyles(new TitleStyle(), new BodyStyle(), new OtherStyle()));
-           slideMasterPart1.SlideMaster = slideMaster;
-           return slideMasterPart1;
-        }
-```
+### [C#](#tab/cs)
+[!code-csharp[](../samples/presentation/working_with_slide_masters/cs/Program.cs)]
 
-```vb
-    Private Shared Function CreateSlideMasterPart(ByVal slideLayoutPart1 As SlideLayoutPart) As SlideMasterPart
-                Dim slideMasterPart1 As SlideMasterPart = slideLayoutPart1.AddNewPart(Of SlideMasterPart)("rId1")
-                Dim slideMaster As New SlideMaster(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
-                  .Id = CType(1UI, UInt32Value), _
-                  .Name = "" _
-                }, New P.NonVisualGroupShapeDrawingProperties(), New ApplicationNonVisualDrawingProperties()), _
-                    New GroupShapeProperties(New TransformGroup()), New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
-                  .Id = CType(2UI, UInt32Value), _
-                  .Name = "Title Placeholder 1" _
-                }, New P.NonVisualShapeDrawingProperties(New ShapeLocks() With { _
-                  .NoGrouping = True _
-                }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape() With { _
-                  .Type = PlaceholderValues.Title _
-                })), New P.ShapeProperties(), New P.TextBody(New BodyProperties(), New ListStyle(), New Paragraph())))), New P.ColorMap() With { _
-                  .Background1 = D.ColorSchemeIndexValues.Light1, _
-                  .Text1 = D.ColorSchemeIndexValues.Dark1, _
-                  .Background2 = D.ColorSchemeIndexValues.Light2, _
-                  .Text2 = D.ColorSchemeIndexValues.Dark2, _
-                  .Accent1 = D.ColorSchemeIndexValues.Accent1, _
-                  .Accent2 = D.ColorSchemeIndexValues.Accent2, _
-                  .Accent3 = D.ColorSchemeIndexValues.Accent3, _
-                  .Accent4 = D.ColorSchemeIndexValues.Accent4, _
-                  .Accent5 = D.ColorSchemeIndexValues.Accent5, _
-                  .Accent6 = D.ColorSchemeIndexValues.Accent6, _
-                  .Hyperlink = D.ColorSchemeIndexValues.Hyperlink, _
-                  .FollowedHyperlink = D.ColorSchemeIndexValues.FollowedHyperlink _
-                }, New SlideLayoutIdList(New SlideLayoutId() With { _
-                  .Id = CType(2147483649UI, UInt32Value), _
-                  .RelationshipId = "rId1" _
-                }), New TextStyles(New TitleStyle(), New BodyStyle(), New OtherStyle()))
-                slideMasterPart1.SlideMaster = slideMaster
-
-                Return slideMasterPart1
-            End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/presentation/working_with_slide_masters/vb/Program.vb)]
 
 ## Generated PresentationML
 
