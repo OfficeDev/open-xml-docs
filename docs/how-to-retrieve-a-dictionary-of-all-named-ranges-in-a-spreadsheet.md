@@ -171,11 +171,63 @@ defined names that are contained within the workbook. If the property returns a 
 
 The following is the complete **GetDefinedNames** code sample in C\# and Visual Basic.
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet/cs/Program.cs)]
+```csharp
+    public static Dictionary<String, String>
+        GetDefinedNames(String fileName)
+    {
+        // Given a workbook name, return a dictionary of defined names.
+        // The pairs include the range name and a string representing the range.
+        var returnValue = new Dictionary<String, String>();
+        
+        // Open the spreadsheet document for read-only access.
+        using (SpreadsheetDocument document =
+            SpreadsheetDocument.Open(fileName, false))
+        {
+            // Retrieve a reference to the workbook part.
+            var wbPart = document.WorkbookPart;
+            
+            // Retrieve a reference to the defined names collection.
+            DefinedNames definedNames = wbPart.Workbook.DefinedNames;
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet/vb/Program.vb)]
+            // If there are defined names, add them to the dictionary.
+            if (definedNames != null)
+            {
+                foreach (DefinedName dn in definedNames)
+                    returnValue.Add(dn.Name.Value, dn.Text);
+            }
+        }
+        return returnValue;
+    }
+```
+
+```vb
+    Public Function GetDefinedNames(
+        ByVal fileName As String) As Dictionary(Of String, String)
+
+        ' Given a workbook name, return a dictionary of defined names.
+        ' The pairs include the range name and a string representing the range.
+        Dim returnValue As New Dictionary(Of String, String)
+        
+        ' Open the spreadsheet document for read-only access.
+        Using document As SpreadsheetDocument =
+          SpreadsheetDocument.Open(fileName, False)
+          
+            ' Retrieve a reference to the workbook part.
+            Dim wbPart As WorkbookPart = document.WorkbookPart
+
+            ' Retrieve a reference to the defined names collection.
+            Dim definedNames As DefinedNames = wbPart.Workbook.DefinedNames
+            
+            ' If there are defined names, add them to the dictionary.
+            If definedNames IsNot Nothing Then
+                For Each dn As DefinedName In definedNames
+                    returnValue.Add(dn.Name.Value, dn.Text)
+                Next
+            End If
+        End Using
+        Return returnValue
+    End Function
+```
 
 ## See also
 

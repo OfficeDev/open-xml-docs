@@ -104,11 +104,66 @@ document properties aren't available if you (or the application) haven't specifi
 
 The following is the complete code sample in C\# and Visual Basic.
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_retrieve_application_property_values_from_a_word_processing_document/cs/Program.cs)]
+```csharp
+    using System;
+    using DocumentFormat.OpenXml.Packaging;
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_retrieve_application_property_values_from_a_word_processing_document/vb/Program.vb)]
+    namespace GetApplicationProperty
+    {
+        class Program
+        {
+            private const string FILENAME = 
+                @"C:\Users\Public\Documents\DocumentProperties.docx";
+
+            static void Main(string[] args)
+            {
+                using (WordprocessingDocument document = 
+                    WordprocessingDocument.Open(FILENAME, false))
+                {
+                    var props = document.ExtendedFilePropertiesPart.Properties;
+
+                    if (props.Company != null)
+                        Console.WriteLine("Company = " + props.Company.Text);
+
+                    if (props.Lines != null)
+                        Console.WriteLine("Lines = " + props.Lines.Text);
+
+                    if (props.Manager != null)
+                        Console.WriteLine("Manager = " + props.Manager.Text);
+                }
+            }
+        }
+    }
+```
+
+```vb
+    Imports DocumentFormat.OpenXml.Packaging
+
+    Module Module1
+
+        Private Const FILENAME As String =
+            "C:\Users\Public\Documents\DocumentProperties.docx"
+
+        Sub Main()
+            Using document As WordprocessingDocument =
+                WordprocessingDocument.Open(FILENAME, False)
+
+                Dim props = document.ExtendedFilePropertiesPart.Properties
+                If props.Company IsNot Nothing Then
+                    Console.WriteLine("Company = " & props.Company.Text)
+                End If
+
+                If props.Lines IsNot Nothing Then
+                    Console.WriteLine("Lines = " & props.Lines.Text)
+                End If
+
+                If props.Manager IsNot Nothing Then
+                    Console.WriteLine("Manager = " & props.Manager.Text)
+                End If
+            End Using
+        End Sub
+    End Module
+```
 
 ## See also
 

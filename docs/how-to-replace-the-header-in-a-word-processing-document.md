@@ -150,11 +150,93 @@ segment as an example.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_replace_the_header_in_a_word_processing_document/cs/Program.cs)]
+```csharp
+    public static void AddHeaderFromTo(string filepathFrom, string filepathTo)
+    {
+        // Replace header in target document with header of source document.
+        using (WordprocessingDocument 
+            wdDoc = WordprocessingDocument.Open(filepathTo, true))
+        {
+            MainDocumentPart mainPart = wdDoc.MainDocumentPart;
+            
+            // Delete the existing header part.
+            mainPart.DeleteParts(mainPart.HeaderParts);
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_replace_the_header_in_a_word_processing_document/vb/Program.vb)]
+            // Create a new header part.
+            DocumentFormat.OpenXml.Packaging.HeaderPart headerPart = 
+        mainPart.AddNewPart<HeaderPart>();
+            
+            // Get Id of the headerPart.
+            string rId = mainPart.GetIdOfPart(headerPart);
+            
+            // Feed target headerPart with source headerPart.
+            using (WordprocessingDocument wdDocSource = 
+                WordprocessingDocument.Open(filepathFrom, true))
+            {
+                DocumentFormat.OpenXml.Packaging.HeaderPart firstHeader =
+        wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
+
+                    wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
+
+                if (firstHeader != null)
+                {
+                    headerPart.FeedData(firstHeader.GetStream());
+                }
+            }
+
+            // Get SectionProperties and Replace HeaderReference with new Id.
+            IEnumerable<DocumentFormat.OpenXml.Wordprocessing.SectionProperties> sectPrs = 
+        mainPart.Document.Body.Elements<SectionProperties>();
+            foreach (var sectPr in sectPrs)
+            {
+                // Delete existing references to headers.
+                sectPr.RemoveAllChildren<HeaderReference>();
+
+                // Create the new header reference node.
+                sectPr.PrependChild<HeaderReference>(new HeaderReference() { Id = rId });
+            }    
+        }
+    }
+```
+
+```vb
+    Public Sub AddHeaderFromTo(ByVal filepathFrom As String, ByVal filepathTo As String)
+        ' Replace header in target document with header of source document.
+        Using wdDoc As WordprocessingDocument = _
+            WordprocessingDocument.Open(filepathTo, True)
+            Dim mainPart As MainDocumentPart = wdDoc.MainDocumentPart
+
+            ' Delete the existing header part.
+            mainPart.DeleteParts(mainPart.HeaderParts)
+
+            ' Create a new header part.
+            Dim headerPart = mainPart.AddNewPart(Of HeaderPart)()
+
+            ' Get Id of the headerPart.
+            Dim rId As String = mainPart.GetIdOfPart(headerPart)
+
+            ' Feed target headerPart with source headerPart.
+            Using wdDocSource As WordprocessingDocument = _
+                WordprocessingDocument.Open(filepathFrom, True)
+                Dim firstHeader = wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault()
+
+                If firstHeader IsNot Nothing Then
+                    headerPart.FeedData(firstHeader.GetStream())
+                End If
+            End Using
+
+            ' Get SectionProperties and Replace HeaderReference with new Id.
+            Dim sectPrs = mainPart.Document.Body.Elements(Of SectionProperties)()
+            For Each sectPr In sectPrs
+                ' Delete existing references to headers.
+                sectPr.RemoveAllChildren(Of HeaderReference)()
+
+                ' Create the new header reference node.
+                sectPr.PrependChild(Of HeaderReference)(New HeaderReference() With { .Id = rId })
+            Next
+        End Using
+    End Sub
+```
 
 ## See also
 

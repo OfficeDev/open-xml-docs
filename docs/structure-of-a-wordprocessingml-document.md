@@ -105,11 +105,43 @@ t — A range of text.
 The following code uses the Open XML SDK to create a simple **WordprocessingML** document that contains the text
 "Hello, Word!"
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/word/structure_of_a_wordprocessingml_document/cs/Program.cs)]
+```csharp
+    public static void CreateWordDoc(string filepath, string msg)
+    {
+        using (WordprocessingDocument doc = WordprocessingDocument.Create(filepath, DocumentFormat.OpenXml.WordprocessingDocumentType.Document))
+        {
+            // Add a main document part. 
+            MainDocumentPart mainPart = doc.AddMainDocumentPart();
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/structure_of_a_wordprocessingml_document/vb/Program.vb)]
+            // Create the document structure and add some text.
+            mainPart.Document = new Document();
+            Body body = mainPart.Document.AppendChild(new Body());
+            Paragraph para = body.AppendChild(new Paragraph());
+            Run run = para.AppendChild(new Run());
+
+            // String msg contains the text, "Hello, Word!"
+            run.AppendChild(new Text(msg));
+        }
+    }
+```
+
+```vb
+    Public Shared Sub CreateWordDoc(filepath As String, msg As String)
+        Using doc As WordprocessingDocument = WordprocessingDocument.Create(filepath, DocumentFormat.OpenXml.WordprocessingDocumentType.Document)
+            ' Add a main document part. 
+            Dim mainPart As MainDocumentPart = doc.AddMainDocumentPart()
+
+            ' Create the document structure and add some text.
+            mainPart.Document = New Document()
+            Dim body As Body = mainPart.Document.AppendChild(New Body())
+            Dim para As Paragraph = body.AppendChild(New Paragraph())
+            Dim run As Run = para.AppendChild(New Run())
+
+            ' String msg contains the text, "Hello, Word!"
+            run.AppendChild(New Text(msg))
+        End Using
+    End Sub
+```
 
 ### Generated WordprocessingML
 

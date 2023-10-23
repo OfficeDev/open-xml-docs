@@ -259,11 +259,110 @@ the operation with the footer elements.
 The following is the complete **RemoveHeadersAndFooters** code sample in C\# and
 Visual Basic.
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_remove_the_headers_and_footers_from_a_word_processing_document/cs/Program.cs)]
+```csharp
+    // Remove all of the headers and footers from a document.
+    public static void RemoveHeadersAndFooters(string filename)
+    {
+        // Given a document name, remove all of the headers and footers
+        // from the document.
+        using (WordprocessingDocument doc = 
+            WordprocessingDocument.Open(filename, true))
+        {
+            // Get a reference to the main document part.
+            var docPart = doc.MainDocumentPart;
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_remove_the_headers_and_footers_from_a_word_processing_document/vb/Program.vb)]
+            // Count the header and footer parts and continue if there 
+            // are any.
+            if (docPart.HeaderParts.Count() > 0 || 
+                docPart.FooterParts.Count() > 0)
+            {
+                // Remove the header and footer parts.
+                docPart.DeleteParts(docPart.HeaderParts);
+                docPart.DeleteParts(docPart.FooterParts);
+
+                // Get a reference to the root element of the main
+                // document part.
+                Document document = docPart.Document;
+
+                // Remove all references to the headers and footers.
+                
+                // First, create a list of all descendants of type
+                // HeaderReference. Then, navigate the list and call
+                // Remove on each item to delete the reference.
+                var headers =
+                  document.Descendants<HeaderReference>().ToList();
+                foreach (var header in headers)
+                {
+                    header.Remove();
+                }
+
+                // First, create a list of all descendants of type
+                // FooterReference. Then, navigate the list and call
+                // Remove on each item to delete the reference.
+                var footers =
+                  document.Descendants<FooterReference>().ToList();
+                foreach (var footer in footers)
+                {
+                    footer.Remove();
+                }
+
+                // Save the changes.
+                document.Save();
+            }
+        }
+    }
+```
+
+```vb
+    ' To remove all of the headers and footers in a document.
+    Public Sub RemoveHeadersAndFooters(ByVal filename As String)
+        
+        ' Given a document name, remove all of the headers and footers
+        ' from the document.
+        Using doc = WordprocessingDocument.Open(filename, True)
+            
+            ' Get a reference to the main document part.
+            Dim docPart = doc.MainDocumentPart
+            
+            ' Count the header and footer parts and continue if there 
+            ' are any.
+            If (docPart.HeaderParts.Count > 0) Or
+              (docPart.FooterParts.Count > 0) Then
+                
+                ' Remove the header and footer parts.
+                docPart.DeleteParts(docPart.HeaderParts)
+                docPart.DeleteParts(docPart.FooterParts)
+
+                ' Get a reference to the root element of the main 
+                ' document part.
+                Dim document As Document = docPart.Document
+
+                ' Remove all references to the headers and footers.
+                    
+                ' First, create a list of all descendants of type
+                ' HeaderReference. Then, navigate the list and call
+                ' Remove on each item to delete the reference.
+                Dim headers = _
+                  document.Descendants(Of HeaderReference).ToList()
+                For Each header In headers
+                    header.Remove()
+                Next
+
+                ' First, create a list of all descendants of type
+                ' FooterReference. Then, navigate the list and call
+                ' Remove on each item to delete the reference.
+                Dim footers = _
+                  document.Descendants(Of FooterReference).ToList()
+                For Each footer In footers
+                    footer.Remove()
+                Next
+                
+                ' Save the changes.
+                document.Save()
+            End If
+        End Using
+    End Sub
+```
 
 ## See also
 

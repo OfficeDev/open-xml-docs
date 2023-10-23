@@ -87,11 +87,40 @@ makes up the document content. The OXML SDK [Text](https://msdn.microsoft.com/li
 The following code instantiates an Open XML SDK**Paragraph** object and then uses it to add text to
 a WordprocessingML document.
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/word/working_with_paragraphs/cs/Program.cs)]
+```csharp
+    public static void WriteToWordDoc(string filepath, string txt)
+    {
+        // Open a WordprocessingDocument for editing using the filepath.
+        using (WordprocessingDocument wordprocessingDocument =
+             WordprocessingDocument.Open(filepath, true))
+        {
+            // Assign a reference to the existing document body.
+            Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/working_with_paragraphs/vb/Program.vb)]
+            // Add a paragraph with some text.
+            Paragraph para = body.AppendChild(new Paragraph());
+            Run run = para.AppendChild(new Run());
+            run.AppendChild(new Text(txt));
+        }
+    }
+```
+
+```vb
+    Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
+        ' Open a WordprocessingDocument for editing using the filepath.
+        Using wordprocessingDocument As WordprocessingDocument = _
+            WordprocessingDocument.Open(filepath, True)
+            ' Assign a reference to the existing document body.
+            Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
+
+            ' Add a paragraph with some text.            
+            Dim para As Paragraph = body.AppendChild(New Paragraph())
+            Dim run As Run = para.AppendChild(New Run())
+            run.AppendChild(New Text(txt))
+        End Using
+
+    End Sub
+```
 
 When this code is run, the following XML is written to the
 WordprocessingML document referenced in the code.

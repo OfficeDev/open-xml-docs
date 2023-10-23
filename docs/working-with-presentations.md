@@ -340,11 +340,71 @@ opened previously.
 The **CreatePresentationParts** procedure creates instances of the **SlideMasterIdList**, **SlideIdList**, **SlideSize**, **NotesSize**, and **DefaultTextStyle** classes and appends them to the
 presentation.
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/presentation/working_with_presentations/cs/Program.cs)]
+```csharp
+    public static void CreatePresentation(string filepath)
+            {
+                // Create a presentation at a specified file path. The presentation document type is pptx, by default.
+                PresentationDocument presentationDoc = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation);
+                PresentationPart presentationPart = presentationDoc.AddPresentationPart();
+                presentationPart.Presentation = new Presentation();
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/working_with_presentations/vb/Program.vb)]
+                CreatePresentationParts(presentationPart);
+
+                // Close the presentation handle.
+                presentationDoc.Close();
+            } 
+    private static void CreatePresentationParts(PresentationPart presentationPart)
+            {
+                SlideMasterIdList slideMasterIdList1 = new SlideMasterIdList(new SlideMasterId() { Id = (UInt32Value)2147483648U, RelationshipId = "rId1" });
+                SlideIdList slideIdList1 = new SlideIdList(new SlideId() { Id = (UInt32Value)256U, RelationshipId = "rId2" });
+                SlideSize slideSize1 = new SlideSize() { Cx = 9144000, Cy = 6858000, Type = SlideSizeValues.Screen4x3 };
+                NotesSize notesSize1 = new NotesSize() { Cx = 6858000, Cy = 9144000 };
+                DefaultTextStyle defaultTextStyle1 = new DefaultTextStyle();
+
+               presentationPart.Presentation.Append(slideMasterIdList1, slideIdList1, slideSize1, notesSize1, defaultTextStyle1);
+
+             // Code to create other parts of the presentation file goes here.
+            }
+```
+
+```vb
+    Public Shared Sub CreatePresentation(ByVal filepath As String)
+
+                ' Create a presentation at a specified file path. The presentation document type is pptx, by default.
+                Dim presentationDoc As PresentationDocument = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation)
+                Dim presentationPart As PresentationPart = presentationDoc.AddPresentationPart()
+                presentationPart.Presentation = New Presentation()
+
+                CreatePresentationParts(presentationPart)
+
+                ' Close the presentation handle.
+                presentationDoc.Close()
+            End Sub
+    Private Shared Sub CreatePresentationParts(ByVal presentationPart As PresentationPart)
+                Dim slideMasterIdList1 As New SlideMasterIdList(New SlideMasterId() With { _
+                 .Id = DirectCast(2147483648UI, UInt32Value), _
+                 .RelationshipId = "rId1" _
+                })
+                Dim slideIdList1 As New SlideIdList(New SlideId() With { _
+                 .Id = DirectCast(256UI, UInt32Value), _
+                 .RelationshipId = "rId2" _
+                })
+                Dim slideSize1 As New SlideSize() With { _
+                 .Cx = 9144000, _
+                 .Cy = 6858000, _
+                 .Type = SlideSizeValues.Screen4x3 _
+                }
+                Dim notesSize1 As New NotesSize() With { _
+                 .Cx = 6858000, _
+                 .Cy = 9144000 _
+                }
+                Dim defaultTextStyle1 As New DefaultTextStyle()
+
+                presentationPart.Presentation.Append(slideMasterIdList1, slideIdList1, slideSize1, notesSize1, defaultTextStyle1)
+
+             ' Code to create other parts of the presentation file goes here.
+            End Sub
+```
 
 ---------------------------------------------------------------------------------
 ## Resulting PresentationML

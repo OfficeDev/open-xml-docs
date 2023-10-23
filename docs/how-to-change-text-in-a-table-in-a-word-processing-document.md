@@ -19,7 +19,19 @@ ms.localizationpriority: high
 
 This topic shows how to use the Open XML SDK for Office to programmatically change text in a table in an existing word processing document.
 
+The following assembly directives are required to compile the code in this topic.
 
+```csharp
+    using System.Linq;
+    using DocumentFormat.OpenXml.Packaging;
+    using DocumentFormat.OpenXml.Wordprocessing;
+```
+
+```vb
+    Imports System.Linq
+    Imports DocumentFormat.OpenXml.Packaging
+    Imports DocumentFormat.OpenXml.Wordprocessing
+```
 
 ## Open the Existing Document
 
@@ -185,11 +197,65 @@ example."
 
 Following is the complete code example.
 
-### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_change_text_in_a_table_in_a_word_processing_document/cs/Program.cs)]
+```csharp
+    // Change the text in a table in a word processing document.
+    public static void ChangeTextInCell(string filepath, string txt)
+    {
+        // Use the file name and path passed in as an argument to 
+        // open an existing document.            
+        using (WordprocessingDocument doc =
+            WordprocessingDocument.Open(filepath, true))
+        {
+            // Find the first table in the document.
+            Table table =
+                doc.MainDocumentPart.Document.Body.Elements<Table>().First();
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_change_text_in_a_table_in_a_word_processing_document/vb/Program.vb)]
+            // Find the second row in the table.
+            TableRow row = table.Elements<TableRow>().ElementAt(1);
+
+            // Find the third cell in the row.
+            TableCell cell = row.Elements<TableCell>().ElementAt(2);
+
+            // Find the first paragraph in the table cell.
+            Paragraph p = cell.Elements<Paragraph>().First();
+
+            // Find the first run in the paragraph.
+            Run r = p.Elements<Run>().First();
+
+            // Set the text for the run.
+            Text t = r.Elements<Text>().First();
+            t.Text = txt;
+        }
+    }
+```
+
+```vb
+    ' Change the text in a table in a word processing document.
+    Public Sub ChangeTextInCell(ByVal filepath As String, ByVal txt As String)
+        ' Use the file name and path passed in as an argument to 
+        ' Open an existing document. 
+        Using doc As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
+            ' Find the first table in the document.
+            Dim table As Table = doc.MainDocumentPart.Document.Body.Elements(Of Table)().First()
+            
+            ' Find the second row in the table.
+            Dim row As TableRow = table.Elements(Of TableRow)().ElementAt(1)
+            
+            ' Find the third cell in the row.
+            Dim cell As TableCell = row.Elements(Of TableCell)().ElementAt(2)
+            
+            ' Find the first paragraph in the table cell.
+            Dim p As Paragraph = cell.Elements(Of Paragraph)().First()
+            
+            ' Find the first run in the paragraph.
+            Dim r As Run = p.Elements(Of Run)().First()
+            
+            ' Set the text for the run.
+            Dim t As Text = r.Elements(Of Text)().First()
+            t.Text = txt
+        End Using
+    End Sub
+```
 
 ## See also
 
