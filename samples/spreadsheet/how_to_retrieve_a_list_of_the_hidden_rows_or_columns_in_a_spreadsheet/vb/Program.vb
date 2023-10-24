@@ -1,11 +1,11 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-  
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Function GetHiddenRowsOrCols(
       ByVal fileName As String, ByVal sheetName As String,

@@ -1,7 +1,7 @@
 
-using System.Linq;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.Linq;
 
 // Change the text in a table in a word processing document.
 static void ChangeTextInCell(string filepath, string txt)

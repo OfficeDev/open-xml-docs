@@ -1,10 +1,10 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-  
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
 
     ' Delete comments by a specific author. Pass an empty string for the author 
     ' to delete all comments, by all authors.

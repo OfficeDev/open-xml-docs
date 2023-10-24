@@ -1,12 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Validation
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-  
-    Imports System
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Validation
-    Imports DocumentFormat.OpenXml.Wordprocessing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Sub ValidateWordDocument(ByVal filepath As String)
         Using wordprocessingDocument__1 As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
@@ -30,7 +30,7 @@ Module Program `
                 Console.WriteLine(ex.Message)
             End Try
 
-            wordprocessingDocument__1.Close()
+            wordprocessingDocument__1.Dispose()
         End Using
     End Sub
 

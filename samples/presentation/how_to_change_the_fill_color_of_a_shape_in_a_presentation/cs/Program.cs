@@ -1,7 +1,7 @@
 
-using DocumentFormat.OpenXml.Presentation;
-using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Presentation;
 using Drawing = DocumentFormat.OpenXml.Drawing;
 
 // Change the fill color of a shape.

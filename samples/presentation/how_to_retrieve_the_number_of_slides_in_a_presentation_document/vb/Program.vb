@@ -1,9 +1,10 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
 
-  
-    Imports DocumentFormat.OpenXml.Packaging
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Function RetrieveNumberOfSlides(ByVal fileName As String,
             Optional ByVal includeHidden As Boolean = True) As Integer

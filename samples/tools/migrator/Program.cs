@@ -1,7 +1,5 @@
-﻿using System.IO;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
-using Microsoft.VisualBasic;
 
 if (args is not [string folder])
 {

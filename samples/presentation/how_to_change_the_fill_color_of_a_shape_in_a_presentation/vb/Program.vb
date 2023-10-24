@@ -1,12 +1,13 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Presentation
+Imports Drawing = DocumentFormat.OpenXml.Drawing
 
-  
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml
-    Imports Drawing = DocumentFormat.OpenXml.Drawing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' Change the fill color of a shape.
     ' The test file must have a filled shape as the first shape on the first slide.

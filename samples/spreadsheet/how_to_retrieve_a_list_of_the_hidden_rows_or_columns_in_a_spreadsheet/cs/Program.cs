@@ -1,10 +1,9 @@
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 static List<uint> GetHiddenRowsOrCols(
   string fileName, string sheetName, bool detectRows)

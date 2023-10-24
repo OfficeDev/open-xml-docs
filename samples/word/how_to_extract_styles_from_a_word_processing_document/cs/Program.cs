@@ -1,9 +1,7 @@
-
-using System;
+using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using DocumentFormat.OpenXml.Packaging;
 
 // Extract the styles or stylesWithEffects part from a 
 // word processing document as an XDocument instance.

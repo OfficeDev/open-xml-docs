@@ -1,7 +1,7 @@
 
+using DocumentFormat.OpenXml.Packaging;
 using System;
 using System.Linq;
-using DocumentFormat.OpenXml.Packaging;
 
 static int RetrieveNumberOfSlides(string fileName,
     bool includeHidden = true)

@@ -1,9 +1,9 @@
 
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Wordprocessing;
 
 // Delete comments by a specific author. Pass an empty string for the 
 // author to delete all comments, by all authors.

@@ -1,11 +1,18 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
+Imports BottomBorder = DocumentFormat.OpenXml.Wordprocessing.BottomBorder
+Imports LeftBorder = DocumentFormat.OpenXml.Wordprocessing.LeftBorder
+Imports RightBorder = DocumentFormat.OpenXml.Wordprocessing.RightBorder
+Imports Run = DocumentFormat.OpenXml.Wordprocessing.Run
+Imports Table = DocumentFormat.OpenXml.Wordprocessing.Table
+Imports Text = DocumentFormat.OpenXml.Wordprocessing.Text
+Imports TopBorder = DocumentFormat.OpenXml.Wordprocessing.TopBorder
 
-  
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
 
     ' Insert a table into a word processing document.
     Public Sub CreateTable(ByVal fileName As String)
@@ -17,12 +24,12 @@ Module Program `
             Dim table As New Table()
 
             ' Create a TableProperties object and specify its border information.
-            Dim tblProp As New TableProperties(New TableBorders( _
-            New TopBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New BottomBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New LeftBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New RightBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New InsideHorizontalBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
+            Dim tblProp As New TableProperties(New TableBorders(
+            New TopBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
+            New BottomBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
+            New LeftBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
+            New RightBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
+            New InsideHorizontalBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
             New InsideVerticalBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}))
             ' Append the TableProperties object to the empty table.
             table.AppendChild(Of TableProperties)(tblProp)

@@ -1,9 +1,7 @@
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System.Collections.Generic;
+using System.Linq;
 
 static List<Sheet> GetHiddenSheets(string fileName)
 {

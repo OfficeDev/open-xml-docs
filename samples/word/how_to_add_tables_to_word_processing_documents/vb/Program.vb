@@ -1,11 +1,18 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
+Imports BottomBorder = DocumentFormat.OpenXml.Wordprocessing.BottomBorder
+Imports LeftBorder = DocumentFormat.OpenXml.Wordprocessing.LeftBorder
+Imports RightBorder = DocumentFormat.OpenXml.Wordprocessing.RightBorder
+Imports Run = DocumentFormat.OpenXml.Wordprocessing.Run
+Imports Table = DocumentFormat.OpenXml.Wordprocessing.Table
+Imports Text = DocumentFormat.OpenXml.Wordprocessing.Text
+Imports TopBorder = DocumentFormat.OpenXml.Wordprocessing.TopBorder
 
-  
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
 
     ' Take the data from a two-dimensional array and build a table at the 
     ' end of the supplied document.

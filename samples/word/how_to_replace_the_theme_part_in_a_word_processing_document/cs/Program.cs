@@ -1,6 +1,6 @@
 
-using System.IO;
 using DocumentFormat.OpenXml.Packaging;
+using System.IO;
 
 // This method can be used to replace the theme part in a package.
 static void ReplaceTheme(string document, string themeFile)

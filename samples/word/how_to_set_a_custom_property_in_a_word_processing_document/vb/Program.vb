@@ -1,12 +1,13 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports System.IO
+Imports DocumentFormat.OpenXml.CustomProperties
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.VariantTypes
 
-  
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.CustomProperties
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.VariantTypes
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Enum PropertyTypes
         YesNo

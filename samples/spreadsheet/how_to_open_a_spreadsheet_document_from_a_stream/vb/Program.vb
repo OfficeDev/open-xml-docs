@@ -1,12 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports System.IO
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-  
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-    Imports System.Linq
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Sub OpenAndAddToSpreadsheetStream(ByVal stream As Stream)
         ' Open a SpreadsheetDocument based on a stream.

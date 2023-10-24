@@ -1,12 +1,10 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
 
-  
-    Imports System.IO
-    Imports System.IO.Packaging
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Sub OpenSpreadsheetDocumentReadonly(ByVal filepath As String)
         ' Open a SpreadsheetDocument based on a filepath.

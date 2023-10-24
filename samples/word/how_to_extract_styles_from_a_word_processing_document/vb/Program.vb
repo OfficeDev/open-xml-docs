@@ -1,11 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports System.IO
+Imports System.Xml
+Imports DocumentFormat.OpenXml.Packaging
 
-  
-    Imports System.IO
-    Imports System.Xml
-    Imports DocumentFormat.OpenXml.Packaging
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' Extract the styles or stylesWithEffects part from a 
     ' word processing document as an XDocument instance.

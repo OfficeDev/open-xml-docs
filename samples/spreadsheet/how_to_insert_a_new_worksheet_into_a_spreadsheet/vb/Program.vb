@@ -1,11 +1,11 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-  
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' Given a document name, inserts a new worksheet.
     Public Sub InsertWorksheet(ByVal docName As String)

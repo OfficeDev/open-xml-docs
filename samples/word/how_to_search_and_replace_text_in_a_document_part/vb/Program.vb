@@ -1,11 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports System.IO
+Imports System.Text.RegularExpressions
+Imports DocumentFormat.OpenXml.Packaging
 
-  
-    Imports System.IO
-    Imports System.Text.RegularExpressions
-    Imports DocumentFormat.OpenXml.Packaging
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' To search and replace content in a document part. 
     Public Sub SearchAndReplace(ByVal document As String)

@@ -1,11 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports System.IO
+Imports System.Xml
+Imports DocumentFormat.OpenXml.Packaging
 
-  
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports System.Xml
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Sub WDDeleteHiddenText(ByVal docName As String)
         ' Given a document name, delete all the hidden text.

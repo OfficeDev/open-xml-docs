@@ -1,8 +1,4 @@
-
-using System.IO;
-using System.IO.Packaging;
 using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
 
 static void OpenSpreadsheetDocumentReadonly(string filepath)
 {

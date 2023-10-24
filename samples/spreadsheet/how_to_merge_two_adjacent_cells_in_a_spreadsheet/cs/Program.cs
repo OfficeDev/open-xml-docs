@@ -1,10 +1,10 @@
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 // Given a document name, a worksheet name, and the names of two adjacent cells, merges the two cells.

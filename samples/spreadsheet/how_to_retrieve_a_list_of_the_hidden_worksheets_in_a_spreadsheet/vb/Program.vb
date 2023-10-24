@@ -1,11 +1,12 @@
+Imports DocumentFormat.OpenXml.Spreadsheet
+Imports DocumentFormat.OpenXml.Packaging
+
 Module Program `
   Sub Main(args As String())`
   End Sub`
 
   
-    Imports DocumentFormat.OpenXml.Spreadsheet
-    Imports DocumentFormat.OpenXml.Packaging
-
+        
     Public Function GetHiddenSheets(ByVal fileName As String) As List(Of Sheet)
         Dim returnVal As New List(Of Sheet)
 

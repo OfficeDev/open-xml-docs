@@ -1,11 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-  
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' Given a document name, set the print orientation for 
     ' all the sections of the document.

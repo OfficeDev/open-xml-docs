@@ -1,12 +1,11 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-  
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Sub AddHeaderFromTo(ByVal filepathFrom As String, ByVal filepathTo As String)
         ' Replace header in target document with header of source document.
@@ -40,7 +39,7 @@ Module Program `
                 sectPr.RemoveAllChildren(Of HeaderReference)()
 
                 ' Create the new header reference node.
-                sectPr.PrependChild(Of HeaderReference)(New HeaderReference() With { .Id = rId })
+                sectPr.PrependChild(Of HeaderReference)(New HeaderReference() With {.Id = rId})
             Next
         End Using
     End Sub

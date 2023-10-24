@@ -1,8 +1,8 @@
 
-using System;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Validation;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 
 static void ValidateWordDocument(string filepath)
 {

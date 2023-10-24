@@ -1,8 +1,7 @@
 
-using System.Linq;
-using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.Linq;
 
 // Remove all of the headers and footers from a document.
 static void RemoveHeadersAndFooters(string filename)

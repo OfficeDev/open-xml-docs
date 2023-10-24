@@ -1,11 +1,14 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
+Imports Bold = DocumentFormat.OpenXml.Wordprocessing.Bold
+Imports Color = DocumentFormat.OpenXml.Wordprocessing.Color
+Imports FontSize = DocumentFormat.OpenXml.Wordprocessing.FontSize
+Imports Italic = DocumentFormat.OpenXml.Wordprocessing.Italic
 
-  
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
+Module Program
+    Sub Main(args As String())
+    End Sub
+
 
     ' Create a new character style with the specified style id, style name and aliases and add 
     ' it to the specified style definitions part.

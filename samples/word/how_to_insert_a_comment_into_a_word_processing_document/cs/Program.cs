@@ -1,8 +1,8 @@
 
-using System;
-using System.Linq;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
+using System.Linq;
 
 // Insert a comment on the first paragraph.
 static void AddCommentOnFirstParagraph(string fileName,

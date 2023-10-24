@@ -1,11 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports System.IO
+Imports System.Xml
+Imports DocumentFormat.OpenXml.Packaging
 
-  
-    Imports System.IO
-    Imports System.Xml
-    Imports DocumentFormat.OpenXml.Packaging
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' Replace the styles in the "to" document with the styles
     ' in the "from" document.

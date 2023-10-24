@@ -1,8 +1,8 @@
 
+using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using DocumentFormat.OpenXml.Packaging;
 
 // Replace the styles in the "to" document with the styles in
 // the "from" document.

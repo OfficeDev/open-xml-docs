@@ -1,10 +1,11 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-  
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     Public Function GetCellValue(ByVal fileName As String,
         ByVal sheetName As String,

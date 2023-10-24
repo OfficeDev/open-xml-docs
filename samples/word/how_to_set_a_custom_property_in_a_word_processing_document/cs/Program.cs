@@ -1,10 +1,10 @@
 
-using System;
-using System.IO;
-using System.Linq;
 using DocumentFormat.OpenXml.CustomProperties;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.VariantTypes;
+using System;
+using System.IO;
+using System.Linq;
 
 static string SetCustomProperty(
     string fileName,

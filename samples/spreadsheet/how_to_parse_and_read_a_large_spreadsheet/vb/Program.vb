@@ -1,13 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-  
-    Imports System
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' The DOM approach.
     ' Note that the this code works only for cells that contain numeric values.

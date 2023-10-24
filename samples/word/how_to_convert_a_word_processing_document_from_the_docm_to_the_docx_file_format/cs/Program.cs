@@ -1,7 +1,7 @@
 
-using System.IO;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
+using System.IO;
 
 // Given a .docm file (with macro storage), remove the VBA 
 // project, reset the document type, and save the document with a new name.

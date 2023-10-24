@@ -1,6 +1,6 @@
 
-using System.IO;
 using DocumentFormat.OpenXml.Packaging;
+using System.IO;
 using System.Xml;
 
 static void WDDeleteHiddenText(string docName)

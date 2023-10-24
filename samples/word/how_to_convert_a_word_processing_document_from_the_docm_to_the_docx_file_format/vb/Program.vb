@@ -1,11 +1,12 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports System.IO
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
 
-  
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' Given a .docm file (with macro storage), remove the VBA 
     ' project, reset the document type, and save the document with a new name.

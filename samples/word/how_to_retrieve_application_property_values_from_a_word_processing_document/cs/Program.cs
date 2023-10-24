@@ -1,6 +1,6 @@
 
-using System;
 using DocumentFormat.OpenXml.Packaging;
+using System;
 
 namespace GetApplicationProperty
 {

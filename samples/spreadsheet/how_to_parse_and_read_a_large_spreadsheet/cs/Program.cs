@@ -1,9 +1,9 @@
 
-using System;
-using System.Linq;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System;
+using System.Linq;
 
 // The DOM approach.
 // Note that the code below works only for cells that contain numeric values.

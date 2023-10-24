@@ -1,16 +1,17 @@
+Imports System.IO
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
+Imports A = DocumentFormat.OpenXml.Drawing
+Imports DW = DocumentFormat.OpenXml.Drawing.Wordprocessing
+Imports PIC = DocumentFormat.OpenXml.Drawing.Pictures
+
 Module Program `
   Sub Main(args As String())`
   End Sub`
 
   
-    Imports System.IO
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-    Imports A = DocumentFormat.OpenXml.Drawing
-    Imports DW = DocumentFormat.OpenXml.Drawing.Wordprocessing
-    Imports PIC = DocumentFormat.OpenXml.Drawing.Pictures
-
+                            
     Public Sub InsertAPicture(ByVal document As String, ByVal fileName As String)
         Using wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(document, True)
             Dim mainPart As MainDocumentPart = wordprocessingDocument.MainDocumentPart

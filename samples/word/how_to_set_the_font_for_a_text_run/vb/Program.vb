@@ -1,11 +1,11 @@
-Module Program `
-  Sub Main(args As String())`
-  End Sub`
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-  
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Wordprocessing
-    Imports DocumentFormat.OpenXml.Packaging
+Module Program
+    Sub Main(args As String())
+    End Sub
+
+
 
     ' Set the font for a text run.
     Public Sub SetRunFont(ByVal fileName As String)

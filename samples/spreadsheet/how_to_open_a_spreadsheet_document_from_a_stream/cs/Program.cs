@@ -1,7 +1,7 @@
 
-using System.IO;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System.IO;
 using System.Linq;
 
 static void OpenAndAddToSpreadsheetStream(Stream stream)
