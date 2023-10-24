@@ -37,8 +37,8 @@ Module Program
         sheets.Append(sheet)
         mySpreadsheetDocument.WorkbookPart.Workbook.Save()
 
-        'Close the document handle.
-        mySpreadsheetDocument.Close()
+        'Dispose the document handle.
+        mySpreadsheetDocument.Dispose()
 
         'Caller must close the stream.
     End Sub

@@ -22,8 +22,8 @@ Namespace CreatePresentationDocument
 
             CreatePresentationParts(presentationPart)
 
-            'Close the presentation handle
-            presentationDoc.Close()
+            'Dispose the presentation handle
+            presentationDoc.Dispose()
         End Sub
 
         Private Shared Sub CreatePresentationParts(ByVal presentationPart As PresentationPart)

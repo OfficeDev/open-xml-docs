@@ -19,7 +19,7 @@ Module Program
 
             ' Verify that the document contains a 
             ' WordProcessingCommentsPart part; if not, add a new one.
-            If document.MainDocumentPart.GetPartsCountOfType(Of WordprocessingCommentsPart)() > 0 Then
+            If document.MainDocumentPart.GetPartsOfType(Of WordprocessingCommentsPart).Count() > 0 Then
                 comments = document.MainDocumentPart.WordprocessingCommentsPart.Comments
                 If comments.HasChildren Then
                     ' Obtain an unused ID.
