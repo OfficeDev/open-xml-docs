@@ -35,8 +35,14 @@ foreach (var path in files)
         continue;
     }
 
-    var cs = string.Concat(csCodeMatches?[0].Value, csCodeMatches?[csCodeMatches.Count - 1].Value.TrimEnd());
-    var vb = string.Concat(vbCodeMatches?[0].Value, vbCodeMatches?[vbCodeMatches.Count - 1].Value.TrimEnd());
+    if (!csCodeMatches[0].Value.TrimStart().StartsWith("using"))
+    {
+        Console.WriteLine("Not a complete program");
+        continue;
+    }
+
+    var cs = string.Concat(csCodeMatches[0].Value, csCodeMatches[csCodeMatches.Count - 1].Value.TrimEnd());
+    var vb = string.Concat(vbCodeMatches[0].Value, vbCodeMatches[vbCodeMatches.Count - 1].Value.TrimEnd());
     var area = Matchers.Area().Match(text).Groups[1].Value;
 
     if (area is null || area == string.Empty)
