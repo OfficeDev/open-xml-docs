@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS8321: Local function is declared but never used
+dotnet_diagnostic.CS8321.severity = none

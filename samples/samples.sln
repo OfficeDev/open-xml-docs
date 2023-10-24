@@ -15,149 +15,154 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "add_comment_cs", "presentat
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "add_comment_vb", "presentation\add_comment\vb\add_comment_vb.vbproj", "{F5204024-B0D0-4106-AE8B-8CB1552C1F87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migrator", "tools\migrator\migrator.csproj", "{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "migrator", "tools\migrator\migrator.csproj", "{0470C4B3-18CE-4621-A41C-A1C70DDF8EAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spreadsheet", "spreadsheet", "{7ACDC26B-C774-4004-8553-87E862D1E71F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_add_custom_ui_to_a_spreadsheet_document_cs", "spreadsheet\how_to_add_custom_ui_to_a_spreadsheet_document\cs\how_to_add_custom_ui_to_a_spreadsheet_document_cs.csproj", "{29E66A2F-4AA6-4AE3-B0FC-AE3376004D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_add_custom_ui_to_a_spreadsheet_document_cs", "spreadsheet\how_to_add_custom_ui_to_a_spreadsheet_document\cs\how_to_add_custom_ui_to_a_spreadsheet_document_cs.csproj", "{29E66A2F-4AA6-4AE3-B0FC-AE3376004D34}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_add_custom_ui_to_a_spreadsheet_document_vb", "spreadsheet\how_to_add_custom_ui_to_a_spreadsheet_document\vb\how_to_add_custom_ui_to_a_spreadsheet_document_vb.vbproj", "{ACDDC408-5095-4300-91A8-A026936E370A}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_add_custom_ui_to_a_spreadsheet_document_vb", "spreadsheet\how_to_add_custom_ui_to_a_spreadsheet_document\vb\how_to_add_custom_ui_to_a_spreadsheet_document_vb.vbproj", "{ACDDC408-5095-4300-91A8-A026936E370A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_add_tables_to_word_processing_documents_cs", "word\how_to_add_tables_to_word_processing_documents\cs\how_to_add_tables_to_word_processing_documents_cs.csproj", "{88B852C2-60AE-49AB-BD54-711B6FDEB4A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_add_tables_to_word_processing_documents_cs", "word\how_to_add_tables_to_word_processing_documents\cs\how_to_add_tables_to_word_processing_documents_cs.csproj", "{88B852C2-60AE-49AB-BD54-711B6FDEB4A4}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_add_tables_to_word_processing_documents_vb", "word\how_to_add_tables_to_word_processing_documents\vb\how_to_add_tables_to_word_processing_documents_vb.vbproj", "{6F5CF9FC-02AD-476B-B580-4D6A61B8728D}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_add_tables_to_word_processing_documents_vb", "word\how_to_add_tables_to_word_processing_documents\vb\how_to_add_tables_to_word_processing_documents_vb.vbproj", "{6F5CF9FC-02AD-476B-B580-4D6A61B8728D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_change_text_in_a_table_in_a_word_processing_document_cs", "word\how_to_change_text_in_a_table_in_a_word_processing_document\cs\how_to_change_text_in_a_table_in_a_word_processing_document_cs.csproj", "{D0165B95-1EF5-4510-A23E-CE1A5DD94C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_change_text_in_a_table_in_a_word_processing_document_cs", "word\how_to_change_text_in_a_table_in_a_word_processing_document\cs\how_to_change_text_in_a_table_in_a_word_processing_document_cs.csproj", "{D0165B95-1EF5-4510-A23E-CE1A5DD94C73}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_change_text_in_a_table_in_a_word_processing_document_vb", "word\how_to_change_text_in_a_table_in_a_word_processing_document\vb\how_to_change_text_in_a_table_in_a_word_processing_document_vb.vbproj", "{97F968C3-CD44-4703-B103-AF5BAE50A576}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_change_text_in_a_table_in_a_word_processing_document_vb", "word\how_to_change_text_in_a_table_in_a_word_processing_document\vb\how_to_change_text_in_a_table_in_a_word_processing_document_vb.vbproj", "{97F968C3-CD44-4703-B103-AF5BAE50A576}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_change_the_fill_color_of_a_shape_in_a_presentation_cs", "presentation\how_to_change_the_fill_color_of_a_shape_in_a_presentation\cs\how_to_change_the_fill_color_of_a_shape_in_a_presentation_cs.csproj", "{51FC11CF-9386-4C10-BB79-3171662DA20D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_change_the_fill_color_of_a_shape_in_a_presentation_cs", "presentation\how_to_change_the_fill_color_of_a_shape_in_a_presentation\cs\how_to_change_the_fill_color_of_a_shape_in_a_presentation_cs.csproj", "{51FC11CF-9386-4C10-BB79-3171662DA20D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_change_the_fill_color_of_a_shape_in_a_presentation_vb", "presentation\how_to_change_the_fill_color_of_a_shape_in_a_presentation\vb\how_to_change_the_fill_color_of_a_shape_in_a_presentation_vb.vbproj", "{37A2DA75-58D9-49CA-8EE6-43BA43DC82B6}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_change_the_fill_color_of_a_shape_in_a_presentation_vb", "presentation\how_to_change_the_fill_color_of_a_shape_in_a_presentation\vb\how_to_change_the_fill_color_of_a_shape_in_a_presentation_vb.vbproj", "{37A2DA75-58D9-49CA-8EE6-43BA43DC82B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_change_the_print_orientation_of_a_word_processing_document_cs", "word\how_to_change_the_print_orientation_of_a_word_processing_document\cs\how_to_change_the_print_orientation_of_a_word_processing_document_cs.csproj", "{43E06191-76C0-4712-B3CF-8E12CC8F42B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_change_the_print_orientation_of_a_word_processing_document_cs", "word\how_to_change_the_print_orientation_of_a_word_processing_document\cs\how_to_change_the_print_orientation_of_a_word_processing_document_cs.csproj", "{43E06191-76C0-4712-B3CF-8E12CC8F42B2}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_change_the_print_orientation_of_a_word_processing_document_vb", "word\how_to_change_the_print_orientation_of_a_word_processing_document\vb\how_to_change_the_print_orientation_of_a_word_processing_document_vb.vbproj", "{B75C407E-0421-42FA-A6EE-FE862CBC3D08}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_change_the_print_orientation_of_a_word_processing_document_vb", "word\how_to_change_the_print_orientation_of_a_word_processing_document\vb\how_to_change_the_print_orientation_of_a_word_processing_document_vb.vbproj", "{B75C407E-0421-42FA-A6EE-FE862CBC3D08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_cs", "word\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format\cs\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_cs.csproj", "{E9BF7E13-BB77-4490-8419-9D61B15A18A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_cs", "word\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format\cs\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_cs.csproj", "{E9BF7E13-BB77-4490-8419-9D61B15A18A5}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_vb", "word\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format\vb\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_vb.vbproj", "{7BE20721-C670-448F-AEFB-54BA4366C5A7}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_vb", "word\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format\vb\how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format_vb.vbproj", "{7BE20721-C670-448F-AEFB-54BA4366C5A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_create_a_presentation_document_by_providing_a_file_name_cs", "presentation\how_to_create_a_presentation_document_by_providing_a_file_name\cs\how_to_create_a_presentation_document_by_providing_a_file_name_cs.csproj", "{66438CBE-181F-4751-B180-EAAC9B19812E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_create_a_presentation_document_by_providing_a_file_name_cs", "presentation\how_to_create_a_presentation_document_by_providing_a_file_name\cs\how_to_create_a_presentation_document_by_providing_a_file_name_cs.csproj", "{66438CBE-181F-4751-B180-EAAC9B19812E}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_create_a_presentation_document_by_providing_a_file_name_vb", "presentation\how_to_create_a_presentation_document_by_providing_a_file_name\vb\how_to_create_a_presentation_document_by_providing_a_file_name_vb.vbproj", "{26618FBA-A3BB-4057-A80B-240E4C90306F}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_create_a_presentation_document_by_providing_a_file_name_vb", "presentation\how_to_create_a_presentation_document_by_providing_a_file_name\vb\how_to_create_a_presentation_document_by_providing_a_file_name_vb.vbproj", "{26618FBA-A3BB-4057-A80B-240E4C90306F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_create_and_add_a_character_style_to_a_word_processing_document_cs", "word\how_to_create_and_add_a_character_style_to_a_word_processing_document\cs\how_to_create_and_add_a_character_style_to_a_word_processing_document_cs.csproj", "{A05BCE67-2847-4BA8-8D0F-A5C6476EAEBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_create_and_add_a_character_style_to_a_word_processing_document_cs", "word\how_to_create_and_add_a_character_style_to_a_word_processing_document\cs\how_to_create_and_add_a_character_style_to_a_word_processing_document_cs.csproj", "{A05BCE67-2847-4BA8-8D0F-A5C6476EAEBA}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_create_and_add_a_character_style_to_a_word_processing_document_vb", "word\how_to_create_and_add_a_character_style_to_a_word_processing_document\vb\how_to_create_and_add_a_character_style_to_a_word_processing_document_vb.vbproj", "{7E3D140B-57EE-4BE3-AB73-D06CC875BAC5}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_create_and_add_a_character_style_to_a_word_processing_document_vb", "word\how_to_create_and_add_a_character_style_to_a_word_processing_document\vb\how_to_create_and_add_a_character_style_to_a_word_processing_document_vb.vbproj", "{7E3D140B-57EE-4BE3-AB73-D06CC875BAC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_cs", "word\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document\cs\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_cs.csproj", "{EB7A3C49-8516-43AB-8589-41408B238636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_cs", "word\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document\cs\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_cs.csproj", "{EB7A3C49-8516-43AB-8589-41408B238636}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_vb", "word\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document\vb\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_vb.vbproj", "{67ABA332-E9E8-4FEE-88D5-436AF6E17ACC}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_vb", "word\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document\vb\how_to_create_and_add_a_paragraph_style_to_a_word_processing_document_vb.vbproj", "{67ABA332-E9E8-4FEE-88D5-436AF6E17ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_cs", "word\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document\cs\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_cs.csproj", "{2D6C4ED6-A22A-4B05-8ED8-26572ABB322B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_cs", "word\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document\cs\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_cs.csproj", "{2D6C4ED6-A22A-4B05-8ED8-26572ABB322B}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_vb", "word\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document\vb\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_vb.vbproj", "{FDF5EDBB-C4A1-42AA-A0AF-288B13E9ABD1}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_vb", "word\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document\vb\how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document_vb.vbproj", "{FDF5EDBB-C4A1-42AA-A0AF-288B13E9ABD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_extract_styles_from_a_word_processing_document_cs", "word\how_to_extract_styles_from_a_word_processing_document\cs\how_to_extract_styles_from_a_word_processing_document_cs.csproj", "{6A3B60EF-CD76-4FAE-96C3-DDF7EEB5886D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_extract_styles_from_a_word_processing_document_cs", "word\how_to_extract_styles_from_a_word_processing_document\cs\how_to_extract_styles_from_a_word_processing_document_cs.csproj", "{6A3B60EF-CD76-4FAE-96C3-DDF7EEB5886D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_extract_styles_from_a_word_processing_document_vb", "word\how_to_extract_styles_from_a_word_processing_document\vb\how_to_extract_styles_from_a_word_processing_document_vb.vbproj", "{D4A479DD-35BF-40CA-A377-0172581852AD}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_extract_styles_from_a_word_processing_document_vb", "word\how_to_extract_styles_from_a_word_processing_document\vb\how_to_extract_styles_from_a_word_processing_document_vb.vbproj", "{D4A479DD-35BF-40CA-A377-0172581852AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_insert_a_comment_into_a_word_processing_document_cs", "word\how_to_insert_a_comment_into_a_word_processing_document\cs\how_to_insert_a_comment_into_a_word_processing_document_cs.csproj", "{0615B916-647D-4176-86AC-60E5B967738C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_insert_a_comment_into_a_word_processing_document_cs", "word\how_to_insert_a_comment_into_a_word_processing_document\cs\how_to_insert_a_comment_into_a_word_processing_document_cs.csproj", "{0615B916-647D-4176-86AC-60E5B967738C}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_insert_a_comment_into_a_word_processing_document_vb", "word\how_to_insert_a_comment_into_a_word_processing_document\vb\how_to_insert_a_comment_into_a_word_processing_document_vb.vbproj", "{45F7B93D-20F6-43BF-8AA6-FD0EAA3F58FF}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_insert_a_comment_into_a_word_processing_document_vb", "word\how_to_insert_a_comment_into_a_word_processing_document\vb\how_to_insert_a_comment_into_a_word_processing_document_vb.vbproj", "{45F7B93D-20F6-43BF-8AA6-FD0EAA3F58FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_insert_a_new_worksheet_into_a_spreadsheet_cs", "spreadsheet\how_to_insert_a_new_worksheet_into_a_spreadsheet\cs\how_to_insert_a_new_worksheet_into_a_spreadsheet_cs.csproj", "{7825182C-8B6C-493F-9C1F-DD80F8A0EAFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_insert_a_new_worksheet_into_a_spreadsheet_cs", "spreadsheet\how_to_insert_a_new_worksheet_into_a_spreadsheet\cs\how_to_insert_a_new_worksheet_into_a_spreadsheet_cs.csproj", "{7825182C-8B6C-493F-9C1F-DD80F8A0EAFD}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_insert_a_new_worksheet_into_a_spreadsheet_vb", "spreadsheet\how_to_insert_a_new_worksheet_into_a_spreadsheet\vb\how_to_insert_a_new_worksheet_into_a_spreadsheet_vb.vbproj", "{B258784B-1568-479F-9B21-9E5045EC75E3}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_insert_a_new_worksheet_into_a_spreadsheet_vb", "spreadsheet\how_to_insert_a_new_worksheet_into_a_spreadsheet\vb\how_to_insert_a_new_worksheet_into_a_spreadsheet_vb.vbproj", "{B258784B-1568-479F-9B21-9E5045EC75E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_insert_a_picture_into_a_word_processing_document_cs", "word\how_to_insert_a_picture_into_a_word_processing_document\cs\how_to_insert_a_picture_into_a_word_processing_document_cs.csproj", "{F364E5F4-B908-4624-9E1D-86113B032387}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_insert_a_picture_into_a_word_processing_document_cs", "word\how_to_insert_a_picture_into_a_word_processing_document\cs\how_to_insert_a_picture_into_a_word_processing_document_cs.csproj", "{F364E5F4-B908-4624-9E1D-86113B032387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_insert_a_table_into_a_word_processing_document_cs", "word\how_to_insert_a_table_into_a_word_processing_document\cs\how_to_insert_a_table_into_a_word_processing_document_cs.csproj", "{0913F657-6C2C-49E4-AE25-223B11EB8724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_insert_a_table_into_a_word_processing_document_cs", "word\how_to_insert_a_table_into_a_word_processing_document\cs\how_to_insert_a_table_into_a_word_processing_document_cs.csproj", "{0913F657-6C2C-49E4-AE25-223B11EB8724}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_insert_a_table_into_a_word_processing_document_vb", "word\how_to_insert_a_table_into_a_word_processing_document\vb\how_to_insert_a_table_into_a_word_processing_document_vb.vbproj", "{800AB4A5-B593-4B33-A2D4-0CED80253344}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_insert_a_table_into_a_word_processing_document_vb", "word\how_to_insert_a_table_into_a_word_processing_document\vb\how_to_insert_a_table_into_a_word_processing_document_vb.vbproj", "{800AB4A5-B593-4B33-A2D4-0CED80253344}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_merge_two_adjacent_cells_in_a_spreadsheet_cs", "spreadsheet\how_to_merge_two_adjacent_cells_in_a_spreadsheet\cs\how_to_merge_two_adjacent_cells_in_a_spreadsheet_cs.csproj", "{40FB71B1-87F8-4DBE-96B7-043A386C72D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_merge_two_adjacent_cells_in_a_spreadsheet_cs", "spreadsheet\how_to_merge_two_adjacent_cells_in_a_spreadsheet\cs\how_to_merge_two_adjacent_cells_in_a_spreadsheet_cs.csproj", "{40FB71B1-87F8-4DBE-96B7-043A386C72D9}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_merge_two_adjacent_cells_in_a_spreadsheet_vb", "spreadsheet\how_to_merge_two_adjacent_cells_in_a_spreadsheet\vb\how_to_merge_two_adjacent_cells_in_a_spreadsheet_vb.vbproj", "{AC58704E-D2BE-43BB-9F80-322349F26802}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_merge_two_adjacent_cells_in_a_spreadsheet_vb", "spreadsheet\how_to_merge_two_adjacent_cells_in_a_spreadsheet\vb\how_to_merge_two_adjacent_cells_in_a_spreadsheet_vb.vbproj", "{AC58704E-D2BE-43BB-9F80-322349F26802}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_open_a_spreadsheet_document_for_read_only_access_cs", "spreadsheet\how_to_open_a_spreadsheet_document_for_read_only_access\cs\how_to_open_a_spreadsheet_document_for_read_only_access_cs.csproj", "{BAE86ACC-E06B-4767-9A68-6607C6DA6DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_open_a_spreadsheet_document_for_read_only_access_cs", "spreadsheet\how_to_open_a_spreadsheet_document_for_read_only_access\cs\how_to_open_a_spreadsheet_document_for_read_only_access_cs.csproj", "{BAE86ACC-E06B-4767-9A68-6607C6DA6DF7}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_open_a_spreadsheet_document_for_read_only_access_vb", "spreadsheet\how_to_open_a_spreadsheet_document_for_read_only_access\vb\how_to_open_a_spreadsheet_document_for_read_only_access_vb.vbproj", "{82E1A22E-18FF-4E5D-8724-27634D0D23DA}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_open_a_spreadsheet_document_for_read_only_access_vb", "spreadsheet\how_to_open_a_spreadsheet_document_for_read_only_access\vb\how_to_open_a_spreadsheet_document_for_read_only_access_vb.vbproj", "{82E1A22E-18FF-4E5D-8724-27634D0D23DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_open_a_spreadsheet_document_from_a_stream_cs", "spreadsheet\how_to_open_a_spreadsheet_document_from_a_stream\cs\how_to_open_a_spreadsheet_document_from_a_stream_cs.csproj", "{1262A76C-FED4-431B-A1B6-329C3DAD2D03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_open_a_spreadsheet_document_from_a_stream_cs", "spreadsheet\how_to_open_a_spreadsheet_document_from_a_stream\cs\how_to_open_a_spreadsheet_document_from_a_stream_cs.csproj", "{1262A76C-FED4-431B-A1B6-329C3DAD2D03}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_open_a_spreadsheet_document_from_a_stream_vb", "spreadsheet\how_to_open_a_spreadsheet_document_from_a_stream\vb\how_to_open_a_spreadsheet_document_from_a_stream_vb.vbproj", "{E2100A00-DE49-4E4C-A2A6-304DB0A20423}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_open_a_spreadsheet_document_from_a_stream_vb", "spreadsheet\how_to_open_a_spreadsheet_document_from_a_stream\vb\how_to_open_a_spreadsheet_document_from_a_stream_vb.vbproj", "{E2100A00-DE49-4E4C-A2A6-304DB0A20423}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_parse_and_read_a_large_spreadsheet_cs", "spreadsheet\how_to_parse_and_read_a_large_spreadsheet\cs\how_to_parse_and_read_a_large_spreadsheet_cs.csproj", "{6F4298ED-EEFB-4899-8F5B-1F6B1F4C7F4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_parse_and_read_a_large_spreadsheet_cs", "spreadsheet\how_to_parse_and_read_a_large_spreadsheet\cs\how_to_parse_and_read_a_large_spreadsheet_cs.csproj", "{6F4298ED-EEFB-4899-8F5B-1F6B1F4C7F4C}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_parse_and_read_a_large_spreadsheet_vb", "spreadsheet\how_to_parse_and_read_a_large_spreadsheet\vb\how_to_parse_and_read_a_large_spreadsheet_vb.vbproj", "{41FE579B-E3E2-4E43-A246-81C702DB09C3}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_parse_and_read_a_large_spreadsheet_vb", "spreadsheet\how_to_parse_and_read_a_large_spreadsheet\vb\how_to_parse_and_read_a_large_spreadsheet_vb.vbproj", "{41FE579B-E3E2-4E43-A246-81C702DB09C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_remove_hidden_text_from_a_word_processing_document_cs", "word\how_to_remove_hidden_text_from_a_word_processing_document\cs\how_to_remove_hidden_text_from_a_word_processing_document_cs.csproj", "{16D1B230-A352-4341-B143-1EE39F32F45E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_remove_hidden_text_from_a_word_processing_document_cs", "word\how_to_remove_hidden_text_from_a_word_processing_document\cs\how_to_remove_hidden_text_from_a_word_processing_document_cs.csproj", "{16D1B230-A352-4341-B143-1EE39F32F45E}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_remove_hidden_text_from_a_word_processing_document_vb", "word\how_to_remove_hidden_text_from_a_word_processing_document\vb\how_to_remove_hidden_text_from_a_word_processing_document_vb.vbproj", "{D156A91E-C79A-4735-AFF1-E2C836E261F7}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_remove_hidden_text_from_a_word_processing_document_vb", "word\how_to_remove_hidden_text_from_a_word_processing_document\vb\how_to_remove_hidden_text_from_a_word_processing_document_vb.vbproj", "{D156A91E-C79A-4735-AFF1-E2C836E261F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_remove_the_headers_and_footers_from_a_word_processing_document_cs", "word\how_to_remove_the_headers_and_footers_from_a_word_processing_document\cs\how_to_remove_the_headers_and_footers_from_a_word_processing_document_cs.csproj", "{D6F0121C-A9B2-401C-B458-481286E98818}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_remove_the_headers_and_footers_from_a_word_processing_document_cs", "word\how_to_remove_the_headers_and_footers_from_a_word_processing_document\cs\how_to_remove_the_headers_and_footers_from_a_word_processing_document_cs.csproj", "{D6F0121C-A9B2-401C-B458-481286E98818}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_remove_the_headers_and_footers_from_a_word_processing_document_vb", "word\how_to_remove_the_headers_and_footers_from_a_word_processing_document\vb\how_to_remove_the_headers_and_footers_from_a_word_processing_document_vb.vbproj", "{9EE65ED2-C97B-4015-8293-ED79B29C1608}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_remove_the_headers_and_footers_from_a_word_processing_document_vb", "word\how_to_remove_the_headers_and_footers_from_a_word_processing_document\vb\how_to_remove_the_headers_and_footers_from_a_word_processing_document_vb.vbproj", "{9EE65ED2-C97B-4015-8293-ED79B29C1608}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_replace_the_header_in_a_word_processing_document_cs", "word\how_to_replace_the_header_in_a_word_processing_document\cs\how_to_replace_the_header_in_a_word_processing_document_cs.csproj", "{E7D4CECE-39DB-4EE7-B4C9-83FBC89B8903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_replace_the_header_in_a_word_processing_document_cs", "word\how_to_replace_the_header_in_a_word_processing_document\cs\how_to_replace_the_header_in_a_word_processing_document_cs.csproj", "{E7D4CECE-39DB-4EE7-B4C9-83FBC89B8903}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_replace_the_header_in_a_word_processing_document_vb", "word\how_to_replace_the_header_in_a_word_processing_document\vb\how_to_replace_the_header_in_a_word_processing_document_vb.vbproj", "{72BB1EBA-2168-4C1B-9F8A-E6CE4CB14920}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_replace_the_header_in_a_word_processing_document_vb", "word\how_to_replace_the_header_in_a_word_processing_document\vb\how_to_replace_the_header_in_a_word_processing_document_vb.vbproj", "{72BB1EBA-2168-4C1B-9F8A-E6CE4CB14920}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_replace_the_styles_parts_in_a_word_processing_document_cs", "word\how_to_replace_the_styles_parts_in_a_word_processing_document\cs\how_to_replace_the_styles_parts_in_a_word_processing_document_cs.csproj", "{DA1D02A7-801C-49EE-B300-79CFDC8BFF66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_replace_the_styles_parts_in_a_word_processing_document_cs", "word\how_to_replace_the_styles_parts_in_a_word_processing_document\cs\how_to_replace_the_styles_parts_in_a_word_processing_document_cs.csproj", "{DA1D02A7-801C-49EE-B300-79CFDC8BFF66}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_replace_the_styles_parts_in_a_word_processing_document_vb", "word\how_to_replace_the_styles_parts_in_a_word_processing_document\vb\how_to_replace_the_styles_parts_in_a_word_processing_document_vb.vbproj", "{F8004D45-99F4-45B0-B2CF-539A4C65D7EC}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_replace_the_styles_parts_in_a_word_processing_document_vb", "word\how_to_replace_the_styles_parts_in_a_word_processing_document\vb\how_to_replace_the_styles_parts_in_a_word_processing_document_vb.vbproj", "{F8004D45-99F4-45B0-B2CF-539A4C65D7EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_replace_the_theme_part_in_a_word_processing_document_cs", "word\how_to_replace_the_theme_part_in_a_word_processing_document\cs\how_to_replace_the_theme_part_in_a_word_processing_document_cs.csproj", "{C0564907-D3BE-478E-B936-C55E4E745EBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_replace_the_theme_part_in_a_word_processing_document_cs", "word\how_to_replace_the_theme_part_in_a_word_processing_document\cs\how_to_replace_the_theme_part_in_a_word_processing_document_cs.csproj", "{C0564907-D3BE-478E-B936-C55E4E745EBC}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_replace_the_theme_part_in_a_word_processing_document_vb", "word\how_to_replace_the_theme_part_in_a_word_processing_document\vb\how_to_replace_the_theme_part_in_a_word_processing_document_vb.vbproj", "{906B7316-6E97-4E92-9E0E-1BDF8FCD49D0}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_replace_the_theme_part_in_a_word_processing_document_vb", "word\how_to_replace_the_theme_part_in_a_word_processing_document\vb\how_to_replace_the_theme_part_in_a_word_processing_document_vb.vbproj", "{906B7316-6E97-4E92-9E0E-1BDF8FCD49D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet\cs\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_cs.csproj", "{EEEB9B22-F363-477C-935C-139E01F79AF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet\cs\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_cs.csproj", "{EEEB9B22-F363-477C-935C-139E01F79AF1}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet\vb\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_vb.vbproj", "{5757C767-600D-4911-9167-5C1B7D17018B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet\vb\how_to_retrieve_a_dictionary_of_all_named_ranges_in_a_spreadsheet_vb.vbproj", "{5757C767-600D-4911-9167-5C1B7D17018B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet\cs\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_cs.csproj", "{7DE8E6F7-3493-4BCA-9519-69CE3ED12459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet\cs\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_cs.csproj", "{7DE8E6F7-3493-4BCA-9519-69CE3ED12459}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet\vb\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_vb.vbproj", "{E31B5339-9529-4716-9E7A-D8DA91F023C0}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet\vb\how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet_vb.vbproj", "{E31B5339-9529-4716-9E7A-D8DA91F023C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_a_list_of_the_hidden_worksheets_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_list_of_the_hidden_worksheets_in_a_spreadsheet\cs\how_to_retrieve_a_list_of_the_hidden_worksheets_in_a_spreadsheet_cs.csproj", "{E2A68C76-68F5-4FD2-9ED2-80454B69550F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_a_list_of_the_hidden_worksheets_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_list_of_the_hidden_worksheets_in_a_spreadsheet\cs\how_to_retrieve_a_list_of_the_hidden_worksheets_in_a_spreadsheet_cs.csproj", "{E2A68C76-68F5-4FD2-9ED2-80454B69550F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet\cs\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_cs.csproj", "{3C113EBD-A91B-45D2-BB1F-4C148326C492}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet\cs\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_cs.csproj", "{3C113EBD-A91B-45D2-BB1F-4C148326C492}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet\vb\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_vb.vbproj", "{69A6E865-50F4-47DE-9B40-27B8D41BA3CE}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet\vb\how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet_vb.vbproj", "{69A6E865-50F4-47DE-9B40-27B8D41BA3CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_application_property_values_from_a_word_processing_document_cs", "word\how_to_retrieve_application_property_values_from_a_word_processing_document\cs\how_to_retrieve_application_property_values_from_a_word_processing_document_cs.csproj", "{80EC9377-CD17-4BCD-97E6-EF971ED7CEDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_application_property_values_from_a_word_processing_document_cs", "word\how_to_retrieve_application_property_values_from_a_word_processing_document\cs\how_to_retrieve_application_property_values_from_a_word_processing_document_cs.csproj", "{80EC9377-CD17-4BCD-97E6-EF971ED7CEDF}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_retrieve_application_property_values_from_a_word_processing_document_vb", "word\how_to_retrieve_application_property_values_from_a_word_processing_document\vb\how_to_retrieve_application_property_values_from_a_word_processing_document_vb.vbproj", "{5D5EE944-CEFC-49D3-9213-B7AF3AB13220}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_retrieve_application_property_values_from_a_word_processing_document_vb", "word\how_to_retrieve_application_property_values_from_a_word_processing_document\vb\how_to_retrieve_application_property_values_from_a_word_processing_document_vb.vbproj", "{5D5EE944-CEFC-49D3-9213-B7AF3AB13220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_comments_from_a_word_processing_document_cs", "word\how_to_retrieve_comments_from_a_word_processing_document\cs\how_to_retrieve_comments_from_a_word_processing_document_cs.csproj", "{DF930C62-644D-4F7C-AB12-6909C9CD8FF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_comments_from_a_word_processing_document_cs", "word\how_to_retrieve_comments_from_a_word_processing_document\cs\how_to_retrieve_comments_from_a_word_processing_document_cs.csproj", "{DF930C62-644D-4F7C-AB12-6909C9CD8FF2}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_retrieve_comments_from_a_word_processing_document_vb", "word\how_to_retrieve_comments_from_a_word_processing_document\vb\how_to_retrieve_comments_from_a_word_processing_document_vb.vbproj", "{F4C3D0CB-7BEA-4CDE-99CA-51995AA590CE}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_retrieve_comments_from_a_word_processing_document_vb", "word\how_to_retrieve_comments_from_a_word_processing_document\vb\how_to_retrieve_comments_from_a_word_processing_document_vb.vbproj", "{F4C3D0CB-7BEA-4CDE-99CA-51995AA590CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_the_number_of_slides_in_a_presentation_document_cs", "presentation\how_to_retrieve_the_number_of_slides_in_a_presentation_document\cs\how_to_retrieve_the_number_of_slides_in_a_presentation_document_cs.csproj", "{9AA1CD10-0BF7-412A-AA54-DF59FF5510C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_the_number_of_slides_in_a_presentation_document_cs", "presentation\how_to_retrieve_the_number_of_slides_in_a_presentation_document\cs\how_to_retrieve_the_number_of_slides_in_a_presentation_document_cs.csproj", "{9AA1CD10-0BF7-412A-AA54-DF59FF5510C8}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_retrieve_the_number_of_slides_in_a_presentation_document_vb", "presentation\how_to_retrieve_the_number_of_slides_in_a_presentation_document\vb\how_to_retrieve_the_number_of_slides_in_a_presentation_document_vb.vbproj", "{588BA6E9-92FD-4074-BE0A-3192ABD0D7B6}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_retrieve_the_number_of_slides_in_a_presentation_document_vb", "presentation\how_to_retrieve_the_number_of_slides_in_a_presentation_document\vb\how_to_retrieve_the_number_of_slides_in_a_presentation_document_vb.vbproj", "{588BA6E9-92FD-4074-BE0A-3192ABD0D7B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_retrieve_the_values_of_cells_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_the_values_of_cells_in_a_spreadsheet\cs\how_to_retrieve_the_values_of_cells_in_a_spreadsheet_cs.csproj", "{FC42866A-6868-4173-9E45-12095CC91A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_retrieve_the_values_of_cells_in_a_spreadsheet_cs", "spreadsheet\how_to_retrieve_the_values_of_cells_in_a_spreadsheet\cs\how_to_retrieve_the_values_of_cells_in_a_spreadsheet_cs.csproj", "{FC42866A-6868-4173-9E45-12095CC91A03}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_retrieve_the_values_of_cells_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_the_values_of_cells_in_a_spreadsheet\vb\how_to_retrieve_the_values_of_cells_in_a_spreadsheet_vb.vbproj", "{08FADF41-2082-4A04-8613-659B5624086D}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_retrieve_the_values_of_cells_in_a_spreadsheet_vb", "spreadsheet\how_to_retrieve_the_values_of_cells_in_a_spreadsheet\vb\how_to_retrieve_the_values_of_cells_in_a_spreadsheet_vb.vbproj", "{08FADF41-2082-4A04-8613-659B5624086D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_search_and_replace_text_in_a_document_part_cs", "word\how_to_search_and_replace_text_in_a_document_part\cs\how_to_search_and_replace_text_in_a_document_part_cs.csproj", "{B4AD7B34-760A-4FD5-878B-1F01AF917D92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_search_and_replace_text_in_a_document_part_cs", "word\how_to_search_and_replace_text_in_a_document_part\cs\how_to_search_and_replace_text_in_a_document_part_cs.csproj", "{B4AD7B34-760A-4FD5-878B-1F01AF917D92}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_search_and_replace_text_in_a_document_part_vb", "word\how_to_search_and_replace_text_in_a_document_part\vb\how_to_search_and_replace_text_in_a_document_part_vb.vbproj", "{D0C6147C-EE5A-45F6-8CEA-A5E2AA560098}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_search_and_replace_text_in_a_document_part_vb", "word\how_to_search_and_replace_text_in_a_document_part\vb\how_to_search_and_replace_text_in_a_document_part_vb.vbproj", "{D0C6147C-EE5A-45F6-8CEA-A5E2AA560098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_set_a_custom_property_in_a_word_processing_document_cs", "word\how_to_set_a_custom_property_in_a_word_processing_document\cs\how_to_set_a_custom_property_in_a_word_processing_document_cs.csproj", "{45133FD5-04AE-43C1-A556-D09CADD354D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_set_a_custom_property_in_a_word_processing_document_cs", "word\how_to_set_a_custom_property_in_a_word_processing_document\cs\how_to_set_a_custom_property_in_a_word_processing_document_cs.csproj", "{45133FD5-04AE-43C1-A556-D09CADD354D4}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_set_a_custom_property_in_a_word_processing_document_vb", "word\how_to_set_a_custom_property_in_a_word_processing_document\vb\how_to_set_a_custom_property_in_a_word_processing_document_vb.vbproj", "{787D75FD-9C9F-43C9-A09B-29ED587EFECA}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_set_a_custom_property_in_a_word_processing_document_vb", "word\how_to_set_a_custom_property_in_a_word_processing_document\vb\how_to_set_a_custom_property_in_a_word_processing_document_vb.vbproj", "{787D75FD-9C9F-43C9-A09B-29ED587EFECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_set_the_font_for_a_text_run_cs", "word\how_to_set_the_font_for_a_text_run\cs\how_to_set_the_font_for_a_text_run_cs.csproj", "{D3D354F1-9DAE-4F5C-A0A8-68CF92A53900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_set_the_font_for_a_text_run_cs", "word\how_to_set_the_font_for_a_text_run\cs\how_to_set_the_font_for_a_text_run_cs.csproj", "{D3D354F1-9DAE-4F5C-A0A8-68CF92A53900}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_set_the_font_for_a_text_run_vb", "word\how_to_set_the_font_for_a_text_run\vb\how_to_set_the_font_for_a_text_run_vb.vbproj", "{A8945DA0-1FA0-4191-BF25-83A91DD8BD6E}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_set_the_font_for_a_text_run_vb", "word\how_to_set_the_font_for_a_text_run\vb\how_to_set_the_font_for_a_text_run_vb.vbproj", "{A8945DA0-1FA0-4191-BF25-83A91DD8BD6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "how_to_validate_a_word_processing_document_cs", "word\how_to_validate_a_word_processing_document\cs\how_to_validate_a_word_processing_document_cs.csproj", "{DD7FD3A1-F42C-4DD7-8993-D4E86473D304}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "how_to_validate_a_word_processing_document_cs", "word\how_to_validate_a_word_processing_document\cs\how_to_validate_a_word_processing_document_cs.csproj", "{DD7FD3A1-F42C-4DD7-8993-D4E86473D304}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "how_to_validate_a_word_processing_document_vb", "word\how_to_validate_a_word_processing_document\vb\how_to_validate_a_word_processing_document_vb.vbproj", "{7B84F55C-56BE-4FDA-9639-62367246F22D}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "how_to_validate_a_word_processing_document_vb", "word\how_to_validate_a_word_processing_document\vb\how_to_validate_a_word_processing_document_vb.vbproj", "{7B84F55C-56BE-4FDA-9639-62367246F22D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD0206D0-5EBF-41E8-A138-12A485DC7932}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -79,7 +79,7 @@ foreach (var path in files)
     """);
         }
 
-        var thisSampleDir = Path.Combine(samplesDir, area, name);
+        var thisSampleDir = Path.Combine(samplesDir, area ?? string.Empty, name);
 
         var csDir = Path.Combine(thisSampleDir, "cs");
         Directory.CreateDirectory(csDir);
