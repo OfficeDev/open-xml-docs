@@ -1,8 +1,8 @@
-
-using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Presentation;
 using Drawing = DocumentFormat.OpenXml.Drawing;
+
+SetPPTShapeColor(args[0]);
 
 // Change the fill color of a shape.
 // The test file must have a filled shape as the first shape on the first slide.
@@ -11,35 +11,44 @@ static void SetPPTShapeColor(string docName)
     using (PresentationDocument ppt = PresentationDocument.Open(docName, true))
     {
         // Get the relationship ID of the first slide.
-        PresentationPart part = ppt.PresentationPart;
-        OpenXmlElementList slideIds = part.Presentation.SlideIdList.ChildElements;
-        string relId = (slideIds[0] as SlideId).RelationshipId;
+        PresentationPart presentationPart = ppt.PresentationPart ?? ppt.AddPresentationPart();
+        SlideIdList slideIdList = presentationPart.Presentation.SlideIdList ?? presentationPart.Presentation.AppendChild(new SlideIdList());
+        SlideId? slideId = slideIdList.GetFirstChild<SlideId>();
 
-        // Get the slide part from the relationship ID.
-        SlidePart slide = (SlidePart)part.GetPartById(relId);
-
-        if (slide != null)
+        if (slideId is not null)
         {
-            // Get the shape tree that contains the shape to change.
-            ShapeTree tree = slide.Slide.CommonSlideData.ShapeTree;
+            string? relId = slideId.RelationshipId;
 
-            // Get the first shape in the shape tree.
-            Shape shape = tree.GetFirstChild<Shape>();
-
-            if (shape != null)
+            if (relId is not null)
             {
-                // Get the style of the shape.
-                ShapeStyle style = shape.ShapeStyle;
+                // Get the slide part from the relationship ID.
+                SlidePart slidePart = (SlidePart)presentationPart.GetPartById(relId);
 
-                // Get the fill reference.
-                Drawing.FillReference fillRef = style.FillReference;
+                if (slidePart is not null && slidePart.Slide is not null && slidePart.Slide.CommonSlideData is not null && slidePart.Slide.CommonSlideData.ShapeTree is not null)
+                {
 
-                // Set the fill color to SchemeColor Accent 6;
-                fillRef.SchemeColor = new Drawing.SchemeColor();
-                fillRef.SchemeColor.Val = Drawing.SchemeColorValues.Accent6;
+                    // Get the shape tree that contains the shape to change.
+                    ShapeTree tree = slidePart.Slide.CommonSlideData.ShapeTree;
 
-                // Save the modified slide.
-                slide.Slide.Save();
+                    // Get the first shape in the shape tree.
+                    Shape? shape = tree.GetFirstChild<Shape>();
+
+                    if (shape is not null && shape.ShapeStyle is not null && shape.ShapeStyle.FillReference is not null)
+                    {
+                        // Get the style of the shape.
+                        ShapeStyle style = shape.ShapeStyle;
+
+                        // Get the fill reference.
+                        Drawing.FillReference fillRef = style.FillReference;
+
+                        // Set the fill color to SchemeColor Accent 6;
+                        fillRef.SchemeColor = new Drawing.SchemeColor();
+                        fillRef.SchemeColor.Val = Drawing.SchemeColorValues.Accent6;
+
+                        // Save the modified slide.
+                        slidePart.Slide.Save();
+                    }
+                }
             }
         }
     }
