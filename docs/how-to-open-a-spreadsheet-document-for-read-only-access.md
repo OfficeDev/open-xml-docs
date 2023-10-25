@@ -202,32 +202,6 @@ row|DocumentFormat.OpenXml.Spreadsheet.Row|A row in the cell table.
 c|DocumentFormat.OpenXml.Spreadsheet.Cell|A cell in a row.
 v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 
-
---------------------------------------------------------------------------------
-## Attempt to Generate the SpreadsheetML Markup to Add a Worksheet
-The sample code shows how, when you try to add a new worksheet, you get
-an exception error because the file is read-only. When you have access
-to the body of the main document part, you add a worksheet by calling
-the [AddNewPart\<T\>(String, String)](https://msdn.microsoft.com/library/office/cc562372.aspx) method to
-create a new [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx). The following code example
-attempts to add the new **WorksheetPart**.
-
-### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_open_a_spreadsheet_document_for_read_only_access/cs/Program.cs)]
-
-```vb
-    Public Shared Sub OpenSpreadsheetDocumentReadonly(ByVal filepath As String)
-        ' Open a SpreadsheetDocument based on a filepath.
-        Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(filepath, False)
-            ' Attempt to add a new WorksheetPart.
-            ' The call to AddNewPart generates an exception because the file is read-only.
-            Dim newWorksheetPart As WorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
-
-            ' The rest of the code will not be called.
-        End Using
-    End Sub
-```
-
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code sample is used to open a Spreadsheet Document for
