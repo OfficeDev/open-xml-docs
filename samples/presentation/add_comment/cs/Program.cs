@@ -13,58 +13,23 @@ static void AddCommentToPresentation(string file, string initials, string name, 
         // Declare a CommentAuthorsPart object.
         CommentAuthorsPart authorsPart;
 
-        // Verify that there is an existing comment authors part. 
-        if (doc.PresentationPart.CommentAuthorsPart == null)
-        {
-            // If not, add a new one.
-            authorsPart = doc.PresentationPart.AddNewPart<CommentAuthorsPart>();
-        }
-        else
-        {
-            authorsPart = doc.PresentationPart.CommentAuthorsPart;
-        }
+        // If the presentation does not contain a comment authors part, add a new one.
+        PresentationPart presentationPart = doc.PresentationPart ?? doc.AddPresentationPart();
 
-        // Verify that there is a comment author list in the comment authors part.
-        if (authorsPart.CommentAuthorList == null)
-        {
-            // If not, add a new one.
-            authorsPart.CommentAuthorList = new CommentAuthorList();
-        }
+        // Verify that there is an existing comment authors part and add a new one if not.
+        authorsPart = presentationPart.CommentAuthorsPart ?? presentationPart.AddNewPart<CommentAuthorsPart>();
 
-        // Declare a new author ID.
-        uint authorId = 0;
-        CommentAuthor author = null;
+        // Verify that there is a comment author list in the comment authors part and add one if not.
+        CommentAuthorList authorList = authorsPart.CommentAuthorList ?? new CommentAuthorList();
+        authorsPart.CommentAuthorList = authorList;
 
-        // If there are existing child elements in the comment authors list...
-        if (authorsPart.CommentAuthorList.HasChildren)
-        {
-            // Verify that the author passed in is on the list.
-            var authors = authorsPart.CommentAuthorList.Elements<CommentAuthor>().Where(a => a.Name == name && a.Initials == initials);
-
-            // If so...
-            if (authors.Any())
-            {
-                // Assign the new comment author the existing author ID.
-                author = authors.First();
-                authorId = author.Id;
-            }
-
-            // If not...
-            if (author == null)
-            {
-                // Assign the author passed in a new ID                        
-                authorId = authorsPart.CommentAuthorList.Elements<CommentAuthor>().Select(a => a.Id.Value).Max();
-            }
-        }
-
-        // If there are no existing child elements in the comment authors list.
-        if (author == null)
-        {
-
-            authorId++;
-
-            // Add a new child element(comment author) to the comment author list.
-            author = authorsPart.CommentAuthorList.AppendChild<CommentAuthor>
+        // Declare a new author ID as either the max existing ID + 1 or 1 if there are no existing IDs.
+        uint authorId = authorList.Elements<CommentAuthor>().Select(a => a.Id?.Value).Max() ?? 0;
+        authorId++;
+        // If there is an existing author with matching name and initials, use that author otherwise create a new CommentAuthor.
+        var foo = authorList.Elements<CommentAuthor>().Where(a => a.Name == name && a.Initials == initials).FirstOrDefault();
+        CommentAuthor author = foo ??
+            authorList.AppendChild
                 (new CommentAuthor()
                 {
                     Id = authorId,
@@ -72,7 +37,8 @@ static void AddCommentToPresentation(string file, string initials, string name, 
                     Initials = initials,
                     ColorIndex = 0
                 });
-        }
+        // get the author id
+        authorId = author.Id ?? authorId;
 
         // Get the first slide, using the GetFirstSlide method.
         SlidePart slidePart1 = GetFirstSlide(doc);
@@ -93,14 +59,14 @@ static void AddCommentToPresentation(string file, string initials, string name, 
         }
 
         // If the comment list does not exist.
-        if (commentsPart.CommentList == null)
+        if (commentsPart.CommentList is null)
         {
             // Add a new comments list.
             commentsPart.CommentList = new CommentList();
         }
 
         // Get the new comment ID.
-        uint commentIdx = author.LastIndex == null ? 1 : author.LastIndex + 1;
+        uint commentIdx = author.LastIndex is null ? 1 : author.LastIndex + 1;
         author.LastIndex = commentIdx;
 
         // Add a new comment.
@@ -118,7 +84,7 @@ static void AddCommentToPresentation(string file, string initials, string name, 
             new Text() { Text = text });
 
         // Save the comment authors part.
-        authorsPart.CommentAuthorList.Save();
+        authorList.Save();
 
         // Save the comments part.
         commentsPart.CommentList.Save();
@@ -126,15 +92,23 @@ static void AddCommentToPresentation(string file, string initials, string name, 
 }
 
 // Get the slide part of the first slide in the presentation document.
-static SlidePart GetFirstSlide(PresentationDocument presentationDocument)
+static SlidePart GetFirstSlide(PresentationDocument? presentationDocument)
 {
     // Get relationship ID of the first slide
-    PresentationPart part = presentationDocument.PresentationPart;
-    SlideId slideId = part.Presentation.SlideIdList.GetFirstChild<SlideId>();
-    string relId = slideId.RelationshipId;
-
+    PresentationPart? part = presentationDocument?.PresentationPart;
+    SlideId? slideId = part?.Presentation?.SlideIdList?.GetFirstChild<SlideId>();
+    string? relId = slideId?.RelationshipId;
+    if (relId is null)
+    {
+        throw new NullReferenceException("The first slide does not contain a relationship ID.");
+    }
     // Get the slide part by the relationship ID.
-    SlidePart slidePart = (SlidePart)part.GetPartById(relId);
+    SlidePart? slidePart = part?.GetPartById(relId) as SlidePart;
+
+    if (slidePart is null)
+    {
+        throw new NullReferenceException("The slide part is null.");
+    }
 
     return slidePart;
 }
