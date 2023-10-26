@@ -161,10 +161,10 @@ The following is the complete **GetAllWorksheets** code sample in C\# and Visual
 Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_retrieve_a_list_of_the_worksheets_in_a_spreadsheet/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 

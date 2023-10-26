@@ -153,10 +153,10 @@ Following is the complete sample C\# and VB code to create a
 presentation, given a file path.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/presentation/how_to_create_a_presentation_document_by_providing_a_file_name/cs/Program.cs)]
+[!code-csharp[](../samples/presentation/create_by_providing_a_file_name/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/how_to_create_a_presentation_document_by_providing_a_file_name/vb/Program.vb)]
+[!code-vb[](../samples/presentation/create_by_providing_a_file_name/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 

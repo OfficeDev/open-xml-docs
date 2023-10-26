@@ -218,10 +218,10 @@ the following code, which opens the file "Sheet10.xlsx," as an example.
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_open_a_spreadsheet_document_for_read_only_access/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/open_for_read_only_access/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_open_a_spreadsheet_document_for_read_only_access/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/open_for_read_only_access/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

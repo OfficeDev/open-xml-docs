@@ -170,10 +170,10 @@ Given a reference to the ribbon extensibility part, the following code finishes 
 The following is the complete **AddCustomUI** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_add_custom_ui_to_a_spreadsheet_document/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/add_custom_ui/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_add_custom_ui_to_a_spreadsheet_document/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/add_custom_ui/vb/Program.vb)]
 
 ## See also
 

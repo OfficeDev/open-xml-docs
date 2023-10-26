@@ -258,10 +258,10 @@ The following code concludes by appending the table to the body of the document,
 The following is the complete **AddTable** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_add_tables_to_word_processing_documents/cs/Program.cs)]
+[!code-csharp[](../samples/word/add_tables/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_add_tables_to_word_processing_documents/vb/Program.vb)]
+[!code-vb[](../samples/word/add_tables/vb/Program.vb)]
 
 ## See also
 

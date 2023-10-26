@@ -180,10 +180,10 @@ named "Word14.docx."
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_remove_hidden_text_from_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/remove_hidden_text/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_remove_hidden_text_from_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/remove_hidden_text/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

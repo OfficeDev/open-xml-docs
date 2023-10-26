@@ -255,10 +255,10 @@ parameter.
 The following is the complete **ExtractStylesPart** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_extract_styles_from_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/extract_styles/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_extract_styles_from_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/extract_styles/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 

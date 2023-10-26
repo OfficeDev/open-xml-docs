@@ -235,10 +235,10 @@ The following is the complete **ConvertDOCMtoDOCX** code sample in C\# and Visua
 Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format/cs/Program.cs)]
+[!code-csharp[](../samples/word/convert_from_the_docm_to_the_docx_file_format/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_convert_a_word_processing_document_from_the_docm_to_the_docx_file_format/vb/Program.vb)]
+[!code-vb[](../samples/word/convert_from_the_docm_to_the_docx_file_format/vb/Program.vb)]
 
 ## See also
 

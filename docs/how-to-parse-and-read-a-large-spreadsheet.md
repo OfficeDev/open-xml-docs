@@ -184,10 +184,10 @@ exclude.
 The following is the complete code sample in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_parse_and_read_a_large_spreadsheet/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/parse_and_read_a_large_spreadsheet/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_parse_and_read_a_large_spreadsheet/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/parse_and_read_a_large_spreadsheet/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

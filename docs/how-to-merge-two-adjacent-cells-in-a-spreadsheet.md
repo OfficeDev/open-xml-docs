@@ -156,10 +156,10 @@ named "Jane," in a file named "Sheet9.xlsx."
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_merge_two_adjacent_cells_in_a_spreadsheet/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/merge_two_adjacent_cells/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_merge_two_adjacent_cells_in_a_spreadsheet/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/merge_two_adjacent_cells/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

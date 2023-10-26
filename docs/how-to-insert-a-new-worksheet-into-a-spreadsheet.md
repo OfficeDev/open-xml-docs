@@ -146,10 +146,10 @@ inserts a worksheet in a file names "Sheet7.xslx," as an example.
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_insert_a_new_worksheet_into_a_spreadsheet/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/insert_a_new_worksheet/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_insert_a_new_worksheet_into_a_spreadsheet/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/insert_a_new_worksheet/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

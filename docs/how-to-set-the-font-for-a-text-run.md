@@ -211,10 +211,10 @@ changed font.
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_set_the_font_for_a_text_run/cs/Program.cs)]
+[!code-csharp[](../samples/word/set_the_font_for_a_text_run/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_set_the_font_for_a_text_run/vb/Program.vb)]
+[!code-vb[](../samples/word/set_the_font_for_a_text_run/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

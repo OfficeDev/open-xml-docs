@@ -182,10 +182,10 @@ The following is the complete **RetrieveNumberOfSlides** code sample in C\# and
 Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/presentation/how_to_retrieve_the_number_of_slides_in_a_presentation_document/cs/Program.cs)]
+[!code-csharp[](../samples/presentation/retrieve_the_number_of_slides/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/how_to_retrieve_the_number_of_slides_in_a_presentation_document/vb/Program.vb)]
+[!code-vb[](../samples/presentation/retrieve_the_number_of_slides/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 

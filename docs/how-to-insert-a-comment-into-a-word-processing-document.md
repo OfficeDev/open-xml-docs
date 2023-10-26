@@ -239,10 +239,10 @@ comment "This is my comment." in the file "Word8.docx."
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_insert_a_comment_into_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/insert_a_comment/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_insert_a_comment_into_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/insert_a_comment/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

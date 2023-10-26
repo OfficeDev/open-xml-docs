@@ -226,10 +226,10 @@ font.
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_replace_the_theme_part_in_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/replace_the_theme_part/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_replace_the_theme_part_in_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/replace_the_theme_part/vb/Program.vb)]
 
 ## See also
 

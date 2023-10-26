@@ -371,10 +371,10 @@ Finally, the procedure returns the variable **value**, which contains the reques
 The following is the complete **GetCellValue** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_retrieve_the_values_of_cells_in_a_spreadsheet/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_retrieve_the_values_of_cells_in_a_spreadsheet/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb)]
 
 ## See also
 

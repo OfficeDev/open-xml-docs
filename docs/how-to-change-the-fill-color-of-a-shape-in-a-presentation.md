@@ -247,10 +247,10 @@ After running the program, examine the file "Myppt3.pptx" to see the
 change in the fill color.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/presentation/how_to_change_the_fill_color_of_a_shape_in_a_presentation/cs/Program.cs)]
+[!code-csharp[](../samples/presentation/change_the_fill_color_of_a_shape/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/how_to_change_the_fill_color_of_a_shape_in_a_presentation/vb/Program.vb)]
+[!code-vb[](../samples/presentation/change_the_fill_color_of_a_shape/vb/Program.vb)]
 
 ## See also
 

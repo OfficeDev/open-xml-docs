@@ -186,10 +186,10 @@ example."
 Following is the complete code example.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_change_text_in_a_table_in_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/change_text_a_table/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_change_text_in_a_table_in_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/change_text_a_table/vb/Program.vb)]
 
 ## See also
 

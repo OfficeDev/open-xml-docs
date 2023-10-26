@@ -188,10 +188,10 @@ close the stream passed to it. The calling code must do that.
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_open_a_spreadsheet_document_from_a_stream/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/open_from_a_stream/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_open_a_spreadsheet_document_from_a_stream/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/open_from_a_stream/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

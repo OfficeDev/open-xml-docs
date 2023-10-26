@@ -105,10 +105,10 @@ document properties aren't available if you (or the application) haven't specifi
 The following is the complete code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_retrieve_application_property_values_from_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/retrieve_application_property_values/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_retrieve_application_property_values_from_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/retrieve_application_property_values/vb/Program.vb)]
 
 ## See also
 

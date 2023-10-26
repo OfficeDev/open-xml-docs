@@ -335,10 +335,10 @@ The following is the complete **SetPrintOrientation** code sample in C\# and Vis
 Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_change_the_print_orientation_of_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/change_the_print_orientation/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_change_the_print_orientation_of_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/change_the_print_orientation/vb/Program.vb)]
 
 -----------------------------------------------------------------------------
 

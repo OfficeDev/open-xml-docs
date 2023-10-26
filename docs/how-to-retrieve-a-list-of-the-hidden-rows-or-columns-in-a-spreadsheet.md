@@ -253,10 +253,10 @@ Retrieving the list of hidden columns is a bit trickier, because Excel collapses
 The following is the complete **GetHiddenRowsOrCols** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet/cs/Program.cs)]
+[!code-csharp[](../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/how_to_retrieve_a_list_of_the_hidden_rows_or_columns_in_a_spreadsheet/vb/Program.vb)]
+[!code-vb[](../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 

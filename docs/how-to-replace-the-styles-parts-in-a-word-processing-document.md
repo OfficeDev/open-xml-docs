@@ -319,10 +319,10 @@ The following is the complete **ReplaceStyles**, **ReplaceStylesPart**, and **Ex
 Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_replace_the_styles_parts_in_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/replace_the_styles_parts/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_replace_the_styles_parts_in_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/replace_the_styles_parts/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 

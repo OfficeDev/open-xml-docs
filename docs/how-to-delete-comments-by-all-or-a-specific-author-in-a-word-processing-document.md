@@ -327,10 +327,10 @@ saving the document.
 The following is the complete code sample in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/delete_comments_by_all_or_a_specific_author/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_delete_comments_by_all_or_a_specific_author_in_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/delete_comments_by_all_or_a_specific_author/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 

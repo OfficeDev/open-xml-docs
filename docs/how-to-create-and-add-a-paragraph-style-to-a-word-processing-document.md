@@ -562,10 +562,10 @@ The following is the complete **CreateAndAddParagraphStyle** code sample in both
 C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_create_and_add_a_paragraph_style_to_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/create_and_add_a_paragraph_style/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_create_and_add_a_paragraph_style_to_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/create_and_add_a_paragraph_style/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 

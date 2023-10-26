@@ -103,10 +103,10 @@ the text, "Hello world!"
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_search_and_replace_text_in_a_document_part/cs/Program.cs)]
+[!code-csharp[](../samples/word/search_and_replace_text_a_part/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_search_and_replace_text_in_a_document_part/vb/Program.vb)]
+[!code-vb[](../samples/word/search_and_replace_text_a_part/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

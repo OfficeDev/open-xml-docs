@@ -472,10 +472,10 @@ Finally, the code returns the stored original property value.
 The following is the complete **SetCustomProperty** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../samples/word/how_to_set_a_custom_property_in_a_word_processing_document/cs/Program.cs)]
+[!code-csharp[](../samples/word/set_a_custom_property/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/how_to_set_a_custom_property_in_a_word_processing_document/vb/Program.vb)]
+[!code-vb[](../samples/word/set_a_custom_property/vb/Program.vb)]
 
 ## See also
 
