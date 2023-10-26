@@ -1,3 +1,4 @@
+#nullable disable
 
 using DocumentFormat.OpenXml.Office.CustomUI;
 using DocumentFormat.OpenXml.Packaging;

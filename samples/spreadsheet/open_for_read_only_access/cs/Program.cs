@@ -1,3 +1,4 @@
+#nullable disable
 using DocumentFormat.OpenXml.Packaging;
 
 static void OpenSpreadsheetDocumentReadonly(string filepath)
