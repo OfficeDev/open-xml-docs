@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -7,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+MergeTwoCells(args[0], args[1], args[2], args[3]);
 
 // Given a document name, a worksheet name, and the names of two adjacent cells, merges the two cells.
 // When two cells are merged, only the content from one cell is preserved:
@@ -16,8 +16,8 @@ static void MergeTwoCells(string docName, string sheetName, string cell1Name, st
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))
     {
-        Worksheet worksheet = GetWorksheet(document, sheetName);
-        if (worksheet == null || string.IsNullOrEmpty(cell1Name) || string.IsNullOrEmpty(cell2Name))
+        Worksheet? worksheet = GetWorksheet(document, sheetName);
+        if (worksheet is null || string.IsNullOrEmpty(cell1Name) || string.IsNullOrEmpty(cell2Name))
         {
             return;
         }
@@ -88,7 +88,7 @@ static void CreateSpreadsheetCellIfNotExist(Worksheet worksheet, string cellName
     string columnName = GetColumnName(cellName);
     uint rowIndex = GetRowIndex(cellName);
 
-    IEnumerable<Row> rows = worksheet.Descendants<Row>().Where(r => r.RowIndex.Value == rowIndex);
+    IEnumerable<Row> rows = worksheet.Descendants<Row>().Where(r => r.RowIndex?.Value == rowIndex);
 
     // If the Worksheet does not contain the specified row, create the specified row.
     // Create the specified cell in that row, and insert the row into the Worksheet.
@@ -98,33 +98,36 @@ static void CreateSpreadsheetCellIfNotExist(Worksheet worksheet, string cellName
         Cell cell = new Cell() { CellReference = new StringValue(cellName) };
         row.Append(cell);
         worksheet.Descendants<SheetData>().First().Append(row);
+
         worksheet.Save();
     }
     else
     {
         Row row = rows.First();
 
-        IEnumerable<Cell> cells = row.Elements<Cell>().Where(c => c.CellReference.Value == cellName);
+        IEnumerable<Cell> cells = row.Elements<Cell>().Where(c => c.CellReference?.Value == cellName);
 
         // If the row does not contain the specified cell, create the specified cell.
         if (cells.Count() == 0)
         {
             Cell cell = new Cell() { CellReference = new StringValue(cellName) };
             row.Append(cell);
+
             worksheet.Save();
         }
     }
 }
 
 // Given a SpreadsheetDocument and a worksheet name, get the specified worksheet.
-static Worksheet GetWorksheet(SpreadsheetDocument document, string worksheetName)
+static Worksheet? GetWorksheet(SpreadsheetDocument document, string worksheetName)
 {
-    IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook.Descendants<Sheet>().Where(s => s.Name == worksheetName);
-    WorksheetPart worksheetPart = (WorksheetPart)document.WorkbookPart.GetPartById(sheets.First().Id);
-    if (sheets.Count() == 0)
-        return null;
-    else
-        return worksheetPart.Worksheet;
+    WorkbookPart workbookPart = document.WorkbookPart ?? document.AddWorkbookPart();
+    IEnumerable<Sheet> sheets = workbookPart.Workbook.Descendants<Sheet>().Where(s => s.Name == worksheetName);
+
+    string? id = sheets.First().Id;
+    WorksheetPart? worksheetPart = id is not null ? (WorksheetPart)workbookPart.GetPartById(id) : null;
+
+    return worksheetPart?.Worksheet;
 }
 
 // Given a cell name, parses the specified cell to get the column name.

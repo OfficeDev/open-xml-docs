@@ -1,40 +1,22 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
+using System.Collections.Generic;
 
-namespace GetAllWorkheets
+GetAllWorksheets(args[0]);
+
+// Retrieve a List of all the sheets in a workbook.
+// The Sheets class contains a collection of 
+// OpenXmlElement objects, each representing one of 
+// the sheets.
+static Sheets? GetAllWorksheets(string fileName)
 {
-    class Program
+    Sheets? theSheets = null;
+
+    using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
     {
-        const string DEMOFILE =
-            @"C:\Users\Public\Documents\SampleWorkbook.xlsx";
-
-        static void Main(string[] args)
-        {
-            var results = GetAllWorksheets(DEMOFILE);
-            foreach (Sheet item in results)
-            {
-                Console.WriteLine(item.Name);
-            }
-        }
-
-        // Retrieve a List of all the sheets in a workbook.
-        // The Sheets class contains a collection of 
-        // OpenXmlElement objects, each representing one of 
-        // the sheets.
-        public static Sheets GetAllWorksheets(string fileName)
-        {
-            Sheets theSheets = null;
-
-            using (SpreadsheetDocument document =
-                SpreadsheetDocument.Open(fileName, false))
-            {
-                WorkbookPart wbPart = document.WorkbookPart;
-                theSheets = wbPart.Workbook.Sheets;
-            }
-            return theSheets;
-        }
+        theSheets = document?.WorkbookPart?.Workbook.Sheets;
     }
+
+    return theSheets;
 }

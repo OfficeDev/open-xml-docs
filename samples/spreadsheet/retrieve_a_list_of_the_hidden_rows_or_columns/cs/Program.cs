@@ -1,13 +1,19 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-static List<uint> GetHiddenRowsOrCols(
-  string fileName, string sheetName, bool detectRows)
+if (args.Length >= 3)
+{
+    GetHiddenRowsOrCols(args[0], args[1], args[2]);
+}
+else
+{
+    GetHiddenRowsOrCols(args[0], args[1]);
+}
+
+static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string detectRows = "false")
 {
     // Given a workbook and a worksheet name, return 
     // either a list of hidden row numbers, or a list 
@@ -17,45 +23,56 @@ static List<uint> GetHiddenRowsOrCols(
 
     List<uint> itemList = new List<uint>();
 
-    using (SpreadsheetDocument document =
-        SpreadsheetDocument.Open(fileName, false))
+    using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
     {
-        WorkbookPart wbPart = document.WorkbookPart;
-
-        Sheet theSheet = wbPart.Workbook.Descendants<Sheet>().
-            Where((s) => s.Name == sheetName).FirstOrDefault();
-        if (theSheet == null)
+        if (document is not null)
         {
-            throw new ArgumentException("sheetName");
-        }
-        else
-        {
-            // The sheet does exist.
-            WorksheetPart wsPart =
-                (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
-            Worksheet ws = wsPart.Worksheet;
+            WorkbookPart wbPart = document.WorkbookPart ?? document.AddWorkbookPart();
 
-            if (detectRows)
+            Sheet? theSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault((s) => s.Name == sheetName);
+
+            if (theSheet is null)
             {
-                // Retrieve hidden rows.
-                itemList = ws.Descendants<Row>().
-                    Where((r) => r.Hidden != null && r.Hidden.Value).
-                    Select(r => r.RowIndex.Value).ToList<uint>();
+                throw new ArgumentException("sheetName");
             }
             else
             {
-                // Retrieve hidden columns.
-                var cols = ws.Descendants<Column>().
-                    Where((c) => c.Hidden != null && c.Hidden.Value);
-                foreach (Column item in cols)
+                string id = theSheet.Id?.ToString() ?? string.Empty;
+                // The sheet does exist.
+                WorksheetPart? wsPart = wbPart.GetPartById(id) as WorksheetPart;
+                Worksheet? ws = wsPart?.Worksheet;
+
+                if (ws is not null)
                 {
-                    for (uint i = item.Min.Value; i <= item.Max.Value; i++)
+                    if (detectRows.ToLower() == "true")
                     {
-                        itemList.Add(i);
+                        // Retrieve hidden rows.
+                        itemList = ws.Descendants<Row>()
+                            .Where((r) => r?.Hidden is not null && r.Hidden.Value)
+                            .Select(r => r.RowIndex?.Value)
+                            .Cast<uint>()
+                            .ToList();
+                    }
+                    else
+                    {
+                        // Retrieve hidden columns.
+                        var cols = ws.Descendants<Column>().Where((c) => c?.Hidden is not null && c.Hidden.Value);
+
+                        foreach (Column item in cols)
+                        {
+                            if (item.Min is not null && item.Max is not null)
+                            {
+                                for (uint i = item.Min.Value; i <= item.Max.Value; i++)
+                                {
+                                    itemList.Add(i);
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
+
     return itemList;
 }
