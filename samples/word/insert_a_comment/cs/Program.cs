@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
@@ -14,10 +12,16 @@ static void AddCommentOnFirstParagraph(string fileName,
     using (WordprocessingDocument document =
         WordprocessingDocument.Open(fileName, true))
     {
+
+        if (document.MainDocumentPart is null || document.MainDocumentPart.WordprocessingCommentsPart is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+        }
+
         // Locate the first paragraph in the document.
         Paragraph firstParagraph =
             document.MainDocumentPart.Document.Descendants<Paragraph>().First();
-        Comments comments = null;
+        Comments? comments = null;
         string id = "0";
 
         // Verify that the document contains a 
@@ -28,7 +32,8 @@ static void AddCommentOnFirstParagraph(string fileName,
             if (comments.HasChildren)
             {
                 // Obtain an unused ID.
-                id = (comments.Descendants<Comment>().Select(e => int.Parse(e.Id.Value)).Max() + 1).ToString();
+                id = (comments.Descendants<Comment>().Select(e => { if (e.Id is not null && e.Id.Value is not null) { return int.Parse(e.Id.Value); } 
+                    else { throw new System.NullReferenceException("Comment id and/or value are null."); } } ).Max() + 1).ToString();
             }
         }
         else

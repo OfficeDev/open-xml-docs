@@ -1,4 +1,3 @@
-#nullable disable
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
@@ -8,11 +7,13 @@ static void CreateAndAddParagraphStyle(StyleDefinitionsPart styleDefinitionsPart
     string styleid, string stylename, string aliases = "")
 {
     // Access the root element of the styles part.
-    Styles styles = styleDefinitionsPart.Styles;
-    if (styles == null)
+    Styles? styles = styleDefinitionsPart.Styles;
+
+    if (styles is null)
     {
         styleDefinitionsPart.Styles = new Styles();
         styleDefinitionsPart.Styles.Save();
+        styles = styleDefinitionsPart.Styles;
     }
 
     // Create a new paragraph style element and specify some of the attributes.
@@ -76,6 +77,12 @@ static void CreateAndAddParagraphStyle(StyleDefinitionsPart styleDefinitionsPart
 static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument doc)
 {
     StyleDefinitionsPart part;
+
+    if (doc.MainDocumentPart is null)
+    {
+        throw new System.NullReferenceException("MainDocumentPart is null.");
+    }
+
     part = doc.MainDocumentPart.AddNewPart<StyleDefinitionsPart>();
     Styles root = new Styles();
     root.Save(part);

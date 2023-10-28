@@ -1,4 +1,4 @@
-#nullable disable
+#nullable enable
 
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
@@ -9,7 +9,7 @@ namespace ChangePrintOrientation
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             SetPrintOrientation(@"C:\Users\Public\Documents\ChangePrintOrientation.docx",
                 PageOrientationValues.Landscape);
@@ -25,14 +25,21 @@ namespace ChangePrintOrientation
             {
                 bool documentChanged = false;
 
+                if (document.MainDocumentPart is null)
+                {
+                    throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+                }
+
                 var docPart = document.MainDocumentPart;
+
+
                 var sections = docPart.Document.Descendants<SectionProperties>();
 
                 foreach (SectionProperties sectPr in sections)
                 {
                     bool pageOrientationChanged = false;
 
-                    PageSize pgSz = sectPr.Descendants<PageSize>().FirstOrDefault();
+                    PageSize pgSz = (sectPr.Descendants<PageSize>().FirstOrDefault()) ?? throw new System.NullReferenceException("There are no PageSize elements in the section.");
                     if (pgSz != null)
                     {
                         // No Orient property? Create it now. Otherwise, just 
@@ -73,8 +80,8 @@ namespace ChangePrintOrientation
                             pgSz.Width = height;
                             pgSz.Height = width;
 
-                            PageMargin pgMar =
-                                sectPr.Descendants<PageMargin>().FirstOrDefault();
+                            PageMargin pgMar = (sectPr.Descendants<PageMargin>().FirstOrDefault()) ?? throw new System.NullReferenceException("There are no PageMargin elements in the section.");
+
                             if (pgMar != null)
                             {
                                 // Rotate margins. Printer settings control how far you 
@@ -82,6 +89,11 @@ namespace ChangePrintOrientation
                                 // settings, this code rotates 90 degrees. You could easily
                                 // modify this behavior, or make it a parameter for the 
                                 // procedure.
+                                if (pgMar.Top is null || pgMar.Bottom is null || pgMar.Left is null || pgMar.Right is null)
+                                {
+                                    throw new System.NullReferenceException("One or more of the PageMargin elements is null.");
+                                }
+
                                 var top = pgMar.Top.Value;
                                 var bottom = pgMar.Bottom.Value;
                                 var left = pgMar.Left.Value;

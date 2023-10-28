@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.CustomProperties;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.VariantTypes;
@@ -17,10 +15,13 @@ static string SetCustomProperty(
     // add a custom property to a document. The method returns the original
     // value, if it existed.
 
-    string returnValue = null;
+    string? returnValue = string.Empty;
 
     var newProp = new CustomDocumentProperty();
     bool propSet = false;
+
+
+    string? propertyValueString = propertyValue.ToString() ?? throw new System.ArgumentNullException("propertyValue can't be converted to a string.");
 
     // Calculate the correct type.
     switch (propertyType)
@@ -44,7 +45,7 @@ static string SetCustomProperty(
         case PropertyTypes.NumberInteger:
             if ((propertyValue) is int)
             {
-                newProp.VTInt32 = new VTInt32(propertyValue.ToString());
+                newProp.VTInt32 = new VTInt32(propertyValueString);
                 propSet = true;
             }
 
@@ -53,14 +54,14 @@ static string SetCustomProperty(
         case PropertyTypes.NumberDouble:
             if (propertyValue is double)
             {
-                newProp.VTFloat = new VTFloat(propertyValue.ToString());
+                newProp.VTFloat = new VTFloat(propertyValueString);
                 propSet = true;
             }
 
             break;
 
         case PropertyTypes.Text:
-            newProp.VTLPWSTR = new VTLPWSTR(propertyValue.ToString());
+            newProp.VTLPWSTR = new VTLPWSTR(propertyValueString);
             propSet = true;
 
             break;
@@ -106,10 +107,10 @@ static string SetCustomProperty(
             // This will trigger an exception if the property's Name 
             // property is null, but if that happens, the property is damaged, 
             // and probably should raise an exception.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var prop =
-                props.Where(
-                p => ((CustomDocumentProperty)p).Name.Value
-                    == propertyName).FirstOrDefault();
+                props.FirstOrDefault(p => ((CustomDocumentProperty)p).Name.Value == propertyName);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             // Does the property exist? If so, get the return value, 
             // and then delete the property.
@@ -117,6 +118,10 @@ static string SetCustomProperty(
             {
                 returnValue = prop.InnerText;
                 prop.Remove();
+            }
+            else
+            {
+                throw new System.ArgumentException("propertyName property was not found or damaged.");
             }
 
             // Append the new property, and 

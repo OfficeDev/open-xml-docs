@@ -1,4 +1,3 @@
-#nullable disable
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
@@ -8,7 +7,7 @@ static void CreateAndAddCharacterStyle(StyleDefinitionsPart styleDefinitionsPart
     string styleid, string stylename, string aliases = "")
 {
     // Get access to the root element of the styles part.
-    Styles styles = styleDefinitionsPart.Styles;
+    Styles styles = styleDefinitionsPart.Styles ?? throw new System.NullReferenceException("Styles is null.");  
 
     // Create a new character style and specify some of the attributes.
     Style style = new Style()
@@ -52,6 +51,12 @@ static void CreateAndAddCharacterStyle(StyleDefinitionsPart styleDefinitionsPart
 static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument doc)
 {
     StyleDefinitionsPart part;
+
+    if (doc.MainDocumentPart is null)
+    {
+        throw new System.NullReferenceException("MainDocumentPart is null.");
+    }
+
     part = doc.MainDocumentPart.AddNewPart<StyleDefinitionsPart>();
     Styles root = new Styles();
     root.Save(part);

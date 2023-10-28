@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -9,7 +7,14 @@ static void SearchAndReplace(string document)
 {
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
     {
-        string docText = null;
+        string? docText = null;
+
+
+        if (wordDoc.MainDocumentPart is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+        }
+
         using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))
         {
             docText = sr.ReadToEnd();
