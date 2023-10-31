@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Linq;
@@ -11,6 +9,11 @@ static void RemoveHeadersAndFooters(string filename)
     // from the document.
     using (WordprocessingDocument doc = WordprocessingDocument.Open(filename, true))
     {
+        if (doc.MainDocumentPart is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart is null.");
+        }
+
         // Get a reference to the main document part.
         var docPart = doc.MainDocumentPart;
 

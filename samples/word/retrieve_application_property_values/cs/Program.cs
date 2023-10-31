@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using System;
 
@@ -15,6 +13,11 @@ namespace GetApplicationProperty
             using (WordprocessingDocument document =
                 WordprocessingDocument.Open(FILENAME, false))
             {
+                if (document.ExtendedFilePropertiesPart is null)
+                {
+                    throw new System.NullReferenceException("ExtendedFilePropertiesPart is null.");
+                }
+
                 var props = document.ExtendedFilePropertiesPart.Properties;
 
                 if (props.Company != null)

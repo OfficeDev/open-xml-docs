@@ -1,5 +1,4 @@
-#nullable disable
-﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Collections.Generic;
@@ -10,11 +9,16 @@ string authorName = args[1];
 
 using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(fileName, true))
 {
+    if (wdDoc.MainDocumentPart is null || wdDoc.MainDocumentPart.Document.Body is null)
+    {
+        throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+    }
+
     Body body = wdDoc.MainDocumentPart.Document.Body;
 
     // Handle the formatting changes.
     List<OpenXmlElement> changes = body.Descendants<ParagraphPropertiesChange>()
-        .Where(c => c.Author.Value == authorName).Cast<OpenXmlElement>().ToList();
+        .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList();
 
     foreach (OpenXmlElement change in changes)
     {
@@ -24,14 +28,14 @@ using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(fileName, true
     // Handle the deletions.
     List<OpenXmlElement> deletions = body
         .Descendants<Deleted>()
-        .Where(c => c.Author.Value == authorName)
+        .Where(c => c.Author is not null && c.Author.Value == authorName)
         .Cast<OpenXmlElement>().ToList();
 
     deletions.AddRange(body.Descendants<DeletedRun>()
-        .Where(c => c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
+        .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
 
     deletions.AddRange(body.Descendants<DeletedMathControl>()
-        .Where(c => c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
+        .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
 
     foreach (OpenXmlElement deletion in deletions)
     {
@@ -41,13 +45,13 @@ using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(fileName, true
     // Handle the insertions.
     List<OpenXmlElement> insertions =
         body.Descendants<Inserted>()
-        .Where(c => c.Author.Value == authorName).Cast<OpenXmlElement>().ToList();
+        .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList();
 
     insertions.AddRange(body.Descendants<InsertedRun>()
-        .Where(c => c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
+        .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
 
     insertions.AddRange(body.Descendants<InsertedMathControl>()
-        .Where(c => c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
+        .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
 
     foreach (OpenXmlElement insertion in insertions)
     {
@@ -61,7 +65,8 @@ using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(fileName, true
             }
             else
             {
-                insertion.NextSibling().InsertAfterSelf(new Run(run.OuterXml));
+                OpenXmlElement? nextSibling = insertion.NextSibling() ?? throw new System.NullReferenceException("NextSibling is null.");
+                nextSibling.InsertAfterSelf(new Run(run.OuterXml));
             }
         }
 

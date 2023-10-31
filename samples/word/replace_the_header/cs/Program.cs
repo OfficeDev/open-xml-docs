@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Collections.Generic;
@@ -11,6 +9,11 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
     using (WordprocessingDocument
         wdDoc = WordprocessingDocument.Open(filepathTo, true))
     {
+        if (wdDoc.MainDocumentPart is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart is null.");
+        }
+
         MainDocumentPart mainPart = wdDoc.MainDocumentPart;
 
         // Delete the existing header part.
@@ -27,7 +30,12 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
         using (WordprocessingDocument wdDocSource =
             WordprocessingDocument.Open(filepathFrom, true))
         {
-            DocumentFormat.OpenXml.Packaging.HeaderPart firstHeader =
+            if (wdDocSource.MainDocumentPart is null || wdDocSource.MainDocumentPart.HeaderParts is null)
+            {
+                throw new System.NullReferenceException("MainDocumentPart and/or HeaderParts is null.");
+            }
+
+            DocumentFormat.OpenXml.Packaging.HeaderPart? firstHeader =
     wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
 
             wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
@@ -36,6 +44,11 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
             {
                 headerPart.FeedData(firstHeader.GetStream());
             }
+        }
+
+        if (mainPart.Document.Body is null)
+        {
+            throw new System.NullReferenceException("Body is null.");
         }
 
         // Get SectionProperties and Replace HeaderReference with new Id.

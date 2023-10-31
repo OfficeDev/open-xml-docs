@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Linq;
@@ -17,6 +15,11 @@ static void SetRunFont(string fileName)
             {
                 Ascii = "Arial"
             });
+
+        if (package.MainDocumentPart is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart is null.");
+        }
 
         Run r = package.MainDocumentPart.Document.Descendants<Run>().First();
         r.PrependChild<RunProperties>(rPr);

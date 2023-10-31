@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 using System.Xml;
@@ -31,12 +29,17 @@ static void ReplaceStylesPart(string fileName, XDocument newStyles, bool setStyl
     // Open the document for write access and get a reference.
     using (var document = WordprocessingDocument.Open(fileName, true))
     {
+        if (document.MainDocumentPart is null || document.MainDocumentPart.StyleDefinitionsPart is null || document.MainDocumentPart.StylesWithEffectsPart is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart and/or one or both of the Styles parts is null.");
+        }
+
         // Get a reference to the main document part.
         var docPart = document.MainDocumentPart;
 
         // Assign a reference to the appropriate part to the
         // stylesPart variable.
-        StylesPart stylesPart = null;
+        StylesPart? stylesPart = null;
         if (setStylesWithEffectsPart)
             stylesPart = docPart.StylesWithEffectsPart;
         else
@@ -56,7 +59,7 @@ static void ReplaceStylesPart(string fileName, XDocument newStyles, bool setStyl
 static XDocument ExtractStylesPart(string fileName, bool getStylesWithEffectsPart = true)
 {
     // Declare a variable to hold the XDocument.
-    XDocument styles = null;
+    XDocument? styles = null;
 
     // Open the document for read access and get a reference.
     using (var document = WordprocessingDocument.Open(fileName, false))
@@ -64,23 +67,24 @@ static XDocument ExtractStylesPart(string fileName, bool getStylesWithEffectsPar
         // Get a reference to the main document part.
         var docPart = document.MainDocumentPart;
 
+        if (docPart is null || docPart.StyleDefinitionsPart is null || docPart.StylesWithEffectsPart is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart and/or one or both of the Styles parts is null.");
+        }
+
         // Assign a reference to the appropriate part to the
         // stylesPart variable.
-        StylesPart stylesPart = null;
+        StylesPart? stylesPart = null;
         if (getStylesWithEffectsPart)
             stylesPart = docPart.StylesWithEffectsPart;
         else
             stylesPart = docPart.StyleDefinitionsPart;
 
-        // If the part exists, read it into the XDocument.
-        if (stylesPart is not null)
+        using (var reader = XmlNodeReader.Create(
+          stylesPart.GetStream(FileMode.Open, FileAccess.Read)))
         {
-            using (var reader = XmlNodeReader.Create(
-              stylesPart.GetStream(FileMode.Open, FileAccess.Read)))
-            {
-                // Create the XDocument.
-                styles = XDocument.Load(reader);
-            }
+            // Create the XDocument.
+            styles = XDocument.Load(reader);
         }
     }
     // Return the XDocument instance.

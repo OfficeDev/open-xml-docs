@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -10,12 +8,16 @@ static void AddTable(string fileName, string[,] data)
 {
     using (var document = WordprocessingDocument.Open(fileName, true))
     {
+        if (document.MainDocumentPart is null || document.MainDocumentPart.Document.Body is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+        }
 
         var doc = document.MainDocumentPart.Document;
 
-        Table table = new Table();
+        Table table = new();
 
-        TableProperties props = new TableProperties(
+        TableProperties props = new(
             new TableBorders(
             new TopBorder
             {

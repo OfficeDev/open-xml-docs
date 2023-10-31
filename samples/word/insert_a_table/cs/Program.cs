@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -85,6 +83,11 @@ static void CreateTable(string fileName)
 
         // Append the table row to the table.
         table.Append(tr);
+
+        if (doc.MainDocumentPart is null || doc.MainDocumentPart.Document.Body is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+        }
 
         // Append the table to the document.
         doc.MainDocumentPart.Document.Body.Append(table);
