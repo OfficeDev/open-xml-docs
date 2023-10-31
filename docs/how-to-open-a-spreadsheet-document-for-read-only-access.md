@@ -20,22 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to open a spreadsheet document for read-only access
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using System.IO.Packaging;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports System.IO
-    Imports System.IO.Packaging
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
 
 ---------------------------------------------------------------------------------
 ## When to Open a Document for Read-Only Access
@@ -217,44 +202,6 @@ row|DocumentFormat.OpenXml.Spreadsheet.Row|A row in the cell table.
 c|DocumentFormat.OpenXml.Spreadsheet.Cell|A cell in a row.
 v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 
-
---------------------------------------------------------------------------------
-## Attempt to Generate the SpreadsheetML Markup to Add a Worksheet
-The sample code shows how, when you try to add a new worksheet, you get
-an exception error because the file is read-only. When you have access
-to the body of the main document part, you add a worksheet by calling
-the [AddNewPart\<T\>(String, String)](https://msdn.microsoft.com/library/office/cc562372.aspx) method to
-create a new [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx). The following code example
-attempts to add the new **WorksheetPart**.
-
-```csharp
-    public static void OpenSpreadsheetDocumentReadonly(string filepath)
-    {
-        // Open a SpreadsheetDocument based on a filepath.
-        using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(filepath, false))
-        {
-            // Attempt to add a new WorksheetPart.
-            // The call to AddNewPart generates an exception because the file is read-only.
-            WorksheetPart newWorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart<WorksheetPart>();
-
-            // The rest of the code will not be called.
-        }
-    }
-```
-
-```vb
-    Public Shared Sub OpenSpreadsheetDocumentReadonly(ByVal filepath As String)
-        ' Open a SpreadsheetDocument based on a filepath.
-        Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(filepath, False)
-            ' Attempt to add a new WorksheetPart.
-            ' The call to AddNewPart generates an exception because the file is read-only.
-            Dim newWorksheetPart As WorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
-
-            ' The rest of the code will not be called.
-        End Using
-    End Sub
-```
-
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code sample is used to open a Spreadsheet Document for
@@ -270,33 +217,11 @@ the following code, which opens the file "Sheet10.xlsx," as an example.
 ```
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void OpenSpreadsheetDocumentReadonly(string filepath)
-    {
-        // Open a SpreadsheetDocument based on a filepath.
-        using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(filepath, false))
-        {
-            // Attempt to add a new WorksheetPart.
-            // The call to AddNewPart generates an exception because the file is read-only.
-            WorksheetPart newWorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart<WorksheetPart>();
+### [C#](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/open_for_read_only_access/cs/Program.cs)]
 
-            // The rest of the code will not be called.
-        }
-    }
-```
-
-```vb
-    Public Sub OpenSpreadsheetDocumentReadonly(ByVal filepath As String)
-        ' Open a SpreadsheetDocument based on a filepath.
-        Using spreadsheetDocument As SpreadsheetDocument = spreadsheetDocument.Open(filepath, False)
-            ' Attempt to add a new WorksheetPart.
-            ' The call to AddNewPart generates an exception because the file is read-only.
-            Dim newWorksheetPart As WorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
-
-            ' The rest of the code will not be called.
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/open_for_read_only_access/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

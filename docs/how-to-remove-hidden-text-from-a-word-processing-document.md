@@ -20,20 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically remove hidden text from a word processing
 document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
-    using System.Xml;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports System.Xml
-```
 
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
@@ -192,71 +179,11 @@ named "Word14.docx."
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void WDDeleteHiddenText(string docName)
-    {
-        // Given a document name, delete all the hidden text.
-        const string wordmlNamespace = "https://schemas.openxmlformats.org/wordprocessingml/2006/main";
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/remove_hidden_text/cs/Program.cs)]
 
-        using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(docName, true))
-        {
-            // Manage namespaces to perform XPath queries.
-            NameTable nt = new NameTable();
-            XmlNamespaceManager nsManager = new XmlNamespaceManager(nt);
-            nsManager.AddNamespace("w", wordmlNamespace);
-
-            // Get the document part from the package.
-            // Load the XML in the document part into an XmlDocument instance.
-            XmlDocument xdoc = new XmlDocument(nt);
-            xdoc.Load(wdDoc.MainDocumentPart.GetStream());
-            XmlNodeList hiddenNodes = xdoc.SelectNodes("//w:vanish", nsManager);
-            foreach (System.Xml.XmlNode hiddenNode in hiddenNodes)
-            {
-                XmlNode topNode = hiddenNode.ParentNode.ParentNode;
-                XmlNode topParentNode = topNode.ParentNode;
-                topParentNode.RemoveChild(topNode);
-                if (!(topParentNode.HasChildNodes))
-                {
-                    topParentNode.ParentNode.RemoveChild(topParentNode);
-                }
-            }
-
-            // Save the document XML back to its document part.
-            xdoc.Save(wdDoc.MainDocumentPart.GetStream(FileMode.Create, FileAccess.Write));
-        }
-    }
-```
-
-```vb
-    Public Sub WDDeleteHiddenText(ByVal docName As String)
-        ' Given a document name, delete all the hidden text.
-        Const wordmlNamespace As String = "https://schemas.openxmlformats.org/wordprocessingml/2006/main"
-
-        Using wdDoc As WordprocessingDocument = WordprocessingDocument.Open(docName, True)
-            ' Manage namespaces to perform XPath queries.
-            Dim nt As New NameTable()
-            Dim nsManager As New XmlNamespaceManager(nt)
-            nsManager.AddNamespace("w", wordmlNamespace)
-
-            ' Get the document part from the package.
-            ' Load the XML in the document part into an XmlDocument instance.
-            Dim xdoc As New XmlDocument(nt)
-            xdoc.Load(wdDoc.MainDocumentPart.GetStream())
-            Dim hiddenNodes As XmlNodeList = xdoc.SelectNodes("//w:vanish", nsManager)
-            For Each hiddenNode As System.Xml.XmlNode In hiddenNodes
-                Dim topNode As XmlNode = hiddenNode.ParentNode.ParentNode
-                Dim topParentNode As XmlNode = topNode.ParentNode
-                topParentNode.RemoveChild(topNode)
-                If Not (topParentNode.HasChildNodes) Then
-                    topParentNode.ParentNode.RemoveChild(topParentNode)
-                End If
-            Next
-
-            ' Save the document XML back to its document part.
-            xdoc.Save(wdDoc.MainDocumentPart.GetStream(FileMode.Create, FileAccess.Write))
-        End Using
-    End Sub 
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/remove_hidden_text/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

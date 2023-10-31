@@ -20,20 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to set the font for a portion of text within a word processing
 document programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.Linq;
-    using DocumentFormat.OpenXml.Wordprocessing;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Wordprocessing
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 --------------------------------------------------------------------------------
 ## Packages and Document Parts
@@ -223,47 +210,11 @@ changed font.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Set the font for a text run.
-    public static void SetRunFont(string fileName)
-    {
-        // Open a Wordprocessing document for editing.
-        using (WordprocessingDocument package = WordprocessingDocument.Open(fileName, true))
-        {
-            // Set the font to Arial to the first Run.
-            // Use an object initializer for RunProperties and rPr.
-            RunProperties rPr = new RunProperties(
-                new RunFonts()
-                {
-                    Ascii = "Arial"
-                });
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/set_the_font_for_a_text_run/cs/Program.cs)]
 
-            Run r = package.MainDocumentPart.Document.Descendants<Run>().First();
-            r.PrependChild<RunProperties>(rPr);
-
-            // Save changes to the MainDocumentPart part.
-            package.MainDocumentPart.Document.Save();
-        }
-    }
-```
-
-```vb
-    ' Set the font for a text run.
-    Public Sub SetRunFont(ByVal fileName As String)
-        ' Open a Wordprocessing document for editing.
-        Dim package As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
-        Using (package)
-            ' Set the font to Arial to the first Run.
-            Dim rPr As RunProperties = New RunProperties(New RunFonts With {.Ascii = "Arial"})
-            Dim r As Run = package.MainDocumentPart.Document.Descendants(Of Run).First
-
-            r.PrependChild(Of RunProperties)(rPr)
-
-            ' Save changes to the main document part.
-            package.MainDocumentPart.Document.Save()
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/set_the_font_for_a_text_run/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

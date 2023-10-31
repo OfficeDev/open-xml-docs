@@ -20,18 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically replace a document part in a word processing
 document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 ## Packages and Document Parts
 
@@ -236,54 +225,11 @@ font.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // This method can be used to replace the theme part in a package.
-    public static void ReplaceTheme(string document, string themeFile)
-    {
-        using (WordprocessingDocument wordDoc = 
-            WordprocessingDocument.Open(document, true))
-        {
-            MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-            
-            // Delete the old document part.
-            mainPart.DeletePart(mainPart.ThemePart);
-            
-            // Add a new document part and then add content.
-            ThemePart themePart = mainPart.AddNewPart<ThemePart>();
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/replace_the_theme_part/cs/Program.cs)]
 
-            using (StreamReader streamReader = new StreamReader(themeFile))
-            using (StreamWriter streamWriter = 
-                new StreamWriter(themePart.GetStream(FileMode.Create)))
-            {
-                streamWriter.Write(streamReader.ReadToEnd());
-            }
-        }
-    }
-```
-
-```vb
-    ' This method can be used to replace a document part in a package.
-    Public Sub ReplaceTheme(ByVal document As String, ByVal themeFile As String)
-        Using wordDoc As WordprocessingDocument = _
-            WordprocessingDocument.Open(document, True)
-            Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-            
-            ' Delete the old document part.
-            mainPart.DeletePart(mainPart.ThemePart)
-            
-            ' Add a new document part and then add content.
-            Dim themePart As ThemePart = mainPart.AddNewPart(Of ThemePart)()
-            
-            Using streamReader As New StreamReader(themeFile)
-                Using streamWriter As _
-                    New StreamWriter(themePart.GetStream(FileMode.Create))
-                    
-                    streamWriter.Write(streamReader.ReadToEnd())
-                End Using
-            End Using
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/replace_the_theme_part/vb/Program.vb)]
 
 ## See also
 

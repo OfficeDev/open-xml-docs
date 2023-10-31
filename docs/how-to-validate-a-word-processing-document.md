@@ -19,22 +19,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically validate a word processing document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Validation;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports System
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Validation
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
@@ -83,137 +68,11 @@ following example that validates a file named "Word18.docx.".
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void ValidateWordDocument(string filepath)
-    {
-        using (WordprocessingDocument wordprocessingDocument =
-        WordprocessingDocument.Open(filepath, true))
-        {                  
-            try
-            {           
-                OpenXmlValidator validator = new OpenXmlValidator();
-                int count = 0;
-                foreach (ValidationErrorInfo error in
-                    validator.Validate(wordprocessingDocument))
-                {
-                    count++;
-                    Console.WriteLine("Error " + count);
-                    Console.WriteLine("Description: " + error.Description);
-                    Console.WriteLine("ErrorType: " + error.ErrorType);
-                    Console.WriteLine("Node: " + error.Node);
-                    Console.WriteLine("Path: " + error.Path.XPath);
-                    Console.WriteLine("Part: " + error.Part.Uri);
-                    Console.WriteLine("-------------------------------------------");
-                }
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/validate/cs/Program.cs)]
 
-                Console.WriteLine("count={0}", count);
-                }
-                
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);              
-            }
-
-            wordprocessingDocument.Close();
-        }
-    }
-
-    public static void ValidateCorruptedWordDocument(string filepath)
-    {
-        // Insert some text into the body, this would cause Schema Error
-        using (WordprocessingDocument wordprocessingDocument =
-        WordprocessingDocument.Open(filepath, true))
-        {
-            // Insert some text into the body, this would cause Schema Error
-            Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
-            Run run = new Run(new Text("some text"));
-            body.Append(run);
-
-            try
-            {
-                OpenXmlValidator validator = new OpenXmlValidator();
-                int count = 0;
-                foreach (ValidationErrorInfo error in
-                    validator.Validate(wordprocessingDocument))
-                {
-                    count++;
-                    Console.WriteLine("Error " + count);
-                    Console.WriteLine("Description: " + error.Description);
-                    Console.WriteLine("ErrorType: " + error.ErrorType);
-                    Console.WriteLine("Node: " + error.Node);
-                    Console.WriteLine("Path: " + error.Path.XPath);
-                    Console.WriteLine("Part: " + error.Part.Uri);
-                    Console.WriteLine("-------------------------------------------");
-                }
-
-                Console.WriteLine("count={0}", count);
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-    }
-```
-
-```vb
-    Public Sub ValidateWordDocument(ByVal filepath As String)
-        Using wordprocessingDocument__1 As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
-            Try
-                Dim validator As New OpenXmlValidator()
-                Dim count As Integer = 0
-                For Each [error] As ValidationErrorInfo In validator.Validate(wordprocessingDocument__1)
-                    count += 1
-                    Console.WriteLine("Error " & count)
-                    Console.WriteLine("Description: " & [error].Description)
-                    Console.WriteLine("ErrorType: " & [error].ErrorType)
-                    Console.WriteLine("Node: " & [error].Node.ToString())
-                    Console.WriteLine("Path: " & [error].Path.XPath)
-                    Console.WriteLine("Part: " & [error].Part.Uri.ToString())
-                    Console.WriteLine("-------------------------------------------")
-                Next
-
-                Console.WriteLine("count={0}", count)
-
-            Catch ex As Exception
-                Console.WriteLine(ex.Message)
-            End Try
-
-            wordprocessingDocument__1.Close()
-        End Using
-    End Sub
-
-    Public Sub ValidateCorruptedWordDocument(ByVal filepath As String)
-        ' Insert some text into the body, this would cause Schema Error
-        Using wordprocessingDocument__1 As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
-            ' Insert some text into the body, this would cause Schema Error
-            Dim body As Body = wordprocessingDocument__1.MainDocumentPart.Document.Body
-            Dim run As New Run(New Text("some text"))
-            body.Append(run)
-
-            Try
-                Dim validator As New OpenXmlValidator()
-                Dim count As Integer = 0
-                For Each [error] As ValidationErrorInfo In validator.Validate(wordprocessingDocument__1)
-                    count += 1
-                    Console.WriteLine("Error " & count)
-                    Console.WriteLine("Description: " & [error].Description)
-                    Console.WriteLine("ErrorType: " & [error].ErrorType)
-                    Console.WriteLine("Node: " & [error].Node.ToString())
-                    Console.WriteLine("Path: " & [error].Path.XPath)
-                    Console.WriteLine("Part: " & [error].Part.Uri.ToString())
-                    Console.WriteLine("-------------------------------------------")
-                Next
-
-                Console.WriteLine("count={0}", count)
-
-            Catch ex As Exception
-                Console.WriteLine(ex.Message)
-            End Try
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/validate/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

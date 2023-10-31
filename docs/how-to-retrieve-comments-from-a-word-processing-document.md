@@ -20,20 +20,7 @@ This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically retrieve the comments from the main document
 part in a word processing document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports System
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 --------------------------------------------------------------------------------
 ## Open the Existing Document for Read-only Access
@@ -195,44 +182,11 @@ example.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void GetCommentsFromDocument(string fileName)
-    {
-        using (WordprocessingDocument wordDoc = 
-            WordprocessingDocument.Open(fileName, false))
-        {
-            WordprocessingCommentsPart commentsPart = 
-                wordDoc.MainDocumentPart.WordprocessingCommentsPart;
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/retrieve_comments/cs/Program.cs)]
 
-            if (commentsPart != null && commentsPart.Comments != null)
-            {
-                foreach (Comment comment in commentsPart.Comments.Elements<Comment>())
-                {
-                    Console.WriteLine(comment.InnerText);
-                }
-            }
-        }
-    }
-```
-
-```vb
-    Public Sub GetCommentsFromDocument(ByVal fileName As String)
-        Using wordDoc As WordprocessingDocument = _
-            WordprocessingDocument.Open(fileName, False)
-
-            Dim commentsPart As WordprocessingCommentsPart = _
-                wordDoc.MainDocumentPart.WordprocessingCommentsPart
-
-            If commentsPart IsNot Nothing AndAlso _
-                commentsPart.Comments IsNot Nothing Then
-                For Each comment As Comment In _
-                    commentsPart.Comments.Elements(Of Comment)()
-                    Console.WriteLine(comment.InnerText)
-                Next
-            End If
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/retrieve_comments/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

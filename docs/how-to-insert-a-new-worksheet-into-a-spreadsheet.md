@@ -20,20 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to insert a new worksheet into a spreadsheet document
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
@@ -138,75 +125,6 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 
 
 --------------------------------------------------------------------------------
-## How the Sample Code Works 
-After opening the document for editing as a **SpreadsheetDocument** document package, the code
-adds a new **WorksheetPart** object to the
-**WorkbookPart** object using the [AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method. It then adds a new **Worksheet** object to the **WorksheetPart** object.
-
-```csharp
-    // Add a blank WorksheetPart.
-    WorksheetPart newWorksheetPart = 
-        spreadSheet.WorkbookPart.AddNewPart<WorksheetPart>();
-    newWorksheetPart.Worksheet = new Worksheet(new SheetData());
-
-    Sheets sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild<Sheets>();
-    string relationshipId = 
-        spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart);
-```
-
-```vb
-    ' Add a blank WorksheetPart.
-    Dim newWorksheetPart As WorksheetPart = spreadSheet.WorkbookPart.AddNewPart(Of WorksheetPart)()
-    newWorksheetPart.Worksheet = New Worksheet(New SheetData())
-    ' newWorksheetPart.Worksheet.Save()
-
-    Dim sheets As Sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()
-    Dim relationshipId As String = spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart)
-```
-
-The code then gets a unique ID for the new worksheet by selecting the
-maximum [SheetId](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.sheetid.aspx) object used within the spreadsheet
-document and adding one to create the new sheet ID. It gives the
-worksheet a name by concatenating the word "Sheet" with the sheet ID and
-appends the new sheet to the sheets collection.
-
-```csharp
-    // Get a unique ID for the new worksheet.
-    uint sheetId = 1;
-    if (sheets.Elements<Sheet>().Count() > 0)
-    {
-        sheetId = 
-            sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;
-    }
-
-    // Give the new worksheet a name.
-    string sheetName = "Sheet" + sheetId;
-
-    // Append the new worksheet and associate it with the workbook.
-    Sheet sheet = new Sheet() 
-    { Id = relationshipId, SheetId = sheetId, Name = sheetName };
-    sheets.Append(sheet);
-```
-
-```vb
-    ' Get a unique ID for the new worksheet.
-    Dim sheetId As UInteger = 1
-    If (sheets.Elements(Of Sheet).Count > 0) Then
-        sheetId = sheets.Elements(Of Sheet).Select(Function(s) s.SheetId.Value).Max + 1
-    End If
-
-    ' Give the new worksheet a name.
-    Dim sheetName As String = ("Sheet" + sheetId.ToString())
-
-    ' Append the new worksheet and associate it with the workbook.
-    Dim sheet As Sheet = New Sheet
-    sheet.Id = relationshipId
-    sheet.SheetId = sheetId
-    sheet.Name = sheetName
-    sheets.Append(sheet)
-```
-
---------------------------------------------------------------------------------
 ## Sample Code 
 In the following code, insert a blank [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.worksheetpart.worksheet.aspx) object by adding a blank [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.worksheetpart.aspx) object, generating a unique
 ID for the **WorksheetPart** object, and
@@ -227,70 +145,11 @@ inserts a worksheet in a file names "Sheet7.xslx," as an example.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Given a document name, inserts a new worksheet.
-    public static void InsertWorksheet(string docName)
-    {
-        // Open the document for editing.
-        using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
-        {
-            // Add a blank WorksheetPart.
-            WorksheetPart newWorksheetPart = spreadSheet.WorkbookPart.AddNewPart<WorksheetPart>();
-            newWorksheetPart.Worksheet = new Worksheet(new SheetData());
+### [C#](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/insert_a_new_worksheet/cs/Program.cs)]
 
-            Sheets sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild<Sheets>();
-            string relationshipId = spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart);
-
-            // Get a unique ID for the new worksheet.
-            uint sheetId = 1;
-            if (sheets.Elements<Sheet>().Count() > 0)
-            {
-                sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;
-            }
-
-            // Give the new worksheet a name.
-            string sheetName = "Sheet" + sheetId;
-
-            // Append the new worksheet and associate it with the workbook.
-            Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };
-            sheets.Append(sheet);
-        }
-    }
-```
-
-```vb
-    ' Given a document name, inserts a new worksheet.
-    Public Sub InsertWorksheet(ByVal docName As String)
-        ' Open the document for editing.
-        Dim spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
-
-        Using (spreadSheet)
-            ' Add a blank WorksheetPart.
-            Dim newWorksheetPart As WorksheetPart = spreadSheet.WorkbookPart.AddNewPart(Of WorksheetPart)()
-            newWorksheetPart.Worksheet = New Worksheet(New SheetData())
-            ' newWorksheetPart.Worksheet.Save()
-
-            Dim sheets As Sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()
-            Dim relationshipId As String = spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart)
-
-            ' Get a unique ID for the new worksheet.
-            Dim sheetId As UInteger = 1
-            If (sheets.Elements(Of Sheet).Count > 0) Then
-                sheetId = sheets.Elements(Of Sheet).Select(Function(s) s.SheetId.Value).Max + 1
-            End If
-
-            ' Give the new worksheet a name.
-            Dim sheetName As String = ("Sheet" + sheetId.ToString())
-
-            ' Append the new worksheet and associate it with the workbook.
-            Dim sheet As Sheet = New Sheet
-            sheet.Id = relationshipId
-            sheet.SheetId = sheetId
-            sheet.Name = sheetName
-            sheets.Append(sheet)
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/insert_a_new_worksheet/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

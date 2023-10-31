@@ -234,103 +234,11 @@ old file name to the new file name.
 The following is the complete **ConvertDOCMtoDOCX** code sample in C\# and Visual
 Basic.
 
-```csharp
-    // Given a .docm file (with macro storage), remove the VBA 
-    // project, reset the document type, and save the document with a new name.
-    public static void ConvertDOCMtoDOCX(string fileName)
-    {
-        bool fileChanged = false;
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/convert_from_the_docm_to_the_docx_file_format/cs/Program.cs)]
 
-        using (WordprocessingDocument document = 
-            WordprocessingDocument.Open(fileName, true))
-        {
-            // Access the main document part.
-            var docPart = document.MainDocumentPart;
-            
-            // Look for the vbaProject part. If it is there, delete it.
-            var vbaPart = docPart.VbaProjectPart;
-            if (vbaPart != null)
-            {
-                // Delete the vbaProject part and then save the document.
-                docPart.DeletePart(vbaPart);
-                docPart.Document.Save();
-
-                // Change the document type to
-                // not macro-enabled.
-                document.ChangeDocumentType(
-                    WordprocessingDocumentType.Document);
-
-                // Track that the document has been changed.
-                fileChanged = true;
-            }
-        }
-
-        // If anything goes wrong in this file handling,
-        // the code will raise an exception back to the caller.
-        if (fileChanged)
-        {
-            // Create the new .docx filename.
-            var newFileName = Path.ChangeExtension(fileName, ".docx");
-            
-            // If it already exists, it will be deleted!
-            if (File.Exists(newFileName))
-            {
-                File.Delete(newFileName);
-            }
-
-            // Rename the file.
-            File.Move(fileName, newFileName);
-        }
-    }
-```
-
-```vb
-    ' Given a .docm file (with macro storage), remove the VBA 
-    ' project, reset the document type, and save the document with a new name.
-    Public Sub ConvertDOCMtoDOCX(ByVal fileName As String)
-        Dim fileChanged As Boolean = False
-
-        Using document As WordprocessingDocument =
-            WordprocessingDocument.Open(fileName, True)
-
-            ' Access the main document part.
-            Dim docPart = document.MainDocumentPart
-
-            ' Look for the vbaProject part. If it is there, delete it.
-            Dim vbaPart = docPart.VbaProjectPart
-            If vbaPart IsNot Nothing Then
-
-                ' Delete the vbaProject part and then save the document.
-                docPart.DeletePart(vbaPart)
-                docPart.Document.Save()
-
-                ' Change the document type to
-                ' not macro-enabled.
-                document.ChangeDocumentType(
-                    WordprocessingDocumentType.Document)
-
-                ' Track that the document has been changed.
-                fileChanged = True
-            End If
-        End Using
-
-        ' If anything goes wrong in this file handling,
-        ' the code will raise an exception back to the caller.
-        If fileChanged Then
-
-            ' Create the new .docx filename.
-            Dim newFileName = Path.ChangeExtension(fileName, ".docx")
-
-            ' If it already exists, it will be deleted!
-            If File.Exists(newFileName) Then
-                File.Delete(newFileName)
-            End If
-
-            ' Rename the file.
-            File.Move(fileName, newFileName)
-        End If
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/convert_from_the_docm_to_the_docx_file_format/vb/Program.vb)]
 
 ## See also
 

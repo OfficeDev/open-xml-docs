@@ -181,68 +181,11 @@ function with a lambda expression to do the work.
 The following is the complete **RetrieveNumberOfSlides** code sample in C\# and
 Visual Basic.
 
-```csharp
-    public static int RetrieveNumberOfSlides(string fileName, 
-        bool includeHidden = true)
-    {
-        int slidesCount = 0;
+### [C#](#tab/cs)
+[!code-csharp[](../samples/presentation/retrieve_the_number_of_slides/cs/Program.cs)]
 
-        using (PresentationDocument doc = 
-            PresentationDocument.Open(fileName, false))
-        {
-            // Get the presentation part of the document.
-            PresentationPart presentationPart = doc.PresentationPart;
-            if (presentationPart != null)
-            {
-                if (includeHidden)
-                {
-                    slidesCount = presentationPart.SlideParts.Count();
-                }
-                else
-                {
-                    // Each slide can include a Show property, which if hidden 
-                    // will contain the value "0". The Show property may not 
-                    // exist, and most likely will not, for non-hidden slides.
-                    var slides = presentationPart.SlideParts.Where(
-                        (s) => (s.Slide != null) &&
-                          ((s.Slide.Show == null) || (s.Slide.Show.HasValue && 
-                          s.Slide.Show.Value)));
-                    slidesCount = slides.Count();
-                }
-            }
-        }
-        return slidesCount;
-    }
-```
-
-```vb
-    Public Function RetrieveNumberOfSlides(ByVal fileName As String,
-            Optional ByVal includeHidden As Boolean = True) As Integer
-        Dim slidesCount As Integer = 0
-
-        Using doc As PresentationDocument =
-            PresentationDocument.Open(fileName, False)
-            ' Get the presentation part of the document.
-            Dim presentationPart As PresentationPart = doc.PresentationPart
-            If presentationPart IsNot Nothing Then
-                If includeHidden Then
-                    slidesCount = presentationPart.SlideParts.Count()
-                Else
-                    ' Each slide can include a Show property, which if 
-                    ' hidden will contain the value "0". The Show property may 
-                    ' not exist, and most likely will not, for non-hidden slides.
-                    Dim slides = presentationPart.SlideParts.
-                      Where(Function(s) (s.Slide IsNot Nothing) AndAlso
-                              ((s.Slide.Show Is Nothing) OrElse
-                              (s.Slide.Show.HasValue AndAlso
-                               s.Slide.Show.Value)))
-                    slidesCount = slides.Count()
-                End If
-            End If
-        End Using
-        Return slidesCount
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/presentation/retrieve_the_number_of_slides/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 

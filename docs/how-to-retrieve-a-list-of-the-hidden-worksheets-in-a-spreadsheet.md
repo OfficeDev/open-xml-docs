@@ -157,54 +157,11 @@ Finally, the following code calls the **[ToList\<TSource\>](https://msdn2.micros
 
 The following is the complete **GetHiddenSheets** code sample in C\# and Visual Basic.
 
-```csharp
-    public static List<Sheet> GetHiddenSheets(string fileName)
-    {
-        List<Sheet> returnVal = new List<Sheet>();
+### [C#](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/retrieve_a_list_of_the_hidden_worksheets/cs/Program.cs)]
 
-        using (SpreadsheetDocument document = 
-            SpreadsheetDocument.Open(fileName, false))
-        {
-            WorkbookPart wbPart = document.WorkbookPart;
-            var sheets = wbPart.Workbook.Descendants<Sheet>();
-
-            // Look for sheets where there is a State attribute defined, 
-            // where the State has a value,
-            // and where the value is either Hidden or VeryHidden.
-            var hiddenSheets = sheets.Where((item) => item.State != null &&
-                item.State.HasValue &&
-                (item.State.Value == SheetStateValues.Hidden ||
-                item.State.Value == SheetStateValues.VeryHidden));
-
-            returnVal = hiddenSheets.ToList();
-        }
-        return returnVal;
-    }
-```
-
-```vb
-    Public Function GetHiddenSheets(ByVal fileName As String) As List(Of Sheet)
-        Dim returnVal As New List(Of Sheet)
-
-        Using document As SpreadsheetDocument =
-            SpreadsheetDocument.Open(fileName, False)
-
-            Dim wbPart As WorkbookPart = document.WorkbookPart
-            Dim sheets = wbPart.Workbook.Descendants(Of Sheet)()
-
-            ' Look for sheets where there is a State attribute defined, 
-            ' where the State has a value,
-            ' and where the value is either Hidden or VeryHidden:
-            Dim hiddenSheets = sheets.Where(Function(item) item.State IsNot
-                Nothing AndAlso item.State.HasValue _
-                AndAlso (item.State.Value = SheetStateValues.Hidden Or _
-                    item.State.Value = SheetStateValues.VeryHidden))
-
-            returnVal = hiddenSheets.ToList()
-        End Using
-        Return returnVal
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/retrieve_a_list_of_the_hidden_worksheets/vb/Program.vb)]
 
 ## See also
 

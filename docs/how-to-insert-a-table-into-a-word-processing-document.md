@@ -20,20 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically insert a table into a word processing
 document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 ## Getting a WordprocessingDocument Object
 
@@ -279,121 +266,11 @@ inserted table.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Insert a table into a word processing document.
-    public static void CreateTable(string fileName)
-    {
-        // Use the file name and path passed in as an argument 
-        // to open an existing Word 2007 document.
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/insert_a_table/cs/Program.cs)]
 
-        using (WordprocessingDocument doc 
-            = WordprocessingDocument.Open(fileName, true))
-        {
-            // Create an empty table.
-            Table table = new Table();
-
-            // Create a TableProperties object and specify its border information.
-            TableProperties tblProp = new TableProperties(
-                new TableBorders(
-                    new TopBorder() { Val = 
-                        new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24 },
-                    new BottomBorder() { Val = 
-                        new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24 },
-                    new LeftBorder() { Val = 
-                        new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24 },
-                    new RightBorder() { Val = 
-                        new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24 },
-                    new InsideHorizontalBorder() { Val = 
-                        new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24 },
-                    new InsideVerticalBorder() { Val = 
-                        new EnumValue<BorderValues>(BorderValues.Dashed), Size = 24 }
-                )
-            );
-
-            // Append the TableProperties object to the empty table.
-            table.AppendChild<TableProperties>(tblProp);
-
-            // Create a row.
-            TableRow tr = new TableRow();
-
-            // Create a cell.
-            TableCell tc1 = new TableCell();
-
-            // Specify the width property of the table cell.
-            tc1.Append(new TableCellProperties(
-                new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));
-
-            // Specify the table cell content.
-            tc1.Append(new Paragraph(new Run(new Text("some text"))));
-
-            // Append the table cell to the table row.
-            tr.Append(tc1);
-
-            // Create a second table cell by copying the OuterXml value of the first table cell.
-            TableCell tc2 = new TableCell(tc1.OuterXml);
-
-            // Append the table cell to the table row.
-            tr.Append(tc2);
-
-            // Append the table row to the table.
-            table.Append(tr);
-
-            // Append the table to the document.
-            doc.MainDocumentPart.Document.Body.Append(table);
-        }
-    }
-```
-
-```vb
-    ' Insert a table into a word processing document.
-    Public Sub CreateTable(ByVal fileName As String)
-        ' Use the file name and path passed in as an argument 
-        ' to open an existing Word 2007 document.
-
-        Using doc As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
-            ' Create an empty table.
-            Dim table As New Table()
-
-            ' Create a TableProperties object and specify its border information.
-            Dim tblProp As New TableProperties(New TableBorders( _
-            New TopBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New BottomBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New LeftBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New RightBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New InsideHorizontalBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}, _
-            New InsideVerticalBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}))
-            ' Append the TableProperties object to the empty table.
-            table.AppendChild(Of TableProperties)(tblProp)
-
-            ' Create a row.
-            Dim tr As New TableRow()
-
-            ' Create a cell.
-            Dim tc1 As New TableCell()
-
-            ' Specify the width property of the table cell.
-            tc1.Append(New TableCellProperties(New TableCellWidth()))
-
-            ' Specify the table cell content.
-            tc1.Append(New Paragraph(New Run(New Text("some text"))))
-
-            ' Append the table cell to the table row.
-            tr.Append(tc1)
-
-            ' Create a second table cell by copying the OuterXml value of the first table cell.
-            Dim tc2 As New TableCell(tc1.OuterXml)
-
-            ' Append the table cell to the table row.
-            tr.Append(tc2)
-
-            ' Append the table row to the table.
-            table.Append(tr)
-
-            ' Append the table to the document.
-            doc.MainDocumentPart.Document.Body.Append(table)
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/insert_a_table/vb/Program.vb)]
 
 ## See also
 

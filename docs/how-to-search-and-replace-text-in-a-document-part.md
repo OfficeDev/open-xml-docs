@@ -20,20 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically search and replace a text value in a word
 processing document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using System.Text.RegularExpressions;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System.IO
-    Imports System.Text.RegularExpressions
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 --------------------------------------------------------------------------------
 ## Packages and Document Parts 
@@ -88,40 +75,6 @@ long as you use **using**.
 
 
 --------------------------------------------------------------------------------
-## How the Sample Code Works 
-After you have opened the file for editing, you read it by using a **StreamReader** object.
-
-```csharp
-    using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))
-    {
-        docText = sr.ReadToEnd();
-    }
-```
-
-```vb
-    Dim sr As StreamReader = New StreamReader(wordDoc.MainDocumentPart.GetStream)
-
-        using (sr)
-            docText = sr.ReadToEnd
-        End using
-```
-
-The code then creates a regular expression object that contains the
-string "Hello world!" It then replaces the text value with the text "Hi
-Everyone!." For more information about regular expressions, see [Regular
-Expressions](https://msdn.microsoft.com/library/hs600312.aspx)
-
-```csharp
-    Regex regexText = new Regex("Hello world!");
-    docText = regexText.Replace(docText, "Hi Everyone!");
-```
-
-```vb
-    Dim regexText As Regex = New Regex("Hello world!")
-    docText = regexText.Replace(docText, "Hi Everyone!")
-```
-
---------------------------------------------------------------------------------
 ## Sample Code 
 The following example demonstrates a quick and easy way to search and
 replace. It may not be reliable because it retrieves the XML document in
@@ -149,51 +102,11 @@ the text, "Hello world!"
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // To search and replace content in a document part.
-    public static void SearchAndReplace(string document)
-    {
-        using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
-        {
-            string docText = null;
-            using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))
-            {
-                docText = sr.ReadToEnd();
-            }
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/search_and_replace_text_a_part/cs/Program.cs)]
 
-            Regex regexText = new Regex("Hello world!");
-            docText = regexText.Replace(docText, "Hi Everyone!");
-
-            using (StreamWriter sw = new StreamWriter(wordDoc.MainDocumentPart.GetStream(FileMode.Create)))
-            {
-                sw.Write(docText);
-            }
-        }
-    }
-```
-
-```vb
-    ' To search and replace content in a document part. 
-    Public Sub SearchAndReplace(ByVal document As String)
-        Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
-        using (wordDoc)
-            Dim docText As String = Nothing
-            Dim sr As StreamReader = New StreamReader(wordDoc.MainDocumentPart.GetStream)
-
-            using (sr)
-                docText = sr.ReadToEnd
-            End using
-
-            Dim regexText As Regex = New Regex("Hello world!")
-            docText = regexText.Replace(docText, "Hi Everyone!")
-            Dim sw As StreamWriter = New StreamWriter(wordDoc.MainDocumentPart.GetStream(FileMode.Create))
-
-            using (sw)
-                sw.Write(docText)
-            End using
-        End using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/search_and_replace_text_a_part/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

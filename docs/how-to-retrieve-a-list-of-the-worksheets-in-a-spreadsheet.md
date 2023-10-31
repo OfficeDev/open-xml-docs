@@ -160,80 +160,11 @@ To get access to the **[Workbook](https://msdn.microsoft.com/library/office/docu
 The following is the complete **GetAllWorksheets** code sample in C\# and Visual
 Basic.
 
-```csharp
-    using System;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
+### [C#](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs)]
 
-    namespace GetAllWorkheets
-    {
-        class Program
-        {
-            const string DEMOFILE = 
-                @"C:\Users\Public\Documents\SampleWorkbook.xlsx";
-
-            static void Main(string[] args)
-            {
-                var results = GetAllWorksheets(DEMOFILE);
-                foreach (Sheet item in results)
-                {
-                    Console.WriteLine(item.Name);
-                }
-            }
-
-            // Retrieve a List of all the sheets in a workbook.
-            // The Sheets class contains a collection of 
-            // OpenXmlElement objects, each representing one of 
-            // the sheets.
-            public static Sheets GetAllWorksheets(string fileName)
-            {
-                Sheets theSheets = null;
-
-                using (SpreadsheetDocument document = 
-                    SpreadsheetDocument.Open(fileName, false))
-                {
-                    WorkbookPart wbPart = document.WorkbookPart;
-                    theSheets = wbPart.Workbook.Sheets;
-                }
-                return theSheets;
-            }
-        }
-    }
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-
-    Module Module1
-
-        Const DEMOFILE As String = 
-            "C:\Users\Public\Documents\SampleWorkbook.xlsx"
-        
-        Sub Main()
-            Dim results = GetAllWorksheets(DEMOFILE)
-            ' Because Sheet inherits from OpenXmlElement, you can cast
-            ' each item in the collection to be a Sheet instance.
-            For Each item As Sheet In results
-                Console.WriteLine(item.Name)
-            Next
-        End Sub
-
-        ' Retrieve a list of all the sheets in a Workbook.
-        ' The Sheets class contains a collection of 
-        ' OpenXmlElement objects, each representing 
-        ' one of the sheets.
-        Public Function GetAllWorksheets(ByVal fileName As String) As Sheets
-            Dim theSheets As Sheets
-            Using document As SpreadsheetDocument = 
-                SpreadsheetDocument.Open(fileName, False)
-                Dim wbPart As WorkbookPart = document.WorkbookPart
-                theSheets = wbPart.Workbook.Sheets()
-            End Using
-            Return theSheets
-        End Function
-    End Module
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 

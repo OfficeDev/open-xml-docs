@@ -19,22 +19,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for
 Office to open a spreadsheet document from a stream programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-    using System.Linq;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-    Imports System.Linq
-```
 
 ---------------------------------------------------------------------------------
 ## When to Open From a Stream 
@@ -202,79 +187,11 @@ close the stream passed to it. The calling code must do that.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void OpenAndAddToSpreadsheetStream(Stream stream)
-    {
-        // Open a SpreadsheetDocument based on a stream.
-        SpreadsheetDocument spreadsheetDocument =
-            SpreadsheetDocument.Open(stream, true);
+### [C#](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/open_from_a_stream/cs/Program.cs)]
 
-        // Add a new worksheet.
-        WorksheetPart newWorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart<WorksheetPart>();
-        newWorksheetPart.Worksheet = new Worksheet(new SheetData());
-        newWorksheetPart.Worksheet.Save();
-
-        Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.GetFirstChild<Sheets>();
-        string relationshipId = spreadsheetDocument.WorkbookPart.GetIdOfPart(newWorksheetPart);
-
-        // Get a unique ID for the new worksheet.
-        uint sheetId = 1;
-        if (sheets.Elements<Sheet>().Count() > 0)
-        {
-            sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;
-        }
-
-        // Give the new worksheet a name.
-        string sheetName = "Sheet" + sheetId;
-
-        // Append the new worksheet and associate it with the workbook.
-        Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };
-        sheets.Append(sheet);
-        spreadsheetDocument.WorkbookPart.Workbook.Save();
-
-        // Close the document handle.
-        spreadsheetDocument.Close();
-
-        // Caller must close the stream.
-    }
-```
-
-```vb
-    Public Sub OpenAndAddToSpreadsheetStream(ByVal stream As Stream)
-        ' Open a SpreadsheetDocument based on a stream.
-        Dim mySpreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(stream, True)
-
-        ' Add a new worksheet.
-        Dim newWorksheetPart As WorksheetPart = mySpreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
-        newWorksheetPart.Worksheet = New Worksheet(New SheetData())
-        newWorksheetPart.Worksheet.Save()
-
-        Dim sheets As Sheets = mySpreadsheetDocument.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()
-        Dim relationshipId As String = mySpreadsheetDocument.WorkbookPart.GetIdOfPart(newWorksheetPart)
-
-        ' Get a unique ID for the new worksheet.
-        Dim sheetId As UInteger = 1
-        If (sheets.Elements(Of Sheet).Count > 0) Then
-            sheetId = sheets.Elements(Of Sheet).Select(Function(s) s.SheetId.Value).Max + 1
-        End If
-
-        ' Give the new worksheet a name.
-        Dim sheetName As String = ("Sheet" + sheetId.ToString())
-
-        ' Append the new worksheet and associate it with the workbook.
-        Dim sheet As Sheet = New Sheet
-        sheet.Id = relationshipId
-        sheet.SheetId = sheetId
-        sheet.Name = sheetName
-        sheets.Append(sheet)
-        mySpreadsheetDocument.WorkbookPart.Workbook.Save()
-
-        'Close the document handle.
-        mySpreadsheetDocument.Close()
-
-        'Caller must close the stream.
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/open_from_a_stream/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

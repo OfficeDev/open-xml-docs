@@ -19,27 +19,7 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add a picture to a word processing document.
 
-The following assembly directives are required to compile the code in this topic.
 
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-    using A = DocumentFormat.OpenXml.Drawing;
-    using DW = DocumentFormat.OpenXml.Drawing.Wordprocessing;
-    using PIC = DocumentFormat.OpenXml.Drawing.Pictures;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-    Imports A = DocumentFormat.OpenXml.Drawing
-    Imports DW = DocumentFormat.OpenXml.Drawing.Wordprocessing
-    Imports PIC = DocumentFormat.OpenXml.Drawing.Pictures
-```
 
 --------------------------------------------------------------------------------
 
@@ -275,137 +255,11 @@ inserted picture.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void InsertAPicture(string document, string fileName)
-    {
-        using (WordprocessingDocument wordprocessingDocument = 
-            WordprocessingDocument.Open(document, true))
-        {
-            MainDocumentPart mainPart = wordprocessingDocument.MainDocumentPart;
+### [C#](#tab/cs)
+[!code-csharp[](../samples/word/insert_a_picture/cs/Program.cs)]
 
-            ImagePart imagePart = mainPart.AddImagePart(ImagePartType.Jpeg);
-
-            using (FileStream stream = new FileStream(fileName, FileMode.Open))
-            {
-                imagePart.FeedData(stream);
-            }
-
-            AddImageToBody(wordprocessingDocument, mainPart.GetIdOfPart(imagePart));
-        }
-    }
-
-    private static void AddImageToBody(WordprocessingDocument wordDoc, string relationshipId)
-    {
-        // Define the reference of the image.
-        var element =
-             new Drawing(
-                 new DW.Inline(
-                     new DW.Extent() { Cx = 990000L, Cy = 792000L },
-                     new DW.EffectExtent() { LeftEdge = 0L, TopEdge = 0L, 
-                         RightEdge = 0L, BottomEdge = 0L },
-                     new DW.DocProperties() { Id = (UInt32Value)1U, 
-                         Name = "Picture 1" },
-                     new DW.NonVisualGraphicFrameDrawingProperties(
-                         new A.GraphicFrameLocks() { NoChangeAspect = true }),
-                     new A.Graphic(
-                         new A.GraphicData(
-                             new PIC.Picture(
-                                 new PIC.NonVisualPictureProperties(
-                                     new PIC.NonVisualDrawingProperties() 
-                                        { Id = (UInt32Value)0U, 
-                                            Name = "New Bitmap Image.jpg" },
-                                     new PIC.NonVisualPictureDrawingProperties()),
-                                 new PIC.BlipFill(
-                                     new A.Blip(
-                                         new A.BlipExtensionList(
-                                             new A.BlipExtension() 
-                                                { Uri = 
-                                                    "{28A0092B-C50C-407E-A947-70E740481C1C}" })
-                                     ) 
-                                     { Embed = relationshipId, 
-                                         CompressionState = 
-                                         A.BlipCompressionValues.Print },
-                                     new A.Stretch(
-                                         new A.FillRectangle())),
-                                 new PIC.ShapeProperties(
-                                     new A.Transform2D(
-                                         new A.Offset() { X = 0L, Y = 0L },
-                                         new A.Extents() { Cx = 990000L, Cy = 792000L }),
-                                     new A.PresetGeometry(
-                                         new A.AdjustValueList()
-                                     ) { Preset = A.ShapeTypeValues.Rectangle }))
-                         ) { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" })
-                 ) { DistanceFromTop = (UInt32Value)0U, 
-                     DistanceFromBottom = (UInt32Value)0U, 
-                     DistanceFromLeft = (UInt32Value)0U, 
-                     DistanceFromRight = (UInt32Value)0U, EditId = "50D07946" });
-
-       // Append the reference to body, the element should be in a Run.
-       wordDoc.MainDocumentPart.Document.Body.AppendChild(new Paragraph(new Run(element)));
-    }
-```
-
-```vb
-    Public Sub InsertAPicture(ByVal document As String, ByVal fileName As String)
-        Using wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(document, True)
-            Dim mainPart As MainDocumentPart = wordprocessingDocument.MainDocumentPart
-
-            Dim imagePart As ImagePart = mainPart.AddImagePart(ImagePartType.Jpeg)
-
-            Using stream As New FileStream(fileName, FileMode.Open)
-                imagePart.FeedData(stream)
-            End Using
-
-            AddImageToBody(wordprocessingDocument, mainPart.GetIdOfPart(imagePart))
-        End Using
-    End Sub
-
-    Private Sub AddImageToBody(ByVal wordDoc As WordprocessingDocument, ByVal relationshipId As String)
-        ' Define the reference of the image.
-        Dim element = New Drawing( _
-                              New DW.Inline( _
-                          New DW.Extent() With {.Cx = 990000L, .Cy = 792000L}, _
-                          New DW.EffectExtent() With {.LeftEdge = 0L, .TopEdge = 0L, .RightEdge = 0L, .BottomEdge = 0L}, _
-                          New DW.DocProperties() With {.Id = CType(1UI, UInt32Value), .Name = "Picture1"}, _
-                          New DW.NonVisualGraphicFrameDrawingProperties( _
-                              New A.GraphicFrameLocks() With {.NoChangeAspect = True} _
-                              ), _
-                          New A.Graphic(New A.GraphicData( _
-                                        New PIC.Picture( _
-                                            New PIC.NonVisualPictureProperties( _
-                                                New PIC.NonVisualDrawingProperties() With {.Id = 0UI, .Name = "Koala.jpg"}, _
-                                                New PIC.NonVisualPictureDrawingProperties() _
-                                                ), _
-                                            New PIC.BlipFill( _
-                                                New A.Blip( _
-                                                    New A.BlipExtensionList( _
-                                                        New A.BlipExtension() With {.Uri = "{28A0092B-C50C-407E-A947-70E740481C1C}"}) _
-                                                    ) With {.Embed = relationshipId, .CompressionState = A.BlipCompressionValues.Print}, _
-                                                New A.Stretch( _
-                                                    New A.FillRectangle() _
-                                                    ) _
-                                                ), _
-                                            New PIC.ShapeProperties( _
-                                                New A.Transform2D( _
-                                                    New A.Offset() With {.X = 0L, .Y = 0L}, _
-                                                    New A.Extents() With {.Cx = 990000L, .Cy = 792000L}), _
-                                                New A.PresetGeometry( _
-                                                    New A.AdjustValueList() _
-                                                    ) With {.Preset = A.ShapeTypeValues.Rectangle} _
-                                                ) _
-                                            ) _
-                                        ) With {.Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture"} _
-                                    ) _
-                                ) With {.DistanceFromTop = 0UI, _
-                                        .DistanceFromBottom = 0UI, _
-                                        .DistanceFromLeft = 0UI, _
-                                        .DistanceFromRight = 0UI} _
-                            )
-
-        ' Append the reference to body, the element should be in a Run.
-        wordDoc.MainDocumentPart.Document.Body.AppendChild(New Paragraph(New Run(element)))
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/insert_a_picture/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 
