@@ -1,34 +1,26 @@
 using DocumentFormat.OpenXml.Packaging;
 using System;
 
-namespace GetApplicationProperty
+GetApplicationProperty(args[0]);
+
+static void GetApplicationProperty(string fileName)
 {
-    class Program
+    using (WordprocessingDocument document = WordprocessingDocument.Open(fileName, false))
     {
-        private const string FILENAME =
-            @"C:\Users\Public\Documents\DocumentProperties.docx";
-
-        static void Main(string[] args)
+        if (document.ExtendedFilePropertiesPart is null)
         {
-            using (WordprocessingDocument document =
-                WordprocessingDocument.Open(FILENAME, false))
-            {
-                if (document.ExtendedFilePropertiesPart is null)
-                {
-                    throw new System.NullReferenceException("ExtendedFilePropertiesPart is null.");
-                }
-
-                var props = document.ExtendedFilePropertiesPart.Properties;
-
-                if (props.Company != null)
-                    Console.WriteLine("Company = " + props.Company.Text);
-
-                if (props.Lines != null)
-                    Console.WriteLine("Lines = " + props.Lines.Text);
-
-                if (props.Manager != null)
-                    Console.WriteLine("Manager = " + props.Manager.Text);
-            }
+            throw new System.NullReferenceException("ExtendedFilePropertiesPart is null.");
         }
+
+        var props = document.ExtendedFilePropertiesPart.Properties;
+
+        if (props.Company is not null)
+            Console.WriteLine("Company = " + props.Company.Text);
+
+        if (props.Lines is not null)
+            Console.WriteLine("Lines = " + props.Lines.Text);
+
+        if (props.Manager is not null)
+            Console.WriteLine("Manager = " + props.Manager.Text);
     }
 }

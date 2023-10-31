@@ -6,10 +6,11 @@ using A = DocumentFormat.OpenXml.Drawing;
 using DW = DocumentFormat.OpenXml.Drawing.Wordprocessing;
 using PIC = DocumentFormat.OpenXml.Drawing.Pictures;
 
+InsertAPicture(args[0], args[1]);
+
 static void InsertAPicture(string document, string fileName)
 {
-    using (WordprocessingDocument wordprocessingDocument =
-        WordprocessingDocument.Open(document, true))
+    using (WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(document, true))
     {
         if (wordprocessingDocument.MainDocumentPart is null)
         {

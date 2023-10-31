@@ -3,6 +3,8 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 
+ReplaceStyles(args[0], args[1]);
+
 // Replace the styles in the "to" document with the styles in
 // the "from" document.
 static void ReplaceStyles(string fromDoc, string toDoc)

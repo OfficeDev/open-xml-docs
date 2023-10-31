@@ -3,18 +3,24 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 
+if (args.Length >= 2)
+{
+    ExtractStylesPart(args[0], args[1]);
+}
+else
+{
+    ExtractStylesPart(args[0]);
+}
+
 // Extract the styles or stylesWithEffects part from a 
 // word processing document as an XDocument instance.
-static XDocument ExtractStylesPart(
-  string fileName,
-  bool getStylesWithEffectsPart = true)
+static XDocument ExtractStylesPart(string fileName, string getStylesWithEffectsPart = "true")
 {
     // Declare a variable to hold the XDocument.
     XDocument? styles = null;
 
     // Open the document for read access and get a reference.
-    using (var document =
-        WordprocessingDocument.Open(fileName, false))
+    using (var document = WordprocessingDocument.Open(fileName, false))
     {
         if (document.MainDocumentPart is null || document.MainDocumentPart.StyleDefinitionsPart is null || document.MainDocumentPart.StylesWithEffectsPart is null)
         {
@@ -27,13 +33,13 @@ static XDocument ExtractStylesPart(
         // Assign a reference to the appropriate part to the
         // stylesPart variable.
         StylesPart? stylesPart = null;
-        if (getStylesWithEffectsPart)
+
+        if (getStylesWithEffectsPart.ToLower() == "true")
             stylesPart = docPart.StylesWithEffectsPart;
         else
             stylesPart = docPart.StyleDefinitionsPart;
 
-        using var reader = XmlNodeReader.Create(
-          stylesPart.GetStream(FileMode.Open, FileAccess.Read));
+        using var reader = XmlNodeReader.Create(stylesPart.GetStream(FileMode.Open, FileAccess.Read));
 
         // Create the XDocument.
         styles = XDocument.Load(reader);

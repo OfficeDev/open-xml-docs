@@ -3,6 +3,8 @@ using DocumentFormat.OpenXml.Validation;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 
+ValidateCorruptedWordDocument(args[0]);
+
 static void ValidateWordDocument(string filepath)
 {
     using (WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(filepath, true))

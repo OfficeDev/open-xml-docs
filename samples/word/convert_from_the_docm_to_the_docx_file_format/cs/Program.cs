@@ -2,21 +2,22 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 
+ConvertDOCMtoDOCX(args[0]);
+
 // Given a .docm file (with macro storage), remove the VBA 
 // project, reset the document type, and save the document with a new name.
 static void ConvertDOCMtoDOCX(string fileName)
 {
     bool fileChanged = false;
 
-    using (WordprocessingDocument document =
-        WordprocessingDocument.Open(fileName, true))
+    using (WordprocessingDocument document = WordprocessingDocument.Open(fileName, true))
     {
         // Access the main document part.
         var docPart = document.MainDocumentPart ?? throw new System.NullReferenceException("MainDocumentPart is null.");
 
         // Look for the vbaProject part. If it is there, delete it.
         var vbaPart = docPart.VbaProjectPart;
-        if (vbaPart != null)
+        if (vbaPart is not null)
         {
             // Delete the vbaProject part and then save the document.
             docPart.DeletePart(vbaPart);

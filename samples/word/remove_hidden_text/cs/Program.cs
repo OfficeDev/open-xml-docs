@@ -2,6 +2,8 @@ using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 using System.Xml;
 
+WDDeleteHiddenText(args[0]);
+
 static void WDDeleteHiddenText(string docName)
 {
     // Given a document name, delete all the hidden text.
@@ -22,37 +24,43 @@ static void WDDeleteHiddenText(string docName)
         // Get the document part from the package.
         // Load the XML in the document part into an XmlDocument instance.
         XmlDocument xdoc = new XmlDocument(nt);
-        xdoc.Load(wdDoc.MainDocumentPart.GetStream());
-        XmlNodeList? hiddenNodes = xdoc.SelectNodes("//w:vanish", nsManager);
-
-        if (hiddenNodes is null)
+        using (Stream stream = wdDoc.MainDocumentPart.GetStream())
         {
-            return;  // No hidden text.
-        }
+            xdoc.Load(stream);
+            XmlNodeList? hiddenNodes = xdoc.SelectNodes("//w:vanish", nsManager);
 
-        foreach (System.Xml.XmlNode hiddenNode in hiddenNodes)
-        {
-            if (hiddenNode.ParentNode is null || hiddenNode.ParentNode.ParentNode is null || hiddenNode.ParentNode.ParentNode.ParentNode is null)
+            if (hiddenNodes is null)
             {
-                continue;
-            }   
-
-            XmlNode topNode = hiddenNode.ParentNode.ParentNode;
-            XmlNode topParentNode = topNode.ParentNode;
-            topParentNode.RemoveChild(topNode);
-             
-            if (topParentNode.ParentNode is null)
-            {
-                continue;
+                return;  // No hidden text.
             }
 
-            if (!(topParentNode.HasChildNodes))
+            foreach (System.Xml.XmlNode hiddenNode in hiddenNodes)
             {
-                topParentNode.ParentNode.RemoveChild(topParentNode);
+                if (hiddenNode.ParentNode is null || hiddenNode.ParentNode.ParentNode is null || hiddenNode.ParentNode.ParentNode.ParentNode is null)
+                {
+                    continue;
+                }
+
+                XmlNode topNode = hiddenNode.ParentNode.ParentNode;
+                XmlNode topParentNode = topNode.ParentNode;
+                topParentNode.RemoveChild(topNode);
+
+                if (topParentNode.ParentNode is null)
+                {
+                    continue;
+                }
+
+                if (!topParentNode.HasChildNodes)
+                {
+                    topParentNode.ParentNode.RemoveChild(topParentNode);
+                }
             }
         }
 
-        // Save the document XML back to its document part.
-        xdoc.Save(wdDoc.MainDocumentPart.GetStream(FileMode.Create, FileAccess.Write));
+        using (Stream stream2 = wdDoc.MainDocumentPart.GetStream(FileMode.Create, FileAccess.Write))
+        {
+            // Save the document XML back to its document part.
+            xdoc.Save(stream2);
+        }
     }
 }

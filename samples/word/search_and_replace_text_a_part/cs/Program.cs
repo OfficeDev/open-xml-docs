@@ -2,6 +2,8 @@ using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 using System.Text.RegularExpressions;
 
+SearchAndReplace(args[0]);
+
 // To search and replace content in a document part.
 static void SearchAndReplace(string document)
 {

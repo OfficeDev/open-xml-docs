@@ -2,20 +2,20 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 
+GetCommentsFromDocument(args[0]);
+
 static void GetCommentsFromDocument(string fileName)
 {
-    using (WordprocessingDocument wordDoc =
-        WordprocessingDocument.Open(fileName, false))
+    using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(fileName, false))
     {
         if (wordDoc.MainDocumentPart is null || wordDoc.MainDocumentPart.WordprocessingCommentsPart is null)
         {
             throw new System.NullReferenceException("MainDocumentPart and/or WordprocessingCommentsPart is null.");
         }
 
-        WordprocessingCommentsPart commentsPart =
-            wordDoc.MainDocumentPart.WordprocessingCommentsPart;
+        WordprocessingCommentsPart commentsPart = wordDoc.MainDocumentPart.WordprocessingCommentsPart;
 
-        if (commentsPart != null && commentsPart.Comments != null)
+        if (commentsPart is not null && commentsPart.Comments is not null)
         {
             foreach (Comment comment in commentsPart.Comments.Elements<Comment>())
             {

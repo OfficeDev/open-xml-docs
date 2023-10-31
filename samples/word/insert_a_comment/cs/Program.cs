@@ -3,45 +3,47 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Linq;
 
+AddCommentOnFirstParagraph(args[0], args[1], args[2], args[3]);
+
 // Insert a comment on the first paragraph.
-static void AddCommentOnFirstParagraph(string fileName,
-    string author, string initials, string comment)
+static void AddCommentOnFirstParagraph(string fileName, string author, string initials, string comment)
 {
     // Use the file name and path passed in as an 
     // argument to open an existing Wordprocessing document. 
-    using (WordprocessingDocument document =
-        WordprocessingDocument.Open(fileName, true))
+    using (WordprocessingDocument document = WordprocessingDocument.Open(fileName, true))
     {
-
-        if (document.MainDocumentPart is null || document.MainDocumentPart.WordprocessingCommentsPart is null)
+        if (document.MainDocumentPart is null/* || document.MainDocumentPart.WordprocessingCommentsPart is null*/)
         {
             throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
         }
 
+        WordprocessingCommentsPart wordprocessingCommentsPart = document.MainDocumentPart.WordprocessingCommentsPart ?? document.MainDocumentPart.AddNewPart<WordprocessingCommentsPart>();
+
         // Locate the first paragraph in the document.
-        Paragraph firstParagraph =
-            document.MainDocumentPart.Document.Descendants<Paragraph>().First();
-        Comments? comments = null;
+        Paragraph firstParagraph = document.MainDocumentPart.Document.Descendants<Paragraph>().First();
+        wordprocessingCommentsPart.Comments ??= new Comments();
         string id = "0";
 
         // Verify that the document contains a 
         // WordProcessingCommentsPart part; if not, add a new one.
         if (document.MainDocumentPart.GetPartsOfType<WordprocessingCommentsPart>().Count() > 0)
         {
-            comments = document.MainDocumentPart.WordprocessingCommentsPart.Comments;
-            if (comments.HasChildren)
+            if (wordprocessingCommentsPart.Comments.HasChildren)
             {
                 // Obtain an unused ID.
-                id = (comments.Descendants<Comment>().Select(e => { if (e.Id is not null && e.Id.Value is not null) { return int.Parse(e.Id.Value); } 
-                    else { throw new System.NullReferenceException("Comment id and/or value are null."); } } ).Max() + 1).ToString();
+                id = (wordprocessingCommentsPart.Comments.Descendants<Comment>().Select(e =>
+                {
+                    if (e.Id is not null && e.Id.Value is not null) 
+                    { 
+                        return int.Parse(e.Id.Value); 
+                    }
+                    else 
+                    { 
+                        throw new System.NullReferenceException("Comment id and/or value are null."); 
+                    }
+                })
+                    .Max() + 1).ToString();
             }
-        }
-        else
-        {
-            // No WordprocessingCommentsPart part exists, so add one to the package.
-            WordprocessingCommentsPart commentPart = document.MainDocumentPart.AddNewPart<WordprocessingCommentsPart>();
-            commentPart.Comments = new Comments();
-            comments = commentPart.Comments;
         }
 
         // Compose a new Comment and add it to the Comments part.
@@ -55,8 +57,8 @@ static void AddCommentOnFirstParagraph(string fileName,
                 Date = DateTime.Now
             };
         cmt.AppendChild(p);
-        comments.AppendChild(cmt);
-        comments.Save();
+        wordprocessingCommentsPart.Comments.AppendChild(cmt);
+        wordprocessingCommentsPart.Comments.Save();
 
         // Specify the text range for the Comment. 
         // Insert the new CommentRangeStart before the first run of paragraph.

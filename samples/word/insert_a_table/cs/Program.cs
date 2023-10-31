@@ -2,6 +2,8 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
+CreateTable(args[0]);
+
 // Insert a table into a word processing document.
 static void CreateTable(string fileName)
 {

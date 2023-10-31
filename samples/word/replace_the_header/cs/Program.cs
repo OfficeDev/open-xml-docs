@@ -3,12 +3,19 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using System.Collections.Generic;
 using System.Linq;
 
+AddHeaderFromTo(args[0], args[1]);
+
 static void AddHeaderFromTo(string filepathFrom, string filepathTo)
 {
     // Replace header in target document with header of source document.
-    using (WordprocessingDocument
-        wdDoc = WordprocessingDocument.Open(filepathTo, true))
+    using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(filepathTo, true))
+    using (WordprocessingDocument wdDocSource = WordprocessingDocument.Open(filepathFrom, true))
     {
+        if (wdDocSource.MainDocumentPart is null || wdDocSource.MainDocumentPart.HeaderParts is null)
+        {
+            throw new System.NullReferenceException("MainDocumentPart and/or HeaderParts is null.");
+        }
+
         if (wdDoc.MainDocumentPart is null)
         {
             throw new System.NullReferenceException("MainDocumentPart is null.");
@@ -20,30 +27,20 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
         mainPart.DeleteParts(mainPart.HeaderParts);
 
         // Create a new header part.
-        DocumentFormat.OpenXml.Packaging.HeaderPart headerPart =
-    mainPart.AddNewPart<HeaderPart>();
+        DocumentFormat.OpenXml.Packaging.HeaderPart headerPart = mainPart.AddNewPart<HeaderPart>();
 
         // Get Id of the headerPart.
         string rId = mainPart.GetIdOfPart(headerPart);
 
         // Feed target headerPart with source headerPart.
-        using (WordprocessingDocument wdDocSource =
-            WordprocessingDocument.Open(filepathFrom, true))
+
+        DocumentFormat.OpenXml.Packaging.HeaderPart? firstHeader = wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
+
+        wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
+
+        if (firstHeader is not null)
         {
-            if (wdDocSource.MainDocumentPart is null || wdDocSource.MainDocumentPart.HeaderParts is null)
-            {
-                throw new System.NullReferenceException("MainDocumentPart and/or HeaderParts is null.");
-            }
-
-            DocumentFormat.OpenXml.Packaging.HeaderPart? firstHeader =
-    wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
-
-            wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault();
-
-            if (firstHeader != null)
-            {
-                headerPart.FeedData(firstHeader.GetStream());
-            }
+            headerPart.FeedData(firstHeader.GetStream());
         }
 
         if (mainPart.Document.Body is null)
@@ -52,8 +49,7 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
         }
 
         // Get SectionProperties and Replace HeaderReference with new Id.
-        IEnumerable<DocumentFormat.OpenXml.Wordprocessing.SectionProperties> sectPrs =
-    mainPart.Document.Body.Elements<SectionProperties>();
+        IEnumerable<DocumentFormat.OpenXml.Wordprocessing.SectionProperties> sectPrs = mainPart.Document.Body.Elements<SectionProperties>();
         foreach (var sectPr in sectPrs)
         {
             // Delete existing references to headers.

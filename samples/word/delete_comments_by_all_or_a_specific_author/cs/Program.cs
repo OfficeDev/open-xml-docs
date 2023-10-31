@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+DeleteComments(args[0], args[1]);
+
 // Delete comments by a specific author. Pass an empty string for the 
 // author to delete all comments, by all authors.
-static void DeleteComments(string fileName,
-    string author = "")
+static void DeleteComments(string fileName, string author = "")
 {
     // Get an existing Wordprocessing document.
     using (WordprocessingDocument document = WordprocessingDocument.Open(fileName, true))

@@ -2,6 +2,8 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Linq;
 
+SetRunFont(args[0]);
+
 // Set the font for a text run.
 static void SetRunFont(string fileName)
 {
