@@ -46,10 +46,18 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
 ## In this section
 
-- [Getting started with the Open XML SDK for Office](getting-started.md)  
-- [Understanding the Open XML file formats](understanding-the-open-xml-file-formats.md)  
-- [How do I... (Open XML SDK)](how-do-i.md)  
+- [Getting started with the Open XML SDK for Office](getting-started.md)
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)  
+
+## Working with packages
+
+- [Packages](general/overview.md) 
+
+- [Presentations](presentation/overview.md)  
+
+- [Spreadsheets](spreadsheet/overview.md)  
+
+- [Word processing](word/overview.md)
 
 ## See also
 
