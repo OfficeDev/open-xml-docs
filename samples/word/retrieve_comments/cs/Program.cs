@@ -10,7 +10,7 @@ static void GetCommentsFromDocument(string fileName)
     {
         if (wordDoc.MainDocumentPart is null || wordDoc.MainDocumentPart.WordprocessingCommentsPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or WordprocessingCommentsPart is null.");
+            throw new System.InvalidOperationException("MainDocumentPart and/or WordprocessingCommentsPart is null.");
         }
 
         WordprocessingCommentsPart commentsPart = wordDoc.MainDocumentPart.WordprocessingCommentsPart;

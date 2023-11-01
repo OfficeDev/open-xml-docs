@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-if (args.Length >= 3)
+if (args is [{ } fileName, { } sheetName, { } detectRows])
 {
-    GetHiddenRowsOrCols(args[0], args[1], args[2]);
+    GetHiddenRowsOrCols(fileName, sheetName, detectRows);
 }
-else
+else if (args is [{ } fileName2, { } sheetName2])
 {
-    GetHiddenRowsOrCols(args[0], args[1]);
+    GetHiddenRowsOrCols(fileName2, sheetName2);
 }
 
 static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string detectRows = "false")

@@ -3,13 +3,13 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 
-if (args.Length >= 2)
+if (args is [{ } fileName, { } getStyleWithEffectsPart])
 {
-    ExtractStylesPart(args[0], args[1]);
+    ExtractStylesPart(fileName, getStyleWithEffectsPart);
 }
-else
+else if (args is [{ } fileName2])
 {
-    ExtractStylesPart(args[0]);
+    ExtractStylesPart(fileName2);
 }
 
 // Extract the styles or stylesWithEffects part from a 

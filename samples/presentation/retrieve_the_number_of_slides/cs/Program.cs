@@ -1,18 +1,18 @@
 using DocumentFormat.OpenXml.Packaging;
 using System;
+using System.IO.Enumeration;
 using System.Linq;
 
-if (args.Length >= 2)
+if (args is [ { } fileName, {} includeHidden])
 {
-    RetrieveNumberOfSlides(args[0], args[1]);
+    RetrieveNumberOfSlides(fileName, includeHidden);
 }
-else
+else if (args is [{ } fileName2])
 {
-    RetrieveNumberOfSlides(args[0]);
+    RetrieveNumberOfSlides(fileName2);
 }
 
-static int RetrieveNumberOfSlides(string fileName,
-    string includeHidden = "true")
+static int RetrieveNumberOfSlides(string fileName, string includeHidden = "true")
 {
     int slidesCount = 0;
 
