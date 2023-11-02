@@ -67,7 +67,7 @@ static void AcceptAllRevisions(string fileName, string authorName)
                 }
                 else
                 {
-                    OpenXmlElement? nextSibling = insertion.NextSibling() ?? throw new ArgumentNullException("NextSibling is null.");
+                    OpenXmlElement nextSibling = insertion.NextSibling()!;
                     nextSibling.InsertAfterSelf(new Run(run.OuterXml));
                 }
             }
