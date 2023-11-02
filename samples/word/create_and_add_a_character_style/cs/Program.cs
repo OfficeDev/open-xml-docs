@@ -1,5 +1,6 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 
 CreateAndAddCharacterStyle(args[0], args[1], args[2], args[3]);
 
@@ -61,7 +62,7 @@ static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument? doc)
 
     if (doc?.MainDocumentPart is null)
     {
-        throw new System.NullReferenceException("MainDocumentPart is null.");
+        throw new ArgumentNullException("MainDocumentPart is null.");
     }
 
     part = doc.MainDocumentPart.AddNewPart<StyleDefinitionsPart>();

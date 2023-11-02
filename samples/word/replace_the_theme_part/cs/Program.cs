@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.IO;
 
 ReplaceTheme(args[0], args[1]);
@@ -10,7 +11,7 @@ static void ReplaceTheme(string document, string themeFile)
     {
         if (wordDoc.MainDocumentPart is null || wordDoc.MainDocumentPart.Document.Body is null || wordDoc.MainDocumentPart.ThemePart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body and/or ThemePart is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body and/or ThemePart is null.");
         }
 
         MainDocumentPart mainPart = wordDoc.MainDocumentPart;

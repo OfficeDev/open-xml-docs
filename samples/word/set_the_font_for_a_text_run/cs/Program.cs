@@ -1,5 +1,6 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Linq;
 
 SetRunFont(args[0]);
@@ -20,7 +21,7 @@ static void SetRunFont(string fileName)
 
         if (package.MainDocumentPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart is null.");
+            throw new ArgumentNullException("MainDocumentPart is null.");
         }
 
         Run r = package.MainDocumentPart.Document.Descendants<Run>().First();

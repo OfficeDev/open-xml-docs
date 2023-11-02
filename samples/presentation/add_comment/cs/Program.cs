@@ -100,14 +100,14 @@ static SlidePart GetFirstSlide(PresentationDocument? presentationDocument)
     string? relId = slideId?.RelationshipId;
     if (relId is null)
     {
-        throw new NullReferenceException("The first slide does not contain a relationship ID.");
+        throw new ArgumentNullException("The first slide does not contain a relationship ID.");
     }
     // Get the slide part by the relationship ID.
     SlidePart? slidePart = part?.GetPartById(relId) as SlidePart;
 
     if (slidePart is null)
     {
-        throw new NullReferenceException("The slide part is null.");
+        throw new ArgumentNullException("The slide part is null.");
     }
 
     return slidePart;

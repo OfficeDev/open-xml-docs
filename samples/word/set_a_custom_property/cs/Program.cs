@@ -92,29 +92,25 @@ static string SetCustomProperty(
     using (var document = WordprocessingDocument.Open(fileName, true))
     {
         var customProps = document.CustomFilePropertiesPart;
-        if (customProps == null)
+        if (customProps is null)
         {
             // No custom properties? Add the part, and the
             // collection of properties now.
             customProps = document.AddCustomFilePropertiesPart();
-            customProps.Properties =
-                new DocumentFormat.OpenXml.CustomProperties.Properties();
+            customProps.Properties = new Properties();
         }
 
         var props = customProps.Properties;
-        if (props != null)
+        if (props is not null)
         {
             // This will trigger an exception if the property's Name 
             // property is null, but if that happens, the property is damaged, 
             // and probably should raise an exception.
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            var prop =
-                props.FirstOrDefault(p => ((CustomDocumentProperty)p).Name.Value == propertyName);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
+            var prop = props.FirstOrDefault(p => ((CustomDocumentProperty)p).Name!.Value == propertyName);
 
             // Does the property exist? If so, get the return value, 
             // and then delete the property.
-            if (prop != null)
+            if (prop is not null)
             {
                 returnValue = prop.InnerText;
                 prop.Remove();

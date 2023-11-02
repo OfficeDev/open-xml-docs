@@ -1,5 +1,6 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Linq;
 
 ChangeTextInCell(args[0], args[1]);
@@ -13,7 +14,7 @@ static void ChangeTextInCell(string filePath, string txt)
     {
         if (doc.MainDocumentPart is null || doc.MainDocumentPart.Document.Body is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         // Find the first table in the document.

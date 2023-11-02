@@ -16,7 +16,7 @@ static void DeleteComments(string fileName, string author = "")
 
         if (document.MainDocumentPart is null || document.MainDocumentPart.WordprocessingCommentsPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or WordprocessingCommentsPart is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or WordprocessingCommentsPart is null.");
         }
 
         // Set commentPart to the document WordprocessingCommentsPart, 

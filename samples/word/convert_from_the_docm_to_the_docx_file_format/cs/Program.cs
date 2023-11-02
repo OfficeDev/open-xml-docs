@@ -1,5 +1,6 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.IO;
 
 ConvertDOCMtoDOCX(args[0]);
@@ -13,7 +14,7 @@ static void ConvertDOCMtoDOCX(string fileName)
     using (WordprocessingDocument document = WordprocessingDocument.Open(fileName, true))
     {
         // Access the main document part.
-        var docPart = document.MainDocumentPart ?? throw new System.NullReferenceException("MainDocumentPart is null.");
+        var docPart = document.MainDocumentPart ?? throw new ArgumentNullException("MainDocumentPart is null.");
 
         // Look for the vbaProject part. If it is there, delete it.
         var vbaPart = docPart.VbaProjectPart;

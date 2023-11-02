@@ -1,6 +1,7 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 
 AddTable(args[0], args[1]);
 
@@ -17,7 +18,7 @@ static void AddTable(string fileName, string json)
         {
             if (document.MainDocumentPart is null || document.MainDocumentPart.Document.Body is null)
             {
-                throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+                throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
             }
 
             var doc = document.MainDocumentPart.Document;

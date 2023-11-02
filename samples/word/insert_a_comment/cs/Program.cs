@@ -14,7 +14,7 @@ static void AddCommentOnFirstParagraph(string fileName, string author, string in
     {
         if (document.MainDocumentPart is null/* || document.MainDocumentPart.WordprocessingCommentsPart is null*/)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         WordprocessingCommentsPart wordprocessingCommentsPart = document.MainDocumentPart.WordprocessingCommentsPart ?? document.MainDocumentPart.AddNewPart<WordprocessingCommentsPart>();
@@ -39,7 +39,7 @@ static void AddCommentOnFirstParagraph(string fileName, string author, string in
                     }
                     else 
                     { 
-                        throw new System.NullReferenceException("Comment id and/or value are null."); 
+                        throw new ArgumentNullException("Comment id and/or value are null."); 
                     }
                 })
                     .Max() + 1).ToString();

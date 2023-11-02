@@ -1,6 +1,7 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 
 CreateTable(args[0]);
 
@@ -88,7 +89,7 @@ static void CreateTable(string fileName)
 
         if (doc.MainDocumentPart is null || doc.MainDocumentPart.Document.Body is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         // Append the table to the document.

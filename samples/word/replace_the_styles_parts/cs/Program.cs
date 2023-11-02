@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
@@ -33,7 +34,7 @@ static void ReplaceStylesPart(string fileName, XDocument newStyles, bool setStyl
     {
         if (document.MainDocumentPart is null || document.MainDocumentPart.StyleDefinitionsPart is null || document.MainDocumentPart.StylesWithEffectsPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or one or both of the Styles parts is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or one or both of the Styles parts is null.");
         }
 
         // Get a reference to the main document part.
@@ -71,7 +72,7 @@ static XDocument ExtractStylesPart(string fileName, bool getStylesWithEffectsPar
 
         if (docPart is null || docPart.StyleDefinitionsPart is null || docPart.StylesWithEffectsPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or one or both of the Styles parts is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or one or both of the Styles parts is null.");
         }
 
         // Assign a reference to the appropriate part to the

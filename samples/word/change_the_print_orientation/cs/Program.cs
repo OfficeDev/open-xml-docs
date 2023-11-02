@@ -3,6 +3,7 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Linq;
 
 SetPrintOrientation(args[0], args[1]);
@@ -25,7 +26,7 @@ static void SetPrintOrientation(string fileName, string no)
 
         if (document.MainDocumentPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         var docPart = document.MainDocumentPart;
@@ -37,7 +38,7 @@ static void SetPrintOrientation(string fileName, string no)
         {
             bool pageOrientationChanged = false;
 
-            PageSize pgSz = (sectPr.Descendants<PageSize>().FirstOrDefault()) ?? throw new System.NullReferenceException("There are no PageSize elements in the section.");
+            PageSize pgSz = (sectPr.Descendants<PageSize>().FirstOrDefault()) ?? throw new ArgumentNullException("There are no PageSize elements in the section.");
             if (pgSz != null)
             {
                 // No Orient property? Create it now. Otherwise, just 
@@ -78,7 +79,7 @@ static void SetPrintOrientation(string fileName, string no)
                     pgSz.Width = height;
                     pgSz.Height = width;
 
-                    PageMargin pgMar = (sectPr.Descendants<PageMargin>().FirstOrDefault()) ?? throw new System.NullReferenceException("There are no PageMargin elements in the section.");
+                    PageMargin pgMar = (sectPr.Descendants<PageMargin>().FirstOrDefault()) ?? throw new ArgumentNullException("There are no PageMargin elements in the section.");
 
                     if (pgMar != null)
                     {
@@ -89,7 +90,7 @@ static void SetPrintOrientation(string fileName, string no)
                         // procedure.
                         if (pgMar.Top is null || pgMar.Bottom is null || pgMar.Left is null || pgMar.Right is null)
                         {
-                            throw new System.NullReferenceException("One or more of the PageMargin elements is null.");
+                            throw new ArgumentNullException("One or more of the PageMargin elements is null.");
                         }
 
                         var top = pgMar.Top.Value;

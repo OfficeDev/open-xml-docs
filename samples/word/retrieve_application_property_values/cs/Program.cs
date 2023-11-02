@@ -9,7 +9,7 @@ static void GetApplicationProperty(string fileName)
     {
         if (document.ExtendedFilePropertiesPart is null)
         {
-            throw new System.NullReferenceException("ExtendedFilePropertiesPart is null.");
+            throw new ArgumentNullException("ExtendedFilePropertiesPart is null.");
         }
 
         var props = document.ExtendedFilePropertiesPart.Properties;

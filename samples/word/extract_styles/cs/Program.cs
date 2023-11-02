@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
@@ -24,7 +25,7 @@ static XDocument ExtractStylesPart(string fileName, string getStylesWithEffectsP
     {
         if (document.MainDocumentPart is null || document.MainDocumentPart.StyleDefinitionsPart is null || document.MainDocumentPart.StylesWithEffectsPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or one or both of the Styles parts is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or one or both of the Styles parts is null.");
         }
 
         // Get a reference to the main document part.

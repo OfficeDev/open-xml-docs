@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -14,7 +15,7 @@ static void SearchAndReplace(string document)
 
         if (wordDoc.MainDocumentPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         using (StreamReader sr = new StreamReader(wordDoc.MainDocumentPart.GetStream()))

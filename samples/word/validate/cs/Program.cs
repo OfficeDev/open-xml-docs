@@ -53,7 +53,7 @@ static void ValidateCorruptedWordDocument(string filepath)
 
         if (wordprocessingDocument.MainDocumentPart is null || wordprocessingDocument.MainDocumentPart.Document.Body is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         // Insert some text into the body, this would cause Schema Error

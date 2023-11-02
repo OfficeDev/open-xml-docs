@@ -1,5 +1,6 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,12 +14,12 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
     {
         if (wdDocSource.MainDocumentPart is null || wdDocSource.MainDocumentPart.HeaderParts is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or HeaderParts is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or HeaderParts is null.");
         }
 
         if (wdDoc.MainDocumentPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart is null.");
+            throw new ArgumentNullException("MainDocumentPart is null.");
         }
 
         MainDocumentPart mainPart = wdDoc.MainDocumentPart;
@@ -45,7 +46,7 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
 
         if (mainPart.Document.Body is null)
         {
-            throw new System.NullReferenceException("Body is null.");
+            throw new ArgumentNullException("Body is null.");
         }
 
         // Get SectionProperties and Replace HeaderReference with new Id.

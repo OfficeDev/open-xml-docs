@@ -1,6 +1,7 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.IO;
 using A = DocumentFormat.OpenXml.Drawing;
 using DW = DocumentFormat.OpenXml.Drawing.Wordprocessing;
@@ -14,7 +15,7 @@ static void InsertAPicture(string document, string fileName)
     {
         if (wordprocessingDocument.MainDocumentPart is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart is null.");
+            throw new ArgumentNullException("MainDocumentPart is null.");
         }
 
         MainDocumentPart mainPart = wordprocessingDocument.MainDocumentPart;
@@ -98,7 +99,7 @@ static void AddImageToBody(WordprocessingDocument wordDoc, string relationshipId
 
     if (wordDoc.MainDocumentPart is null || wordDoc.MainDocumentPart.Document.Body is null)
     {
-        throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+        throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
     }
 
     // Append the reference to body, the element should be in a Run.

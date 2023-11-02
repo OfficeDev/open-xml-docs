@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.Packaging;
+using System;
 using System.IO;
 using System.Xml;
 
@@ -18,7 +19,7 @@ static void WDDeleteHiddenText(string docName)
 
         if (wdDoc.MainDocumentPart is null || wdDoc.MainDocumentPart.Document.Body is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         // Get the document part from the package.

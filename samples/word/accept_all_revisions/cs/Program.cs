@@ -1,6 +1,7 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,7 +13,7 @@ static void AcceptAllRevisions(string fileName, string authorName)
     {
         if (wdDoc.MainDocumentPart is null || wdDoc.MainDocumentPart.Document.Body is null)
         {
-            throw new System.NullReferenceException("MainDocumentPart and/or Body is null.");
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
         Body body = wdDoc.MainDocumentPart.Document.Body;
@@ -66,7 +67,7 @@ static void AcceptAllRevisions(string fileName, string authorName)
                 }
                 else
                 {
-                    OpenXmlElement? nextSibling = insertion.NextSibling() ?? throw new System.NullReferenceException("NextSibling is null.");
+                    OpenXmlElement? nextSibling = insertion.NextSibling() ?? throw new ArgumentNullException("NextSibling is null.");
                     nextSibling.InsertAfterSelf(new Run(run.OuterXml));
                 }
             }
