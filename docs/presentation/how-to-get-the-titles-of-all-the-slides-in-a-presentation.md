@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: b7d5d1fd-dcdf-4f88-9d57-884562c8144f
-title: 'How to: Get the titles of all the slides in a presentation (Open XML SDK)'
+title: 'How to: Get the titles of all the slides in a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Get the titles of all the slides in a presentation (Open XML SDK)
+# Get the titles of all the slides in a presentation
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to get the titles of all slides in a presentation

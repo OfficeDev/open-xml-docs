@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: fdb29547-c295-4e7d-9fc5-d86d8d8c2967
-title: 'How to: Add custom UI to a spreadsheet document (Open XML SDK)'
+title: 'How to: Add custom UI to a spreadsheet document'
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
 
-# Add custom UI to a spreadsheet document (Open XML SDK)
+# Add custom UI to a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to an Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an example **AddCustomUI** method to illustrate
 this task.

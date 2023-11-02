@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 119a7eb6-9a02-4914-b651-9ba090bf7994
-title: Working with sheets (Open XML SDK)
+title: Working with sheets
 ms.suite: office
 
 ms.author: o365devx
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Working with sheets (Open XML SDK)
+# Working with sheets
 
 This topic discusses the Open XML SDK [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx), [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx), and [DialogSheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.dialogsheet.aspx) classes and how they relate to
 the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
-SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 
 ## Sheets in SpreadsheetML
@@ -102,7 +102,7 @@ current value of the worksheet cell. If the value is a numeric value, it
 is stored directly in the \<**v**\> element in
 the XML file. If the value is a string value, it is stored in a shared
 string table. For more information about using the shared string table
-to store string values, see [Working with the shared string table (Open XML SDK)](working-with-the-shared-string-table.md).
+to store string values, see [Working with the shared string table](working-with-the-shared-string-table.md).
 
 The following table lists the common Open XML SDK classes used when
 working with the [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx) class.

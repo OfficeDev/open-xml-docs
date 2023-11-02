@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 124cb0a0-cc47-433f-bad0-06b793890650
-title: 'How to: Get worksheet information from an Open XML package (Open XML SDK)'
+title: 'How to: Get worksheet information from an Open XML package'
 ms.suite: office
 ms.author: o365devx
 author: o365devx
@@ -13,7 +13,7 @@ ms.date: 03/22/2022
 ms.localizationpriority: high
 ---
 
-# Get worksheet information from an Open XML package (Open XML SDK)
+# Get worksheet information from an Open XML package
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve information from a worksheet in a Spreadsheet document.
 

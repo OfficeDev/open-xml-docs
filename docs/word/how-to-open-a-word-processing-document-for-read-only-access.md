@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: c811c2c7-1066-45a5-a724-33d0fbfd5284
-title: 'How to: Open a word processing document for read-only access (Open XML SDK)'
+title: 'How to: Open a word processing document for read-only access'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Open a word processing document for read-only access (Open XML SDK)
+# Open a word processing document for read-only access
 
 This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a word processing document for read only

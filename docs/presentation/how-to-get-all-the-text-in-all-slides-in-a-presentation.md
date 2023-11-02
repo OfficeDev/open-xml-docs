@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: debad542-5915-45ad-a71c-eeb95b40ec1a
-title: 'How to: Get all the text in all slides in a presentation (Open XML SDK)'
+title: 'How to: Get all the text in all slides in a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Get all the text in all slides in a presentation (Open XML SDK)
+# Get all the text in all slides in a presentation
 
 This topic shows how to use the classes in the Open XML SDK to get
 all of the text in all of the slides in a presentation programmatically.

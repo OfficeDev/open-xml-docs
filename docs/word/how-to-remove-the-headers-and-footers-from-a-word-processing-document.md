@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 22f973f4-58d1-4dd4-943e-a15ac2571b7c
-title: 'How to: Remove the headers and footers from a word processing document (Open XML SDK)'
+title: 'How to: Remove the headers and footers from a word processing document'
 description: 'Learn how to remove the headers and footers from a word processing document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
-# Remove the headers and footers from a word processing document (Open XML SDK)
+# Remove the headers and footers from a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically remove all headers and footers in a word

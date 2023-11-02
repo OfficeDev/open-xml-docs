@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 6079a1ae-4567-4d99-b350-b819fd06fe5c
-title: 'How to: Insert a new slide into a presentation (Open XML SDK)'
+title: 'How to: Insert a new slide into a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Insert a new slide into a presentation (Open XML SDK)
+# Insert a new slide into a presentation
 
 This topic shows how to use the classes in the Open XML SDK to
 insert a new slide into a presentation programmatically.

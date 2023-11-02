@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 9d390cf8-1654-4a75-b3b8-4aba86ed1476
-title: 'How to: Insert a table into a word processing document (Open XML SDK)'
+title: 'How to: Insert a table into a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Insert a table into a word processing document (Open XML SDK)
+# Insert a table into a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically insert a table into a word processing

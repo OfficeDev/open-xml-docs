@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: how-to-set-a-custom-property-in-a-word-processing-document
-title: 'How to: Set a custom property in a word processing document (Open XML SDK)'
+title: 'How to: Set a custom property in a word processing document'
 description: 'Learn how to use the classes in the Open XML SDK for Office to programmatically set a custom property in a word processing document.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
-# Set a custom property in a word processing document (Open XML SDK)
+# Set a custom property in a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically set a custom property in a word processing document. It contains an example **SetCustomProperty** method to illustrate this task.
 

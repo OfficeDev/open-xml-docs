@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 5adddb6e-545e-4fba-ae35-cc4682e3eda7
-title: 'How to: Retrieve a list of the hidden rows or columns in a spreadsheet document (Open XML SDK)'
+title: 'How to: Retrieve a list of the hidden rows or columns in a spreadsheet document'
 description: 'Learn how to retrieve a list of the hidden rows or columns in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
-# Retrieve a list of the hidden rows or columns in a spreadsheet document (Open XML SDK)
+# Retrieve a list of the hidden rows or columns in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve a list of hidden rows or columns in a Microsoft Excel 2010 or Microsoft Excel 2013 worksheet, without
 loading the document into Excel. It contains an example **GetHiddenRowsOrCols** method to illustrate this task.

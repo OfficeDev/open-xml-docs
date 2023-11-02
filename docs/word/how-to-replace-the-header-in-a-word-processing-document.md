@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: d57e9b7d-b271-4c8d-998f-b7ca3eb6c850
-title: 'How to: Replace the header in a word processing document (Open XML SDK)'
+title: 'How to: Replace the header in a word processing document'
 description: 'Learn how to replace the header in a word processing document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
-# Replace the header in a word processing document (Open XML SDK)
+# Replace the header in a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to replace the header in word processing document

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 5ded6212-e8d4-4206-9025-cb5991bd2f80
-title: 'How to: Insert text into a cell in a spreadsheet document (Open XML SDK)'
+title: 'How to: Insert text into a cell in a spreadsheet document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Insert text into a cell in a spreadsheet document (Open XML SDK)
+# Insert text into a cell in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to insert text into a cell in a new worksheet in a spreadsheet

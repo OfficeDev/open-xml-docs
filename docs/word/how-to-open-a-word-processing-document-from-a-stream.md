@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 75cff172-b29d-475a-8eb5-d8e90642f015
-title: 'How to: Open a word processing document from a stream (Open XML SDK)'
+title: 'How to: Open a word processing document from a stream'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Open a word processing document from a stream (Open XML SDK)
+# Open a word processing document from a stream
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically open a Word processing document from a

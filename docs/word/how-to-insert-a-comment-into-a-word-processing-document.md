@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 474f0a6c-62c8-4f04-b3f9-cd613a6e48d0
-title: 'How to: Insert a comment into a word processing document (Open XML SDK)'
+title: 'How to: Insert a comment into a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Insert a comment into a word processing document (Open XML SDK)
+# Insert a comment into a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically add a comment to the first paragraph in a

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: e4e5a2e5-a97e-47b9-a263-6723bd4230a1
-title: 'How to: Set the font for a text run (Open XML SDK)'
+title: 'How to: Set the font for a text run'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Set the font for a text run (Open XML SDK)
+# Set the font for a text run
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to set the font for a portion of text within a word processing

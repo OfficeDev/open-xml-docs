@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 73747a65-0857-4fd4-8362-3613f4169203
-title: 'How to: Merge two adjacent cells in a spreadsheet document (Open XML SDK)'
+title: 'How to: Merge two adjacent cells in a spreadsheet document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Merge two adjacent cells in a spreadsheet document (Open XML SDK)
+# Merge two adjacent cells in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to merge two adjacent cells in a spreadsheet document

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: b3890e64-51d1-4643-8d07-2c9d8e060000
-title: 'How to: Remove a document part from a package (Open XML SDK)'
+title: 'How to: Remove a document part from a package'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Remove a document part from a package (Open XML SDK)
+# Remove a document part from a package
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to remove a document part (file) from a Wordprocessing document

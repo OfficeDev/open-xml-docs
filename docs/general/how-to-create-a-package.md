@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: fe261589-7b04-47df-8ee9-26b444e587b0
-title: 'How to: Create a package (Open XML SDK)'
+title: 'How to: Create a package'
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
 
-# Create a package (Open XML SDK)
+# Create a package
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create a word processing document package

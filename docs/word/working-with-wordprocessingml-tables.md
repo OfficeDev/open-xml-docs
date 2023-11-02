@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 7b72277f-3c5e-43ba-bbd8-7467cf532c95
-title: Working with WordprocessingML tables (Open XML SDK)
+title: Working with WordprocessingML tables
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Working with WordprocessingML tables (Open XML SDK)
+# Working with WordprocessingML tables
 
 This topic discusses the Open XML SDK [Table](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.table.aspx) class and how it relates to the Office Open XML File Formats WordprocessingML schema.
 
@@ -202,6 +202,6 @@ When this code is run, the following XML is written to the WordprocessingML docu
 ## See also
 
 - [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
-- [Structure of a WordprocessingML document (Open XML SDK)](structure-of-a-wordprocessingml-document.md)
-- [Working with paragraphs (Open XML SDK)](working-with-paragraphs.md)
-- [Working with runs (Open XML SDK)](working-with-runs.md)
+- [Structure of a WordprocessingML document](structure-of-a-wordprocessingml-document.md)
+- [Working with paragraphs](working-with-paragraphs.md)
+- [Working with runs](working-with-runs.md)

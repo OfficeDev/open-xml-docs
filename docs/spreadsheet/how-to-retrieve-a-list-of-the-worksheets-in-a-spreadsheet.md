@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: a0c1e144-2080-4470-bd4b-ed98f1399374
-title: 'How to: Retrieve a list of the worksheets in a spreadsheet document (Open XML SDK)'
+title: 'How to: Retrieve a list of the worksheets in a spreadsheet document'
 description: 'Learn how to retrieve a list of the worksheets in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
-# Retrieve a list of the worksheets in a spreadsheet document (Open XML SDK)
+# Retrieve a list of the worksheets in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve a list of the worksheets in a

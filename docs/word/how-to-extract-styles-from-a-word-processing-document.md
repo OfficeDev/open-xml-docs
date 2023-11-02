@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 20258c39-9411-41f2-8463-e94a4b0fa326
-title: 'How to: Extract styles from a word processing document (Open XML SDK)'
+title: 'How to: Extract styles from a word processing document'
 description: 'Learn how to extract styles from a word processing document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
-# Extract styles from a word processing document (Open XML SDK)
+# Extract styles from a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically extract the styles or stylesWithEffects part

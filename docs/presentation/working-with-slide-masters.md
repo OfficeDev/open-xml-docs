@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 7dfd78a3-e233-4abd-8c17-1e384780d3ec
-title: Working with slide masters (Open XML SDK)
+title: Working with slide masters
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
 
-# Working with slide masters (Open XML SDK)
+# Working with slide masters
 
 This topic discusses the Open XML SDK for Office **[SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the Open XML File Format PresentationML schema.
 
@@ -284,5 +284,5 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
-[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)
-[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  

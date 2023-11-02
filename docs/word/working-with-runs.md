@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 1fbc6d30-bfe4-4b2b-8fd8-0c5a400d1e03
-title: Working with runs (Open XML SDK)
+title: Working with runs
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Working with runs (Open XML SDK)
+# Working with runs
 
 This topic discusses the Open XML SDK **[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx)** class and how it relates to the Open
 XML File Format WordprocessingML schema.
@@ -144,8 +144,8 @@ WordprocessingML document specified in the preceding code.
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)  
 
-[Working with paragraphs (Open XML SDK)](working-with-paragraphs.md)  
+[Working with paragraphs](working-with-paragraphs.md)  
 
-[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)  
+[How to: Apply a style to a paragraph in a word processing document](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)  
 
-[How to: Open and add text to a word processing document (Open XML SDK)](how-to-open-and-add-text-to-a-word-processing-document.md)  
+[How to: Open and add text to a word processing document](how-to-open-and-add-text-to-a-word-processing-document.md)  

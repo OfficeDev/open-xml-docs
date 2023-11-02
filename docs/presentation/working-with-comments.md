@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: d7f0f1d3-bcf9-40b5-aaa4-4a08d862ac8e
-title: Working with comments (Open XML SDK)
+title: Working with comments
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Working with comments (Open XML SDK)
+# Working with comments
 
 This topic discusses the Open XML SDK for Office [Comment](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
 Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML
@@ -273,5 +273,5 @@ article.
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
-[How to: Add a comment to a slide in a presentation (Open XML SDK)](how-to-add-a-comment-to-a-slide-in-a-presentation.md)
-[How to: Delete all the comments by an author from all the slides in a presentation (Open XML SDK)](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md)  
+[How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md)
+[How to: Delete all the comments by an author from all the slides in a presentation](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md)  

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 3e9ca812-460e-442e-8257-38f523a53dc6
-title: 'How to: Retrieve application property values from a word processing document (Open XML SDK)'
+title: 'How to: Retrieve application property values from a word processing document'
 description: 'Learn how to retrieve application property values from a word processing document using the Open XML SDK.'
 ms.suite: office
 
@@ -16,7 +16,7 @@ ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
 
-# Retrieve application property values from a word processing document (Open XML SDK)
+# Retrieve application property values from a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve an application property from a Microsoft Word 2013 document, without loading the document into Word. It contains example code to illustrate this task.
 

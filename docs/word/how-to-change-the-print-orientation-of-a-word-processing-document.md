@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: bb5319c8-ee99-4862-937b-94dcae8deaca
-title: 'How to: Change the print orientation of a word processing document (Open XML SDK)'
+title: 'How to: Change the print orientation of a word processing document'
 description: 'Learn how to change the print orientation of a word processing document using the Open XML SDK.'
 ms.suite: office
 

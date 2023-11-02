@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: ef817bef-27cd-4c2a-acf3-b7bba17e6e1e
-title: 'How to: Move a paragraph from one presentation to another (Open XML SDK)'
+title: 'How to: Move a paragraph from one presentation to another'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Move a paragraph from one presentation to another (Open XML SDK)
+# Move a paragraph from one presentation to another
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to move a paragraph from one presentation to another presentation

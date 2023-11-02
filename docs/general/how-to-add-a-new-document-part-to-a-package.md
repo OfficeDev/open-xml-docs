@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: ec83a076-9d71-49d1-915f-e7090f74c13a
-title: 'How to: Add a new document part to a package (Open XML SDK)'
+title: 'How to: Add a new document part to a package'
 ms.suite: office
 ms.author: o365devx
 author: o365devx
@@ -13,7 +13,7 @@ ms.date: 03/22/2022
 ms.localizationpriority: medium
 ---
 
-# Add a new document part to a package (Open XML SDK)
+# Add a new document part to a package
 
 This topic shows how to use the classes in the Open XML SDK for Office to add a document part (file) to a word processing document programmatically.
 

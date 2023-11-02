@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: fb4b293c-9a23-44b7-8af6-afe5fac6611a
-title: Working with handout master slides (Open XML SDK)
+title: Working with handout master slides
 ms.suite: office
 
 ms.author: o365devx
@@ -14,9 +14,9 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Working with handout master slides (Open XML SDK)
+# Working with handout master slides
 
-This topic discusses the Open XML SDK for Office [HandoutMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md).
+This topic discusses the Open XML SDK for Office [HandoutMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document](structure-of-a-presentationml-document.md).
 
 ## Handout Master Slides in PresentationML
 The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<handoutMaster\>
@@ -277,8 +277,8 @@ the PresentationML document referenced in the code.
 ## See also
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
-[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)
-[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)
-[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)
-[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)
-[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)
+[How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)
+[How to: Retrieve the number of slides in a presentation document](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)

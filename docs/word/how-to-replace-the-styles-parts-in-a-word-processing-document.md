@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 67edb37c-cfec-461c-b616-5a8b7d074c91
-title: 'How to: Replace the styles parts in a word processing document (Open XML SDK)'
+title: 'How to: Replace the styles parts in a word processing document'
 description: 'Learn how to replace the styles parts in a word processing document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
-# Replace the styles parts in a word processing document (Open XML SDK)
+# Replace the styles parts in a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically replace the styles in a word processing

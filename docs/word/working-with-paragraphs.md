@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 8a9117f7-066e-409c-8681-a26610c0eede
-title: Working with paragraphs (Open XML SDK)
+title: Working with paragraphs
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Working with paragraphs (Open XML SDK)
+# Working with paragraphs
 
 This topic discusses the Open XML SDK [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) class and how it relates to the
 Open XML File Format WordprocessingML schema.
@@ -139,8 +139,8 @@ WordprocessingML document referenced in the code.
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)  
 
-[Working with runs (Open XML SDK)](working-with-runs.md)  
+[Working with runs](working-with-runs.md)  
 
-[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)  
+[How to: Apply a style to a paragraph in a word processing document](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)  
 
-[How to: Open and add text to a word processing document (Open XML SDK)](how-to-open-and-add-text-to-a-word-processing-document.md)  
+[How to: Open and add text to a word processing document](how-to-open-and-add-text-to-a-word-processing-document.md)  

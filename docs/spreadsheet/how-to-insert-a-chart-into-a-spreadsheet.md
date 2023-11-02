@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 281776d0-be75-46eb-8fdc-a1f656291175
-title: 'How to: Insert a chart into a spreadsheet document (Open XML SDK)'
+title: 'How to: Insert a chart into a spreadsheet document'
 ms.suite: office
 ms.author: o365devx
 author: o365devx
@@ -13,7 +13,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
 
-# Insert a chart into a spreadsheet document (Open XML SDK)
+# Insert a chart into a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for Office to insert a chart into a spreadsheet document programmatically.
 

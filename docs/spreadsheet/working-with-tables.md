@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 7b72277f-3c5e-43ba-bbd8-7467cf532c95
-title: Working with SpreadsheetML tables (Open XML SDK)
+title: Working with SpreadsheetML tables
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
 
-# Working with SpreadsheetML tables (Open XML SDK)
+# Working with SpreadsheetML tables
 
 This topic discusses the Open XML SDK **[Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
@@ -62,7 +62,7 @@ filtering, formatting and binding of data.
 Like other constructs in SpreadsheetML, a table in a worksheet is stored
 in a separate part inside the package. The table part does not contain
 any table data. The data is maintained in the worksheet cells. For more
-information about data is stored in the worksheet, see [Working with sheets (Open XML SDK)](working-with-sheets.md).
+information about data is stored in the worksheet, see [Working with sheets](working-with-sheets.md).
 
 The following table lists the common Open XML SDK classes used when working with the **Table** class.
 

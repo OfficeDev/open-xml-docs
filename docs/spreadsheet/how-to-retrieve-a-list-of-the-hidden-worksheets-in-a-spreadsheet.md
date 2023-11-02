@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: a6d35b76-d12a-460c-9d9d-2334abde759e
-title: 'How to: Retrieve a list of the hidden worksheets in a spreadsheet document (Open XML SDK)'
+title: 'How to: Retrieve a list of the hidden worksheets in a spreadsheet document'
 description: 'Learn how to retrieve a list of the hidden worksheets in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
 
-# Retrieve a list of the hidden worksheets in a spreadsheet document (Open XML SDK)
+# Retrieve a list of the hidden worksheets in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve a list of hidden worksheets in a Microsoft Excel 2010 or Microsoft Excel 2010 workbook, without loading the document into Excel. It contains an example **GetHiddenSheets** method to illustrate this task.
 

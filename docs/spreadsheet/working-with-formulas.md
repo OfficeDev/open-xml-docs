@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 17abd341-abe9-4eee-9bb3-27fded0b04d2
-title: Working with formulas (Open XML SDK)
+title: Working with formulas
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Working with formulas (Open XML SDK)
+# Working with formulas
 
 This topic discusses the Open XML SDK [CellFormula](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about

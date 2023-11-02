@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 360318b5-9d17-42a1-b707-c3ccd1a89c97
-title: 'How to: Open and add text to a word processing document (Open XML SDK)'
+title: 'How to: Open and add text to a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Open and add text to a word processing document (Open XML SDK)
+# Open and add text to a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically open and add text to a Word processing

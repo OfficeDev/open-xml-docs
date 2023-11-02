@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: b0d3d890-431a-4838-89dc-1f0dccd5dcd0
-title: 'How to: Get the contents of a document part from a package (Open XML SDK)'
+title: 'How to: Get the contents of a document part from a package'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Get the contents of a document part from a package (Open XML SDK)
+# Get the contents of a document part from a package
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to retrieve the contents of a document part in a Wordprocessing

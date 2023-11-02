@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: d6daf04e-3e45-4570-a184-8f0449c7ab91
-title: 'How to: Get all the external hyperlinks in a presentation (Open XML SDK)'
+title: 'How to: Get all the external hyperlinks in a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Get all the external hyperlinks in a presentation (Open XML SDK)
+# Get all the external hyperlinks in a presentation
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to get all the external hyperlinks in a presentation

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: c66a64ca-cb0d-4acc-9d05-535b5bbb8c96
-title: 'How to: Delete comments by all or a specific author in a word processing document (Open XML SDK)'
+title: 'How to: Delete comments by all or a specific author in a word processing document'
 description: 'Learn how to delete comments by all or a specific author in a word processing document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
-# Delete comments by all or a specific author in a word processing document (Open XML SDK)
+# Delete comments by all or a specific author in a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically delete comments by all or a specific author

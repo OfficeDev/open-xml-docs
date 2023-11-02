@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 98781b17-8de4-46e9-b29a-5b4033665491
-title: 'How to: Delete a slide from a presentation (Open XML SDK)'
+title: 'How to: Delete a slide from a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Delete a slide from a presentation (Open XML SDK)
+# Delete a slide from a presentation
 
 This topic shows how to use the Open XML SDK for Office to delete a
 slide from a presentation programmatically. It also shows how to delete

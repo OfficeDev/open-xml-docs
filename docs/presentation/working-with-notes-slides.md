@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 56d28bc5-c9ea-4c0e-b2f5-20be9c16d290
-title: Working with notes slides (Open XML SDK)
+title: Working with notes slides
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Working with notes slides (Open XML SDK)
+# Working with notes slides
 
 This topic discusses the Open XML SDK for Office [NotesSlide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
 Open XML File Format PresentationML schema.
@@ -279,8 +279,8 @@ the PresentationML document referenced in the code.
 
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  
 
-[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  
