@@ -38,36 +38,34 @@ static void SetPrintOrientation(string fileName, string no)
         {
             bool pageOrientationChanged = false;
 
-            PageSize pgSz = (sectPr.Descendants<PageSize>().FirstOrDefault()) ?? throw new ArgumentNullException("There are no PageSize elements in the section.");
-            if (pgSz != null)
+            PageSize pgSz = sectPr.Descendants<PageSize>().First();
+
+            // No Orient property? Create it now. Otherwise, just 
+            // set its value. Assume that the default orientation 
+            // is Portrait.
+            if (pgSz.Orient is null)
             {
-                // No Orient property? Create it now. Otherwise, just 
-                // set its value. Assume that the default orientation 
-                // is Portrait.
-                if (pgSz.Orient == null)
+                // Need to create the attribute. You do not need to 
+                // create the Orient property if the property does not 
+                // already exist, and you are setting it to Portrait. 
+                // That is the default value.
+                if (newOrientation != PageOrientationValues.Portrait)
                 {
-                    // Need to create the attribute. You do not need to 
-                    // create the Orient property if the property does not 
-                    // already exist, and you are setting it to Portrait. 
-                    // That is the default value.
-                    if (newOrientation != PageOrientationValues.Portrait)
-                    {
-                        pageOrientationChanged = true;
-                        documentChanged = true;
-                        pgSz.Orient =
-                            new EnumValue<PageOrientationValues>(newOrientation);
-                    }
+                    pageOrientationChanged = true;
+                    documentChanged = true;
+                    pgSz.Orient =
+                        new EnumValue<PageOrientationValues>(newOrientation);
                 }
-                else
+            }
+            else
+            {
+                // The Orient property exists, but its value
+                // is different than the new value.
+                if (pgSz.Orient.Value != newOrientation)
                 {
-                    // The Orient property exists, but its value
-                    // is different than the new value.
-                    if (pgSz.Orient.Value != newOrientation)
-                    {
-                        pgSz.Orient.Value = newOrientation;
-                        pageOrientationChanged = true;
-                        documentChanged = true;
-                    }
+                    pgSz.Orient.Value = newOrientation;
+                    pageOrientationChanged = true;
+                    documentChanged = true;
                 }
 
                 if (pageOrientationChanged)
@@ -81,7 +79,7 @@ static void SetPrintOrientation(string fileName, string no)
 
                     PageMargin pgMar = (sectPr.Descendants<PageMargin>().FirstOrDefault()) ?? throw new ArgumentNullException("There are no PageMargin elements in the section.");
 
-                    if (pgMar != null)
+                    if (pgMar is not null)
                     {
                         // Rotate margins. Printer settings control how far you 
                         // rotate when switching to landscape mode. Not having those
