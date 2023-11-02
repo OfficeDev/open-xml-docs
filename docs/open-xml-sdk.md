@@ -51,12 +51,9 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 
 ## Working with packages
 
-- [Packages](general/overview.md) 
-
-- [Presentations](presentation/overview.md)  
-
-- [Spreadsheets](spreadsheet/overview.md)  
-
+- [Packages](general/overview.md)
+- [Presentations](presentation/overview.md)
+- [Spreadsheets](spreadsheet/overview.md)
 - [Word processing](word/overview.md)
 
 ## See also
