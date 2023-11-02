@@ -24,4 +24,4 @@ Using the Open XML SDK, you can create document structure and content using stro
 | r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
 | t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
 
-For more information about the overall structure of the parts and elements of a WordprocessingML document, see [Structure of a WordprocessingML document (Open XML SDK)](../../structure-of-a-wordprocessingml-document.md).
+For more information about the overall structure of the parts and elements of a WordprocessingML document, see [Structure of a WordprocessingML document (Open XML SDK)](../../word/structure-of-a-wordprocessingml-document.md).

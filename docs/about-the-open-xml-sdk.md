@@ -27,7 +27,7 @@ The document parts in an Open XML package are created as XML markup. Because XML
 
 Structurally, an Open XML document is an Open Packaging Conventions (OPC) package. As stated previously, a package is composed of a collection of document parts. Each part has a part name that consists of a sequence of segments or a pathname such as "/word/theme/theme1.xml." The package contains a [Content\_Types].xml part that allows you to determine the content type of all document parts in the package. A set of explicit relationships for a source package or part is contained in a relationships part that ends with the .rels extension.
 
-Word processing documents are described by using WordprocessingML markup. For more information, see [Working with WordprocessingML documents (Open XML SDK)](working-with-wordprocessingml-documents.md). A WordprocessingML document is composed of a collection of stories where each story is one of the following:
+Word processing documents are described by using WordprocessingML markup. For more information, see [Working with WordprocessingML documents (Open XML SDK)](word/overview.md). A WordprocessingML document is composed of a collection of stories where each story is one of the following:
 
 - Main document (the only required story)
 - Glossary document
@@ -36,7 +36,7 @@ Word processing documents are described by using WordprocessingML markup. For mo
 - Text box
 - Footnote and endnote
 
-Presentations are described by using PresentationML markup. For more information, see [Working with PresentationML documents (Open XML SDK)](working-with-presentationml-documents.md). Presentation packages can contain the following document parts:
+Presentations are described by using PresentationML markup. For more information, see [Working with PresentationML documents (Open XML SDK)](presentation/overview.md). Presentation packages can contain the following document parts:
 
 - Slide master
 - Notes master
@@ -44,23 +44,13 @@ Presentations are described by using PresentationML markup. For more information
 - Slide layout
 - Notes
 
-Spreadsheet workbooks are described by using SpreadsheetML markup. For more information, see [Working with SpreadsheetML documents (Open XML SDK)](working-with-spreadsheetml-documents.md). Workbook packages can contain:
+Spreadsheet workbooks are described by using SpreadsheetML markup. For more information, see [Working with SpreadsheetML documents (Open XML SDK)](spreadsheet/overview.md). Workbook packages can contain:
 
 - Workbook part (required part)
 - One or more worksheets
 - Charts
 - Tables
 - Custom XML
-
-## Open XML SDK 1.0
-
-Version 1 of the Open XML SDK simplified the manipulation of Open XML packages. The Open XML SDK Application Programming Interface (API) encapsulates many of the common tasks that you typically perform on Open XML packages, so you can perform complex operations with just a few lines of code. Some common tasks:
-
-- **Search**  With a few lines of code, you can search a collection of Excel 2007 worksheets for some arbitrary data.
-- **Document assembly**  You can create documents by combining the document parts of existing documents programmatically. For example, you can pull slides from various PowerPoint 2007 presentations to create a single presentation.
-- **Validation**  With a few lines of code, you can validate the document parts in a package or validate an entire package against a schema.
-- **Data update**  With the Open XML object model, you can easily modify the data in multiple packages.
-- **Privacy**  With a few lines of code, you can remove comments and other personal information from a document before it is distributed.
 
 ## Open XML SDK for Microsoft Office
 
