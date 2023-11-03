@@ -20,20 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to retrieve the contents of a document part in a Wordprocessing
 document programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 --------------------------------------------------------------------------------
 ## Packages and Document Parts
@@ -194,38 +181,11 @@ following example.
 
 Following is the complete code example in both C\# and Visual Basic.
 
-```csharp
-    // To get the contents of a document part.
-    public static string GetCommentsFromDocument(string document)
-    {
-        string comments = null;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs)]
 
-        using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, false))
-        {
-            MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-            WordprocessingCommentsPart WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart;
-
-            using (StreamReader streamReader = new StreamReader(WordprocessingCommentsPart.GetStream()))
-            {
-                comments = streamReader.ReadToEnd();
-            }
-        }
-        return comments;
-    }
-```
-
-```vb
-    ' To get the contents of a document part.
-    Public Function GetCommentsFromDocument(ByVal document As String) As String
-        Dim comments As String = Nothing
-        Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, False)
-        Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-        Dim WordprocessingCommentsPart As WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart
-        Dim streamReader As StreamReader = New StreamReader(WordprocessingCommentsPart.GetStream)
-        comments = streamReader.ReadToEnd
-        Return comments
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/get_the_contents_of_a_part_from_a_package/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

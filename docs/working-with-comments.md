@@ -150,90 +150,11 @@ The **Comment** class, which represents the \<cm\> element, is therefore also as
 
 The following code segment from the article [How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md) adds a new comments part to an existing slide in a presentation (if the slide does not already contain comments) and creates an instance of an Open XML SDK **Comment** class in the slide comments part. It also adds a comment list to the comments part by creating an instance of the **CommentList** class, if one does not already exist; assigns an ID to the comment; and then adds a comment to the comment list by creating an instance of the **Comment** class, assigning the required attribute values. In addition, it creates instances of the **Position** and **Text** classes associated with the new **Comment** class instance. For the complete code sample, see the aforementioned article.
 
-```csharp
-       // Declare a comments part.
-            SlideCommentsPart commentsPart;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/presentation/working_with_comments/cs/Program.cs)]
 
-            // Verify that there is a comments part in the first slide part.
-            if (slidePart1.GetPartsOfType<SlideCommentsPart>().Count() == 0)
-            {
-                // If not, add a new comments part.
-                commentsPart = slidePart1.AddNewPart<SlideCommentsPart>();
-            }
-            else
-            {
-                // Else, use the first comments part in the slide part.
-                commentsPart = slidePart1.GetPartsOfType<SlideCommentsPart>().First();
-            }
-
-            // If the comment list does not exist.
-            if (commentsPart.CommentList == null)
-            {
-                // Add a new comments list.
-                commentsPart.CommentList = new CommentList();
-            }
-
-            // Get the new comment ID.
-            uint commentIdx = author.LastIndex == null ? 1 : author.LastIndex + 1;
-            author.LastIndex = commentIdx;
-
-            // Add a new comment.
-            Comment comment = commentsPart.CommentList.AppendChild<Comment>(
-                new Comment()
-                {
-                    AuthorId = authorId,
-                    Index = commentIdx,
-                    DateTime = DateTime.Now
-                });
-
-            // Add the position child node to the comment element.
-            comment.Append(
-                new Position() { X = 100, Y = 200 },
-                new Text() { Text = text });
-```
-
-```vb
-     ' Declare a comments part.
-          Dim commentsPart As SlideCommentsPart
-
-          ' Verify that there is a comments part in the first slide part.
-          If slidePart1.GetPartsOfType(Of SlideCommentsPart)().Count() = 0 Then
-
-             ' If not, add a new comments part.
-             commentsPart = slidePart1.AddNewPart(Of SlideCommentsPart)()
-          Else
-
-             ' Else, use the first comments part in the slide part.
-             commentsPart = _
-              slidePart1.GetPartsOfType(Of SlideCommentsPart)().First()
-          End If
-
-          ' If the comment list does not exist.
-          If (commentsPart.CommentList Is Nothing) Then
-
-             ' Add a new comments list.
-             commentsPart.CommentList = New CommentList()
-          End If
-
-          ' Get the new comment ID.
-          Dim commentIdx As UInteger
-          If author.LastIndex Is Nothing Then
-             commentIdx = 1
-          Else
-             commentIdx = CType(author.LastIndex, UInteger) + 1
-          End If
-
-          author.LastIndex = commentIdx
-
-          ' Add a new comment.
-          Dim comment As Comment = _
-           (commentsPart.CommentList.AppendChild(Of Comment)(New Comment() _
-             With {.AuthorId = authorId, .Index = commentIdx, .DateTime = DateTime.Now}))
-
-          ' Add the position child node to the comment element.
-          comment.Append(New Position() With _
-               {.X = 100, .Y = 200}, New Text() With {.Text = text})
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/presentation/working_with_comments/vb/Program.vb)]
 
 ## Generated PresentationML
 

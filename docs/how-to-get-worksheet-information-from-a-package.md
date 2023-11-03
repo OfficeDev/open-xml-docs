@@ -17,23 +17,7 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve information from a worksheet in a Spreadsheet document.
 
-The following assembly directives are required to compile the code in this topic.
 
-```csharp
-    using System;
-    using DocumentFormat.OpenXml.Packaging;
-    using S = DocumentFormat.OpenXml.Spreadsheet.Sheets;
-    using E = DocumentFormat.OpenXml.OpenXmlElement;
-    using A = DocumentFormat.OpenXml.OpenXmlAttribute;
-```
-
-```vb
-    Imports System
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports S = DocumentFormat.OpenXml.Spreadsheet.Sheets
-    Imports E = DocumentFormat.OpenXml.OpenXmlElement
-    Imports A = DocumentFormat.OpenXml.OpenXmlAttribute
-```
 
 ## Create SpreadsheetDocument object
 
@@ -105,41 +89,11 @@ In the following code example, you retrieve and display the attributes of the al
 
 The following is the complete code sample in both C\# and Visual Basic.
 
-```csharp
-    public static void GetSheetInfo(string fileName)
-    {
-        // Open file as read-only.
-        using (SpreadsheetDocument mySpreadsheet = SpreadsheetDocument.Open(fileName, false))
-        {
-            S sheets = mySpreadsheet.WorkbookPart.Workbook.Sheets;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/get_worksheetformation_from_a_package/cs/Program.cs)]
 
-            // For each sheet, display the sheet information.
-            foreach (E sheet in sheets)
-            {
-                foreach (A attr in sheet.GetAttributes())
-                {
-                    Console.WriteLine("{0}: {1}", attr.LocalName, attr.Value);
-                }
-            }
-        }
-    }
-```
-
-```vb
-    Public Sub GetSheetInfo(ByVal fileName As String)
-            ' Open file as read-only.
-            Using mySpreadsheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
-                Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
-
-                ' For each sheet, display the sheet information.
-                For Each sheet As E In sheets
-                    For Each attr As A In sheet.GetAttributes()
-                        Console.WriteLine("{0}: {1}", attr.LocalName, attr.Value)
-                    Next
-                Next
-            End Using
-        End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/get_worksheetformation_from_a_package/vb/Program.vb)]
 
 ## See also
 

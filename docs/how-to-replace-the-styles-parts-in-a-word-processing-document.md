@@ -24,29 +24,7 @@ contains an example **ReplaceStyles** method to illustrate this task, as
 well as the **ReplaceStylesPart** and **ExtractStylesPart** supporting
 methods.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using System.IO;
-    using System.Xml;
-    using System.Xml.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System.IO
-    Imports System.Xml
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 ---------------------------------------------------------------------------------
 

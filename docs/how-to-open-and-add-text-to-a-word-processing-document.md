@@ -20,18 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically open and add text to a Word processing
 document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 --------------------------------------------------------------------------------
 ## How to Open and Add Text to a Document
@@ -144,44 +133,11 @@ because the AutoSave feature is on by default and has not been disabled
 in the call to the **Open** method through use
 of **OpenSettings**.
 
-```csharp
-    public static void OpenAndAddTextToWordDocument(string filepath, string txt)
-    {   
-        // Open a WordprocessingDocument for editing using the filepath.
-        WordprocessingDocument wordprocessingDocument = 
-            WordprocessingDocument.Open(filepath, true);
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/word/open_and_add_text_to/cs/Program.cs)]
 
-        // Assign a reference to the existing document body.
-        Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
-        
-        // Add new text.
-        Paragraph para = body.AppendChild(new Paragraph());
-        Run run = para.AppendChild(new Run());
-        run.AppendChild(new Text(txt));
-        
-        // Close the handle explicitly.
-        wordprocessingDocument.Close();
-    }
-```
-
-```vb
-    Public Sub OpenAndAddTextToWordDocument(ByVal filepath As String, ByVal txt As String)
-        ' Open a WordprocessingDocument for editing using the filepath.
-        Dim wordprocessingDocument As WordprocessingDocument = _
-            wordprocessingDocument.Open(filepath, True)
-
-        ' Assign a reference to the existing document body. 
-        Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
-
-        ' Add new text.
-        Dim para As Paragraph = body.AppendChild(New Paragraph)
-        Dim run As Run = para.AppendChild(New Run)
-        run.AppendChild(New Text(txt))
-
-        ' Close the handle explicitly.
-        wordprocessingDocument.Close()
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/open_and_add_text_to/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

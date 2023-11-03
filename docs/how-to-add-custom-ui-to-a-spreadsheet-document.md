@@ -20,21 +20,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to an Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an example **AddCustomUI** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). Explicitly reference the following assemblies in your project:
 
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
-
-```csharp
-    using DocumentFormat.OpenXml.Office.CustomUI;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Office.CustomUI
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 ## Creating Custom UI
 

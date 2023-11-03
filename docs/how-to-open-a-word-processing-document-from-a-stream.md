@@ -20,20 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically open a Word processing document from a
 stream.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 ## When to Open a Document from a Stream
 
@@ -152,47 +139,11 @@ Word13.docx file in the Public Documents folder and adds text to it.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void OpenAndAddToWordprocessingStream(Stream stream, string txt)
-    {
-        // Open a WordProcessingDocument based on a stream.
-        WordprocessingDocument wordprocessingDocument = 
-            WordprocessingDocument.Open(stream, true);
-        
-        // Assign a reference to the existing document body.
-        Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/word/open_from_a_stream/cs/Program.cs)]
 
-        // Add new text.
-        Paragraph para = body.AppendChild(new Paragraph());
-        Run run = para.AppendChild(new Run());
-        run.AppendChild(new Text(txt));
-
-        // Close the document handle.
-        wordprocessingDocument.Close();
-        
-        // Caller must close the stream.
-    }
-```
-
-```vb
-    Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As String)
-        ' Open a WordProcessingDocument based on a stream.
-        Dim wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(stream, true)
-
-        ' Assign a reference to the existing document body.
-        Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
-
-        ' Add new text.
-        Dim para As Paragraph = body.AppendChild(New Paragraph)
-        Dim run As Run = para.AppendChild(New Run)
-        run.AppendChild(New Text(txt))
-
-        ' Close the document handle.
-        wordprocessingDocument.Close
-
-        ' Caller must close the stream.
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/open_from_a_stream/vb/Program.vb)]
 
 ## See also
 

@@ -19,20 +19,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create a spreadsheet document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
@@ -125,70 +112,11 @@ call to the **Create** method.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    public static void CreateSpreadsheetWorkbook(string filepath)
-    {
-        // Create a spreadsheet document by supplying the filepath.
-        // By default, AutoSave = true, Editable = true, and Type = xlsx.
-        SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.
-            Create(filepath, SpreadsheetDocumentType.Workbook);
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/create_by_providing_a_file_name/cs/Program.cs)]
 
-        // Add a WorkbookPart to the document.
-        WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();
-        workbookpart.Workbook = new Workbook();
-
-        // Add a WorksheetPart to the WorkbookPart.
-        WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();
-        worksheetPart.Worksheet = new Worksheet(new SheetData());
-
-        // Add Sheets to the Workbook.
-        Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.
-            AppendChild<Sheets>(new Sheets());
-
-        // Append a new worksheet and associate it with the workbook.
-        Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.
-            GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };
-        sheets.Append(sheet);
-
-        workbookpart.Workbook.Save();
-
-        // Close the document.
-        spreadsheetDocument.Close();
-    }
-```
-
-```vb
-    Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
-        ' Create a spreadsheet document by supplying the filepath.
-        ' By default, AutoSave = true, Editable = true, and Type = xlsx.
-        Dim spreadsheetDocument As SpreadsheetDocument = _
-    spreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook)
-
-        ' Add a WorkbookPart to the document.
-        Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart
-        workbookpart.Workbook = New Workbook
-
-        ' Add a WorksheetPart to the WorkbookPart.
-        Dim worksheetPart As WorksheetPart = workbookpart.AddNewPart(Of WorksheetPart)()
-        worksheetPart.Worksheet = New Worksheet(New SheetData())
-
-        ' Add Sheets to the Workbook.
-        Dim sheets As Sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())
-
-        ' Append a new worksheet and associate it with the workbook.
-        Dim sheet As Sheet = New Sheet
-        sheet.Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart)
-        sheet.SheetId = 1
-        sheet.Name = "mySheet"
-
-        sheets.Append(sheet)
-
-        workbookpart.Workbook.Save()
-
-        ' Close the document.
-        spreadsheetDocument.Close()
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/create_by_providing_a_file_name/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

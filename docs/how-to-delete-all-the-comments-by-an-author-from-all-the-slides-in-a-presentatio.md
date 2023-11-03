@@ -20,26 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to delete all of the comments by a specific author in a
 presentation programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Presentation;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System
-    Imports System.Linq
-    Imports System.Collections.Generic
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 ## Getting a PresentationDocument Object
 
@@ -261,105 +242,11 @@ the specified author from the presentation file, *myppt5.pptx*.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Remove all the comments in the slides by a certain author.
-    public static void DeleteCommentsByAuthorInPresentation(string fileName, string author)
-    {
-        if (String.IsNullOrEmpty(fileName) || String.IsNullOrEmpty(author))
-            throw new ArgumentNullException("File name or author name is NULL!");
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/presentation/delete_all_the_comments_by_an_author_from_all_the_slides_a_presentatio/cs/Program.cs)]
 
-        using (PresentationDocument doc = PresentationDocument.Open(fileName, true))
-        {
-            // Get the specified comment author.
-            IEnumerable<CommentAuthor> commentAuthors = 
-                doc.PresentationPart.CommentAuthorsPart.CommentAuthorList.Elements<CommentAuthor>()
-                .Where(e => e.Name.Value.Equals(author));
-
-            // Iterate through all the matching authors.
-            foreach (CommentAuthor commentAuthor in commentAuthors)
-            {
-                UInt32Value authorId = commentAuthor.Id;
-
-                // Iterate through all the slides and get the slide parts.
-                foreach (SlidePart slide in doc.PresentationPart.SlideParts)
-                {
-                    SlideCommentsPart slideCommentsPart = slide.SlideCommentsPart;
-                    // Get the list of comments.
-                    if (slideCommentsPart != null && slide.SlideCommentsPart.CommentList != null)
-                    {
-                        IEnumerable<Comment> commentList = 
-                            slideCommentsPart.CommentList.Elements<Comment>().Where(e => e.AuthorId == authorId.Value);
-                        List<Comment> comments = new List<Comment>();
-                        comments = commentList.ToList<Comment>();
-
-                        foreach (Comment comm in comments)
-                        {
-                            // Delete all the comments by the specified author.
-                            
-                            slideCommentsPart.CommentList.RemoveChild<Comment>(comm);
-                        }
-
-                        // If the commentPart has no existing comment.
-                        if (slideCommentsPart.CommentList.ChildElements.Count == 0)
-                            // Delete this part.
-                            slide.DeletePart(slideCommentsPart);
-                    }
-                }
-                // Delete the comment author from the comment authors part.
-                doc.PresentationPart.CommentAuthorsPart.CommentAuthorList.RemoveChild<CommentAuthor>(commentAuthor);
-            }
-        }
-    }
-```
-
-```vb
-    ' Remove all the comments in the slides by a certain author.
-    Public Sub DeleteCommentsByAuthorInPresentation(ByVal fileName As String, ByVal author As String)
-
-        Dim doc As PresentationDocument = PresentationDocument.Open(fileName, True)
-
-        If (String.IsNullOrEmpty(fileName) Or String.IsNullOrEmpty(author)) Then
-            Throw New ArgumentNullException("File name or author name is NULL!")
-        End If
-
-        Using (doc)
-
-            ' Get the specified comment author.
-            Dim commentAuthors = doc.PresentationPart.CommentAuthorsPart. _
-                CommentAuthorList.Elements(Of CommentAuthor)().Where(Function(e) _
-                   e.Name.Value.Equals(author))
-
-            ' Dim changed As Boolean = False
-            For Each commentAuthor In commentAuthors
-
-                Dim authorId = commentAuthor.Id
-
-                ' Iterate through all the slides and get the slide parts.
-                For Each slide In doc.PresentationPart.GetPartsOfType(Of SlidePart)()
-
-                    ' Get the slide comments part of each slide.
-                    For Each slideCommentsPart In slide.GetPartsOfType(Of SlideCommentsPart)()
-
-                        ' Delete all the comments by the specified author.
-                        Dim commentList = slideCommentsPart.CommentList.Elements(Of Comment)(). _
-                            Where(Function(e) e.AuthorId.Value.Equals(authorId.Value))
-
-                        Dim comments As List(Of Comment) = commentList.ToList()
-
-                        For Each comm As Comment In comments
-                            slideCommentsPart.CommentList.RemoveChild(Of Comment)(comm)
-                        Next
-                    Next
-                Next
-
-                ' Delete the comment author from the comment authors part.
-                doc.PresentationPart.CommentAuthorsPart.CommentAuthorList.RemoveChild(Of CommentAuthor)(commentAuthor)
-
-            Next
-
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/presentation/delete_all_the_comments_by_an_author_from_all_the_slides_a_presentatio/vb/Program.vb)]
 
 ## See also
 

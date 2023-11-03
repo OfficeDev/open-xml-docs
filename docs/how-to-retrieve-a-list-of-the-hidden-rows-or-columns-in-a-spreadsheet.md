@@ -20,28 +20,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve a list of hidden rows or columns in a Microsoft Excel 2010 or Microsoft Excel 2013 worksheet, without
 loading the document into Excel. It contains an example **GetHiddenRowsOrCols** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
-
-```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
 
 ---------------------------------------------------------------------------------
 

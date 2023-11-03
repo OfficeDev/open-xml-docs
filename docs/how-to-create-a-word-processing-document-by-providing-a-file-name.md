@@ -19,20 +19,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create a word processing document.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 --------------------------------------------------------------------------------
 ## Creating a WordprocessingDocument Object
@@ -144,44 +131,11 @@ parameter in the call to the **Create** method.
 
 Following is the complete code example in both C\# and Visual Basic.
 
-```csharp
-    public static void CreateWordprocessingDocument(string filepath)
-    {
-        // Create a document by supplying the filepath. 
-        using (WordprocessingDocument wordDocument =
-            WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document))
-        {
-            // Add a main document part. 
-            MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/word/create_by_providing_a_file_name/cs/Program.cs)]
 
-            // Create the document structure and add some text.
-            mainPart.Document = new Document();
-            Body body = mainPart.Document.AppendChild(new Body());
-            Paragraph para = body.AppendChild(new Paragraph());
-            Run run = para.AppendChild(new Run());
-            run.AppendChild(new Text("Create text in body - CreateWordprocessingDocument"));
-        }
-    }
-```
-
-```vb
-    Public Sub CreateWordprocessingDocument(ByVal filepath As String)
-        ' Create a document by supplying the filepath.
-        Using wordDocument As WordprocessingDocument = _
-            WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document)
-        
-            ' Add a main document part. 
-            Dim mainPart As MainDocumentPart = wordDocument.AddMainDocumentPart()
-
-            ' Create the document structure and add some text.
-            mainPart.Document = New Document()
-            Dim body As Body = mainPart.Document.AppendChild(New Body())
-            Dim para As Paragraph = body.AppendChild(New Paragraph())
-            Dim run As Run = para.AppendChild(New Run())
-            run.AppendChild(New Text("Create text in body - CreateWordprocessingDocument"))
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/create_by_providing_a_file_name/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

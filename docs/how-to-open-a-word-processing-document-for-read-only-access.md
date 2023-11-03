@@ -20,22 +20,7 @@ This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a word processing document for read only
 access.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using System.IO.Packaging;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports System.IO
-    Imports System.IO.Packaging
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 ---------------------------------------------------------------------------------
 ## When to Open a Document for Read-only Access 
@@ -234,91 +219,11 @@ Word12.docx file in the Public Documents folder for read-only access.
 
 The following is the complete sample code in C\# and VB.
 
-```csharp
-    public static void OpenWordprocessingDocumentReadonly(string filepath)
-    {
-        // Open a WordprocessingDocument based on a filepath.
-        using (WordprocessingDocument wordDocument =
-            WordprocessingDocument.Open(filepath, false))
-        {
-            // Assign a reference to the existing document body.  
-            Body body = wordDocument.MainDocumentPart.Document.Body;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/word/open_for_read_only_access/cs/Program.cs)]
 
-            // Attempt to add some text.
-            Paragraph para = body.AppendChild(new Paragraph());
-            Run run = para.AppendChild(new Run());
-            run.AppendChild(new Text("Append text in body, but text is not saved - OpenWordprocessingDocumentReadonly"));
-
-            // Call Save to generate an exception and show that access is read-only.
-            // wordDocument.MainDocumentPart.Document.Save();
-        }
-    }
-
-    public static void OpenWordprocessingPackageReadonly(string filepath)
-    {
-        // Open System.IO.Packaging.Package.
-        Package wordPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read);
-
-        // Open a WordprocessingDocument based on a package.
-        using (WordprocessingDocument wordDocument = 
-            WordprocessingDocument.Open(wordPackage))
-        {
-            // Assign a reference to the existing document body. 
-            Body body = wordDocument.MainDocumentPart.Document.Body;
-
-            // Attempt to add some text.
-            Paragraph para = body.AppendChild(new Paragraph());
-            Run run = para.AppendChild(new Run());
-            run.AppendChild(new Text("Append text in body, but text is not saved - OpenWordprocessingPackageReadonly"));
-
-            // Call Save to generate an exception and show that access is read-only.
-            // wordDocument.MainDocumentPart.Document.Save();
-        }
-
-        // Close the package.
-        wordPackage.Close();
-    }
-```
-
-```vb
-    Public Sub OpenWordprocessingDocumentReadonly(ByVal filepath As String)
-        ' Open a WordprocessingDocument based on a filepath.
-        Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, False)
-            ' Assign a reference to the existing document body. 
-            Dim body As Body = wordDocument.MainDocumentPart.Document.Body
-            
-            ' Attempt to add some text.
-            Dim para As Paragraph = body.AppendChild(New Paragraph())
-            Dim run As Run = para.AppendChild(New Run())
-            run.AppendChild(New Text("Append text in body, but text is not saved - OpenWordprocessingDocumentReadonly"))
-            
-            ' Call Save to generate an exception and show that access is read-only.
-            ' wordDocument.MainDocumentPart.Document.Save()
-        End Using
-    End Sub
-
-    Public Sub OpenWordprocessingPackageReadonly(ByVal filepath As String)
-        ' Open System.IO.Packaging.Package.
-        Dim wordPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
-        
-        ' Open a WordprocessingDocument based on a package.
-        Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(wordPackage)
-            ' Assign a reference to the existing document body. 
-            Dim body As Body = wordDocument.MainDocumentPart.Document.Body
-            
-            ' Attempt to add some text.
-            Dim para As Paragraph = body.AppendChild(New Paragraph())
-            Dim run As Run = para.AppendChild(New Run())
-            run.AppendChild(New Text("Append text in body, but text is not saved - OpenWordprocessingPackageReadonly"))
-            
-            ' Call Save to generate an exception and show that access is read-only.
-            ' wordDocument.MainDocumentPart.Document.Save()
-        End Using
-        
-        ' Close the package.
-        wordPackage.Close()
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/open_for_read_only_access/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

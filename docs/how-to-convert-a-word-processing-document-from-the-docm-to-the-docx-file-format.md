@@ -25,29 +25,7 @@ Word 2013 document that contains VBA code (and has a .docm extension) to
 a standard document (with a .docx extension). It contains an example
 **ConvertDOCMtoDOCX** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK]
-(https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (Installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml
-```
 
 ## ConvertDOCMtoDOCX Method
 

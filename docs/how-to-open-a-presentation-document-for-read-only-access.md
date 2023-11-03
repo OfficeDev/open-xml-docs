@@ -20,28 +20,7 @@ This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a presentation document for read-only
 access.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using System.Collections.Generic;
-    using DocumentFormat.OpenXml.Presentation;
-    using A = DocumentFormat.OpenXml.Drawing;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml;
-    using System.Text;
-```
-
-```vb
-    Imports System
-    Imports System.Collections.Generic
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports A = DocumentFormat.OpenXml.Drawing
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml
-    Imports System.Text
-```
 
 ## How to Open a File for Read-Only Access
 
@@ -254,58 +233,11 @@ the second slide in a presentation file named "Myppt13.pptx".
 
 The following is the complete code listing in C\# and Visual Basic.
 
-```csharp
-    public static void GetSlideIdAndText(out string sldText, string docName, int index)
-    {
-        using (PresentationDocument ppt = PresentationDocument.Open(docName, false))
-        {
-            // Get the relationship ID of the first slide.
-            PresentationPart part = ppt.PresentationPart;
-            OpenXmlElementList slideIds = part.Presentation.SlideIdList.ChildElements;
-            string relId = (slideIds[index] as SlideId).RelationshipId;
-            relId = (slideIds[index] as SlideId).RelationshipId;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/presentation/open_for_read_only_access/cs/Program.cs)]
 
-            // Get the slide part from the relationship ID.
-            SlidePart slide = (SlidePart)part.GetPartById(relId);
-
-            // Build a StringBuilder object.
-            StringBuilder paragraphText = new StringBuilder();
-
-            // Get the inner text of the slide:
-            IEnumerable<A.Text> texts = slide.Slide.Descendants<A.Text>();
-            foreach (A.Text text in texts)
-            {
-                paragraphText.Append(text.Text);
-            }
-            sldText = paragraphText.ToString();
-        }
-    }
-```
-
-```vb
-    Public Sub GetSlideIdAndText(ByRef sldText As String, ByVal docName As String, ByVal index As Integer)
-        Using ppt As PresentationDocument = PresentationDocument.Open(docName, False)
-            ' Get the relationship ID of the first slide.
-            Dim part As PresentationPart = ppt.PresentationPart
-            Dim slideIds As OpenXmlElementList = part.Presentation.SlideIdList.ChildElements
-            Dim relId As String = TryCast(slideIds(index), SlideId).RelationshipId
-            relId = TryCast(slideIds(index), SlideId).RelationshipId
-
-            ' Get the slide part from the relationship ID.
-            Dim slide As SlidePart = DirectCast(part.GetPartById(relId), SlidePart)
-
-            ' Build a StringBuilder object.
-            Dim paragraphText As New StringBuilder()
-
-            ' Get the inner text of the slide:
-            Dim texts As IEnumerable(Of A.Text) = slide.Slide.Descendants(Of A.Text)()
-            For Each text As A.Text In texts
-                paragraphText.Append(text.Text)
-            Next
-            sldText = paragraphText.ToString()
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/presentation/open_for_read_only_access/vb/Program.vb)]
 
 ## See also
 

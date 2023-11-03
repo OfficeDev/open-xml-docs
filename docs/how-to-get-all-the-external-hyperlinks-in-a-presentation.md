@@ -20,22 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to get all the external hyperlinks in a presentation
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using System.Collections.Generic;
-    using DocumentFormat.OpenXml.Packaging;
-    using Drawing = DocumentFormat.OpenXml.Drawing;
-```
-
-```vb
-    Imports System
-    Imports System.Collections.Generic 
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports Drawing = DocumentFormat.OpenXml.Drawing
-```
 
 --------------------------------------------------------------------------------
 ## Getting a PresentationDocument Object
@@ -200,81 +185,11 @@ get the list of URIs in your presentation.
     Next
 ```
 
-```csharp
-    // Returns all the external hyperlinks in the slides of a presentation.
-    public static IEnumerable<String> GetAllExternalHyperlinksInPresentation(string fileName)
-    {
-        // Declare a list of strings.
-        List<string> ret = new List<string>();
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/presentation/get_all_the_external_hyperlinks/cs/Program.cs)]
 
-        // Open the presentation file as read-only.
-        using (PresentationDocument document = PresentationDocument.Open(fileName, false))
-        {
-            // Iterate through all the slide parts in the presentation part.
-            foreach (SlidePart slidePart in document.PresentationPart.SlideParts)
-            {
-                IEnumerable<Drawing.HyperlinkType> links = slidePart.Slide.Descendants<Drawing.HyperlinkType>();
-
-                // Iterate through all the links in the slide part.
-                foreach (Drawing.HyperlinkType link in links)
-                {
-                    // Iterate through all the external relationships in the slide part. 
-                    foreach (HyperlinkRelationship relation in slidePart.HyperlinkRelationships)
-                    {
-                        // If the relationship ID matches the link ID…
-                        if (relation.Id.Equals(link.Id))
-                        {
-                            // Add the URI of the external relationship to the list of strings.
-                            ret.Add(relation.Uri.AbsoluteUri);
-                        }
-                    }
-                }
-            }
-        }
-
-        // Return the list of strings.
-        return ret;
-    }
-```
-
-```vb
-    ' Returns all the external hyperlinks in the slides of a presentation.
-    Public Function GetAllExternalHyperlinksInPresentation(ByVal fileName As String) As IEnumerable
-
-        ' Declare a list of strings.
-        Dim ret As List(Of String) = New List(Of String)
-
-        ' Open the presentation file as read-only.
-        Dim document As PresentationDocument = PresentationDocument.Open(fileName, False)
-
-        Using (document)
-
-            ' Iterate through all the slide parts in the presentation part.
-            For Each slidePart As SlidePart In document.PresentationPart.SlideParts
-                Dim links As IEnumerable = slidePart.Slide.Descendants(Of Drawing.HyperlinkType)()
-
-                ' Iterate through all the links in the slide part.
-                For Each link As Drawing.HyperlinkType In links
-
-                    ' Iterate through all the external relationships in the slide part.
-                    For Each relation As HyperlinkRelationship In slidePart.HyperlinkRelationships
-                        ' If the relationship ID matches the link ID…
-                        If relation.Id.Equals(link.Id) Then
-
-                            ' Add the URI of the external relationship to the list of strings.
-                            ret.Add(relation.Uri.AbsoluteUri)
-                        End If
-                    Next
-                Next
-            Next
-
-
-            ' Return the list of strings.
-            Return ret
-
-        End Using
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/presentation/get_all_the_external_hyperlinks/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

@@ -22,18 +22,7 @@ Office to copy the contents of an Open XML Wordprocessing document part
 to a document part in a different word-processing document
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 --------------------------------------------------------------------------------
 ## Packages and Document Parts
@@ -204,41 +193,11 @@ the copied theme from the file "MyPkg4.docx."
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // To copy contents of one package part.
-    public static void CopyThemeContent(string fromDocument1, string toDocument2)
-    {
-       using (WordprocessingDocument wordDoc1 = WordprocessingDocument.Open(fromDocument1, false))
-       using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(toDocument2, true))
-       {
-          ThemePart themePart1 = wordDoc1.MainDocumentPart.ThemePart;
-          ThemePart themePart2 = wordDoc2.MainDocumentPart.ThemePart;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/spreadsheet/copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif/cs/Program.cs)]
 
-           using (StreamReader streamReader = new StreamReader(themePart1.GetStream()))
-           using (StreamWriter streamWriter = new StreamWriter(themePart2.GetStream(FileMode.Create))) 
-          {
-             streamWriter.Write( streamReader.ReadToEnd() );
-          }
-       }
-    }
-```
-
-```vb
-    ' To copy contents of one package part.
-    Public Sub CopyThemeContent(ByVal fromDocument1 As String, ByVal toDocument2 As String)
-       Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)
-       Dim wordDoc2 As WordprocessingDocument = WordprocessingDocument.Open(toDocument2, True)
-       Using (wordDoc2)
-          Dim themePart1 As ThemePart = wordDoc1.MainDocumentPart.ThemePart
-          Dim themePart2 As ThemePart = wordDoc2.MainDocumentPart.ThemePart
-          Dim streamReader As StreamReader = New StreamReader(themePart1.GetStream())
-          Dim streamWriter As StreamWriter = New StreamWriter(themePart2.GetStream(FileMode.Create))
-          Using (streamWriter)
-             streamWriter.Write(streamReader.ReadToEnd)
-          End Using
-       End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/spreadsheet/copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

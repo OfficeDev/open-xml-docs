@@ -18,25 +18,7 @@ ms.localizationpriority: medium
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve a list of hidden worksheets in a Microsoft Excel 2010 or Microsoft Excel 2010 workbook, without loading the document into Excel. It contains an example **GetHiddenSheets** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
-
-```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Spreadsheet
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 ## GetHiddenSheets method
 

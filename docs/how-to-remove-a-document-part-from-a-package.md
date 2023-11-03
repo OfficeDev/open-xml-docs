@@ -20,18 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to remove a document part (file) from a Wordprocessing document
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 --------------------------------------------------------------------------------
 ## Packages and Document Parts
@@ -159,31 +148,11 @@ this example.
 
 Following is the complete code example in both C\# and Visual Basic.
 
-```csharp
-    // To remove a document part from a package.
-    public static void RemovePart(string document)
-    {
-      using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
-      {
-         MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-         if (mainPart.DocumentSettingsPart != null)
-         {
-            mainPart.DeletePart(mainPart.DocumentSettingsPart);
-         }
-      }
-    }
-```
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/word/remove_a_part_from_a_package/cs/Program.cs)]
 
-```vb
-    ' To remove a document part from a package.
-    Public Sub RemovePart(ByVal document As String)
-       Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, true)
-       Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-       If (Not (mainPart.DocumentSettingsPart) Is Nothing) Then
-          mainPart.DeletePart(mainPart.DocumentSettingsPart)
-       End If
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/remove_a_part_from_a_package/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

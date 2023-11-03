@@ -17,17 +17,7 @@ ms.localizationpriority: medium
 
 This topic shows how to use the classes in the Open XML SDK for Office to add a document part (file) to a word processing document programmatically.
 
-The following assembly directives are required to compile the code in this topic.
 
-```csharp
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 ## Packages and document parts
 
@@ -104,38 +94,11 @@ The following code adds a new document part that contains custom XML from an ext
 
 Following is the complete code example in both C\# and Visual Basic.
 
-```csharp
-    // To add a new document part to a package.
-    public static void AddNewPart(string document, string fileName)
-    {
-        using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
-        {
-            MainDocumentPart mainPart = wordDoc.MainDocumentPart;
+### [CSharp](#tab/cs)
+[!code-csharp[](../samples/word/add_a_new_part_to_a_package/cs/Program.cs)]
 
-            CustomXmlPart myXmlPart = mainPart.AddCustomXmlPart(CustomXmlPartType.CustomXml);
-
-            using (FileStream stream = new FileStream(fileName, FileMode.Open))
-            {
-                myXmlPart.FeedData(stream);
-            }
-        }
-    }
-```
-
-```vb
-    ' To add a new document part to a package.
-    Public Sub AddNewPart(ByVal document As String, ByVal fileName As String)
-        Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
-            Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-            
-            Dim myXmlPart As CustomXmlPart = mainPart.AddCustomXmlPart(CustomXmlPartType.CustomXml)
-            
-            Using stream As New FileStream(fileName, FileMode.Open)
-                myXmlPart.FeedData(stream)
-            End Using
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../samples/word/add_a_new_part_to_a_package/vb/Program.vb)]
 
 ## See also
 

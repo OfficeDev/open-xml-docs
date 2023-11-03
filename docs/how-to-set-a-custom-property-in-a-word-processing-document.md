@@ -19,29 +19,7 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically set a custom property in a word processing document. It contains an example **SetCustomProperty** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
-
-```csharp
-    using System;
-    using System.IO;
-    using System.Linq;
-    using DocumentFormat.OpenXml.CustomProperties;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.VariantTypes;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.CustomProperties
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.VariantTypes
-```
 
 The sample code also includes an enumeration that defines the possible types of custom properties. The **SetCustomProperty** method requires that you supply one of these values when you call the method.
 
