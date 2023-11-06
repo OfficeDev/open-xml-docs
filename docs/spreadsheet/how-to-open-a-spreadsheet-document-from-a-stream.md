@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 7fde676b-81b6-4210-82bf-f74d0d925dec
-title: 'How to: Open a spreadsheet document from a stream (Open XML SDK)'
+title: 'How to: Open a spreadsheet document from a stream'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Open a spreadsheet document from a stream (Open XML SDK)
+# Open a spreadsheet document from a stream
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to open a spreadsheet document from a stream programmatically.

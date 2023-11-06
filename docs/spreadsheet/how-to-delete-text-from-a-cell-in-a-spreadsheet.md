@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 4b395c48-b469-4d69-b229-d4bad3f3dd8b
-title: 'How to: Delete text from a cell in a spreadsheet document (Open XML SDK)'
+title: 'How to: Delete text from a cell in a spreadsheet document'
 ms.suite: office
 
 ms.author: o365devx
@@ -13,7 +13,7 @@ ms.topic: conceptual
 ms.date: 03/22/2022
 ms.localizationpriority: high
 ---
-# Delete text from a cell in a spreadsheet document (Open XML SDK)
+# Delete text from a cell in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to delete text from a cell in a spreadsheet document

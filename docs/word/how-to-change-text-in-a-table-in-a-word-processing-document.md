@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 69f7c94e-2b8c-4bec-be8c-31933e2ee042
-title: 'How to: Change text in a table in a word processing document (Open XML SDK)'
+title: 'How to: Change text in a table in a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
 
-# Change text in a table in a word processing document (Open XML SDK)
+# Change text in a table in a word processing document
 
 This topic shows how to use the Open XML SDK for Office to programmatically change text in a table in an existing word processing document.
 

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: b6f5afca-5feb-4003-b803-55dd2f9bf6d2
-title: Working with conditional formatting (Open XML SDK)
+title: Working with conditional formatting
 ms.suite: office
 
 ms.author: o365devx
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Working with conditional formatting (Open XML SDK)
+# Working with conditional formatting
 
 This topic discusses the Open XML SDK **[ConditionalFormatting](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
-make up a SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)**.
+make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)**.
 
 
 ---------------------------------------------------------------------------------

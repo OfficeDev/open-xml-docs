@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: e3adae2b-c7e8-45f4-b1fc-93d937f4b3b1
-title: 'How to: Change the fill color of a shape in a presentation (Open XML SDK)'
+title: 'How to: Change the fill color of a shape in a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
 
-# Change the fill color of a shape in a presentation (Open XML SDK)
+# Change the fill color of a shape in a presentation
 
 This topic shows how to use the classes in the Open XML SDK to
 change the fill color of a shape on the first slide in a presentation

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 70839c86-36ef-4b67-a682-abd5114b2bfe
-title: 'How to: Retrieve comments from a word processing document (Open XML SDK)'
+title: 'How to: Retrieve comments from a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Retrieve comments from a word processing document (Open XML SDK)
+# Retrieve comments from a word processing document
 
 This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically retrieve the comments from the main document

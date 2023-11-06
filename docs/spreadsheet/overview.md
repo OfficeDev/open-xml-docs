@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 7808dcc4-8f50-42c4-bad1-d69fe5f045fe
-title: Spreadsheets (Open XML SDK)
+title: Spreadsheets
 ms.suite: office
 
 ms.author: o365devx
@@ -15,27 +15,27 @@ ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
 
-# Spreadsheets (Open XML SDK)
+# Spreadsheets
 
 This section provides how-to topics for working with spreadsheet documents using the Open XML SDK for Office.
 
 ## In this section
 
-- [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)  
+- [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)  
 
-- [Working with the calculation chain (Open XML SDK)](working-with-the-calculation-chain.md)  
+- [Working with the calculation chain](working-with-the-calculation-chain.md)  
 
-- [Working with conditional formatting (Open XML SDK)](working-with-conditional-formatting.md)  
+- [Working with conditional formatting](working-with-conditional-formatting.md)  
 
-- [Working with formulas (Open XML SDK)](working-with-formulas.md)  
+- [Working with formulas](working-with-formulas.md)  
 
-- [Working with PivotTables (Open XML SDK)](working-with-pivottables.md)  
+- [Working with PivotTables](working-with-pivottables.md)  
 
-- [Working with the shared string table (Open XML SDK)](working-with-the-shared-string-table.md)  
+- [Working with the shared string table](working-with-the-shared-string-table.md)  
 
-- [Working with sheets (Open XML SDK)](working-with-sheets.md)  
+- [Working with sheets](working-with-sheets.md)  
 
-- [Working with SpreadsheetML tables (Open XML SDK)](working-with-tables.md)  
+- [Working with SpreadsheetML tables](working-with-tables.md)  
 
 - [Calculate the sum of a range of cells in a spreadsheet document](how-to-calculate-the-sum-of-a-range-of-cells-in-a-spreadsheet-document.md)  
 

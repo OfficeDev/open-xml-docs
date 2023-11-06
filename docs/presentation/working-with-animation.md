@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: d4ef73a6-888a-4476-9e21-4df76782127f
-title: Working with animation (Open XML SDK)
+title: Working with animation
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
 
-# Working with animation (Open XML SDK)
+# Working with animation
 
 This topic discusses the Open XML SDK for Office **Animate** class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
@@ -140,6 +140,6 @@ The **Animate** class, which represents the \<anim\> element, is therefore also 
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
-[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)
-[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)
-[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  

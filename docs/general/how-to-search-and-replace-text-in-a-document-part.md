@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: cbb4547e-45fa-48ee-872e-8727beec6dfa
-title: 'How to: Search and replace text in a document part (Open XML SDK)'
+title: 'How to: Search and replace text in a document part'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Search and replace text in a document part (Open XML SDK)
+# Search and replace text in a document part
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically search and replace a text value in a word

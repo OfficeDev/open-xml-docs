@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: cfb75725-f3a7-43c0-85f4-7bb4c3f448ca
-title: 'How to: Replace the theme part in a word processing document (Open XML SDK)'
+title: 'How to: Replace the theme part in a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Replace the theme part in a word processing document (Open XML SDK)
+# Replace the theme part in a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically replace a document part in a word processing

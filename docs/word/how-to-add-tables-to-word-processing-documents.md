@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 65c377d2-1763-4bb6-8915-bc6839ccf62d
-title: 'How to: Add tables to word processing documents (Open XML SDK)'
+title: 'How to: Add tables to word processing documents'
 description: 'Learn how to add tables to word processing documents using the Open XML SDK.'
 ms.suite: office
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
 
-# Add tables to word processing documents (Open XML SDK)
+# Add tables to word processing documents
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add a table to a word processing document. It contains an example **AddTable** method to illustrate this task.
 

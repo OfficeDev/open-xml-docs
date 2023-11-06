@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 03ac59c4-49a6-4721-8931-d045c4c9ddde
-title: 'How to: Create a spreadsheet document by providing a file name (Open XML SDK)'
+title: 'How to: Create a spreadsheet document by providing a file name'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Create a spreadsheet document by providing a file name (Open XML SDK)
+# Create a spreadsheet document by providing a file name
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create a spreadsheet document.

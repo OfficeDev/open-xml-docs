@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 36664cc7-30ef-4e9b-b569-846a9e404219
-title: Working with the shared string table (Open XML SDK)
+title: Working with the shared string table
 ms.suite: office
 
 ms.author: o365devx
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Working with the shared string table (Open XML SDK)
+# Working with the shared string table
 
 This topic discusses the Open XML SDK [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
-SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 
 --------------------------------------------------------------------------------
@@ -206,7 +206,7 @@ specified text exists in the shared string table. If the text does not
 exist, it is added as a shared string item to the shared string table.
 
 For more information about how to use the **SharedStringTable** class to programmatically
-insert text into a cell, see [How to: Insert text into a cell in a spreadsheet document (Open XML SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.md).
+insert text into a cell, see [How to: Insert text into a cell in a spreadsheet document](how-to-insert-text-into-a-cell-in-a-spreadsheet.md).
 
 ```csharp
     // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
@@ -268,7 +268,7 @@ insert text into a cell, see [How to: Insert text into a cell in a spreadsheet d
 ```
 ### Generated SpreadsheetML
 
-If you run the Open XML SDK in the [How to: Insert text into a cell in a spreadsheet document (Open XML SDK)](how-to-insert-text-into-a-cell-in-a-spreadsheet.md) topic and insert
+If you run the Open XML SDK in the [How to: Insert text into a cell in a spreadsheet document](how-to-insert-text-into-a-cell-in-a-spreadsheet.md) topic and insert
 the word "hello" into cell A1, the following XML is written to the
 "sharedStrings.xml" file in the .zip file of the SpreadsheetML document
 referenced in the code.

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 96697c37-3fa7-4814-85b6-657439435ce1
-title: Working with PivotTables (Open XML SDK)
+title: Working with PivotTables
 ms.suite: office
 
 ms.author: o365devx
@@ -15,9 +15,9 @@ ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
 
-# Working with PivotTables (Open XML SDK)
+# Working with PivotTables
 
-This topic discusses the Open XML SDK **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+This topic discusses the Open XML SDK **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 ## PivotTable in SpreadsheetML
 

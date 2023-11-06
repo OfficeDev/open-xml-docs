@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: b6f429a7-4489-4155-b713-2139f3add8c2
-title: 'How to: Retrieve the number of slides in a presentation document (Open XML SDK)'
+title: 'How to: Retrieve the number of slides in a presentation document'
 description: 'Learn how to retrieve the number of slides in a presentation document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
-# Retrieve the number of slides in a presentation document (Open XML SDK)
+# Retrieve the number of slides in a presentation document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve the number of slides in a

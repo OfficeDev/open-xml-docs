@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 403abe97-7ab2-40ba-92c0-d6312a6d10c8
-title: 'How to: Add a comment to a slide in a presentation (Open XML SDK)'
+title: 'How to: Add a comment to a slide in a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
 
-# Add a comment to a slide in a presentation (Open XML SDK)
+# Add a comment to a slide in a presentation
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to add a comment to the first slide in a presentation

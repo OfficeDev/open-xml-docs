@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 95fd9dcd-41e9-4e83-9191-2f3110ae73d5
-title: 'How to: Move a slide to a new position in a presentation (Open XML SDK)'
+title: 'How to: Move a slide to a new position in a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Move a slide to a new position in a presentation (Open XML SDK)
+# Move a slide to a new position in a presentation
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to move a slide to a new position in a presentation

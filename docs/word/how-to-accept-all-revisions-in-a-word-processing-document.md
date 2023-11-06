@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: b3406fcc-f10b-4075-a18f-116400f35faf
-title: 'How to: Accept all revisions in a word processing document (Open XML SDK)'
+title: 'How to: Accept all revisions in a word processing document'
 description: 'Learn how to accept all revisions in a word processing document using the Open XML SDK.'
 ms.suite: office
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.date: 06/30/2021
 ms.localizationpriority: high
 ---
 
-# Accept all revisions in a word processing document (Open XML SDK)
+# Accept all revisions in a word processing document
 
 This topic shows how to use the Open XML SDK for Office to accept all revisions in a word processing document programmatically.
 

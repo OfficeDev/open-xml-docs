@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 56ba8cee-d789-4a03-b8ff-b161af0788ff
-title: 'How to: Get a column heading in a spreadsheet document (Open XML SDK)'
+title: 'How to: Get a column heading in a spreadsheet document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Get a column heading in a spreadsheet document (Open XML SDK)
+# Get a column heading in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to retrieve a column heading in a spreadsheet document

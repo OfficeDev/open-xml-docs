@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: dd42a9a3-5c16-4cab-ad6d-506cf822ec7a
-title: Introduction to markup compatibility (Open XML SDK)
+title: Introduction to markup compatibility
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
 
-# Introduction to markup compatibility (Open XML SDK)
+# Introduction to markup compatibility
 
 This topic introduces the markup compatibility features included in the Open XML SDK for Office.
 

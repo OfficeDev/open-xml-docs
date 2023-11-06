@@ -4,7 +4,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 15e26fbd-fc23-466a-a7cc-b7584ba8f821
-title: 'How to: Retrieve the values of cells in a spreadsheet document (Open XML SDK)'
+title: 'How to: Retrieve the values of cells in a spreadsheet document'
 description: 'Learn how to retrieve the values of cells in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
 
-# Retrieve the values of cells in a spreadsheet document (Open XML SDK)
+# Retrieve the values of cells in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve the values of cells in a spreadsheet

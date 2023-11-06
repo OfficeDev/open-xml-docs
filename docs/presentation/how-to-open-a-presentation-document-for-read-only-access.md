@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 8dc8a6ac-aa9e-47cc-b45e-e128fcec3c57
-title: 'How to: Open a presentation document for read-only access (Open XML SDK)'
+title: 'How to: Open a presentation document for read-only access'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Open a presentation document for read-only access (Open XML SDK)
+# Open a presentation document for read-only access
 
 This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a presentation document for read-only

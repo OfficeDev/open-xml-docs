@@ -515,5 +515,5 @@ The following is the complete **CreateAndAddCharacterStyle** code sample in both
 
 ## See also
 
-[How to: Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
+[How to: Apply a style to a paragraph in a word processing document](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
 [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

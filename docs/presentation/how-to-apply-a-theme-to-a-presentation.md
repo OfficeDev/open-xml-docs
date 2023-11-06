@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: d7575014-8187-4e55-bafa-15bc317bf8c8
-title: 'How to: Apply a theme to a presentation (Open XML SDK)'
+title: 'How to: Apply a theme to a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
 
-# Apply a theme to a presentation (Open XML SDK)
+# Apply a theme to a presentation
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to apply the theme from one presentation to another presentation

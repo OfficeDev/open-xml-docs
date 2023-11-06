@@ -27,7 +27,7 @@ The document parts in an Open XML package are created as XML markup. Because XML
 
 Structurally, an Open XML document is an Open Packaging Conventions (OPC) package. As stated previously, a package is composed of a collection of document parts. Each part has a part name that consists of a sequence of segments or a pathname such as "/word/theme/theme1.xml." The package contains a [Content\_Types].xml part that allows you to determine the content type of all document parts in the package. A set of explicit relationships for a source package or part is contained in a relationships part that ends with the .rels extension.
 
-Word processing documents are described by using WordprocessingML markup. For more information, see [Working with WordprocessingML documents (Open XML SDK)](word/overview.md). A WordprocessingML document is composed of a collection of stories where each story is one of the following:
+Word processing documents are described by using WordprocessingML markup. For more information, see [Working with WordprocessingML documents](word/overview.md). A WordprocessingML document is composed of a collection of stories where each story is one of the following:
 
 - Main document (the only required story)
 - Glossary document
@@ -36,7 +36,7 @@ Word processing documents are described by using WordprocessingML markup. For mo
 - Text box
 - Footnote and endnote
 
-Presentations are described by using PresentationML markup. For more information, see [Working with PresentationML documents (Open XML SDK)](presentation/overview.md). Presentation packages can contain the following document parts:
+Presentations are described by using PresentationML markup. For more information, see [Working with PresentationML documents](presentation/overview.md). Presentation packages can contain the following document parts:
 
 - Slide master
 - Notes master
@@ -44,7 +44,7 @@ Presentations are described by using PresentationML markup. For more information
 - Slide layout
 - Notes
 
-Spreadsheet workbooks are described by using SpreadsheetML markup. For more information, see [Working with SpreadsheetML documents (Open XML SDK)](spreadsheet/overview.md). Workbook packages can contain:
+Spreadsheet workbooks are described by using SpreadsheetML markup. For more information, see [Working with SpreadsheetML documents](spreadsheet/overview.md). Workbook packages can contain:
 
 - Workbook part (required part)
 - One or more worksheets

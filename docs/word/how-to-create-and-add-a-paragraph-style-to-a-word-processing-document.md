@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 73cbca2d-3603-45a5-8a73-c2e718376b01
-title: 'How to: Create and add a paragraph style to a word processing document (Open XML SDK)'
+title: 'How to: Create and add a paragraph style to a word processing document'
 description: 'Learn how to create and add a paragraph style to a word processing document using hte Open XML SDK.'
 ms.suite: office
 
@@ -571,5 +571,5 @@ C\# and Visual Basic.
 
 ## See also
 
-- [Apply a style to a paragraph in a word processing document (Open XML SDK)](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
+- [Apply a style to a paragraph in a word processing document](how-to-apply-a-style-to-a-paragraph-in-a-word-processing-document.md)
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

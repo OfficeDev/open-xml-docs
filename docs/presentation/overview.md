@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 0a81a7fb-c431-4f53-a199-e72eea91f360
-title: Presentations (Open XML SDK)
+title: Presentations
 ms.suite: office
 
 ms.author: o365devx
@@ -14,13 +14,13 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Presentations (Open XML SDK)
+# Presentations
 
 This section provides how-to topics for working with presentation documents using the Open XML SDK.
 
 ## In this section
 
-- [Structure of a PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md)  
+- [Structure of a PresentationML document](structure-of-a-presentationml-document.md)  
  
 - [Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md)  
 
@@ -52,21 +52,21 @@ This section provides how-to topics for working with presentation documents usin
 
 - [Retrieve the number of slides in a presentation document](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
 
-- [Working with animation (Open XML SDK)](working-with-animation.md)  
+- [Working with animation](working-with-animation.md)  
 
-- [Working with comments (Open XML SDK)](working-with-comments.md)  
+- [Working with comments](working-with-comments.md)  
 
-- [Working with handout master slides (Open XML SDK)](working-with-handout-master-slides.md)  
+- [Working with handout master slides](working-with-handout-master-slides.md)  
 
-- [Working with notes slides (Open XML SDK)](working-with-notes-slides.md)  
+- [Working with notes slides](working-with-notes-slides.md)  
 
-- [Working with presentations (Open XML SDK)](working-with-presentations.md)  
+- [Working with presentations](working-with-presentations.md)  
 
-- [Working with presentation slides (Open XML SDK)](working-with-presentation-slides.md)  
+- [Working with presentation slides](working-with-presentation-slides.md)  
 
-- [Working with slide layouts (Open XML SDK)](working-with-slide-layouts.md)  
+- [Working with slide layouts](working-with-slide-layouts.md)  
 
-- [Working with slide masters (Open XML SDK)](working-with-slide-masters.md)  
+- [Working with slide masters](working-with-slide-masters.md)  
 
 
 ## Related sections 

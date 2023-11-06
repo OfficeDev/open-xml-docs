@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: edbe267a-ced9-43fd-a702-fd0165cb3438
-title: Packages and general (Open XML SDK)
+title: Packages and general
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Packages and general (Open XML SDK)
+# Packages and general
 
 This section provides how-to topics for working with documents and packages using the Open XML SDK.
 

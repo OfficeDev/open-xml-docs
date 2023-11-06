@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 944036fa-9251-408f-86cb-2351a5f8cd48
-title: 'How to: Insert a new worksheet into a spreadsheet document (Open XML SDK)'
+title: 'How to: Insert a new worksheet into a spreadsheet document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Insert a new worksheet into a spreadsheet document (Open XML SDK)
+# Insert a new worksheet into a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to insert a new worksheet into a spreadsheet document

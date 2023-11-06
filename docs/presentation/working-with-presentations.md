@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 82deb499-7479-474d-9d89-c4847e6f3649
-title: Working with presentations (Open XML SDK)
+title: Working with presentations
 ms.suite: office
 
 ms.author: o365devx
@@ -14,13 +14,13 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Working with presentations (Open XML SDK)
+# Working with presentations
 
 This topic discusses the Open XML SDK for Office [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a
-PresentationML document (Open XML SDK)](structure-of-a-presentationml-document.md).
+PresentationML document](structure-of-a-presentationml-document.md).
 
 
 ---------------------------------------------------------------------------------
@@ -325,7 +325,7 @@ code example, are the **SlideMasterIdList**,
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following code example from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
+The following code example from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
 method of the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class of the Open XML
 SDK to create an instance of that same class that has the specified
 name and file path. Then it uses the [AddPresentationPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx) method to add an
@@ -432,12 +432,12 @@ PresentationML document referenced in the code.
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)  
 
-[How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
+[How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  
 
-[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
+[How to: Retrieve the number of slides in a presentation document](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
 
-[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  

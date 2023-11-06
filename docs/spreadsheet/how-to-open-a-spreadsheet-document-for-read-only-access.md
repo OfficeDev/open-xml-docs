@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 625bf571-5630-47f8-953f-e9e1a93e3229
-title: 'How to: Open a spreadsheet document for read-only access (Open XML SDK)'
+title: 'How to: Open a spreadsheet document for read-only access'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Open a spreadsheet document for read-only access (Open XML SDK)
+# Open a spreadsheet document for read-only access
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to open a spreadsheet document for read-only access

@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 80cdc1e8-d023-4886-b8d6-ee26327df739
-title: 'How to: Convert a word processing document from the DOCM to the DOCX file format (Open XML SDK)'
+title: 'How to: Convert a word processing document from the DOCM to the DOCX file format'
 description: 'Learn how to convert a word processing document from the DOCM to the DOCX file format using the Open XML SDK.'
 
 ms.suite: office

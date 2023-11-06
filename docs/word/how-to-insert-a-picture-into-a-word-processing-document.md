@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: ae8c98d9-dd11-4b75-804c-165095d60ffd
-title: 'How to: Insert a picture into a word processing document (Open XML SDK)'
+title: 'How to: Insert a picture into a word processing document'
 description: 'Learn how to insert a picture into a word processing document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
-# Insert a picture into a word processing document (Open XML SDK)
+# Insert a picture into a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add a picture to a word processing document.
 

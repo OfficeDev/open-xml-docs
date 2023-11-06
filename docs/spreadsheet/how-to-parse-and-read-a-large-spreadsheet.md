@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: dd28d239-42be-42a9-893e-b65338fe184e
-title: 'How to: Parse and read a large spreadsheet document (Open XML SDK)'
+title: 'How to: Parse and read a large spreadsheet document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Parse and read a large spreadsheet document (Open XML SDK)
+# Parse and read a large spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically read a large Excel file. For more information
-about the basic structure of a **SpreadsheetML** document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+about the basic structure of a **SpreadsheetML** document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 [!include[Add-ins note](../includes/addinsnote.md)]
 
@@ -193,7 +193,7 @@ The following is the complete code sample in both C\# and Visual Basic.
 ## See also 
 
 
-[Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md)  
+[Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)  
 
 
 

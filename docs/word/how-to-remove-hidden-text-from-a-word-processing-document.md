@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: e5e9c6ba-b422-4639-bb8c-6da521307f13
-title: 'How to: Remove hidden text from a word processing document (Open XML SDK)'
+title: 'How to: Remove hidden text from a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
-# Remove hidden text from a word processing document (Open XML SDK)
+# Remove hidden text from a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically remove hidden text from a word processing

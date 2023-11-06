@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 03636fa2-be44-4e8d-9c26-7d38415bb459
-title: Structure of a WordprocessingML document (Open XML SDK)
+title: Structure of a WordprocessingML document
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Structure of a WordprocessingML document (Open XML SDK)
+# Structure of a WordprocessingML document
 
 This topic discusses the basic structure of a **WordprocessingML** document and reviews important
 Open XML SDK classes that are used most often to create **WordprocessingML** documents.

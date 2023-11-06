@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: a20bf30b-204e-4c57-8ca3-badf4b0b3e03
-title: 'How to: Validate a word processing document (Open XML SDK)'
+title: 'How to: Validate a word processing document'
 ms.suite: office
 
 ms.author: o365devx
@@ -14,7 +14,7 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Validate a word processing document (Open XML SDK)
+# Validate a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically validate a word processing document.

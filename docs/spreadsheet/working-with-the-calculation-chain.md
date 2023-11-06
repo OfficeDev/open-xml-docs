@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: ffdf5bd3-53f5-4f48-8946-11a0287fb107
-title: Working with the calculation chain (Open XML SDK)
+title: Working with the calculation chain
 ms.suite: office
 
 ms.author: o365devx
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
-# Working with the calculation chain (Open XML SDK)
+# Working with the calculation chain
 
 This topic discusses the Open XML SDK [CalculationChain](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.calculationchain.aspx) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
-SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 
 ## CalculationChain in SpreadsheetML

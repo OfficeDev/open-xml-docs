@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 1ec087c3-8b9e-46a9-9c3c-14586908eb0e
-title: Working with slide layouts (Open XML SDK)
+title: Working with slide layouts
 ms.suite: office
 
 ms.author: o365devx
@@ -15,7 +15,7 @@ ms.date: 11/01/2017
 ms.localizationpriority: medium
 ---
 
-# Working with slide layouts (Open XML SDK)
+# Working with slide layouts
 
 This topic discusses the Open XML SDK for Office [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the Open XML File Format PresentationML schema.
 
@@ -166,7 +166,7 @@ the **CommonSlideData** class, the **ColorMapOverride** class, the [ShapeTree](h
 
 ## Open XML SDK Code Example
 
-The following method from the article [How to: Create a presentation document by providing a file name (Open XML SDK)](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an Open XML SDK**SlideLayout** class in the new slide layout part. The **SlideLayout** class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn creates additional class instances: an instance of the [NonVisualGroupShapeProperties (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+The following method from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an Open XML SDK**SlideLayout** class in the new slide layout part. The **SlideLayout** class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn creates additional class instances: an instance of the [NonVisualGroupShapeProperties (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
 The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx) namespace.
 
@@ -267,4 +267,4 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
-[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  

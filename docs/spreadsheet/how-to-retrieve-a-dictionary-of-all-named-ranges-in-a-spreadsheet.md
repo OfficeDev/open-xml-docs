@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 0aa2aef3-b329-4ccc-8f25-9660c083e14e
-title: 'How to: Retrieve a dictionary of all named ranges in a spreadsheet document (Open XML SDK)'
+title: 'How to: Retrieve a dictionary of all named ranges in a spreadsheet document'
 description: 'Learn how to retrieve a dictionary of all named ranges in a spreadsheet document using the Open XML SDK.'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 06/28/2021
 ms.localizationpriority: medium
 ---
-# Retrieve a dictionary of all named ranges in a spreadsheet document (Open XML SDK)
+# Retrieve a dictionary of all named ranges in a spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve a dictionary that contains the names

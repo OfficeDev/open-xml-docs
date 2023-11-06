@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 3d4a800e-64f0-4715-919f-a8f7d92a5c37
-title: 'How to: Create a presentation document by providing a file name (Open XML SDK)'
+title: 'How to: Create a presentation document by providing a file name'
 description: 'Learn how to create a presentation document by providing a file name using the Open XML SDK.'
 ms.suite: office
 
@@ -16,7 +16,7 @@ ms.date: 06/28/2021
 ms.localizationpriority: high
 ---
 
-# Create a presentation document by providing a file name (Open XML SDK)
+# Create a presentation document by providing a file name
 
 This topic shows how to use the classes in the Open XML SDK to
 create a presentation document programmatically.
@@ -166,12 +166,12 @@ presentation, given a file path.
 
 [Structure of a PresentationML Document](structure-of-a-presentationml-document.md)  
 
-[How to: Insert a new slide into a presentation (Open XML SDK)](how-to-insert-a-new-slide-into-a-presentation.md)  
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)  
 
-[How to: Delete a slide from a presentation (Open XML SDK)](how-to-delete-a-slide-from-a-presentation.md)  
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  
 
-[How to: Retrieve the number of slides in a presentation document (Open XML SDK)](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
+[How to: Retrieve the number of slides in a presentation document](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
 
-[How to: Apply a theme to a presentation (Open XML SDK)](how-to-apply-a-theme-to-a-presentation.md)  
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
