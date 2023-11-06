@@ -1,23 +1,30 @@
 
-    using System;
-    using System.IO;
-    using DocumentFormat.OpenXml.Packaging;
+using System;
+using System.IO;
+using DocumentFormat.OpenXml.Packaging;
 
+GetCommentsFromDocument(args[0]);
 
-    // To get the contents of a document part.
-    public static string GetCommentsFromDocument(string document)
+// To get the contents of a document part.
+static string GetCommentsFromDocument(string document)
+{
+    string? comments = null;
+
+    using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, false))
     {
-        string comments = null;
-
-        using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, false))
+        if (wordDoc is null)
         {
-            MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-            WordprocessingCommentsPart WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart;
-
-            using (StreamReader streamReader = new StreamReader(WordprocessingCommentsPart.GetStream()))
-            {
-                comments = streamReader.ReadToEnd();
-            }
+            throw new ArgumentNullException(nameof(wordDoc));
         }
-        return comments;
+
+        MainDocumentPart mainPart = wordDoc.MainDocumentPart ?? wordDoc.AddMainDocumentPart();
+        WordprocessingCommentsPart WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart ?? mainPart.AddNewPart<WordprocessingCommentsPart>();
+
+        using (StreamReader streamReader = new StreamReader(WordprocessingCommentsPart.GetStream()))
+        {
+            comments = streamReader.ReadToEnd();
+        }
     }
+
+    return comments;
+}
