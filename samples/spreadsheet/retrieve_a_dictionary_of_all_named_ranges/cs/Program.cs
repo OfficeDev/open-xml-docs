@@ -1,9 +1,9 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
+
+GetDefinedNames(args[0]);
 
 static Dictionary<String, String>
     GetDefinedNames(String fileName)
@@ -20,14 +20,25 @@ static Dictionary<String, String>
         var wbPart = document.WorkbookPart;
 
         // Retrieve a reference to the defined names collection.
-        DefinedNames definedNames = wbPart.Workbook.DefinedNames;
+        DefinedNames? definedNames = wbPart?.Workbook?.DefinedNames;
 
         // If there are defined names, add them to the dictionary.
-        if (definedNames != null)
+        if (definedNames is not null)
         {
             foreach (DefinedName dn in definedNames)
-                returnValue.Add(dn.Name.Value, dn.Text);
+            {
+                if (dn?.Name?.Value is not null && dn?.Text is not null)
+                {
+                    returnValue.Add(dn.Name.Value, dn.Text);
+                }
+            }
         }
     }
+
+    foreach (var pair in returnValue)
+    {
+        Console.WriteLine("{0}  {1}", pair.Key, pair.Value);
+    }
+
     return returnValue;
 }

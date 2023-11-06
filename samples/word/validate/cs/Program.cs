@@ -1,9 +1,9 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Validation;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
+
+ValidateCorruptedWordDocument(args[0]);
 
 static void ValidateWordDocument(string filepath)
 {
@@ -21,8 +21,14 @@ static void ValidateWordDocument(string filepath)
                 Console.WriteLine("Description: " + error.Description);
                 Console.WriteLine("ErrorType: " + error.ErrorType);
                 Console.WriteLine("Node: " + error.Node);
-                Console.WriteLine("Path: " + error.Path.XPath);
-                Console.WriteLine("Part: " + error.Part.Uri);
+                if (error.Path is not null)
+                {
+                    Console.WriteLine("Path: " + error.Path.XPath);
+                }
+                if (error.Part is not null)
+                {
+                    Console.WriteLine("Part: " + error.Part.Uri);
+                }
                 Console.WriteLine("-------------------------------------------");
             }
 
@@ -44,6 +50,12 @@ static void ValidateCorruptedWordDocument(string filepath)
     using (WordprocessingDocument wordprocessingDocument =
     WordprocessingDocument.Open(filepath, true))
     {
+
+        if (wordprocessingDocument.MainDocumentPart is null || wordprocessingDocument.MainDocumentPart.Document.Body is null)
+        {
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
+        }
+
         // Insert some text into the body, this would cause Schema Error
         Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
         Run run = new Run(new Text("some text"));
@@ -61,8 +73,14 @@ static void ValidateCorruptedWordDocument(string filepath)
                 Console.WriteLine("Description: " + error.Description);
                 Console.WriteLine("ErrorType: " + error.ErrorType);
                 Console.WriteLine("Node: " + error.Node);
-                Console.WriteLine("Path: " + error.Path.XPath);
-                Console.WriteLine("Part: " + error.Part.Uri);
+                if (error.Path is not null)
+                {
+                    Console.WriteLine("Path: " + error.Path.XPath);
+                }
+                if (error.Part is not null)
+                {
+                    Console.WriteLine("Part: " + error.Part.Uri);
+                }
                 Console.WriteLine("-------------------------------------------");
             }
 

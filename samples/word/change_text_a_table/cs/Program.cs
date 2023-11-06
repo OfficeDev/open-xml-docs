@@ -1,20 +1,24 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Linq;
 
+ChangeTextInCell(args[0], args[1]);
+
 // Change the text in a table in a word processing document.
-static void ChangeTextInCell(string filepath, string txt)
+static void ChangeTextInCell(string filePath, string txt)
 {
     // Use the file name and path passed in as an argument to 
     // open an existing document.            
-    using (WordprocessingDocument doc =
-        WordprocessingDocument.Open(filepath, true))
+    using (WordprocessingDocument doc = WordprocessingDocument.Open(filePath, true))
     {
+        if (doc.MainDocumentPart is null || doc.MainDocumentPart.Document.Body is null)
+        {
+            throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
+        }
+
         // Find the first table in the document.
-        Table table =
-            doc.MainDocumentPart.Document.Body.Elements<Table>().First();
+        Table table = doc.MainDocumentPart.Document.Body.Elements<Table>().First();
 
         // Find the second row in the table.
         TableRow row = table.Elements<TableRow>().ElementAt(1);

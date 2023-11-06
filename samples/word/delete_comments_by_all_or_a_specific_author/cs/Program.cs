@@ -1,19 +1,24 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
+DeleteComments(args[0], args[1]);
+
 // Delete comments by a specific author. Pass an empty string for the 
 // author to delete all comments, by all authors.
-static void DeleteComments(string fileName,
-    string author = "")
+static void DeleteComments(string fileName, string author = "")
 {
     // Get an existing Wordprocessing document.
     using (WordprocessingDocument document = WordprocessingDocument.Open(fileName, true))
     {
+
+        if (document.MainDocumentPart is null || document.MainDocumentPart.WordprocessingCommentsPart is null)
+        {
+            throw new ArgumentNullException("MainDocumentPart and/or WordprocessingCommentsPart is null.");
+        }
+
         // Set commentPart to the document WordprocessingCommentsPart, 
         // if it exists.
         WordprocessingCommentsPart commentPart =
@@ -35,8 +40,8 @@ static void DeleteComments(string fileName,
             commentsToDelete = commentsToDelete.
             Where(c => c.Author == author).ToList();
         }
-        IEnumerable<string> commentIds =
-            commentsToDelete.Select(r => r.Id.Value);
+        IEnumerable<string?> commentIds =
+            commentsToDelete.Where(r => r.Id is not null && r.Id.HasValue).Select(r => r.Id?.Value);
 
         // Delete each comment in commentToDelete from the 
         // Comments collection.
@@ -54,7 +59,7 @@ static void DeleteComments(string fileName,
         // deleted comment in the main document.
         List<CommentRangeStart> commentRangeStartToDelete =
             doc.Descendants<CommentRangeStart>().
-            Where(c => commentIds.Contains(c.Id.Value)).ToList();
+            Where(c => c.Id is not null && c.Id.HasValue && commentIds.Contains(c.Id.Value)).ToList();
         foreach (CommentRangeStart c in commentRangeStartToDelete)
         {
             c.Remove();
@@ -63,7 +68,7 @@ static void DeleteComments(string fileName,
         // Delete CommentRangeEnd for each deleted comment in the main document.
         List<CommentRangeEnd> commentRangeEndToDelete =
             doc.Descendants<CommentRangeEnd>().
-            Where(c => commentIds.Contains(c.Id.Value)).ToList();
+            Where(c => c.Id is not null && c.Id.HasValue && commentIds.Contains(c.Id.Value)).ToList();
         foreach (CommentRangeEnd c in commentRangeEndToDelete)
         {
             c.Remove();
@@ -72,7 +77,7 @@ static void DeleteComments(string fileName,
         // Delete CommentReference for each deleted comment in the main document.
         List<CommentReference> commentRangeReferenceToDelete =
             doc.Descendants<CommentReference>().
-            Where(c => commentIds.Contains(c.Id.Value)).ToList();
+            Where(c => c.Id is not null && c.Id.HasValue && commentIds.Contains(c.Id.Value)).ToList();
         foreach (CommentReference c in commentRangeReferenceToDelete)
         {
             c.Remove();

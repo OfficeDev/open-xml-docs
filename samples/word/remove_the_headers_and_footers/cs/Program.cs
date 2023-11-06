@@ -1,8 +1,9 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Linq;
+
+RemoveHeadersAndFooters(args[0]);
 
 // Remove all of the headers and footers from a document.
 static void RemoveHeadersAndFooters(string filename)
@@ -11,6 +12,11 @@ static void RemoveHeadersAndFooters(string filename)
     // from the document.
     using (WordprocessingDocument doc = WordprocessingDocument.Open(filename, true))
     {
+        if (doc.MainDocumentPart is null)
+        {
+            throw new ArgumentNullException("MainDocumentPart is null.");
+        }
+
         // Get a reference to the main document part.
         var docPart = doc.MainDocumentPart;
 

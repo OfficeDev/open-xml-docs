@@ -1,5 +1,3 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.CustomProperties;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.VariantTypes;
@@ -17,10 +15,13 @@ static string SetCustomProperty(
     // add a custom property to a document. The method returns the original
     // value, if it existed.
 
-    string returnValue = null;
+    string? returnValue = string.Empty;
 
     var newProp = new CustomDocumentProperty();
     bool propSet = false;
+
+
+    string? propertyValueString = propertyValue.ToString() ?? throw new System.ArgumentNullException("propertyValue can't be converted to a string.");
 
     // Calculate the correct type.
     switch (propertyType)
@@ -44,7 +45,7 @@ static string SetCustomProperty(
         case PropertyTypes.NumberInteger:
             if ((propertyValue) is int)
             {
-                newProp.VTInt32 = new VTInt32(propertyValue.ToString());
+                newProp.VTInt32 = new VTInt32(propertyValueString);
                 propSet = true;
             }
 
@@ -53,14 +54,14 @@ static string SetCustomProperty(
         case PropertyTypes.NumberDouble:
             if (propertyValue is double)
             {
-                newProp.VTFloat = new VTFloat(propertyValue.ToString());
+                newProp.VTFloat = new VTFloat(propertyValueString);
                 propSet = true;
             }
 
             break;
 
         case PropertyTypes.Text:
-            newProp.VTLPWSTR = new VTLPWSTR(propertyValue.ToString());
+            newProp.VTLPWSTR = new VTLPWSTR(propertyValueString);
             propSet = true;
 
             break;
@@ -91,32 +92,32 @@ static string SetCustomProperty(
     using (var document = WordprocessingDocument.Open(fileName, true))
     {
         var customProps = document.CustomFilePropertiesPart;
-        if (customProps == null)
+        if (customProps is null)
         {
             // No custom properties? Add the part, and the
             // collection of properties now.
             customProps = document.AddCustomFilePropertiesPart();
-            customProps.Properties =
-                new DocumentFormat.OpenXml.CustomProperties.Properties();
+            customProps.Properties = new Properties();
         }
 
         var props = customProps.Properties;
-        if (props != null)
+        if (props is not null)
         {
             // This will trigger an exception if the property's Name 
             // property is null, but if that happens, the property is damaged, 
             // and probably should raise an exception.
-            var prop =
-                props.Where(
-                p => ((CustomDocumentProperty)p).Name.Value
-                    == propertyName).FirstOrDefault();
+            var prop = props.FirstOrDefault(p => ((CustomDocumentProperty)p).Name!.Value == propertyName);
 
             // Does the property exist? If so, get the return value, 
             // and then delete the property.
-            if (prop != null)
+            if (prop is not null)
             {
                 returnValue = prop.InnerText;
                 prop.Remove();
+            }
+            else
+            {
+                throw new System.ArgumentException("propertyName property was not found or damaged.");
             }
 
             // Append the new property, and 

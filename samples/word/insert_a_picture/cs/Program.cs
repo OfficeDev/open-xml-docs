@@ -1,18 +1,23 @@
-#nullable disable
-
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.IO;
 using A = DocumentFormat.OpenXml.Drawing;
 using DW = DocumentFormat.OpenXml.Drawing.Wordprocessing;
 using PIC = DocumentFormat.OpenXml.Drawing.Pictures;
 
+InsertAPicture(args[0], args[1]);
+
 static void InsertAPicture(string document, string fileName)
 {
-    using (WordprocessingDocument wordprocessingDocument =
-        WordprocessingDocument.Open(document, true))
+    using (WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(document, true))
     {
+        if (wordprocessingDocument.MainDocumentPart is null)
+        {
+            throw new ArgumentNullException("MainDocumentPart is null.");
+        }
+
         MainDocumentPart mainPart = wordprocessingDocument.MainDocumentPart;
 
         ImagePart imagePart = mainPart.AddImagePart(ImagePartType.Jpeg);
@@ -91,6 +96,11 @@ static void AddImageToBody(WordprocessingDocument wordDoc, string relationshipId
                  DistanceFromRight = (UInt32Value)0U,
                  EditId = "50D07946"
              });
+
+    if (wordDoc.MainDocumentPart is null || wordDoc.MainDocumentPart.Document.Body is null)
+    {
+        throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
+    }
 
     // Append the reference to body, the element should be in a Run.
     wordDoc.MainDocumentPart.Document.Body.AppendChild(new Paragraph(new Run(element)));
