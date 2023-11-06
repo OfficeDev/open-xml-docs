@@ -21,7 +21,7 @@ The Open XML SDK simplifies the task of manipulating Open XML packages and the u
 
 ## Available packages
 
-The SDK is available as a collection of NuGet packages that support .NET 3.5+, .NET Standard 2.0, .NET 6+, and [other supported platforms](https://learn.microsoft.com/dotnet/standard/net-standard) for those targets. For information about installing packages, please see [the NuGet documentation](https://learn.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio). The following are the available packages:
+The SDK is available as a collection of NuGet packages that support .NET 3.5+, .NET Standard 2.0, .NET 6+, and [other supported platforms](/dotnet/standard/net-standard) for those targets. For information about installing packages, please see [the NuGet documentation](/nuget/quickstart/install-and-use-a-package-in-visual-studio). The following are the available packages:
 
 - [`DocumentFormat.OpenXml.Framework`](https://www.nuget.org/packages/DocumentFormat.OpenXml.Framework): This package contains the foundational framework that enables the SDK. This is a new package starting with v3.0 and contains many types that previously were included in `DocumentFormat.OpenXml`.
 - [`DocumentFormat.OpenXml`](https://www.nuget.org/packages/DocumentFormat.OpenXml): This package contains all of the strongly typed classes for parts and elements.
