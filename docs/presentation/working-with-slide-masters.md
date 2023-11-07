@@ -7,7 +7,6 @@ api_type:
 ms.assetid: 7dfd78a3-e233-4abd-8c17-1e384780d3ec
 title: Working with slide masters
 ms.suite: office
-
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual

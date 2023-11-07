@@ -176,7 +176,7 @@ the instance, as shown in the following code example.
     Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties)().First()
 ```
 
-## Add the atyles part
+## Add the Styles part
 
 With the paragraph found and the paragraph properties element present,
 now ensure that the prerequisites are in place for applying the style.

@@ -271,7 +271,7 @@ The code then iterates through each key in the **Dictionary** class. For each ke
     Layout layout = plotArea.AppendChild<Layout>(new Layout());
     BarChart barChart = plotArea.AppendChild<BarChart>(new BarChart(new BarDirection() 
         { Val = new EnumValue<BarDirectionValues>(BarDirectionValues.Column) },
-        new BarGrouping() { Val = new EnumValue<BarGroupingValues> BarGroupingValues.Clustered) }));
+        new BarGrouping() { Val = new EnumValue<BarGroupingValues> (BarGroupingValues.Clustered) }));
 
     uint i = 0;
 
