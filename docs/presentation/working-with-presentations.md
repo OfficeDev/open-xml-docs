@@ -341,10 +341,10 @@ The **CreatePresentationParts** procedure creates instances of the **SlideMaster
 presentation.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/working_with_presentations/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/working_with_presentations/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/working_with_presentations/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/working_with_presentations/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 ## Resulting PresentationML
