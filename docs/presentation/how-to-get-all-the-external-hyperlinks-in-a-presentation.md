@@ -185,7 +185,7 @@ get the list of URIs in your presentation.
     Next
 ```
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/get_all_the_external_hyperlinks/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

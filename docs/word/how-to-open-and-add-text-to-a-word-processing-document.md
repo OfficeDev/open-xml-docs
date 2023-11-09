@@ -133,7 +133,7 @@ because the AutoSave feature is on by default and has not been disabled
 in the call to the **Open** method through use
 of **OpenSettings**.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/open_and_add_text_to/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

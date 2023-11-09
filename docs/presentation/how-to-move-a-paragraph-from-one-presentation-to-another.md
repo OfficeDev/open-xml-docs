@@ -261,7 +261,7 @@ and the target files to see the moved paragraph.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/move_a_paragraph_from_one_presentation_to_another/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

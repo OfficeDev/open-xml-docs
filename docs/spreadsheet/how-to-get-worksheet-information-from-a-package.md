@@ -89,7 +89,7 @@ In the following code example, you retrieve and display the attributes of the al
 
 The following is the complete code sample in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/get_worksheetformation_from_a_package/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

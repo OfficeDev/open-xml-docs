@@ -87,7 +87,7 @@ dotnet run -- [filePath] [initials] [name] [test ...]
 > [!NOTE]
 > To get the exact author name and initials, open the presentation file and click the **File** menu item, and then click **Options**. The **PowerPointOptions** window opens and the content of the **General** tab is displayed. The author name and initials must match the **User name** and **Initials** in this tab.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

@@ -139,7 +139,7 @@ Word13.docx file in the Public Documents folder and adds text to it.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/open_from_a_stream/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

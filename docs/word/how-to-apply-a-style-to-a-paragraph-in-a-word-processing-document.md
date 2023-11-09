@@ -576,7 +576,7 @@ first paragraph in the sample file named ApplyStyleToParagraph.docx.
 
 The following is the complete code sample in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/apply_a_style_to_a_paragraph/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

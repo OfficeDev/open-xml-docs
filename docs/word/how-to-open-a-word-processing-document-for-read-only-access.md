@@ -219,7 +219,7 @@ Word12.docx file in the Public Documents folder for read-only access.
 
 The following is the complete sample code in C\# and VB.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/open_for_read_only_access/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

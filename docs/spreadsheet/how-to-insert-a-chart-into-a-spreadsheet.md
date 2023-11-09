@@ -506,7 +506,7 @@ After you have run the program, take a look the file named "Sheet6.xlsx" to see 
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/insert_a_chartto/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

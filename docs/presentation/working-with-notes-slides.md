@@ -176,7 +176,7 @@ of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.
 The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

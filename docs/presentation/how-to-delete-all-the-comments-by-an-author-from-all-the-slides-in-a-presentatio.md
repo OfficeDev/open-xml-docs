@@ -242,7 +242,7 @@ the specified author from the presentation file, *myppt5.pptx*.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/delete_all_the_comments_by_an_author_from_all_the_slides_a_presentatio/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

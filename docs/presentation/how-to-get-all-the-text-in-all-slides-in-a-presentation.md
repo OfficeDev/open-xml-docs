@@ -102,7 +102,7 @@ example.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/get_all_the_text_all_slides/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

@@ -376,7 +376,7 @@ performing the deletion.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/delete_a_slide_from/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

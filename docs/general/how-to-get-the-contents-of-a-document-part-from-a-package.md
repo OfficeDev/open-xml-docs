@@ -181,7 +181,7 @@ following example.
 
 Following is the complete code example in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

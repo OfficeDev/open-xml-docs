@@ -94,7 +94,7 @@ The following code adds a new document part that contains custom XML from an ext
 
 Following is the complete code example in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/add_a_new_part_to_a_package/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

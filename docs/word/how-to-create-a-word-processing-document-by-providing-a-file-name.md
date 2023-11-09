@@ -131,7 +131,7 @@ parameter in the call to the **Create** method.
 
 Following is the complete code example in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/create_by_providing_a_file_name/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

@@ -208,7 +208,7 @@ exist, it is added as a shared string item to the shared string table.
 For more information about how to use the **SharedStringTable** class to programmatically
 insert text into a cell, see [How to: Insert text into a cell in a spreadsheet document](how-to-insert-text-into-a-cell-in-a-spreadsheet.md).
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/working_with_the_shared_string_table/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

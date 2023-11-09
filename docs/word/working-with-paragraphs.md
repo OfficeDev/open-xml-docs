@@ -87,7 +87,7 @@ makes up the document content. The OXML SDK [Text](https://msdn.microsoft.com/li
 The following code instantiates an Open XML SDK**Paragraph** object and then uses it to add text to
 a WordprocessingML document.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/working_with_paragraphs/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

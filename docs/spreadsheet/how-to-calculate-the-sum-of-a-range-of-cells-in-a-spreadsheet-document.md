@@ -441,7 +441,7 @@ After running the program, you can inspect the file named "Sheet1.xlsx" to see t
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/calculate_the_sum_of_a_range_of_cells/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

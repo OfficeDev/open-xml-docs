@@ -85,7 +85,7 @@ the presentation, each on a separate line.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/get_the_titles_of_all_the_slides/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

@@ -394,7 +394,7 @@ in your program to perform the copying.
 After performing that call you can inspect the file Myppt2.pptx, and you
 would see the same theme of the file Myppt9-theme.pptx.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

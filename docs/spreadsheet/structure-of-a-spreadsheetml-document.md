@@ -73,7 +73,7 @@ A relationship Id that points to the location of the sheet definition
 This code example uses the classes in the Open XML SDK to create a
 minimum, blank workbook.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/structure_ofml/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

@@ -105,7 +105,7 @@ t — A range of text.
 The following code uses the Open XML SDK to create a simple **WordprocessingML** document that contains the text
 "Hello, Word!"
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/structure_of_a_wordprocessingml/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

@@ -150,7 +150,7 @@ The **Comment** class, which represents the \<cm\> element, is therefore also as
 
 The following code segment from the article [How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md) adds a new comments part to an existing slide in a presentation (if the slide does not already contain comments) and creates an instance of an Open XML SDK **Comment** class in the slide comments part. It also adds a comment list to the comments part by creating an instance of the **CommentList** class, if one does not already exist; assigns an ID to the comment; and then adds a comment to the comment list by creating an instance of the **Comment** class, assigning the required attribute values. In addition, it creates instances of the **Position** and **Text** classes associated with the new **Comment** class instance. For the complete code sample, see the aforementioned article.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/working_with_comments/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

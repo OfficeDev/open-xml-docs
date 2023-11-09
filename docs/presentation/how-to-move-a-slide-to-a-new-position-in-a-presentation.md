@@ -336,7 +336,7 @@ positions of the slides.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/move_a_slide_to_a_new_position/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

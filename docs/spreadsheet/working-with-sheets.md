@@ -181,7 +181,7 @@ specified file name and instantiates a **Worksheet** class, and then adds a row 
 cell to the cell table at position A1. Then the value of the cell in A1
 is set equal to the numeric value 100.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/working_with_sheets/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

@@ -340,7 +340,7 @@ opened previously.
 The **CreatePresentationParts** procedure creates instances of the **SlideMasterIdList**, **SlideIdList**, **SlideSize**, **NotesSize**, and **DefaultTextStyle** classes and appends them to the
 presentation.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/working_with_presentations/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

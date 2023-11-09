@@ -149,7 +149,7 @@ The following method from the article [How to: Create a presentation document by
 
 The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/working_with_slide_masters/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

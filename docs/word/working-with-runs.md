@@ -85,7 +85,7 @@ specified WordprocessingML document. A **Run**
 object demarcates a region of text within the paragraph and then a **RunProperties** object is used to apply bold
 formatting to the run.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/working_with_runs/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

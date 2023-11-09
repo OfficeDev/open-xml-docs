@@ -175,7 +175,7 @@ dotnet run -- [filePath] [authorName]
 After you have run the program, open the word processing file to make
 sure that all revision marks have been accepted.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/word/accept_all_revisions/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)

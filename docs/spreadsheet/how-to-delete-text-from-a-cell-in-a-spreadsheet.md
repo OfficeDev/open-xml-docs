@@ -322,7 +322,7 @@ a spreadsheet document. You can run the program by calling the method
 
 The following is the complete code sample in both C\# and Visual Basic.
 
-### [CSharp](#tab/cs)
+### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/delete_text_from_a_cell/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
