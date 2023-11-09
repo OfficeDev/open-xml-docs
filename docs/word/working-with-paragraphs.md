@@ -88,10 +88,10 @@ The following code instantiates an Open XML SDK**Paragraph** object and then use
 a WordprocessingML document.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/word/working_with_paragraphs/cs/Program.cs)]
+[!code-csharp[](../../samples/word/working_with_paragraphs/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/working_with_paragraphs/vb/Program.vb)]
+[!code-vb[](../../samples/word/working_with_paragraphs/vb/Program.vb)]
 
 When this code is run, the following XML is written to the
 WordprocessingML document referenced in the code.

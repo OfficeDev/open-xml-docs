@@ -86,10 +86,10 @@ the presentation, each on a separate line.
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/get_the_titles_of_all_the_slides/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/get_the_titles_of_all_the_slides/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/get_the_titles_of_all_the_slides/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/get_the_titles_of_all_the_slides/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

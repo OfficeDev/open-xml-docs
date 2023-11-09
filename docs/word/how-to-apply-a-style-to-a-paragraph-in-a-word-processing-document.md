@@ -577,10 +577,10 @@ first paragraph in the sample file named ApplyStyleToParagraph.docx.
 The following is the complete code sample in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/word/apply_a_style_to_a_paragraph/cs/Program.cs)]
+[!code-csharp[](../../samples/word/apply_a_style_to_a_paragraph/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/apply_a_style_to_a_paragraph/vb/Program.vb)]
+[!code-vb[](../../samples/word/apply_a_style_to_a_paragraph/vb/Program.vb)]
 
 ## See also
 

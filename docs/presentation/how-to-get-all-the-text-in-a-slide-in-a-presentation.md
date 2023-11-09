@@ -323,10 +323,10 @@ the second slide of the presentation file "Myppt8.pptx."
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/get_all_the_text_a_slide/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/get_all_the_text_a_slide/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/get_all_the_text_a_slide/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/get_all_the_text_a_slide/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

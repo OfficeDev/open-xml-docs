@@ -106,10 +106,10 @@ The following code uses the Open XML SDK to create a simple **WordprocessingML**
 "Hello, Word!"
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/word/structure_of_a_wordprocessingml/cs/Program.cs)]
+[!code-csharp[](../../samples/word/structure_of_a_wordprocessingml/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/structure_of_a_wordprocessingml/vb/Program.vb)]
+[!code-vb[](../../samples/word/structure_of_a_wordprocessingml/vb/Program.vb)]
 
 ### Generated WordprocessingML
 

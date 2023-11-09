@@ -80,10 +80,10 @@ second slide in the presentation.
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/insert_a_new_slideto/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/insert_a_new_slideto/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/insert_a_new_slideto/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/insert_a_new_slideto/vb/Program.vb)]
 
 ## See also
 

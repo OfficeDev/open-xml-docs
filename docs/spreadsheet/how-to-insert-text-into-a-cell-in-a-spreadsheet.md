@@ -413,10 +413,10 @@ as an example.
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/insert_textto_a_cell/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/insert_textto_a_cell/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/insert_textto_a_cell/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/insert_textto_a_cell/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

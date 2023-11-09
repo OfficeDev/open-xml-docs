@@ -182,10 +182,10 @@ cell to the cell table at position A1. Then the value of the cell in A1
 is set equal to the numeric value 100.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/working_with_sheets/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/working_with_sheets/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/working_with_sheets/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/working_with_sheets/vb/Program.vb)]
 
 ### Generated SpreadsheetML
 

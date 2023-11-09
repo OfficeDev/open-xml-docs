@@ -113,10 +113,10 @@ call to the **Create** method.
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/create_by_providing_a_file_name/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/create_by_providing_a_file_name/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/create_by_providing_a_file_name/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/create_by_providing_a_file_name/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

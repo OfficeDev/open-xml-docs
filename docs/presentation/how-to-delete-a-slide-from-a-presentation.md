@@ -377,10 +377,10 @@ performing the deletion.
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/delete_a_slide_from/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/delete_a_slide_from/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/delete_a_slide_from/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/delete_a_slide_from/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

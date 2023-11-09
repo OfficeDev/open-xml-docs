@@ -68,14 +68,14 @@ foreach (var path in files)
         {
             text = text.Replace(csMatch.Groups[1].Value, $"""
     ### [C#](#tab/cs)
-    [!code-csharp[](../samples/{area}/{name}/cs/Program.cs)]
+    [!code-csharp[](../../samples/{area}/{name}/cs/Program.cs)]
     """);
         }
         if (vbMatch is not null && vbMatch.Groups is not null && vbMatch.Groups[1] is not null && vbMatch.Groups[1].Value.Length > 0)
         {
             text = text.Replace(vbMatch.Groups[1].Value, $"""
     ### [Visual Basic](#tab/vb)
-    [!code-vb[](../samples/{area}/{name}/vb/Program.vb)]
+    [!code-vb[](../../samples/{area}/{name}/vb/Program.vb)]
     """);
         }
 

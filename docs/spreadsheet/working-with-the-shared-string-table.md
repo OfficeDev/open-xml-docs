@@ -209,10 +209,10 @@ For more information about how to use the **SharedStringTable** class to program
 insert text into a cell, see [How to: Insert text into a cell in a spreadsheet document](how-to-insert-text-into-a-cell-in-a-spreadsheet.md).
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/working_with_the_shared_string_table/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/working_with_the_shared_string_table/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/working_with_the_shared_string_table/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/working_with_the_shared_string_table/vb/Program.vb)]
 ### Generated SpreadsheetML
 
 If you run the Open XML SDK in the [How to: Insert text into a cell in a spreadsheet document](how-to-insert-text-into-a-cell-in-a-spreadsheet.md) topic and insert

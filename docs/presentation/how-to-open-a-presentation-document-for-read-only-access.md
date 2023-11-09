@@ -234,10 +234,10 @@ the second slide in a presentation file named "Myppt13.pptx".
 The following is the complete code listing in C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/open_for_read_only_access/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/open_for_read_only_access/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/open_for_read_only_access/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/open_for_read_only_access/vb/Program.vb)]
 
 ## See also
 

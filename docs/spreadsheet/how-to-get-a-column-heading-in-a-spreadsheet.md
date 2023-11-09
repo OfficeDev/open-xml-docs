@@ -206,10 +206,10 @@ following example that uses the file "Sheet4.xlsx."
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/get_a_column_heading/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/get_a_column_heading/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/get_a_column_heading/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/get_a_column_heading/vb/Program.vb)]
 
 ## See also
 

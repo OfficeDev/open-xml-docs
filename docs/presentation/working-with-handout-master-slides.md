@@ -147,9 +147,9 @@ The namespace represented by the letter *P* in the code is the [DocumentFormat.O
 namespace.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/working_with_handout_master_slides/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/working_with_handout_master_slides/cs/Program.cs)]
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/working_with_handout_master_slides/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/working_with_handout_master_slides/vb/Program.vb)]
 
 ## Generated PresentationML
 

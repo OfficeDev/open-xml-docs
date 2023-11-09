@@ -171,10 +171,10 @@ The following method from the article [How to: Create a presentation document by
 The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx) namespace.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/working_with_slide_layouts/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/working_with_slide_layouts/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/working_with_slide_layouts/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/working_with_slide_layouts/vb/Program.vb)]
 
 ## Generated PresentationML
 

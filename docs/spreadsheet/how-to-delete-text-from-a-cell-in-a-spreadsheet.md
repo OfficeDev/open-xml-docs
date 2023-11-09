@@ -323,10 +323,10 @@ a spreadsheet document. You can run the program by calling the method
 The following is the complete code sample in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/delete_text_from_a_cell/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/delete_text_from_a_cell/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/delete_text_from_a_cell/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/delete_text_from_a_cell/vb/Program.vb)]
 
 ## See also
 

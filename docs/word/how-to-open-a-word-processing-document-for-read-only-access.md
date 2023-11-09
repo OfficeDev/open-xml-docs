@@ -220,10 +220,10 @@ Word12.docx file in the Public Documents folder for read-only access.
 The following is the complete sample code in C\# and VB.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/word/open_for_read_only_access/cs/Program.cs)]
+[!code-csharp[](../../samples/word/open_for_read_only_access/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/open_for_read_only_access/vb/Program.vb)]
+[!code-vb[](../../samples/word/open_for_read_only_access/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

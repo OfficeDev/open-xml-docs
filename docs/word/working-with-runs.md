@@ -86,10 +86,10 @@ object demarcates a region of text within the paragraph and then a **RunProperti
 formatting to the run.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/word/working_with_runs/cs/Program.cs)]
+[!code-csharp[](../../samples/word/working_with_runs/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/working_with_runs/vb/Program.vb)]
+[!code-vb[](../../samples/word/working_with_runs/vb/Program.vb)]
 When this code is run, the following XML is written to the
 WordprocessingML document specified in the preceding code.
 

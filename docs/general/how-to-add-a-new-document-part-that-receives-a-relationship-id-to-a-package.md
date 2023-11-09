@@ -62,10 +62,10 @@ the following code example.
 The following is the complete code example in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/word/add_a_new_part_that_receives_a_relationship_id_to_a_package/cs/Program.cs)]
+[!code-csharp[](../../samples/word/add_a_new_part_that_receives_a_relationship_id_to_a_package/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/add_a_new_part_that_receives_a_relationship_id_to_a_package/vb/Program.vb)]
+[!code-vb[](../../samples/word/add_a_new_part_that_receives_a_relationship_id_to_a_package/vb/Program.vb)]
 
 -----------------------------------------------------------------------------
 ## See also 

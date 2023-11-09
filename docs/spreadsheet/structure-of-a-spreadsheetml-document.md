@@ -74,10 +74,10 @@ This code example uses the classes in the Open XML SDK to create a
 minimum, blank workbook.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/structure_ofml/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/structure_ofml/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/structure_ofml/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/structure_ofml/vb/Program.vb)]
 
 ### Generated SpreadsheetML
 

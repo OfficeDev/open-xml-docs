@@ -186,10 +186,10 @@ get the list of URIs in your presentation.
 ```
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/presentation/get_all_the_external_hyperlinks/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/get_all_the_external_hyperlinks/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/presentation/get_all_the_external_hyperlinks/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/get_all_the_external_hyperlinks/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

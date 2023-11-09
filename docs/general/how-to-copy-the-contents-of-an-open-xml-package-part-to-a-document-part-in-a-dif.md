@@ -194,10 +194,10 @@ the copied theme from the file "MyPkg4.docx."
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/spreadsheet/copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/spreadsheet/copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

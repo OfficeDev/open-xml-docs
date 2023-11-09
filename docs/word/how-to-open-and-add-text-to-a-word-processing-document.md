@@ -134,10 +134,10 @@ in the call to the **Open** method through use
 of **OpenSettings**.
 
 ### [CSharp](#tab/cs)
-[!code-csharp[](../samples/word/open_and_add_text_to/cs/Program.cs)]
+[!code-csharp[](../../samples/word/open_and_add_text_to/cs/Program.cs)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../samples/word/open_and_add_text_to/vb/Program.vb)]
+[!code-vb[](../../samples/word/open_and_add_text_to/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also
