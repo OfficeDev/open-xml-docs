@@ -43,6 +43,7 @@ not be saved if this parameter is **false**.
 The code that calls the **Open** method is
 shown in the following **using** statement.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true)) 
@@ -51,6 +52,7 @@ shown in the following **using** statement.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Dim spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
@@ -58,6 +60,8 @@ shown in the following **using** statement.
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -133,15 +137,19 @@ registering the **WorksheetPart** object in the
 call the method InsertWorksheet, you can use the following code, which
 inserts a worksheet in a file names "Sheet7.xslx," as an example.
 
+### [C#](#tab/cs-1)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet7.xlsx";
     InsertWorksheet(docName);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Sheet7.xlsx"
     InsertWorksheet(docName)
 ```
+***
+
 
 Following is the complete sample code in both C\# and Visual Basic.
 

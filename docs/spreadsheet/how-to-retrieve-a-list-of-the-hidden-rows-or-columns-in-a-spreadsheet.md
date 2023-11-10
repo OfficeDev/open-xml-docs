@@ -37,16 +37,20 @@ parameters, indicating the following:
 
 - Whether to detect rows (true) or columns (false) (Boolean).
 
+### [C#](#tab/cs-0)
 ```csharp
     public static List<uint> GetHiddenRowsOrCols(
       string fileName, string sheetName, bool detectRows)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Function GetHiddenRowsOrCols(
       ByVal fileName As String, ByVal sheetName As String,
       ByVal detectRows As Boolean) As List(Of UInteger)
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -54,6 +58,7 @@ parameters, indicating the following:
 
 The method returns a list of unsigned integers that contain each index for the hidden rows or columns, if the specified worksheet contains any hidden rows or columns (rows and columns are numbered starting at 1, rather than 0.) To call the method, pass all the parameter values, as shown in the following example code.
 
+### [C#](#tab/cs-1)
 ```csharp
     const string fileName = @"C:\users\public\documents\RetrieveHiddenRowsCols.xlsx";
     List<uint> items = GetHiddenRowsOrCols(fileName, "Sheet1", true);
@@ -63,6 +68,7 @@ The method returns a list of unsigned integers that contain each index for the h
     Console.WriteLine(sw.ToString());
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Const fileName As String = "C:\Users\Public\Documents\RetrieveHiddenRowsCols.xlsx"
     Dim items As List(Of UInteger) =
@@ -73,6 +79,8 @@ The method returns a list of unsigned integers that contain each index for the h
     Next
     Console.WriteLine(sw.ToString())
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -80,16 +88,21 @@ The method returns a list of unsigned integers that contain each index for the h
 
 The code starts by creating a variable, **itemList**, that will contain the return value.
 
+### [C#](#tab/cs-2)
 ```csharp
     List<uint> itemList = new List<uint>();
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim itemList As New List(Of UInteger)
 ```
+***
+
 
 Next, the code opens the document, by using the [SpreadsheetDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) method and indicating that the document should be open for read-only access (the final **false** parameter value). Next the code retrieves a reference to the workbook part, by using the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx) property of the document.
 
+### [C#](#tab/cs-3)
 ```csharp
     using (SpreadsheetDocument document =
         SpreadsheetDocument.Open(fileName, false))
@@ -99,6 +112,7 @@ Next, the code opens the document, by using the [SpreadsheetDocument.Open](https
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Using document As SpreadsheetDocument =
         SpreadsheetDocument.Open(fileName, False)
@@ -107,10 +121,13 @@ Next, the code opens the document, by using the [SpreadsheetDocument.Open](https
         ' Code removed here...
     End Using
 ```
+***
+
 
 To find the hidden rows or columns, the code must first retrieve a reference to the specified sheet, given its name. This is not as easy as you might think. The code must look through all the sheet-type descendants of the workbook part's [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx) property, examining the [Name](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.name.aspx) property of each sheet that it finds.
 Note that this search simply looks through the relations of the workbook, and does not actually find a worksheet part. It simply finds a reference to a [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) object, which contains information such as the name and [Id](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.id.aspx) property of the sheet. The simplest way to accomplish this is to use a LINQ query.
 
+### [C#](#tab/cs-4)
 ```csharp
     Sheet theSheet = wbPart.Workbook.Descendants<Sheet>().
         Where((s) => s.Name == sheetName).FirstOrDefault();
@@ -120,17 +137,21 @@ Note that this search simply looks through the relations of the workbook, and do
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Dim theSheet As Sheet = wbPart.Workbook.Descendants(Of Sheet)().
         Where(Function(s) s.Name = sheetName).FirstOrDefault()
     If theSheet Is Nothing Then
         Throw New ArgumentException("sheetName")
 ```
+***
+
 
 The [FirstOrDefault](https://msdn2.microsoft.com/library/bb358452) method returns either the first matching reference (a sheet, in this case) or a null reference if no match was found. The code checks for the
 null reference, and throws an exception if you passed in an invalid sheet name. Now that you have information about the sheet, the code must retrieve a reference to the corresponding worksheet part. The sheet
 information you already retrieved provides an **Id** property, and given that **Id** property, the code can retrieve a reference to the corresponding [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx) property by calling the [GetPartById](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid.aspx) method of the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.aspx) object.
 
+### [C#](#tab/cs-5)
 ```csharp
     else
     {
@@ -142,6 +163,7 @@ information you already retrieved provides an **Id** property, and given that **
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     Else
         ' The sheet does exist.
@@ -151,6 +173,8 @@ information you already retrieved provides an **Id** property, and given that **
         ' Code removed here...
     End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -160,6 +184,7 @@ The code uses the **detectRows** parameter that
 you specified when you called the method to determine whether to
 retrieve information about rows or columns.
 
+### [C#](#tab/cs-6)
 ```csharp
     if (detectRows)
     {
@@ -173,6 +198,7 @@ retrieve information about rows or columns.
     }
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     If detectRows Then
         ' Retrieve hidden rows.
@@ -182,26 +208,33 @@ retrieve information about rows or columns.
         ' Code removed here...
     End If
 ```
+***
+
 
 The code that actually retrieves the list of hidden rows requires only a single line of code.
 
+### [C#](#tab/cs-7)
 ```csharp
     itemList = ws.Descendants<Row>().
         Where((r) => r.Hidden != null && r.Hidden.Value).
         Select(r => r.RowIndex.Value).ToList<uint>();
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     itemList = ws.Descendants(Of Row).
         Where(Function(r) r.Hidden IsNot Nothing AndAlso
               r.Hidden.Value).
         Select(Function(r) r.RowIndex.Value).ToList()
 ```
+***
+
 
 This single line accomplishes a lot, however. It starts by calling the [Descendants](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.descendants.aspx) method of the worksheet, retrieving a list of all the rows. The [Where](https://msdn2.microsoft.com/library/bb301979) method limits the results to only those rows where the [Hidden](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.hidden.aspx) property of the item is not null and the value of the **Hidden** property is **True**. The [Select](https://msdn2.microsoft.com/library/bb357126) method projects the return value for each row, returning the value of the [RowIndex](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.rowindex.aspx) property. Finally, the [ToList\<TSource\>](https://msdn2.microsoft.com/library/bb342261) method converts the resulting [IEnumerable\<T\>](https://msdn2.microsoft.com/library/9eekhta0) interface into a [List\<T\>](https://msdn2.microsoft.com/library/6sh2ey19) object of unsigned integers. If there are no hidden rows, the returned list is empty.
 
 Retrieving the list of hidden columns is a bit trickier, because Excel collapses groups of hidden columns into a single element, and provides [Min](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.column.min.aspx) and [Max](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.column.max.aspx) properties that describe the first and last columns in the group. Therefore, the code that retrieves the list of hidden columns starts the same as the code that retrieves hidden rows. However, it must iterate through the index values (looping each item in the collection of hidden columns, adding each index from the **Min** to the **Max** value, inclusively).
 
+### [C#](#tab/cs-8)
 ```csharp
     var cols = ws.Descendants<Column>().
       Where((c) => c.Hidden != null && c.Hidden.Value);
@@ -214,6 +247,7 @@ Retrieving the list of hidden columns is a bit trickier, because Excel collapses
     }
 ```
 
+### [Visual Basic](#tab/vb-8)
 ```vb
     Dim cols = ws.Descendants(Of Column).
       Where(Function(c) c.Hidden IsNot Nothing AndAlso
@@ -224,6 +258,8 @@ Retrieving the list of hidden columns is a bit trickier, because Excel collapses
         Next
     Next
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 

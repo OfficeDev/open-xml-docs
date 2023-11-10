@@ -25,6 +25,7 @@ This topic shows how to use the Open XML SDK for Office to programmatically chan
 
 To open an existing document, instantiate the **WordprocessingDocument** class as shown in the following **using** statement. In the same statement, open the word processing file at the specified **filepath** by using the **Open** method, with the Boolean parameter set to **true** to enable editing the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument doc =
            WordprocessingDocument.Open(filepath, true)) 
@@ -33,11 +34,14 @@ To open an existing document, instantiate the **WordprocessingDocument** class a
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using doc As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
        ' Insert other code here. 
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -104,6 +108,7 @@ the document. Then you locate the second row in the table by finding the
 row whose index is 1. Next, you locate the third cell in that row whose
 index is 2, as shown in the following code example.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Find the first table in the document.
     Table table =
@@ -116,6 +121,7 @@ index is 2, as shown in the following code example.
     TableCell cell = row.Elements<TableCell>().ElementAt(2);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Find the first table in the document.
     Dim table As Table = doc.MainDocumentPart.Document.Body.Elements(Of Table)().First()
@@ -126,11 +132,14 @@ index is 2, as shown in the following code example.
     ' Find the third cell in the row.
     Dim cell As TableCell = row.Elements(Of TableCell)().ElementAt(2)
 ```
+***
+
 
 After you have located the target cell, you locate the first run in the
 first paragraph of the cell and replace the text with the passed in
 text. The following code example shows these actions.
 
+### [C#](#tab/cs-2)
 ```csharp
     Paragraph p = cell.Elements<Paragraph>().First();
     Run r = p.Elements<Run>().First();
@@ -138,12 +147,15 @@ text. The following code example shows these actions.
     t.Text = txt;
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim p As Paragraph = cell.Elements(Of Paragraph)().First()
     Dim r As Run = p.Elements(Of Run)().First()
     Dim t As Text = r.Elements(Of Text)().First()
     t.Text = txt
 ```
+***
+
 
 ## Change Text in a Cell in a Table
 
@@ -173,15 +185,19 @@ following call to the **ChangeTextInCell**
 method changes the text in the specified cell to "The text from the API
 example."
 
+### [C#](#tab/cs-3)
 ```csharp
     ChangeTextInCell(@"c:\Users\Public\Documents\word4.docx",
     "The text from the API example");
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ChangeTextInCell("C:\Users\Public\Documents\word4.docx", _
     "The text from the API example")
 ```
+***
+
 
 Following is the complete code example.
 

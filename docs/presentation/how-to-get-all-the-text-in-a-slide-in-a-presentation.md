@@ -38,6 +38,7 @@ the **file** parameter is a string that
 represents the path for the file from which you want to open the
 document.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the presentation as read-only.
         using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
@@ -46,11 +47,14 @@ document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(file, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -72,6 +76,7 @@ second overloaded method, which gets the slide part. This method returns
 the array of strings that the second method returns to it, each of which
 represents a paragraph of text in the specified slide.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Get all the text in a slide.
     public static string[] GetAllTextInSlide(string presentationFile, int slideIndex)
@@ -87,6 +92,7 @@ represents a paragraph of text in the specified slide.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Get all the text in a slide.
     Public Shared Function GetAllTextInSlide(ByVal presentationFile As String, ByVal slideIndex As Integer) As String()
@@ -99,6 +105,8 @@ represents a paragraph of text in the specified slide.
         End Using
     End Function
 ```
+***
+
 
 The second overloaded method takes the presentation document passed in
 and gets a slide part to pass to the third overloaded method. It returns
@@ -106,6 +114,7 @@ to the first overloaded method the array of strings that the third
 overloaded method returns to it, each of which represents a paragraph of
 text in the specified slide.
 
+### [C#](#tab/cs-2)
 ```csharp
     public static string[] GetAllTextInSlide(PresentationDocument presentationDocument, int slideIndex)
     {
@@ -157,6 +166,7 @@ text in the specified slide.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Public Shared Function GetAllTextInSlide(ByVal presentationDocument As PresentationDocument, ByVal slideIndex As Integer) As String()
         ' Verify that the presentation document exists.
@@ -202,6 +212,8 @@ text in the specified slide.
         Return Nothing
     End Function
 ```
+***
+
 
 The following code segment shows the third overloaded method, which
 takes takes the slide part passed in, and returns to the second
@@ -214,6 +226,7 @@ paragraph to a string in the linked list. It then returns to the second
 overloaded method an array of strings that represents all the text in
 the specified slide in the presentation.
 
+### [C#](#tab/cs-3)
 ```csharp
     public static string[] GetAllTextInSlide(SlidePart slidePart)
     {
@@ -262,6 +275,7 @@ the specified slide in the presentation.
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Public Shared Function GetAllTextInSlide(ByVal slidePart As SlidePart) As String()
         ' Verify that the slide part exists.
@@ -300,6 +314,8 @@ the specified slide in the presentation.
         End If
     End Function
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -309,16 +325,20 @@ use the following **foreach** loop in your
 program to get the array of strings returned by the method **GetAllTextInSlide**, which represents the text in
 the second slide of the presentation file "Myppt8.pptx."
 
+### [C#](#tab/cs-4)
 ```csharp
     foreach (string s in GetAllTextInSlide(@"C:\Users\Public\Documents\Myppt8.pptx", 1))
         Console.WriteLine(s);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     For Each s As String In GetAllTextInSlide("C:\Users\Public\Documents\Myppt8.pptx", 1)
         Console.WriteLine(s)
     Next
 ```
+***
+
 
 Following is the complete sample code in both C\# and Visual Basic.
 

@@ -27,15 +27,19 @@ To create the class instance from the document you call one of the **[Open](/dot
 
 The following code example calls the **Open** method to open the file specified by the **filepath** for read-only access.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open file as read-only.
     using (SpreadsheetDocument mySpreadsheet = SpreadsheetDocument.Open(fileName, false))
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open file as read-only.
     Using mySpreadsheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
 ```
+***
+
 
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **mySpreadsheet**.
 
@@ -45,16 +49,21 @@ The **using** statement provides a recommended alternative to the typical .Open,
 
 After you have opened the file for read-only access, you instantiate the **Sheets** class.
 
+### [C#](#tab/cs-1)
 ```csharp
     S sheets = mySpreadsheet.WorkbookPart.Workbook.Sheets;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
 ```
+***
+
 
 You then you iterate through the **Sheets** collection and display **[OpenXmlElement](/dotnet/api/documentformat.openxml.openxmlelement)** and the **[OpenXmlAttribute](/dotnet/api/documentformat.openxml.openxmlattribute)** in each element.
 
+### [C#](#tab/cs-2)
 ```csharp
     foreach (E sheet in sheets)
     {
@@ -65,6 +74,7 @@ You then you iterate through the **Sheets** collection and display **[OpenXmlEle
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     For Each sheet In sheets
         For Each attr In sheet.GetAttributes()
@@ -72,6 +82,8 @@ You then you iterate through the **Sheets** collection and display **[OpenXmlEle
         Next
     Next
 ```
+***
+
 
 By displaying the attribute information you get the name and ID for each worksheet in the spreadsheet file.
 
@@ -79,13 +91,17 @@ By displaying the attribute information you get the name and ID for each workshe
 
 In the following code example, you retrieve and display the attributes of the all sheets in the specified workbook contained in a **SpreadsheetDocument** document. The following code example shows how to call the **GetSheetInfo** method.
 
+### [C#](#tab/cs-3)
 ```csharp
     GetSheetInfo(@"C:\Users\Public\Documents\Sheet5.xlsx");
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     GetSheetInfo("C:\Users\Public\Documents\Sheet5.xlsx")
 ```
+***
+
 
 The following is the complete code sample in both C\# and Visual Basic.
 

@@ -46,6 +46,7 @@ opened in read/write mode or not. In this case, the Boolean value is
 **true** specifying that the file should be
 opened in read/write mode.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open a Wordprocessing document for editing.
     using (WordprocessingDocument package = WordprocessingDocument.Open(fileName, true))
@@ -54,6 +55,7 @@ opened in read/write mode.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open a Wordprocessing document for editing.
     Dim package As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
@@ -61,6 +63,8 @@ opened in read/write mode.
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -142,6 +146,7 @@ Wordprocessing schema. Use a **RunProperties**
 object to specify the properties of a given text run. In this case, to
 set the font of the run to Arial, the code creates a **RunFonts** object and then sets the **Ascii** value to "Arial".
 
+### [C#](#tab/cs-1)
 ```csharp
     // Use an object initializer for RunProperties and rPr.
     RunProperties rPr = new RunProperties(
@@ -151,10 +156,13 @@ set the font of the run to Arial, the code creates a **RunFonts** object and the
         });
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Use an object initializer for RunProperties and rPr.
     Dim rPr As New RunProperties(New RunFonts() With {.Ascii = "Arial"})
 ```
+***
+
 
 The code then creates a [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) object that represents the first text
 run of the document. The code instantiates a **Run** and sets it to the first text run of the
@@ -169,6 +177,7 @@ changes made to the in-memory representation of the **MainDocumentPart** part ba
 the **MainDocumentPart** (the document.xml file
 in the Wordprocessing package).
 
+### [C#](#tab/cs-2)
 ```csharp
     Run r = package.MainDocumentPart.Document.Descendants<Run>().First();
     r.PrependChild<RunProperties>(rPr);
@@ -177,6 +186,7 @@ in the Wordprocessing package).
     package.MainDocumentPart.Document.Save();
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim r As Run = package.MainDocumentPart.Document.Descendants(Of Run)().First()
     r.PrependChild(Of RunProperties)(rPr)
@@ -184,6 +194,8 @@ in the Wordprocessing package).
     ' Save changes to the MainDocumentPart part.
     package.MainDocumentPart.Document.Save()
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -192,15 +204,19 @@ paragraph of a Word-processing document. For instance, you can invoke
 the **SetRunFont** method in your program to
 change the font in the file "myPkg9.docx" by using the following call.
 
+### [C#](#tab/cs-3)
 ```csharp
     string fileName = @"C:\Users\Public\Documents\MyPkg9.docx";
     SetRunFont(fileName);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\MyPkg9.docx"
     SetRunFont(fileName)
 ```
+***
+
 
 After running the program check your file "MyPkg9.docx" to see the
 changed font.

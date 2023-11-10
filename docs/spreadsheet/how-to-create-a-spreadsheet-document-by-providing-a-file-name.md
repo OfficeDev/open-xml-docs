@@ -50,15 +50,19 @@ templates and workbooks.
 The following code example calls the **Create**
 method.
 
+### [C#](#tab/cs-0)
 ```csharp
     SpreadsheetDocument spreadsheetDocument = 
     SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook);
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Dim spreadsheetDocument As SpreadsheetDocument = _
     SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook)
 ```
+***
+
 
 When you have created the Excel document package, you can add parts to
 it. To add the workbook part you call the [AddWorkbookPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.addworkbookpart.aspx) method of the **SpreadsheetDocument** class. A workbook part must
@@ -68,16 +72,20 @@ have at least one worksheet. To add a worksheet, create a new **Sheet**. When yo
 creates a new worksheet, associates the worksheet, and appends the
 worksheet to the workbook.
 
+### [C#](#tab/cs-1)
 ```csharp
     Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.
     GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };
     sheets.Append(sheet);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim sheet As New Sheet() With {.Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), .SheetId = 1, .Name = "mySheet"}
     sheets.Append(sheet)
 ```
+***
+
 
 [!include[Structure](../includes/spreadsheet/structure.md)]
 
@@ -98,13 +106,17 @@ sheet named "mySheet". To call it in your program, you can use the
 following code example that creates a file named "Sheet2.xlsx" in the
 public documents folder.
 
+### [C#](#tab/cs-2)
 ```csharp
     CreateSpreadsheetWorkbook(@"c:\Users\Public\Documents\Sheet2.xlsx")
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     CreateSpreadsheetWorkbook("c:\Users\Public\Documents\Sheet2.xlsx")
 ```
+***
+
 
 Notice that the file name extension, .xlsx, matches the type of file
 specified by the **SpreadsheetDocumentType.Workbook** parameter in the

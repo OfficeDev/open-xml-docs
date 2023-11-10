@@ -47,6 +47,7 @@ opened in read/write mode or not. In this case, the Boolean value is
 **false** specifying that the file should be
 opened in read-only mode to avoid accidental changes.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open a Wordprocessing document for editing.
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, false))
@@ -55,12 +56,15 @@ opened in read-only mode to avoid accidental changes.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open a Wordprocessing document for editing.
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -120,6 +124,7 @@ After you have opened the source file for reading, you create a **mainPart** obj
 to the **WordprocessingCommentsPart** part of
 the document.
 
+### [C#](#tab/cs-1)
 ```csharp
     // To get the contents of a document part.
     public static string GetCommentsFromDocument(string document)
@@ -132,6 +137,7 @@ the document.
             WordprocessingCommentsPart WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' To get the contents of a document part.
     Public Shared Function GetCommentsFromDocument(ByVal document As String) As String
@@ -141,11 +147,14 @@ the document.
             Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
             Dim WordprocessingCommentsPart As WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart
 ```
+***
+
 
 You can then use a **StreamReader** object to
 read the contents of the **WordprocessingCommentsPart** part of the document
 and return its contents.
 
+### [C#](#tab/cs-2)
 ```csharp
     using (StreamReader streamReader = new StreamReader(WordprocessingCommentsPart.GetStream()))
             {
@@ -155,12 +164,15 @@ and return its contents.
         return comments;
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Using streamReader As New StreamReader(WordprocessingCommentsPart.GetStream())
     comments = streamReader.ReadToEnd()
     End Using
     Return comments
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -169,15 +181,19 @@ The following code retrieves the contents of a **WordprocessingCommentsPart** pa
 run the program by calling the **GetCommentsFromDocument** method as shown in the
 following example.
 
+### [C#](#tab/cs-3)
 ```csharp
     string document = @"C:\Users\Public\Documents\MyPkg5.docx";
     GetCommentsFromDocument(document);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim document As String = "C:\Users\Public\Documents\MyPkg5.docx"
     GetCommentsFromDocument(document)
 ```
+***
+
 
 Following is the complete code example in both C\# and Visual Basic.
 

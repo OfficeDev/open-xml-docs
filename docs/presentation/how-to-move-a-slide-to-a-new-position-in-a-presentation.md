@@ -39,6 +39,7 @@ this code, the **presentationFile** parameter
 is a string that represents the path for the file from which you want to
 open the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the presentation as read-only.
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
@@ -47,12 +48,15 @@ open the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the presentation as read-only.
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -85,17 +89,21 @@ the presentation document in the **using**
 statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer
 number that represents the number of slides in the presentation.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Pass the presentation to the next CountSlides method
     // and return the slide count.
     return CountSlides(presentationDocument);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Pass the presentation to the next CountSlides method
     ' and return the slide count.
     Return CountSlides(presentationDocument)
 ```
+***
+
 
 In the second **CountSlides** method, the code
 verifies that the **PresentationDocument**
@@ -104,6 +112,7 @@ not, it gets a **PresentationPart** object from
 the **PresentationDocument** object. By using
 the **SlideParts** the code gets the **slideCount** and returns it.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Check for a null document object.
     if (presentationDocument == null)
@@ -125,6 +134,7 @@ the **SlideParts** the code gets the **slideCount** and returns it.
     return slidesCount;
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Check for a null document object.
     If presentationDocument Is Nothing Then
@@ -143,6 +153,8 @@ the **SlideParts** the code gets the **slideCount** and returns it.
     ' Return the slide count to the previous method.
     Return slidesCount
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Moving a Slide from one Position to Another
@@ -158,6 +170,7 @@ object and the two integers, *from* and *to*, to the second overloaded
 **MoveSlide** method, which performs the actual
 move.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Move a slide to a different position in the slide order in the presentation.
     public static void MoveSlide(string presentationFile, int from, int to)
@@ -169,6 +182,7 @@ move.
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Move a slide to a different position in the slide order in the presentation.
     Public Shared Sub MoveSlide(ByVal presentationFile As String, ByVal [from] As Integer, ByVal [to] As Integer)
@@ -177,6 +191,8 @@ move.
         End Using
     End Sub
 ```
+***
+
 
 In the second overloaded **MoveSlide** method,
 the **CountSlides** method is called to get the
@@ -184,6 +200,7 @@ number of slides in the presentation. The code then checks if the
 zero-based indexes, *from* and *to*, are within the range and different
 from one another.
 
+### [C#](#tab/cs-4)
 ```csharp
     public static void MoveSlide(PresentationDocument presentationDocument, int from, int to)
     {
@@ -207,6 +224,7 @@ from one another.
         }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Public Shared Sub MoveSlide(ByVal presentationDocument As PresentationDocument, ByVal [from] As Integer, ByVal [to] As Integer)
         If presentationDocument Is Nothing Then
@@ -229,6 +247,8 @@ from one another.
             Throw New ArgumentOutOfRangeException("to")
         End If
 ```
+***
+
 
 A **PresentationPart** object is declared and
 set equal to the presentation part of the **PresentationDocument** object passed in. The **PresentationPart** object is used to create a **Presentation** object, and then create a **SlideIdList** object that represents the list of
@@ -237,6 +257,7 @@ slide (the slide to move) is obtained, and then the position of the
 target slide (the slide after which in the slide order to move the
 source slide) is identified.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Get the presentation part from the presentation document.
     PresentationPart presentationPart = presentationDocument.PresentationPart;
@@ -265,6 +286,7 @@ source slide) is identified.
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Get the presentation part from the presentation document.
     Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
@@ -287,12 +309,15 @@ source slide) is identified.
         targetSlide = TryCast(slideIdList.ChildElements(to - 1), SlideId)
     End If
 ```
+***
+
 
 The **Remove** method of the **SlideID** object is used to remove the source slide
 from its current position, and then the **InsertAfter** method of the **SlideIdList** object is used to insert the source
 slide in the index position after the target slide. Finally, the
 modified presentation is saved.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Remove the source slide from its current position.
     sourceSlide.Remove();
@@ -304,6 +329,7 @@ modified presentation is saved.
     presentation.Save();
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Remove the source slide from its current position.
     sourceSlide.Remove()
@@ -314,6 +340,8 @@ modified presentation is saved.
     ' Save the modified presentation.
     presentation.Save()
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -323,13 +351,17 @@ instance, you can use the following call in your program to move a slide
 from position 0 to position 1 in a presentation file named
 "Myppt11.pptx".
 
+### [C#](#tab/cs-7)
 ```csharp
     MoveSlide(@"C:\Users\Public\Documents\Myppt11.pptx", 0, 1);
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     MoveSlide("C:\Users\Public\Documents\Myppt11.pptx", 0, 1)
 ```
+***
+
 
 After you run the program, check your presentation file to see the new
 positions of the slides.

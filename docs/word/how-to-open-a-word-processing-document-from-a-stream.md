@@ -59,17 +59,21 @@ represents whether the stream is opened for editing.
 The following code example calls the **Open**
 method.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open a WordProcessingDocument based on a stream.
     WordprocessingDocument wordprocessingDocument = 
         WordprocessingDocument.Open(stream, true);
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open a WordProcessingDocument based on a stream.
     Dim wordprocessingDocument As WordprocessingDocument = _
     WordprocessingDocument.Open(stream, True)
 ```
+***
+
 
 [!include[Structure](../includes/word/structure.md)]
 
@@ -80,21 +84,26 @@ document part. To access the body of the main document part you assign a
 reference to the existing document body, as shown in the following code
 segment.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Assign a reference to the existing document body.
     Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Assign a reference to the existing document body.
     Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
 ```
+***
+
 
 When you access to the body of the main document part, add text by
 adding instances of the **Paragraph**, **Run**, and **Text**
 classes. This generates the required **WordprocessingML** markup. The following lines from
 the sample code add the paragraph, run, and text.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Add new text.
     Paragraph para = body.AppendChild(new Paragraph());
@@ -102,12 +111,15 @@ the sample code add the paragraph, run, and text.
     run.AppendChild(new Text(txt));
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Add new text.
     Dim para As Paragraph = body.AppendChild(New Paragraph())
     Dim run As Run = para.AppendChild(New Run())
     run.AppendChild(New Text(txt))
 ```
+***
+
 
 ## Sample Code
 
@@ -118,6 +130,7 @@ handle to an open stream as the first parameter and the text to add as
 the second. For example, the following code example opens the
 Word13.docx file in the Public Documents folder and adds text to it.
 
+### [C#](#tab/cs-3)
 ```csharp
     string strDoc = @"C:\Users\Public\Public Documents\Word13.docx";
     string txt = "Append text in body - OpenAndAddToWordprocessingStream";
@@ -126,6 +139,7 @@ Word13.docx file in the Public Documents folder and adds text to it.
     stream.Close();
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim strDoc As String = "C:\Users\Public\Documents\Word13.docx"
     Dim txt As String = "Append text in body - OpenAndAddToWordprocessingStream"
@@ -133,6 +147,8 @@ Word13.docx file in the Public Documents folder and adds text to it.
     OpenAndAddToWordprocessingStream(stream, txt)
     stream.Close()
 ```
+***
+
 
 > [!NOTE]
 > Notice that the **OpenAddAddToWordprocessingStream** method does not close the stream passed to it. The calling code must do that.

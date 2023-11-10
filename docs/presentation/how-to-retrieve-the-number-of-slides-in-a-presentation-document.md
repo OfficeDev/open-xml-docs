@@ -37,15 +37,19 @@ parameters: a string that indicates the path of the file that you want
 to examine, and an optional Boolean value that indicates whether to
 include hidden slides in the count.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static int RetrieveNumberOfSlides(string fileName, 
         bool includeHidden = true)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Function RetrieveNumberOfSlides(ByVal fileName As String,
             Optional ByVal includeHidden As Boolean = True) As Integer
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 ## Calling the RetrieveNumberOfSlides Method
@@ -55,6 +59,7 @@ counting either all the slides or only visible slides, depending on the
 second parameter value. To call the method, pass all the parameter
 values, as shown in the following code.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Retrieve the number of slides, excluding the hidden slides.
     Console.WriteLine(RetrieveNumberOfSlides(DEMOPATH, false));
@@ -62,12 +67,15 @@ values, as shown in the following code.
     Console.WriteLine(RetrieveNumberOfSlides(DEMOPATH));
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Retrieve the number of slides, excluding the hidden slides.
     Console.WriteLine(RetrieveNumberOfSlides(DEMOPATH, False))
     ' Retrieve the number of slides, including the hidden slides.
     Console.WriteLine(RetrieveNumberOfSlides(DEMOPATH))
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -76,6 +84,7 @@ values, as shown in the following code.
 The code starts by creating an integer variable, **slidesCount**, to hold the number of slides. The code then opens the specified presentation by using the [PresentationDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.open.aspx) method and indicating that the document should be open for read-only access (the
 final **false** parameter value). Given the open presentation, the code uses the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.presentationpart.aspx) property to navigate to the main presentation part, storing the reference in a variable named **presentationPart**.
 
+### [C#](#tab/cs-2)
 ```csharp
     using (PresentationDocument doc = 
         PresentationDocument.Open(fileName, false))
@@ -87,6 +96,7 @@ final **false** parameter value). Given the open presentation, the code uses the
     Return slidesCount;
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Using doc As PresentationDocument =
         PresentationDocument.Open(fileName, False)
@@ -96,6 +106,8 @@ final **false** parameter value). Given the open presentation, the code uses the
     End Using
     Return slidesCount
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -103,6 +115,7 @@ final **false** parameter value). Given the open presentation, the code uses the
 
 If the presentation part reference is not null (and it will not be, for any valid presentation that loads correctly into PowerPoint), the code next calls the **Count** method on the value of the [SlideParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.slideparts.aspx) property of the presentation part. If you requested all slides, including hidden slides, that is all there is to do. There is slightly more work to be done if you want to exclude hidden slides, as shown in the following code.
 
+### [C#](#tab/cs-3)
 ```csharp
     if (includeHidden)
     {
@@ -114,6 +127,7 @@ If the presentation part reference is not null (and it will not be, for any vali
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     If includeHidden Then
         slidesCount = presentationPart.SlideParts.Count()
@@ -121,6 +135,8 @@ If the presentation part reference is not null (and it will not be, for any vali
         ' Code removed here…
     End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -138,6 +154,7 @@ be if you had hidden and then unhidden the slide. The following code
 uses the [Where](https://msdn2.microsoft.com/library/bb301979)**
 function with a lambda expression to do the work.
 
+### [C#](#tab/cs-4)
 ```csharp
     var slides = presentationPart.SlideParts.Where(
         (s) => (s.Slide != null) &&
@@ -146,6 +163,7 @@ function with a lambda expression to do the work.
     slidesCount = slides.Count();
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Dim slides = presentationPart.SlideParts.
       Where(Function(s) (s.Slide IsNot Nothing) AndAlso
@@ -154,6 +172,8 @@ function with a lambda expression to do the work.
                s.Slide.Show.Value)))
     slidesCount = slides.Count()
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 

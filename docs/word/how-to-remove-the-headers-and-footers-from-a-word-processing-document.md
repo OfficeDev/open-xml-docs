@@ -35,13 +35,17 @@ demonstrates both steps in the operation. The **RemoveHeadersAndFooters** method
 parameter, a string that indicates the path of the file that you want to
 modify.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void RemoveHeadersAndFooters(string filename)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub RemoveHeadersAndFooters(ByVal filename As String)
 ```
+***
+
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
@@ -51,13 +55,17 @@ To call the sample method, pass a string for the first parameter that
 contains the file name of the document that you want to modify as shown
 in the following code example.
 
+### [C#](#tab/cs-1)
 ```csharp
     RemoveHeadersAndFooters(@"C:\Users\Public\Documents\Headers.docx");
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     RemoveHeadersAndFooters("C:\Users\Public\Documents\Headers.docx")
 ```
+***
+
 
 ## How the Code Works
 
@@ -69,6 +77,7 @@ document should be opened for read/write access (the final true
 parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
 the main document, storing the reference in a variable named **docPart**.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Given a document name, remove all of the headers and footers
     // from the document.
@@ -79,6 +88,7 @@ the main document, storing the reference in a variable named **docPart**.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Given a document name, remove all of the headers and footers
     ' from the document.
@@ -86,6 +96,8 @@ the main document, storing the reference in a variable named **docPart**.
         ' Code removed here...
     End Using
 ```
+***
+
 
 ## Confirm Header/Footer Existence
 
@@ -97,6 +109,7 @@ Be aware that the **HeaderParts** and **FooterParts** properties each return an
 [IEnumerable](https://msdn.microsoft.com/library/9eekhta0.aspx) of
 [HeaderPart](https://msdn.microsoft.com/library/9eekhta0.aspx) or [FooterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.footerpart.aspx) objects, respectively.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Get a reference to the main document part.
     var docPart = doc.MainDocumentPart;
@@ -110,6 +123,7 @@ Be aware that the **HeaderParts** and **FooterParts** properties each return an
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Get a reference to the main document part.
     Dim docPart = doc.MainDocumentPart
@@ -121,6 +135,8 @@ Be aware that the **HeaderParts** and **FooterParts** properties each return an
         ' Code removed here...
     End If
 ```
+***
+
 
 ## Remove the Header and Footer Parts
 
@@ -132,17 +148,21 @@ for deleting a collection of parts. Therefore, the following few lines
 of code take the place of the loop that you would otherwise have to
 write yourself.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Remove the header and footer parts.
     docPart.DeleteParts(docPart.HeaderParts);
     docPart.DeleteParts(docPart.FooterParts);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Remove the header and footer parts.
     docPart.DeleteParts(docPart.HeaderParts)
     docPart.DeleteParts(docPart.FooterParts)
 ```
+***
+
 
 ## Work with the Document Content
 
@@ -155,6 +175,7 @@ code must ensure that they persist by explicitly saving them. Between
 these two operations, the code must delete the orphaned references, as
 shown in the section that follows the following code example.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Get a reference to the root element of the main
     // document part.
@@ -164,6 +185,7 @@ shown in the section that follows the following code example.
     document.Save();
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Get a reference to the root element of the main 
     ' document part.
@@ -172,6 +194,8 @@ shown in the section that follows the following code example.
     ' Save the changes.
     document.Save()
 ```
+***
+
 
 ## Delete the Header and Footer References
 
@@ -186,6 +210,7 @@ additional help, you would have to work with the details of the XML
 content directly.) Once it has removed all the headers, the code repeats
 the operation with the footer elements.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Remove all references to the headers and footers.
 
@@ -210,6 +235,7 @@ the operation with the footer elements.
     }
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Remove all references to the headers and footers.
         
@@ -231,6 +257,8 @@ the operation with the footer elements.
         footer.Remove()
     Next
 ```
+***
+
 
 ## Sample Code
 

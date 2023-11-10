@@ -39,6 +39,7 @@ writing. The following **using** statement
 opens the file for read-only access. In this code segment, the **fileName** parameter is a string that represents the
 path for the file from which you want to open the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the presentation file as read-only.
     using (PresentationDocument document = PresentationDocument.Open(fileName, false))
@@ -47,12 +48,15 @@ path for the file from which you want to open the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the presentation file as read-only.
     Using document As PresentationDocument = PresentationDocument.Open(fileName, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -125,6 +129,7 @@ all the slides in the presentation and returns a list of strings that
 represent the Universal Resource Identifiers (URIs) of all the external
 hyperlinks in the presentation.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Iterate through all the slide parts in the presentation part.
     foreach (SlidePart slidePart in document.PresentationPart.SlideParts)
@@ -147,6 +152,7 @@ hyperlinks in the presentation.
                 }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Iterate through all the slide parts in the presentation part.
     For Each slidePart As SlidePart In document.PresentationPart.SlideParts
@@ -163,6 +169,8 @@ hyperlinks in the presentation.
                     ret.Add(relation.Uri.AbsoluteUri)
                 End If
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -171,12 +179,14 @@ list of all external links in a presentation. You can use the following
 loop in your program to call the **GetAllExternalHyperlinksInPresentation** method to
 get the list of URIs in your presentation.
 
+### [C#](#tab/cs-2)
 ```csharp
     string fileName = @"C:\Users\Public\Documents\Myppt7.pptx";
     foreach (string s in GetAllExternalHyperlinksInPresentation(fileName))
         Console.WriteLine(s);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim fileName As String
     fileName = "C:\Users\Public\Documents\Myppt7.pptx"
@@ -184,6 +194,8 @@ get the list of URIs in your presentation.
         Console.WriteLine(s)
     Next
 ```
+***
+
 
 ### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/get_all_the_external_hyperlinks/cs/Program.cs)]

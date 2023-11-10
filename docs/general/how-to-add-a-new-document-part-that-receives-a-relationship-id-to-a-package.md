@@ -49,15 +49,19 @@ from an external file and then populates the document part. You can call
 the method **AddNewPart** by using a call like
 the following code example.
 
+### [C#](#tab/cs-0)
 ```csharp
     string document = @"C:\Users\Public\Documents\MyPkg1.docx";
     AddNewPart(document);
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Dim document As String = "C:\Users\Public\Documents\MyPkg1.docx"
     AddNewPart(document)
 ```
+***
+
 
 The following is the complete code example in both C\# and Visual Basic.
 

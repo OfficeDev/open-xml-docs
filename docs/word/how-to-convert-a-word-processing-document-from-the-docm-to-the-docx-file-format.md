@@ -36,13 +36,17 @@ method to remove the macros and the vbaProject part that contains them
 from a document stored in .docm file format. The method accepts a single
 parameter that indicates the file name of the file to convert.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void ConvertDOCMtoDOCX(string fileName)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub ConvertDOCMtoDOCX(ByVal fileName As String)
 ```
+***
+
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
@@ -51,15 +55,19 @@ The complete code listing for the method can be found in the [Sample Code](#samp
 To call the sample method, pass a string that contains the name of the
 file to convert. The following sample code shows an example.
 
+### [C#](#tab/cs-1)
 ```csharp
     string filename = @"C:\Users\Public\Documents\WithMacros.docm";
     ConvertDOCMtoDOCX(filename);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim filename As String = "C:\Users\Public\Documents\WithMacros.docm"
     ConvertDOCMtoDOCX(filename)
 ```
+***
+
 
 ## Parts and the vbaProject Part
 
@@ -95,6 +103,7 @@ renames the document so that it uses the .docx extension.
 
 The code starts by opening the document by using the **Open** method and indicating that the document should be open for read/write access (the final true parameter). The code then retrieves a reference to the Document part by using the **MainDocumentPart** property of the word  processing document.
 
+### [C#](#tab/cs-2)
 ```csharp
     using (WordprocessingDocument document = 
         WordprocessingDocument.Open(fileName, true))
@@ -105,6 +114,7 @@ The code starts by opening the document by using the **Open** method and indicat
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Using document As WordprocessingDocument =
         WordprocessingDocument.Open(fileName, True)
@@ -114,9 +124,12 @@ The code starts by opening the document by using the **Open** method and indicat
       ' Code removed here…
     End Using
 ```
+***
+
 
 The sample code next verifies that the vbaProject part exists, deletes the part and saves the document. The code has no effect if the file to convert does not contain a vbaProject part. To find the part, the sample code retrieves the **VbaProjectPart** property of the document. It calls the **DeletePart** method to delete the part, and then calls the **Save** method of the document to save the changes.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Look for the vbaProject part. If it is there, delete it.
     var vbaPart = docPart.VbaProjectPart;
@@ -129,6 +142,7 @@ The sample code next verifies that the vbaProject part exists, deletes the part 
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Look for the vbaProject part. If it is there, delete it.
     Dim vbaPart = docPart.VbaProjectPart
@@ -140,11 +154,14 @@ The sample code next verifies that the vbaProject part exists, deletes the part 
         ' Code removed here…
     End If
 ```
+***
+
 
 It is not enough to delete the part from the document. You must also convert the document type, internally. The Open XML SDK provides a way to perform this task: You can call the document **ChangeDocumentType** method and indicate the new document type (in this case, supply the *WordProcessingDocumentType.Document* enumerated value).
 
 You must also rename the file. However, you cannot do that while the file is open. The using block closes the file at the end of the block. Therefore, you must have some way to indicate to the code after the block that you have modified the file: The **fileChanged** Boolean variable tracks this information for you.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Change the document type to
     // not macro-enabled.
@@ -155,6 +172,7 @@ You must also rename the file. However, you cannot do that while the file is ope
     fileChanged = true;
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Change the document type to 
     ' not macro-enabled.
@@ -164,12 +182,15 @@ You must also rename the file. However, you cannot do that while the file is ope
     ' Track that the document has been changed.
     fileChanged = True
 ```
+***
+
 
 The code then renames the newly modified document. To do this, the code
 creates a new file name by changing the extension; verifies that the
 output file exists and deletes it, and finally moves the file from the
 old file name to the new file name.
 
+### [C#](#tab/cs-5)
 ```csharp
     // If anything goes wrong in this file handling,
     // the code will raise an exception back to the caller.
@@ -189,6 +210,7 @@ old file name to the new file name.
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' If anything goes wrong in this file handling,
     ' the code will raise an exception back to the caller.
@@ -206,6 +228,8 @@ old file name to the new file name.
         File.Move(fileName, newFileName)
     End If
 ```
+***
+
 
 ## Sample Code
 

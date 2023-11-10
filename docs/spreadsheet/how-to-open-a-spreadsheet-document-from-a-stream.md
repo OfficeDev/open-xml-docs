@@ -58,15 +58,19 @@ not be saved if this parameter is **false**.
 The code that calls the **Open** method is
 shown in the following example.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
 ```
+***
+
 
 After you have opened the spreadsheet document package, you can add a
 row to a sheet in the workbook. Each workbook has a workbook part and at
@@ -74,13 +78,17 @@ least one [Worksheet](https://msdn.microsoft.com/library/office/documentformat.o
 document body, represented by the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.workbookpart.aspx), as shown in the following
 code example.
 
+### [C#](#tab/cs-1)
 ```csharp
     WorkbookPart wbPart = document.WorkbookPart;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim wbPart As WorkbookPart = document.WorkbookPart
 ```
+***
+
 
 The basic document structure of a SpreadsheetML document consists of the
 [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
@@ -145,6 +153,7 @@ worksheet by calling [AddNewPart\<T\>(String, String)](https://msdn.microsoft.co
 create a new [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx). The following code example
 adds the new **WorksheetPart**.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Add a new worksheet.
     WorksheetPart newWorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart<WorksheetPart>();
@@ -152,12 +161,15 @@ adds the new **WorksheetPart**.
     newWorksheetPart.Worksheet.Save();
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Add a new worksheet.
     Dim newWorksheetPart As WorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
     newWorksheetPart.Worksheet = New Worksheet(New SheetData())
     newWorksheetPart.Worksheet.Save()
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code 
@@ -167,6 +179,7 @@ some text to it. In your program, you can use the following example to
 call the **OpenAndAddToSpreadsheetStream**
 method that uses a file named Sheet11.xslx.
 
+### [C#](#tab/cs-3)
 ```csharp
     string strDoc = @"C:\Users\Public\Documents\Sheet11.xlsx";
     ;
@@ -175,12 +188,15 @@ method that uses a file named Sheet11.xslx.
     stream.Close();
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim strDoc As String = "C:\Users\Public\Documents\Sheet11.xlsx"
     Dim stream As Stream = File.Open(strDoc, FileMode.Open)
     OpenAndAddToSpreadsheetStream(stream)
     stream.Close()
 ```
+***
+
 
 Notice that the **OpenAddAndAddToSpreadsheetStream** method does not
 close the stream passed to it. The calling code must do that.

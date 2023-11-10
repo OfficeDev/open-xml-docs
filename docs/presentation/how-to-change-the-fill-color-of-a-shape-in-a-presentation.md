@@ -36,6 +36,7 @@ editable. To open a document for read/write, specify the value **true** for this
 parameter is a string that represents the path for the file from which
 you want to open the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (PresentationDocument ppt = PresentationDocument.Open(docName, true))
     {
@@ -43,11 +44,14 @@ you want to open the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using ppt As PresentationDocument = PresentationDocument.Open(docName, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -142,6 +146,7 @@ the first slide, and gets the slide part from the relationship ID.
 > [!NOTE]
 > The test file must have a filled shape as the first shape on the first slide.
 
+### [C#](#tab/cs-1)
 ```csharp
     using (PresentationDocument ppt = PresentationDocument.Open(docName, true))
     {
@@ -154,6 +159,7 @@ the first slide, and gets the slide part from the relationship ID.
         SlidePart slide = (SlidePart)part.GetPartById(relId);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Using ppt As PresentationDocument = PresentationDocument.Open(docName, True)
 
@@ -165,6 +171,8 @@ the first slide, and gets the slide part from the relationship ID.
         ' Get the slide part from the relationship ID.
         Dim slide As SlidePart = CType(part.GetPartById(relId), SlidePart)
 ```
+***
+
 
 The code then gets the shape tree that contains the shape whose fill
 color is to be changed, and gets the first shape in the shape tree. It
@@ -172,6 +180,7 @@ then gets the style of the shape and the fill reference of the style,
 and assigns a new fill color to the shape. Finally it saves the modified
 presentation.
 
+### [C#](#tab/cs-2)
 ```csharp
     if (slide != null)
     {
@@ -199,6 +208,7 @@ presentation.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     If (Not (slide) Is Nothing) Then
 
@@ -225,6 +235,8 @@ presentation.
         End If
     End If
 ```
+***
+
 
 ## Sample Code
 
@@ -233,15 +245,19 @@ fill color of a shape in a presentation. In your program, you can invoke
 the method **SetPPTShapeColor** to change the
 fill color in the file "Myppt3.pptx" by using the following call.
 
+### [C#](#tab/cs-3)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Myppt3.pptx";
     SetPPTShapeColor(docName);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Myppt3.pptx"
     SetPPTShapeColor(docName)
 ```
+***
+
 
 After running the program, examine the file "Myppt3.pptx" to see the
 change in the fill color.

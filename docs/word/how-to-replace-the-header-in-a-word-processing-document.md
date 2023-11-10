@@ -113,17 +113,21 @@ processing document with the header from another word processing
 document. To call the method, **AddHeaderFromTo**, you can use the following code
 segment as an example.
 
+### [C#](#tab/cs-0)
 ```csharp
     string filepathFrom = @"C:\Users\Public\Documents\Word15a.docx";
     string filepathTo=@"C:\Users\Public\Documents\Word15b.docx";
     AddHeaderFromTo(filepathFrom, filepathTo);
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Dim filepathFrom As String = "C:\Users\Public\Documents\word15a.docx"
     Dim filepathTo As String = "C:\Users\Public\Documents\Word15b.docx"
     AddHeaderFromTo(filepathFrom, filepathTo)
 ```
+***
+
 
 Following is the complete sample code in both C\# and Visual Basic.
 

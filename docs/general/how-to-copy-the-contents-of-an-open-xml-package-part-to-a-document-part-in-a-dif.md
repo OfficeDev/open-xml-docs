@@ -49,6 +49,7 @@ For the source file that set the parameter to **false** to open it for read-only
 target file, set the parameter to **true** in
 order to enable editing the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument wordDoc1 = WordprocessingDocument.Open(fromDocument1, false))
     using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(toDocument2, true))
@@ -57,6 +58,7 @@ order to enable editing the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)
     Dim wordDoc2 As WordprocessingDocument = WordprocessingDocument.Open(toDocument2, True)
@@ -64,6 +66,8 @@ order to enable editing the document.
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -128,6 +132,7 @@ processing document is passed in as a parameter to the **CopyThemeContent** meth
 documents as **WordprocessingDocument**
 objects, and creates variables that reference the **ThemePart** parts in each of the packages.
 
+### [C#](#tab/cs-1)
 ```csharp
     public static void CopyThemeContent(string fromDocument1, string toDocument2)
     {
@@ -138,6 +143,7 @@ objects, and creates variables that reference the **ThemePart** parts in each of
           ThemePart themePart2 = wordDoc2.MainDocumentPart.ThemePart;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Public Sub CopyThemeContent(ByVal fromDocument1 As String, ByVal toDocument2 As String)
        Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)
@@ -146,10 +152,13 @@ objects, and creates variables that reference the **ThemePart** parts in each of
           Dim themePart1 As ThemePart = wordDoc1.MainDocumentPart.ThemePart
           Dim themePart2 As ThemePart = wordDoc2.MainDocumentPart.ThemePart
 ```
+***
+
 
 The code then reads the contents of the source **ThemePart** part by using a **StreamReader** object and writes to the target
 **ThemePart** part by using a **StreamWriter** object.
 
+### [C#](#tab/cs-2)
 ```csharp
     using (StreamReader streamReader = new StreamReader(themePart1.GetStream()))
     using (StreamWriter streamWriter = new StreamWriter(themePart2.GetStream(FileMode.Create))) 
@@ -158,6 +167,7 @@ The code then reads the contents of the source **ThemePart** part by using a **S
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim streamReader As StreamReader = New StreamReader(themePart1.GetStream())
     Dim streamWriter As StreamWriter = New StreamWriter(themePart2.GetStream(FileMode.Create))
@@ -165,6 +175,8 @@ The code then reads the contents of the source **ThemePart** part by using a **S
         streamWriter.Write(streamReader.ReadToEnd)
     End Using
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -173,17 +185,21 @@ XML package to a document part in a different package. To call the **CopyThemeCo
 following example, which copies the theme part from "MyPkg4.docx" to
 "MyPkg3.docx."
 
+### [C#](#tab/cs-3)
 ```csharp
     string fromDocument1 = @"C:\Users\Public\Documents\MyPkg4.docx";
     string toDocument2 = @"C:\Users\Public\Documents\MyPkg3.docx";
     CopyThemeContent(fromDocument1, toDocument2);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim fromDocument1 As String = "C:\Users\Public\Documents\MyPkg4.docx"
     Dim toDocument2 As String = "C:\Users\Public\Documents\MyPkg3.docx"
     CopyThemeContent(fromDocument1, toDocument2)
 ```
+***
+
 
 > [!IMPORTANT]
 > Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word 2013, click the **Page Layout** tab, click **Themes**, and select one of the available themes.

@@ -35,6 +35,7 @@ In this code segment, the *presentationFile* parameter is a string that
 represents the full path for the file from which you want to open the
 document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
     {
@@ -42,11 +43,14 @@ document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -66,13 +70,17 @@ presentation. In your program, you can use the following call to the
 a presentation file named "Myppt10.pptx," with the title "My new slide,"
 at position 1.
 
+### [C#](#tab/cs-1)
 ```csharp
     InsertNewSlide(@"C:\Users\Public\Documents\Myppt10.pptx", 1, "My new slide");
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     InsertNewSlide("C:\Users\Public\Documents\Myppt10.pptx", 1, "My new slide")
 ```
+***
+
 
 After you have run the program, the new slide would show up as the
 second slide in the presentation.

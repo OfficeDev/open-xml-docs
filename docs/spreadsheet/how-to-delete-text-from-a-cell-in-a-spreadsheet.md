@@ -30,6 +30,7 @@ To create the class instance from the document, call one of the [Open()](https:/
 
 The following **using** statement code example calls the **Open** method.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true)) 
@@ -38,12 +39,15 @@ The following **using** statement code example calls the **Open** method.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
         ' Other code goes here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It verifies
@@ -58,6 +62,7 @@ object that is created or named in the **using** statement, in this case *docume
 
 In the following code example, you delete text from a cell in a [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package. Then, you verify if other cells within the spreadsheet document still reference the text removed from the row, and if they do not, you remove the text from the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object by using the [Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method. Then you clean up the **SharedStringTablePart** object by calling the **RemoveSharedStringItem** method.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Given a document, a worksheet name, a column name, and a one-based row index,
     // deletes the text from the cell at the specified column and row on the specified worksheet.
@@ -88,6 +93,7 @@ In the following code example, you delete text from a cell in a [SpreadsheetDocu
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Given a document, a worksheet name, a column name, and a one-based row index,
     ' deletes the text from the cell at the specified column and row on the specified worksheet.
@@ -115,9 +121,12 @@ In the following code example, you delete text from a cell in a [SpreadsheetDocu
         End Using
     End Sub
 ```
+***
+
 
 In the following code example, you verify that the cell specified by the column name and row index exists. If so, the code returns the cell; otherwise, it returns **null**.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
     private static Cell GetSpreadsheetCell(Worksheet worksheet, string columnName, uint rowIndex)
@@ -140,6 +149,7 @@ In the following code example, you verify that the cell specified by the column 
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
     Private Shared Function GetSpreadsheetCell(ByVal worksheet As Worksheet, ByVal columnName As String, ByVal rowIndex As UInteger) As Cell
@@ -158,6 +168,8 @@ In the following code example, you verify that the cell specified by the column 
         Return cells.First()
     End Function
 ```
+***
+
 
 In the following code example, you verify if other cells within the
 spreadsheet document reference the text specified by the **shareStringId** parameter. If they do not reference
@@ -175,6 +187,7 @@ remove the item from the **SharedStringTablePart** object. Then you iterate
 through each **Worksheet** object and **Cell** object and refresh the shared string
 references. Finally, you save the worksheet and the [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
     // reference the specified SharedStringItem and removes the item.
@@ -243,6 +256,7 @@ references. Finally, you save the worksheet and the [SharedStringTable](https://
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
     ' reference the specified SharedStringItem and removes the item.
@@ -295,6 +309,8 @@ references. Finally, you save the worksheet and the [SharedStringTable](https://
         End If
     End Sub
 ```
+***
+
 
 ## Sample code
 
@@ -304,6 +320,7 @@ a spreadsheet document. You can run the program by calling the method
 "Sheet3.xlsx" as shown in the following example, where you specify row
 2, column B, and the name of the worksheet.
 
+### [C#](#tab/cs-4)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet3.xlsx";
     string sheetName  = "Jane";
@@ -312,6 +329,7 @@ a spreadsheet document. You can run the program by calling the method
     DeleteTextFromCell( docName, sheetName, colName, rowIndex);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Sheet3.xlsx"
     Dim sheetName As String = "Jane"
@@ -319,6 +337,8 @@ a spreadsheet document. You can run the program by calling the method
     Dim rowIndex As UInteger = 2
     DeleteTextFromCell(docName, sheetName, colName, rowIndex)
 ```
+***
+
 
 The following is the complete code sample in both C\# and Visual Basic.
 

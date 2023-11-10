@@ -42,15 +42,19 @@ identifier), the name of the style (for external use in the user
 interface), and optionally, any style aliases (alternate names for use
 in the user interface).
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void CreateAndAddParagraphStyle(StyleDefinitionsPart styleDefinitionsPart,
         string styleid, string stylename, string aliases="")
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub CreateAndAddParagraphStyle(ByVal styleDefinitionsPart As StyleDefinitionsPart, 
     ByVal styleid As String, ByVal stylename As String, Optional ByVal aliases As String = "")
 ```
+***
+
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
@@ -104,6 +108,7 @@ the "Overdue Amount Para" paragraph style in a sample file that is named
 CreateAndAddParagraphStyle.docx. It also adds a paragraph of text, and
 applies the style to the paragraph.
 
+### [C#](#tab/cs-1)
 ```csharp
     string strDoc = @"C:\Users\Public\Documents\CreateAndAddParagraphStyle.docx";
 
@@ -157,6 +162,7 @@ applies the style to the paragraph.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim strDoc As String = "C:\Users\Public\Documents\CreateAndAddParagraphStyle.docx"
 
@@ -207,6 +213,8 @@ applies the style to the paragraph.
         pPr.ParagraphStyleId.Val = parastyleid
     End Using
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -313,6 +321,7 @@ part. The styles element is the root element of the part and contains
 all of the individual style elements. If the reference is null, the
 styles element is created and saved to the part.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Access the root element of the styles part.
         Styles styles = styleDefinitionsPart.Styles;
@@ -323,6 +332,7 @@ styles element is created and saved to the part.
         }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Access the root element of the styles part.
         Dim styles As Styles = styleDefinitionsPart.Styles
@@ -331,6 +341,8 @@ styles element is created and saved to the part.
             styleDefinitionsPart.Styles.Save()
         End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -340,6 +352,7 @@ To create the style, the code instantiates the **[Style](https://msdn.microsoft.
 such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx)** of style (paragraph), the **[StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx)**, whether the style is a **[CustomStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx)**, and whether the style is the
 **[Default](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.default.aspx)** style for its type.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Create a new paragraph style element and specify some of the attributes.
     Style style = new Style() { Type = StyleValues.Paragraph,
@@ -349,6 +362,7 @@ such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.op
     };
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Create a new paragraph style element and specify some of the attributes.
     Dim style As New Style() With { .Type = StyleValues.Paragraph, _
@@ -356,6 +370,8 @@ such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.op
      .CustomStyle = True, _
      .[Default] = False}
 ```
+***
+
 
 The code results in the following XML.
 
@@ -373,6 +389,7 @@ the style. For more information about these properties, see section 17.7
 of the [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 specification.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Create and add the child elements (properties of the style).
     Aliases aliases1 = new Aliases() { Val = aliases };
@@ -402,6 +419,7 @@ specification.
     style.Append(unhidewhenused1);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Create and add the child elements (properties of the style)
     Dim aliases1 As New Aliases() With {.Val = aliases}
@@ -433,11 +451,14 @@ specification.
     style.Append(uipriority1)
     style.Append(unhidewhenused1)
 ```
+***
+
 
 Next, the code instantiates a **[StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx)** object to create a **rPr** (Run Properties) element. You specify the character properties that apply to the style, such as font and color, in this element. The properties are then appended as children of the **rPr** element.
 
 When the run properties are created, the code appends the **rPr** element to the style, and the style element to the styles root element in the styles part.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Create the StyleRunProperties object and specify some of the run properties.
     StyleRunProperties styleRunProperties1 = new StyleRunProperties();
@@ -460,6 +481,7 @@ When the run properties are created, the code appends the **rPr** element to the
     styles.Append(style);
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Create the StyleRunProperties object and specify some of the run properties.
     Dim styleRunProperties1 As New StyleRunProperties()
@@ -484,6 +506,8 @@ When the run properties are created, the code appends the **rPr** element to the
     ' Add the style to the styles part.
     styles.Append(style)
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -496,6 +520,7 @@ apply a style to a paragraph referenced by the variable p. The style ID
 of the style to apply is stored in the parastyleid variable, and the
 ParagraphStyleId property represents the paragraph properties' **pStyle** element.
 
+### [C#](#tab/cs-6)
 ```csharp
     // If the paragraph has no ParagraphProperties object, create one.
     if (p.Elements<ParagraphProperties>().Count() == 0)
@@ -514,6 +539,7 @@ ParagraphStyleId property represents the paragraph properties' **pStyle** elemen
     pPr.ParagraphStyleId.Val = parastyleid;
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' If the paragraph has no ParagraphProperties object, create one.
     If p.Elements(Of ParagraphProperties)().Count() = 0 Then
@@ -531,6 +557,8 @@ ParagraphStyleId property represents the paragraph properties' **pStyle** elemen
     ' Set the style of the paragraph.
     pPr.ParagraphStyleId.Val = parastyleid
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 

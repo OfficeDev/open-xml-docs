@@ -44,6 +44,7 @@ not be saved if this parameter is **false**.
 The code that calls the **Open** method is
 shown in the following **using** statement.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true)) 
@@ -52,12 +53,15 @@ shown in the following **using** statement.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -74,6 +78,7 @@ document for editing, the code inserts a blank [Worksheet](https://msdn.microsof
 inserts a new [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) object into the new worksheet and
 inserts the specified text into that cell.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Given a document name and text, 
     // inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
@@ -112,6 +117,7 @@ inserts the specified text into that cell.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Given a document name and text, 
     ' inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
@@ -149,6 +155,8 @@ inserts the specified text into that cell.
         End Imports
     End Function
 ```
+***
+
 
 The code passes in a parameter that represents the text to insert into
 the cell and a parameter that represents the **SharedStringTablePart** object for the spreadsheet.
@@ -161,6 +169,7 @@ text. Otherwise, it creates a new **SharedStringItem** object that represents th
 The following code verifies if the specified text exists in the **SharedStringTablePart** object and add the text if
 it does not exist.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
@@ -193,6 +202,7 @@ it does not exist.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
@@ -219,6 +229,8 @@ it does not exist.
         Return i
     End Function
 ```
+***
+
 
 The code adds a new **WorksheetPart** object to
 the **WorkbookPart** object by using the [AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method. It then adds a new **Worksheet** object to the **WorksheetPart** object, and gets a unique ID for
@@ -232,6 +244,7 @@ The following code inserts a new **Worksheet**
 object by adding a new **WorksheetPart** object
 to the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx) object.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Given a WorkbookPart, inserts a new worksheet.
     private static WorksheetPart InsertWorksheet(WorkbookPart workbookPart)
@@ -262,6 +275,7 @@ to the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.o
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Given a WorkbookPart, inserts a new worksheet.
     Private Function InsertWorksheet(ByVal workbookPart As WorkbookPart) As WorksheetPart
@@ -291,6 +305,8 @@ to the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.o
         Return newWorksheetPart
     End Function
 ```
+***
+
 
 To insert a cell into a worksheet, the code determines where to insert
 the new cell in the column by iterating through the row elements to find
@@ -302,6 +318,7 @@ variable. It then inserts the new cell before the cell referenced by
 In the following code, insert a new **Cell**
 object into a **Worksheet** object.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     // If the cell already exists, returns it. 
@@ -353,6 +370,7 @@ object into a **Worksheet** object.
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     ' If the cell already exists, return it. 
@@ -394,6 +412,8 @@ object into a **Worksheet** object.
         End If
     End Function
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -402,13 +422,17 @@ the text to the cell "A1" of the new worksheet for a specific
 spreadsheet document named "Sheet8.xlsx." To call the **InsertText** method you can use the following code
 as an example.
 
+### [C#](#tab/cs-5)
 ```csharp
     InsertText(@"C:\Users\Public\Documents\Sheet8.xlsx", "Inserted Text");
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     InsertText("C:\Users\Public\Documents\Sheet8.xlsx", "Inserted Text")
 ```
+***
+
 
 The following is the complete sample code in both C\# and Visual Basic.
 

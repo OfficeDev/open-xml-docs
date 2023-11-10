@@ -34,6 +34,7 @@ slides, and the second is deleting a slide at a specific index.
 
 In the Open XML SDK, the **[PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx)** class represents a presentation document package. To work with a presentation document, first create an instance of the **PresentationDocument** class, and then work with that instance. To create the class instance from the document call one of the **Open** method overloads. The code in this topic uses the **[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx)** method, which takes a file path as the first parameter to specify the file to open, and a Boolean value as the second parameter to specify whether a document is editable. Set this second parameter to **false** to open the file for read-only access, or **true** if you want to open the file for read/write access. The code in this topic opens the file twice, once to count the number of slides and once to delete a specific slide. When you count the number of slides in a presentation, it is best to open the file for read-only access to protect the file against accidental writing. The following **using** statement opens the file for read-only access. In this code example, the **presentationFile** parameter is a string that represents the path for the file from which you want to open the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the presentation as read-only.
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
@@ -42,17 +43,21 @@ In the Open XML SDK, the **[PresentationDocument](https://msdn.microsoft.com/lib
     }                                                                           
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the presentation as read-only.
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 To delete a slide from the presentation file, open it for read/write
 access as shown in the following **using**
 statement.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Open the source document as read/write.
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
@@ -61,12 +66,15 @@ statement.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Open the source document as read/write.
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, True)
         ' Place other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **presentationDocument**.
 
@@ -76,17 +84,21 @@ The **using** statement provides a recommended alternative to the typical .Open,
 
 The sample code consists of two overloads of the **CountSlides** method. The first overload uses a **string** parameter and the second overload uses a **PresentationDocument** parameter. In the first **CountSlides** method, the sample code opens the presentation document in the **using** statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer number that represents the number of slides in the presentation.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Pass the presentation to the next CountSlides method
     // and return the slide count.
     return CountSlides(presentationDocument);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Pass the presentation to the next CountSlides method
     ' and return the slide count.
     Return CountSlides(presentationDocument)
 ```
+***
+
 
 In the second **CountSlides** method, the code
 verifies that the **PresentationDocument**
@@ -96,6 +108,7 @@ the **PresentationDocument** object. By using
 the **SlideParts** the code gets the slideCount
 and returns it.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Check for a null document object.
     if (presentationDocument == null)
@@ -117,6 +130,7 @@ and returns it.
     return slidesCount;
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Check for a null document object.
     If presentationDocument Is Nothing Then
@@ -135,6 +149,8 @@ and returns it.
     ' Return the slide count to the previous method.
     Return slidesCount
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Deleting a Specific Slide 
@@ -145,6 +161,7 @@ represents the zero-based index position of the slide to delete. It
 opens the presentation file for read/write access, gets a **PresentationDocument** object, and then passes that
 object and the index number to the next overloaded **DeleteSlide** method, which performs the deletion.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Get the presentation object and pass it to the next DeleteSlide method.
     public static void DeleteSlide(string presentationFile, int slideIndex)
@@ -159,6 +176,7 @@ object and the index number to the next overloaded **DeleteSlide** method, which
     }  
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Check for a null document object.
     If presentationDocument Is Nothing Then
@@ -177,12 +195,15 @@ object and the index number to the next overloaded **DeleteSlide** method, which
     ' Return the slide count to the previous method.
     Return slidesCount
 ```
+***
+
 
 The first section of the second overloaded **DeleteSlide** method uses the **CountSlides** method to get the number of slides in
 the presentation. Then, it gets the list of slide IDs in the
 presentation, identifies the specified slide in the slide list, and
 removes the slide from the slide list.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Delete the specified slide from the presentation.
     public static void DeleteSlide(PresentationDocument presentationDocument, int slideIndex)
@@ -219,6 +240,7 @@ removes the slide from the slide list.
         slideIdList.RemoveChild(slideId);
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Delete the specified slide from the presentation.
     Public Shared Sub DeleteSlide(ByVal presentationDocument As 
@@ -251,6 +273,8 @@ removes the slide from the slide list.
         ' Remove the slide from the slide list.
         slideIdList.RemoveChild(slideId)
 ```
+***
+
 
 The next section of the second overloaded **DeleteSlide** method removes all references to the
 deleted slide from custom shows. It does that by iterating through the
@@ -261,6 +285,7 @@ of that slide. It adds those references to the list of slide list
 entries, and then removes each such reference from the slide list of its
 respective custom show.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Remove references to the slide from all custom shows.
     if (presentation.CustomShowList != null)
@@ -291,6 +316,7 @@ respective custom show.
     }
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Remove references to the slide from all custom shows.
     If presentation.CustomShowList IsNot Nothing Then
@@ -314,10 +340,13 @@ respective custom show.
         Next customShow
     End If
 ```
+***
+
 
 Finally, the code saves the modified presentation, and deletes the slide
 part for the deleted slide.
 
+### [C#](#tab/cs-7)
 ```csharp
     // Save the modified presentation.
     presentation.Save();
@@ -330,6 +359,7 @@ part for the deleted slide.
     }
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     ' Save the modified presentation.
     presentation.Save()
@@ -341,6 +371,8 @@ part for the deleted slide.
     presentationPart.DeletePart(slidePart)
     End Sub
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code 
@@ -350,26 +382,34 @@ methods, **CountSlides** and **DeleteSlide**. To use the code, you can use the
 following call as an example to delete the slide at index 2 in the
 presentation file "Myppt6.pptx."
 
+### [C#](#tab/cs-8)
 ```csharp
     DeleteSlide(@"C:\Users\Public\Documents\Myppt6.pptx", 2);
 ```
 
+### [Visual Basic](#tab/vb-8)
 ```vb
     DeleteSlide("C:\Users\Public\Documents\Myppt6.pptx", 0)
 ```
+***
+
 
 You can also use the following call to count the number of slides in the
 presentation.
 
+### [C#](#tab/cs-9)
 ```csharp
     Console.WriteLine("Number of slides = {0}",
     CountSlides(@"C:\Users\Public\Documents\Myppt6.pptx"));
 ```
 
+### [Visual Basic](#tab/vb-9)
 ```vb
     Console.WriteLine("Number of slides = {0}", _
     CountSlides("C:\Users\Public\Documents\Myppt6.pptx"))
 ```
+***
+
 
 It might be a good idea to count the number of slides before and after
 performing the deletion.

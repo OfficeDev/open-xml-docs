@@ -27,6 +27,7 @@ To create the class instance from the document that you call one of the **Open**
 
 The code that calls the **Open** method is shown in the following **using** statement.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true)) 
@@ -35,12 +36,15 @@ The code that calls the **Open** method is shown in the following **using** stat
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
         ' Other code goes here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **document**.
 
@@ -57,6 +61,7 @@ range by calling the **CompareColumn** method. If the cell is within the contigu
 
 The code inserts a new cell for the result into the worksheet by calling the **InsertCellInWorksheet** method and set the value of the cell. For more information, see [how to insert a cell in a spreadsheet](how-to-insert-text-into-a-cell-in-a-spreadsheet.md#how-the-sample-code-works), and then saves the worksheet.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
     // the name of the last cell in the contiguous range, and the name of the results cell, 
@@ -124,6 +129,7 @@ The code inserts a new cell for the result into the worksheet by calling the **I
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
     ' the name of the last cell in the contiguous range, and the name of the results cell, 
@@ -181,9 +187,12 @@ The code inserts a new cell for the result into the worksheet by calling the **I
         End Using
     End Sub
 ```
+***
+
 To get the row index the code passes a parameter that represents the name of the cell, and creates a new regular expression to match the row
 index portion of the cell name. For more information about regular expressions, see [Regular Expression Language Elements](/dotnet/standard/base-types/regular-expression-language-quick-reference). It gets the row index by calling the **[Regex.Match](https://msdn2.microsoft.com/library/3zy662f6)** method, and then returns the row index.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Given a cell name, parses the specified cell to get the row index.
     private static uint GetRowIndex(string cellName)
@@ -196,6 +205,7 @@ index portion of the cell name. For more information about regular expressions, 
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Given a cell name, parses the specified cell to get the row index.
     Private Shared Function GetRowIndex(ByVal cellName As String) As UInteger
@@ -206,9 +216,12 @@ index portion of the cell name. For more information about regular expressions, 
         Return UInteger.Parse(match.Value)
     End Function
 ```
+***
+
 
 The code then gets the column name by passing a parameter that represents the name of the cell, and creates a new regular expression to match the column name portion of the cell name. This regular expression matches any combination of uppercase or lowercase letters. It gets the column name by calling the **[Regex.Match](/dotnet/api/system.text.regularexpressions.regex.match)** method, and then returns the column name.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Given a cell name, parses the specified cell to get the column name.
     private static string GetColumnName(string cellName)
@@ -221,6 +234,7 @@ The code then gets the column name by passing a parameter that represents the na
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Given a cell name, parses the specified cell to get the column name.
     Private Shared Function GetColumnName(ByVal cellName As String) As String
@@ -231,9 +245,12 @@ The code then gets the column name by passing a parameter that represents the na
         Return match.Value
     End Function
 ```
+***
+
 
 To compare two columns the code passes in two parameters that represent the columns to compare. If the first column is longer than the second column, it returns 1. If the second column is longer than the first column, it returns -1. Otherwise, it compares the values of the columns using the **[Compare](/dotnet/api/system.string.compare)** and returns the result.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Given two columns, compares the columns.
     private static int CompareColumn(string column1, string column2)
@@ -253,6 +270,7 @@ To compare two columns the code passes in two parameters that represent the colu
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Given two columns, compares the columns.
     Private Shared Function CompareColumn(ByVal column1 As String, ByVal column2 As String) As Integer
@@ -265,9 +283,12 @@ To compare two columns the code passes in two parameters that represent the colu
         End If
     End Function
 ```
+***
+
 
 To insert a **SharedStringItem**, the code passes in a parameter that represents the text to insert into the cell and a parameter that represents the  **SharedStringTablePart** object for the spreadsheet. If the **ShareStringTablePart** object does not contain a **[SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx)** object then it creates one. If the text already exists in the **ShareStringTable** object, then it returns the index for the **[SharedStringItem](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem)** object that represents the text. If the text does not exist, create a new **SharedStringItem** object that represents the text. It then returns the index for the **SharedStringItem** object that represents the text.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
@@ -299,6 +320,7 @@ To insert a **SharedStringItem**, the code passes in a parameter that represents
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
@@ -325,9 +347,12 @@ To insert a **SharedStringItem**, the code passes in a parameter that represents
         Return i
     End Function
 ```
+***
+
 
 The final step is to insert a cell into the worksheet. The code does that by passing in parameters that represent the name of the column and the number of the row of the cell, and a parameter that represents the worksheet that contains the cell. If the specified row does not exist, it creates the row and append it to the worksheet. If the specified column exists, it finds the cell that matches the row in that column and returns the cell. If the specified column does not exist, it creates the column and inserts it into the worksheet. It then determines where to insert the new cell in the column by iterating through the row elements to find the cell that comes directly after the specified row, in sequential order. It saves this row in the **refCell** variable. It inserts the new cell before the cell referenced by **refCell** using the **[InsertBefore](/dotnet/api/documentformat.openxml.openxmlcompositeelement.insertbefore)** method. It then returns the new **Cell** object.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     // If the cell already exists, returns it. 
@@ -376,6 +401,7 @@ The final step is to insert a cell into the worksheet. The code does that by pas
     }
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     ' If the cell already exists, returns it. 
@@ -414,11 +440,14 @@ The final step is to insert a cell into the worksheet. The code does that by pas
         End If
     End Function
 ```
+***
+
 
 ## Sample Code
 
 The following code sample calculates the sum of a contiguous range of cells in a spreadsheet document. The result is inserted into the **SharedStringTablePart** object and into the specified result cell. You can call the method CalculateSumOfCellRange by using the following example.
 
+### [C#](#tab/cs-7)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet1.xlsx";
     string worksheetName = "John";
@@ -428,6 +457,7 @@ The following code sample calculates the sum of a contiguous range of cells in a
     CalculateSumOfCellRange(docName, worksheetName, firstCellName, lastCellName, resultCell);
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Sheet1.xlsx"
     Dim worksheetName As String = "John"
@@ -436,6 +466,8 @@ The following code sample calculates the sum of a contiguous range of cells in a
     Dim resultCell As String = "A4"
     CalculateSumOfCellRange(docName, worksheetName, firstCellName, lastCellName, resultCell)
 ```
+***
+
 
 After running the program, you can inspect the file named "Sheet1.xlsx" to see the sum of the column in the worksheet named "John" in the specified cell.
 

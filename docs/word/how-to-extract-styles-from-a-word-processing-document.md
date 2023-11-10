@@ -53,17 +53,21 @@ styles or stylesWithEffects part that you requested, with all the style
 information for the document (or a null reference, if the part you
 requested does not exist).
 
+### [C#](#tab/cs-0)
 ```csharp
     public static XDocument ExtractStylesPart(
       string fileName,
       bool getStylesWithEffectsPart = true)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Function ExtractStylesPart(
       ByVal fileName As String,
       Optional ByVal getStylesWithEffectsPart As Boolean = True) As XDocument
 ```
+***
+
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
@@ -80,6 +84,7 @@ can do what you want with it; in the following sample code the content
 of the **XDocument** instance is displayed to
 the console.
 
+### [C#](#tab/cs-1)
 ```csharp
     string filename = @"C:\Users\Public\Documents\StylesFrom.docx";
 
@@ -92,6 +97,7 @@ the console.
         Console.WriteLine(styles.ToString());
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim filename As String = "C:\Users\Public\Documents\StylesFrom.docx"
 
@@ -104,6 +110,8 @@ the console.
         Console.WriteLine(styles.ToString())
     End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -111,6 +119,7 @@ the console.
 
 The code starts by creating a variable named **styles** that the method returns before it exits.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Declare a variable to hold the XDocument.
     XDocument styles = null;
@@ -119,6 +128,7 @@ The code starts by creating a variable named **styles** that the method returns 
     return styles;
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Declare a variable to hold the XDocument.
     Dim styles As XDocument = Nothing
@@ -126,12 +136,15 @@ The code starts by creating a variable named **styles** that the method returns 
     ' Return the XDocument instance.
     Return styles
 ```
+***
+
 
 The code continues by opening the document by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
 document should be open for read-only access (the final false
 parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Open the document for read access and get a reference.
     using (var document = 
@@ -147,6 +160,7 @@ the main document part, and then prepares a variable named **stylesPart** to hol
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Open the document for read access and get a reference.
     Using document = WordprocessingDocument.Open(fileName, False)
@@ -160,6 +174,8 @@ the main document part, and then prepares a variable named **stylesPart** to hol
         ' Code removed here...
     End Using
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -171,6 +187,7 @@ parameter. Based on this value, the code retrieves a specific property
 of the **docPart** variable, and stores it in the
 **stylesPart** variable.
 
+### [C#](#tab/cs-4)
 ```csharp
     if (getStylesWithEffectsPart)
         stylesPart = docPart.StylesWithEffectsPart;
@@ -178,6 +195,7 @@ of the **docPart** variable, and stores it in the
         stylesPart = docPart.StyleDefinitionsPart;
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     If getStylesWithEffectsPart Then
         stylesPart = docPart.StylesWithEffectsPart
@@ -185,6 +203,8 @@ of the **docPart** variable, and stores it in the
         stylesPart = docPart.StyleDefinitionsPart
     End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -200,6 +220,7 @@ method, and then calls the
 method, passing the **XmlNodeReader** as a
 parameter.
 
+### [C#](#tab/cs-5)
 ```csharp
     // If the part exists, read it into the XDocument.
     if (stylesPart != null)
@@ -213,6 +234,7 @@ parameter.
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' If the part exists, read it into the XDocument.
     If stylesPart IsNot Nothing Then
@@ -223,6 +245,8 @@ parameter.
         End Using
     End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 

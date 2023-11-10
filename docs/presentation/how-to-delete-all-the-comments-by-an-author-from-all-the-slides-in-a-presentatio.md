@@ -38,6 +38,7 @@ path for the file from which you want to open the document, and the
 author is the user name displayed in the General tab of the PowerPoint
 Options.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void DeleteCommentsByAuthorInPresentation(string fileName, string author)
     {
@@ -47,6 +48,7 @@ Options.
         }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Shared Sub DeleteCommentsByAuthorInPresentation(ByVal fileName As String, ByVal author As String)
 
@@ -54,6 +56,8 @@ Options.
             ' Insert other code here.
         End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -126,6 +130,7 @@ instantiating the **PresentationDocument**
 class, the code gets the specified comment author from the list of
 comment authors.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Get the specifed comment author.
     IEnumerable<CommentAuthor> commentAuthors = 
@@ -133,12 +138,15 @@ comment authors.
         .Where(e => e.Name.Value.Equals(author));
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Get the specifed comment author.
     Dim commentAuthors As IEnumerable(Of CommentAuthor) = _
         doc.PresentationPart.CommentAuthorsPart.CommentAuthorList.Elements _
        (Of CommentAuthor)().Where(Function(e) e.Name.Value.Equals(author))
 ```
+***
+
 
 By iterating through the matching authors and all the slides in the
 presentation the code gets all the slide parts, and the comments part of
@@ -147,6 +155,7 @@ author and deletes each one. It also verifies that the comment part has
 no existing comment, in which case it deletes that part. It also deletes
 the comment author from the comment authors part.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Iterate through all the matching authors.
     foreach (CommentAuthor commentAuthor in commentAuthors)
@@ -182,6 +191,7 @@ the comment author from the comment authors part.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     'Iterate through all the matching authors
     For Each commentAuthor In commentAuthors
@@ -213,6 +223,8 @@ the comment author from the comment authors part.
 
     Next
 ```
+***
+
 
 ## Sample Code
 
@@ -226,17 +238,21 @@ You can use the following example to call the
 *DeleteCommentsByAuthorInPresentation* method to remove the comments of
 the specified author from the presentation file, *myppt5.pptx*.
 
+### [C#](#tab/cs-3)
 ```csharp
     string fileName = @"C:\Users\Public\Documents\myppt5.pptx";
     string author = "Katie Jordan";
     DeleteCommentsByAuthorInPresentation(fileName, author);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\myppt5.pptx"
     Dim author As String = "Katie Jordan"
     DeleteCommentsByAuthorInPresentation(fileName, author)
 ```
+***
+
 > [!NOTE]
 > To get the exact author's name, open the presentation file and click the **File** menu item, and then click **Options**. The **PowerPoint Options** window opens and the content of the **General** tab is displayed. The author's name must match the **User name** in this tab.
 

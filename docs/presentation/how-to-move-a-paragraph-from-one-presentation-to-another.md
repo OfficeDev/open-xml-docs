@@ -36,6 +36,7 @@ as shown in the following **using** statement.
 In this code, the *file* parameter is a string that represents the path
 for the file from which you want to open the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (PresentationDocument doc = PresentationDocument.Open(file, true))
     {
@@ -43,11 +44,14 @@ for the file from which you want to open the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using doc As PresentationDocument = PresentationDocument.Open(file, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -106,6 +110,7 @@ paragraph in the target file and removes the source paragraph from the
 source file, replacing it with a placeholder paragraph. Finally, it
 saves the modified slides in both presentations.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Moves a paragraph range in a TextBody shape in the source document
     // to another TextBody shape in the target document.
@@ -154,6 +159,7 @@ saves the modified slides in both presentations.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Moves a paragraph range in a TextBody shape in the source document
     ' to another TextBody shape in the target document.
@@ -198,6 +204,8 @@ saves the modified slides in both presentations.
         End Using
     End Sub
 ```
+***
+
 
 The **GetFirstSlide** method takes the **PresentationDocument** object passed in, gets its
 presentation part, and then gets the ID of the first slide in its slide
@@ -205,6 +213,7 @@ list. It then gets the relationship ID of the slide, gets the slide part
 from the relationship ID, and returns the slide part to the calling
 method.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Get the slide part of the first slide in the presentation document.
     public static SlidePart GetFirstSlide(PresentationDocument presentationDocument)
@@ -221,6 +230,7 @@ method.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Get the slide part of the first slide in the presentation document.
     Public Shared Function GetFirstSlide(ByVal presentationDocument As PresentationDocument) As SlidePart
@@ -235,6 +245,8 @@ method.
         Return slidePart
     End Function
 ```
+***
+
 
 ## Sample Code
 
@@ -244,17 +256,21 @@ to the **MoveParagraphToPresentation** method
 to move the first paragraph from the presentation file "Myppt4.pptx" to
 the presentation file "Myppt12.pptx".
 
+### [C#](#tab/cs-3)
 ```csharp
     string sourceFile = @"C:\Users\Public\Documents\Myppt4.pptx";
     string targetFile = @"C:\Users\Public\Documents\Myppt12.pptx";
     MoveParagraphToPresentation(sourceFile, targetFile);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim sourceFile As String = "C:\Users\Public\Documents\Myppt4.pptx"
     Dim targetFile As String = "C:\Users\Public\Documents\Myppt12.pptx"
     MoveParagraphToPresentation(sourceFile, targetFile)
 ```
+***
+
 
 After you run the program take a look on the content of both the source
 and the target files to see the moved paragraph.

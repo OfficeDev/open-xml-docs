@@ -53,31 +53,39 @@ saved if this parameter is **false**.
 The following code example calls the **Open**
 method.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open a WordprocessingDocument for editing using the filepath.
     WordprocessingDocument wordprocessingDocument = 
         WordprocessingDocument.Open(filepath, true);
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open a WordprocessingDocument for editing using the filepath.
     Dim wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
 ```
+***
+
 
 When you have opened the Word document package, you can add text to the
 main document part. To access the body of the main document part, assign
 a reference to the existing document body, as shown in the following
 code example.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Assign a reference to the existing document body.
     Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Assign a reference to the existing document body.
     Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
 ```
+***
+
 
 --------------------------------------------------------------------------------
 
@@ -90,6 +98,7 @@ adding instances of the **Paragraph**, **Run**, and **Text**
 classes. This generates the required WordprocessingML markup. The
 following code example adds the paragraph, run and text.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Add new text.
     Paragraph para = body.AppendChild(new Paragraph());
@@ -97,12 +106,15 @@ following code example adds the paragraph, run and text.
     run.AppendChild(new Text(txt));
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Add new text.
     Dim para As Paragraph = body.AppendChild(New Paragraph())
     Dim run As Run = para.AppendChild(New Run())
     run.AppendChild(New Text(txt))
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -113,17 +125,21 @@ filename as the first parameter and the text to add as the second. For
 example, the following code example opens the Letter.docx file in the
 Public Documents folder and adds text to it.
 
+### [C#](#tab/cs-3)
 ```csharp
     string strDoc = @"C:\Users\Public\Documents\Letter.docx";
     string strTxt = "Append text in body - OpenAndAddTextToWordDocument";
     OpenAndAddTextToWordDocument(strDoc, strTxt);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim strDoc As String = "C:\Users\Public\Documents\Letter.docx"
     Dim strTxt As String = "Append text in body - OpenAndAddTextToWordDocument"
     OpenAndAddTextToWordDocument(strDoc, strTxt)
 ```
+***
+
 
 Following is the complete sample code in both C\# and Visual Basic.
 

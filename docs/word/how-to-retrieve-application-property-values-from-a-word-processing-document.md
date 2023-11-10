@@ -26,6 +26,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to progra
 
 To retrieve application document properties, you can retrieve the **ExtendedFilePropertiesPart** property of a **WordprocessingDocument** object, and then retrieve the specific application property you need. To do this, you must first get a reference to the document, as shown in the following code.
 
+### [C#](#tab/cs-0)
 ```csharp
     const string FILENAME = "DocumentProperties.docx";
 
@@ -36,6 +37,7 @@ To retrieve application document properties, you can retrieve the **ExtendedFile
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Private Const FILENAME As String = "DocumentProperties.docx"
 
@@ -44,21 +46,28 @@ To retrieve application document properties, you can retrieve the **ExtendedFile
         ' Code removed here…
     End Using
 ```
+***
+
 
 Given the reference to the **WordProcessingDocument** object, you can retrieve a reference to the **ExtendedFilePropertiesPart** property of the document. This object provides its own properties, each of which exposes one of the application document properties.
 
+### [C#](#tab/cs-1)
 ```csharp
     var props = document.ExtendedFilePropertiesPart.Properties;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim props = document.ExtendedFilePropertiesPart.Properties
 ```
+***
+
 
 Once you have the reference to the properties of **ExtendedFilePropertiesPart**, you can then retrieve any of the application properties, using simple code such as that shown
 in the next example. Note that the code must confirm that the reference to each property isn't **null** before retrieving its **Text** property. Unlike core properties,
 document properties aren't available if you (or the application) haven't specifically given them a value.
 
+### [C#](#tab/cs-2)
 ```csharp
     if (props.Company != null)
         Console.WriteLine("Company = " + props.Company.Text);
@@ -70,6 +79,7 @@ document properties aren't available if you (or the application) haven't specifi
         Console.WriteLine("Manager = " + props.Manager.Text);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     If props.Company IsNot Nothing Then
         Console.WriteLine("Company = " & props.Company.Text)
@@ -83,6 +93,8 @@ document properties aren't available if you (or the application) haven't specifi
         Console.WriteLine("Manager = " & props.Manager.Text)
     End If
 ```
+***
+
 
 ## Sample Code
 

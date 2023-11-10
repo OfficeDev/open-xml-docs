@@ -51,6 +51,7 @@ The code that calls the **Create** method is
 part of a **using** statement followed by a
 bracketed block, as shown in the following code example.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument wordDocument =
         WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document))
@@ -59,11 +60,14 @@ bracketed block, as shown in the following code example.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using wordDocument As WordprocessingDocument = WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document)
         ' Insert other code here. 
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -98,6 +102,7 @@ sample listing calls the **AppendChild** method
 of each class, you can sometimes make code shorter and easier to read by
 using the technique shown in the following code example.
 
+### [C#](#tab/cs-1)
 ```csharp
     mainPart.Document = new Document(
        new Body(
@@ -106,9 +111,12 @@ using the technique shown in the following code example.
                 new Text("Create text in body - CreateWordprocessingDocument")))));
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     mainPart.Document = New Document(New Body(New Paragraph(New Run(New Text("Create text in body - CreateWordprocessingDocument")))))
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -117,13 +125,17 @@ be used to create a basic Word document. You call it by passing a full
 path as the only parameter. The following code example creates the
 Invoice.docx file in the Public Documents folder.
 
+### [C#](#tab/cs-2)
 ```csharp
     CreateWordprocessingDocument(@"c:\Users\Public\Documents\Invoice.docx");
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     CreateWordprocessingDocument("c:\Users\Public\Documents\Invoice.docx")
 ```
+***
+
 
 The file extension, .docx, matches the type of file specified by the
 **WordprocessingDocumentType.Document**

@@ -37,6 +37,7 @@ this parameter as shown in the following **using** statement. In this code, the 
 represents the path for the file from which you want to open the
 document.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the presentation as read-only.
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
@@ -45,12 +46,15 @@ document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the presentation as read-only.
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -69,16 +73,20 @@ titles of the slides in a presentation file. For example you can use the
 following **foreach** statement in your program
 to return all the titles in the presentation file, "Myppt9.pptx."
 
+### [C#](#tab/cs-1)
 ```csharp
     foreach (string s in GetSlideTitles(@"C:\Users\Public\Documents\Myppt9.pptx"))
        Console.WriteLine(s);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     For Each s As String In GetSlideTitles("C:\Users\Public\Documents\Myppt9.pptx")
        Console.WriteLine(s)
     Next
 ```
+***
+
 
 The result would be a list of the strings that represent the titles in
 the presentation, each on a separate line.

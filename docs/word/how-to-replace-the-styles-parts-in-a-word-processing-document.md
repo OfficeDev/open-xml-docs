@@ -71,13 +71,17 @@ contains the styles to extract. The second parameter contains a string
 that indicates the path of the file to which to copy the styles,
 effectively completely replacing the styles.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void ReplaceStyles(string fromDoc, string toDoc)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub ReplaceStyles(fromDoc As String, toDoc As String)
 ```
+***
+
 
 The complete code listing for the **ReplaceStyles** method and its supporting methods
 can be found in the [Sample Code](#sample-code) section.
@@ -94,17 +98,21 @@ When the code finishes executing, the styles in the target document will
 have been replaced, and consequently the appearance of the text in the
 document will reflect the new styles.
 
+### [C#](#tab/cs-1)
 ```csharp
     const string fromDoc = @"C:\Users\Public\Documents\StylesFrom.docx";
     const string toDoc = @"C:\Users\Public\Documents\StylesTo.docx";
     ReplaceStyles(fromDoc, toDoc);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Const fromDoc As String = "C:\Users\Public\Documents\StylesFrom.docx"
     Const toDoc As String = "C:\Users\Public\Documents\StylesTo.docx"
     ReplaceStyles(fromDoc, toDoc)
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -121,6 +129,7 @@ the object created by **ExtractStylesPart** and
 uses its content to replace the styles or stylesWithEffects part in the
 target document.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Extract and replace the styles part.
     var node = ExtractStylesPart(fromDoc, false);
@@ -128,6 +137,7 @@ target document.
         ReplaceStylesPart(toDoc, node, false);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Extract and replace the styles part.
     Dim node = ExtractStylesPart(fromDoc, False)
@@ -135,6 +145,8 @@ target document.
         ReplaceStylesPart(toDoc, node, False)
     End If
 ```
+***
+
 
 The final parameter in the signature for either the **ExtractStylesPart** or the **ReplaceStylesPart** method determines whether the
 styles part or the stylesWithEffects part is employed. A value of false
@@ -143,6 +155,7 @@ absence of a value (the parameter is optional), or a value of true (the
 default), means that you want to extract and replace the
 stylesWithEffects part.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Extract and replace the stylesWithEffects part. To fully support 
     // round-tripping from Word 2013 to Word 2010, you should 
@@ -153,6 +166,7 @@ stylesWithEffects part.
     return;
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Extract and replace the stylesWithEffects part. To fully support 
     ' round-tripping from Word 2013 to Word 2010, you should 
@@ -162,6 +176,8 @@ stylesWithEffects part.
         ReplaceStylesPart(toDoc, node, True)
     End If
 ```
+***
+
 For more information about the **ExtractStylesPart** method, see [the associated sample](how-to-extract-styles-from-a-word-processing-document.md). The
 following section explains the **ReplaceStylesPart** method.
 
@@ -185,16 +201,20 @@ code earlier in this topic, you will need to call this procedure twice
 for Word 2013 documents, replacing each part with the corresponding part
 from a source document).
 
+### [C#](#tab/cs-4)
 ```csharp
     public static void ReplaceStylesPart(string fileName, XDocument newStyles,
       bool setStylesWithEffectsPart = true)
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Public Sub ReplaceStylesPart(
       ByVal fileName As String, ByVal newStyles As XDocument,
       Optional ByVal setStylesWithEffectsPart As Boolean = True)
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -209,6 +229,7 @@ document should be open for read/write access (the final **true** parameter). Gi
 uses the **[MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx)** property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Open the document for write access and get a reference.
     using (var document = 
@@ -222,6 +243,7 @@ the main document part, and then prepares a variable named **stylesPart** to hol
         StylesPart stylesPart = null;
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Open the document for write access and get a reference.
     Using document = WordprocessingDocument.Open(fileName, True)
@@ -233,6 +255,8 @@ the main document part, and then prepares a variable named **stylesPart** to hol
         ' stylesPart variable.
         Dim stylesPart As StylesPart = Nothing
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -243,6 +267,7 @@ the **setStylesWithEffectsPart** Boolean
 parameter. Based on this value, the code retrieves a reference to the
 requested styles part, and stores it in the **stylesPart** variable.
 
+### [C#](#tab/cs-6)
 ```csharp
     if (setStylesWithEffectsPart)
         stylesPart = docPart.StylesWithEffectsPart;
@@ -250,6 +275,7 @@ requested styles part, and stores it in the **stylesPart** variable.
         stylesPart = docPart.StyleDefinitionsPart;
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     If setStylesWithEffectsPart Then
         stylesPart = docPart.StylesWithEffectsPart
@@ -257,6 +283,8 @@ requested styles part, and stores it in the **stylesPart** variable.
         stylesPart = docPart.StyleDefinitionsPart
     End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -272,6 +300,7 @@ the code calls the
 [Save](https://msdn.microsoft.com/library/cc838476.aspx) method of
 the XDocument, saving its contents into the styles part.
 
+### [C#](#tab/cs-7)
 ```csharp
     // If the part exists, populate it with the new styles.
     if (stylesPart != null)
@@ -281,6 +310,7 @@ the XDocument, saving its contents into the styles part.
     }
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     ' If the part exists, populate it with the new styles.
     If stylesPart IsNot Nothing Then
@@ -288,6 +318,8 @@ the XDocument, saving its contents into the styles part.
           stylesPart.GetStream(FileMode.Create, FileAccess.Write)))
     End If
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 

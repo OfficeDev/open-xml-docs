@@ -38,6 +38,7 @@ the **presentationFile** parameter is a string
 that represents the path for the file from which you want to open the
 document.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the presentation as read-only.
         using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
@@ -46,11 +47,14 @@ document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -71,6 +75,7 @@ presentation file from the keyboard, and then use a **foreach** loop in your pro
 strings returned by the method **GetSlideIdAndText** as shown in the following
 example.
 
+### [C#](#tab/cs-1)
 ```csharp
     Console.Write("Please enter a presentation file name without extension: ");
     string fileName = Console.ReadLine();
@@ -86,6 +91,7 @@ example.
     System.Console.ReadKey();
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Console.Write("Please enter a presentation file name without extension: ")
     Dim fileName As String = System.Console.ReadLine()
@@ -99,6 +105,8 @@ example.
     Next
     System.Console.ReadKey()
 ```
+***
+
 
 The following is the complete sample code in both C\# and Visual Basic.
 

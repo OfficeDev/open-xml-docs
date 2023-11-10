@@ -61,6 +61,7 @@ template.
 > [!NOTE]
 > Carefully select the appropriate **WordProcessingDocumentType** and verify that the persisted file has the correct, matching file extension. If the **WordProcessingDocumentType** does not match the file extension, an error occurs when you open the file in Microsoft Word. The code that calls the **Create** method is part of a **using** statement followed by a bracketed block, as shown in the following code example.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Create(document, WordprocessingDocumentType.Document))
     {
@@ -68,11 +69,14 @@ template.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Create(document, WordprocessingDocumentType.Document)
        ' Insert other code here. 
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -98,13 +102,17 @@ of **WordprocessingML** markup. In your
 program, you can invoke the method **CreateNewWordDocument** by using the following
 call:
 
+### [C#](#tab/cs-1)
 ```csharp
     CreateNewWordDocument(@"C:\Users\Public\Documents\MyPkg4.docx");
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     CreateNewWordDocument("C:\Users\Public\Documents\MyPkg4.docx")
 ```
+***
+
 
 After you run the program, open the created file "myPkg4.docx" and
 examine its content; it should be one paragraph that contains the phrase

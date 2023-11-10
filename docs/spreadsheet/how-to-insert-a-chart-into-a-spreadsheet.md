@@ -39,6 +39,7 @@ this parameter is **false**.
 
 The code that calls the **Open** method is shown in the following **using** statement.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true)) 
@@ -47,12 +48,15 @@ The code that calls the **Open** method is shown in the following **using** stat
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended alternative to the typical .Open, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case *document*.
 
@@ -186,6 +190,7 @@ In the following example cell B4 contains the number 360.
 
 After opening the spreadsheet file for read/write access, the code verifies if the specified worksheet exists. It then adds a new [DrawingsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.aspx) object using the [AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method, appends it to the worksheet, and saves the worksheet part. The code then adds a new [ChartPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.aspx) object, appends a new [ChartSpace](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.chartpart.chartspace.aspx) object to the **ChartPart** object, and then appends a new [EditingLanguage](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chartspace.editinglanguage.aspx) object to the **ChartSpace*** object that specifies the language for the chart is English-US.
 
+### [C#](#tab/cs-1)
 ```csharp
     IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook.Descendants<Sheet>().Where
         (s => s.Name == worksheetName);
@@ -211,6 +216,7 @@ After opening the spreadsheet file for read/write access, the code verifies if t
         (new DocumentFormat.OpenXml.Drawing.Charts.Chart());
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim sheets As IEnumerable(Of Sheet) = _
         document.WorkbookPart.Workbook.Descendants(Of Sheet)() _
@@ -237,12 +243,15 @@ After opening the spreadsheet file for read/write access, the code verifies if t
         chartPart.ChartSpace.AppendChild(Of DocumentFormat.OpenXml.Drawing.Charts _
             .Chart)(New DocumentFormat.OpenXml.Drawing.Charts.Chart())
 ```
+***
+
 
 The code creates a new clustered column chart by creating a new [BarChart](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.barchart.aspx) object with [BarDirectionValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bardirectionvalues.aspx) object set to **Column** and [BarGroupingValues](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.bargroupingvalues.aspx) object set to **Clustered**.
 
 The code then iterates through each key in the **Dictionary** class. For each key, it appends a
 [BarChartSeries](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.barchartseries.aspx) object to the **BarChart** object and sets the [SeriesText](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.seriestext.aspx) object of the **BarChartSeries** object to equal the key. For each key, it appends a [NumberLiteral](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.numberliteral.aspx) object to the **Values** collection of the **BarChartSeries** object and sets the **NumberLiteral** object to equal the **Dictionary** class value corresponding to the key.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Create a new clustered column chart.
     PlotArea plotArea = chart.AppendChild<PlotArea>(new PlotArea());
@@ -280,6 +289,7 @@ The code then iterates through each key in the **Dictionary** class. For each ke
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Create a new clustered column chart.
     Dim plotArea As PlotArea = chart.AppendChild(Of PlotArea)(New PlotArea())
@@ -315,9 +325,12 @@ The code then iterates through each key in the **Dictionary** class. For each ke
         i += 1
     Next key
 ```
+***
+
 
 The code adds the [CategoryAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.categoryaxis.aspx) object and [ValueAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.valueaxis.aspx) object to the chart and sets the value of the following properties: [Scaling](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.scaling.aspx), [AxisPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.axisposition.aspx), [TickLabelPosition](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.ticklabelposition.aspx), [CrossingAxis](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crossingaxis.aspx), [Crosses](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.crosses.aspx), [AutoLabeled](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.autolabeled.aspx), [LabelAlignment](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labelalignment.aspx), and [LabelOffset](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.labeloffset.aspx). It also adds the [Legend](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.charts.chart.legend.aspx) object to the chart and saves the chart part.
 
+### [C#](#tab/cs-3)
 ```csharp
     barChart.Append(new AxisId() { Val = new UInt32Value(48650112u) });
     barChart.Append(new AxisId() { Val = new UInt32Value(48672768u) });
@@ -363,6 +376,7 @@ The code adds the [CategoryAxis](https://msdn.microsoft.com/library/office/docum
     chartPart.ChartSpace.Save();
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     barChart.Append(New AxisId() With {.Val = New UInt32Value(48650112UI)})
     barChart.Append(New AxisId() With {.Val = New UInt32Value(48672768UI)})
@@ -403,9 +417,12 @@ The code adds the [CategoryAxis](https://msdn.microsoft.com/library/office/docum
     ' Save the chart part.
     chartPart.ChartSpace.Save()
 ```
+***
+
 
 The code positions the chart on the worksheet by creating a [WorksheetDrawing](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.drawingspart.worksheetdrawing.aspx) object and appending a **TwoCellAnchor** object. The **TwoCellAnchor** object specifies how to move or resize the chart if you move the rows and columns between the [FromMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.frommarker.aspx) and [ToMarker](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.tomarker.aspx) anchors. The code then creates a [GraphicFrame](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.spreadsheet.graphicframe.aspx) object to contain the chart and names the chart "Chart 1," and saves the worksheet drawing.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Position the chart on the worksheet using a TwoCellAnchor object.
     drawingsPart.WorksheetDrawing = new WorksheetDrawing();
@@ -441,6 +458,7 @@ The code positions the chart on the worksheet by creating a [WorksheetDrawing](h
     drawingsPart.WorksheetDrawing.Save();
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Position the chart on the worksheet using a TwoCellAnchor object.
     drawingsPart.WorksheetDrawing = New WorksheetDrawing()
@@ -474,6 +492,8 @@ The code positions the chart on the worksheet by creating a [WorksheetDrawing](h
     ' Save the WorksheetDrawing object.
     drawingsPart.WorksheetDrawing.Save()
 ```
+***
+
 
 ## Sample Code
 
@@ -481,6 +501,7 @@ In the following code, you add a clustered column chart to a [SpreadsheetDocumen
 the data from a [Dictionary\<TKey, TValue\>](https://msdn2.microsoft.com/library/xfhwa508)
 class. For instance, you can call the method **InsertChartInSpreadsheet** by using this code segment.
 
+### [C#](#tab/cs-5)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet6.xlsx";
     string worksheetName = "Joe";
@@ -490,6 +511,7 @@ class. For instance, you can call the method **InsertChartInSpreadsheet** by usi
     InsertChartInSpreadsheet(docName, worksheetName, title, data);
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Sheet6.xlsx"
     Dim worksheetName As String = "Joe"
@@ -498,6 +520,8 @@ class. For instance, you can call the method **InsertChartInSpreadsheet** by usi
     data.Add("abc", 1)
     InsertChartInSpreadsheet(docName, worksheetName, title, data)
 ```
+***
+
 
 After you have run the program, take a look the file named "Sheet6.xlsx" to see the inserted chart.
 
