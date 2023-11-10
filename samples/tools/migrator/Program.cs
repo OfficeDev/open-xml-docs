@@ -110,27 +110,27 @@ foreach (var path in files)
 partial class Matchers
 {
     [GeneratedRegex("""The following assembly directives.*?```vb.*?```""", RegexOptions.Singleline)]
-    public static partial Regex GetAssemblyDirective();
+    static partial Regex GetAssemblyDirective();
 
     [GeneratedRegex("## How the Sample Code Works .*?##", RegexOptions.Singleline)]
-    public static partial Regex HowWorks();
+    static partial Regex HowWorks();
 
     [GeneratedRegex(".*(```csharp(.*?)```)", RegexOptions.Singleline)]
-    public static partial Regex Csharp();
+    static partial Regex Csharp();
 
     [GeneratedRegex("```csharp(.*?)```", RegexOptions.Singleline)]
-    public static partial Regex CsharpUsings();
+    static partial Regex CsharpUsings();
 
     [GeneratedRegex(".*(```vb(.*?)```)", RegexOptions.Singleline)]
-    public static partial Regex Vb();
+    static partial Regex Vb();
 
     [GeneratedRegex("```vb(.*?)```", RegexOptions.Singleline)]
-    public static partial Regex VbUsings();
+    static partial Regex VbUsings();
 
     [GeneratedRegex("./includes/(.*?)/structure\\.md")]
-    public static partial Regex Area();
+    static partial Regex Area();
 
-    public static MatchCollection? GetCsharpCode(string str)
+    static MatchCollection? GetCsharpCode(string str)
     {
         var pattern = @"(?<=```csharp).*?(?=```)";
 
@@ -140,7 +140,7 @@ partial class Matchers
         return matchCollection;
     }
 
-    public static MatchCollection? GetVbCode(string str)
+    static MatchCollection? GetVbCode(string str)
     {
         var pattern = @"(?<=```vb).*?(?=```)";
 

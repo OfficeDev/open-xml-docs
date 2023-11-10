@@ -1,18 +1,21 @@
 
-    using System;
-    using DocumentFormat.OpenXml.Packaging;
-    using S = DocumentFormat.OpenXml.Spreadsheet.Sheets;
-    using E = DocumentFormat.OpenXml.OpenXmlElement;
-    using A = DocumentFormat.OpenXml.OpenXmlAttribute;
+using System;
+using DocumentFormat.OpenXml.Packaging;
+using S = DocumentFormat.OpenXml.Spreadsheet.Sheets;
+using E = DocumentFormat.OpenXml.OpenXmlElement;
+using A = DocumentFormat.OpenXml.OpenXmlAttribute;
 
+GetSheetInfo(args[0]);
 
-    public static void GetSheetInfo(string fileName)
+static void GetSheetInfo(string fileName)
+{
+    // Open file as read-only.
+    using (SpreadsheetDocument mySpreadsheet = SpreadsheetDocument.Open(fileName, false))
     {
-        // Open file as read-only.
-        using (SpreadsheetDocument mySpreadsheet = SpreadsheetDocument.Open(fileName, false))
-        {
-            S sheets = mySpreadsheet.WorkbookPart.Workbook.Sheets;
+        S? sheets = mySpreadsheet.WorkbookPart?.Workbook?.Sheets;
 
+        if (sheets is not null)
+        {
             // For each sheet, display the sheet information.
             foreach (E sheet in sheets)
             {
@@ -23,3 +26,4 @@
             }
         }
     }
+}

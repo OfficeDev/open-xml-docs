@@ -3,7 +3,7 @@ using System;
 using System.IO.Enumeration;
 using System.Linq;
 
-if (args is [ { } fileName, {} includeHidden])
+if (args is [{ } fileName, { } includeHidden])
 {
     RetrieveNumberOfSlides(fileName, includeHidden);
 }
@@ -18,7 +18,7 @@ static int RetrieveNumberOfSlides(string fileName, string includeHidden = "true"
 
     using (PresentationDocument doc = PresentationDocument.Open(fileName, false))
     {
-        if (doc is not null && doc.PresentationPart is not null)
+        if (doc.PresentationPart is not null)
         {
             // Get the presentation part of the document.
             PresentationPart presentationPart = doc.PresentationPart;

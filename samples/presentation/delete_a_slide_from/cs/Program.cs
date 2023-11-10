@@ -1,128 +1,129 @@
 
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Presentation;
-    using DocumentFormat.OpenXml.Packaging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using DocumentFormat.OpenXml.Presentation;
+using DocumentFormat.OpenXml.Packaging;
 
+CountSlides(args[0]);
 
-    // Get the presentation object and pass it to the next CountSlides method.
-    public static int CountSlides(string presentationFile)
+// Get the presentation object and pass it to the next CountSlides method.
+static int CountSlides(string presentationFile)
+{
+    // Open the presentation as read-only.
+    using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
     {
-        // Open the presentation as read-only.
-        using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
-        {
-            // Pass the presentation to the next CountSlide method
-            // and return the slide count.
-            return CountSlides(presentationDocument);
-        }
+        // Pass the presentation to the next CountSlide method
+        // and return the slide count.
+        return CountSlidesFromPresentation(presentationDocument);
+    }
+}
+
+// Count the slides in the presentation.
+static int CountSlidesFromPresentation(PresentationDocument presentationDocument)
+{
+    int slidesCount = 0;
+
+    // Get the presentation part of document.
+    PresentationPart presentationPart = presentationDocument.PresentationPart ?? presentationDocument.AddPresentationPart();
+
+    // Get the slide count from the SlideParts.
+    if (presentationPart is not null)
+    {
+        slidesCount = presentationPart.SlideParts.Count();
     }
 
-    // Count the slides in the presentation.
-    public static int CountSlides(PresentationDocument presentationDocument)
+    // Return the slide count to the previous method.
+    return slidesCount;
+}
+//
+// Get the presentation object and pass it to the next DeleteSlide method.
+static void DeleteSlide(string presentationFile, int slideIndex)
+{
+    // Open the source document as read/write.
+
+    using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
     {
-        // Check for a null document object.
-        if (presentationDocument == null)
-        {
-            throw new ArgumentNullException("presentationDocument");
-        }
-
-        int slidesCount = 0;
-
-        // Get the presentation part of document.
-        PresentationPart presentationPart = presentationDocument.PresentationPart;
-
-        // Get the slide count from the SlideParts.
-        if (presentationPart != null)
-        {
-             slidesCount = presentationPart.SlideParts.Count();
-         }
-
-        // Return the slide count to the previous method.
-        return slidesCount;
+        // Pass the source document and the index of the slide to be deleted to the next DeleteSlide method.
+        DeleteSlideFromPresentation(presentationDocument, slideIndex);
     }
-    //
-    // Get the presentation object and pass it to the next DeleteSlide method.
-    public static void DeleteSlide(string presentationFile, int slideIndex)
+}
+
+// Delete the specified slide from the presentation.
+static void DeleteSlideFromPresentation(PresentationDocument presentationDocument, int slideIndex)
+{
+    if (presentationDocument is null)
     {
-        // Open the source document as read/write.
+        throw new ArgumentNullException("presentationDocument");
+    }
 
-        using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
-        {
-          // Pass the source document and the index of the slide to be deleted to the next DeleteSlide method.
-          DeleteSlide(presentationDocument, slideIndex);
-        }
-    }  
+    // Use the CountSlides sample to get the number of slides in the presentation.
+    int slidesCount = CountSlidesFromPresentation(presentationDocument);
 
-    // Delete the specified slide from the presentation.
-    public static void DeleteSlide(PresentationDocument presentationDocument, int slideIndex)
+    if (slideIndex < 0 || slideIndex >= slidesCount)
     {
-        if (presentationDocument == null)
-        {
-            throw new ArgumentNullException("presentationDocument");
-        }
+        throw new ArgumentOutOfRangeException("slideIndex");
+    }
 
-        // Use the CountSlides sample to get the number of slides in the presentation.
-        int slidesCount = CountSlides(presentationDocument);
+    // Get the presentation part from the presentation document. 
+    PresentationPart? presentationPart = presentationDocument.PresentationPart;
 
-        if (slideIndex < 0 || slideIndex >= slidesCount)
-        {
-            throw new ArgumentOutOfRangeException("slideIndex");
-        }
+    // Get the presentation from the presentation part.
+    Presentation? presentation = presentationPart?.Presentation;
 
-        // Get the presentation part from the presentation document. 
-        PresentationPart presentationPart = presentationDocument.PresentationPart;
+    // Get the list of slide IDs in the presentation.
+    SlideIdList? slideIdList = presentation?.SlideIdList;
 
-        // Get the presentation from the presentation part.
-        Presentation presentation = presentationPart.Presentation;
+    // Get the slide ID of the specified slide
+    SlideId? slideId = slideIdList?.ChildElements[slideIndex] as SlideId;
 
-        // Get the list of slide IDs in the presentation.
-        SlideIdList slideIdList = presentation.SlideIdList;
+    // Get the relationship ID of the slide.
+    string? slideRelId = slideId?.RelationshipId;
 
-        // Get the slide ID of the specified slide
-        SlideId slideId = slideIdList.ChildElements[slideIndex] as SlideId;
+    // If there's no relationship ID, there's no slide to delete.
+    if (slideRelId is null)
+    {
+        return;
+    }
 
-        // Get the relationship ID of the slide.
-        string slideRelId = slideId.RelationshipId;
-
-        // Remove the slide from the slide list.
-        slideIdList.RemoveChild(slideId);
+    // Remove the slide from the slide list.
+    slideIdList!.RemoveChild(slideId);
 
     //
-        // Remove references to the slide from all custom shows.
-        if (presentation.CustomShowList != null)
+    // Remove references to the slide from all custom shows.
+    if (presentation!.CustomShowList is not null)
+    {
+        // Iterate through the list of custom shows.
+        foreach (var customShow in presentation.CustomShowList.Elements<CustomShow>())
         {
-            // Iterate through the list of custom shows.
-            foreach (var customShow in presentation.CustomShowList.Elements<CustomShow>())
+            if (customShow.SlideList is not null)
             {
-                if (customShow.SlideList != null)
+                // Declare a link list of slide list entries.
+                LinkedList<SlideListEntry> slideListEntries = new LinkedList<SlideListEntry>();
+                foreach (SlideListEntry slideListEntry in customShow.SlideList.Elements())
                 {
-                    // Declare a link list of slide list entries.
-                    LinkedList<SlideListEntry> slideListEntries = new LinkedList<SlideListEntry>();
-                    foreach (SlideListEntry slideListEntry in customShow.SlideList.Elements())
+                    // Find the slide reference to remove from the custom show.
+                    if (slideListEntry.Id is not null && slideListEntry.Id == slideRelId)
                     {
-                        // Find the slide reference to remove from the custom show.
-                        if (slideListEntry.Id != null && slideListEntry.Id == slideRelId)
-                        {
-                            slideListEntries.AddLast(slideListEntry);
-                        }
+                        slideListEntries.AddLast(slideListEntry);
                     }
+                }
 
-                    // Remove all references to the slide from the custom show.
-                    foreach (SlideListEntry slideListEntry in slideListEntries)
-                    {
-                        customShow.SlideList.RemoveChild(slideListEntry);
-                    }
+                // Remove all references to the slide from the custom show.
+                foreach (SlideListEntry slideListEntry in slideListEntries)
+                {
+                    customShow.SlideList.RemoveChild(slideListEntry);
                 }
             }
         }
-
-        // Save the modified presentation.
-        presentation.Save();
-
-        // Get the slide part for the specified slide.
-        SlidePart slidePart = presentationPart.GetPartById(slideRelId) as SlidePart;
-
-        // Remove the slide part.
-        presentationPart.DeletePart(slidePart);
     }
+
+    // Save the modified presentation.
+    presentation.Save();
+
+    // Get the slide part for the specified slide.
+    SlidePart slidePart = (SlidePart)presentationPart!.GetPartById(slideRelId);
+
+    // Remove the slide part.
+    presentationPart.DeletePart(slidePart);
+}
