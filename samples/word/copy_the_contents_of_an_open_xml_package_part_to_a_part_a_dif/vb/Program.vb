@@ -1,9 +1,9 @@
+Imports System.IO
+Imports DocumentFormat.OpenXml.Packaging
 
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
 
-
-    ' To copy contents of one package part.
+Module MyModule
+' To copy contents of one package part.
     Public Sub CopyThemeContent(ByVal fromDocument1 As String, ByVal toDocument2 As String)
        Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)
        Dim wordDoc2 As WordprocessingDocument = WordprocessingDocument.Open(toDocument2, True)
@@ -17,3 +17,4 @@
           End Using
        End Using
     End Sub
+End Module

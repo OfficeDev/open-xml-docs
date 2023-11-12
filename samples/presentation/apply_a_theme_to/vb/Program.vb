@@ -1,11 +1,11 @@
+Imports System
+Imports System.Collections.Generic
+Imports System.Linq
+Imports DocumentFormat.OpenXml.Presentation
+Imports DocumentFormat.OpenXml.Packaging
 
-    Imports System
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
 
-
+Module MyModule
     ' Apply a new theme to the presentation. 
     Public Sub ApplyThemeToPresentation(ByVal presentationFile As String, ByVal themePresentation As String)
         Dim themeDocument As PresentationDocument = PresentationDocument.Open(themePresentation, False)
@@ -89,3 +89,4 @@
         ' Remarks: If this is used in production code, check for a null reference.
         Return slideData.Name
     End Function
+End Module

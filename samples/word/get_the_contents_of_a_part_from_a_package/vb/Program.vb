@@ -1,10 +1,10 @@
+Imports System
+Imports System.IO
+Imports DocumentFormat.OpenXml.Packaging
 
-    Imports System
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
 
-
-    ' To get the contents of a document part.
+Module MyModule
+' To get the contents of a document part.
     Public Function GetCommentsFromDocument(ByVal document As String) As String
         Dim comments As String = Nothing
         Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, False)
@@ -14,3 +14,4 @@
         comments = streamReader.ReadToEnd
         Return comments
     End Function
+End Module

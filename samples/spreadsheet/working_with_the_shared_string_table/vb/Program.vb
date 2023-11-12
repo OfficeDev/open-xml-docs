@@ -1,5 +1,7 @@
 
-    ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
+
+Module MyModule
+' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
     Private Function InsertSharedStringItem(ByVal text As String, ByVal shareStringPart As SharedStringTablePart) As Integer
         ' If the part does not contain a SharedStringTable, create one.
@@ -49,3 +51,4 @@
 
         Return i
     End Function
+End Module

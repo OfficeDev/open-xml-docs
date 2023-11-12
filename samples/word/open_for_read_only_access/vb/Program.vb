@@ -1,11 +1,11 @@
+Imports System.IO
+Imports System.IO.Packaging
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-    Imports System.IO
-    Imports System.IO.Packaging
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
 
-
-    Public Sub OpenWordprocessingDocumentReadonly(ByVal filepath As String)
+Module MyModule
+Public Sub OpenWordprocessingDocumentReadonly(ByVal filepath As String)
         ' Open a WordprocessingDocument based on a filepath.
         Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, False)
             ' Assign a reference to the existing document body. 
@@ -42,3 +42,4 @@
         ' Close the package.
         wordPackage.Close()
     End Sub
+End Module

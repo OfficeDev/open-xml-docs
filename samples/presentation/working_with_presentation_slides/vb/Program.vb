@@ -1,5 +1,7 @@
 
-    Private Shared Function CreateSlidePart(ByVal presentationPart As PresentationPart) As SlidePart
+
+Module MyModule
+Private Shared Function CreateSlidePart(ByVal presentationPart As PresentationPart) As SlidePart
                 Dim slidePart1 As SlidePart = presentationPart.AddNewPart(Of SlidePart)("rId2")
                 slidePart1.Slide = New Slide(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
                  .Id = CType(1UI, UInt32Value), _
@@ -26,3 +28,4 @@
                 }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New P.TextBody(New BodyProperties(), _
                    New ListStyle(), New Paragraph(New EndParagraphRunProperties() With { _
                   .Language = "en-US" })))
+End Module

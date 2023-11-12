@@ -1,11 +1,11 @@
+Imports System
+Imports System.Linq
+Imports DocumentFormat.OpenXml.Presentation
+Imports DocumentFormat.OpenXml.Packaging
 
-    Imports System
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
 
-
-    ' Count the slides in the presentation.
+Module MyModule
+' Count the slides in the presentation.
     Public Function CountSlides(ByVal presentationFile As String) As Integer
 
         ' Open the presentation as read-only.
@@ -102,3 +102,4 @@
         presentation.Save()
 
     End Sub
+End Module

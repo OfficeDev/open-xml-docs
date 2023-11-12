@@ -1,12 +1,12 @@
+Imports System
+Imports DocumentFormat.OpenXml.Packaging
+Imports S = DocumentFormat.OpenXml.Spreadsheet.Sheets
+Imports E = DocumentFormat.OpenXml.OpenXmlElement
+Imports A = DocumentFormat.OpenXml.OpenXmlAttribute
 
-    Imports System
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports S = DocumentFormat.OpenXml.Spreadsheet.Sheets
-    Imports E = DocumentFormat.OpenXml.OpenXmlElement
-    Imports A = DocumentFormat.OpenXml.OpenXmlAttribute
 
-
-    Public Sub GetSheetInfo(ByVal fileName As String)
+Module MyModule
+Public Sub GetSheetInfo(ByVal fileName As String)
             ' Open file as read-only.
             Using mySpreadsheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
                 Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
@@ -19,3 +19,4 @@
                 Next
             End Using
         End Sub
+End Module

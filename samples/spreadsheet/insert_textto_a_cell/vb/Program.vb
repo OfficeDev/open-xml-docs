@@ -1,11 +1,11 @@
+Imports System.Linq
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
 
-
-    ' Given a document name and text, 
+Module MyModule
+' Given a document name and text, 
     ' inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
     Public Function InsertText(ByVal docName As String, ByVal text As String)
         ' Open the document for editing.
@@ -133,3 +133,4 @@
             Return newCell
         End If
     End Function
+End Module

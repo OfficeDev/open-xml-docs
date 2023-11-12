@@ -1,5 +1,7 @@
 
-    Private Shared Function CreateSlideLayoutPart(ByVal slidePart1 As SlidePart) As SlideLayoutPart
+
+Module MyModule
+Private Shared Function CreateSlideLayoutPart(ByVal slidePart1 As SlidePart) As SlideLayoutPart
                 Dim slideLayoutPart1 As SlideLayoutPart = slidePart1.AddNewPart(Of SlideLayoutPart)("rId1")
                 Dim slideLayout As New SlideLayout(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
                   .Id = CType(1UI, UInt32Value), _
@@ -33,3 +35,4 @@
                 slideLayoutPart1.SlideLayout = slideLayout
                 Return slideLayoutPart1
             End Function
+End Module

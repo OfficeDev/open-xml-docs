@@ -1,5 +1,7 @@
 
-    Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
+
+Module MyModule
+Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
         ' Open a WordprocessingDocument for editing using the filepath.
         Using wordprocessingDocument As WordprocessingDocument = _
             WordprocessingDocument.Open(filepath, True)
@@ -33,3 +35,4 @@
             run.AppendChild(New Text(txt))
         End Using
     End Sub
+End Module

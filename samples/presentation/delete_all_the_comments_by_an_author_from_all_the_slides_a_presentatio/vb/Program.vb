@@ -1,13 +1,13 @@
+Imports System
+Imports System.Linq
+Imports System.Collections.Generic
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Presentation
+Imports DocumentFormat.OpenXml.Packaging
 
-    Imports System
-    Imports System.Linq
-    Imports System.Collections.Generic
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
 
-
-    ' Remove all the comments in the slides by a certain author.
+Module MyModule
+' Remove all the comments in the slides by a certain author.
     Public Sub DeleteCommentsByAuthorInPresentation(ByVal fileName As String, ByVal author As String)
 
         Dim doc As PresentationDocument = PresentationDocument.Open(fileName, True)
@@ -53,3 +53,4 @@
 
         End Using
     End Sub
+End Module

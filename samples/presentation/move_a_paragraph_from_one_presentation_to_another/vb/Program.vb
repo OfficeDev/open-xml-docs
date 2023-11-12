@@ -1,11 +1,11 @@
+Imports System.Linq
+Imports DocumentFormat.OpenXml.Presentation
+Imports DocumentFormat.OpenXml.Packaging
+Imports Drawing = DocumentFormat.OpenXml.Drawing
 
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports Drawing = DocumentFormat.OpenXml.Drawing
 
-
-    ' Moves a paragraph range in a TextBody shape in the source document
+Module MyModule
+' Moves a paragraph range in a TextBody shape in the source document
     ' to another TextBody shape in the target document.
     Public Sub MoveParagraphToPresentation(ByVal sourceFile As String, ByVal targetFile As String)
 
@@ -61,3 +61,4 @@
         Return slidePart
 
     End Function
+End Module

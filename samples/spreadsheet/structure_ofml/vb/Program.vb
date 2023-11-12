@@ -1,5 +1,7 @@
 
-    Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
+
+Module MyModule
+Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
         ' Create a spreadsheet document by supplying the filepath.
         ' By default, AutoSave = true, Editable = true, and Type = xlsx.
         Dim spreadsheetDocument As SpreadsheetDocument = spreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook)
@@ -59,3 +61,4 @@
         ' Close the document.
         spreadsheetDocument.Close()
     End Sub
+End Module

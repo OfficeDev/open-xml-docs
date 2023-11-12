@@ -1,9 +1,9 @@
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
 
-
-    Public Sub OpenAndAddTextToWordDocument(ByVal filepath As String, ByVal txt As String)
+Module MyModule
+Public Sub OpenAndAddTextToWordDocument(ByVal filepath As String, ByVal txt As String)
         ' Open a WordprocessingDocument for editing using the filepath.
         Dim wordprocessingDocument As WordprocessingDocument = _
             wordprocessingDocument.Open(filepath, True)
@@ -19,3 +19,4 @@
         ' Close the handle explicitly.
         wordprocessingDocument.Close()
     End Sub
+End Module

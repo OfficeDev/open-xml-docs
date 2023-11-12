@@ -1,15 +1,15 @@
+Imports System.Collections.Generic
+Imports System.Linq
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
+Imports DocumentFormat.OpenXml.Drawing
+Imports DocumentFormat.OpenXml.Drawing.Charts
+Imports DocumentFormat.OpenXml.Drawing.Spreadsheet
 
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-    Imports DocumentFormat.OpenXml.Drawing
-    Imports DocumentFormat.OpenXml.Drawing.Charts
-    Imports DocumentFormat.OpenXml.Drawing.Spreadsheet
 
-
-    ' Given a document name, a worksheet name, a chart title, and a Dictionary collection of text keys 
+Module MyModule
+' Given a document name, a worksheet name, a chart title, and a Dictionary collection of text keys 
     ' and corresponding integer data, creates a column chart with the text as the series 
     ' and the integers as the values.
     Private Sub InsertChartInSpreadsheet(ByVal docName As String, ByVal worksheetName As String, _
@@ -138,3 +138,4 @@
         End Using
 
     End Sub
+End Module

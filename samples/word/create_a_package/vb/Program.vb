@@ -1,11 +1,11 @@
+Imports System.Text
+Imports System.IO
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
 
-    Imports System.Text
-    Imports System.IO
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
 
-
-    ' To create a new package as a Word document.
+Module MyModule
+' To create a new package as a Word document.
     Public Sub CreateNewWordDocument(ByVal document As String)
         Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Create(document, WordprocessingDocumentType.Document)
         Using (wordDoc)
@@ -31,3 +31,4 @@
         Dim buf() As Byte = utf8encoder1.GetBytes(docXml)
         stream1.Write(buf, 0, buf.Length)
     End Sub
+End Module

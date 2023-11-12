@@ -1,5 +1,7 @@
 
-    Private Shared Function CreateHandoutMasterPart(ByVal presentationPart As PresentationPart) As HandoutMasterPart
+
+Module MyModule
+Private Shared Function CreateHandoutMasterPart(ByVal presentationPart As PresentationPart) As HandoutMasterPart
             Dim handoutMasterPart1 As HandoutMasterPart = presentationPart.AddNewPart(Of HandoutMasterPart)("rId3")
             handoutMasterPart1.HandoutMaster = New HandoutMaster(New CommonSlideData(New ShapeTree(New _
                 P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
@@ -63,3 +65,4 @@
             })
             Return handoutMasterPart1
         End Function
+End Module

@@ -1,5 +1,7 @@
 
-    Public Shared Sub CreateWordDoc(filepath As String, msg As String)
+
+Module MyModule
+Public Shared Sub CreateWordDoc(filepath As String, msg As String)
         Using doc As WordprocessingDocument = WordprocessingDocument.Create(filepath, DocumentFormat.OpenXml.WordprocessingDocumentType.Document)
             ' Add a main document part. 
             Dim mainPart As MainDocumentPart = doc.AddMainDocumentPart()
@@ -31,3 +33,4 @@
             run.AppendChild(New Text(msg))
         End Using
     End Sub
+End Module

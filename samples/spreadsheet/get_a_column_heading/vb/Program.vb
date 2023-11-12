@@ -1,12 +1,12 @@
+Imports System.Collections.Generic
+Imports System.Linq
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
+Imports System.Text.RegularExpressions
 
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-    Imports System.Text.RegularExpressions
 
-
-    ' Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
+Module MyModule
+' Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
     ' the content of the first cell in that column.
     Public Function GetColumnHeading(ByVal docName As String, ByVal worksheetName As String, ByVal cellName As String) As String
         ' Open the document as read-only.
@@ -64,3 +64,4 @@
         Dim match As Match = regex.Match(cellName)
         Return UInteger.Parse(match.Value)
     End Function
+End Module

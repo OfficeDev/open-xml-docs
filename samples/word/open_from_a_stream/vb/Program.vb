@@ -1,10 +1,10 @@
+Imports System.IO
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
 
-
-    Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As String)
+Module MyModule
+Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As String)
         ' Open a WordProcessingDocument based on a stream.
         Dim wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(stream, true)
 
@@ -21,3 +21,4 @@
 
         ' Caller must close the stream.
     End Sub
+End Module

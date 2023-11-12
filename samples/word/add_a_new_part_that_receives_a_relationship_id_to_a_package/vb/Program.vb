@@ -1,12 +1,12 @@
+Imports System.IO
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
+Imports System.Xml
 
-    Imports System.IO
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-    Imports System.Xml
 
-
-    Public Sub AddNewPart(ByVal document As String)
+Module MyModule
+Public Sub AddNewPart(ByVal document As String)
         ' Create a new word processing document.
         Dim wordDoc As WordprocessingDocument = _
     WordprocessingDocument.Create(document, WordprocessingDocumentType.Document)
@@ -43,3 +43,4 @@
         
         wordDoc.Close()
     End Sub
+End Module

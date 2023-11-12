@@ -1,9 +1,9 @@
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
 
-
-    ' Apply a style to a paragraph.
+Module MyModule
+' Apply a style to a paragraph.
     Public Sub ApplyStyleToParagraph(ByVal doc As WordprocessingDocument,
         ByVal styleid As String, ByVal stylename As String, ByVal p As Paragraph)
 
@@ -124,3 +124,4 @@
         root.Save(part)
         Return part
     End Function
+End Module

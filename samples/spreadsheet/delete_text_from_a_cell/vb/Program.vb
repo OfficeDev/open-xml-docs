@@ -1,11 +1,11 @@
+Imports System.Collections.Generic
+Imports System.Linq
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
 
-
-    ' Given a document, a worksheet name, a column name, and a one-based row index,
+Module MyModule
+' Given a document, a worksheet name, a column name, and a one-based row index,
     ' deletes the text from the cell at the specified column and row on the specified sheet.
     Public Sub DeleteTextFromCell(ByVal docName As String, ByVal sheetName As String, ByVal colName As String, ByVal rowIndex As UInteger)
         ' Open the document for editing.
@@ -101,3 +101,4 @@
             End If
         End If
     End Sub
+End Module

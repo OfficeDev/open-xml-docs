@@ -1,14 +1,14 @@
+Imports System
+Imports System.Collections.Generic
+Imports System.Linq
+Imports System.Text
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Presentation
+Imports D = DocumentFormat.OpenXml.Drawing
 
-    Imports System
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports System.Text
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports D = DocumentFormat.OpenXml.Drawing
 
-
-    ' Get a list of the titles of all the slides in the presentation.
+Module MyModule
+' Get a list of the titles of all the slides in the presentation.
     Public Function GetSlideTitles(ByVal presentationFile As String) As IList(Of String)
 
         ' Open the presentation as read-only.
@@ -109,3 +109,4 @@
         End If
         Return False
     End Function
+End Module

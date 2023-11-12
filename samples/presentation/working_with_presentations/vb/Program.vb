@@ -1,5 +1,7 @@
 
-    Public Shared Sub CreatePresentation(ByVal filepath As String)
+
+Module MyModule
+Public Shared Sub CreatePresentation(ByVal filepath As String)
 
                 ' Create a presentation at a specified file path. The presentation document type is pptx, by default.
                 Dim presentationDoc As PresentationDocument = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation)
@@ -73,3 +75,4 @@
 
              ' Code to create other parts of the presentation file goes here.
             End Sub
+End Module

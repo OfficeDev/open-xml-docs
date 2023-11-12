@@ -1,13 +1,13 @@
+Imports System.Collections.Generic
+Imports System.Linq
+Imports System.Text.RegularExpressions
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports System.Text.RegularExpressions
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
 
-
-    ' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
+Module MyModule
+' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
     ' the name of the last cell in the contiguous range, and the name of the results cell, 
     ' calculates the sum of the cells in the contiguous range and inserts the result into the results cell.
     ' Note: All cells in the contiguous range must contain numbers.Private Sub CalculateSumOfCellRange(ByVal docName As String, ByVal worksheetName As String, ByVal firstCellName As String, _
@@ -152,3 +152,4 @@
             Return newCell
         End If
     End Function
+End Module

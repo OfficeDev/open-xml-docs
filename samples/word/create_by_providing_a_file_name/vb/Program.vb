@@ -1,10 +1,10 @@
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
 
-
-    Public Sub CreateWordprocessingDocument(ByVal filepath As String)
+Module MyModule
+Public Sub CreateWordprocessingDocument(ByVal filepath As String)
         ' Create a document by supplying the filepath.
         Using wordDocument As WordprocessingDocument = _
             WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document)
@@ -20,3 +20,4 @@
             run.AppendChild(New Text("Create text in body - CreateWordprocessingDocument"))
         End Using
     End Sub
+End Module

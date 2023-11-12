@@ -1,11 +1,11 @@
+Imports System
+Imports DocumentFormat.OpenXml.Presentation
+Imports DocumentFormat.OpenXml.Packaging
+Imports Drawing = DocumentFormat.OpenXml.Drawing
 
-    Imports System
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports Drawing = DocumentFormat.OpenXml.Drawing
 
-
-    ' Insert a slide into the specified presentation.
+Module MyModule
+' Insert a slide into the specified presentation.
     Public Sub InsertNewSlide(ByVal presentationFile As String, ByVal position As Integer, ByVal slideTitle As String)
 
         ' Open the source document as read/write. 
@@ -131,3 +131,4 @@
         presentationPart.Presentation.Save()
 
     End Sub
+End Module

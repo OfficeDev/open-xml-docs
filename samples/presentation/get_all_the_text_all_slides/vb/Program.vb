@@ -1,15 +1,15 @@
+Imports System
+Imports System.Linq
+Imports System.Collections.Generic
+Imports A = DocumentFormat.OpenXml.Drawing
+Imports DocumentFormat.OpenXml.Presentation
+Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml
+Imports System.Text
 
-    Imports System
-    Imports System.Linq
-    Imports System.Collections.Generic
-    Imports A = DocumentFormat.OpenXml.Drawing
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml
-    Imports System.Text
 
-
-    Public Function CountSlides(ByVal presentationFile As String) As Integer
+Module MyModule
+Public Function CountSlides(ByVal presentationFile As String) As Integer
         ' Open the presentation as read-only.
         Using presentationDocument__1 As PresentationDocument = PresentationDocument.Open(presentationFile, False)
             ' Pass the presentation to the next CountSlides method
@@ -58,3 +58,4 @@
             sldText = paragraphText.ToString()
         End Using
     End Sub
+End Module
