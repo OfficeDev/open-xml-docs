@@ -7,25 +7,25 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 
 Module MyModule
-' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
+    ' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
     ' the name of the last cell in the contiguous range, and the name of the results cell, 
     ' calculates the sum of the cells in the contiguous range and inserts the result into the results cell.
     ' Note: All cells in the contiguous range must contain numbers.Private Sub CalculateSumOfCellRange(ByVal docName As String, ByVal worksheetName As String, ByVal firstCellName As String, _
-    Private Sub CalculateSumOfCellRange(ByVal docName As String, ByVal worksheetName As String, ByVal firstCellName As String, _
+    Private Sub CalculateSumOfCellRange(ByVal docName As String, ByVal worksheetName As String, ByVal firstCellName As String,
     ByVal lastCellName As String, ByVal resultCell As String)
         ' Open the document for editing.
         Dim document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
 
         Using (document)
-            Dim sheets As IEnumerable(Of Sheet) = _
+            Dim sheets As IEnumerable(Of Sheet) =
                 document.WorkbookPart.Workbook.Descendants(Of Sheet)().Where(Function(s) s.Name = worksheetName)
             If (sheets.Count() = 0) Then
                 ' The specified worksheet does not exist.
                 Return
             End If
 
-            Dim worksheetPart As WorksheetPart = CType(document.WorkbookPart.GetPartById(Sheets.First().Id), WorksheetPart)
-            Dim worksheet As Worksheet = WorksheetPart.Worksheet
+            Dim worksheetPart As WorksheetPart = CType(document.WorkbookPart.GetPartById(sheets.First().Id), WorksheetPart)
+            Dim worksheet As Worksheet = worksheetPart.Worksheet
 
             ' Get the row number and column name for the first and last cells in the range.
             Dim firstRowNum As UInteger = GetRowIndex(firstCellName)
@@ -39,7 +39,7 @@ Module MyModule
             For Each row As Row In worksheet.Descendants(Of Row)().Where(Function(r) r.RowIndex.Value >= firstRowNum _
                                                                              AndAlso r.RowIndex.Value <= lastRowNum)
                 For Each cell As Cell In row
-                    Dim columnName As String = GetColumnName(Cell.CellReference.Value)
+                    Dim columnName As String = GetColumnName(cell.CellReference.Value)
                     If ((CompareColumn(columnName, firstColumn) >= 0) AndAlso (CompareColumn(columnName, lastColumn) <= 0)) Then
                         sum = (sum + Double.Parse(cell.CellValue.Text))
                     End If
@@ -58,7 +58,7 @@ Module MyModule
             ' Insert the result into the SharedStringTablePart.
             Dim index As Integer = InsertSharedStringItem(("Result:" + sum.ToString()), shareStringPart)
 
-            Dim result As Cell = InsertCellInWorksheet(GetColumnName(resultCell), GetRowIndex(resultCell), WorksheetPart)
+            Dim result As Cell = InsertCellInWorksheet(GetColumnName(resultCell), GetRowIndex(resultCell), worksheetPart)
 
             ' Set the value of the cell.
             result.CellValue = New CellValue(index.ToString())

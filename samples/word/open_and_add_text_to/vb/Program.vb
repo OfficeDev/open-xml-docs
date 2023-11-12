@@ -3,10 +3,10 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
-Public Sub OpenAndAddTextToWordDocument(ByVal filepath As String, ByVal txt As String)
+    Public Sub OpenAndAddTextToWordDocument(ByVal filepath As String, ByVal txt As String)
         ' Open a WordprocessingDocument for editing using the filepath.
-        Dim wordprocessingDocument As WordprocessingDocument = _
-            wordprocessingDocument.Open(filepath, True)
+        Dim wordprocessingDocument As WordprocessingDocument =
+            WordprocessingDocument.Open(filepath, True)
 
         ' Assign a reference to the existing document body. 
         Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
@@ -16,7 +16,7 @@ Public Sub OpenAndAddTextToWordDocument(ByVal filepath As String, ByVal txt As S
         Dim run As Run = para.AppendChild(New Run)
         run.AppendChild(New Text(txt))
 
-        ' Close the handle explicitly.
-        wordprocessingDocument.Close()
+        ' Dispose the handle explicitly.
+        wordprocessingDocument.Dispose()
     End Sub
 End Module

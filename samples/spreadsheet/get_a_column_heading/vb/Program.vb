@@ -6,45 +6,45 @@ Imports System.Text.RegularExpressions
 
 
 Module MyModule
-' Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
+    ' Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
     ' the content of the first cell in that column.
     Public Function GetColumnHeading(ByVal docName As String, ByVal worksheetName As String, ByVal cellName As String) As String
         ' Open the document as read-only.
         Dim document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, False)
 
         Using (document)
-    Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)().Where(Function(s) s.Name = worksheetName)
-    If (sheets.Count() = 0) Then
-        ' The specified worksheet does not exist.
-        Return Nothing
-    End If
+            Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)().Where(Function(s) s.Name = worksheetName)
+            If (sheets.Count() = 0) Then
+                ' The specified worksheet does not exist.
+                Return Nothing
+            End If
 
-    Dim worksheetPart As WorksheetPart = CType(document.WorkbookPart.GetPartById(sheets.First.Id), WorksheetPart)
+            Dim worksheetPart As WorksheetPart = CType(document.WorkbookPart.GetPartById(sheets.First.Id), WorksheetPart)
 
-    ' Get the column name for the specified cell.
-    Dim columnName As String = GetColumnName(cellName)
+            ' Get the column name for the specified cell.
+            Dim columnName As String = GetColumnName(cellName)
 
-    ' Get the cells in the specified column and order them by row.
-    Dim cells As IEnumerable(Of Cell) = worksheetPart.Worksheet.Descendants(Of Cell)().Where(Function(c) _
-        String.Compare(GetColumnName(c.CellReference.Value), columnName, True) = 0).OrderBy(Function(r) GetRowIndex(r.CellReference))
+            ' Get the cells in the specified column and order them by row.
+            Dim cells As IEnumerable(Of Cell) = worksheetPart.Worksheet.Descendants(Of Cell)().Where(Function(c) _
+                String.Compare(GetColumnName(c.CellReference.Value), columnName, True) = 0).OrderBy(Function(r) GetRowIndex(r.CellReference))
 
-    If (cells.Count() = 0) Then
-        ' The specified column does not exist.
-        Return Nothing
-    End If
+            If (cells.Count() = 0) Then
+                ' The specified column does not exist.
+                Return Nothing
+            End If
 
-    ' Get the first cell in the column.
-    Dim headCell As Cell = cells.First()
+            ' Get the first cell in the column.
+            Dim headCell As Cell = cells.First()
 
-    ' If the content of the first cell is stored as a shared string, get the text of the first cell
-    ' from the SharedStringTablePart and return it. Otherwise, return the string value of the cell.
-    If ((Not (headCell.DataType) Is Nothing) AndAlso (headCell.DataType.Value = CellValues.SharedString)) Then
-        Dim shareStringPart As SharedStringTablePart = document.WorkbookPart.GetPartsOfType(Of SharedStringTablePart)().First()
-        Dim items() As SharedStringItem = shareStringPart.SharedStringTable.Elements(Of SharedStringItem)().ToArray()
-        Return items(Integer.Parse(headCell.CellValue.Text)).InnerText
-    Else
-        Return headCell.CellValue.Text
-    End If
+            ' If the content of the first cell is stored as a shared string, get the text of the first cell
+            ' from the SharedStringTablePart and return it. Otherwise, return the string value of the cell.
+            If ((Not (headCell.DataType) Is Nothing) AndAlso (headCell.DataType.Value = CellValues.SharedString)) Then
+                Dim shareStringPart As SharedStringTablePart = document.WorkbookPart.GetPartsOfType(Of SharedStringTablePart)().First()
+                Dim items() As SharedStringItem = shareStringPart.SharedStringTable.Elements(Of SharedStringItem)().ToArray()
+                Return items(Integer.Parse(headCell.CellValue.Text)).InnerText
+            Else
+                Return headCell.CellValue.Text
+            End If
 
         End Using
     End Function

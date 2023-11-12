@@ -4,9 +4,9 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
-Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As String)
+    Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As String)
         ' Open a WordProcessingDocument based on a stream.
-        Dim wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(stream, true)
+        Dim wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(stream, True)
 
         ' Assign a reference to the existing document body.
         Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
@@ -16,8 +16,8 @@ Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As
         Dim run As Run = para.AppendChild(New Run)
         run.AppendChild(New Text(txt))
 
-        ' Close the document handle.
-        wordprocessingDocument.Close
+        ' Dispose the document handle.
+        wordprocessingDocument.Dispose()
 
         ' Caller must close the stream.
     End Sub

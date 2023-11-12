@@ -22,9 +22,9 @@ Module Program
         End If
 
         ' Create a new character style and specify some of the attributes.
-        Dim style As New Style() With { _
-            .Type = StyleValues.Character, _
-            .StyleId = styleid, _
+        Dim style As New Style() With {
+            .Type = StyleValues.Character,
+            .StyleId = styleid,
             .CustomStyle = True}
 
         ' Create and add the child elements (properties of the style).
@@ -40,7 +40,7 @@ Module Program
         ' Create the StyleRunProperties object and specify some of the run properties.
         Dim styleRunProperties1 As New StyleRunProperties()
         Dim bold1 As New Bold()
-        Dim color1 As New Color() With { _
+        Dim color1 As New Color() With {
             .ThemeColor = ThemeColorValues.Accent2}
         Dim font1 As New RunFonts() With {.Ascii = "Tahoma"}
         Dim italic1 As New Italic()

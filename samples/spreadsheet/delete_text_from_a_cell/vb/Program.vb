@@ -5,7 +5,7 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 
 Module MyModule
-' Given a document, a worksheet name, a column name, and a one-based row index,
+    ' Given a document, a worksheet name, a column name, and a one-based row index,
     ' deletes the text from the cell at the specified column and row on the specified sheet.
     Public Sub DeleteTextFromCell(ByVal docName As String, ByVal sheetName As String, ByVal colName As String, ByVal rowIndex As UInteger)
         ' Open the document for editing.

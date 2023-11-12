@@ -24,8 +24,8 @@ Module Program
 
             Dim table As New Table()
 
-            Dim props As TableProperties = _
-                New TableProperties(New TableBorders( _
+            Dim props As TableProperties =
+                New TableProperties(New TableBorders(
                 New TopBorder With {
                     .Val = New EnumValue(Of BorderValues)(BorderValues.Single),
                     .Size = 12},
@@ -37,10 +37,10 @@ Module Program
                     .Size = 12},
                 New RightBorder With {
                     .Val = New EnumValue(Of BorderValues)(BorderValues.Single),
-                    .Size = 12}, _
+                    .Size = 12},
                 New InsideHorizontalBorder With {
                     .Val = New EnumValue(Of BorderValues)(BorderValues.Single),
-                    .Size = 12}, _
+                    .Size = 12},
                 New InsideVerticalBorder With {
                     .Val = New EnumValue(Of BorderValues)(BorderValues.Single),
                     .Size = 12}))

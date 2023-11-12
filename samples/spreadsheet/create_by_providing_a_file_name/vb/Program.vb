@@ -4,11 +4,11 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 
 Module MyModule
-Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
+    Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
         ' Create a spreadsheet document by supplying the filepath.
         ' By default, AutoSave = true, Editable = true, and Type = xlsx.
-        Dim spreadsheetDocument As SpreadsheetDocument = _
-    spreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook)
+        Dim spreadsheetDocument As SpreadsheetDocument =
+    SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook)
 
         ' Add a WorkbookPart to the document.
         Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart
@@ -31,7 +31,7 @@ Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
 
         workbookpart.Workbook.Save()
 
-        ' Close the document.
-        spreadsheetDocument.Close()
+        ' Dispose the document.
+        spreadsheetDocument.Dispose()
     End Sub
 End Module

@@ -9,35 +9,35 @@ Imports DocumentFormat.OpenXml.Drawing.Spreadsheet
 
 
 Module MyModule
-' Given a document name, a worksheet name, a chart title, and a Dictionary collection of text keys 
+    ' Given a document name, a worksheet name, a chart title, and a Dictionary collection of text keys 
     ' and corresponding integer data, creates a column chart with the text as the series 
     ' and the integers as the values.
-    Private Sub InsertChartInSpreadsheet(ByVal docName As String, ByVal worksheetName As String, _
+    Private Sub InsertChartInSpreadsheet(ByVal docName As String, ByVal worksheetName As String,
     ByVal title As String, ByVal data As Dictionary(Of String, Integer))
         ' Open the document for editing.
         Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
-            Dim sheets As IEnumerable(Of Sheet) = _
+            Dim sheets As IEnumerable(Of Sheet) =
                 document.WorkbookPart.Workbook.Descendants(Of Sheet)() _
                 .Where(Function(s) s.Name = worksheetName)
             If sheets.Count() = 0 Then
                 ' The specified worksheet does not exist.
                 Return
             End If
-            Dim worksheetPart As WorksheetPart = _
+            Dim worksheetPart As WorksheetPart =
                 CType(document.WorkbookPart.GetPartById(sheets.First().Id), WorksheetPart)
 
             ' Add a new drawing to the worksheet.
             Dim drawingsPart As DrawingsPart = worksheetPart.AddNewPart(Of DrawingsPart)()
-            worksheetPart.Worksheet.Append(New DocumentFormat.OpenXml.Spreadsheet.Drawing() With {.Id = _
+            worksheetPart.Worksheet.Append(New DocumentFormat.OpenXml.Spreadsheet.Drawing() With {.Id =
                   worksheetPart.GetIdOfPart(drawingsPart)})
             worksheetPart.Worksheet.Save()
 
             ' Add a new chart and set the chart language to English-US.
             Dim chartPart As ChartPart = drawingsPart.AddNewPart(Of ChartPart)()
             chartPart.ChartSpace = New ChartSpace()
-            chartPart.ChartSpace.Append(New EditingLanguage() With {.Val = _
+            chartPart.ChartSpace.Append(New EditingLanguage() With {.Val =
                                         New StringValue("en-US")})
-            Dim chart As DocumentFormat.OpenXml.Drawing.Charts.Chart = _
+            Dim chart As DocumentFormat.OpenXml.Drawing.Charts.Chart =
                 chartPart.ChartSpace.AppendChild(Of DocumentFormat.OpenXml.Drawing.Charts _
                     .Chart)(New DocumentFormat.OpenXml.Drawing.Charts.Chart())
 
@@ -61,7 +61,7 @@ Module MyModule
                 Dim strLit As StringLiteral = barChartSeries.AppendChild(Of CategoryAxisData) _
                     (New CategoryAxisData()).AppendChild(Of StringLiteral)(New StringLiteral())
                 strLit.Append(New PointCount() With {.Val = New UInt32Value(1UI)})
-                strLit.AppendChild(Of StringPoint)(New StringPoint() With {.Index = _
+                strLit.AppendChild(Of StringPoint)(New StringPoint() With {.Index =
                     New UInt32Value(0UI)}).Append(New NumericValue(title))
 
                 Dim numLit As NumberLiteral = barChartSeries.AppendChild _
@@ -69,7 +69,7 @@ Module MyModule
                     .OpenXml.Drawing.Charts.Values()).AppendChild(Of NumberLiteral)(New NumberLiteral())
                 numLit.Append(New FormatCode("General"))
                 numLit.Append(New PointCount() With {.Val = New UInt32Value(1UI)})
-                numLit.AppendChild(Of NumericPoint)(New NumericPoint() With {.Index = _
+                numLit.AppendChild(Of NumericPoint)(New NumericPoint() With {.Index =
                     New UInt32Value(0UI)}).Append(New NumericValue(data(key).ToString()))
 
                 i += 1
@@ -86,10 +86,10 @@ Module MyModule
             Dim valAx As ValueAxis = plotArea.AppendChild(Of ValueAxis)(New ValueAxis _
                 (New AxisId() With {.Val = New UInt32Value(48672768UI)}, New Scaling(New _
                 Orientation() With {.Val = New EnumValue(Of DocumentFormat.OpenXml.Drawing _
-                .Charts.OrientationValues)(DocumentFormat.OpenXml.Drawing.Charts.OrientationValues.MinMax)}), _
-                New AxisPosition() With {.Val = New EnumValue(Of AxisPositionValues)(AxisPositionValues.Left)}, _
-                New MajorGridlines(), New DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat() With {.FormatCode = _
-                New StringValue("General"), .SourceLinked = New BooleanValue(True)}, New TickLabelPosition() With _
+                .Charts.OrientationValues)(DocumentFormat.OpenXml.Drawing.Charts.OrientationValues.MinMax)}),
+                New AxisPosition() With {.Val = New EnumValue(Of AxisPositionValues)(AxisPositionValues.Left)},
+                New MajorGridlines(), New DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat() With {.FormatCode =
+                New StringValue("General"), .SourceLinked = New BooleanValue(True)}, New TickLabelPosition() With
                 {.Val = New EnumValue(Of TickLabelPositionValues)(TickLabelPositionValues.NextTo)}, New CrossingAxis() _
                 With {.Val = New UInt32Value(48650112UI)}, New Crosses() With {.Val = New EnumValue(Of CrossesValues) _
                 (CrossesValues.AutoZero)}, New CrossBetween() With {.Val = New EnumValue(Of CrossBetweenValues) _
@@ -106,7 +106,7 @@ Module MyModule
 
             ' Position the chart on the worksheet using a TwoCellAnchor object.
             drawingsPart.WorksheetDrawing = New WorksheetDrawing()
-            Dim twoCellAnchor As TwoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(Of _
+            Dim twoCellAnchor As TwoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(Of
                 TwoCellAnchor)(New TwoCellAnchor())
             twoCellAnchor.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker(New _
                 ColumnId("9"), New ColumnOffset("581025"), New RowId("17"), New RowOffset("114300")))
@@ -114,21 +114,21 @@ Module MyModule
                 ColumnId("17"), New ColumnOffset("276225"), New RowId("32"), New RowOffset("0")))
 
             ' Append a GraphicFrame to the TwoCellAnchor object.
-            Dim graphicFrame As DocumentFormat.OpenXml.Drawing.Spreadsheet.GraphicFrame = _
+            Dim graphicFrame As DocumentFormat.OpenXml.Drawing.Spreadsheet.GraphicFrame =
                 twoCellAnchor.AppendChild(Of DocumentFormat.OpenXml.Drawing.Spreadsheet.GraphicFrame) _
                 (New DocumentFormat.OpenXml.Drawing.Spreadsheet.GraphicFrame())
             graphicFrame.Macro = ""
 
             graphicFrame.Append(New DocumentFormat.OpenXml.Drawing.Spreadsheet _
-                .NonVisualGraphicFrameProperties(New DocumentFormat.OpenXml.Drawing.Spreadsheet. _
-                NonVisualDrawingProperties() With {.Id = New UInt32Value(2UI), .Name = "Chart 1"}, _
+                .NonVisualGraphicFrameProperties(New DocumentFormat.OpenXml.Drawing.Spreadsheet.
+                NonVisualDrawingProperties() With {.Id = New UInt32Value(2UI), .Name = "Chart 1"},
                 New DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualGraphicFrameDrawingProperties()))
 
-            graphicFrame.Append(New Transform(New Offset() With {.X = 0L, .Y = 0L}, _
+            graphicFrame.Append(New Transform(New Offset() With {.X = 0L, .Y = 0L},
                 New Extents() With {.Cx = 0L, .Cy = 0L}))
 
-            graphicFrame.Append(New Graphic(New GraphicData(New ChartReference() With _
-                {.Id = drawingsPart.GetIdOfPart(chartPart)}) With {.Uri = _
+            graphicFrame.Append(New Graphic(New GraphicData(New ChartReference() With
+                {.Id = drawingsPart.GetIdOfPart(chartPart)}) With {.Uri =
                 "https://schemas.openxmlformats.org/drawingml/2006/chart"}))
 
             twoCellAnchor.Append(New ClientData())

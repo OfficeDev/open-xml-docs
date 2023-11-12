@@ -27,7 +27,7 @@ Module Program
 
             ' Create a list of comments by the specified author, or
             ' if the author name is empty, all authors.
-            Dim commentsToDelete As List(Of Comment) = _
+            Dim commentsToDelete As List(Of Comment) =
                 commentPart.Comments.Elements(Of Comment)().ToList()
             If Not String.IsNullOrEmpty(author) Then
                 commentsToDelete = commentsToDelete.
@@ -49,24 +49,24 @@ Module Program
 
             ' Delete CommentRangeStart for each 
             ' deleted comment in the main document.
-            Dim commentRangeStartToDelete As List(Of CommentRangeStart) = _
-                doc.Descendants(Of CommentRangeStart). _
+            Dim commentRangeStartToDelete As List(Of CommentRangeStart) =
+                doc.Descendants(Of CommentRangeStart).
                 Where(Function(c) commentIds.Contains(c.Id.Value)).ToList()
             For Each c As CommentRangeStart In commentRangeStartToDelete
                 c.Remove()
             Next
 
             ' Delete CommentRangeEnd for each deleted comment in main document.
-            Dim commentRangeEndToDelete As List(Of CommentRangeEnd) = _
-                doc.Descendants(Of CommentRangeEnd). _
+            Dim commentRangeEndToDelete As List(Of CommentRangeEnd) =
+                doc.Descendants(Of CommentRangeEnd).
                 Where(Function(c) commentIds.Contains(c.Id.Value)).ToList()
             For Each c As CommentRangeEnd In commentRangeEndToDelete
                 c.Remove()
             Next
 
             ' Delete CommentReference for each deleted comment in the main document.
-            Dim commentRangeReferenceToDelete As List(Of CommentReference) = _
-                doc.Descendants(Of CommentReference). _
+            Dim commentRangeReferenceToDelete As List(Of CommentReference) =
+                doc.Descendants(Of CommentReference).
                 Where(Function(c) commentIds.Contains(c.Id.Value)).ToList
             For Each c As CommentReference In commentRangeReferenceToDelete
                 c.Remove()

@@ -6,17 +6,17 @@ Imports A = DocumentFormat.OpenXml.OpenXmlAttribute
 
 
 Module MyModule
-Public Sub GetSheetInfo(ByVal fileName As String)
-            ' Open file as read-only.
-            Using mySpreadsheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
-                Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
+    Public Sub GetSheetInfo(ByVal fileName As String)
+        ' Open file as read-only.
+        Using mySpreadsheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
+            Dim sheets As S = mySpreadsheet.WorkbookPart.Workbook.Sheets
 
-                ' For each sheet, display the sheet information.
-                For Each sheet As E In sheets
-                    For Each attr As A In sheet.GetAttributes()
-                        Console.WriteLine("{0}: {1}", attr.LocalName, attr.Value)
-                    Next
+            ' For each sheet, display the sheet information.
+            For Each sheet As E In sheets
+                For Each attr As A In sheet.GetAttributes()
+                    Console.WriteLine("{0}: {1}", attr.LocalName, attr.Value)
                 Next
-            End Using
-        End Sub
+            Next
+        End Using
+    End Sub
 End Module

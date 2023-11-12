@@ -17,9 +17,9 @@ Module Program
         NumberDouble
     End Enum
 
-    Public Function SetCustomProperty( _
+    Public Function SetCustomProperty(
         ByVal fileName As String,
-        ByVal propertyName As String, _
+        ByVal propertyName As String,
         ByVal propertyValue As Object,
         ByVal propertyType As PropertyTypes) As String
 
@@ -41,7 +41,7 @@ Module Program
                 ' The date/time value passed in should 
                 ' represent a UTC date/time.
                 If TypeOf (propertyValue) Is DateTime Then
-                    newProp.VTFileTime = _
+                    newProp.VTFileTime =
                         New VTFileTime(String.Format("{0:s}Z",
                             Convert.ToDateTime(propertyValue)))
                     propSet = True
@@ -66,7 +66,7 @@ Module Program
             Case PropertyTypes.YesNo
                 If TypeOf propertyValue Is Boolean Then
                     ' Must be lowercase.
-                    newProp.VTBool = _
+                    newProp.VTBool =
                       New VTBool(Convert.ToBoolean(propertyValue).ToString().ToLower())
                     propSet = True
                 End If

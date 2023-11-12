@@ -4,11 +4,11 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
-Public Sub CreateWordprocessingDocument(ByVal filepath As String)
+    Public Sub CreateWordprocessingDocument(ByVal filepath As String)
         ' Create a document by supplying the filepath.
-        Using wordDocument As WordprocessingDocument = _
+        Using wordDocument As WordprocessingDocument =
             WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document)
-        
+
             ' Add a main document part. 
             Dim mainPart As MainDocumentPart = wordDocument.AddMainDocumentPart()
 

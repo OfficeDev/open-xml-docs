@@ -5,7 +5,7 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 
 Module MyModule
-' Given a document name and text, 
+    ' Given a document name and text, 
     ' inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
     Public Function InsertText(ByVal docName As String, ByVal text As String)
         ' Open the document for editing.

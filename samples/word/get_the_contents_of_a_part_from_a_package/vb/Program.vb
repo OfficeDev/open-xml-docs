@@ -4,7 +4,7 @@ Imports DocumentFormat.OpenXml.Packaging
 
 
 Module MyModule
-' To get the contents of a document part.
+    ' To get the contents of a document part.
     Public Function GetCommentsFromDocument(ByVal document As String) As String
         Dim comments As String = Nothing
         Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, False)
