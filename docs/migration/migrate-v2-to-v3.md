@@ -115,3 +115,5 @@ This property provided a dictionary that allowed access to change the extensions
 ### Packages with MarkupCompatibilityProcessMode.ProcessAllParts now actually process all parts
 
 Previously, there was a heuristic to potentially minimize processing if no parts had been loaded. However, this caused scenarios such as ones where someone manually edited the XML to not actually process upon saving. v3.0.0 fixes this behavior and processes all part if this has been opted in.
+
+**Action needed**: If you only want loaded parts to be processed, change to `MarkupCompatibilityProcessMode.ProcessLoadedPartsOnly`
