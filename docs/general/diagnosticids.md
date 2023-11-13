@@ -13,7 +13,11 @@ ms.localizationpriority: high
 
 Diagnostic IDs are used to identify APIs or patterns that can raise compiler warnings or errors. This can be done via [ObsoleteAttribute](/dotnet/api/system.obsoleteattribute.diagnosticid) or [ExperimentalAttribute](/dotnet/api/system.diagnostics.codeanalysis.experimentalattribute). These can be suppressed at the consumer level for each diagnostic id.
 
-## OOXML0001 - IPackage related APIs are currently experimental
+## Current obsolete or experimental APIs
+
+### OOXML0001
+
+**Title**: IPackage related APIs are currently experimental
 
 As of v3.0, a new abstraction layer was added in between `System.IO.Packaging` and `DocumentFormat.OpenXml.Packaging.OpenXmlPackage`. This is currently experimental, but can be used if needed. This will be stabalized in a future release, and may or may not require code changes.
 
