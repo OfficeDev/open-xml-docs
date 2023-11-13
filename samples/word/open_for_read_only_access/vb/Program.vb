@@ -5,6 +5,10 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub OpenWordprocessingDocumentReadonly(ByVal filepath As String)
         ' Open a WordprocessingDocument based on a filepath.
         Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, False)

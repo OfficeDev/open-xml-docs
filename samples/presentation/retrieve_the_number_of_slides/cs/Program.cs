@@ -1,6 +1,5 @@
 using DocumentFormat.OpenXml.Packaging;
 using System;
-using System.IO.Enumeration;
 using System.Linq;
 
 if (args is [{ } fileName, { } includeHidden])

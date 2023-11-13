@@ -1,9 +1,9 @@
 
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DocumentFormat.OpenXml.Presentation;
-using DocumentFormat.OpenXml.Packaging;
 
 CountSlides(args[0]);
 

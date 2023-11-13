@@ -3,6 +3,10 @@ Imports DocumentFormat.OpenXml.Packaging
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' To add a new document part to a package.
     Public Sub AddNewPart(ByVal document As String, ByVal fileName As String)
         Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)

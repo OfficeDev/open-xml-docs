@@ -1,12 +1,13 @@
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports DocumentFormat.OpenXml.Presentation
 Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Presentation
 
 
 Module MyModule
-' Count the number of slides in the presentation.
+
+    Sub Main(args As String())
+    End Sub
+
+    ' Count the number of slides in the presentation.
     Public Function CountSlides(ByVal presentationFile As String) As Integer
         ' Open the presentation as read-only.
         Using presentationDocument__1 As PresentationDocument = PresentationDocument.Open(presentationFile, False)
@@ -86,13 +87,13 @@ Module MyModule
         ' Remove the slide from the slide list.
         slideIdList.RemoveChild(slideId)
         ' Remove references to the slide from all custom shows.
-        If (Not (presentation.CustomShowList) Is Nothing) Then
+        If ((presentation.CustomShowList) IsNot Nothing) Then
 
             ' Iterate through the list of custom shows.
             For Each customShow As System.Object In presentation.CustomShowList.Elements(Of _
                                    DocumentFormat.OpenXml.Presentation.CustomShow)()
 
-                If (Not (customShow.SlideList) Is Nothing) Then
+                If ((customShow.SlideList) IsNot Nothing) Then
 
                     ' Declare a linked list.
                     Dim slideListEntries As LinkedList(Of SlideListEntry) = New LinkedList(Of SlideListEntry)
@@ -101,7 +102,7 @@ Module MyModule
                     For Each slideListEntry As SlideListEntry In customShow.SlideList.Elements
 
                         ' Find the slide reference to be removed from the custom show.
-                        If ((Not (slideListEntry.Id) Is Nothing) _
+                        If (((slideListEntry.Id) IsNot Nothing) _
                                     AndAlso (slideListEntry.Id = slideRelId)) Then
 
                             ' Add that slide reference to the end of the linked list.

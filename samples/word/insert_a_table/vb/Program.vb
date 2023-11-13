@@ -10,6 +10,7 @@ Imports Text = DocumentFormat.OpenXml.Wordprocessing.Text
 Imports TopBorder = DocumentFormat.OpenXml.Wordprocessing.TopBorder
 
 Module MyModule
+
     Sub Main(args As String())
     End Sub
 

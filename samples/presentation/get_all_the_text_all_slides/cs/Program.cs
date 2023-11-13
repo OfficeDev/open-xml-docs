@@ -1,12 +1,12 @@
 
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using DocumentFormat.OpenXml.Presentation;
-using A = DocumentFormat.OpenXml.Drawing;
-using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Presentation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using A = DocumentFormat.OpenXml.Drawing;
 
 if (args is [{ } sldText, { } slideIndex])
 {

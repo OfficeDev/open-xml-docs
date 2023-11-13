@@ -1,10 +1,14 @@
 Imports DocumentFormat.OpenXml.Drawing
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
-Imports P = DocumentFormat.OpenXml.Presentation
 Imports D = DocumentFormat.OpenXml.Drawing
+Imports P = DocumentFormat.OpenXml.Presentation
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Function CreateHandoutMasterPart(ByVal presentationPart As PresentationPart) As HandoutMasterPart
         Dim handoutMasterPart1 As HandoutMasterPart = presentationPart.AddNewPart(Of HandoutMasterPart)("rId3")
         handoutMasterPart1.HandoutMaster = New HandoutMaster(New CommonSlideData(New ShapeTree(New _

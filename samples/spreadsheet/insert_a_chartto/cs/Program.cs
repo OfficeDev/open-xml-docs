@@ -1,12 +1,12 @@
 
-using System.Collections.Generic;
-using System.Linq;
 using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.Drawing.Spreadsheet;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.Collections.Generic;
+using System.Linq;
 
 InsertChartInSpreadsheet(args[0], args[1], args[2], new Dictionary<string, int>() { { "First", 1 }, { "Second", 2 }, { "Third", 3 } });
 

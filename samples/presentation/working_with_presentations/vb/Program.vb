@@ -3,6 +3,10 @@ Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Sub CreatePresentation(ByVal filepath As String)
 
         ' Create a presentation at a specified file path. The presentation document type is pptx, by default.

@@ -1,7 +1,7 @@
 
-using System;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 
 OpenWordprocessingDocumentReadonly(args[0]);
 

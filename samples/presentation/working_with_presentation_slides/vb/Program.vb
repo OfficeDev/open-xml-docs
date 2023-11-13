@@ -1,5 +1,3 @@
-
-
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Drawing
 Imports DocumentFormat.OpenXml.Packaging
@@ -7,6 +5,10 @@ Imports DocumentFormat.OpenXml.Presentation
 Imports P = DocumentFormat.OpenXml.Presentation
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Function CreateSlidePart(ByVal presentationPart As PresentationPart) As SlidePart
         Dim slidePart1 As SlidePart = presentationPart.AddNewPart(Of SlidePart)("rId2")
         slidePart1.Slide = New Slide(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With {

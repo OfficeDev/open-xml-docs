@@ -1,10 +1,13 @@
-Imports System.Linq
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' Given a document name and text, 
     ' inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
     Public Function InsertText(ByVal docName As String, ByVal text As String)

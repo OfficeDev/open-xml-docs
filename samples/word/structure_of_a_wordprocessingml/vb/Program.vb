@@ -2,6 +2,10 @@ Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Sub CreateWordDoc(filepath As String, msg As String)
         Using doc As WordprocessingDocument = WordprocessingDocument.Create(filepath, DocumentFormat.OpenXml.WordprocessingDocumentType.Document)
             ' Add a main document part. 

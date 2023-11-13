@@ -5,6 +5,10 @@ Imports DocumentFormat.OpenXml.Presentation
 Imports P = DocumentFormat.OpenXml.Presentation
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Function CreateSlideLayoutPart(ByVal slidePart1 As SlidePart) As SlideLayoutPart
         Dim slideLayoutPart1 As SlideLayoutPart = slidePart1.AddNewPart(Of SlideLayoutPart)("rId1")
         Dim slideLayout As New SlideLayout(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With {

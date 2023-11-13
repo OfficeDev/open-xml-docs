@@ -1,7 +1,7 @@
 
+using DocumentFormat.OpenXml.Packaging;
 using System;
 using System.IO;
-using DocumentFormat.OpenXml.Packaging;
 
 GetCommentsFromDocument(args[0]);
 

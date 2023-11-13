@@ -1,6 +1,3 @@
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
 Imports System.Text
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
@@ -8,7 +5,11 @@ Imports D = DocumentFormat.OpenXml.Drawing
 
 
 Module MyModule
-' Get a list of the titles of all the slides in the presentation.
+
+    Sub Main(args As String())
+    End Sub
+
+    ' Get a list of the titles of all the slides in the presentation.
     Public Function GetSlideTitles(ByVal presentationFile As String) As IList(Of String)
 
         ' Open the presentation as read-only.
@@ -26,12 +27,12 @@ Module MyModule
 
         ' Get a PresentationPart object from the PresentationDocument object.
         Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
-        If ((Not (presentationPart) Is Nothing) _
-           AndAlso (Not (presentationPart.Presentation) Is Nothing)) Then
+        If (((presentationPart) IsNot Nothing) _
+           AndAlso ((presentationPart.Presentation) IsNot Nothing)) Then
 
             ' Get a Presentation object from the PresentationPart object.
             Dim presentation As Presentation = presentationPart.Presentation
-            If (Not (presentation.SlideIdList) Is Nothing) Then
+            If ((presentation.SlideIdList) IsNot Nothing) Then
 
                 Dim titlesList As List(Of String) = New List(Of String)
 
@@ -59,12 +60,12 @@ Module MyModule
 
         ' Declare a paragraph separator.
         Dim paragraphSeparator As String = Nothing
-        If (Not (slidePart.Slide) Is Nothing) Then
+        If ((slidePart.Slide) IsNot Nothing) Then
 
             ' Find all the title shapes.
             Dim shapes = From shape In slidePart.Slide.Descendants(Of Shape)() _
-             Where (IsTitleShape(shape)) _
-             Select shape
+                         Where (IsTitleShape(shape)) _
+                         Select shape
 
             Dim paragraphText As StringBuilder = New StringBuilder
 
@@ -91,8 +92,8 @@ Module MyModule
     Private Function IsTitleShape(ByVal shape As Shape) As Boolean
         Dim placeholderShape As Object = _
          shape.NonVisualShapeProperties.ApplicationNonVisualDrawingProperties.GetFirstChild(Of PlaceholderShape)()
-        If ((Not (placeholderShape) Is Nothing) _
-           AndAlso ((Not (placeholderShape.Type) Is Nothing) _
+        If (((placeholderShape) IsNot Nothing) _
+           AndAlso (((placeholderShape.Type) IsNot Nothing) _
            AndAlso placeholderShape.Type.HasValue)) Then
             Select Case placeholderShape.Type.Value
 

@@ -4,6 +4,10 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub CreateWordprocessingDocument(ByVal filepath As String)
         ' Create a document by supplying the filepath.
         Using wordDocument As WordprocessingDocument =

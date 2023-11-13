@@ -1,10 +1,8 @@
-
-using System;
-using System.Linq;
-using System.Collections.Generic;
 using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Presentation;
 using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Presentation;
+using System.Collections.Generic;
+using System.Linq;
 
 DeleteCommentsByAuthorInPresentation(args[0], args[1]);
 

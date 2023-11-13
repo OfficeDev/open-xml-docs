@@ -1,11 +1,12 @@
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports DocumentFormat.OpenXml.Presentation
 Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Presentation
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' Apply a new theme to the presentation. 
     Public Sub ApplyThemeToPresentation(ByVal presentationFile As String, ByVal themePresentation As String)
         Dim themeDocument As PresentationDocument = PresentationDocument.Open(themePresentation, False)
@@ -61,7 +62,7 @@ Module MyModule
         ' Remove the slide layout relationship on all slides. 
         For Each slidePart As Object In presentationPart.SlideParts
             layoutType = Nothing
-            If (Not (slidePart.SlideLayoutPart) Is Nothing) Then
+            If ((slidePart.SlideLayoutPart) IsNot Nothing) Then
 
                 ' Determine the slide layout type for each slide.
                 layoutType = GetSlideLayoutType(slidePart.SlideLayoutPart)
@@ -70,7 +71,7 @@ Module MyModule
                 slidePart.DeletePart(slidePart.SlideLayoutPart)
             End If
 
-            If ((Not (layoutType) Is Nothing) AndAlso newSlideLayouts.TryGetValue(layoutType, newLayoutPart)) Then
+            If (((layoutType) IsNot Nothing) AndAlso newSlideLayouts.TryGetValue(layoutType, newLayoutPart)) Then
 
                 ' Apply the new layout part.
                 slidePart.AddPart(newLayoutPart)

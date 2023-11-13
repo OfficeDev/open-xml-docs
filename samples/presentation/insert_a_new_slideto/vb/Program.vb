@@ -1,11 +1,14 @@
-Imports System
-Imports DocumentFormat.OpenXml.Presentation
 Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Presentation
 Imports Drawing = DocumentFormat.OpenXml.Drawing
 
 
 Module MyModule
-' Insert a slide into the specified presentation.
+
+    Sub Main(args As String())
+    End Sub
+
+    ' Insert a slide into the specified presentation.
     Public Sub InsertNewSlide(ByVal presentationFile As String, ByVal position As Integer, ByVal slideTitle As String)
 
         ' Open the source document as read/write. 
@@ -110,7 +113,7 @@ Module MyModule
         ' Get the ID of the previous slide.
         Dim lastSlidePart As SlidePart = Nothing
 
-        If (Not prevSlideId Is Nothing) Then
+        If (prevSlideId IsNot Nothing) Then
             lastSlidePart = CType(presentationPart.GetPartById(prevSlideId.RelationshipId), SlidePart)
         Else
             lastSlidePart = CType(presentationPart.GetPartById(CType(slideIdList.ChildElements(0), SlideId).RelationshipId), SlidePart)
@@ -118,7 +121,7 @@ Module MyModule
 
 
         ' Use the same slide layout as that of the previous slide.
-        If (Not (lastSlidePart.SlideLayoutPart) Is Nothing) Then
+        If ((lastSlidePart.SlideLayoutPart) IsNot Nothing) Then
             slidePart.AddPart(lastSlidePart.SlideLayoutPart)
         End If
 

@@ -3,6 +3,10 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub OpenAndAddTextToWordDocument(ByVal filepath As String, ByVal txt As String)
         ' Open a WordprocessingDocument for editing using the filepath.
         Dim wordprocessingDocument As WordprocessingDocument =

@@ -1,5 +1,3 @@
-
-using System;
 using DocumentFormat.OpenXml.Packaging;
 
 RemovePart(args[0]);

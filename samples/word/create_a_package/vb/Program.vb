@@ -1,10 +1,14 @@
-Imports System.Text
 Imports System.IO
+Imports System.Text
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' To create a new package as a Word document.
     Public Sub CreateNewWordDocument(ByVal document As String)
         Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Create(document, WordprocessingDocumentType.Document)

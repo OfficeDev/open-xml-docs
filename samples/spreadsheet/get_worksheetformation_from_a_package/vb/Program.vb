@@ -1,11 +1,14 @@
-Imports System
 Imports DocumentFormat.OpenXml.Packaging
-Imports S = DocumentFormat.OpenXml.Spreadsheet.Sheets
-Imports E = DocumentFormat.OpenXml.OpenXmlElement
 Imports A = DocumentFormat.OpenXml.OpenXmlAttribute
+Imports E = DocumentFormat.OpenXml.OpenXmlElement
+Imports S = DocumentFormat.OpenXml.Spreadsheet.Sheets
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub GetSheetInfo(ByVal fileName As String)
         ' Open file as read-only.
         Using mySpreadsheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)

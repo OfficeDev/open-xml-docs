@@ -4,6 +4,10 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub OpenAndAddToWordprocessingStream(ByVal stream As Stream, ByVal txt As String)
         ' Open a WordProcessingDocument based on a stream.
         Dim wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(stream, True)

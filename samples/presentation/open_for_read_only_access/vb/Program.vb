@@ -1,14 +1,16 @@
-Imports System
-Imports System.Collections.Generic
+Imports System.Text
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
 Imports A = DocumentFormat.OpenXml.Drawing
-Imports DocumentFormat.OpenXml.Packaging
-Imports DocumentFormat.OpenXml
-Imports System.Text
 
 
 Module MyModule
-Public Sub GetSlideIdAndText(ByRef sldText As String, ByVal docName As String, ByVal index As Integer)
+
+    Sub Main(args As String())
+    End Sub
+
+    Public Sub GetSlideIdAndText(ByRef sldText As String, ByVal docName As String, ByVal index As Integer)
         Using ppt As PresentationDocument = PresentationDocument.Open(docName, False)
             ' Get the relationship ID of the first slide.
             Dim part As PresentationPart = ppt.PresentationPart

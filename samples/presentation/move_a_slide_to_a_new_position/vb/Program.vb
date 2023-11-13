@@ -1,11 +1,13 @@
-Imports System
-Imports System.Linq
-Imports DocumentFormat.OpenXml.Presentation
 Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Presentation
 
 
 Module MyModule
-' Count the slides in the presentation.
+
+    Sub Main(args As String())
+    End Sub
+
+    ' Count the slides in the presentation.
     Public Function CountSlides(ByVal presentationFile As String) As Integer
 
         ' Open the presentation as read-only.
@@ -28,11 +30,11 @@ Module MyModule
 
         ' Get the presentation part of the document.
         Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
-        If ((Not (presentationPart) Is Nothing) AndAlso (Not (presentationPart.Presentation) Is Nothing)) Then
+        If (((presentationPart) IsNot Nothing) AndAlso ((presentationPart.Presentation) IsNot Nothing)) Then
 
             ' Get the Presentation object from the presentation part.
             Dim presentation As Presentation = presentationPart.Presentation
-            If (Not (presentation.SlideIdList) Is Nothing) Then
+            If ((presentation.SlideIdList) IsNot Nothing) Then
 
                 ' Get the slide count from the slide ID list.
                 slidesCount = presentation.SlideIdList.Elements.Count()

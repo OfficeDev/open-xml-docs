@@ -1,7 +1,7 @@
 
-using System.IO;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.IO;
 
 
 static void OpenAndAddToWordprocessingStream(Stream stream, string txt)

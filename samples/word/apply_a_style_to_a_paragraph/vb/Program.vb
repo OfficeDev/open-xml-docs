@@ -3,6 +3,10 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' Apply a style to a paragraph.
     Public Sub ApplyStyleToParagraph(ByVal doc As WordprocessingDocument,
         ByVal styleid As String, ByVal stylename As String, ByVal p As Paragraph)

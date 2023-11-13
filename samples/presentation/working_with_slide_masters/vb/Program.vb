@@ -1,13 +1,15 @@
-
-
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Drawing
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
-Imports P = DocumentFormat.OpenXml.Presentation
 Imports D = DocumentFormat.OpenXml.Drawing
+Imports P = DocumentFormat.OpenXml.Presentation
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Function CreateSlideMasterPart(ByVal slideLayoutPart1 As SlideLayoutPart) As SlideMasterPart
         Dim slideMasterPart1 As SlideMasterPart = slideLayoutPart1.AddNewPart(Of SlideMasterPart)("rId1")
         Dim slideMaster As New SlideMaster(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With {

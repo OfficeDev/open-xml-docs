@@ -2,6 +2,10 @@ Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
     Private Function InsertSharedStringItem(ByVal text As String, ByVal shareStringPart As SharedStringTablePart) As Integer

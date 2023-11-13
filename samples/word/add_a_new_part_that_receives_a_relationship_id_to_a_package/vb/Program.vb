@@ -1,11 +1,15 @@
 Imports System.IO
+Imports System.Xml
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
-Imports System.Xml
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub AddNewPart(ByVal document As String)
         ' Create a new word processing document.
         Dim wordDoc As WordprocessingDocument =

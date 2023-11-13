@@ -1,11 +1,13 @@
-Imports System
-Imports System.Collections.Generic 
 Imports DocumentFormat.OpenXml.Packaging
 Imports Drawing = DocumentFormat.OpenXml.Drawing
 
 
 Module MyModule
-' Returns all the external hyperlinks in the slides of a presentation.
+
+    Sub Main(args As String())
+    End Sub
+
+    ' Returns all the external hyperlinks in the slides of a presentation.
     Public Function GetAllExternalHyperlinksInPresentation(ByVal fileName As String) As IEnumerable
 
         ' Declare a list of strings.

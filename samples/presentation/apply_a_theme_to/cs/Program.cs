@@ -1,9 +1,7 @@
-
-using System;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Presentation;
 using System.Collections.Generic;
 using System.Linq;
-using DocumentFormat.OpenXml.Presentation;
-using DocumentFormat.OpenXml.Packaging;
 
 ApplyThemeToPresentation(args[0], args[1]);
 

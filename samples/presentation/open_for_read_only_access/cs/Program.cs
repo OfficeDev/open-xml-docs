@@ -1,12 +1,12 @@
 
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Presentation;
 using System;
 using System.Collections.Generic;
-using DocumentFormat.OpenXml.Presentation;
-using A = DocumentFormat.OpenXml.Drawing;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml;
-using System.Text;
 using System.Linq;
+using System.Text;
+using A = DocumentFormat.OpenXml.Drawing;
 
 GetSlideIdAndText(out string text, args[0], int.Parse(args[1]));
 

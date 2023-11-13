@@ -1,5 +1,3 @@
-Imports System.Collections.Generic
-Imports System.Linq
 Imports System.Text.RegularExpressions
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
@@ -7,6 +5,10 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
     ' the name of the last cell in the contiguous range, and the name of the results cell, 
     ' calculates the sum of the cells in the contiguous range and inserts the result into the results cell.

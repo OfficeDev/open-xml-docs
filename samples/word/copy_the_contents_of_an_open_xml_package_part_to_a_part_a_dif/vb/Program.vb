@@ -3,6 +3,10 @@ Imports DocumentFormat.OpenXml.Packaging
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' To copy contents of one package part.
     Public Sub CopyThemeContent(ByVal fromDocument1 As String, ByVal toDocument2 As String)
         Dim wordDoc1 As WordprocessingDocument = WordprocessingDocument.Open(fromDocument1, False)

@@ -1,11 +1,13 @@
-Imports System.Collections.Generic
-Imports System.Linq
+Imports System.Text.RegularExpressions
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
-Imports System.Text.RegularExpressions
 
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     ' Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
     ' the content of the first cell in that column.
     Public Function GetColumnHeading(ByVal docName As String, ByVal worksheetName As String, ByVal cellName As String) As String
@@ -38,7 +40,7 @@ Module MyModule
 
             ' If the content of the first cell is stored as a shared string, get the text of the first cell
             ' from the SharedStringTablePart and return it. Otherwise, return the string value of the cell.
-            If ((Not (headCell.DataType) Is Nothing) AndAlso (headCell.DataType.Value = CellValues.SharedString)) Then
+            If (((headCell.DataType) IsNot Nothing) AndAlso (headCell.DataType.Value = CellValues.SharedString)) Then
                 Dim shareStringPart As SharedStringTablePart = document.WorkbookPart.GetPartsOfType(Of SharedStringTablePart)().First()
                 Dim items() As SharedStringItem = shareStringPart.SharedStringTable.Elements(Of SharedStringItem)().ToArray()
                 Return items(Integer.Parse(headCell.CellValue.Text)).InnerText

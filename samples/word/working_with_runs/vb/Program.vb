@@ -2,6 +2,10 @@ Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
         ' Open a WordprocessingDocument for editing using the filepath.
         Using wordprocessingDocument As WordprocessingDocument =

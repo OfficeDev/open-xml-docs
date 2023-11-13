@@ -1,13 +1,14 @@
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
 Imports System.Text
-Imports DocumentFormat.OpenXml.Presentation
 Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Presentation
 
 
 Module MyModule
-' Get all the text in a slide.
+
+    Sub Main(args As String())
+    End Sub
+
+    ' Get all the text in a slide.
     Public Function GetAllTextInSlide(ByVal presentationFile As String, ByVal slideIndex As Integer) As String()
         ' Open the presentation as read-only.
         Using presentationDocument As PresentationDocument = presentationDocument.Open(presentationFile, False)

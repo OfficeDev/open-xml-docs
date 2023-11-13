@@ -4,6 +4,10 @@ Imports DocumentFormat.OpenXml.Presentation
 Imports P = DocumentFormat.OpenXml.Presentation
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Function CreateNotesSlidePart(ByVal slidePart1 As SlidePart) As NotesSlidePart
         Dim notesSlidePart1 As NotesSlidePart = slidePart1.AddNewPart(Of NotesSlidePart)("rId6")
         Dim notesSlide As New NotesSlide(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With {

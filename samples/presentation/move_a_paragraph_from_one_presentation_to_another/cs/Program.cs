@@ -1,9 +1,9 @@
 
-using System.Linq;
-using DocumentFormat.OpenXml.Presentation;
 using DocumentFormat.OpenXml.Packaging;
-using Drawing = DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Presentation;
 using System;
+using System.Linq;
+using Drawing = DocumentFormat.OpenXml.Drawing;
 
 MoveParagraphToPresentation(args[0], args[1]);
 

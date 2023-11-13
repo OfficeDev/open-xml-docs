@@ -3,6 +3,10 @@ Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
 Module MyModule
+
+    Sub Main(args As String())
+    End Sub
+
     Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
         ' Create a spreadsheet document by supplying the filepath.
         ' By default, AutoSave = true, Editable = true, and Type = xlsx.
