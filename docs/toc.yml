@@ -16,7 +16,7 @@
       items:
       - name: Overview
         href: general/overview.md
-      - name: Features
+      - name: Custom SDK Features
         href: general/features.md
       - name: Introduction to markup compatibility
         href: general/introduction-to-markup-compatibility.md  

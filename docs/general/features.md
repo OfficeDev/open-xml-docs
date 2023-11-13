@@ -1,5 +1,5 @@
 ---
-title: Features in Open XML SDK
+title: Custom SDK Features
 ms.suite: office
 
 ms.author: o365devx
@@ -9,7 +9,7 @@ ms.date: 11/13/2023
 ms.localizationpriority: medium
 ---
 
-# Features in Open XML SDK
+# Custom SDK Features
 
 Features in the Open XML SDK are available starting in v2.14.0 that allows for behavior and state to be contained within the document or part and customized without reimplementing the containing package or part. This is accessed via `Features` property  on packages, parts, and elements.
 
@@ -47,7 +47,7 @@ The in-box implementations of the `IFeatureCollection` provide a helpful debug v
 
 ![Features Debug View](../media/feature-debug-view.png)
 
-## DocumentFormat.OpenXml.Framework Features
+## Available Features
 
 The features that are currently available are described below and at what scope they are available:
 
@@ -108,11 +108,8 @@ Generally, assume that there may be a singleton implementation for the events an
 
 > Note: There may be times when the part root is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
 
-## DocumentFormat.OpenXml.Features Features
-
-This library contains additional (non-core) features that build on top of built-in features and functionality.
-
 ### IRandomNumberGeneratorFeature
+
 This feature allows for a shared service to generate random numbers and fill an array.
 
 ### IParagraphIdGeneratorFeature
@@ -159,8 +156,6 @@ body2.AddChild(p2);
 Assert.NotEqual(p1.ParagraphId, p2.ParagraphId);
 Assert.Equal(2, shared.Count);
 ```
-
-## DocumentFormat.OpenXml.Linq Features
 
 ### IPartRootXElementFeature
 
