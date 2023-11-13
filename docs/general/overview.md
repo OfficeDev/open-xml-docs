@@ -14,12 +14,15 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.localizationpriority: high
 ---
+
 # Packages and general
 
 This section provides how-to topics for working with documents and packages using the Open XML SDK.
 
 
 ## In this section
+
+- [Features in Open XML SDK](features.md)
 
 - [Introduction to markup compatibility](introduction-to-markup-compatibility.md)
 
