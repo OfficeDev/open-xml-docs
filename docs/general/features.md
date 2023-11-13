@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Features in the Open XML SDK are available starting in v2.14.0 that allows for behavior and state to be contained within the document or part and customized without reimplementing the containing package or part. This is accessed via `Features` property  on packages, parts, and elements.
 
-This is inspired by the [features pattern](/aspnet/core/fundamentals/request-feature) ASP.NET Core uses to modify behavior of HttpContext, and borrows the shape of the type. Due to our need for an expanded TFM set, we are not using the same type, but similar ones. This is an implementation of the [strategy pattern](https://refactoring.guru/design-patterns/strategy) that makes it easy to replace behavior on the fly.
+This is inspired by the [features pattern](https://learn.microsoft.com/aspnet/core/fundamentals/request-features) ASP.NET Core uses to modify behavior of HttpContext, and borrows the shape of the type. Due to our need for an expanded TFM set, we are not using the same type, but similar ones. This is an implementation of the [strategy pattern](https://refactoring.guru/design-patterns/strategy) that makes it easy to replace behavior on the fly.
 
 ## Feature inheritance
 
