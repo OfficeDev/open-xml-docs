@@ -23,30 +23,7 @@ Office to programmatically set the print orientation of a Microsoft Word
 2010 or Microsoft Word 2013 document. It contains an example
 **SetPrintOrientation** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK]
-(https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using System.Linq;
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 -----------------------------------------------------------------------------
 
@@ -59,16 +36,20 @@ modify (string) and the new print orientation ([PageOrientationValues](https://m
 
 The following code shows the **SetPrintOrientation** method.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void SetPrintOrientation(
       string fileName, PageOrientationValues newOrientation)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub SetPrintOrientation(
       ByVal fileName As String, 
       ByVal newOrientation As PageOrientationValues)
 ```
+***
+
 
 For each section in the document, if the new orientation differs from
 the section's current print orientation, the code modifies the print
@@ -83,15 +64,19 @@ To call the sample **SetPrintOrientation**
 method, pass a string that contains the name of the file to convert. The
 following code shows an example method call.
 
+### [C#](#tab/cs-1)
 ```csharp
     SetPrintOrientation(@"C:\Users\Public\Documents\ChangePrintOrientation.docx", 
         PageOrientationValues.Landscape);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     SetPrintOrientation("C:\Users\Public\Documents\ChangePrintOrientation.docx",
         PageOrientationValues.Landscape)
 ```
+***
+
 
 -----------------------------------------------------------------------------
 
@@ -107,6 +92,7 @@ all of the descendants of type [SectionProperties](https://msdn.microsoft.com/li
 document. Later code will use this collection to set the orientation for
 each section in turn.
 
+### [C#](#tab/cs-2)
 ```csharp
     using (var document = 
         WordprocessingDocument.Open(fileName, true))
@@ -119,6 +105,7 @@ each section in turn.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Using document =
         WordprocessingDocument.Open(fileName, True)
@@ -129,6 +116,8 @@ each section in turn.
         ' Code removed here...
     End Using
 ```
+***
+
 
 -----------------------------------------------------------------------------
 
@@ -136,6 +125,7 @@ each section in turn.
 
 The next block of code iterates through all the sections in the collection of **SectionProperties** elements. For each section, the code initializes a variable that tracks whether the page orientation for the section was changed so the code can update the page size and margins. (If the new orientation matches the original orientation, the code will not update the page.) The code continues by retrieving a reference to the first [PageSize](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.pagesize.aspx) descendant of the **SectionProperties** element. If the reference is not null, the code updates the orientation as required.
 
+### [C#](#tab/cs-3)
 ```csharp
     foreach (SectionProperties sectPr in sections)
     {
@@ -149,6 +139,7 @@ The next block of code iterates through all the sections in the collection of **
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     For Each sectPr As SectionProperties In sections
 
@@ -161,6 +152,8 @@ The next block of code iterates through all the sections in the collection of **
         End If
     Next
 ```
+***
+
 
 -----------------------------------------------------------------------------
 
@@ -181,6 +174,7 @@ save the document at the end.)
 > [!NOTE]
 > If the code must create the **Orient** property, it must also create the value to store in the property, as a new [EnumValue\<T\>](https://msdn.microsoft.com/library/office/cc801792.aspx) instance, supplying the new orientation in the **EnumValue** constructor.
 
+### [C#](#tab/cs-4)
 ```csharp
     if (pgSz.Orient == null)
     {
@@ -203,6 +197,7 @@ save the document at the end.)
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     If pgSz.Orient Is Nothing Then
         If newOrientation <> PageOrientationValues.Portrait Then
@@ -219,6 +214,8 @@ save the document at the end.)
         End If
     End If
 ```
+***
+
 
 -----------------------------------------------------------------------------
 
@@ -230,6 +227,7 @@ update the page margins for the section. The first task is easy—the
 following code just swaps the page height and width, storing the values
 in the **PageSize** element.
 
+### [C#](#tab/cs-5)
 ```csharp
     if (pageOrientationChanged)
     {
@@ -243,6 +241,7 @@ in the **PageSize** element.
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     If pageOrientationChanged Then
         ' Changing the orientation is not enough. You must also 
@@ -254,6 +253,8 @@ in the **PageSize** element.
         ' Code removed here...
     End If
 ```
+***
+
 
 -----------------------------------------------------------------------------
 
@@ -270,6 +271,7 @@ Also be aware that the [Top](https://msdn.microsoft.com/library/office/documentf
 code must convert between the two types of values as it rotates the
 margin settings, as shown in the following code.
 
+### [C#](#tab/cs-6)
 ```csharp
     PageMargin pgMar = 
         sectPr.Descendants<PageMargin>().FirstOrDefault();
@@ -289,6 +291,7 @@ margin settings, as shown in the following code.
     }
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     Dim pgMar As PageMargin =
       sectPr.Descendants(Of PageMargin).FirstOrDefault()
@@ -306,6 +309,8 @@ margin settings, as shown in the following code.
             CType(top, Int32Value)), UInt32Value)
     End If
 ```
+***
+
 
 -----------------------------------------------------------------------------
 
@@ -314,6 +319,7 @@ margin settings, as shown in the following code.
 After all the modifications, the code determines whether the document
 has changed. If the document has changed, the code saves it.
 
+### [C#](#tab/cs-7)
 ```csharp
     if (documentChanged)
     {
@@ -321,11 +327,14 @@ has changed. If the document has changed, the code saves it.
     }
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     If documentChanged Then
         docPart.Document.Save()
     End If
 ```
+***
+
 
 -----------------------------------------------------------------------------
 

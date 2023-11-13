@@ -46,6 +46,7 @@ statement, you open the word processing file *document* by using the
 **[Open](https://msdn.microsoft.com/library/office/cc562234.aspx)** method, with the Boolean parameter set
 to **true** to enable editing the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument wordDoc = 
             WordprocessingDocument.Open(document, true))
@@ -54,11 +55,14 @@ to **true** to enable editing the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -89,13 +93,17 @@ named "MyPkg8.docx," with the value "Hi Everyone!". To call the method
 **SearchAndReplace**, you can use the following
 example.
 
+### [C#](#tab/cs-1)
 ```csharp
     SearchAndReplace(@"C:\Users\Public\Documents\MyPkg8.docx");
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     SearchAndReplace("C:\Users\Public\Documents\MyPkg8.docx")
 ```
+***
+
 
 After running the program, you can inspect the file to see the change in
 the text, "Hello world!"

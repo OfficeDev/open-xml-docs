@@ -85,45 +85,11 @@ specified WordprocessingML document. A **Run**
 object demarcates a region of text within the paragraph and then a **RunProperties** object is used to apply bold
 formatting to the run.
 
-```csharp
-    public static void WriteToWordDoc(string filepath, string txt)
-    {
-        // Open a WordprocessingDocument for editing using the filepath.
-        using (WordprocessingDocument wordprocessingDocument =
-             WordprocessingDocument.Open(filepath, true))
-        {
-            // Assign a reference to the existing document body.
-            Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/word/working_with_runs/cs/Program.cs)]
 
-            // Add new text.
-            Paragraph para = body.AppendChild(new Paragraph());
-            Run run = para.AppendChild(new Run());
-
-            // Apply bold formatting to the run.
-            RunProperties runProperties = run.AppendChild(new RunProperties(new Bold()));   
-            run.AppendChild(new Text(txt));                
-        }
-    }
-```
-
-```vb
-    Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
-        ' Open a WordprocessingDocument for editing using the filepath.
-        Using wordprocessingDocument As WordprocessingDocument = _
-            WordprocessingDocument.Open(filepath, True)
-            ' Assign a reference to the existing document body.
-            Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
-
-            ' Add new text.
-            Dim para As Paragraph = body.AppendChild(New Paragraph())
-            Dim run As Run = para.AppendChild(New Run())
-
-            ' Apply bold formatting to the run.
-            Dim runProperties As RunProperties = run.AppendChild(New RunProperties(New Bold()))
-            run.AppendChild(New Text(txt))
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/word/working_with_runs/vb/Program.vb)]
 When this code is run, the following XML is written to the
 WordprocessingML document specified in the preceding code.
 

@@ -9,7 +9,7 @@ Module Program
 
     ' This method can be used to replace a document part in a package.
     Public Sub ReplaceTheme(ByVal document As String, ByVal themeFile As String)
-        Using wordDoc As WordprocessingDocument = _
+        Using wordDoc As WordprocessingDocument =
             WordprocessingDocument.Open(document, True)
             Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
 

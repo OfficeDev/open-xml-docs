@@ -33,13 +33,13 @@ static void AddCommentOnFirstParagraph(string fileName, string author, string in
                 // Obtain an unused ID.
                 id = (wordprocessingCommentsPart.Comments.Descendants<Comment>().Select(e =>
                 {
-                    if (e.Id is not null && e.Id.Value is not null) 
-                    { 
-                        return int.Parse(e.Id.Value); 
+                    if (e.Id is not null && e.Id.Value is not null)
+                    {
+                        return int.Parse(e.Id.Value);
                     }
-                    else 
-                    { 
-                        throw new ArgumentNullException("Comment id and/or value are null."); 
+                    else
+                    {
+                        throw new ArgumentNullException("Comment id and/or value are null.");
                     }
                 })
                     .Max() + 1).ToString();

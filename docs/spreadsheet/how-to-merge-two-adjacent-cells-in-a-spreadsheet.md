@@ -45,6 +45,7 @@ not be saved if this parameter is **false**.
 The code that calls the **Open** method is
 shown in the following **using** statement.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true)) 
@@ -53,12 +54,15 @@ shown in the following **using** statement.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -137,6 +141,7 @@ cell is preserved. You can call the **MergeTwoCells** method in your program by 
 following code example, which merges the two cells B2 and C2 in a sheet
 named "Jane," in a file named "Sheet9.xlsx."
 
+### [C#](#tab/cs-1)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet9.xlsx";
     string sheetName = "Jane";
@@ -145,6 +150,7 @@ named "Jane," in a file named "Sheet9.xlsx."
     MergeTwoCells(docName, sheetName, cell1Name, cell2Name);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Sheet9.xlsx"
     Dim sheetName As String = "Jane"
@@ -152,6 +158,8 @@ named "Jane," in a file named "Sheet9.xlsx."
     Dim cell2Name As String = "C2"
     MergeTwoCells(docName, sheetName, cell1Name, cell2Name)
 ```
+***
+
 
 The following is the complete sample code in both C\# and Visual Basic.
 

@@ -26,6 +26,7 @@ You must use the following **using** directives
 or **Imports** statements to compile the code
 in this topic.
 
+### [C#](#tab/cs-0)
 ```csharp
     using System;
     using System.Linq;
@@ -34,6 +35,7 @@ in this topic.
     using DocumentFormat.OpenXml.Spreadsheet;
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Imports System
     Imports System.Linq
@@ -41,6 +43,8 @@ in this topic.
     Imports DocumentFormat.OpenXml.Packaging
     Imports DocumentFormat.OpenXml.Spreadsheet
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object 
@@ -59,6 +63,7 @@ represents whether or not you want the file to be opened for editing. In
 this example, the parameter is **false**
 because the document is opened as read-only.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Open the document as read-only.
     using (SpreadsheetDocument spreadsheetDocument = 
@@ -68,6 +73,7 @@ because the document is opened as read-only.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Open the document as read-only.
     Using spreadsheetDocument As SpreadsheetDocument = _
@@ -75,6 +81,8 @@ because the document is opened as read-only.
         ' Code removed here.
     End Using
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Approaches to Parsing Open XML Files 
@@ -92,6 +100,7 @@ memory. Consider using SAX when you need to handle very large files.
 The following code segment is used to read a very large Excel file using
 the DOM approach.
 
+### [C#](#tab/cs-2)
 ```csharp
     WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
     WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
@@ -107,6 +116,7 @@ the DOM approach.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
     Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
@@ -119,11 +129,14 @@ the DOM approach.
         Next
     Next
 ```
+***
+
 
 The following code segment performs an identical task to the preceding
 sample (reading a very large Excel file), but uses the SAX approach.
 This is the recommended approach for reading very large files.
 
+### [C#](#tab/cs-3)
 ```csharp
     WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
     WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
@@ -140,6 +153,7 @@ This is the recommended approach for reading very large files.
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
     Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
@@ -153,6 +167,8 @@ This is the recommended approach for reading very large files.
         End If
     End While
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code 
@@ -167,6 +183,7 @@ can call them in your code one after the other or you can call each
 method separately by commenting the call to the one you would like to
 exclude.
 
+### [C#](#tab/cs-4)
 ```csharp
     String fileName = @"C:\Users\Public\Documents\BigFile.xlsx";
     // Comment one of the following lines to test the method separately.
@@ -174,12 +191,15 @@ exclude.
     ReadExcelFileSAX(fileName);    // SAX
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\BigFile.xlsx"
     ' Comment one of the following lines to test each method separately.
     ReadExcelFileDOM(fileName)    ' DOM
     ReadExcelFileSAX(fileName)    ' SAX
 ```
+***
+
 
 The following is the complete code sample in both C\# and Visual Basic.
 

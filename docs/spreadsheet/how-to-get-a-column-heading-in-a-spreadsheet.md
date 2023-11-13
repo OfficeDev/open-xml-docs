@@ -20,24 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to retrieve a column heading in a spreadsheet document
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.Collections.Generic;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-    using System.Text.RegularExpressions;
-```
-
-```vb
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-    Imports System.Text.RegularExpressions
-```
 
 ## Create a SpreadsheetDocument Object
 
@@ -56,15 +39,19 @@ Boolean parameter to **false**.
 
 The following code example calls the Open method to **Open** the file specified by the **filepath** for read-only access.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open file as read-only.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, false))
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document as read-only.
     Dim document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, False)
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -86,6 +73,7 @@ name as a parameter. It parses the cell name to get the column name by
 creating a regular expression to match the column name portion of the
 cell name. For more information about regular expressions, see [Regular Expression Language Elements](https://msdn.microsoft.com/library/az24scfc.aspx).
 
+### [C#](#tab/cs-1)
 ```csharp
     // Create a regular expression to match the column name portion of the cell name.
     Regex regex = new Regex("[A-Za-z]+");
@@ -94,17 +82,21 @@ cell name. For more information about regular expressions, see [Regular Expressi
     return match.Value;
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Create a regular expression to match the column name portion of the cell name.
     Dim regex As Regex = New Regex("[A-Za-z]+")
     Dim match As Match = regex.Match(cellName)
     Return match.Value
 ```
+***
+
 
 The **GetRowIndex** method takes the cell name
 as a parameter. It parses the cell name to get the row index by creating
 a regular expression to match the row index portion of the cell name.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Create a regular expression to match the row index portion the cell name.
     Regex regex = new Regex(@"\d+");
@@ -113,12 +105,15 @@ a regular expression to match the row index portion of the cell name.
     return uint.Parse(match.Value);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Create a regular expression to match the row index portion the cell name.
     Dim regex As Regex = New Regex("\d+")
     Dim match As Match = regex.Match(cellName)
     Return UInteger.Parse(match.Value)
 ```
+***
+
 
 The **GetColumnHeading** method uses three
 parameters, the full path to the source spreadsheet file, the name of
@@ -129,6 +124,7 @@ The code gets the name of the column of the specified cell by calling
 the **GetColumnName** method. The code also
 gets the cells in the column and orders them by row using the **GetRowIndex** method.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Get the column name for the specified cell.
     string columnName = GetColumnName(cellName);
@@ -139,6 +135,7 @@ gets the cells in the column and orders them by row using the **GetRowIndex** me
             columnName, true) == 0)
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Get the column name for the specified cell.
     Dim columnName As String = GetColumnName(cellName)
@@ -147,21 +144,27 @@ gets the cells in the column and orders them by row using the **GetRowIndex** me
     Dim cells As IEnumerable(Of Cell) = worksheetPart.Worksheet.Descendants(Of Cell)().Where(Function(c) _
         String.Compare(GetColumnName(c.CellReference.Value), columnName, True) = 0).OrderBy(Function(r) GetRowIndex(r.CellReference))
 ```
+***
+
 
 If the specified column exists, it gets the first cell in the column
 using the
 [IEnumerable(T).First](https://msdn.microsoft.com/library/bb291976.aspx)
 method. The first cell contains the heading.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Get the first cell in the column.
     Cell headCell = cells.First();
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Get the first cell in the column.
     Dim headCell As Cell = cells.First()
 ```
+***
+
 
 If the content of the cell is stored in the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object, it gets the
 shared string items and returns the content of the column heading using
@@ -170,6 +173,7 @@ the
 method. If the content of the cell is not in the [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object, it returns the
 content of the cell.
 
+### [C#](#tab/cs-5)
 ```csharp
     // If the content of the first cell is stored as a shared string, get the text of the first cell
     // from the SharedStringTablePart and return it. Otherwise, return the string value of the cell.
@@ -188,6 +192,7 @@ content of the cell.
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' If the content of the first cell is stored as a shared string, get the text of the first cell
     ' from the SharedStringTablePart and return it. Otherwise, return the string value of the cell.
@@ -199,6 +204,8 @@ content of the cell.
         Return headCell.CellValue.Text
     End If
 ```
+***
+
 
 ## Sample Code
 
@@ -206,6 +213,7 @@ The following code example shows how to retrieve the column heading
 using the name of the column. You can call the **GetColumnHeading** method by using a call like the
 following example that uses the file "Sheet4.xlsx."
 
+### [C#](#tab/cs-6)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet4.xlsx";
     string worksheetName = "Sheet1";
@@ -213,143 +221,23 @@ following example that uses the file "Sheet4.xlsx."
     string s1 = GetColumnHeading(docName, worksheetName, cellName);
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Sheet4.xlsx"
     Dim worksheetName As String = "Sheet1"
     Dim cellName As String = "B2"
     Dim s1 As String = GetColumnHeading(docName, worksheetName, cellName)
 ```
+***
+
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
-    // the content of the first cell in that column.
-    public static string GetColumnHeading(string docName, string worksheetName, string cellName)
-    {
-        // Open the document as read-only.
-        using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, false))
-        {
-    IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook.Descendants<Sheet>().Where(s => s.Name == worksheetName);
-    if (sheets.Count() == 0)
-    {
-        // The specified worksheet does not exist.
-        return null;
-    }
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/spreadsheet/get_a_column_heading/cs/Program.cs)]
 
-    WorksheetPart worksheetPart = (WorksheetPart)document.WorkbookPart.GetPartById(sheets.First().Id);
-
-    // Get the column name for the specified cell.
-    string columnName = GetColumnName(cellName);
-
-    // Get the cells in the specified column and order them by row.
-    IEnumerable<Cell> cells = worksheetPart.Worksheet.Descendants<Cell>().Where(c => string.Compare(GetColumnName(c.CellReference.Value), columnName, true) == 0)
-        .OrderBy(r => GetRowIndex(r.CellReference));
-
-    if (cells.Count() == 0)
-    {
-        // The specified column does not exist.
-        return null;
-    }
-
-    // Get the first cell in the column.
-    Cell headCell = cells.First();
-
-    // If the content of the first cell is stored as a shared string, get the text of the first cell
-    // from the SharedStringTablePart and return it. Otherwise, return the string value of the cell.
-    if (headCell.DataType != null && headCell.DataType.Value == CellValues.SharedString)
-    {
-        SharedStringTablePart shareStringPart = document.WorkbookPart.GetPartsOfType<SharedStringTablePart>().First();
-        SharedStringItem[] items = shareStringPart.SharedStringTable.Elements<SharedStringItem>().ToArray();
-        return items[int.Parse(headCell.CellValue.Text)].InnerText;
-    }
-    else
-    {
-        return headCell.CellValue.Text;
-    }
-        }
-    }
-    // Given a cell name, parses the specified cell to get the column name.
-    private static string GetColumnName(string cellName)
-    {
-        // Create a regular expression to match the column name portion of the cell name.
-        Regex regex = new Regex("[A-Za-z]+");
-        Match match = regex.Match(cellName);
-
-        return match.Value;
-    }
-
-    // Given a cell name, parses the specified cell to get the row index.
-    private static uint GetRowIndex(string cellName)
-    {
-        // Create a regular expression to match the row index portion the cell name.
-        Regex regex = new Regex(@"\d+");
-        Match match = regex.Match(cellName);
-
-        return uint.Parse(match.Value);
-    }
-```
-
-```vb
-    ' Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
-    ' the content of the first cell in that column.
-    Public Function GetColumnHeading(ByVal docName As String, ByVal worksheetName As String, ByVal cellName As String) As String
-        ' Open the document as read-only.
-        Dim document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, False)
-
-        Using (document)
-    Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)().Where(Function(s) s.Name = worksheetName)
-    If (sheets.Count() = 0) Then
-        ' The specified worksheet does not exist.
-        Return Nothing
-    End If
-
-    Dim worksheetPart As WorksheetPart = CType(document.WorkbookPart.GetPartById(sheets.First.Id), WorksheetPart)
-
-    ' Get the column name for the specified cell.
-    Dim columnName As String = GetColumnName(cellName)
-
-    ' Get the cells in the specified column and order them by row.
-    Dim cells As IEnumerable(Of Cell) = worksheetPart.Worksheet.Descendants(Of Cell)().Where(Function(c) _
-        String.Compare(GetColumnName(c.CellReference.Value), columnName, True) = 0).OrderBy(Function(r) GetRowIndex(r.CellReference))
-
-    If (cells.Count() = 0) Then
-        ' The specified column does not exist.
-        Return Nothing
-    End If
-
-    ' Get the first cell in the column.
-    Dim headCell As Cell = cells.First()
-
-    ' If the content of the first cell is stored as a shared string, get the text of the first cell
-    ' from the SharedStringTablePart and return it. Otherwise, return the string value of the cell.
-    If ((Not (headCell.DataType) Is Nothing) AndAlso (headCell.DataType.Value = CellValues.SharedString)) Then
-        Dim shareStringPart As SharedStringTablePart = document.WorkbookPart.GetPartsOfType(Of SharedStringTablePart)().First()
-        Dim items() As SharedStringItem = shareStringPart.SharedStringTable.Elements(Of SharedStringItem)().ToArray()
-        Return items(Integer.Parse(headCell.CellValue.Text)).InnerText
-    Else
-        Return headCell.CellValue.Text
-    End If
-
-        End Using
-    End Function
-
-    ' Given a cell name, parses the specified cell to get the column name.
-    Private Function GetColumnName(ByVal cellName As String) As String
-        ' Create a regular expression to match the column name portion of the cell name.
-        Dim regex As Regex = New Regex("[A-Za-z]+")
-        Dim match As Match = regex.Match(cellName)
-        Return match.Value
-    End Function
-
-    ' Given a cell name, parses the specified cell to get the row index.
-    Private Function GetRowIndex(ByVal cellName As String) As UInteger
-        ' Create a regular expression to match the row index portion the cell name.
-        Dim regex As Regex = New Regex("\d+")
-        Dim match As Match = regex.Match(cellName)
-        Return UInteger.Parse(match.Value)
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/spreadsheet/get_a_column_heading/vb/Program.vb)]
 
 ## See also
 

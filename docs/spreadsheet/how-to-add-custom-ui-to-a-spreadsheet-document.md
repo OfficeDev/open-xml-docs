@@ -20,21 +20,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to an Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an example **AddCustomUI** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). Explicitly reference the following assemblies in your project:
 
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
-
-```csharp
-    using DocumentFormat.OpenXml.Office.CustomUI;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Office.CustomUI
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 ## Creating Custom UI
 
@@ -85,19 +71,24 @@ The **AddCustomUI** method accepts two parameters:
 
 The following code shows the two parameters.
 
+### [C#](#tab/cs-0)
 ```csharp
     static public void AddCustomUI(string fileName, string customUIContent)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub XLAddCustomUI(ByVal fileName As String,
                                  ByVal customUIContent As String)
 ```
+***
+
 
 ## Call the AddCustomUI Method
 
 The method modifies the ribbon in an Excel workbook. To call the method, pass the file name of the workbook to modify, and a string that contains the customization XML, as shown in the following example code.
 
+### [C#](#tab/cs-1)
 ```csharp
     const string SAMPLEXML = "AddCustomUI.xml";
     const string DEMOFILE = "AddCustomUI.xlsm";
@@ -106,6 +97,7 @@ The method modifies the ribbon in an Excel workbook. To call the method, pass th
     AddCustomUI(DEMOFILE, content);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Const SAMPLEXML As String = "AddCustomUI.xml"
     Const DEMOFILE As String = "AddCustomUI.xlsm"
@@ -113,25 +105,32 @@ The method modifies the ribbon in an Excel workbook. To call the method, pass th
     Dim content As String = System.IO.File.OpenText(SAMPLEXML).ReadToEnd()
     AddCustomUI(DEMOFILE, content)
 ```
+***
+
 
 ## Interact with the Workbook
 
 The sample method, **AddCustomUI**, starts by opening the requested workbook in read/write mode, as shown in the following code.
 
+### [C#](#tab/cs-2)
 ```csharp
     using (SpreadsheetDocument document = 
         SpreadsheetDocument.Open(fileName, true))
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Using document As SpreadsheetDocument =
         SpreadsheetDocument.Open(fileName, True)
 ```
+***
+
 
 ## Work with the Ribbon Extensibility Part
 
 Next, as shown in the following code, the sample method attempts to retrieve a reference to the single ribbon extensibility part. If the part does not yet exist, the code creates it and stores a reference to the new part.
 
+### [C#](#tab/cs-3)
 ```csharp
     // You can have only a single ribbon extensibility part.
     // If the part doesn't exist, create it.
@@ -142,6 +141,7 @@ Next, as shown in the following code, the sample method attempts to retrieve a r
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' You can have only a single ribbon extensibility part.
     ' If the part doesn't exist, add it.
@@ -150,20 +150,26 @@ Next, as shown in the following code, the sample method attempts to retrieve a r
         part = document.AddRibbonExtensibilityPart
     End If
 ```
+***
+
 
 ## Add the Customization
 
 Given a reference to the ribbon extensibility part, the following code finishes by setting the part's **CustomUI** property to a new [CustomUI](https://msdn.microsoft.com/library/office/documentformat.openxml.office.customui.customui.aspx) object that contains the supplied customization. Once the customization is in place, the code saves the custom UI.
 
+### [C#](#tab/cs-4)
 ```csharp
     part.CustomUI = new CustomUI(customUIContent);
     part.CustomUI.Save();
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     part.CustomUI = New CustomUI(customUIContent)
     part.CustomUI.Save()
 ```
+***
+
 
 ## Sample Code
 

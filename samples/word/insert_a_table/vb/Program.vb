@@ -9,7 +9,8 @@ Imports Table = DocumentFormat.OpenXml.Wordprocessing.Table
 Imports Text = DocumentFormat.OpenXml.Wordprocessing.Text
 Imports TopBorder = DocumentFormat.OpenXml.Wordprocessing.TopBorder
 
-Module Program
+Module MyModule
+
     Sub Main(args As String())
     End Sub
 

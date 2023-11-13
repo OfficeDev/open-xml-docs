@@ -20,28 +20,7 @@ This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a presentation document for read-only
 access.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using System.Collections.Generic;
-    using DocumentFormat.OpenXml.Presentation;
-    using A = DocumentFormat.OpenXml.Drawing;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml;
-    using System.Text;
-```
-
-```vb
-    Imports System
-    Imports System.Collections.Generic
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports A = DocumentFormat.OpenXml.Drawing
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml
-    Imports System.Text
-```
 
 ## How to Open a File for Read-Only Access
 
@@ -84,6 +63,7 @@ the **presentationFile** parameter is a string
 that represents the path of the file from which you want to open the
 document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
     {
@@ -91,11 +71,14 @@ document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 You can also use the second overload of the **Open** method, in the table above, to create an
 instance of the **PresentationDocument** class
@@ -104,6 +87,7 @@ Microsoft SharePoint Foundation 2010 application that uses stream I/O
 and you want to use the Open XML SDK to work with a document. The
 following code segment opens a document based on a stream.
 
+### [C#](#tab/cs-1)
 ```csharp
     Stream stream = File.Open(strDoc, FileMode.Open);
     using (PresentationDocument presentationDocument =
@@ -113,12 +97,15 @@ following code segment opens a document based on a stream.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim stream As Stream = File.Open(strDoc, FileMode.Open)
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(stream, False)
         ' Other code goes here.
     End Using
 ```
+***
+
 
 Suppose you have an application that employs the Open XML support in the
 **System.IO.Packaging** namespace of the .NET
@@ -131,6 +118,7 @@ open the package as read-only prior to creating the instance of the
 **PresentationDocument** class. The following
 code segment performs this operation.
 
+### [C#](#tab/cs-2)
 ```csharp
     Package presentationPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read);
     using (PresentationDocument presentationDocument =
@@ -140,12 +128,15 @@ code segment performs this operation.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim presentationPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationPackage)
         ' Other code goes here.
     End Using
 ```
+***
+
 
 [!include[Structure](../includes/presentation/structure.md)]
 
@@ -156,6 +147,7 @@ In the sample code, after you open the presentation document in the
 instantiate the **PresentationPart**, and open
 the slide list. Then you get the relationship ID of the first slide.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Get the relationship ID of the first slide.
     PresentationPart part = ppt.PresentationPart;
@@ -163,17 +155,21 @@ the slide list. Then you get the relationship ID of the first slide.
     string relId = (slideIds[index] as SlideId).RelationshipId;
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Get the relationship ID of the first slide.
     Dim part As PresentationPart = ppt.PresentationPart
     Dim slideIds As OpenXmlElementList = part.Presentation.SlideIdList.ChildElements
     Dim relId As String = (TryCast(slideIds(index), SlideId)).RelationshipId
 ```
+***
+
 
 From the relationship ID, **relId**, you get the
 slide part, and then the inner text of the slide by building a text
 string using **StringBuilder**.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Get the slide part from the relationship ID.
     SlidePart slide = (SlidePart)part.GetPartById(relId);
@@ -190,6 +186,7 @@ string using **StringBuilder**.
     sldText = paragraphText.ToString();
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Get the slide part from the relationship ID.
     Dim slide As SlidePart = CType(part.GetPartById(relId), SlidePart)
@@ -204,6 +201,8 @@ string using **StringBuilder**.
     Next text
     sldText = paragraphText.ToString()
 ```
+***
+
 
 The inner text of the slide, which is an **out** parameter of the **GetSlideIdAndText** method, is passed back to the
 main method to be displayed.
@@ -225,6 +224,7 @@ the second slide in a presentation file named "Myppt13.pptx".
 > [!TIP]
 > The most expected exception in this program is the **ArgumentOutOfRangeException** exception. It could be thrown if, for example, you have a file with two slides, and you wanted to display the text in slide number 4. Therefore, it is best to use a **try** block when you call the **GetSlideIdAndText** method as shown in the following example.
 
+### [C#](#tab/cs-5)
 ```csharp
     string file = @"C:\Users\Public\Documents\Myppt13.pptx";
     string slideText;
@@ -240,6 +240,7 @@ the second slide in a presentation file named "Myppt13.pptx".
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     Dim file As String = "C:\Users\Public\Documents\Myppt13.pptx"
     Dim slideText As String = Nothing
@@ -251,61 +252,16 @@ the second slide in a presentation file named "Myppt13.pptx".
         Console.WriteLine(exp.Message)
     End Try
 ```
+***
+
 
 The following is the complete code listing in C\# and Visual Basic.
 
-```csharp
-    public static void GetSlideIdAndText(out string sldText, string docName, int index)
-    {
-        using (PresentationDocument ppt = PresentationDocument.Open(docName, false))
-        {
-            // Get the relationship ID of the first slide.
-            PresentationPart part = ppt.PresentationPart;
-            OpenXmlElementList slideIds = part.Presentation.SlideIdList.ChildElements;
-            string relId = (slideIds[index] as SlideId).RelationshipId;
-            relId = (slideIds[index] as SlideId).RelationshipId;
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/presentation/open_for_read_only_access/cs/Program.cs)]
 
-            // Get the slide part from the relationship ID.
-            SlidePart slide = (SlidePart)part.GetPartById(relId);
-
-            // Build a StringBuilder object.
-            StringBuilder paragraphText = new StringBuilder();
-
-            // Get the inner text of the slide:
-            IEnumerable<A.Text> texts = slide.Slide.Descendants<A.Text>();
-            foreach (A.Text text in texts)
-            {
-                paragraphText.Append(text.Text);
-            }
-            sldText = paragraphText.ToString();
-        }
-    }
-```
-
-```vb
-    Public Sub GetSlideIdAndText(ByRef sldText As String, ByVal docName As String, ByVal index As Integer)
-        Using ppt As PresentationDocument = PresentationDocument.Open(docName, False)
-            ' Get the relationship ID of the first slide.
-            Dim part As PresentationPart = ppt.PresentationPart
-            Dim slideIds As OpenXmlElementList = part.Presentation.SlideIdList.ChildElements
-            Dim relId As String = TryCast(slideIds(index), SlideId).RelationshipId
-            relId = TryCast(slideIds(index), SlideId).RelationshipId
-
-            ' Get the slide part from the relationship ID.
-            Dim slide As SlidePart = DirectCast(part.GetPartById(relId), SlidePart)
-
-            ' Build a StringBuilder object.
-            Dim paragraphText As New StringBuilder()
-
-            ' Get the inner text of the slide:
-            Dim texts As IEnumerable(Of A.Text) = slide.Slide.Descendants(Of A.Text)()
-            For Each text As A.Text In texts
-                paragraphText.Append(text.Text)
-            Next
-            sldText = paragraphText.ToString()
-        End Using
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/presentation/open_for_read_only_access/vb/Program.vb)]
 
 ## See also
 

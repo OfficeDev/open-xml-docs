@@ -19,10 +19,10 @@ Module Program
         End If
 
         ' Create a new paragraph style element and specify some of the attributes.
-        Dim style As New Style() With { _
-         .Type = StyleValues.Paragraph, _
-         .StyleId = styleid, _
-         .CustomStyle = True, _
+        Dim style As New Style() With {
+         .Type = StyleValues.Paragraph,
+         .StyleId = styleid,
+         .CustomStyle = True,
          .[Default] = False}
 
         ' Create and add the child elements (properties of the style)
@@ -35,10 +35,10 @@ Module Program
         Dim stylehidden1 As New StyleHidden() With {.Val = OnOffOnlyValues.Off}
         Dim semihidden1 As New SemiHidden() With {.Val = OnOffOnlyValues.Off}
         Dim styleName1 As New StyleName() With {.Val = stylename}
-        Dim nextParagraphStyle1 As New NextParagraphStyle() With { _
+        Dim nextParagraphStyle1 As New NextParagraphStyle() With {
          .Val = "Normal"}
         Dim uipriority1 As New UIPriority() With {.Val = 1}
-        Dim unhidewhenused1 As New UnhideWhenUsed() With { _
+        Dim unhidewhenused1 As New UnhideWhenUsed() With {
          .Val = OnOffOnlyValues.[On]}
         If aliases <> "" Then
             style.Append(aliases1)
@@ -58,13 +58,13 @@ Module Program
         ' Create the StyleRunProperties object and specify some of the run properties.
         Dim styleRunProperties1 As New StyleRunProperties()
         Dim bold1 As New Bold()
-        Dim color1 As New Color() With { _
+        Dim color1 As New Color() With {
          .ThemeColor = ThemeColorValues.Accent2}
-        Dim font1 As New RunFonts() With { _
+        Dim font1 As New RunFonts() With {
          .Ascii = "Lucida Console"}
         Dim italic1 As New Italic()
         ' Specify a 12 point size.
-        Dim fontSize1 As New FontSize() With { _
+        Dim fontSize1 As New FontSize() With {
          .Val = "24"}
         styleRunProperties1.Append(bold1)
         styleRunProperties1.Append(color1)

@@ -1,7 +1,7 @@
-#nullable disable
-
 using DocumentFormat.OpenXml.Office.CustomUI;
 using DocumentFormat.OpenXml.Packaging;
+
+AddCustomUI(args[0], args[1]);
 
 static void AddCustomUI(string fileName, string customUIContent)
 {
@@ -32,7 +32,7 @@ static void AddCustomUI(string fileName, string customUIContent)
         // You can have only a single ribbon extensibility part.
         // If the part doesn't exist, create it.
         var part = document.RibbonExtensibilityPart;
-        if (part == null)
+        if (part is null)
         {
             part = document.AddRibbonExtensibilityPart();
         }

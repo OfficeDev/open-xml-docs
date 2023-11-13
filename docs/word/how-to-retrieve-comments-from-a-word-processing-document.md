@@ -31,6 +31,7 @@ file for editing the Boolean parameter is set to **true**. In this example you j
 file; therefore, you can open the file for read-only access by setting
 the Boolean parameter to **false**.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument wordDoc = 
            WordprocessingDocument.Open(fileName, false)) 
@@ -39,11 +40,14 @@ the Boolean parameter to **false**.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(fileName, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
@@ -149,6 +153,7 @@ After you have opened the file for read-only access, you instantiate the
 then display the inner text of the **Comment**
 element.
 
+### [C#](#tab/cs-1)
 ```csharp
     foreach (Comment comment in commentsPart.Comments.Elements<Comment>())
     {
@@ -156,12 +161,15 @@ element.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     For Each comment As Comment In _
         commentsPart.Comments.Elements(Of Comment)()
         Console.WriteLine(comment.InnerText)
     Next
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -170,15 +178,19 @@ inserted into a word processing document. To call the method **GetCommentsFromDo
 call, which retrieves comments from a file named "Word16.docx," as an
 example.
 
+### [C#](#tab/cs-2)
 ```csharp
     string fileName = @"C:\Users\Public\Documents\Word16.docx";
     GetCommentsFromDocument(fileName);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\Word16.docx"
     GetCommentsFromDocument(fileName)
 ```
+***
+
 
 The following is the complete sample code in both C\# and Visual Basic.
 

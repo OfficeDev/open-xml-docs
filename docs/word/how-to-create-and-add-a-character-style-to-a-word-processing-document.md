@@ -23,29 +23,7 @@ processing document. It contains an example
 **CreateAndAddCharacterStyle** method to illustrate this task, plus a
 supplemental example method to add the styles part when it is necessary.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using System.Linq;
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 ## CreateAndAddCharacterStyle Method
 
@@ -61,15 +39,19 @@ identifier), the name of the style (for external use in the user
 interface), and optionally, any style aliases (alternate names for use
 in the user interface).
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void CreateAndAddCharacterStyle(StyleDefinitionsPart styleDefinitionsPart,
         string styleid, string stylename, string aliases="")
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub CreateAndAddCharacterStyle(ByVal styleDefinitionsPart As StyleDefinitionsPart, 
     ByVal styleid As String, ByVal stylename As String, Optional ByVal aliases As String = "")
 ```
+***
+
 
 The complete code listing for the method can be found in the [Sample Code](#sample-code) section.
 
@@ -120,6 +102,7 @@ sample file that is named CreateAndAddCharacterStyle.docx. It also
 creates three runs of text in a paragraph, and applies the style to the
 second run.
 
+### [C#](#tab/cs-1)
 ```csharp
     string strDoc = @"C:\Users\Public\Documents\CreateAndAddCharacterStyle.docx";
 
@@ -176,6 +159,7 @@ second run.
         rPr.RunStyle.Val = "OverdueAmountChar";
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim strDoc As String = "C:\Users\Public\Documents\CreateAndAddCharacterStyle.docx"
 
@@ -234,6 +218,8 @@ second run.
 
     End Using
 ```
+***
+
 
 ## Style Types
 
@@ -314,6 +300,7 @@ part. The styles element is the root element of the part and contains
 all of the individual style elements. If the reference is null, the
 styles element is created and saved to the part.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Get access to the root element of the styles part.
         Styles styles = styleDefinitionsPart.Styles;
@@ -324,6 +311,7 @@ styles element is created and saved to the part.
         }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Get access to the root element of the styles part.
         Dim styles As Styles = styleDefinitionsPart.Styles
@@ -332,12 +320,15 @@ styles element is created and saved to the part.
             styleDefinitionsPart.Styles.Save()
         End If
 ```
+***
+
 
 ## Creating the Style
 
 To create the style, the code instantiates the [Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx) class and sets certain properties,
 such as the [Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx) of style (paragraph), the [StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx), and whether the style is a [CustomStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx).
 
+### [C#](#tab/cs-3)
 ```csharp
     // Create a new character style and specify some of the attributes.
     Style style = new Style()
@@ -348,6 +339,7 @@ such as the [Type](https://msdn.microsoft.com/library/office/documentformat.open
     };
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Create a new character style and specify some of the attributes.
     Dim style As New Style() With { _
@@ -355,6 +347,8 @@ such as the [Type](https://msdn.microsoft.com/library/office/documentformat.open
         .StyleId = styleid, _
         .CustomStyle = True}
 ```
+***
+
 
 The code results in the following XML.
 
@@ -369,6 +363,7 @@ corresponding class, and then call the [Append(\[\])](https://msdn.microsoft.com
 to the style. For more information about these properties, see section
 17.7 of the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Create and add the child elements (properties of the style).
     Aliases aliases1 = new Aliases() { Val = aliases };
@@ -380,6 +375,7 @@ to the style. For more information about these properties, see section
     style.Append(linkedStyle1);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Create and add the child elements (properties of the style).
     Dim aliases1 As New Aliases() With {.Val = aliases}
@@ -391,6 +387,8 @@ to the style. For more information about these properties, see section
     style.Append(styleName1)
     style.Append(linkedStyle1)
 ```
+***
+
 
 Next, the code instantiates a [StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx) object to create a **rPr** (Run Properties) element. You specify the
 character properties that apply to the style, such as font and color, in
@@ -399,6 +397,7 @@ this element. The properties are then appended as children of the **rPr** elemen
 When the run properties are created, the code appends the **rPr** element to the style, and the style element
 to the styles root element in the styles part.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Create the StyleRunProperties object and specify some of the run properties.
     StyleRunProperties styleRunProperties1 = new StyleRunProperties();
@@ -421,6 +420,7 @@ to the styles root element in the styles part.
     styles.Append(style);
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Create the StyleRunProperties object and specify some of the run properties.
     Dim styleRunProperties1 As New StyleRunProperties()
@@ -443,6 +443,8 @@ to the styles root element in the styles part.
     ' Add the style to the styles part.
     styles.Append(style)
 ```
+***
+
 
 The following XML shows the final style generated by the code shown here.
 
@@ -471,6 +473,7 @@ variable r. The style ID of the style to apply, OverdueAmountChar in
 this example, is stored in the RunStyle property of the **rPr** object. This property represents the run
 properties' **rStyle** element.
 
+### [C#](#tab/cs-6)
 ```csharp
     // If the Run has no RunProperties object, create one.
     if (r.Elements<RunProperties>().Count() == 0)
@@ -487,6 +490,7 @@ properties' **rStyle** element.
     rPr.RunStyle.Val = "OverdueAmountChar";
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' If the Run has no RunProperties object, create one.
     If r.Elements(Of RunProperties)().Count() = 0 Then
@@ -502,6 +506,8 @@ properties' **rStyle** element.
     End If
     rPr.RunStyle.Val = "OverdueAmountChar"
 ```
+***
+
 
 ## Sample Code
 

@@ -21,26 +21,7 @@ Office to programmatically retrieve the values of cells in a spreadsheet
 document. It contains an example **GetCellValue** method to illustrate
 this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (Installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
 
 ## GetCellValue Method
 
@@ -58,17 +39,21 @@ following three parameters:
 The method returns the value of the specified cell, if it could be
 found. The following code example shows the method signature.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static string GetCellValue(string fileName, 
         string sheetName, 
         string addressName)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Function GetCellValue(ByVal fileName As String,
         ByVal sheetName As String,
         ByVal addressName As String) As String
 ```
+***
+
 
 ## Calling the GetCellValue Sample Method
 
@@ -76,6 +61,7 @@ To call the **GetCellValue** method, pass the
 file name, sheet name, and cell address, as shown in the following code
 example.
 
+### [C#](#tab/cs-1)
 ```csharp
     const string fileName = 
         @"C:\users\public\documents\RetrieveCellValue.xlsx";
@@ -89,6 +75,7 @@ example.
         DateTime.FromOADate(double.Parse(value)).ToShortDateString());
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Const fileName As String =
         "C:\Users\Public\Documents\RetrieveCellValue.xlsx"
@@ -102,19 +89,25 @@ example.
     Console.WriteLine(
         DateTime.FromOADate(Double.Parse(value)).ToShortDateString())
 ```
+***
+
 
 ## How the Code Works
 
 The code starts by creating a variable to hold the return value, and
 initializes it to null.
 
+### [C#](#tab/cs-2)
 ```csharp
     string value = null;
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim value as String = Nothing
 ```
+***
+
 
 ## Accessing the Cell
 
@@ -122,6 +115,7 @@ Next, the code opens the document by using the **[Open](https://msdn.microsoft.c
 should be open for read-only access (the final **false** parameter). Next, the code retrieves a
 reference to the workbook part by using the **[WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)** property of the document.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Open the spreadsheet document for read-only access.
     using (SpreadsheetDocument document = 
@@ -131,6 +125,7 @@ reference to the workbook part by using the **[WorkbookPart](https://msdn.micros
         WorkbookPart wbPart = document.WorkbookPart;
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Open the spreadsheet document for read-only access.
     Using document As SpreadsheetDocument =
@@ -139,6 +134,8 @@ reference to the workbook part by using the **[WorkbookPart](https://msdn.micros
         ' Retrieve a reference to the workbook part.
         Dim wbPart As WorkbookPart = document.WorkbookPart
 ```
+***
+
 
 To find the requested cell, the code must first retrieve a reference to
 the sheet, given its name. The code must search all the sheet-type
@@ -149,6 +146,7 @@ and does not actually find a worksheet part. It finds a reference to a
 the name and **[Id](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.id.aspx)** of the sheet. The simplest way to do
 this is to use a LINQ query, as shown in the following code example.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Find the sheet with the supplied name, and then use that 
     // Sheet object to retrieve a reference to the first worksheet.
@@ -162,6 +160,7 @@ this is to use a LINQ query, as shown in the following code example.
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Find the sheet with the supplied name, and then use that Sheet object
     ' to retrieve a reference to the appropriate worksheet.
@@ -173,6 +172,8 @@ this is to use a LINQ query, as shown in the following code example.
         Throw New ArgumentException("sheetName")
     End If
 ```
+***
+
 
 Be aware that the [FirstOrDefault](https://msdn.microsoft.com/library/bb340482.aspx)
 method returns either the first matching reference (a sheet, in this
@@ -184,17 +185,21 @@ information that you already retrieved provides an **[Id](https://msdn.microsoft
 the corresponding **[WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx)** by calling the workbook part
 **[GetPartById](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid.aspx)** method.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Retrieve a reference to the worksheet part.
     WorksheetPart wsPart = 
         (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Retrieve a reference to the worksheet part.
     Dim wsPart As WorksheetPart =
         CType(wbPart.GetPartById(theSheet.Id), WorksheetPart)
 ```
+***
+
 
 Just as when locating the named sheet, when locating the named cell, the
 code uses the **[Descendants](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.descendants.aspx)** method, searching for the first
@@ -203,6 +208,7 @@ match in which the **[CellReference](https://msdn.microsoft.com/library/office/d
 parameter. After this method call, the variable named **theCell** will either contain a reference to the cell,
 or will contain a null reference.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Use its Worksheet property to get a reference to the cell 
     // whose address matches the address you supplied.
@@ -210,12 +216,15 @@ or will contain a null reference.
         Where(c => c.CellReference == addressName).FirstOrDefault();
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Use its Worksheet property to get a reference to the cell 
     ' whose address matches the address you supplied.
     Dim theCell As Cell = wsPart.Worksheet.Descendants(Of Cell).
         Where(Function(c) c.CellReference = addressName).FirstOrDefault
 ```
+***
+
 
 ## Retrieving the Value
 
@@ -233,6 +242,7 @@ such as the following.
 The **[InnerText](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.innertext.aspx)** property contains the content for
 the cell, and so the next block of code retrieves this value.
 
+### [C#](#tab/cs-7)
 ```csharp
     // If the cell does not exist, return an empty string.
     if (theCell != null)
@@ -242,6 +252,7 @@ the cell, and so the next block of code retrieves this value.
     }
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     ' If the cell does not exist, return an empty string.
     If theCell IsNot Nothing Then
@@ -249,6 +260,8 @@ the cell, and so the next block of code retrieves this value.
         ' Code removed here…
     End If
 ```
+***
+
 
 Now, the sample method must interpret the value. As it is, the code
 handles numeric and date, string, and Boolean values. You can extend the
@@ -259,6 +272,7 @@ types. It contains the value **CellValues.SharedString** for strings, and **Cell
 the value of the cell (it is a numeric value). Otherwise, the code
 continues by branching based on the data type.
 
+### [C#](#tab/cs-8)
 ```csharp
     // If the cell represents an integer number, you are done. 
     // For dates, this code returns the serialized value that 
@@ -276,6 +290,7 @@ continues by branching based on the data type.
     }
 ```
 
+### [Visual Basic](#tab/vb-8)
 ```vb
     ' If the cell represents an numeric value, you are done. 
     ' For dates, this code returns the serialized value that 
@@ -290,10 +305,13 @@ continues by branching based on the data type.
         End Select
     End If
 ```
+***
+
 
 If the **DataType** property contains **CellValues.SharedString**, the code must retrieve a
 reference to the single **[SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.sharedstringtablepart.aspx)**.
 
+### [C#](#tab/cs-9)
 ```csharp
     // For shared strings, look up the value in the
     // shared strings table.
@@ -302,18 +320,22 @@ reference to the single **[SharedStringTablePart](https://msdn.microsoft.com/lib
         .FirstOrDefault();
 ```
 
+### [Visual Basic](#tab/vb-9)
 ```vb
     ' For shared strings, look up the value in the 
     ' shared strings table.
     Dim stringTable = wbPart.
       GetPartsOfType(Of SharedStringTablePart).FirstOrDefault()
 ```
+***
+
 
 Next, if the string table exists (and if it does not, the workbook is
 damaged and the sample code returns the index into the string table
 instead of the string itself) the code returns the **InnerText** property of the element it finds at the
 specified index (first converting the value property to an integer).
 
+### [C#](#tab/cs-10)
 ```csharp
     // If the shared string table is missing, something 
     // is wrong. Return the index that is in
@@ -327,6 +349,7 @@ specified index (first converting the value property to an integer).
     }
 ```
 
+### [Visual Basic](#tab/vb-10)
 ```vb
     ' If the shared string table is missing, something
     ' is wrong. Return the index that is in 
@@ -337,10 +360,13 @@ specified index (first converting the value property to an integer).
         ElementAt(Integer.Parse(value)).InnerText
     End If
 ```
+***
+
 
 If the **DataType** property contains **CellValues.Boolean**, the code converts the 0 or 1
 it finds in the cell value into the appropriate text string.
 
+### [C#](#tab/cs-11)
 ```csharp
     case CellValues.Boolean:
         switch (value)
@@ -354,6 +380,7 @@ it finds in the cell value into the appropriate text string.
         }
 ```
 
+### [Visual Basic](#tab/vb-11)
 ```vb
     Case CellValues.Boolean
         Select Case value
@@ -363,6 +390,8 @@ it finds in the cell value into the appropriate text string.
                 value = "TRUE"
         End Select
 ```
+***
+
 
 Finally, the procedure returns the variable **value**, which contains the requested information.
 

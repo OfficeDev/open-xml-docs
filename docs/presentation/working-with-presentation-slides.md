@@ -198,6 +198,7 @@ minimum number of XML elements necessary to represent a new slide.
 The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace.
 
+### [C#](#tab/cs-0)
 ```csharp
     private static SlidePart CreateSlidePart(PresentationPart presentationPart)        
             {
@@ -225,6 +226,7 @@ namespace.
              }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Private Shared Function CreateSlidePart(ByVal presentationPart As PresentationPart) As SlidePart
                 Dim slidePart1 As SlidePart = presentationPart.AddNewPart(Of SlidePart)("rId2")
@@ -244,12 +246,15 @@ namespace.
                 Return slidePart1
             End Function
 ```
+***
+
 
 To add another shape to the shape tree and, hence, to the slide,
 instantiate a second **Shape** object by
 passing an additional parameter that contains the following code to the
 **ShapeTree** constructor.
 
+### [C#](#tab/cs-1)
 ```csharp
     new P.Shape(
               new P.NonVisualShapeProperties(
@@ -263,6 +268,7 @@ passing an additional parameter that contains the following code to the
                   new Paragraph(new EndParagraphRunProperties() { Language = "en-US" })))
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
                   .Id = CType(2UI, UInt32Value), _
@@ -273,6 +279,8 @@ passing an additional parameter that contains the following code to the
                    New ListStyle(), New Paragraph(New EndParagraphRunProperties() With { _
                   .Language = "en-US" })))
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 ## Generated PresentationML

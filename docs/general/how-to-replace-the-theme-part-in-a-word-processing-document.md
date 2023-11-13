@@ -46,6 +46,7 @@ statement, you open the word processing file *document* by using the
 [Open](https://msdn.microsoft.com/library/office/cc562234.aspx) method, with the Boolean parameter set
 to **true** to enable editing the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument wordDoc = 
             WordprocessingDocument.Open(document, true))
@@ -54,11 +55,14 @@ to **true** to enable editing the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -149,6 +153,7 @@ future extensibility of this complex type.
 After opening the file, you can instantiate the **MainDocumentPart** in the *wordDoc* object, and
 delete the old theme part.
 
+### [C#](#tab/cs-1)
 ```csharp
     public static void ReplaceTheme(string document, string themeFile)
     {
@@ -161,6 +166,7 @@ delete the old theme part.
             mainPart.DeletePart(mainPart.ThemePart);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Public Shared Sub ReplaceTheme(ByVal document As String, ByVal themeFile As String)
         Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
@@ -169,11 +175,14 @@ delete the old theme part.
             ' Delete the old document part.
             mainPart.DeletePart(mainPart.ThemePart)
 ```
+***
+
 You can then create add a new **ThemePart**
 object and add it to the **MainDocumentPart**
 object. Then you add content by using a **StreamReader** and **StreamWriter** objects to copy the theme from the
 *themeFile* to the **ThemePart** object.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Add a new document part and then add content.
     ThemePart themePart = mainPart.AddNewPart<ThemePart>();
@@ -186,6 +195,7 @@ object. Then you add content by using a **StreamReader** and **StreamWriter** ob
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Add a new document part and then add content.
     Dim themePart As ThemePart = mainPart.AddNewPart(Of ThemePart)()
@@ -196,6 +206,8 @@ object. Then you add content by using a **StreamReader** and **StreamWriter** ob
     End Using
     End Using
 ```
+***
+
 
 ## Sample Code
 
@@ -208,17 +220,21 @@ an existing document or theme file (.THMX) that has been renamed to be a
 you can use the following call example to copy the theme from the file
 "Theme1.xml" to the file "MyPkg7.docx."
 
+### [C#](#tab/cs-3)
 ```csharp
     string document = @"C:\Users\Public\Documents\\MyPkg7.docx";
     string themeFile = @"C:\Users\Public\Documents\Theme1.xml";
     ReplaceTheme(document, themeFile);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim document As String = "C:\Users\Public\Documents\\MyPkg7.docx"
     Dim themeFile As String = "C:\Users\Public\Documents\Theme1.xml"
     ReplaceTheme(document, themeFile)
 ```
+***
+
 
 After you run the program open the Word file and notice the change in
 font.

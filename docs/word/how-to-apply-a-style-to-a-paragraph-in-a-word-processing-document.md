@@ -18,37 +18,24 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically apply a style to a paragraph within a word processing document. It contains an example **ApplyStyleToParagraph** method to illustrate this task, plus several supplemental example methods to check whether a style exists, add a new style, and add the styles part.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
-
-```csharp
-    using System;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 ## ApplyStyleToParagraph method
 
 The **ApplyStyleToParagraph** example method can be used to apply a style to a paragraph. You must first obtain a reference to the document as well as a reference to the paragraph that you want to style. The method accepts four parameters that indicate: the reference to the opened word processing document, the styleid of the style to be applied, the name of the style to be applied, and the reference to the paragraph to which to apply the style.
 
+### [C#](#tab/cs-0)
 ```csharp
     public static void ApplyStyleToParagraph(WordprocessingDocument doc, string styleid, string stylename, Paragraph p)
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Sub ApplyStyleToParagraph(ByVal doc As WordprocessingDocument, 
     ByVal styleid As String, ByVal stylename As String, ByVal p As Paragraph)
 ```
+***
+
 
 The following sections in this topic explain the implementation of this method and the supporting code, as well as how to call it. The complete sample code listing can be found in the [Sample Code](#sample-code) section at the end of this topic.
 
@@ -58,6 +45,7 @@ The Sample Code section also shows the code required to set up for calling the s
 
 To create the class instance, call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method. The following sample code shows how to use the [WordprocessingDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) overload. The first parameter takes a string that represents the full path to the document to open. The second parameter takes a value of **true** or **false** and represents whether to open the file for editing. In this example the parameter is **true** to enable read/write access to the file.
 
+### [C#](#tab/cs-1)
 ```csharp
     using (WordprocessingDocument doc = 
         WordprocessingDocument.Open(fileName, true))
@@ -66,12 +54,15 @@ To create the class instance, call one of the overloads of the [Open()](https://
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Using doc As WordprocessingDocument = _
         WordprocessingDocument.Open(fileName, True)
         ' Code removed here.
     End Using
 ```
+***
+
 
 [!include[Structure](../includes/word/structure.md)]
 
@@ -79,6 +70,7 @@ To create the class instance, call one of the overloads of the [Open()](https://
 
 After opening the file, the sample code retrieves a reference to the first paragraph. Because a typical word processing document body contains many types of elements, the code filters the descendants in the body of the document to those of type **Paragraph**. The [ElementAtOrDefault](https://msdn.microsoft.com/library/bb494386.aspx) method is then employed to retrieve a reference to the paragraph. Because the elements are indexed starting at zero, you pass a zero to retrieve the reference to the first paragraph, as shown in the following code example.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Get the first paragraph.
     Paragraph p =
@@ -92,6 +84,7 @@ After opening the file, the sample code retrieves a reference to the first parag
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim p = doc.MainDocumentPart.Document.Body.Descendants(Of Paragraph)() _
             .ElementAtOrDefault(0)
@@ -101,6 +94,8 @@ After opening the file, the sample code retrieves a reference to the first parag
         ' Code removed here.
     End If
 ```
+***
+
 
 The reference to the found paragraph is stored in a variable named p. If
 a paragraph is not found at the specified index, the
@@ -155,6 +150,7 @@ determines if the element exists, and creates a new instance of the
 The **pPr** element is a child of the **p** (paragraph) element; consequently, the [PrependChild\<T\>(T)](https://msdn.microsoft.com/library/office/cc883719.aspx) method is used to add
 the instance, as shown in the following code example.
 
+### [C#](#tab/cs-3)
 ```csharp
     // If the paragraph has no ParagraphProperties object, create one.
     if (p.Elements<ParagraphProperties>().Count() == 0)
@@ -166,6 +162,7 @@ the instance, as shown in the following code example.
     ParagraphProperties pPr = p.Elements<ParagraphProperties>().First();
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' If the paragraph has no ParagraphProperties object, create one.
     If p.Elements(Of ParagraphProperties)().Count() = 0 Then
@@ -175,6 +172,8 @@ the instance, as shown in the following code example.
     ' Get the paragraph properties element of the paragraph.
     Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties)().First()
 ```
+***
+
 
 ## Add the Styles part
 
@@ -190,6 +189,7 @@ automatically; you must explicitly create it. Consequently, the
 following code verifies that the styles part exists, and creates it if
 it does not.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Get the Styles part for this document.
     StyleDefinitionsPart part =
@@ -203,6 +203,7 @@ it does not.
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Get the Styles part for this document.
     Dim part As StyleDefinitionsPart = doc.MainDocumentPart.StyleDefinitionsPart
@@ -213,6 +214,8 @@ it does not.
         ' Code removed here...
     End If
 ```
+***
+
 
 The **AddStylesPartToPackage** example method
 does the work of adding the styles part. It creates a part of the **StyleDefinitionsPart** type, adding it as a child
@@ -221,6 +224,7 @@ that contains all of the styles. The **Styles**
 element is represented by the [Styles](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.styles.aspx) class in the Open XML SDK. Finally,
 the code saves the part.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Add a StylesDefinitionsPart to the document.  Returns a reference to it.
     public static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument doc)
@@ -233,6 +237,7 @@ the code saves the part.
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Add a StylesDefinitionsPart to the document.  Returns a reference to it.
     Public Function AddStylesPartToPackage(ByVal doc As WordprocessingDocument) _
@@ -244,6 +249,8 @@ the code saves the part.
         Return part
     End Function
 ```
+***
+
 
 ## Verify that the style exists
 
@@ -264,6 +271,7 @@ exist, or because the styles part exists, but the style does not, the
 code calls the **AddNewStyle** example method
 to add the style.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Get the Styles part for this document.
     StyleDefinitionsPart part =
@@ -292,6 +300,7 @@ to add the style.
     }
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Get the Styles part for this document.
     Dim part As StyleDefinitionsPart = doc.MainDocumentPart.StyleDefinitionsPart
@@ -314,6 +323,8 @@ to add the style.
         End If
     End If
 ```
+***
+
 
 Within the **IsStyleInDocument** example
 method, the work begins with retrieving the **Styles** element through the **Styles** property of the [StyleDefinitionsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.styledefinitionspart.aspx) of the main document
@@ -331,6 +342,7 @@ method defaults to null if no match is found, so the code verifies for
 null to see whether a style was matched, as shown in the following
 excerpt.
 
+### [C#](#tab/cs-7)
 ```csharp
     // Return true if the style id is in the document, false otherwise.
     public static bool IsStyleIdInDocument(WordprocessingDocument doc, 
@@ -355,6 +367,7 @@ excerpt.
     }
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     ' Return true if the style id is in the document, false otherwise.
     Public Function IsStyleIdInDocument(ByVal doc As WordprocessingDocument,
@@ -380,6 +393,8 @@ excerpt.
         Return True
     End Function
 ```
+***
+
 
 When the style cannot be found based on the styleid, the code attempts
 to find a match based on the style name instead. The **GetStyleIdFromStyleName** example method does this
@@ -431,6 +446,7 @@ When the style definition is complete, the code appends the style to the
 styles element in the styles part, as shown in the following code
 example.
 
+### [C#](#tab/cs-8)
 ```csharp
     // Create a new style with the specified styleid and stylename and add it to the specified
     // style definitions part.
@@ -473,6 +489,7 @@ example.
     }
 ```
 
+### [Visual Basic](#tab/vb-8)
 ```vb
     ' Create a new style with the specified styleid and stylename and add it to the specified
     ' style definitions part.
@@ -513,6 +530,8 @@ example.
         styles.Append(style)
     End Sub
 ```
+***
+
 
 ## Apply the style to the paragraph
 
@@ -525,16 +544,20 @@ then places a reference to that instance in the **ParagraphStyleId** property of
 properties object. This creates and assigns the appropriate value to the
 **pStyle** element that specifies the style to use for the paragraph.
 
+### [C#](#tab/cs-9)
 ```csharp
     // Set the style of the paragraph.
     pPr.ParagraphStyleId = new ParagraphStyleId(){Val = styleid};
 ```
 
+### [Visual Basic](#tab/vb-9)
 ```vb
     ' Set the style of the paragraph.
      pPr.ParagraphStyleId = New ParagraphStyleId() With { _
          .Val = styleid}
 ```
+***
+
 
 ## Sample code
 
@@ -551,6 +574,7 @@ paragraph to which to apply the style, as the fourth parameter. For
 example, the following code applies the "Overdue Amount" style to the
 first paragraph in the sample file named ApplyStyleToParagraph.docx.
 
+### [C#](#tab/cs-10)
 ```csharp
     string filename = @"C:\Users\Public\Documents\ApplyStyleToParagraph.docx";
 
@@ -573,6 +597,7 @@ first paragraph in the sample file named ApplyStyleToParagraph.docx.
     }
 ```
 
+### [Visual Basic](#tab/vb-10)
 ```vb
     Dim filename = "C:\Users\Public\Documents\ApplyStyleToParagraph.docx"
 
@@ -590,260 +615,16 @@ first paragraph in the sample file named ApplyStyleToParagraph.docx.
         ApplyStyleToParagraph(doc, "OverdueAmount", "Overdue Amount", p)
     End Using
 ```
+***
+
 
 The following is the complete code sample in both C\# and Visual Basic.
 
-```csharp
-    // Apply a style to a paragraph.
-    public static void ApplyStyleToParagraph(WordprocessingDocument doc, 
-        string styleid, string stylename, Paragraph p)
-    {
-        // If the paragraph has no ParagraphProperties object, create one.
-        if (p.Elements<ParagraphProperties>().Count() == 0)
-        {
-            p.PrependChild<ParagraphProperties>(new ParagraphProperties());
-        }
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/word/apply_a_style_to_a_paragraph/cs/Program.cs)]
 
-        // Get the paragraph properties element of the paragraph.
-        ParagraphProperties pPr = p.Elements<ParagraphProperties>().First();
-
-        // Get the Styles part for this document.
-        StyleDefinitionsPart part =
-            doc.MainDocumentPart.StyleDefinitionsPart;
-
-        // If the Styles part does not exist, add it and then add the style.
-        if (part == null)
-        {
-            part = AddStylesPartToPackage(doc);
-            AddNewStyle(part, styleid, stylename);
-        }
-        else
-        {
-            // If the style is not in the document, add it.
-            if (IsStyleIdInDocument(doc, styleid) != true)
-            {
-                // No match on styleid, so let's try style name.
-                string styleidFromName = GetStyleIdFromStyleName(doc, stylename);
-                if (styleidFromName == null)
-                {
-                    AddNewStyle(part, styleid, stylename);
-                }
-                else
-                    styleid = styleidFromName;
-            }
-        }
-
-        // Set the style of the paragraph.
-        pPr.ParagraphStyleId = new ParagraphStyleId(){Val = styleid};
-    }
-        
-    // Return true if the style id is in the document, false otherwise.
-    public static bool IsStyleIdInDocument(WordprocessingDocument doc, 
-        string styleid)
-    {
-        // Get access to the Styles element for this document.
-        Styles s = doc.MainDocumentPart.StyleDefinitionsPart.Styles;
-
-        // Check that there are styles and how many.
-        int n = s.Elements<Style>().Count();
-        if (n==0)
-            return false;
-
-        // Look for a match on styleid.
-        Style style = s.Elements<Style>()
-            .Where(st => (st.StyleId == styleid) && (st.Type == StyleValues.Paragraph))
-            .FirstOrDefault();
-        if (style == null)
-                return false;
-        
-        return true;
-    }
-
-    // Return styleid that matches the styleName, or null when there's no match.
-    public static string GetStyleIdFromStyleName(WordprocessingDocument doc, string styleName)
-    {
-        StyleDefinitionsPart stylePart = doc.MainDocumentPart.StyleDefinitionsPart;
-        string styleId = stylePart.Styles.Descendants<StyleName>()
-            .Where(s => s.Val.Value.Equals(styleName) && 
-                (((Style)s.Parent).Type == StyleValues.Paragraph))
-            .Select(n => ((Style)n.Parent).StyleId).FirstOrDefault();
-        return styleId;
-    }
-
-    // Create a new style with the specified styleid and stylename and add it to the specified
-    // style definitions part.
-    private static void AddNewStyle(StyleDefinitionsPart styleDefinitionsPart, 
-        string styleid, string stylename)
-    {
-        // Get access to the root element of the styles part.
-        Styles styles = styleDefinitionsPart.Styles;
-
-        // Create a new paragraph style and specify some of the properties.
-        Style style = new Style() { Type = StyleValues.Paragraph, 
-            StyleId = styleid, 
-            CustomStyle = true };
-        StyleName styleName1 = new StyleName() { Val = stylename };
-        BasedOn basedOn1 = new BasedOn() { Val = "Normal" };
-        NextParagraphStyle nextParagraphStyle1 = new NextParagraphStyle() { Val = "Normal" };
-        style.Append(styleName1);
-        style.Append(basedOn1);
-        style.Append(nextParagraphStyle1);
-
-        // Create the StyleRunProperties object and specify some of the run properties.
-        StyleRunProperties styleRunProperties1 = new StyleRunProperties();
-        Bold bold1 = new Bold();
-        Color color1 = new Color() { ThemeColor = ThemeColorValues.Accent2 };
-        RunFonts font1 = new RunFonts() { Ascii = "Lucida Console" };
-        Italic italic1 = new Italic();
-        // Specify a 12 point size.
-        FontSize fontSize1 = new FontSize() { Val = "24" };
-        styleRunProperties1.Append(bold1);
-        styleRunProperties1.Append(color1);
-        styleRunProperties1.Append(font1);
-        styleRunProperties1.Append(fontSize1);
-        styleRunProperties1.Append(italic1);
-        
-        // Add the run properties to the style.
-        style.Append(styleRunProperties1);
-        
-        // Add the style to the styles part.
-        styles.Append(style);
-    }
-
-    // Add a StylesDefinitionsPart to the document.  Returns a reference to it.
-    public static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument doc)
-    {
-        StyleDefinitionsPart part;
-        part = doc.MainDocumentPart.AddNewPart<StyleDefinitionsPart>();
-        Styles root = new Styles();
-        root.Save(part);
-        return part;
-    }
-```
-
-```vb
-    ' Apply a style to a paragraph.
-    Public Sub ApplyStyleToParagraph(ByVal doc As WordprocessingDocument,
-        ByVal styleid As String, ByVal stylename As String, ByVal p As Paragraph)
-
-        ' If the paragraph has no ParagraphProperties object, create one.
-        If p.Elements(Of ParagraphProperties)().Count() = 0 Then
-            p.PrependChild(Of ParagraphProperties)(New ParagraphProperties)
-        End If
-
-        ' Get the paragraph properties element of the paragraph.
-        Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties)().First()
-
-        ' Get the Styles part for this document.
-        Dim part As StyleDefinitionsPart = doc.MainDocumentPart.StyleDefinitionsPart
-
-        ' If the Styles part does not exist, add it and then add the style.
-        If part Is Nothing Then
-            part = AddStylesPartToPackage(doc)
-            AddNewStyle(part, styleid, stylename)
-        Else
-            ' If the style is not in the document, add it.
-            If IsStyleIdInDocument(doc, styleid) <> True Then
-                ' No match on styleid, so let's try style name.
-                Dim styleidFromName As String =
-                    GetStyleIdFromStyleName(doc, stylename)
-                If styleidFromName Is Nothing Then
-                    AddNewStyle(part, styleid, stylename)
-                Else
-                    styleid = styleidFromName
-                End If
-            End If
-        End If
-
-        ' Set the style of the paragraph.
-        pPr.ParagraphStyleId = New ParagraphStyleId With {.Val = styleid}
-    End Sub
-
-    ' Return true if the style id is in the document, false otherwise.
-    Public Function IsStyleIdInDocument(ByVal doc As WordprocessingDocument,
-                                        ByVal styleid As String) As Boolean
-        ' Get access to the Styles element for this document.
-        Dim s As Styles = doc.MainDocumentPart.StyleDefinitionsPart.Styles
-
-        ' Check that there are styles and how many.
-        Dim n As Integer = s.Elements(Of Style)().Count()
-        If n = 0 Then
-            Return False
-        End If
-
-        ' Look for a match on styleid.
-        Dim style As Style = s.Elements(Of Style)().
-            Where(Function(st) (st.StyleId = styleid) AndAlso
-                      (st.Type.Value = StyleValues.Paragraph)).
-            FirstOrDefault()
-        If style Is Nothing Then
-            Return False
-        End If
-
-        Return True
-    End Function
-
-    ' Return styleid that matches the styleName, or null when there's no match.
-    Public Function GetStyleIdFromStyleName(ByVal doc As WordprocessingDocument,
-                                            ByVal styleName As String) As String
-        Dim stylePart As StyleDefinitionsPart = doc.MainDocumentPart.StyleDefinitionsPart
-        Dim styleId As String = stylePart.Styles.Descendants(Of StyleName)().
-            Where(Function(s) s.Val.Value.Equals(styleName) AndAlso
-                      ((CType(s.Parent, Style)).Type.Value = StyleValues.Paragraph)).
-            Select(Function(n) (CType(n.Parent, Style)).StyleId).
-            FirstOrDefault()
-        Return styleId
-    End Function
-
-    ' Create a new style with the specified styleid and stylename and add it to the specified
-    ' style definitions part.
-    Public Sub AddNewStyle(ByVal styleDefinitionsPart As StyleDefinitionsPart,
-                            ByVal styleid As String, ByVal stylename As String)
-        ' Get access to the root element of the styles part.
-        Dim styles As Styles = styleDefinitionsPart.Styles
-
-        ' Create a new paragraph style and specify some of the properties.
-        Dim style As New Style With {.Type = StyleValues.Paragraph,
-                                     .StyleId = styleid,
-                                     .CustomStyle = True}
-        Dim styleName1 As New StyleName With {.Val = stylename}
-        Dim basedOn1 As New BasedOn With {.Val = "Normal"}
-        Dim nextParagraphStyle1 As New NextParagraphStyle With {.Val = "Normal"}
-        style.Append(styleName1)
-        style.Append(basedOn1)
-        style.Append(nextParagraphStyle1)
-
-        ' Create the StyleRunProperties object and specify some of the run properties.
-        Dim styleRunProperties1 As New StyleRunProperties
-        Dim bold1 As New Bold
-        Dim color1 As New Color With {.ThemeColor = ThemeColorValues.Accent2}
-        Dim font1 As New RunFonts With {.Ascii = "Lucida Console"}
-        Dim italic1 As New Italic
-        ' Specify a 12 point size.
-        Dim fontSize1 As New FontSize With {.Val = "24"}
-        styleRunProperties1.Append(bold1)
-        styleRunProperties1.Append(color1)
-        styleRunProperties1.Append(font1)
-        styleRunProperties1.Append(fontSize1)
-        styleRunProperties1.Append(italic1)
-
-        ' Add the run properties to the style.
-        style.Append(styleRunProperties1)
-
-        ' Add the style to the styles part.
-        styles.Append(style)
-    End Sub
-
-    ' Add a StylesDefinitionsPart to the document.  Returns a reference to it.
-    Public Function AddStylesPartToPackage(ByVal doc As WordprocessingDocument) _
-        As StyleDefinitionsPart
-        Dim part As StyleDefinitionsPart
-        part = doc.MainDocumentPart.AddNewPart(Of StyleDefinitionsPart)()
-        Dim root As New Styles
-        root.Save(part)
-        Return part
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/word/apply_a_style_to_a_paragraph/vb/Program.vb)]
 
 ## See also
 

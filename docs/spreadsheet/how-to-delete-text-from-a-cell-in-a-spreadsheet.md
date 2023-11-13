@@ -19,22 +19,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to delete text from a cell in a spreadsheet document
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.Collections.Generic;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
 
 
 ## Get a SpreadsheetDocument object
@@ -45,6 +30,7 @@ To create the class instance from the document, call one of the [Open()](https:/
 
 The following **using** statement code example calls the **Open** method.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true)) 
@@ -53,12 +39,15 @@ The following **using** statement code example calls the **Open** method.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
         ' Other code goes here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It verifies
@@ -73,6 +62,7 @@ object that is created or named in the **using** statement, in this case *docume
 
 In the following code example, you delete text from a cell in a [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package. Then, you verify if other cells within the spreadsheet document still reference the text removed from the row, and if they do not, you remove the text from the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object by using the [Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method. Then you clean up the **SharedStringTablePart** object by calling the **RemoveSharedStringItem** method.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Given a document, a worksheet name, a column name, and a one-based row index,
     // deletes the text from the cell at the specified column and row on the specified worksheet.
@@ -103,6 +93,7 @@ In the following code example, you delete text from a cell in a [SpreadsheetDocu
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Given a document, a worksheet name, a column name, and a one-based row index,
     ' deletes the text from the cell at the specified column and row on the specified worksheet.
@@ -130,9 +121,12 @@ In the following code example, you delete text from a cell in a [SpreadsheetDocu
         End Using
     End Sub
 ```
+***
+
 
 In the following code example, you verify that the cell specified by the column name and row index exists. If so, the code returns the cell; otherwise, it returns **null**.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
     private static Cell GetSpreadsheetCell(Worksheet worksheet, string columnName, uint rowIndex)
@@ -155,6 +149,7 @@ In the following code example, you verify that the cell specified by the column 
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
     Private Shared Function GetSpreadsheetCell(ByVal worksheet As Worksheet, ByVal columnName As String, ByVal rowIndex As UInteger) As Cell
@@ -173,6 +168,8 @@ In the following code example, you verify that the cell specified by the column 
         Return cells.First()
     End Function
 ```
+***
+
 
 In the following code example, you verify if other cells within the
 spreadsheet document reference the text specified by the **shareStringId** parameter. If they do not reference
@@ -190,6 +187,7 @@ remove the item from the **SharedStringTablePart** object. Then you iterate
 through each **Worksheet** object and **Cell** object and refresh the shared string
 references. Finally, you save the worksheet and the [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
     // reference the specified SharedStringItem and removes the item.
@@ -258,6 +256,7 @@ references. Finally, you save the worksheet and the [SharedStringTable](https://
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
     ' reference the specified SharedStringItem and removes the item.
@@ -310,6 +309,8 @@ references. Finally, you save the worksheet and the [SharedStringTable](https://
         End If
     End Sub
 ```
+***
+
 
 ## Sample code
 
@@ -319,6 +320,7 @@ a spreadsheet document. You can run the program by calling the method
 "Sheet3.xlsx" as shown in the following example, where you specify row
 2, column B, and the name of the worksheet.
 
+### [C#](#tab/cs-4)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Sheet3.xlsx";
     string sheetName  = "Jane";
@@ -327,6 +329,7 @@ a spreadsheet document. You can run the program by calling the method
     DeleteTextFromCell( docName, sheetName, colName, rowIndex);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Sheet3.xlsx"
     Dim sheetName As String = "Jane"
@@ -334,224 +337,16 @@ a spreadsheet document. You can run the program by calling the method
     Dim rowIndex As UInteger = 2
     DeleteTextFromCell(docName, sheetName, colName, rowIndex)
 ```
+***
+
 
 The following is the complete code sample in both C\# and Visual Basic.
 
-```csharp
-    // Given a document, a worksheet name, a column name, and a one-based row index,
-    // deletes the text from the cell at the specified column and row on the specified worksheet.
-    public static void DeleteTextFromCell(string docName, string sheetName, string colName, uint rowIndex)
-    {
-        // Open the document for editing.
-        using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))
-        {
-            IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook.GetFirstChild<Sheets>().Elements<Sheet>().Where(s => s.Name == sheetName);
-            if (sheets.Count() == 0)
-            {
-                // The specified worksheet does not exist.
-                return;
-            }
-            string relationshipId = sheets.First().Id.Value;
-            WorksheetPart worksheetPart = (WorksheetPart)document.WorkbookPart.GetPartById(relationshipId);
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/spreadsheet/delete_text_from_a_cell/cs/Program.cs)]
 
-            // Get the cell at the specified column and row.
-            Cell cell = GetSpreadsheetCell(worksheetPart.Worksheet, colName, rowIndex);
-            if (cell == null)
-            {
-                // The specified cell does not exist.
-                return;
-            }
-
-            cell.Remove();
-            worksheetPart.Worksheet.Save();
-        }
-    }
-
-    // Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
-    private static Cell GetSpreadsheetCell(Worksheet worksheet, string columnName, uint rowIndex)
-    {
-        IEnumerable<Row> rows = worksheet.GetFirstChild<SheetData>().Elements<Row>().Where(r => r.RowIndex == rowIndex);
-        if (rows.Count() == 0)
-        {
-            // A cell does not exist at the specified row.
-            return null;
-        }
-
-        IEnumerable<Cell> cells = rows.First().Elements<Cell>().Where(c => string.Compare(c.CellReference.Value, columnName + rowIndex, true) == 0);
-        if (cells.Count() == 0)
-        {
-            // A cell does not exist at the specified column, in the specified row.
-            return null;
-        }
-
-        return cells.First();
-    }
-
-    // Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
-    // reference the specified SharedStringItem and removes the item.
-    private static void RemoveSharedStringItem(int shareStringId, SpreadsheetDocument document)
-    {
-        bool remove = true;
-
-        foreach (var part in document.WorkbookPart.GetPartsOfType<WorksheetPart>())
-        {
-            Worksheet worksheet = part.Worksheet;
-            foreach (var cell in worksheet.GetFirstChild<SheetData>().Descendants<Cell>())
-            {
-                // Verify if other cells in the document reference the item.
-                if (cell.DataType != null &&
-                    cell.DataType.Value == CellValues.SharedString &&
-                    cell.CellValue.Text == shareStringId.ToString())
-                {
-                    // Other cells in the document still reference the item. Do not remove the item.
-                    remove = false;
-                    break;
-                }
-            }
-
-            if (!remove)
-            {
-                break;
-            }
-        }
-
-        // Other cells in the document do not reference the item. Remove the item.
-        if (remove)
-        {
-            SharedStringTablePart shareStringTablePart = document.WorkbookPart.SharedStringTablePart;
-            if (shareStringTablePart == null)
-            {
-                return;
-            }
-
-            SharedStringItem item = shareStringTablePart.SharedStringTable.Elements<SharedStringItem>().ElementAt(shareStringId);
-            if (item != null)
-            {
-                item.Remove();
-
-                // Refresh all the shared string references.
-                foreach (var part in document.WorkbookPart.GetPartsOfType<WorksheetPart>())
-                {
-                    Worksheet worksheet = part.Worksheet;
-                    foreach (var cell in worksheet.GetFirstChild<SheetData>().Descendants<Cell>())
-                    {
-                        if (cell.DataType != null &&
-                            cell.DataType.Value == CellValues.SharedString)
-                        {
-                            int itemIndex = int.Parse(cell.CellValue.Text);
-                            if (itemIndex > shareStringId)
-                            {
-                                cell.CellValue.Text = (itemIndex - 1).ToString();
-                            }
-                        }
-                    }
-                    worksheet.Save();
-                }
-
-                document.WorkbookPart.SharedStringTablePart.SharedStringTable.Save();
-            }
-        }
-    }
-```
-
-```vb
-    ' Given a document, a worksheet name, a column name, and a one-based row index,
-    ' deletes the text from the cell at the specified column and row on the specified sheet.
-    Public Sub DeleteTextFromCell(ByVal docName As String, ByVal sheetName As String, ByVal colName As String, ByVal rowIndex As UInteger)
-        ' Open the document for editing.
-        Dim document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
-
-        Using (document)
-            Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.GetFirstChild(Of Sheets)().Elements(Of Sheet)().Where(Function(s) s.Name = sheetName.ToString())
-            If (sheets.Count = 0) Then
-                ' The specified worksheet does not exist.
-                Return
-            End If
-
-            Dim relationshipId As String = sheets.First.Id.Value
-            Dim worksheetPart As WorksheetPart = CType(document.WorkbookPart.GetPartById(relationshipId), WorksheetPart)
-
-            ' Get the cell at the specified column and row.
-            Dim cell As Cell = GetSpreadsheetCell(worksheetPart.Worksheet, colName, rowIndex)
-            If (cell Is Nothing) Then
-                ' The specified cell does not exist.
-                Return
-            End If
-
-            cell.Remove()
-            worksheetPart.Worksheet.Save()
-
-        End Using
-    End Sub
-
-    ' Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
-    Private Function GetSpreadsheetCell(ByVal worksheet As Worksheet, ByVal columnName As String, ByVal rowIndex As UInteger) As Cell
-        Dim rows As IEnumerable(Of Row) = worksheet.GetFirstChild(Of SheetData)().Elements(Of Row)().Where(Function(r) r.RowIndex = rowIndex.ToString())
-        If (rows.Count = 0) Then
-            ' A cell does not exist at the specified row.
-            Return Nothing
-        End If
-
-        Dim cells As IEnumerable(Of Cell) = rows.First().Elements(Of Cell)().Where(Function(c) String.Compare(c.CellReference.Value, columnName + rowIndex.ToString(), True) = 0)
-        If (cells.Count = 0) Then
-            ' A cell does not exist at the specified column, in the specified row.
-            Return Nothing
-        End If
-
-        Return cells.First
-    End Function
-
-    ' Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
-    ' reference the specified SharedStringItem and removes the item.
-    Private Sub RemoveSharedStringItem(ByVal shareStringId As Integer, ByVal document As SpreadsheetDocument)
-        Dim remove As Boolean = True
-
-        For Each part In document.WorkbookPart.GetPartsOfType(Of WorksheetPart)()
-            Dim worksheet As Worksheet = part.Worksheet
-            For Each cell In worksheet.GetFirstChild(Of SheetData)().Descendants(Of Cell)()
-                ' Verify if other cells in the document reference the item.
-                If cell.DataType IsNot Nothing AndAlso cell.DataType.Value = CellValues.SharedString AndAlso cell.CellValue.Text = shareStringId.ToString() Then
-                    ' Other cells in the document still reference the item. Do not remove the item.
-                    remove = False
-                    Exit For
-                End If
-            Next
-
-            If Not remove Then
-                Exit For
-            End If
-        Next
-
-        ' Other cells in the document do not reference the item. Remove the item.
-        If remove Then
-            Dim shareStringTablePart As SharedStringTablePart = document.WorkbookPart.SharedStringTablePart
-            If shareStringTablePart Is Nothing Then
-                Exit Sub
-            End If
-
-            Dim item As SharedStringItem = shareStringTablePart.SharedStringTable.Elements(Of SharedStringItem)().ElementAt(shareStringId)
-            If item IsNot Nothing Then
-                item.Remove()
-
-                ' Refresh all the shared string references.
-                For Each part In document.WorkbookPart.GetPartsOfType(Of WorksheetPart)()
-                    Dim worksheet As Worksheet = part.Worksheet
-                    For Each cell In worksheet.GetFirstChild(Of SheetData)().Descendants(Of Cell)()
-                        If cell.DataType IsNot Nothing AndAlso cell.DataType.Value = CellValues.SharedString Then
-                            Dim itemIndex As Integer = Integer.Parse(cell.CellValue.Text)
-                            If itemIndex > shareStringId Then
-                                cell.CellValue.Text = (itemIndex - 1).ToString()
-                            End If
-                        End If
-                    Next
-                    worksheet.Save()
-                Next
-
-                document.WorkbookPart.SharedStringTablePart.SharedStringTable.Save()
-            End If
-        End If
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/spreadsheet/delete_text_from_a_cell/vb/Program.vb)]
 
 ## See also
 

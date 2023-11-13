@@ -39,6 +39,7 @@ errors.
 In your main method, you can call the two methods, **ValidateWordDocument** and **ValidateCorruptedWordDocument** by using the
 following example that validates a file named "Word18.docx.".
 
+### [C#](#tab/cs-0)
 ```csharp
     string filepath = @"C:\Users\Public\Documents\Word18.docx";
     ValidateWordDocument(filepath);
@@ -51,6 +52,7 @@ following example that validates a file named "Word18.docx.".
     Console.ReadKey();
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Dim filepath As String = "C:\Users\Public\Documents\Word18.docx"
     ValidateWordDocument(filepath)
@@ -62,6 +64,8 @@ following example that validates a file named "Word18.docx.".
     Console.WriteLine("All done! Press a key.")
     Console.ReadKey()
 ```
+***
+
 
 > [!Important] 
 > Notice that you cannot run the code twice after corrupting the file in the first run. You have to start with a new Word file.

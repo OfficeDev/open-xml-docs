@@ -70,15 +70,19 @@ file as read-only.
 The following code example calls the **Open**
 Method.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open a SpreadsheetDocument for read-only access based on a filepath.
     using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(filepath, false))
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open a SpreadsheetDocument for read-only access based on a filepath.
     Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(filepath, False)
 ```
+***
+
 
 The other two **Open** methods create an
 instance of the SpreadsheetDocument class based on an input/output
@@ -89,6 +93,7 @@ document.
 
 The following code example opens a document based on a stream.
 
+### [C#](#tab/cs-1)
 ```csharp
     Stream stream = File.Open(strDoc, FileMode.Open);
     // Open a SpreadsheetDocument for read-only access based on a stream.
@@ -96,11 +101,14 @@ The following code example opens a document based on a stream.
         SpreadsheetDocument.Open(stream, false))
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim stream As Stream = File.Open(strDoc, FileMode.Open)
     ' Open a SpreadsheetDocument for read-only access based on a stream.
     Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(stream, False)
 ```
+***
+
 
 Suppose you have an application that uses the Open XML support in the
 System.IO.Packaging namespace of the .NET Framework Class Library, and
@@ -115,6 +123,7 @@ before creating the instance of the **SpreadsheetDocument** class, as shown in t
 example in the sample code. The following code example performs this
 operation.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Open System.IO.Packaging.Package.
     Package spreadsheetPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read);
@@ -124,6 +133,7 @@ operation.
         SpreadsheetDocument.Open(spreadsheetPackage))
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Open System.IO.Packaging.Package.
     Dim spreadsheetPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
@@ -131,20 +141,26 @@ operation.
     ' Open a SpreadsheetDocument based on a package.
     Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(spreadsheetPackage)
 ```
+***
+
 
 After you open the spreadsheet document package, you can access the main
 workbook part. To access the main workbook part, you assign a reference
 to the existing workbook part, as shown in the following code example.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Assign a reference to the existing workbook part.
     WorkbookPart wbPart = document.WorkbookPart;
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Assign a reference to the existing workbook part.
     Dim wbPart As WorkbookPart = document.WorkbookPart
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 ## Basic Document Structure
@@ -208,13 +224,17 @@ The following code sample is used to open a Spreadsheet Document for
 Read-only Access. You can call the **OpenSpreadsheetDocumentReadonly** method by using
 the following code, which opens the file "Sheet10.xlsx," as an example.
 
+### [C#](#tab/cs-4)
 ```csharp
     OpenSpreadsheetDocumentReadonly(@"C:\Users\Public\Documents\Sheet10.xlsx");
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     OpenSpreadsheetDocumentReadonly("C:\Users\Public\Documents\Sheet10.xlsx")
 ```
+***
+
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)

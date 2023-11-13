@@ -9,7 +9,7 @@ Module Program
 
     Public Sub AddHeaderFromTo(ByVal filepathFrom As String, ByVal filepathTo As String)
         ' Replace header in target document with header of source document.
-        Using wdDoc As WordprocessingDocument = _
+        Using wdDoc As WordprocessingDocument =
             WordprocessingDocument.Open(filepathTo, True)
             Dim mainPart As MainDocumentPart = wdDoc.MainDocumentPart
 
@@ -23,7 +23,7 @@ Module Program
             Dim rId As String = mainPart.GetIdOfPart(headerPart)
 
             ' Feed target headerPart with source headerPart.
-            Using wdDocSource As WordprocessingDocument = _
+            Using wdDocSource As WordprocessingDocument =
                 WordprocessingDocument.Open(filepathFrom, True)
                 Dim firstHeader = wdDocSource.MainDocumentPart.HeaderParts.FirstOrDefault()
 

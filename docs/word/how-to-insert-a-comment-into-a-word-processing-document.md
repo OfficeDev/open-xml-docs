@@ -31,6 +31,7 @@ using the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc56
 Boolean parameter set to **true** to enable
 editing in the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument document =
            WordprocessingDocument.Open(filepath, true)) 
@@ -39,11 +40,14 @@ editing in the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using document As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
        ' Insert other code here. 
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -68,17 +72,21 @@ provides extension methods for objects that implement the
 [System.Collections.Generic.IEnumerable](https://msdn.microsoft.com/library/9eekhta0.aspx)
 interface.
 
+### [C#](#tab/cs-1)
 ```csharp
     Paragraph firstParagraph = document.MainDocumentPart.Document.Descendants<Paragraph>().First();
     Comments comments = null;
     string id = "0";
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim firstParagraph As Paragraph = document.MainDocumentPart.Document.Descendants(Of Paragraph)().First()
     Dim comments As Comments = Nothing
     Dim id As String = "0"
 ```
+***
+
 
 The code first determines whether a [WordprocessingCommentsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingcommentspart.aspx) part exists. To
 do this, call the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) generic method, **GetPartsCountOfType**, and specify a kind of **WordprocessingCommentsPart**.
@@ -93,6 +101,7 @@ value by one, and then storing that as the **Id** value.If no **WordprocessingCo
 creates one using the [AddNewPart\<T\>()](https://msdn.microsoft.com/library/office/cc562657.aspx) method of the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) object and then adds a
 **Comments** collection object to it.
 
+### [C#](#tab/cs-2)
 ```csharp
     if (document.MainDocumentPart.GetPartsCountOfType<WordprocessingCommentsPart>() > 0)
     {
@@ -112,6 +121,7 @@ creates one using the [AddNewPart\<T\>()](https://msdn.microsoft.com/library/off
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     If document.MainDocumentPart.GetPartsCountOfType(Of WordprocessingCommentsPart)() > 0 Then
         comments = document.MainDocumentPart.WordprocessingCommentsPart.Comments
@@ -124,6 +134,8 @@ creates one using the [AddNewPart\<T\>()](https://msdn.microsoft.com/library/off
         comments = commentPart.Comments
     End If
 ```
+***
+
 
 The **Comment** and **Comments** objects represent comment and comments
 elements, respectively, in the Open XML Wordprocessing schema. A **Comment** must be added to a **Comments** object so the code first instantiates a
@@ -147,6 +159,7 @@ memory which consists of a **comments** parent
 element with **comment** child elements under
 it.
 
+### [C#](#tab/cs-3)
 ```csharp
     Paragraph p = new Paragraph(new Run(new Text(comment)));
     Comment cmt = new Comment() { Id = id, 
@@ -156,6 +169,7 @@ it.
     comments.Save();
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim p As New Paragraph(New Run(New Text(comment)))
     Dim cmt As New Comment() With {.Id = id, .Author = author, .Initials = initials, .Date = Date.Now}
@@ -163,6 +177,8 @@ it.
     comments.AppendChild(cmt)
     comments.Save()
 ```
+***
+
 
 The following WordprocessingML code example represents the content of a
 comments part in a WordprocessingML document.
@@ -200,6 +216,7 @@ value that it links to. In the sample, the code adds a **commentReference** elem
 instantiates a **CommentReference** object,
 specifying the **Id** value, and then adds it to a [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) object.
 
+### [C#](#tab/cs-4)
 ```csharp
     firstParagraph.InsertBefore(new CommentRangeStart() 
                 { Id = id }, firstParagraph.GetFirstChild<Run>());
@@ -210,6 +227,7 @@ specifying the **Id** value, and then adds it to a [Run](https://msdn.microsoft.
             firstParagraph.InsertAfter(new Run(new CommentReference() { Id = id }), cmtEnd);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     firstParagraph.InsertBefore(New CommentRangeStart() With {.Id = id}, firstParagraph.GetFirstChild(Of Run)())
 
@@ -217,6 +235,8 @@ specifying the **Id** value, and then adds it to a [Run](https://msdn.microsoft.
 
             firstParagraph.InsertAfter(New Run(New CommentReference() With {.Id = id}), cmtEnd)
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -226,15 +246,19 @@ the document, your name, your initials, and the comment text. For
 example, the following call to the **AddCommentOnFirstParagraph** method writes the
 comment "This is my comment." in the file "Word8.docx."
 
+### [C#](#tab/cs-5)
 ```csharp
     AddCommentOnFirstParagraph(@"C:\Users\Public\Documents\Word8.docx",
      author, initials, "This is my comment.");
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     AddCommentOnFirstParagraph("C:\Users\Public\Documents\Word8.docx", _
      author, initials, comment)
 ```
+***
+
 
 Following is the complete sample code in both C\# and Visual Basic.
 

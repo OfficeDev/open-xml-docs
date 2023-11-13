@@ -31,6 +31,7 @@ statement, open the word processing file at the specified **filepath** by using 
 Boolean parameter set to **true** in order to
 enable editing the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument wordprocessingDocument =
            WordprocessingDocument.Open(filepath, true)) 
@@ -39,11 +40,14 @@ enable editing the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
         ' Insert other code here. 
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -92,6 +96,7 @@ The following XML Schema fragment defines the contents of this element
 After you have opened the document, add the [ImagePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.imagepart.aspx) object to the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) object by using a file
 stream as shown in the following code segment.
 
+### [C#](#tab/cs-1)
 ```csharp
     MainDocumentPart mainPart = wordprocessingDocument.MainDocumentPart;
     ImagePart imagePart = mainPart.AddImagePart(ImagePartType.Jpeg);
@@ -102,6 +107,7 @@ stream as shown in the following code segment.
     AddImageToBody(wordprocessingDocument, mainPart.GetIdOfPart(imagePart));
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim mainPart As MainDocumentPart = wordprocessingDocument.MainDocumentPart
     Dim imagePart As ImagePart = mainPart.AddImagePart(ImagePartType.Jpeg)
@@ -110,10 +116,13 @@ stream as shown in the following code segment.
     End Using
     AddImageToBody(wordprocessingDocument, mainPart.GetIdOfPart(imagePart))
 ```
+***
+
 
 To add the image to the body, first define the reference of the image.
 Then, append the reference to the body. The element should be in a [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx).
 
+### [C#](#tab/cs-2)
 ```csharp
     // Define the reference of the image.
     var element =
@@ -182,6 +191,7 @@ Then, append the reference to the body. The element should be in a [Run](https:/
     wordDoc.MainDocumentPart.Document.Body.AppendChild(new Paragraph(new Run(element)));
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Define the image reference.
     Dim element = New Drawing( _
@@ -228,6 +238,8 @@ Then, append the reference to the body. The element should be in a [Run](https:/
     ' a DocumentFormat.OpenXml.Wordprocessing.Run.
     wordDoc.MainDocumentPart.Document.Body.AppendChild(New Paragraph(New Run(element)))
 ```
+***
+
 
 --------------------------------------------------------------------------------
 
@@ -238,17 +250,21 @@ the word document, and the path of the file that contains the picture.
 For example, the following call inserts the picture "MyPic.jpg" into the
 file "Word9.docx," located at the specified paths.
 
+### [C#](#tab/cs-3)
 ```csharp
     string document = @"C:\Users\Public\Documents\Word9.docx";
     string fileName = @"C:\Users\Public\Documents\MyPic.jpg";
     InsertAPicture(document, fileName);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim document As String = "C:\Users\Public\Documents\Word9.docx"
     Dim fileName As String = "C:\Users\Public\Documents\MyPic.jpg"
     InsertAPicture(document, fileName)
 ```
+***
+
 
 After you run the code, look at the file "Word9.docx" to see the
 inserted picture.

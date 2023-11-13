@@ -176,52 +176,11 @@ of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.
 The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
 namespace.
 
-```csharp
-    private static NotesSlidePart CreateNotesSlidePart(SlidePart slidePart1)
-        {
-            NotesSlidePart notesSlidePart1 = slidePart1.AddNewPart<NotesSlidePart>("rId6");
-            NotesSlide notesSlide = new NotesSlide(
-            new CommonSlideData(new ShapeTree(
-              new P.NonVisualGroupShapeProperties(
-              new P.NonVisualDrawingProperties() { Id = (UInt32Value)1U, Name = "" },
-              new P.NonVisualGroupShapeDrawingProperties(),
-              new ApplicationNonVisualDrawingProperties()),
-              new GroupShapeProperties(new TransformGroup()),
-              new P.Shape(
-              new P.NonVisualShapeProperties(
-                new P.NonVisualDrawingProperties() { Id = (UInt32Value)2U, Name = "" },
-                new P.NonVisualShapeDrawingProperties(new ShapeLocks() { NoGrouping = true }),
-                new ApplicationNonVisualDrawingProperties(new PlaceholderShape())),
-              new P.ShapeProperties(),
-              new P.TextBody(
-                new BodyProperties(),
-                new ListStyle(),
-                new Paragraph(new EndParagraphRunProperties()))))),
-            new ColorMapOverride(new MasterColorMapping()));
-            notesSlidePart1.NotesSlide = notesSlide;
-            return notesSlidePart1;
-        }
-```
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs)]
 
-```vb
-    Private Shared Function CreateNotesSlidePart(ByVal slidePart1 As SlidePart) As NotesSlidePart
-            Dim notesSlidePart1 As NotesSlidePart = slidePart1.AddNewPart(Of NotesSlidePart)("rId6")
-            Dim notesSlide As New NotesSlide(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
-             .Id = DirectCast(1UI, UInt32Value), _
-             .Name = "" _
-            }, New P.NonVisualGroupShapeDrawingProperties(), New ApplicationNonVisualDrawingProperties()), New _
-                GroupShapeProperties(New TransformGroup()), New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
-             .Id = DirectCast(2UI, UInt32Value), _
-             .Name = "" _
-            }, New P.NonVisualShapeDrawingProperties(New ShapeLocks() With { _
-             .NoGrouping = True _
-            }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New _
-                P.TextBody(New BodyProperties(), New ListStyle(), New Paragraph(New EndParagraphRunProperties()))))),
-            New ColorMapOverride(New MasterColorMapping()))
-            notesSlidePart1.NotesSlide = notesSlide
-            Return notesSlidePart1
-        End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb)]
 
 ---------------------------------------------------------------------------------
 ## Generated PresentationML

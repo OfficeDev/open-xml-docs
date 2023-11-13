@@ -135,7 +135,7 @@ static string SetCustomProperty(
     return returnValue;
 }
 
-public enum PropertyTypes : int
+enum PropertyTypes : int
 {
     YesNo,
     Text,

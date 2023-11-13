@@ -20,22 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to move a slide to a new position in a presentation
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Presentation;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 --------------------------------------------------------------------------------
 ## Getting a Presentation Object
@@ -54,6 +39,7 @@ this code, the **presentationFile** parameter
 is a string that represents the path for the file from which you want to
 open the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the presentation as read-only.
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
@@ -62,12 +48,15 @@ open the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the presentation as read-only.
     Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -100,17 +89,21 @@ the presentation document in the **using**
 statement. Then it passes the **PresentationDocument** object to the second **CountSlides** method, which returns an integer
 number that represents the number of slides in the presentation.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Pass the presentation to the next CountSlides method
     // and return the slide count.
     return CountSlides(presentationDocument);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Pass the presentation to the next CountSlides method
     ' and return the slide count.
     Return CountSlides(presentationDocument)
 ```
+***
+
 
 In the second **CountSlides** method, the code
 verifies that the **PresentationDocument**
@@ -119,6 +112,7 @@ not, it gets a **PresentationPart** object from
 the **PresentationDocument** object. By using
 the **SlideParts** the code gets the **slideCount** and returns it.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Check for a null document object.
     if (presentationDocument == null)
@@ -140,6 +134,7 @@ the **SlideParts** the code gets the **slideCount** and returns it.
     return slidesCount;
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Check for a null document object.
     If presentationDocument Is Nothing Then
@@ -158,6 +153,8 @@ the **SlideParts** the code gets the **slideCount** and returns it.
     ' Return the slide count to the previous method.
     Return slidesCount
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Moving a Slide from one Position to Another
@@ -173,6 +170,7 @@ object and the two integers, *from* and *to*, to the second overloaded
 **MoveSlide** method, which performs the actual
 move.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Move a slide to a different position in the slide order in the presentation.
     public static void MoveSlide(string presentationFile, int from, int to)
@@ -184,6 +182,7 @@ move.
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Move a slide to a different position in the slide order in the presentation.
     Public Shared Sub MoveSlide(ByVal presentationFile As String, ByVal [from] As Integer, ByVal [to] As Integer)
@@ -192,6 +191,8 @@ move.
         End Using
     End Sub
 ```
+***
+
 
 In the second overloaded **MoveSlide** method,
 the **CountSlides** method is called to get the
@@ -199,6 +200,7 @@ number of slides in the presentation. The code then checks if the
 zero-based indexes, *from* and *to*, are within the range and different
 from one another.
 
+### [C#](#tab/cs-4)
 ```csharp
     public static void MoveSlide(PresentationDocument presentationDocument, int from, int to)
     {
@@ -222,6 +224,7 @@ from one another.
         }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Public Shared Sub MoveSlide(ByVal presentationDocument As PresentationDocument, ByVal [from] As Integer, ByVal [to] As Integer)
         If presentationDocument Is Nothing Then
@@ -244,6 +247,8 @@ from one another.
             Throw New ArgumentOutOfRangeException("to")
         End If
 ```
+***
+
 
 A **PresentationPart** object is declared and
 set equal to the presentation part of the **PresentationDocument** object passed in. The **PresentationPart** object is used to create a **Presentation** object, and then create a **SlideIdList** object that represents the list of
@@ -252,6 +257,7 @@ slide (the slide to move) is obtained, and then the position of the
 target slide (the slide after which in the slide order to move the
 source slide) is identified.
 
+### [C#](#tab/cs-5)
 ```csharp
     // Get the presentation part from the presentation document.
     PresentationPart presentationPart = presentationDocument.PresentationPart;
@@ -280,6 +286,7 @@ source slide) is identified.
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     ' Get the presentation part from the presentation document.
     Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
@@ -302,12 +309,15 @@ source slide) is identified.
         targetSlide = TryCast(slideIdList.ChildElements(to - 1), SlideId)
     End If
 ```
+***
+
 
 The **Remove** method of the **SlideID** object is used to remove the source slide
 from its current position, and then the **InsertAfter** method of the **SlideIdList** object is used to insert the source
 slide in the index position after the target slide. Finally, the
 modified presentation is saved.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Remove the source slide from its current position.
     sourceSlide.Remove();
@@ -319,6 +329,7 @@ modified presentation is saved.
     presentation.Save();
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Remove the source slide from its current position.
     sourceSlide.Remove()
@@ -329,6 +340,8 @@ modified presentation is saved.
     ' Save the modified presentation.
     presentation.Save()
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -338,222 +351,28 @@ instance, you can use the following call in your program to move a slide
 from position 0 to position 1 in a presentation file named
 "Myppt11.pptx".
 
+### [C#](#tab/cs-7)
 ```csharp
     MoveSlide(@"C:\Users\Public\Documents\Myppt11.pptx", 0, 1);
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     MoveSlide("C:\Users\Public\Documents\Myppt11.pptx", 0, 1)
 ```
+***
+
 
 After you run the program, check your presentation file to see the new
 positions of the slides.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Counting the slides in the presentation.
-     public static int CountSlides(string presentationFile)
-    {
-        // Open the presentation as read-only.
-        using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
-        {
-            // Pass the presentation to the next CountSlides method
-            // and return the slide count.
-            return CountSlides(presentationDocument);
-        }
-    }
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/presentation/move_a_slide_to_a_new_position/cs/Program.cs)]
 
-    // Count the slides in the presentation.
-    public static int CountSlides(PresentationDocument presentationDocument)
-    {
-        // Check for a null document object.
-        if (presentationDocument == null)
-        {
-            throw new ArgumentNullException("presentationDocument");
-        }
-
-        int slidesCount = 0;
-
-        // Get the presentation part of document.
-        PresentationPart presentationPart = presentationDocument.PresentationPart;
-
-        // Get the slide count from the SlideParts.
-        if (presentationPart != null)
-        {
-            slidesCount = presentationPart.SlideParts.Count();
-        }
-
-        // Return the slide count to the previous method.
-        return slidesCount;
-    }
-
-    // Move a slide to a different position in the slide order in the presentation.
-    public static void MoveSlide(string presentationFile, int from, int to)
-    {
-        using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
-        {
-            MoveSlide(presentationDocument, from, to);
-        }
-    }
-    // Move a slide to a different position in the slide order in the presentation.
-    public static void MoveSlide(PresentationDocument presentationDocument, int from, int to)
-    {
-        if (presentationDocument == null)
-        {
-            throw new ArgumentNullException("presentationDocument");
-        }
-
-        // Call the CountSlides method to get the number of slides in the presentation.
-        int slidesCount = CountSlides(presentationDocument);
-
-        // Verify that both from and to positions are within range and different from one another.
-        if (from < 0 || from >= slidesCount)
-        {
-            throw new ArgumentOutOfRangeException("from");
-        }
-
-        if (to < 0 || from >= slidesCount || to == from)
-        {
-            throw new ArgumentOutOfRangeException("to");
-        }
-
-        // Get the presentation part from the presentation document.
-        PresentationPart presentationPart = presentationDocument.PresentationPart;
-
-        // The slide count is not zero, so the presentation must contain slides.            
-        Presentation presentation = presentationPart.Presentation;
-        SlideIdList slideIdList = presentation.SlideIdList;
-
-        // Get the slide ID of the source slide.
-        SlideId sourceSlide = slideIdList.ChildElements[from] as SlideId;
-
-        SlideId targetSlide = null;
-
-        // Identify the position of the target slide after which to move the source slide.
-        if (to == 0)
-        {
-            targetSlide = null;
-        }
-        else if (from < to)
-        {
-            targetSlide = slideIdList.ChildElements[to] as SlideId;
-        }
-        else
-        {
-            targetSlide = slideIdList.ChildElements[to - 1] as SlideId;
-        }
-
-        // Remove the source slide from its current position.
-        sourceSlide.Remove();
-
-        // Insert the source slide at its new position after the target slide.
-        slideIdList.InsertAfter(sourceSlide, targetSlide);
-
-        // Save the modified presentation.
-        presentation.Save();
-    }
-```
-
-```vb
-    ' Count the slides in the presentation.
-    Public Function CountSlides(ByVal presentationFile As String) As Integer
-
-        ' Open the presentation as read-only.
-        Dim presentationDocument As PresentationDocument = presentationDocument.Open(presentationFile, False)
-        Using (presentationDocument)
-
-            ' Pass the presentation to the next CountSlide method
-            ' and return the slide count.
-            Return CountSlides(presentationDocument)
-        End Using
-    End Function
-    ' Count the slides in the presentation.
-    Public Function CountSlides(ByVal presentationDocument As PresentationDocument) As Integer
-
-        ' Check for a null document object.
-        If (presentationDocument Is Nothing) Then
-            Throw New ArgumentNullException("presentationDocument")
-        End If
-        Dim slidesCount As Integer = 0
-
-        ' Get the presentation part of the document.
-        Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
-        If ((Not (presentationPart) Is Nothing) AndAlso (Not (presentationPart.Presentation) Is Nothing)) Then
-
-            ' Get the Presentation object from the presentation part.
-            Dim presentation As Presentation = presentationPart.Presentation
-            If (Not (presentation.SlideIdList) Is Nothing) Then
-
-                ' Get the slide count from the slide ID list.
-                slidesCount = presentation.SlideIdList.Elements.Count()
-
-            End If
-        End If
-
-        ' Return the slide count to the previous function.
-        Return slidesCount
-    End Function
-    ' Move a slide to a different position in the slide order in the presentation.
-    Public Sub MoveSlide(ByVal presentationFile As String, ByVal from As Integer, ByVal moveTo As Integer)
-        Dim presentationDocument As PresentationDocument = presentationDocument.Open(presentationFile, True)
-
-        Using (presentationDocument)
-            MoveSlide(presentationDocument, from, moveTo)
-        End Using
-
-    End Sub
-    ' Move a slide to a different position in the slide order in the presentation.
-    Public Sub MoveSlide(ByVal presentationDocument As PresentationDocument, ByVal from As Integer, ByVal moveTo As Integer)
-        If (presentationDocument Is Nothing) Then
-            Throw New ArgumentNullException("presentationDocument")
-        End If
-
-        ' Use the CountSlides sample to get the number of slides in the presentation.
-        Dim slidesCount As Integer = CountSlides(presentationDocument)
-
-        ' Verify that both from and to positions are within range and different from one another.
-        If ((from < 0) OrElse (from >= slidesCount)) Then
-            Throw New ArgumentOutOfRangeException("from")
-        End If
-
-        If ((moveTo < 0) _
-                    OrElse ((from >= slidesCount) _
-                    OrElse (moveTo = from))) Then
-            Throw New ArgumentOutOfRangeException("moveTo")
-        End If
-
-        ' Get the presentation part from the presentation document.
-        Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
-
-        ' The slide count is not zero, so the presentation must contain slides. 
-        Dim presentation As Presentation = presentationPart.Presentation
-        Dim slideIdList As SlideIdList = presentation.SlideIdList
-
-        ' Get the slide ID of the source slide.
-        Dim sourceSlide As SlideId = CType(slideIdList.ChildElements(from), SlideId)
-        Dim targetSlide As SlideId = Nothing
-
-        ' Identify the position of the target slide after which to move the source slide.
-        If (moveTo = 0) Then
-            targetSlide = Nothing
-        ElseIf (from < moveTo) Then
-            targetSlide = CType(slideIdList.ChildElements(moveTo), SlideId)
-        Else
-            targetSlide = CType(slideIdList.ChildElements((moveTo - 1)), SlideId)
-        End If
-
-        ' Remove the source slide from its current position.
-        sourceSlide.Remove()
-
-        ' Insert the source slide at its new position after the target slide.
-        slideIdList.InsertAfter(sourceSlide, targetSlide)
-
-        ' Save the modified presentation.
-        presentation.Save()
-
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/presentation/move_a_slide_to_a_new_position/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

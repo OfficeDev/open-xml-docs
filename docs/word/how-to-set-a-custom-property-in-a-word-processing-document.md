@@ -19,32 +19,11 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically set a custom property in a word processing document. It contains an example **SetCustomProperty** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using** directives or **Imports** statements to compile the code in this topic.
-
-```csharp
-    using System;
-    using System.IO;
-    using System.Linq;
-    using DocumentFormat.OpenXml.CustomProperties;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.VariantTypes;
-```
-
-```vb
-    Imports System.IO
-    Imports DocumentFormat.OpenXml.CustomProperties
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.VariantTypes
-```
 
 The sample code also includes an enumeration that defines the possible types of custom properties. The **SetCustomProperty** method requires that you supply one of these values when you call the method.
 
+### [C#](#tab/cs-0)
 ```csharp
     public enum PropertyTypes : int
     {
@@ -56,6 +35,7 @@ The sample code also includes an enumeration that defines the possible types of 
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Public Enum PropertyTypes
         YesNo
@@ -65,6 +45,8 @@ The sample code also includes an enumeration that defines the possible types of 
         NumberDouble
     End Enum
 ```
+***
+
 
 ## How Custom Properties Are Stored
 
@@ -116,6 +98,7 @@ Use the **SetCustomProperty** method to set a custom property in a word processi
 
 - The kind of property (one of the values in the **PropertyTypes** enumeration).
 
+### [C#](#tab/cs-1)
 ```csharp
     public static string SetCustomProperty(
         string fileName, 
@@ -124,6 +107,7 @@ Use the **SetCustomProperty** method to set a custom property in a word processi
         PropertyTypes propertyType)
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Public Function SetCustomProperty( _
         ByVal fileName As String,
@@ -131,11 +115,14 @@ Use the **SetCustomProperty** method to set a custom property in a word processi
         ByVal propertyValue As Object,
         ByVal propertyType As PropertyTypes) As String
 ```
+***
+
 
 ## Calling the SetCustomProperty Method
 
 The **SetCustomProperty** method enables you to set a custom property, and returns the current value of the property, if it exists. To call the sample method, pass the file name, property name, property value, and property type parameters. The following sample code shows an example.
 
+### [C#](#tab/cs-2)
 ```csharp
     const string fileName = @"C:\Users\Public\Documents\SetCustomProperty.docx";
 
@@ -150,6 +137,7 @@ The **SetCustomProperty** method enables you to set a custom property, and retur
         DateTime.Parse("12/21/2010"), PropertyTypes.DateTime));
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Const fileName As String = "C:\Users\Public\Documents\SetCustomProperty.docx"
 
@@ -163,6 +151,8 @@ The **SetCustomProperty** method enables you to set a custom property, and retur
         SetCustomProperty(fileName, "ReviewDate",
         #12/21/2010#, PropertyTypes.DateTime))
 ```
+***
+
 
 After running this code, use the following procedure to view the custom properties from Word.
 
@@ -185,6 +175,7 @@ type of the property value, and then converts the input to the correct type, set
 > [!NOTE]
 > The **CustomDocumentProperty** type works much like a VBA Variant type. It maintains separate placeholders as properties for the various types of data it might contain.
 
+### [C#](#tab/cs-3)
 ```csharp
     string returnValue = null;
 
@@ -253,6 +244,7 @@ type of the property value, and then converts the input to the correct type, set
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim returnValue As String = Nothing
 
@@ -305,9 +297,12 @@ type of the property value, and then converts the input to the correct type, set
         Throw New InvalidDataException("propertyValue")
     End If
 ```
+***
+
 
 At this point, if the code has not thrown an exception, you can assume that the property is valid, and the code sets the [FormatId](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.formatid.aspx) and [Name](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.name.aspx) properties of the new custom property.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Now that you have handled the parameters, start
     // working on the document.
@@ -315,18 +310,22 @@ At this point, if the code has not thrown an exception, you can assume that the 
     newProp.Name = propertyName;
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Now that you have handled the parameters, start
     ' working on the document.
     newProp.FormatId = "{D5CDD505-2E9C-101B-9397-08002B2CF9AE}"
     newProp.Name = propertyName
 ```
+***
+
 
 ## Working with the Document
 
 Given the **CustomDocumentProperty** object, the code next interacts with the document that you supplied in the parameters to the **SetCustomProperty** procedure. The code starts by opening the document in read/write mode by
 using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class. The code attempts to retrieve a reference to the custom file properties part by using the [CustomFilePropertiesPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart.aspx) property of the document.
 
+### [C#](#tab/cs-5)
 ```csharp
     using (var document = WordprocessingDocument.Open(fileName, true))
     {
@@ -335,15 +334,19 @@ using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxm
     }
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     Using document = WordprocessingDocument.Open(fileName, True)
         Dim customProps = document.CustomFilePropertiesPart
         ' Code removed here...
     End Using
 ```
+***
+
 
 If the code cannot find a custom properties part, it creates a new part, and adds a new set of properties to the part.
 
+### [C#](#tab/cs-6)
 ```csharp
     if (customProps == null)
     {
@@ -355,6 +358,7 @@ If the code cannot find a custom properties part, it creates a new part, and add
     }
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     If customProps Is Nothing Then
         ' No custom properties? Add the part, and the
@@ -363,6 +367,8 @@ If the code cannot find a custom properties part, it creates a new part, and add
         customProps.Properties = New Properties
     End If
 ```
+***
+
 
 Next, the code retrieves a reference to the [Properties](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.customfilepropertiespart.properties.aspx) property of the custom
 properties part (that is, a reference to the properties themselves). If
@@ -371,6 +377,7 @@ reference is not null. However, for existing custom properties parts, it
 is possible, although highly unlikely, that the **Properties** property will be null. If so, the code
 cannot continue.
 
+### [C#](#tab/cs-7)
 ```csharp
     var props = customProps.Properties;
     if (props != null)
@@ -379,12 +386,15 @@ cannot continue.
     }
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     Dim props = customProps.Properties
     If props IsNot Nothing Then
       ' Code removed here...
     End If
 ```
+***
+
 
 If the property already exists, the code retrieves its current value,
 and then deletes the property. Why delete the property? If the new type
@@ -396,6 +406,7 @@ type—for more information, see Figure 1). It is simpler to always delete
 and then re-create the element. The code uses a simple LINQ query to
 find the first match for the property name.
 
+### [C#](#tab/cs-8)
 ```csharp
     var prop = 
         props.Where(
@@ -411,6 +422,7 @@ find the first match for the property name.
     }
 ```
 
+### [Visual Basic](#tab/vb-8)
 ```vb
     Dim prop = props.
       Where(Function(p) CType(p, CustomDocumentProperty).
@@ -422,6 +434,8 @@ find the first match for the property name.
         prop.Remove()
     End If
 ```
+***
+
 
 Now, you will know for sure that the custom property part exists, a property that has the same name as the new property does not exist, and that there may be other existing custom properties. The code performs the following steps:
 
@@ -431,6 +445,7 @@ Now, you will know for sure that the custom property part exists, a property tha
 
 3. Saves the part.
 
+### [C#](#tab/cs-9)
 ```csharp
     // Append the new property, and 
     // fix up all the property ID values. 
@@ -444,6 +459,7 @@ Now, you will know for sure that the custom property part exists, a property tha
     props.Save();
 ```
 
+### [Visual Basic](#tab/vb-9)
 ```vb
     ' Append the new property, and 
     ' fix up all the property ID values. 
@@ -456,16 +472,22 @@ Now, you will know for sure that the custom property part exists, a property tha
     Next
     props.Save()
 ```
+***
+
 
 Finally, the code returns the stored original property value.
 
+### [C#](#tab/cs-10)
 ```csharp
     return returnValue;
 ```
 
+### [Visual Basic](#tab/vb-10)
 ```vb
     Return returnValue
 ```
+***
+
 
 ## Sample Code
 

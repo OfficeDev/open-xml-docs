@@ -20,22 +20,7 @@ This topic describes how to use the classes in the Open XML SDK for
 Office to programmatically open a word processing document for read only
 access.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.IO;
-    using System.IO.Packaging;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports System.IO
-    Imports System.IO.Packaging
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 ---------------------------------------------------------------------------------
 ## When to Open a Document for Read-only Access 
@@ -89,16 +74,20 @@ you want to open the file for editing.
 The following code example calls the **Open**
 Method.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open a WordprocessingDocument for read-only access based on a filepath.
     using (WordprocessingDocument wordDocument =
         WordprocessingDocument.Open(filepath, false))
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open a WordprocessingDocument for read-only access based on a filepath.
     Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, False)
 ```
+***
+
 
 The other two **Open** methods create an
 instance of the **WordprocessingDocument**
@@ -109,6 +98,7 @@ XML SDK to work with a document.
 
 The following code example opens a document based on a stream.
 
+### [C#](#tab/cs-1)
 ```csharp
     Stream stream = File.Open(strDoc, FileMode.Open);
     // Open a WordprocessingDocument for read-only access based on a stream.
@@ -116,11 +106,14 @@ The following code example opens a document based on a stream.
         WordprocessingDocument.Open(stream, false))
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim stream As Stream = File.Open(strDoc, FileMode.Open)
     ' Open a WordprocessingDocument for read-only access based on a stream.
     Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(stream, False)
 ```
+***
+
 
 Suppose you have an application that employs the Open XML support in the
 System.IO.Packaging namespace of the .NET Framework Class Library, and
@@ -134,6 +127,7 @@ prior to creating the instance of the **WordprocessingDocument** class, as shown
 second example in the sample code. The following code example performs
 this operation.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Open System.IO.Packaging.Package.
     Package wordPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read);
@@ -143,6 +137,7 @@ this operation.
         WordprocessingDocument.Open(wordPackage))
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Open System.IO.Packaging.Package.
     Dim wordPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
@@ -150,21 +145,27 @@ this operation.
     ' Open a WordprocessingDocument based on a package.
     Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(wordPackage)
 ```
+***
+
 
 Once you open the Word document package, you can access the main
 document part. To access the body of the main document part, you assign
 a reference to the existing document body, as shown in the following
 code example.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Assign a reference to the existing document body.
     Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Assign a reference to the existing document body.
     Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
 ```
+***
+
 
 ---------------------------------------------------------------------------------
 
@@ -179,6 +180,7 @@ body of the main document part, you add text by adding instances of the
 classes. This generates the required WordprocessingML markup. The
 following code example adds the paragraph, run, and text.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Attempt to add some text.
     Paragraph para = body.AppendChild(new Paragraph());
@@ -189,6 +191,7 @@ following code example adds the paragraph, run, and text.
     wordDocument.MainDocumentPart.Document.Save();
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Attempt to add some text.
     Dim para As Paragraph = body.AppendChild(New Paragraph())
@@ -198,6 +201,8 @@ following code example adds the paragraph, run, and text.
     ' Call Save to generate an exception and show that access is read-only.
     wordDocument.MainDocumentPart.Document.Save()
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code 
@@ -207,13 +212,17 @@ file that you want to open. For example, the following code example
 opens the Word12.docx file in the Public Documents folder for read-only
 access.
 
+### [C#](#tab/cs-5)
 ```csharp
     OpenWordprocessingDocumentReadonly(@"c:\Users\Public\Public Documents\Word12.docx");
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     OpenWordprocessingDocumentReadonly("c:\Users\Public\Public Documents\Word12.docx")
 ```
+***
+
 
 The second example method, **OpenWordprocessingPackageReadonly**, shows how to
 open a Word document for read-only access from a
@@ -221,104 +230,28 @@ System.IO.Packaging.Package. Call it by passing a full path to the file
 that you want to open. For example, the following code opens the
 Word12.docx file in the Public Documents folder for read-only access.
 
+### [C#](#tab/cs-6)
 ```csharp
     OpenWordprocessingPackageReadonly(@"c:\Users\Public\Public Documents\Word12.docx");
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     OpenWordprocessingPackageReadonly("c:\Users\Public\Public Documents\Word12.docx")
 ```
+***
+
 
 > [!IMPORTANT]
 > If you uncomment the statement that saves the file, the program would throw an **IOException** because the file is opened for read-only access.
 
 The following is the complete sample code in C\# and VB.
 
-```csharp
-    public static void OpenWordprocessingDocumentReadonly(string filepath)
-    {
-        // Open a WordprocessingDocument based on a filepath.
-        using (WordprocessingDocument wordDocument =
-            WordprocessingDocument.Open(filepath, false))
-        {
-            // Assign a reference to the existing document body.  
-            Body body = wordDocument.MainDocumentPart.Document.Body;
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/word/open_for_read_only_access/cs/Program.cs)]
 
-            // Attempt to add some text.
-            Paragraph para = body.AppendChild(new Paragraph());
-            Run run = para.AppendChild(new Run());
-            run.AppendChild(new Text("Append text in body, but text is not saved - OpenWordprocessingDocumentReadonly"));
-
-            // Call Save to generate an exception and show that access is read-only.
-            // wordDocument.MainDocumentPart.Document.Save();
-        }
-    }
-
-    public static void OpenWordprocessingPackageReadonly(string filepath)
-    {
-        // Open System.IO.Packaging.Package.
-        Package wordPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read);
-
-        // Open a WordprocessingDocument based on a package.
-        using (WordprocessingDocument wordDocument = 
-            WordprocessingDocument.Open(wordPackage))
-        {
-            // Assign a reference to the existing document body. 
-            Body body = wordDocument.MainDocumentPart.Document.Body;
-
-            // Attempt to add some text.
-            Paragraph para = body.AppendChild(new Paragraph());
-            Run run = para.AppendChild(new Run());
-            run.AppendChild(new Text("Append text in body, but text is not saved - OpenWordprocessingPackageReadonly"));
-
-            // Call Save to generate an exception and show that access is read-only.
-            // wordDocument.MainDocumentPart.Document.Save();
-        }
-
-        // Close the package.
-        wordPackage.Close();
-    }
-```
-
-```vb
-    Public Sub OpenWordprocessingDocumentReadonly(ByVal filepath As String)
-        ' Open a WordprocessingDocument based on a filepath.
-        Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, False)
-            ' Assign a reference to the existing document body. 
-            Dim body As Body = wordDocument.MainDocumentPart.Document.Body
-            
-            ' Attempt to add some text.
-            Dim para As Paragraph = body.AppendChild(New Paragraph())
-            Dim run As Run = para.AppendChild(New Run())
-            run.AppendChild(New Text("Append text in body, but text is not saved - OpenWordprocessingDocumentReadonly"))
-            
-            ' Call Save to generate an exception and show that access is read-only.
-            ' wordDocument.MainDocumentPart.Document.Save()
-        End Using
-    End Sub
-
-    Public Sub OpenWordprocessingPackageReadonly(ByVal filepath As String)
-        ' Open System.IO.Packaging.Package.
-        Dim wordPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
-        
-        ' Open a WordprocessingDocument based on a package.
-        Using wordDocument As WordprocessingDocument = WordprocessingDocument.Open(wordPackage)
-            ' Assign a reference to the existing document body. 
-            Dim body As Body = wordDocument.MainDocumentPart.Document.Body
-            
-            ' Attempt to add some text.
-            Dim para As Paragraph = body.AppendChild(New Paragraph())
-            Dim run As Run = para.AppendChild(New Run())
-            run.AppendChild(New Text("Append text in body, but text is not saved - OpenWordprocessingPackageReadonly"))
-            
-            ' Call Save to generate an exception and show that access is read-only.
-            ' wordDocument.MainDocumentPart.Document.Save()
-        End Using
-        
-        ' Close the package.
-        wordPackage.Close()
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/word/open_for_read_only_access/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also 

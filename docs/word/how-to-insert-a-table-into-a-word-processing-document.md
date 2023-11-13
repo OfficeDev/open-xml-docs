@@ -31,6 +31,7 @@ using the **Open** method, with the Boolean
 parameter set to **true** in order to enable
 editing the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument doc =
            WordprocessingDocument.Open(filepath, true)) 
@@ -39,11 +40,14 @@ editing the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using doc As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
         ' Insert other code here. 
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -117,6 +121,7 @@ specifying its value using object initializers. After it has been
 instantiated, append the **TableProperties**
 object to the table.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Create an empty table.
     Table table = new Table();
@@ -136,6 +141,7 @@ object to the table.
     table.AppendChild<TableProperties>(tblProp);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Create an empty table.
     Dim table As New Table()
@@ -153,6 +159,8 @@ object to the table.
     ' Append the TableProperties object to the empty table.
     table.AppendChild(Of TableProperties)(tblProp)
 ```
+***
+
 
 The code creates a table row. This section of the code makes extensive
 use of the overloaded [Append\[\])](https://msdn.microsoft.com/library/office/cc801361.aspx) methods, which classes derived
@@ -170,6 +178,7 @@ insert text within a table cell using the API, you must create a [Paragraph](htt
 insert in the cell. You then append the **Paragraph** object to the **TableCell** object. This creates the proper XML
 structure for inserting text into a cell. The **TableCell** is then appended to the [TableRow](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tablerow.aspx) object.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Create a row.
     TableRow tr = new TableRow();
@@ -187,6 +196,7 @@ structure for inserting text into a cell. The **TableCell** is then appended to 
     tr.Append(tc1);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Create a row.
     Dim tr As New TableRow()
@@ -203,12 +213,15 @@ structure for inserting text into a cell. The **TableCell** is then appended to 
     ' Append the table cell to the table row.
     tr.Append(tc1)
 ```
+***
+
 
 The code then creates a second table cell. The final section of code
 creates another table cell using the overloaded **TableCell** constructor [TableCell(String)](https://msdn.microsoft.com/library/office/cc803944.aspx) that takes the [OuterXml](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.outerxml.aspx) property of an existing **TableCell** object as its only argument. After
 creating the second table cell, the code appends the **TableCell** to the **TableRow**, appends the **TableRow** to the **Table**, and the **Table**
 to the [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) object.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Create a second table cell by copying the OuterXml value of the first table cell.
     TableCell tc2 = new TableCell(tc1.OuterXml);
@@ -226,6 +239,7 @@ to the [Document](https://msdn.microsoft.com/library/office/documentformat.openx
     doc.MainDocumentPart.Document.Save();
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Create a second table cell by copying the OuterXml value of the first table cell.
     Dim tc2 As New TableCell(tc1.OuterXml)
@@ -242,6 +256,8 @@ to the [Document](https://msdn.microsoft.com/library/office/documentformat.openx
     ' Save changes to the MainDocumentPart.
     doc.MainDocumentPart.Document.Save()
 ```
+***
+
 
 ## Sample Code
 
@@ -251,15 +267,19 @@ insert the table into a word processing document. You can invoke the
 method **CreateTable** by using the following
 call.
 
+### [C#](#tab/cs-4)
 ```csharp
     string fileName = @"C:\Users\Public\Documents\Word10.docx";
     CreateTable(fileName);
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     Dim fileName As String = "C:\Users\Public\Documents\Word10.docx"
     CreateTable(fileName)
 ```
+***
+
 
 After you run the program inspect the file "Word10.docx" to see the
 inserted table.

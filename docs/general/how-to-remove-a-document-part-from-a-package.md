@@ -20,18 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to remove a document part (file) from a Wordprocessing document
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System;
-    using DocumentFormat.OpenXml.Packaging;
-```
-
-```vb
-    Imports System
-    Imports DocumentFormat.OpenXml.Packaging
-```
 
 --------------------------------------------------------------------------------
 ## Packages and Document Parts
@@ -57,6 +46,7 @@ should be opened in read/write mode or not. In this case, the Boolean
 value is **true** specifying that the file
 should be opened in read/write mode.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open a Wordprocessing document for editing.
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
@@ -65,12 +55,15 @@ should be opened in read/write mode.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open a Wordprocessing document for editing.
     Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -124,6 +117,7 @@ You can then check if that part exists, if so, delete that part from the
 package. In this instance, the **settings.xml**
 part is removed from the package.
 
+### [C#](#tab/cs-1)
 ```csharp
     MainDocumentPart mainPart = wordDoc.MainDocumentPart;
     if (mainPart.DocumentSettingsPart != null)
@@ -132,12 +126,15 @@ part is removed from the package.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
     If mainPart.DocumentSettingsPart IsNot Nothing Then
         mainPart.DeletePart(mainPart.DocumentSettingsPart)
     End If
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -145,45 +142,29 @@ The following code removes a document part from a package. To run the
 program, call the method **RemovePart** like
 this example.
 
+### [C#](#tab/cs-2)
 ```csharp
     string document = @"C:\Users\Public\Documents\MyPkg6.docx";
     RemovePart(document);
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     Dim document As String = "C:\Users\Public\Documents\MyPkg6.docx"
     RemovePart(document)
 ```
+***
+
 > [!NOTE]
 > Before running the program on the test file, &quot;MyPkg6.docs,&quot; for example, open the file by using the Open XML SDK Productivity Tool for Microsoft Office and examine its structure. After running the program, examine the file again, and you will notice that the **DocumentSettingsPart** part was removed.
 
 Following is the complete code example in both C\# and Visual Basic.
 
-```csharp
-    // To remove a document part from a package.
-    public static void RemovePart(string document)
-    {
-      using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
-      {
-         MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-         if (mainPart.DocumentSettingsPart != null)
-         {
-            mainPart.DeletePart(mainPart.DocumentSettingsPart);
-         }
-      }
-    }
-```
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/word/remove_a_part_from_a_package/cs/Program.cs)]
 
-```vb
-    ' To remove a document part from a package.
-    Public Sub RemovePart(ByVal document As String)
-       Dim wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, true)
-       Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-       If (Not (mainPart.DocumentSettingsPart) Is Nothing) Then
-          mainPart.DeletePart(mainPart.DocumentSettingsPart)
-       End If
-    End Sub
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/word/remove_a_part_from_a_package/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

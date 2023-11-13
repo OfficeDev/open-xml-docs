@@ -21,34 +21,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK to
 create a presentation document programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (Installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Drawing;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Presentation;
-    using P = DocumentFormat.OpenXml.Presentation;
-    using D = DocumentFormat.OpenXml.Drawing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXML.Drawing 
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports P = DocumentFormat.OpenXml.Presentation
-    Imports D = DocumentFormat.OpenXml.Drawing
-```
 
 --------------------------------------------------------------------------------
 

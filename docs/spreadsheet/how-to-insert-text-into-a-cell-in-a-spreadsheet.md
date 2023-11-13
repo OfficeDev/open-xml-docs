@@ -20,22 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to insert text into a cell in a new worksheet in a spreadsheet
 document programmatically.
 
-The following assembly directives are required to compile the code in
-this topic:
 
-```csharp
-    using System.Linq;
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-```vb
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object
@@ -59,6 +44,7 @@ not be saved if this parameter is **false**.
 The code that calls the **Open** method is
 shown in the following **using** statement.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Open the document for editing.
     using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true)) 
@@ -67,12 +53,15 @@ shown in the following **using** statement.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Open the document for editing.
     Using spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -89,6 +78,7 @@ document for editing, the code inserts a blank [Worksheet](https://msdn.microsof
 inserts a new [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) object into the new worksheet and
 inserts the specified text into that cell.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Given a document name and text, 
     // inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
@@ -127,6 +117,7 @@ inserts the specified text into that cell.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Given a document name and text, 
     ' inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
@@ -164,6 +155,8 @@ inserts the specified text into that cell.
         End Imports
     End Function
 ```
+***
+
 
 The code passes in a parameter that represents the text to insert into
 the cell and a parameter that represents the **SharedStringTablePart** object for the spreadsheet.
@@ -176,6 +169,7 @@ text. Otherwise, it creates a new **SharedStringItem** object that represents th
 The following code verifies if the specified text exists in the **SharedStringTablePart** object and add the text if
 it does not exist.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
@@ -208,6 +202,7 @@ it does not exist.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
@@ -234,6 +229,8 @@ it does not exist.
         Return i
     End Function
 ```
+***
+
 
 The code adds a new **WorksheetPart** object to
 the **WorkbookPart** object by using the [AddNewPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart.aspx) method. It then adds a new **Worksheet** object to the **WorksheetPart** object, and gets a unique ID for
@@ -247,6 +244,7 @@ The following code inserts a new **Worksheet**
 object by adding a new **WorksheetPart** object
 to the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx) object.
 
+### [C#](#tab/cs-3)
 ```csharp
     // Given a WorkbookPart, inserts a new worksheet.
     private static WorksheetPart InsertWorksheet(WorkbookPart workbookPart)
@@ -277,6 +275,7 @@ to the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.o
     }
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     ' Given a WorkbookPart, inserts a new worksheet.
     Private Function InsertWorksheet(ByVal workbookPart As WorkbookPart) As WorksheetPart
@@ -306,6 +305,8 @@ to the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.o
         Return newWorksheetPart
     End Function
 ```
+***
+
 
 To insert a cell into a worksheet, the code determines where to insert
 the new cell in the column by iterating through the row elements to find
@@ -317,6 +318,7 @@ variable. It then inserts the new cell before the cell referenced by
 In the following code, insert a new **Cell**
 object into a **Worksheet** object.
 
+### [C#](#tab/cs-4)
 ```csharp
     // Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     // If the cell already exists, returns it. 
@@ -368,6 +370,7 @@ object into a **Worksheet** object.
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     ' Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     ' If the cell already exists, return it. 
@@ -409,6 +412,8 @@ object into a **Worksheet** object.
         End If
     End Function
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## Sample Code
@@ -417,289 +422,25 @@ the text to the cell "A1" of the new worksheet for a specific
 spreadsheet document named "Sheet8.xlsx." To call the **InsertText** method you can use the following code
 as an example.
 
+### [C#](#tab/cs-5)
 ```csharp
     InsertText(@"C:\Users\Public\Documents\Sheet8.xlsx", "Inserted Text");
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     InsertText("C:\Users\Public\Documents\Sheet8.xlsx", "Inserted Text")
 ```
+***
+
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Given a document name and text, 
-     // inserts a new work sheet and writes the text to cell "A1" of the new worksheet.
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/spreadsheet/insert_textto_a_cell/cs/Program.cs)]
 
-     public static void InsertText(string docName, string text)
-    {
-        // Open the document for editing.
-        using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
-        {
-            // Get the SharedStringTablePart. If it does not exist, create a new one.
-            SharedStringTablePart shareStringPart;
-            if (spreadSheet.WorkbookPart.GetPartsOfType<SharedStringTablePart>().Count() > 0)
-            {
-                shareStringPart = spreadSheet.WorkbookPart.GetPartsOfType<SharedStringTablePart>().First();
-            }
-            else
-            {
-                shareStringPart = spreadSheet.WorkbookPart.AddNewPart<SharedStringTablePart>();
-            }
-
-            // Insert the text into the SharedStringTablePart.
-            int index = InsertSharedStringItem(text, shareStringPart);
-
-            // Insert a new worksheet.
-            WorksheetPart worksheetPart = InsertWorksheet(spreadSheet.WorkbookPart);
-
-            // Insert cell A1 into the new worksheet.
-            Cell cell = InsertCellInWorksheet("A", 1, worksheetPart);
-
-            // Set the value of cell A1.
-            cell.CellValue = new CellValue(index.ToString());
-            cell.DataType = new EnumValue<CellValues>(CellValues.SharedString);
-
-            // Save the new worksheet.
-            worksheetPart.Worksheet.Save();
-        }
-    }
-
-            // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
-            // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
-            private static int InsertSharedStringItem(string text, SharedStringTablePart shareStringPart)
-            {
-                // If the part does not contain a SharedStringTable, create one.
-                if (shareStringPart.SharedStringTable == null)
-                {
-                    shareStringPart.SharedStringTable = new SharedStringTable();
-                }
-
-                int i = 0;
-
-                // Iterate through all the items in the SharedStringTable. If the text already exists, return its index.
-                foreach (SharedStringItem item in shareStringPart.SharedStringTable.Elements<SharedStringItem>())
-                {
-                    if (item.InnerText == text)
-                    {
-                        return i;
-                    }
-
-                    i++;
-                }
-
-                // The text does not exist in the part. Create the SharedStringItem and return its index.
-                shareStringPart.SharedStringTable.AppendChild(new SharedStringItem(new DocumentFormat.OpenXml.Spreadsheet.Text(text)));
-                shareStringPart.SharedStringTable.Save();
-
-                return i;
-            }
-
-            // Given a WorkbookPart, inserts a new worksheet.
-            private static WorksheetPart InsertWorksheet(WorkbookPart workbookPart)
-            {
-                // Add a new worksheet part to the workbook.
-                WorksheetPart newWorksheetPart = workbookPart.AddNewPart<WorksheetPart>();
-                newWorksheetPart.Worksheet = new Worksheet(new SheetData());
-                newWorksheetPart.Worksheet.Save();
-
-                Sheets sheets = workbookPart.Workbook.GetFirstChild<Sheets>();
-                string relationshipId = workbookPart.GetIdOfPart(newWorksheetPart);
-
-                // Get a unique ID for the new sheet.
-                uint sheetId = 1;
-                if (sheets.Elements<Sheet>().Count() > 0)
-                {
-                    sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;
-                }
-
-                string sheetName = "Sheet" + sheetId;
-
-                // Append the new worksheet and associate it with the workbook.
-                Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };
-                sheets.Append(sheet);
-                workbookPart.Workbook.Save();
-
-                return newWorksheetPart;
-            }
-
-            // Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
-            // If the cell already exists, returns it. 
-            private static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPart worksheetPart)
-            {
-                Worksheet worksheet = worksheetPart.Worksheet;
-                SheetData sheetData = worksheet.GetFirstChild<SheetData>();
-                string cellReference = columnName + rowIndex;
-
-                // If the worksheet does not contain a row with the specified row index, insert one.
-                Row row;
-                if (sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).Count() != 0)
-                {
-                    row = sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
-                }
-                else
-                {
-                    row = new Row() { RowIndex = rowIndex };
-                    sheetData.Append(row);
-                }
-
-                // If there is not a cell with the specified column name, insert one.  
-                if (row.Elements<Cell>().Where(c => c.CellReference.Value == columnName + rowIndex).Count() > 0)
-                {
-                    return row.Elements<Cell>().Where(c => c.CellReference.Value == cellReference).First();
-                }
-                else
-                {
-                    // Cells must be in sequential order according to CellReference. Determine where to insert the new cell.
-                    Cell refCell = null;
-                    foreach (Cell cell in row.Elements<Cell>())
-                    {
-                        if (string.Compare(cell.CellReference.Value, cellReference, true) > 0)
-                        {
-                            refCell = cell;
-                            break;
-                        }
-                    }
-
-                    Cell newCell = new Cell() { CellReference = cellReference };
-                    row.InsertBefore(newCell, refCell);
-
-                    worksheet.Save();
-                    return newCell;
-                }
-            }
-```
-
-```vb
-    ' Given a document name and text, 
-    ' inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
-    Public Function InsertText(ByVal docName As String, ByVal text As String)
-        ' Open the document for editing.
-        Dim spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
-
-        Using (spreadSheet)
-            ' Get the SharedStringTablePart. If it does not exist, create a new one.
-            Dim shareStringPart As SharedStringTablePart
-
-            If (spreadSheet.WorkbookPart.GetPartsOfType(Of SharedStringTablePart).Count() > 0) Then
-                shareStringPart = spreadSheet.WorkbookPart.GetPartsOfType(Of SharedStringTablePart).First()
-            Else
-                shareStringPart = spreadSheet.WorkbookPart.AddNewPart(Of SharedStringTablePart)()
-            End If
-
-            ' Insert the text into the SharedStringTablePart.
-            Dim index As Integer = InsertSharedStringItem(text, shareStringPart)
-
-            ' Insert a new worksheet.
-            Dim worksheetPart As WorksheetPart = InsertWorksheet(spreadSheet.WorkbookPart)
-
-            ' Insert cell A1 into the new worksheet.
-            Dim cell As Cell = InsertCellInWorksheet("A", 1, worksheetPart)
-
-            ' Set the value of cell A1.
-            cell.CellValue = New CellValue(index.ToString)
-            cell.DataType = New EnumValue(Of CellValues)(CellValues.SharedString)
-
-            ' Save the new worksheet.
-            worksheetPart.Worksheet.Save()
-
-            Return 0
-        End Using
-    End Function
-
-    ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
-    ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
-    Private Function InsertSharedStringItem(ByVal text As String, ByVal shareStringPart As SharedStringTablePart) As Integer
-        ' If the part does not contain a SharedStringTable, create one.
-        If (shareStringPart.SharedStringTable Is Nothing) Then
-            shareStringPart.SharedStringTable = New SharedStringTable
-        End If
-
-        Dim i As Integer = 0
-
-        ' Iterate through all the items in the SharedStringTable. If the text already exists, return its index.
-        For Each item As SharedStringItem In shareStringPart.SharedStringTable.Elements(Of SharedStringItem)()
-            If (item.InnerText = text) Then
-                Return i
-            End If
-            i = (i + 1)
-        Next
-
-        ' The text does not exist in the part. Create the SharedStringItem and return its index.
-        shareStringPart.SharedStringTable.AppendChild(New SharedStringItem(New DocumentFormat.OpenXml.Spreadsheet.Text(text)))
-        shareStringPart.SharedStringTable.Save()
-
-        Return i
-    End Function
-
-    ' Given a WorkbookPart, inserts a new worksheet.
-    Private Function InsertWorksheet(ByVal workbookPart As WorkbookPart) As WorksheetPart
-        ' Add a new worksheet part to the workbook.
-        Dim newWorksheetPart As WorksheetPart = workbookPart.AddNewPart(Of WorksheetPart)()
-        newWorksheetPart.Worksheet = New Worksheet(New SheetData)
-        newWorksheetPart.Worksheet.Save()
-        Dim sheets As Sheets = workbookPart.Workbook.GetFirstChild(Of Sheets)()
-        Dim relationshipId As String = workbookPart.GetIdOfPart(newWorksheetPart)
-
-        ' Get a unique ID for the new sheet.
-        Dim sheetId As UInteger = 1
-        If (sheets.Elements(Of Sheet).Count() > 0) Then
-            sheetId = sheets.Elements(Of Sheet).Select(Function(s) s.SheetId.Value).Max() + 1
-        End If
-
-        Dim sheetName As String = ("Sheet" + sheetId.ToString())
-
-        ' Add the new worksheet and associate it with the workbook.
-        Dim sheet As Sheet = New Sheet
-        sheet.Id = relationshipId
-        sheet.SheetId = sheetId
-        sheet.Name = sheetName
-        sheets.Append(sheet)
-        workbookPart.Workbook.Save()
-
-        Return newWorksheetPart
-    End Function
-
-    ' Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
-    ' If the cell already exists, return it. 
-    Private Function InsertCellInWorksheet(ByVal columnName As String, ByVal rowIndex As UInteger, ByVal worksheetPart As WorksheetPart) As Cell
-        Dim worksheet As Worksheet = worksheetPart.Worksheet
-        Dim sheetData As SheetData = worksheet.GetFirstChild(Of SheetData)()
-        Dim cellReference As String = (columnName + rowIndex.ToString())
-
-        ' If the worksheet does not contain a row with the specified row index, insert one.
-        Dim row As Row
-        If (sheetData.Elements(Of Row).Where(Function(r) r.RowIndex.Value = rowIndex).Count() <> 0) Then
-            row = sheetData.Elements(Of Row).Where(Function(r) r.RowIndex.Value = rowIndex).First()
-        Else
-            row = New Row()
-            row.RowIndex = rowIndex
-            sheetData.Append(row)
-        End If
-
-        ' If there is not a cell with the specified column name, insert one.  
-        If (row.Elements(Of Cell).Where(Function(c) c.CellReference.Value = columnName + rowIndex.ToString()).Count() > 0) Then
-            Return row.Elements(Of Cell).Where(Function(c) c.CellReference.Value = cellReference).First()
-        Else
-            ' Cells must be in sequential order according to CellReference. Determine where to insert the new cell.
-            Dim refCell As Cell = Nothing
-            For Each cell As Cell In row.Elements(Of Cell)()
-                If (String.Compare(cell.CellReference.Value, cellReference, True) > 0) Then
-                    refCell = cell
-                    Exit For
-                End If
-            Next
-
-            Dim newCell As Cell = New Cell
-            newCell.CellReference = cellReference
-
-            row.InsertBefore(newCell, refCell)
-            worksheet.Save()
-
-            Return newCell
-        End If
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/spreadsheet/insert_textto_a_cell/vb/Program.vb)]
 
 --------------------------------------------------------------------------------
 ## See also

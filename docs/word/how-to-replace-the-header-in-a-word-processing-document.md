@@ -21,30 +21,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to replace the header in word processing document
 programmatically.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using System.Collections.Generic;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports System.Collections.Generic
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 ## Structure of the Header Reference Element
 
@@ -136,17 +113,21 @@ processing document with the header from another word processing
 document. To call the method, **AddHeaderFromTo**, you can use the following code
 segment as an example.
 
+### [C#](#tab/cs-0)
 ```csharp
     string filepathFrom = @"C:\Users\Public\Documents\Word15a.docx";
     string filepathTo=@"C:\Users\Public\Documents\Word15b.docx";
     AddHeaderFromTo(filepathFrom, filepathTo);
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Dim filepathFrom As String = "C:\Users\Public\Documents\word15a.docx"
     Dim filepathTo As String = "C:\Users\Public\Documents\Word15b.docx"
     AddHeaderFromTo(filepathFrom, filepathTo)
 ```
+***
+
 
 Following is the complete sample code in both C\# and Visual Basic.
 

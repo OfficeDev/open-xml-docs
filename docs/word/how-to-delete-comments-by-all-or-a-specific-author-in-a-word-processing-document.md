@@ -22,29 +22,7 @@ Office to programmatically delete comments by all or a specific author
 in a word processing document, without having to load the document into
 Microsoft Word. It contains an example **DeleteComments** method to illustrate this task.
 
-To use the sample code in this topic, you must install the [Open XML SDK](https://www.nuget.org/packages/DocumentFormat.OpenXml). You
-must explicitly reference the following assemblies in your project:
 
-- WindowsBase
-
-- DocumentFormat.OpenXml (installed by the Open XML SDK)
-
-You must also use the following **using**
-directives or **Imports** statements to compile
-the code in this topic.
-
-```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Wordprocessing;
-```
-
-```vb
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Wordprocessing
-```
 
 --------------------------------------------------------------------------------
 
@@ -59,6 +37,7 @@ you want to delete (string). If you supply an author name, the code
 deletes comments written by the specified author. If you do not supply
 an author name, the code deletes all comments.
 
+### [C#](#tab/cs-0)
 ```csharp
     // Delete comments by a specific author. Pass an empty string for the 
     // author to delete all comments, by all authors.
@@ -66,12 +45,15 @@ an author name, the code deletes all comments.
         string author = "")
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     ' Delete comments by a specific author. Pass an empty string for the author 
     ' to delete all comments, by all authors.
     Public Sub DeleteComments(ByVal fileName As String,
         Optional ByVal author As String = "")
 ```
+***
+
 
 --------------------------------------------------------------------------------
 
@@ -80,15 +62,19 @@ an author name, the code deletes all comments.
 To call the **DeleteComments** method, provide
 the required parameters as shown in the following code.
 
+### [C#](#tab/cs-1)
 ```csharp
     DeleteComments(@"C:\Users\Public\Documents\DeleteComments.docx",
     "David Jones");
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     DeleteComments("C:\Users\Public\Documents\DeleteComments.docx",
     "David Jones")
 ```
+***
+
 
 --------------------------------------------------------------------------------
 ## How the Code Works
@@ -101,6 +87,7 @@ document part from the [MainDocumentPart](https://msdn.microsoft.com/library/off
 processing document. If the comments part is missing, there is no point
 in proceeding, as there cannot be any comments to delete.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Get an existing Wordprocessing document.
     using (WordprocessingDocument document =
@@ -121,6 +108,7 @@ in proceeding, as there cannot be any comments to delete.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Get an existing Wordprocessing document.
     Using document As WordprocessingDocument =
@@ -138,6 +126,8 @@ in proceeding, as there cannot be any comments to delete.
         ' Code removed here…
     End Using
 ```
+***
+
 
 --------------------------------------------------------------------------------
 
@@ -151,21 +141,26 @@ the references to the comments from the document part.The following code
 starts by retrieving a list of [Comment](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.comment.aspx) elements. To retrieve the list, it
 converts the [Elements](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.elements.aspx) collection exposed by the **commentPart** variable into a list of **Comment** objects.
 
+### [C#](#tab/cs-3)
 ```csharp
     List<Comment> commentsToDelete =
         commentPart.Comments.Elements<Comment>().ToList();
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim commentsToDelete As List(Of Comment) = _
         commentPart.Comments.Elements(Of Comment)().ToList()
 ```
+***
+
 
 So far, the list of comments contains all of the comments. If the author
 parameter is not an empty string, the following code limits the list to
 only those comments where the [Author](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.comment.author.aspx) property matches the parameter you
 supplied.
 
+### [C#](#tab/cs-4)
 ```csharp
     if (!String.IsNullOrEmpty(author))
     {
@@ -174,12 +169,15 @@ supplied.
     }
 ```
 
+### [Visual Basic](#tab/vb-4)
 ```vb
     If Not String.IsNullOrEmpty(author) Then
         commentsToDelete = commentsToDelete.
         Where(Function(c) c.Author = author).ToList()
     End If
 ```
+***
+
 
 Before deleting any comments, the code retrieves a list of comments ID
 values, so that it can later delete matching elements from the document
@@ -187,15 +185,19 @@ part. The call to the [Select](https://msdn2.microsoft.com/library/bb357126)
 method effectively projects the list of comments, retrieving an [IEnumerable\<T\>](https://msdn2.microsoft.com/library/9eekhta0)
 of strings that contain all the comment ID values.
 
+### [C#](#tab/cs-5)
 ```csharp
     IEnumerable<string> commentIds = 
         commentsToDelete.Select(r => r.Id.Value);
 ```
 
+### [Visual Basic](#tab/vb-5)
 ```vb
     Dim commentIds As IEnumerable(Of String) =
         commentsToDelete.Select(Function(r) r.Id.Value)
 ```
+***
+
 
 --------------------------------------------------------------------------------
 
@@ -205,6 +207,7 @@ Given the **commentsToDelete** collection, to
 the following code loops through all the comments that require deleting
 and performs the deletion. The code then saves the comments part.
 
+### [C#](#tab/cs-6)
 ```csharp
     // Delete each comment in commentToDelete from the 
     // Comments collection.
@@ -217,6 +220,7 @@ and performs the deletion. The code then saves the comments part.
     commentPart.Comments.Save();
 ```
 
+### [Visual Basic](#tab/vb-6)
 ```vb
     ' Delete each comment in commentToDelete from the Comments 
     ' collection.
@@ -227,6 +231,8 @@ and performs the deletion. The code then saves the comments part.
     ' Save the comment part changes.
     commentPart.Comments.Save()
 ```
+***
+
 
 --------------------------------------------------------------------------------
 
@@ -240,13 +246,17 @@ must remove all three for each comment. Before performing any deletions,
 the code first retrieves a reference to the root element of the main
 document part, as shown in the following code.
 
+### [C#](#tab/cs-7)
 ```csharp
     Document doc = document.MainDocumentPart.Document;
 ```
 
+### [Visual Basic](#tab/vb-7)
 ```vb
     Dim doc As Document = document.MainDocumentPart.Document
 ```
+***
+
 
 Given a reference to the document element, the following code performs
 its deletion loop three times, once for each of the different elements
@@ -257,6 +267,7 @@ of comment IDs to be deleted. Given the list of elements to be deleted,
 the code removes each element in turn. Finally, the code completes by
 saving the document.
 
+### [C#](#tab/cs-8)
 ```csharp
     // Delete CommentRangeStart for each
     // deleted comment in the main document.
@@ -290,6 +301,7 @@ saving the document.
     doc.Save();
 ```
 
+### [Visual Basic](#tab/vb-8)
 ```vb
     ' Delete CommentRangeStart for each 
     ' deleted comment in the main document.
@@ -319,6 +331,8 @@ saving the document.
     ' Save changes back to the MainDocumentPart part.
     doc.Save()
 ```
+***
+
 
 --------------------------------------------------------------------------------
 

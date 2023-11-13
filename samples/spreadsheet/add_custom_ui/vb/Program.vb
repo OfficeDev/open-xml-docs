@@ -1,10 +1,10 @@
 Imports DocumentFormat.OpenXml.Office.CustomUI
 Imports DocumentFormat.OpenXml.Packaging
 
-Module Program
+Module MyModule
+
     Sub Main(args As String())
     End Sub
-
 
 
     Public Sub XLAddCustomUI(ByVal fileName As String,

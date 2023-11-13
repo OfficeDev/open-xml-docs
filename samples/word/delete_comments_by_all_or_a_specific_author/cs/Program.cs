@@ -26,7 +26,7 @@ static void DeleteComments(string fileName, string author = "")
 
         // If no WordprocessingCommentsPart exists, there can be no 
         // comments. Stop execution and return from the method.
-        if (commentPart == null)
+        if (commentPart is null)
         {
             return;
         }

@@ -31,6 +31,7 @@ statement, you open the word processing file with the specified
 the Boolean parameter set to **true** in order
 to enable editing the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (WordprocessingDocument doc = 
         WordprocessingDocument.Open(fileName, true))
@@ -39,12 +40,15 @@ to enable editing the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using wdDoc As WordprocessingDocument = _
             WordprocessingDocument.Open(filepath, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
@@ -163,15 +167,19 @@ from a document. You can call the method, WDDeleteHiddenText, by using
 the following call as an example to delete the hidden text from a file
 named "Word14.docx."
 
+### [C#](#tab/cs-1)
 ```csharp
     string docName = @"C:\Users\Public\Documents\Word14.docx";
     WDDeleteHiddenText(docName);
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     Dim docName As String = "C:\Users\Public\Documents\Word14.docx"
     WDDeleteHiddenText(docName)
 ```
+***
+
 
 > [!NOTE]
 > This example assumes that the file Word14.docx contains some hidden text. In order to hide part of the file text, select it, and click CTRL+D to show the **Font** dialog box. Select the **Hidden** box and click **OK**.

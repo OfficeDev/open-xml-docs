@@ -20,22 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to move a paragraph from one presentation to another presentation
 programmatically.
 
-The following assembly directives are required to compile the code in
-this topic.
 
-```csharp
-    using System.Linq;
-    using DocumentFormat.OpenXml.Presentation;
-    using DocumentFormat.OpenXml.Packaging;
-    using Drawing = DocumentFormat.OpenXml.Drawing;
-```
-
-```vb
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml.Presentation
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports Drawing = DocumentFormat.OpenXml.Drawing
-```
 
 ## Getting a PresentationDocument Object
 
@@ -51,6 +36,7 @@ as shown in the following **using** statement.
 In this code, the *file* parameter is a string that represents the path
 for the file from which you want to open the document.
 
+### [C#](#tab/cs-0)
 ```csharp
     using (PresentationDocument doc = PresentationDocument.Open(file, true))
     {
@@ -58,11 +44,14 @@ for the file from which you want to open the document.
     }
 ```
 
+### [Visual Basic](#tab/vb-0)
 ```vb
     Using doc As PresentationDocument = PresentationDocument.Open(file, True)
         ' Insert other code here.
     End Using
 ```
+***
+
 
 The **using** statement provides a recommended
 alternative to the typical .Open, .Save, .Close sequence. It ensures
@@ -121,6 +110,7 @@ paragraph in the target file and removes the source paragraph from the
 source file, replacing it with a placeholder paragraph. Finally, it
 saves the modified slides in both presentations.
 
+### [C#](#tab/cs-1)
 ```csharp
     // Moves a paragraph range in a TextBody shape in the source document
     // to another TextBody shape in the target document.
@@ -169,6 +159,7 @@ saves the modified slides in both presentations.
     }
 ```
 
+### [Visual Basic](#tab/vb-1)
 ```vb
     ' Moves a paragraph range in a TextBody shape in the source document
     ' to another TextBody shape in the target document.
@@ -213,6 +204,8 @@ saves the modified slides in both presentations.
         End Using
     End Sub
 ```
+***
+
 
 The **GetFirstSlide** method takes the **PresentationDocument** object passed in, gets its
 presentation part, and then gets the ID of the first slide in its slide
@@ -220,6 +213,7 @@ list. It then gets the relationship ID of the slide, gets the slide part
 from the relationship ID, and returns the slide part to the calling
 method.
 
+### [C#](#tab/cs-2)
 ```csharp
     // Get the slide part of the first slide in the presentation document.
     public static SlidePart GetFirstSlide(PresentationDocument presentationDocument)
@@ -236,6 +230,7 @@ method.
     }
 ```
 
+### [Visual Basic](#tab/vb-2)
 ```vb
     ' Get the slide part of the first slide in the presentation document.
     Public Shared Function GetFirstSlide(ByVal presentationDocument As PresentationDocument) As SlidePart
@@ -250,6 +245,8 @@ method.
         Return slidePart
     End Function
 ```
+***
+
 
 ## Sample Code
 
@@ -259,143 +256,32 @@ to the **MoveParagraphToPresentation** method
 to move the first paragraph from the presentation file "Myppt4.pptx" to
 the presentation file "Myppt12.pptx".
 
+### [C#](#tab/cs-3)
 ```csharp
     string sourceFile = @"C:\Users\Public\Documents\Myppt4.pptx";
     string targetFile = @"C:\Users\Public\Documents\Myppt12.pptx";
     MoveParagraphToPresentation(sourceFile, targetFile);
 ```
 
+### [Visual Basic](#tab/vb-3)
 ```vb
     Dim sourceFile As String = "C:\Users\Public\Documents\Myppt4.pptx"
     Dim targetFile As String = "C:\Users\Public\Documents\Myppt12.pptx"
     MoveParagraphToPresentation(sourceFile, targetFile)
 ```
+***
+
 
 After you run the program take a look on the content of both the source
 and the target files to see the moved paragraph.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
-```csharp
-    // Moves a paragraph range in a TextBody shape in the source document
-    // to another TextBody shape in the target document.
-    public static void MoveParagraphToPresentation(string sourceFile, string targetFile)
-    {
-        // Open the source file as read/write.
-        using (PresentationDocument sourceDoc = PresentationDocument.Open(sourceFile, true))
-        {
-            // Open the target file as read/write.
-            using (PresentationDocument targetDoc = PresentationDocument.Open(targetFile, true))
-            {
-                // Get the first slide in the source presentation.
-                SlidePart slide1 = GetFirstSlide(sourceDoc);
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/presentation/move_a_paragraph_from_one_presentation_to_another/cs/Program.cs)]
 
-                // Get the first TextBody shape in it.
-                TextBody textBody1 = slide1.Slide.Descendants<TextBody>().First();
-
-                // Get the first paragraph in the TextBody shape.
-                // Note: "Drawing" is the alias of namespace DocumentFormat.OpenXml.Drawing
-                Drawing.Paragraph p1 = textBody1.Elements<Drawing.Paragraph>().First();
-
-                // Get the first slide in the target presentation.
-                SlidePart slide2 = GetFirstSlide(targetDoc);
-
-                // Get the first TextBody shape in it.
-                TextBody textBody2 = slide2.Slide.Descendants<TextBody>().First();
-
-                // Clone the source paragraph and insert the cloned. paragraph into the target TextBody shape.
-                // Passing "true" creates a deep clone, which creates a copy of the 
-                // Paragraph object and everything directly or indirectly referenced by that object.
-                textBody2.Append(p1.CloneNode(true));
-
-                // Remove the source paragraph from the source file.
-                textBody1.RemoveChild<Drawing.Paragraph>(p1);
-
-                // Replace the removed paragraph with a placeholder.
-                textBody1.AppendChild<Drawing.Paragraph>(new Drawing.Paragraph());
-
-                // Save the slide in the source file.
-                slide1.Slide.Save();
-
-                // Save the slide in the target file.
-                slide2.Slide.Save();
-            }
-        }
-    }
-
-    // Get the slide part of the first slide in the presentation document.
-    public static SlidePart GetFirstSlide(PresentationDocument presentationDocument)
-    {
-        // Get relationship ID of the first slide
-        PresentationPart part = presentationDocument.PresentationPart;
-        SlideId slideId = part.Presentation.SlideIdList.GetFirstChild<SlideId>();
-        string relId = slideId.RelationshipId;
-
-        // Get the slide part by the relationship ID.
-        SlidePart slidePart = (SlidePart)part.GetPartById(relId);
-
-        return slidePart;
-    }
-```
-
-```vb
-    ' Moves a paragraph range in a TextBody shape in the source document
-    ' to another TextBody shape in the target document.
-    Public Sub MoveParagraphToPresentation(ByVal sourceFile As String, ByVal targetFile As String)
-
-        ' Open the source file.
-        Dim sourceDoc As PresentationDocument = PresentationDocument.Open(sourceFile, True)
-
-        ' Open the target file.
-        Dim targetDoc As PresentationDocument = PresentationDocument.Open(targetFile, True)
-
-        ' Get the first slide in the source presentation.
-        Dim slide1 As SlidePart = GetFirstSlide(sourceDoc)
-
-        ' Get the first TextBody shape in it.
-        Dim textBody1 As TextBody = slide1.Slide.Descendants(Of TextBody).First()
-
-        ' Get the first paragraph in the TextBody shape.
-        ' Note: Drawing is the alias of the namespace DocumentFormat.OpenXml.Drawing
-        Dim p1 As Drawing.Paragraph = textBody1.Elements(Of Drawing.Paragraph).First()
-
-        ' Get the first slide in the target presentation.
-        Dim slide2 As SlidePart = GetFirstSlide(targetDoc)
-
-        ' Get the first TextBody shape in it.
-        Dim textBody2 As TextBody = slide2.Slide.Descendants(Of TextBody).First()
-
-        ' Clone the source paragraph and insert the cloned paragraph into the target TextBody shape.
-        textBody2.Append(p1.CloneNode(True))
-
-        ' Remove the source paragraph from the source file.
-        textBody1.RemoveChild(Of Drawing.Paragraph)(p1)
-
-        ' Replace it with an empty one, because a paragraph is required for a TextBody shape.
-        textBody1.AppendChild(Of Drawing.Paragraph)(New Drawing.Paragraph())
-
-        ' Save the slide in the source file.
-        slide1.Slide.Save()
-
-        ' Save the slide in the target file.
-        slide2.Slide.Save()
-
-    End Sub
-    ' Get the slide part of the first slide in the presentation document.
-    Public Function GetFirstSlide(ByVal presentationDoc As PresentationDocument) As SlidePart
-
-        ' Get relationship ID of the first slide.
-        Dim part As PresentationPart = presentationDoc.PresentationPart
-        Dim slideId As SlideId = part.Presentation.SlideIdList.GetFirstChild(Of SlideId)()
-        Dim relId As String = slideId.RelationshipId
-
-        ' Get the slide part by the relationship ID.
-        Dim slidePart As SlidePart = CType(part.GetPartById(relId), SlidePart)
-
-        Return slidePart
-
-    End Function
-```
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/presentation/move_a_paragraph_from_one_presentation_to_another/vb/Program.vb)]
 
 ## See also
 
