@@ -48,7 +48,8 @@ Starting with v3.0.0, the supporting framework for the Open XML SDK is now withi
 
 There have been issues with getting behavior we need from the System.IO.Packaging namespace. Starting with v3.0, a new set of interfaces in the `DocumentFormat.OpenXml.Packaging` namespace will be used to access package properties.
 
-> NOTE: These types are currently marked as Obsolete, but only in the sense that we reserve the right to change their shape per feedback. Please be careful using these types as they may change in the future. At some point, we will remove the obsoletions and they will be considered stable APIs.
+> [!NOTE]
+> These types are currently marked as obsolete, but only in the sense that we reserve the right to change their shape per feedback. Please be careful using these types as they may change in the future. At some point, we will remove the obsoletions and they will be considered stable APIs. See [here](../general/diagnosticids.md) for details.
 
 **Action needed**: If using `OpenXmlPackage.Package`, the package returned is no longer of type `System.IO.Packaging.Package`, but of `DocumentFormat.OpenXml.Packaging.IPackage`.
 
@@ -92,7 +93,7 @@ In previous versions, [OpenXmlPartReader](/dotnet/api/documentformat.openxml.ope
 
 `SchemaAttrAttribute` and `ChildElementInfoAttribute` have been removed from types and the types themselves are no longer present.
 
-**Action needed**: If these types were required, please engage us at https://github.com/dotnet/open-xml-sdk to figure out the best way forward for you.
+**Action needed**: If these types were required, please engage us on [GitHub](https://github.com/dotnet/open-xml-sdk) to identify the best way forward for you.
 
 ### OpenXmlPackage.Close has been removed
 
