@@ -13,7 +13,7 @@ ms.localizationpriority: high
 
 Diagnostic IDs are used to identify APIs or patterns that can raise compiler warnings or errors. This can be done via [ObsoleteAttribute](/dotnet/api/system.obsoleteattribute.diagnosticid) or [ExperimentalAttribute](/dotnet/api/system.diagnostics.codeanalysis.experimentalattribute). These can be suppressed at the consumer level for each diagnostic id.
 
-## Current obsolete or experimental APIs
+## Experimental APIs
 
 ### OOXML0001
 
