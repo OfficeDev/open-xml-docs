@@ -76,7 +76,8 @@ package.TryAddPackageEventsFeature();
 var feature = package.Features.GetRequired<IPackageEventsFeature>();
 ```
 
-> Note: There may be times when the package is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
+> [!NOTE]
+> There may be times when the package is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
 
 ### IPartEventsFeature
 
@@ -106,7 +107,8 @@ var feature = part.Features.GetRequired<IPartRootEventsFeature>();
 
 Generally, assume that there may be a singleton implementation for the events and verify that the part is the correct part.
 
-> Note: There may be times when the part root is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
+> [!NOTE]
+> There may be times when the part root is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
 
 ### IRandomNumberGeneratorFeature
 
