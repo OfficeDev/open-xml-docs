@@ -92,7 +92,8 @@ var feature = part.Features.GetRequired<IPartEventsFeature>();
 
 Generally, assume that there may be a singleton implementation for the events and verify that the part is the correct part.
 
-> Note: There may be times when the part is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
+> [!NOTE]
+> There may be times when the part is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
 
 ### IPartRootEventsFeature
 
