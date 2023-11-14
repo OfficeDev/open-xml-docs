@@ -38,8 +38,8 @@ private sealed class PrivateFeature
 {
 }
 ```
-
-> NOTE: The feature collection on elements is readonly. This is due to memory issues if it is made writeable. If this is needed, please engage on https://github.com/dotnet/open-xml-sdk to let us know your scenario.
+> [!NOTE]
+> The feature collection on elements is readonly. This is due to memory issues if it is made writeable. If this is needed, please engage on https://github.com/dotnet/open-xml-sdk to let us know your scenario.
 
 ## Visualizing Registered Features
 
