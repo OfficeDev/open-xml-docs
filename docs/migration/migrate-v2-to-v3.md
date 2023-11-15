@@ -71,11 +71,43 @@ Starting with v3.0.0, `EnumValue<T>` wraps a custom type that contains the infor
 
 **Action needed**: Similar API surface is available, however the exposed enum values for this are no longer constants and will not be available in a few scenarios they had been (i.e. attribute values).
 
+A common change that is required is switch statements no longer work:
+
+```csharp
+switch (theCell.DataType.Value)
+{
+  case CellValues.SharedString:
+    // Handle the case
+    break;
+}
+```
+
+becomes:
+
+```csharp
+if (theCell.DataType.Value == CellValues.SharedString)
+{
+  // Handle the case
+}
+```
+
 ### OpenXmlElementList is now a struct
 
 [OpenXmlElementList](/dotnet/api/documentformat.openxml.openxmlelementlist) is now a struct. It still implements `IEnumerable<OpenXmlElement>` in addition to `IReadOnlyList<OpenXmlElement>` where available.
 
-**Action needed**: None
+**Action needed**: Because this is a struct, code patterns that may have a `null` result will now be a `OpenXmlElementList?` instead. Null checks will be flagged by the compiler and the value itself will need to be unwrapped, such as:
+
+```diff
+- OpenXmlElementList? slideIds = part?.Presentation?.SlideIdList?.ChildElements;
++ OpenXmlElementList slideIds = part?.Presentation?.SlideIdList?.ChildElements ?? default;
+```
+
+or
+
+```diff
+- OpenXmlElementList? slideIds = part?.Presentation?.SlideIdList?.ChildElements;
++ OpenXmlElementList slideIds = (part?.Presentation?.SlideIdList?.ChildElements).GetValueOrDefault();
+```
 
 ### IdPartPair is now a readonly struct
 
