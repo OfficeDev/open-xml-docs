@@ -91,12 +91,7 @@ static void InsertNewSlideFromPresentation(PresentationDocument presentationDocu
     uint maxSlideId = 1;
     SlideId? prevSlideId = null;
 
-    OpenXmlElementList? slideIds = slideIdList?.ChildElements;
-
-    if (slideIds is null)
-    {
-        throw new ArgumentNullException(nameof(slideIds));
-    }
+    OpenXmlElementList slideIds = slideIdList?.ChildElements ?? default;
 
     foreach (SlideId slideId in slideIds)
     {

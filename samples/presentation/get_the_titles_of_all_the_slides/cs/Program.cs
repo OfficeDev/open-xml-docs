@@ -115,18 +115,7 @@ static bool IsTitleShape(Shape shape)
 
     if (placeholderShape is not null && placeholderShape.Type is not null && placeholderShape.Type.HasValue)
     {
-        switch ((PlaceholderValues)placeholderShape.Type)
-        {
-            // Any title shape.
-            case PlaceholderValues.Title:
-
-            // A centered title.
-            case PlaceholderValues.CenteredTitle:
-                return true;
-
-            default:
-                return false;
-        }
+        return placeholderShape.Type == PlaceholderValues.Title || placeholderShape.Type == PlaceholderValues.CenteredTitle;
     }
 
     return false;
