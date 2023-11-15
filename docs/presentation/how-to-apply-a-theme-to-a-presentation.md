@@ -44,22 +44,10 @@ that represents the path for the source presentation document, and the
 represents the path for the target presentation document.
 
 ### [C#](#tab/cs-0)
-```csharp
-    using (PresentationDocument themeDocument = PresentationDocument.Open(themePresentation, false))
-    using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
-    {
-        // Insert other code here.
-    }
-```
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet1)]
 
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Using themeDocument As PresentationDocument = PresentationDocument.Open(themePresentation, False)
-    Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, True)
-        ' Insert other code here.
-    End Using
-    End Using
-```
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet1)]
 ***
 
 
@@ -141,29 +129,10 @@ files, **themePresentation** and **presentationFile**, are opened and passed to 
 second overloaded method as parameters.
 
 ### [C#](#tab/cs-1)
-```csharp
-    // Apply a new theme to the presentation. 
-    public static void ApplyThemeToPresentation(string presentationFile, string themePresentation)
-    {
-        using (PresentationDocument themeDocument = PresentationDocument.Open(themePresentation, false))
-        using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
-        {
-            ApplyThemeToPresentation(presentationDocument, themeDocument);
-        }
-    }
-```
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet2)]
 
 ### [Visual Basic](#tab/vb-1)
-```vb
-    ' Apply a new theme to the presentation. 
-    Public Shared Sub ApplyThemeToPresentation(ByVal presentationFile As String, ByVal themePresentation As String)
-        Using themeDocument As PresentationDocument = PresentationDocument.Open(themePresentation, False)
-        Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, True)
-            ApplyThemeToPresentation(presentationDocument, themeDocument)
-        End Using
-        End Using
-    End Sub
-```
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet2)]
 ***
 
 
@@ -177,52 +146,10 @@ passed in, and gets the relationship ID of the slide master part of the
 target presentation.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Apply a new theme to the presentation. 
-    public static void ApplyThemeToPresentation(PresentationDocument presentationDocument, PresentationDocument themeDocument)
-    {
-        if (presentationDocument == null)
-        {
-            throw new ArgumentNullException("presentationDocument");
-        }
-        if (themeDocument == null)
-        {
-            throw new ArgumentNullException("themeDocument");
-        }
-
-        // Get the presentation part of the presentation document.
-        PresentationPart presentationPart = presentationDocument.PresentationPart;
-
-        // Get the existing slide master part.
-        SlideMasterPart slideMasterPart = presentationPart.SlideMasterParts.ElementAt(0);
-        string relationshipId = presentationPart.GetIdOfPart(slideMasterPart);
-
-        // Get the new slide master part.
-        SlideMasterPart newSlideMasterPart = themeDocument.PresentationPart.SlideMasterParts.ElementAt(0);
-    }
-```
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet3)]
 
 ### [Visual Basic](#tab/vb-2)
-```vb
-    Apply a new theme to the presentation. 
-    Public Shared Sub ApplyThemeToPresentation(ByVal presentationDocument As PresentationDocument, ByVal themeDocument As PresentationDocument)
-        If presentationDocument Is Nothing Then
-            Throw New ArgumentNullException("presentationDocument")
-        End If
-        If themeDocument Is Nothing Then
-            Throw New ArgumentNullException("themeDocument")
-        End If
-
-        ' Get the presentation part of the presentation document.
-        Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
-
-        ' Get the existing slide master part.
-        Dim slideMasterPart As SlideMasterPart = presentationPart.SlideMasterParts.ElementAt(0)
-        Dim relationshipId As String = presentationPart.GetIdOfPart(slideMasterPart)
-
-        ' Get the new slide master part.
-        Dim newSlideMasterPart As SlideMasterPart = themeDocument.PresentationPart.SlideMasterParts.ElementAt(0)
-```
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet3)]
 ***
 
 
@@ -233,34 +160,10 @@ target presentation. It also adds the theme part to the target
 presentation.
 
 ### [C#](#tab/cs-3)
-```csharp
-    // Remove the existing theme part.
-    presentationPart.DeletePart(presentationPart.ThemePart);
-
-    // Remove the old slide master part.
-    presentationPart.DeletePart(slideMasterPart);
-
-    // Import the new slide master part, and reuse the old relationship ID.
-    newSlideMasterPart = presentationPart.AddPart(newSlideMasterPart, relationshipId);
-
-    // Change to the new theme part.
-    presentationPart.AddPart(newSlideMasterPart.ThemePart);
-```
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet4)]
 
 ### [Visual Basic](#tab/vb-3)
-```vb
-    ' Remove the existing theme part.
-    presentationPart.DeletePart(presentationPart.ThemePart)
-
-    ' Remove the old slide master part.
-    presentationPart.DeletePart(slideMasterPart)
-
-    ' Import the new slide master part, and reuse the old relationship ID.
-    newSlideMasterPart = presentationPart.AddPart(newSlideMasterPart, relationshipId)
-
-    ' Change to the new theme part.
-    presentationPart.AddPart(newSlideMasterPart.ThemePart)
-```
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet4)]
 ***
 
 
@@ -270,35 +173,10 @@ default layout type. For this example, the code for the default layout
 type is "Title and Content".
 
 ### [C#](#tab/cs-4)
-```csharp
-    Dictionary<string, SlideLayoutPart> newSlideLayouts = new Dictionary<string, SlideLayoutPart>();
-
-    foreach (var slideLayoutPart in newSlideMasterPart.SlideLayoutParts)
-    {
-        newSlideLayouts.Add(GetSlideLayoutType(slideLayoutPart), slideLayoutPart);
-    }
-
-    string layoutType = null;
-    SlideLayoutPart newLayoutPart = null;
-
-    // Insert the code for the layout for this example.
-    string defaultLayoutType = "Title and Content";
-```
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet5)]
 
 ### [Visual Basic](#tab/vb-4)
-```vb
-    Dim newSlideLayouts As New Dictionary(Of String, SlideLayoutPart)()
-
-    For Each slideLayoutPart In newSlideMasterPart.SlideLayoutParts
-        newSlideLayouts.Add(GetSlideLayoutType(slideLayoutPart), slideLayoutPart)
-    Next slideLayoutPart
-
-    Dim layoutType As String = Nothing
-    Dim newLayoutPart As SlideLayoutPart = Nothing
-
-    ' Insert the code for the layout for this example.
-    Dim defaultLayoutType As String = "Title and Content"
-```
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet5)]
 ***
 
 
@@ -311,90 +189,22 @@ had previously. For any slide without an existing slide layout part, it
 adds a new slide layout part of the default type.
 
 ### [C#](#tab/cs-5)
-```csharp
-    // Remove the slide layout relationship on all slides. 
-    foreach (var slidePart in presentationPart.SlideParts)
-    {
-        layoutType = null;
-
-        if (slidePart.SlideLayoutPart != null)
-        {
-            // Determine the slide layout type for each slide.
-            layoutType = GetSlideLayoutType(slidePart.SlideLayoutPart);
-
-            // Delete the old layout part.
-            slidePart.DeletePart(slidePart.SlideLayoutPart);
-        }
-
-        if (layoutType != null && newSlideLayouts.TryGetValue(layoutType, out newLayoutPart))
-        {
-            // Apply the new layout part.
-            slidePart.AddPart(newLayoutPart);
-        }
-        else
-        {
-            newLayoutPart = newSlideLayouts[defaultLayoutType];
-
-            // Apply the new default layout part.
-            slidePart.AddPart(newLayoutPart);
-        }
-    }
-```
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet6)]
 
 ### [Visual Basic](#tab/vb-5)
-```vb
-    ' Remove the slide layout relationship on all slides. 
-    For Each slidePart In presentationPart.SlideParts
-        layoutType = Nothing
-
-        If slidePart.SlideLayoutPart IsNot Nothing Then
-            ' Determine the slide layout type for each slide.
-            layoutType = GetSlideLayoutType(slidePart.SlideLayoutPart)
-
-            ' Delete the old layout part.
-            slidePart.DeletePart(slidePart.SlideLayoutPart)
-        End If
-
-        If layoutType IsNot Nothing AndAlso newSlideLayouts.TryGetValue(layoutType, newLayoutPart) Then
-            ' Apply the new layout part.
-            slidePart.AddPart(newLayoutPart)
-        Else
-            newLayoutPart = newSlideLayouts(defaultLayoutType)
-
-            ' Apply the new default layout part.
-            slidePart.AddPart(newLayoutPart)
-        End If
-    Next slidePart
-``
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet6)]
+***
 
 To get the type of the slide layout, the code uses the **GetSlideLayoutType** method that takes the slide
 layout part as a parameter, and returns to the second overloaded **ApplyThemeToPresentation** method a string that
 represents the name of the slide layout type
 
-``csharp
-    // Get the slide layout type.
-    public static string GetSlideLayoutType(SlideLayoutPart slideLayoutPart)
-    {
-        CommonSlideData slideData = slideLayoutPart.SlideLayout.CommonSlideData;
+### [C#](#tab/cs-6)
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet7)]
 
-        // Remarks: If this is used in production code, check for a null reference.
-
-        return slideData.Name;}
-```
+### [Visual Basic](#tab/vb-6)
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet7)]
 ***
-
-
-```vb
-    ' Get the slide layout type.
-    Public Shared Function GetSlideLayoutType(ByVal slideLayoutPart As SlideLayoutPart) As String
-        Dim slideData As CommonSlideData = slideLayoutPart.SlideLayout.CommonSlideData
-
-        ' Remarks: If this is used in production code, check for a null reference.
-
-        Return slideData.Name
-    End Function
-```
-
 -----------------------------------------------------------------------------
 ## Sample Code
 The following is the complete sample code to copy a theme from one
@@ -404,19 +214,11 @@ copy, for example, Myppt9-theme.pptx, and the other one is the target
 presentation, for example, Myppt9.pptx. You can use the following call
 in your program to perform the copying.
 
-### [C#](#tab/cs-6)
-```csharp
-    string presentationFile=@"C:\Users\Public\Documents\myppt2.pptx";
-    string themePresentation = @"C:\Users\Public\Documents\myppt2-theme.pptx";
-    ApplyThemeToPresentation(presentationFile, themePresentation);
-```
+### [C#](#tab/cs-7)
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet8)]
 
-### [Visual Basic](#tab/vb-6)
-```vb
-    Dim presentationFile As String = "C:\Users\Public\Documents\myppt2.pptx"
-    Dim themePresentation As String = "C:\Users\Public\Documents\myppt2-theme.pptx"
-    ApplyThemeToPresentation(presentationFile, themePresentation)
-```
+### [Visual Basic](#tab/vb-7)
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet8)]
 ***
 
 
@@ -424,10 +226,10 @@ After performing that call you can inspect the file Myppt2.pptx, and you
 would see the same theme of the file Myppt9-theme.pptx.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/apply_a_theme_to/cs/Program.cs?name=snippet9)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/apply_a_theme_to/vb/Program.vb?name=snippet9)]
 
 -----------------------------------------------------------------------------
 ## See also
