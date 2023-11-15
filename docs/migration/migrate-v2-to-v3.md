@@ -113,7 +113,7 @@ or
 
 This type is used to enumerate pairs within a part and caused many unnecessary allocations. This change should be transparent upon recompilation.
 
-**Action needed**: None
+**Action needed**: Because this is now a struct, null handling code will need to be updated.
 
 ### OpenXmlPartReader no longer knows about all parts
 
