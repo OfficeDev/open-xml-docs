@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # What's new in the Open XML SDK
 
-## [3.0.0]
+## [3.0.0] - 2023-11-15
 
 ### Added
 
@@ -63,7 +63,7 @@ ms.localizationpriority: high
 - Removed `OpenXmlPackage.Close` in favor of `Dispose` (#1373)
 - Removed `OpenXmlPackage.SaveAs` in favor of `Clone` (#1376)
 
-## [2.20.0]
+## [2.20.0] - 2023-04-05
 
 ### Added
 - Added DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula namespace

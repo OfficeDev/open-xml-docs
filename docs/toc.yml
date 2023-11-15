@@ -12,6 +12,8 @@
         href: what-s-new-in-the-open-xml-sdk.md
       - name: Open XML SDK  design considerations
         href: open-xml-sdk-design-considerations.md
+      - name: Migrating v2.x to v3.0
+        href: migration/migrate-v2-to-v3.md
     - name: General
       items:
       - name: Overview
@@ -36,6 +38,8 @@
         href: general/how-to-replace-the-theme-part-in-a-word-processing-document.md
       - name: Search and replace text in a document part
         href: general/how-to-search-and-replace-text-in-a-document-part.md
+      - name: Diagnostic IDs
+        href: general/diagnosticids.md
     - name: Presentations
       items:
       - name: Overview

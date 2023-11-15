@@ -56,6 +56,10 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 - [Spreadsheets](spreadsheet/overview.md)
 - [Word processing](word/overview.md)
 
+## Migrating from previous versions
+
+- [Migrating to v3.0.0 from v2.x](migration/migrate-v2-to-v3.md)
+
 ## See also
 
 - [Open XML SDK for Microsoft Office](https://www.nuget.org/packages/DocumentFormat.OpenXml)
