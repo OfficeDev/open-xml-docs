@@ -19,7 +19,7 @@ static void GetSlideIdAndText(out string sldText, string docName, int index)
         OpenXmlElementList slideIds = part?.Presentation?.SlideIdList?.ChildElements ?? default;
 
         // If there are no slide IDs then there are no slides.
-        if (slideIds.Count() < 1)
+        if (slideIds.Count == 0)
         {
             sldText = "";
             return;
