@@ -17,7 +17,9 @@
     - name: General
       items:
       - name: Overview
-        href: general/overview.md    
+        href: general/overview.md
+      - name: Custom SDK Features
+        href: general/features.md
       - name: Introduction to markup compatibility
         href: general/introduction-to-markup-compatibility.md  
       - name: Add a new document part that receives a relationship ID to a package
