@@ -58,9 +58,9 @@ static void GetSlideIdAndText(out string sldText, string docName, int index)
     {
         // Get the relationship ID of the first slide.
         PresentationPart? part = ppt.PresentationPart;
-        OpenXmlElementList? slideIds = part?.Presentation?.SlideIdList?.ChildElements;
+        OpenXmlElementList slideIds = part?.Presentation?.SlideIdList?.ChildElements ?? default;
 
-        if (part is null || slideIds is null || slideIds.Count == 0)
+        if (part is null || slideIds.Count == 0)
         {
             sldText = "";
             return;

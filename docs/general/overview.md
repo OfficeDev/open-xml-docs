@@ -42,6 +42,7 @@ This section provides how-to topics for working with documents and packages usin
 
 - [Search and replace text in a document part](how-to-search-and-replace-text-in-a-document-part.md)  
 
+- [Diagnostic IDs](diagnosticids.md)
 
 ## Related sections 
 

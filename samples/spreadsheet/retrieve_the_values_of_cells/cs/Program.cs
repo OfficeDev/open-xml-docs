@@ -4,13 +4,13 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Linq;
 
-GetCellValue(args[0], args[1], args[2]);
+Console.WriteLine(GetCellValue(args[0], args[1], args[2]));
 // Retrieve the value of a cell, given a file name, sheet name, 
 // and address name.
 // <Snippet1>
 static string GetCellValue(string fileName, string sheetName, string addressName)
-    // </Snippet1>
-{   
+// </Snippet1>
+{
     // <Snippet2>
     string? value = null;
     // </Snippet2>
@@ -59,39 +59,38 @@ static string GetCellValue(string fileName, string sheetName, string addressName
         // the words TRUE or FALSE.
         if (theCell.DataType is not null)
         {
-            switch (theCell.DataType.Value)
+            if (theCell.DataType.Value == CellValues.SharedString)
             {
                 // </Snippet8>
-                case CellValues.SharedString:
-                    // <Snippet9>
-                    // For shared strings, look up the value in the
-                    // shared strings table.
-                    var stringTable = wbPart.GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
-                    // </Snippet9>
-                    // <Snippet10>
-                    // If the shared string table is missing, something 
-                    // is wrong. Return the index that is in
-                    // the cell. Otherwise, look up the correct text in 
-                    // the table.
-                    if (stringTable is not null)
-                    {
-                        value = stringTable.SharedStringTable.ElementAt(int.Parse(value)).InnerText;
-                    }
-                    // </Snippet10>
-                    break;
-                    // <Snippet11>
-                case CellValues.Boolean:
-                    switch (value)
-                    {
-                        case "0":
-                            value = "FALSE";
-                            break;
-                        default:
-                            value = "TRUE";
-                            break;
-                    }
-                    // </Snippet11>
-                    break;
+                // <Snippet9>
+                // For shared strings, look up the value in the
+                // shared strings table.
+                var stringTable = wbPart.GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
+                // </Snippet9>
+                // <Snippet10>
+                // If the shared string table is missing, something 
+                // is wrong. Return the index that is in
+                // the cell. Otherwise, look up the correct text in 
+                // the table.
+                if (stringTable is not null)
+                {
+                    value = stringTable.SharedStringTable.ElementAt(int.Parse(value)).InnerText;
+                }
+                // </Snippet10>
+            }
+            else if (theCell.DataType.Value == CellValues.Boolean)
+            {
+                // <Snippet11>
+                switch (value)
+                {
+                    case "0":
+                        value = "FALSE";
+                        break;
+                    default:
+                        value = "TRUE";
+                        // </Snippet11>
+                        break;
+                }
             }
         }
     }
