@@ -1,20 +1,25 @@
+// <Snippet9>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Presentation;
 using System.Collections.Generic;
 using System.Linq;
-
+// <Snippet8>
 ApplyThemeToPresentation(args[0], args[1]);
-
+// </Snippet8>
+// <Snippet2>
 // Apply a new theme to the presentation. 
 static void ApplyThemeToPresentation(string presentationFile, string themePresentation)
 {
+    // <Snippet1>
     using (PresentationDocument themeDocument = PresentationDocument.Open(themePresentation, false))
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
     {
+        // </Snippet1>
         ApplyThemeToPresentationDocument(presentationDocument, themeDocument);
     }
 }
-
+// </Snippet2>
+// <Snippet3>
 // Apply a new theme to the presentation. 
 static void ApplyThemeToPresentationDocument(PresentationDocument presentationDocument, PresentationDocument themeDocument)
 {
@@ -30,7 +35,8 @@ static void ApplyThemeToPresentationDocument(PresentationDocument presentationDo
     // Get the new slide master part.
     PresentationPart themeDocPresentationPart = themeDocument.PresentationPart ?? themeDocument.AddPresentationPart();
     SlideMasterPart newSlideMasterPart = themeDocPresentationPart.SlideMasterParts.ElementAt(0);
-
+    // </Snippet3>
+    // <Snippet4>
     if (presentationPart.ThemePart is not null)
     {
         // Remove the existing theme part.
@@ -48,7 +54,8 @@ static void ApplyThemeToPresentationDocument(PresentationDocument presentationDo
         // Change to the new theme part.
         presentationPart.AddPart(newSlideMasterPart.ThemePart);
     }
-
+    // </Snippet4>
+    // <Snippet5>
     Dictionary<string, SlideLayoutPart> newSlideLayouts = new Dictionary<string, SlideLayoutPart>();
 
     foreach (var slideLayoutPart in newSlideMasterPart.SlideLayoutParts)
@@ -66,7 +73,8 @@ static void ApplyThemeToPresentationDocument(PresentationDocument presentationDo
 
     // Insert the code for the layout for this example.
     string defaultLayoutType = "Title and Content";
-
+    // </Snippet5>
+    // <Snippet6>
     // Remove the slide layout relationship on all slides. 
     foreach (var slidePart in presentationPart.SlideParts)
     {
@@ -94,14 +102,15 @@ static void ApplyThemeToPresentationDocument(PresentationDocument presentationDo
             slidePart.AddPart(newLayoutPart);
         }
     }
+    // </Snippet6>
 }
-
+// <Snippet7>
 // Get the slide layout type.
 static string? GetSlideLayoutType(SlideLayoutPart slideLayoutPart)
 {
     CommonSlideData? slideData = slideLayoutPart.SlideLayout?.CommonSlideData;
 
-    // Remarks: If this is used in production code, check for a null reference.
-
     return slideData?.Name;
 }
+// </Snippet7>
+// </Snippet9>

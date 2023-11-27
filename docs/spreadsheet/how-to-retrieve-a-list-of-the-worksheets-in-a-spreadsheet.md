@@ -35,14 +35,10 @@ parameter, a string that indicates the path of the file that you want to
 examine.
 
 ### [C#](#tab/cs-0)
-```csharp
-    public static Sheets GetAllWorksheets(string fileName)
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet1)]
 
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Public Function GetAllWorksheets(ByVal fileName As String) As Sheets
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb#snippet2)]
 ***
 
 
@@ -58,33 +54,10 @@ To call the **GetAllWorksheets** method, pass
 the required value, as shown in the following code.
 
 ### [C#](#tab/cs-1)
-```csharp
-    const string DEMOFILE = @"C:\Users\Public\Documents\SampleWorkbook.xlsx";
-
-    static void Main(string[] args)
-    {
-        var results = GetAllWorksheets(DEMOFILE);
-        foreach (Sheet item in results)
-        {
-            Console.WriteLine(item.Name);
-        }
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet2)]
 
 ### [Visual Basic](#tab/vb-1)
-```vb
-    Const DEMOFILE As String = 
-        "C:\Samples\SampleWorkbook.xlsx"
-
-    Sub Main()
-        Dim results = GetAllWorksheets(DEMOFILE)
-        ' Because Sheet inherits from OpenXmlElement, you can cast
-        ' each item in the collection to be a Sheet instance.
-        For Each item As Sheet In results
-            Console.WriteLine(item.Name)
-        Next
-    End Sub
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb#snippet2)]
 ***
 
 
@@ -100,18 +73,10 @@ null/Nothing if there were no sheets (this cannot occur in a well-formed
 workbook).
 
 ### [C#](#tab/cs-2)
-```csharp
-    Sheets theSheets = null;
-    // Code removed here…
-    return theSheets;
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet3)]
 
 ### [Visual Basic](#tab/vb-2)
-```vb
-    Dim theSheets As Sheets
-    ' Code removed here…
-    Return theSheets
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb#snippet3)]
 ***
 
 
@@ -119,37 +84,20 @@ The code then continues by opening the document in read-only mode, and
 retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)**.
 
 ### [C#](#tab/cs-3)
-```csharp
-    using (SpreadsheetDocument document = 
-        SpreadsheetDocument.Open(fileName, false))
-    {
-        WorkbookPart wbPart = document.WorkbookPart;
-        // Code removed here.
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet4)]
 
 ### [Visual Basic](#tab/vb-3)
-```vb
-    Using document As SpreadsheetDocument = 
-        SpreadsheetDocument.Open(fileName, False)
-        Dim wbPart As WorkbookPart = document.WorkbookPart
-        ' Code removed here.
-    End Using
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb#snippet4)]
 ***
 
 
 To get access to the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** object, the code retrieves the value of the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx)** property from the **WorkbookPart**, and then retrieves a reference to the **Sheets** object from the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.sheets.aspx)** property of the **Workbook**. The **Sheets** object contains the collection of **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** objects that provide the method's return value.
 
 ### [C#](#tab/cs-4)
-```csharp
-    theSheets = wbPart.Workbook.Sheets;
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet5)]
 
 ### [Visual Basic](#tab/vb-4)
-```vb
-    theSheets = wbPart.Workbook.Sheets
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb#snippet5)]
 ***
 
 
@@ -161,10 +109,10 @@ The following is the complete **GetAllWorksheets** code sample in C\# and Visual
 Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
 
