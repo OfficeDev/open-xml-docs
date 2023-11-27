@@ -26,6 +26,7 @@ static Sheets? GetAllWorksheets(string fileName)
     // <Snippet3>
     Sheets? theSheets = null;
     // </Snippet3>
+
     // <Snippet4>
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
     {
