@@ -4,13 +4,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+List<uint>? items = null;
+
 if (args is [{ } fileName, { } sheetName, { } detectRows])
 {
-    GetHiddenRowsOrCols(fileName, sheetName, detectRows);
+    items = GetHiddenRowsOrCols(fileName, sheetName, detectRows);
 }
 else if (args is [{ } fileName2, { } sheetName2])
 {
-    GetHiddenRowsOrCols(fileName2, sheetName2);
+    items = GetHiddenRowsOrCols(fileName2, sheetName2);
+}
+
+if (items is null)
+{
+    throw new ArgumentException("Invalid arguments.");
+}
+
+foreach (uint item in items)
+{
+    Console.WriteLine(item);
 }
 
 static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string detectRows = "false")
