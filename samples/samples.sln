@@ -332,6 +332,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "copy_the_contents_of_an_ope
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif_vb", "word\copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif\vb\copy_the_contents_of_an_open_xml_package_part_to_a_part_a_dif_vb.vbproj", "{BE95ECDD-B751-410E-B138-44B77DA0DE14}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "retrieve_a_list_of_the_hidden_worksheets_vb", "spreadsheet\retrieve_a_list_of_the_hidden_worksheets\vb\retrieve_a_list_of_the_hidden_worksheets_vb.vbproj", "{72BE6D64-0AEB-4090-A6F9-B255D291BF14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -966,6 +968,10 @@ Global
 		{BE95ECDD-B751-410E-B138-44B77DA0DE14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE95ECDD-B751-410E-B138-44B77DA0DE14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE95ECDD-B751-410E-B138-44B77DA0DE14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BE6D64-0AEB-4090-A6F9-B255D291BF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BE6D64-0AEB-4090-A6F9-B255D291BF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BE6D64-0AEB-4090-A6F9-B255D291BF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BE6D64-0AEB-4090-A6F9-B255D291BF14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1127,6 +1133,7 @@ Global
 		{F0CF5756-9899-4DEA-A884-95E06DE2E960} = {7ACDC26B-C774-4004-8553-87E862D1E71F}
 		{6A9A6136-3F51-4FCA-B2CA-82AB69160895} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}
 		{BE95ECDD-B751-410E-B138-44B77DA0DE14} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}
+		{72BE6D64-0AEB-4090-A6F9-B255D291BF14} = {7ACDC26B-C774-4004-8553-87E862D1E71F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {721B3030-08D7-4412-9087-D1CFBB3F5046}
