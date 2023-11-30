@@ -1,3 +1,4 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
@@ -6,7 +7,6 @@ Module Program
     End Sub
 
 
-    ' <Snippet0>
     Public Function GetHiddenRowsOrCols(
       ByVal fileName As String, ByVal sheetName As String,
       ByVal detectRows As Boolean) As List(Of UInteger)
@@ -67,5 +67,6 @@ Module Program
         End Using
         Return itemList
     End Function
-    ' </Snippet0>
 End Module
+
+' </Snippet0>
