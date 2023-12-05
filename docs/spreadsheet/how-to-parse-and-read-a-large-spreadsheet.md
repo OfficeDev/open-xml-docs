@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 12/05/2023
 ms.localizationpriority: high
 ---
 # Parse and read a large spreadsheet document

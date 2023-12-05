@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 11/27/2023
 ms.localizationpriority: high
 ---
 # Retrieve a list of the worksheets in a spreadsheet document
