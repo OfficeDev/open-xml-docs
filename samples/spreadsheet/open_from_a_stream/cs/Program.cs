@@ -1,10 +1,8 @@
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.IO;
 using System.Linq;
-
-FileStream fileStream = new(args[0], FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
-OpenAndAddToSpreadsheetStream(fileStream);
 
 static void OpenAndAddToSpreadsheetStream(Stream stream)
 {
@@ -16,10 +14,14 @@ static void OpenAndAddToSpreadsheetStream(Stream stream)
         // Get or create the WorkbookPart
         WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart ?? spreadsheetDocument.AddWorkbookPart();
 
+        // <Snippet1>
+        
         // Add a new worksheet.
         WorksheetPart newWorksheetPart = workbookPart.AddNewPart<WorksheetPart>();
         newWorksheetPart.Worksheet = new Worksheet(new SheetData());
         newWorksheetPart.Worksheet.Save();
+        
+        // </Snippet1>
 
         Workbook workbook = workbookPart.Workbook ?? new Workbook();
 
@@ -51,3 +53,10 @@ static void OpenAndAddToSpreadsheetStream(Stream stream)
         spreadsheetDocument.Dispose();
     }
 }
+
+// </Snippet0>
+
+// <Snippet2>
+var fileStream = File.Open(args[0], FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+OpenAndAddToSpreadsheetStream(fileStream);
+// </Snippet2>

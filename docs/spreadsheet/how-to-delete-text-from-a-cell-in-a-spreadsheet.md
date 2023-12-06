@@ -19,12 +19,7 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to delete text from a cell in a spreadsheet document
 programmatically.
 
-
-
-
-## Get a SpreadsheetDocument object
-
-In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an Excel document package. To open and work with an Excel document, create an instance of the **SpreadsheetDocument** class from the document. After you create the instance from the document, obtain access to the main workbook part that contains the worksheets. The text in the document is represented in the package as XML using **SpreadsheetML** markup.
+[!include[Structure](../includes/spreadsheet/spreadsheet-document-object.md)]
 
 To create the class instance from the document, call one of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) methods. Several are provided, each with a different signature. The sample code in this topic uses the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) method with a signature that requires two parameters. The first parameter takes a full path string that represents the document that you want to open. The second parameter is either **true** or **false** and represents whether you want the file to be opened for editing. Any changes that you make to the document will not be saved if this parameter is **false**.
 
