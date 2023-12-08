@@ -36,7 +36,7 @@ Open XML SDK.
 
 
 --------------------------------------------------------------------------------
-## The a SpreadsheetDocument Object 
+## The SpreadsheetDocument Object 
 
 The basic document structure of a SpreadsheetML document consists of the
 [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
