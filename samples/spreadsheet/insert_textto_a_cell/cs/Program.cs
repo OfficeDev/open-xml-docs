@@ -1,14 +1,12 @@
-
+// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Linq;
 
-InsertText(args[0], args[1]);
-
+// <Snippet1>
 // Given a document name and text, 
 // inserts a new work sheet and writes the text to cell "A1" of the new worksheet.
-
 static void InsertText(string docName, string text)
 {
     // Open the document for editing.
@@ -44,7 +42,9 @@ static void InsertText(string docName, string text)
         worksheetPart.Worksheet.Save();
     }
 }
+// </Snippet1>
 
+// <Snippet2>
 // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
 // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
 static int InsertSharedStringItem(string text, SharedStringTablePart shareStringPart)
@@ -74,7 +74,9 @@ static int InsertSharedStringItem(string text, SharedStringTablePart shareString
 
     return i;
 }
+// </Snippet2>
 
+// <Snippet3>
 // Given a WorkbookPart, inserts a new worksheet.
 static WorksheetPart InsertWorksheet(WorkbookPart workbookPart)
 {
@@ -110,7 +112,10 @@ static WorksheetPart InsertWorksheet(WorkbookPart workbookPart)
 
     return newWorksheetPart;
 }
+// </Snippet3>
 
+
+// <Snippet4>
 // Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
 // If the cell already exists, returns it. 
 static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPart worksheetPart)
@@ -158,3 +163,7 @@ static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPar
         return newCell;
     }
 }
+// </Snippet4>
+// </Snippet0>
+
+InsertText(args[0], args[1]);
