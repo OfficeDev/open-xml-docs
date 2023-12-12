@@ -1,3 +1,4 @@
+// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -6,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-MergeTwoCells(args[0], args[1], args[2], args[3]);
 
 // Given a document name, a worksheet name, and the names of two adjacent cells, merges the two cells.
 // When two cells are merged, only the content from one cell is preserved:
@@ -148,3 +148,6 @@ static uint GetRowIndex(string cellName)
 
     return uint.Parse(match.Value);
 }
+// </Snippet0>
+
+MergeTwoCells(args[0], args[1], args[2], args[3]);
