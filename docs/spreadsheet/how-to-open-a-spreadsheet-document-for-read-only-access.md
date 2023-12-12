@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 12/12/2023
 ms.localizationpriority: high
 ---
 # Open a spreadsheet document for read-only access
@@ -71,16 +71,10 @@ The following code example calls the **Open**
 Method.
 
 ### [C#](#tab/cs-0)
-```csharp
-    // Open a SpreadsheetDocument for read-only access based on a filepath.
-    using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(filepath, false))
-```
+[!code-csharp[](../../samples/spreadsheet/open_for_read_only_access/cs/Program.cs#snippet1)]
 
 ### [Visual Basic](#tab/vb-0)
-```vb
-    ' Open a SpreadsheetDocument for read-only access based on a filepath.
-    Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(filepath, False)
-```
+[!code-vb[](../../samples/spreadsheet/open_for_read_only_access/vb/Program.vb#snippet1)]
 ***
 
 
@@ -94,19 +88,10 @@ document.
 The following code example opens a document based on a stream.
 
 ### [C#](#tab/cs-1)
-```csharp
-    Stream stream = File.Open(strDoc, FileMode.Open);
-    // Open a SpreadsheetDocument for read-only access based on a stream.
-    using (SpreadsheetDocument spreadsheetDocument =
-        SpreadsheetDocument.Open(stream, false))
-```
+[!code-csharp[](../../samples/spreadsheet/open_for_read_only_access/cs/Program.cs#snippet2)]
 
 ### [Visual Basic](#tab/vb-1)
-```vb
-    Dim stream As Stream = File.Open(strDoc, FileMode.Open)
-    ' Open a SpreadsheetDocument for read-only access based on a stream.
-    Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(stream, False)
-```
+[!code-vb[](../../samples/spreadsheet/open_for_read_only_access/vb/Program.vb#snippet2)]
 ***
 
 
@@ -124,43 +109,10 @@ example in the sample code. The following code example performs this
 operation.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Open System.IO.Packaging.Package.
-    Package spreadsheetPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read);
-
-    // Open a SpreadsheetDocument based on a package.
-    using (SpreadsheetDocument spreadsheetDocument =
-        SpreadsheetDocument.Open(spreadsheetPackage))
-```
+[!code-csharp[](../../samples/spreadsheet/open_for_read_only_access/cs/Program.cs#snippet3)]
 
 ### [Visual Basic](#tab/vb-2)
-```vb
-    ' Open System.IO.Packaging.Package.
-    Dim spreadsheetPackage As Package = Package.Open(filepath, FileMode.Open, FileAccess.Read)
-
-    ' Open a SpreadsheetDocument based on a package.
-    Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(spreadsheetPackage)
-```
-***
-
-
-After you open the spreadsheet document package, you can access the main
-workbook part. To access the main workbook part, you assign a reference
-to the existing workbook part, as shown in the following code example.
-
-### [C#](#tab/cs-3)
-```csharp
-    // Assign a reference to the existing workbook part.
-    WorkbookPart wbPart = document.WorkbookPart;
-```
-
-### [Visual Basic](#tab/vb-3)
-```vb
-    ' Assign a reference to the existing workbook part.
-    Dim wbPart As WorkbookPart = document.WorkbookPart
-```
-***
-
+[!code-vb[](../../samples/spreadsheet/open_for_read_only_access/vb/Program.vb#snippet3)]
 
 ---------------------------------------------------------------------------------
 ## Basic Document Structure
@@ -220,28 +172,14 @@ v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 
 --------------------------------------------------------------------------------
 ## Sample Code
-The following code sample is used to open a Spreadsheet Document for
-Read-only Access. You can call the **OpenSpreadsheetDocumentReadonly** method by using
-the following code, which opens the file "Sheet10.xlsx," as an example.
-
-### [C#](#tab/cs-4)
-```csharp
-    OpenSpreadsheetDocumentReadonly(@"C:\Users\Public\Documents\Sheet10.xlsx");
-```
-
-### [Visual Basic](#tab/vb-4)
-```vb
-    OpenSpreadsheetDocumentReadonly("C:\Users\Public\Documents\Sheet10.xlsx")
-```
-***
 
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/spreadsheet/open_for_read_only_access/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/open_for_read_only_access/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/spreadsheet/open_for_read_only_access/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/open_for_read_only_access/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
 ## See also

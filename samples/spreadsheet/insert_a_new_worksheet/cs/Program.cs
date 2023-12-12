@@ -2,8 +2,6 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Linq;
 
-InsertWorksheet(args[0]);
-
 // Given a document name, inserts a new worksheet.
 static void InsertWorksheet(string docName)
 {
@@ -33,3 +31,5 @@ static void InsertWorksheet(string docName)
         sheets.Append(sheet);
     }
 }
+
+InsertWorksheet(args[0]);
