@@ -1,3 +1,4 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Drawing
 Imports DocumentFormat.OpenXml.Drawing.Charts
@@ -9,18 +10,19 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 Module MyModule
 
     Sub Main(args As String())
+        InsertChartInSpreadsheet(args(0), args(1), args(2), New Dictionary(Of String, Integer) From {{"First", 1}, {"Second", 2}, {"Third", 3}})
     End Sub
 
     ' Given a document name, a worksheet name, a chart title, and a Dictionary collection of text keys 
     ' and corresponding integer data, creates a column chart with the text as the series 
     ' and the integers as the values.
-    Private Sub InsertChartInSpreadsheet(ByVal docName As String, ByVal worksheetName As String,
-    ByVal title As String, ByVal data As Dictionary(Of String, Integer))
+    Private Sub InsertChartInSpreadsheet(ByVal docName As String, ByVal worksheetName As String, ByVal title As String, ByVal data As Dictionary(Of String, Integer))
         ' Open the document for editing.
         Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
-            Dim sheets As IEnumerable(Of Sheet) =
-                document.WorkbookPart.Workbook.Descendants(Of Sheet)() _
-                .Where(Function(s) s.Name = worksheetName)
+
+            ' <Snippet1>
+            Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)() _.Where(Function(s) s.Name = worksheetName)
+
             If sheets.Count() = 0 Then
                 ' The specified worksheet does not exist.
                 Return
@@ -42,7 +44,9 @@ Module MyModule
             Dim chart As DocumentFormat.OpenXml.Drawing.Charts.Chart =
                 chartPart.ChartSpace.AppendChild(Of DocumentFormat.OpenXml.Drawing.Charts _
                     .Chart)(New DocumentFormat.OpenXml.Drawing.Charts.Chart())
+            ' </Snippet1>
 
+            ' <Snippet2>
             ' Create a new clustered column chart.
             Dim plotArea As PlotArea = chart.AppendChild(Of PlotArea)(New PlotArea())
             Dim layout As Layout = plotArea.AppendChild(Of Layout)(New Layout())
@@ -76,7 +80,9 @@ Module MyModule
 
                 i += 1
             Next key
+            ' </Snippet2>
 
+            ' <Snippet3>
             barChart.Append(New AxisId() With {.Val = New UInt32Value(48650112UI)})
             barChart.Append(New AxisId() With {.Val = New UInt32Value(48672768UI)})
 
@@ -105,7 +111,9 @@ Module MyModule
 
             ' Save the chart part.
             chartPart.ChartSpace.Save()
+            ' </Snippet3>
 
+            ' <Snippet4>
             ' Position the chart on the worksheet using a TwoCellAnchor object.
             drawingsPart.WorksheetDrawing = New WorksheetDrawing()
             Dim twoCellAnchor As TwoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(Of
@@ -134,6 +142,7 @@ Module MyModule
                 "https://schemas.openxmlformats.org/drawingml/2006/chart"}))
 
             twoCellAnchor.Append(New ClientData())
+            ' </Snippet4>
 
             ' Save the WorksheetDrawing object.
             drawingsPart.WorksheetDrawing.Save()
@@ -141,3 +150,4 @@ Module MyModule
 
     End Sub
 End Module
+' </Snippet0>
