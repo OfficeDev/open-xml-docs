@@ -21,7 +21,7 @@ Module MyModule
         Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
 
             ' <Snippet1>
-            Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)() _.Where(Function(s) s.Name = worksheetName)
+            Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)().Where(Function(s) s.Name = worksheetName)
 
             If sheets.Count() = 0 Then
                 ' The specified worksheet does not exist.
