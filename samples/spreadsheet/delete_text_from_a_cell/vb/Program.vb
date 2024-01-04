@@ -1,3 +1,4 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
@@ -5,8 +6,10 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 Module MyModule
 
     Sub Main(args As String())
+        DeleteTextFromCell(args(0), args(1), args(2), UInteger.Parse(args(3)))
     End Sub
 
+    ' <Snippet1>
     ' Given a document, a worksheet name, a column name, and a one-based row index,
     ' deletes the text from the cell at the specified column and row on the specified sheet.
     Public Sub DeleteTextFromCell(ByVal docName As String, ByVal sheetName As String, ByVal colName As String, ByVal rowIndex As UInteger)
@@ -35,7 +38,9 @@ Module MyModule
 
         End Using
     End Sub
+    ' </Snippet1>
 
+    ' <Snippet2>
     ' Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
     Private Function GetSpreadsheetCell(ByVal worksheet As Worksheet, ByVal columnName As String, ByVal rowIndex As UInteger) As Cell
         Dim rows As IEnumerable(Of Row) = worksheet.GetFirstChild(Of SheetData)().Elements(Of Row)().Where(Function(r) r.RowIndex = rowIndex.ToString())
@@ -52,7 +57,9 @@ Module MyModule
 
         Return cells.First
     End Function
+    ' </Snippet2>
 
+    ' <Snippet3>
     ' Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
     ' reference the specified SharedStringItem and removes the item.
     Private Sub RemoveSharedStringItem(ByVal shareStringId As Integer, ByVal document As SpreadsheetDocument)
@@ -103,4 +110,6 @@ Module MyModule
             End If
         End If
     End Sub
+    ' </Snippet3>
 End Module
+' </Snippet0>
