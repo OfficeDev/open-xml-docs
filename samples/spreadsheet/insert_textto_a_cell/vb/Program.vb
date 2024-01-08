@@ -1,3 +1,4 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
@@ -6,8 +7,10 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 Module MyModule
 
     Sub Main(args As String())
+        InsertText(args(0), args(1))
     End Sub
 
+    ' <Snippet1>
     ' Given a document name and text, 
     ' inserts a new worksheet and writes the text to cell "A1" of the new worksheet.
     Public Function InsertText(ByVal docName As String, ByVal text As String)
@@ -43,7 +46,9 @@ Module MyModule
             Return 0
         End Using
     End Function
+    ' </Snippet1>
 
+    ' <Snippet2>
     ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
     Private Function InsertSharedStringItem(ByVal text As String, ByVal shareStringPart As SharedStringTablePart) As Integer
@@ -68,7 +73,9 @@ Module MyModule
 
         Return i
     End Function
+    ' </Snippet2>
 
+    ' <Snippet3>
     ' Given a WorkbookPart, inserts a new worksheet.
     Private Function InsertWorksheet(ByVal workbookPart As WorkbookPart) As WorksheetPart
         ' Add a new worksheet part to the workbook.
@@ -96,7 +103,9 @@ Module MyModule
 
         Return newWorksheetPart
     End Function
+    ' </Snippet3>
 
+    ' <Snippet4>
     ' Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     ' If the cell already exists, return it. 
     Private Function InsertCellInWorksheet(ByVal columnName As String, ByVal rowIndex As UInteger, ByVal worksheetPart As WorksheetPart) As Cell
@@ -136,4 +145,7 @@ Module MyModule
             Return newCell
         End If
     End Function
+    ' </Snippet4>
+
 End Module
+' </Snippet0>

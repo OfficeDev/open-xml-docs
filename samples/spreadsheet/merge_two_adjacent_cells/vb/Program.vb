@@ -1,3 +1,4 @@
+' <Snippet0>
 Imports System.Text.RegularExpressions
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
@@ -5,9 +6,8 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 Module Program
     Sub Main(args As String())
+        MergeTwoCells(args(0), args(1), args(2), args(3))
     End Sub
-
-
 
     ' Given a document name, a worksheet name, and the names of two adjacent cells, merges the two cells.
     ' When two cells are merged, only the content from one cell is preserved:
@@ -126,3 +126,4 @@ Module Program
         Return UInteger.Parse(match.Value)
     End Function
 End Module
+' </Snippet0>

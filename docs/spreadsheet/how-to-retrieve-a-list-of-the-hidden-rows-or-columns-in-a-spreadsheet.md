@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 12/05/2023
 ms.localizationpriority: high
 ---
 # Retrieve a list of the hidden rows or columns in a spreadsheet document

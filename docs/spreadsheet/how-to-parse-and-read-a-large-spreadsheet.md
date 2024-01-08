@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 12/05/2023
 ms.localizationpriority: high
 ---
 # Parse and read a large spreadsheet document
@@ -21,68 +21,6 @@ Office to programmatically read a large Excel file. For more information
 about the basic structure of a **SpreadsheetML** document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 [!include[Add-ins note](../includes/addinsnote.md)]
-
-You must use the following **using** directives
-or **Imports** statements to compile the code
-in this topic.
-
-### [C#](#tab/cs-0)
-```csharp
-    using System;
-    using System.Linq;
-    using DocumentFormat.OpenXml;
-    using DocumentFormat.OpenXml.Packaging;
-    using DocumentFormat.OpenXml.Spreadsheet;
-```
-
-### [Visual Basic](#tab/vb-0)
-```vb
-    Imports System
-    Imports System.Linq
-    Imports DocumentFormat.OpenXml
-    Imports DocumentFormat.OpenXml.Packaging
-    Imports DocumentFormat.OpenXml.Spreadsheet
-```
-***
-
-
---------------------------------------------------------------------------------
-## Getting a SpreadsheetDocument Object 
-In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
-Excel document package. To open and work with an Excel document, you
-create an instance of the **SpreadsheetDocument** class from the document.
-After you create this instance, you can use it to obtain access to the
-main workbook part that contains the worksheets. The content in the
-document is represented in the package as XML using **SpreadsheetML** markup.
-
-To create the class instance, you call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) method. The following code sample
-shows how to use the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) overload. The first
-parameter takes a string that represents the full path to the document
-to open. The second parameter takes a value of **true** or **false** and
-represents whether or not you want the file to be opened for editing. In
-this example, the parameter is **false**
-because the document is opened as read-only.
-
-### [C#](#tab/cs-1)
-```csharp
-    // Open the document as read-only.
-    using (SpreadsheetDocument spreadsheetDocument = 
-        SpreadsheetDocument.Open(fileName, false))
-    {
-        // Code removed here.
-    }
-```
-
-### [Visual Basic](#tab/vb-1)
-```vb
-    ' Open the document as read-only.
-    Using spreadsheetDocument As SpreadsheetDocument = _
-    SpreadsheetDocument.Open(filename, False)
-        ' Code removed here.
-    End Using
-```
-***
-
 
 --------------------------------------------------------------------------------
 ## Approaches to Parsing Open XML Files 
@@ -101,34 +39,10 @@ The following code segment is used to read a very large Excel file using
 the DOM approach.
 
 ### [C#](#tab/cs-2)
-```csharp
-    WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
-    WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
-    SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
-    string text;
-    foreach (Row r in sheetData.Elements<Row>())
-    {
-        foreach (Cell c in r.Elements<Cell>())
-        {
-            text = c.CellValue.Text;
-            Console.Write(text + " ");
-        }
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/cs/Program.cs#snippet1)]
 
 ### [Visual Basic](#tab/vb-2)
-```vb
-    Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
-    Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
-    Dim sheetData As SheetData = worksheetPart.Worksheet.Elements(Of SheetData)().First()
-    Dim text As String
-    For Each r As Row In sheetData.Elements(Of Row)()
-        For Each c As Cell In r.Elements(Of Cell)()
-            text = c.CellValue.Text
-            Console.Write(text & " ")
-        Next
-    Next
-```
+[!code-vb[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/vb/Program.vb#snippet1)]
 ***
 
 
@@ -137,36 +51,10 @@ sample (reading a very large Excel file), but uses the SAX approach.
 This is the recommended approach for reading very large files.
 
 ### [C#](#tab/cs-3)
-```csharp
-    WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
-    WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
-
-    OpenXmlReader reader = OpenXmlReader.Create(worksheetPart);
-    string text;
-    while (reader.Read())
-    {
-        if (reader.ElementType == typeof(CellValue))
-        {
-            text = reader.GetText();
-            Console.Write(text + " ");
-        }
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/cs/Program.cs#snippet2)]
 
 ### [Visual Basic](#tab/vb-3)
-```vb
-    Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
-    Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
-
-    Dim reader As OpenXmlReader = OpenXmlReader.Create(worksheetPart)
-    Dim text As String
-    While reader.Read()
-        If reader.ElementType = GetType(CellValue) Then
-            text = reader.GetText()
-            Console.Write(text & " ")
-        End If
-    End While
-```
+[!code-vb[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/vb/Program.vb#snippet2)]
 ***
 
 
@@ -184,30 +72,20 @@ method separately by commenting the call to the one you would like to
 exclude.
 
 ### [C#](#tab/cs-4)
-```csharp
-    String fileName = @"C:\Users\Public\Documents\BigFile.xlsx";
-    // Comment one of the following lines to test the method separately.
-    ReadExcelFileDOM(fileName);    // DOM
-    ReadExcelFileSAX(fileName);    // SAX
-```
+[!code-csharp[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/cs/Program.cs#snippet3)]
 
 ### [Visual Basic](#tab/vb-4)
-```vb
-    Dim fileName As String = "C:\Users\Public\Documents\BigFile.xlsx"
-    ' Comment one of the following lines to test each method separately.
-    ReadExcelFileDOM(fileName)    ' DOM
-    ReadExcelFileSAX(fileName)    ' SAX
-```
+[!code-vb[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/vb/Program.vb#snippet3)]
 ***
 
 
 The following is the complete code sample in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
 ## See also 
