@@ -5,8 +5,8 @@ Imports DocumentFormat.OpenXml.Packaging
 Module MyModule
 
     Sub Main(args As String())
-        Dim xml as String = 
         ' <Snippet4>
+        Dim xml As String =
 "<customUI xmlns=""http://schemas.microsoft.com/office/2006/01/customui"">
 	<ribbon>
 		<tabs>
