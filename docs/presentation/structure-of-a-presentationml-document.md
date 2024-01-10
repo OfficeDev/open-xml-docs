@@ -650,7 +650,7 @@ The following XML code is the PresentationML that represents the relationship pa
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
       <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/slide"
                     Target="/ppt/slides/slide.xml"
                     Id="rId2" />

@@ -126,7 +126,7 @@ when you run the Open XML SDK to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
         <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="/xl/worksheets/sheet.xml" Id="Rddc7711f116045e5" />
     </Relationships>
 ```

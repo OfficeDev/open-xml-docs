@@ -142,7 +142,7 @@ Sheet1.xml file and is as follows.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
                 <c r="A1">
