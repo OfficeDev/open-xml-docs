@@ -1,47 +1,50 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Office.CustomUI
 Imports DocumentFormat.OpenXml.Packaging
 
 Module MyModule
 
     Sub Main(args As String())
+        Dim xml as String = 
+        ' <Snippet4>
+"<customUI xmlns=""http://schemas.microsoft.com/office/2006/01/customui"">
+	<ribbon>
+		<tabs>
+			<tab idMso=""TabAddIns"">
+				<group id=""Group1"" label=""Group1"">
+					<button id=""Button1"" label=""Click Me!"" showImage=""false"" onAction=""SampleMacro""/>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>"
+        ' </Snippet4>
+        ' args(0) contains the path to the AddCustomUI.xlsm file earlier in the tutorial.
+        XLAddCustomUI(args(0), xml)
     End Sub
 
 
-    Public Sub XLAddCustomUI(ByVal fileName As String,
-                             ByVal customUIContent As String)
-        ' Add a custom UI part to the document.
-        ' Use this sample XML to test:
+    Public Sub XLAddCustomUI(ByVal fileName As String, ByVal customUIContent As String)
 
-        '<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
-        '    <ribbon>
-        '        <tabs>
-        '            <tab idMso="TabAddIns">
-        '                <group id="Group1" label="Group1">
-        '                    <button id="Button1" label="Button1" 
-        '                     showImage="false" onAction="SampleMacro"/>
-        '                </group>
-        '            </tab>
-        '        </tabs>
-        '    </ribbon>
-        '</customUI>
+        ' <Snippet1>
+        Using document As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, True)
+            ' </Snippet1>
 
-        ' In the sample XLSM file, create a module and create a procedure 
-        ' named SampleMacro, using this signature:
-        ' Public Sub SampleMacro(control As IRibbonControl)
-        ' Add some code, and then save and close the XLSM file. Run this
-        ' example to add a button to the Add-Ins tab that calls the macro, 
-        ' given the XML content above in the AddCustomUI.xml file.
-
-        Using document As SpreadsheetDocument =
-            SpreadsheetDocument.Open(fileName, True)
+            ' <Snippet2>
             ' You can have only a single ribbon extensibility part.
             ' If the part doesn't exist, add it.
             Dim part = document.RibbonExtensibilityPart
             If part Is Nothing Then
                 part = document.AddRibbonExtensibilityPart
             End If
+            ' </Snippet2>
+
+            ' <Snippet3>
             part.CustomUI = New CustomUI(customUIContent)
             part.CustomUI.Save()
+            ' </Snippet3>
+
         End Using
     End Sub
 End Module
+' </Snippet0>
