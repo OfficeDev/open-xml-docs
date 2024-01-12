@@ -1,11 +1,10 @@
-
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Collections.Generic;
 using System.Linq;
 
-DeleteTextFromCell(args[0], args[1], args[2], uint.Parse(args[3]));
-
+// <Snippet1>
 // Given a document, a worksheet name, a column name, and a one-based row index,
 // deletes the text from the cell at the specified column and row on the specified worksheet.
 static void DeleteTextFromCell(string docName, string sheetName, string colName, uint rowIndex)
@@ -41,7 +40,9 @@ static void DeleteTextFromCell(string docName, string sheetName, string colName,
         worksheetPart.Worksheet.Save();
     }
 }
+// </Snippet1>
 
+// <Snippet2>
 // Given a worksheet, a column name, and a row index, gets the cell at the specified column and row.
 static Cell? GetSpreadsheetCell(Worksheet worksheet, string columnName, uint rowIndex)
 {
@@ -62,7 +63,9 @@ static Cell? GetSpreadsheetCell(Worksheet worksheet, string columnName, uint row
 
     return cells.FirstOrDefault();
 }
+// </Snippet2>
 
+// <Snippet3>
 // Given a shared string ID and a SpreadsheetDocument, verifies that other cells in the document no longer 
 // reference the specified SharedStringItem and removes the item.
 static void RemoveSharedStringItem(int shareStringId, SpreadsheetDocument document)
@@ -144,3 +147,7 @@ static void RemoveSharedStringItem(int shareStringId, SpreadsheetDocument docume
         }
     }
 }
+// </Snippet3>
+// </Snippet0>
+
+DeleteTextFromCell(args[0], args[1], args[2], uint.Parse(args[3]));
