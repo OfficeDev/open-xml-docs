@@ -1,7 +1,6 @@
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-
-WriteToWordDoc(args[0], args[1]);
 
 static void WriteToWordDoc(string filepath, string txt)
 {
@@ -22,3 +21,5 @@ static void WriteToWordDoc(string filepath, string txt)
         run.AppendChild(new Text(txt));
     }
 }
+// </Snippet0>
+WriteToWordDoc(args[0], args[1]);
