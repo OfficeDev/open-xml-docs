@@ -1,3 +1,4 @@
+' <Snippet0>
 Imports System.Text.RegularExpressions
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
@@ -7,8 +8,10 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 Module MyModule
 
     Sub Main(args As String())
+        CalculateSumOfCellRange(args(0), args(1), args(2), args(3), args(4))
     End Sub
 
+    ' <Snippet1>
     ' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
     ' the name of the last cell in the contiguous range, and the name of the results cell, 
     ' calculates the sum of the cells in the contiguous range and inserts the result into the results cell.
@@ -68,6 +71,9 @@ Module MyModule
             worksheetPart.Worksheet.Save()
         End Using
     End Sub
+    ' </Snippet1>
+
+    ' <Snippet2>
     ' Given a cell name, parses the specified cell to get the row index.
     Private Function GetRowIndex(ByVal cellName As String) As UInteger
         ' Create a regular expression to match the row index portion the cell name.
@@ -75,6 +81,9 @@ Module MyModule
         Dim match As Match = regex.Match(cellName)
         Return UInteger.Parse(match.Value)
     End Function
+    ' </Snippet2>
+
+    ' <Snippet3>
     ' Given a cell name, parses the specified cell to get the column name.
     Private Function GetColumnName(ByVal cellName As String) As String
         ' Create a regular expression to match the column name portion of the cell name.
@@ -82,6 +91,9 @@ Module MyModule
         Dim match As Match = regex.Match(cellName)
         Return match.Value
     End Function
+    ' </Snippet3>
+
+    ' <Snippet4>
     ' Given two columns, compares the columns.
     Private Function CompareColumn(ByVal column1 As String, ByVal column2 As String) As Integer
         If (column1.Length > column2.Length) Then
@@ -92,6 +104,9 @@ Module MyModule
             Return String.Compare(column1, column2, True)
         End If
     End Function
+    ' </Snippet4>
+
+    ' <Snippet5>
     ' Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
     ' and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
     Private Function InsertSharedStringItem(ByVal text As String, ByVal shareStringPart As SharedStringTablePart) As Integer
@@ -115,6 +130,9 @@ Module MyModule
 
         Return i
     End Function
+    ' </Snippet5>
+
+    ' <Snippet6>
     ' Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
     ' If the cell already exists, return it. 
     Private Function InsertCellInWorksheet(ByVal columnName As String, ByVal rowIndex As UInteger, ByVal worksheetPart As WorksheetPart) As Cell
@@ -154,4 +172,7 @@ Module MyModule
             Return newCell
         End If
     End Function
+    ' </Snippet6>
+
 End Module
+' </Snippet0>

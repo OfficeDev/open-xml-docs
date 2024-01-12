@@ -1,3 +1,4 @@
+// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -7,8 +8,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 
-CalculateSumOfCellRange(args[0], args[1], args[2], args[3], args[4]);
-
+// <Snippet1>
 static void CalculateSumOfCellRange(string docName, string worksheetName, string firstCellName, string lastCellName, string resultCell)
 {
     // Open the document for editing.
@@ -73,7 +73,9 @@ static void CalculateSumOfCellRange(string docName, string worksheetName, string
         worksheetPart.Worksheet.Save();
     }
 }
+// </Snippet1>
 
+// <Snippet2>
 // Given a cell name, parses the specified cell to get the row index.
 static uint GetRowIndex(string cellName)
 {
@@ -83,6 +85,9 @@ static uint GetRowIndex(string cellName)
 
     return uint.Parse(match.Value);
 }
+// </Snippet2>
+
+// <Snippet3>
 // Given a cell name, parses the specified cell to get the column name.
 static string GetColumnName(string cellName)
 {
@@ -92,6 +97,9 @@ static string GetColumnName(string cellName)
 
     return match.Value;
 }
+// </Snippet3>
+
+// <Snippet4>
 // Given two columns, compares the columns.
 static int CompareColumn(string column1, string column2)
 {
@@ -108,6 +116,9 @@ static int CompareColumn(string column1, string column2)
         return string.Compare(column1, column2, true);
     }
 }
+// </Snippet4>
+
+// <Snippet5>
 // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
 // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
 static int InsertSharedStringItem(string text, SharedStringTablePart shareStringPart)
@@ -136,6 +147,9 @@ static int InsertSharedStringItem(string text, SharedStringTablePart shareString
 
     return i;
 }
+// </Snippet5>
+
+// <Snippet6>
 // Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
 // If the cell already exists, returns it. 
 static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPart worksheetPart)
@@ -182,3 +196,8 @@ static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPar
         return newCell;
     }
 }
+// </Snippet6>
+
+// </Snippet0>
+
+CalculateSumOfCellRange(args[0], args[1], args[2], args[3], args[4]);
