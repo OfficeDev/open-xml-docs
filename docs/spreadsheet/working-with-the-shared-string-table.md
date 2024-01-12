@@ -115,7 +115,7 @@ ISO/IEC 29500 specification.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <sst xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" count="6" uniqueCount="5">
+    <sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="6" uniqueCount="5">
         <si>
             <t>Cell A1</t>
         </si>
@@ -222,7 +222,7 @@ referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:sst xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:sst xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:si>
         <x:t>hello</x:t>
       </x:si>
@@ -232,7 +232,7 @@ In addition, the following XML is written to the new worksheet XML file.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:sheetData>
         <x:row r="1">
           <x:c r="A1" t="s">

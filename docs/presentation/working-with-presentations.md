@@ -353,12 +353,12 @@ PresentationML document referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8" ?>
-    <p:presentation xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:presentation xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
      <p:sldMasterIdLst>
-      <p:sldMasterId id="2147483648" r:id="rId1" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
+      <p:sldMasterId id="2147483648" r:id="rId1" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
      </p:sldMasterIdLst>
      <p:sldIdLst>
-      <p:sldId id="256" r:id="rId2" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
+      <p:sldId id="256" r:id="rId2" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
      </p:sldIdLst>
      <p:sldSz cx="9144000" cy="6858000" type="screen4x3"/>
      <p:notesSz cx="6858000" cy="9144000"/>

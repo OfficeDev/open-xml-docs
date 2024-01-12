@@ -161,7 +161,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:sldMaster xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:sldMaster xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -171,7 +171,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
             <p:nvPr />
           </p:nvGrpSpPr>
           <p:grpSpPr>
-            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
           </p:grpSpPr>
           <p:sp>
             <p:nvSpPr>
@@ -179,7 +179,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
                        name="Title Placeholder 1" />
               <p:cNvSpPr>
                 <a:spLocks noGrp="1"
-                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
               </p:cNvSpPr>
               <p:nvPr>
                 <p:ph type="title" />
@@ -187,9 +187,9 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
             </p:nvSpPr>
             <p:spPr />
             <p:txBody>
-              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
             </p:txBody>
           </p:sp>
         </p:spTree>
@@ -209,7 +209,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
       <p:sldLayoutIdLst>
         <p:sldLayoutId id="2147483649"
                        r:id="rId1"
-                       xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+                       xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
       </p:sldLayoutIdLst>
       <p:txStyles>
         <p:titleStyle />

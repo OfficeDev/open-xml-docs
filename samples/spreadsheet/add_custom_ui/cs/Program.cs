@@ -7,7 +7,7 @@ static void AddCustomUI(string fileName, string customUIContent)
 {
     // Add a custom UI part to the document.
     // Use this sample XML to test:
-    //<customUI xmlns="https://schemas.microsoft.com/office/2006/01/customui">
+    //<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
     //    <ribbon>
     //        <tabs>
     //            <tab idMso="TabAddIns">

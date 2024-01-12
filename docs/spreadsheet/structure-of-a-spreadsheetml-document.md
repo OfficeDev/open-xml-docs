@@ -109,9 +109,9 @@ the Open XML SDK code to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:workbook xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:workbook xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheets>
-            <x:sheet name="mySheet" sheetId="1" r:id="Rddc7711f116045e5" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+            <x:sheet name="mySheet" sheetId="1" r:id="Rddc7711f116045e5" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
         </x:sheets>
     </x:workbook>
 ```
@@ -126,7 +126,7 @@ when you run the Open XML SDK to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
         <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="/xl/worksheets/sheet.xml" Id="Rddc7711f116045e5" />
     </Relationships>
 ```
@@ -141,7 +141,7 @@ you run the Open XML SDK to create a minimum workbook.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheetData />
     </x:worksheet>
 ```

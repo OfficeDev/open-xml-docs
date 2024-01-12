@@ -74,7 +74,7 @@ code example shows the **WordprocessingML**
 markup for a document that contains the text "Example text."
 
 ```xml
-    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>

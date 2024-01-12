@@ -376,7 +376,7 @@ such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.op
 The code results in the following XML.
 
 ```xml
-    <w:styles xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:style w:type="paragraph" w:styleId="OverdueAmountPara" w:default="false" w:customStyle="true">
       </w:style>
     </w:styles>

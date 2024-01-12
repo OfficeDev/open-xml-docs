@@ -47,7 +47,7 @@ file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
+    <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
         <sheets>
             <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
             <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
@@ -65,7 +65,7 @@ code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
                 <c r="A1">

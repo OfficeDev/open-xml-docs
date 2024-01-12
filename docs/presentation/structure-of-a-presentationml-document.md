@@ -626,16 +626,16 @@ The following XML code is the PresentationML that represents the presentation pa
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:presentation xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:presentation xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:sldMasterIdLst>
         <p:sldMasterId id="2147483648"
                        r:id="rId1"
-                       xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+                       xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
       </p:sldMasterIdLst>
       <p:sldIdLst>
         <p:sldId id="256"
                  r:id="rId2"
-                 xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+                 xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
       </p:sldIdLst>
       <p:sldSz cx="9144000"
                cy="6858000"
@@ -650,7 +650,7 @@ The following XML code is the PresentationML that represents the relationship pa
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
       <Relationship Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/slide"
                     Target="/ppt/slides/slide.xml"
                     Id="rId2" />
@@ -667,7 +667,7 @@ The following XML code is the PresentationML that represents the slide part of t
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:sld xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:sld xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -677,7 +677,7 @@ The following XML code is the PresentationML that represents the slide part of t
             <p:nvPr />
           </p:nvGrpSpPr>
           <p:grpSpPr>
-            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
           </p:grpSpPr>
           <p:sp>
             <p:nvSpPr>
@@ -685,7 +685,7 @@ The following XML code is the PresentationML that represents the slide part of t
                        name="Title 1" />
               <p:cNvSpPr>
                 <a:spLocks noGrp="1"
-                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
               </p:cNvSpPr>
               <p:nvPr>
                 <p:ph />
@@ -693,9 +693,9 @@ The following XML code is the PresentationML that represents the slide part of t
             </p:nvSpPr>
             <p:spPr />
             <p:txBody>
-              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
                 <a:endParaRPr lang="en-US" />
               </a:p>
             </p:txBody>
@@ -703,7 +703,7 @@ The following XML code is the PresentationML that represents the slide part of t
         </p:spTree>
       </p:cSld>
       <p:clrMapOvr>
-        <a:masterClrMapping xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
       </p:clrMapOvr>
     </p:sld>
 ```

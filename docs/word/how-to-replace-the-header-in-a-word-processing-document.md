@@ -77,7 +77,7 @@ from the document part with a unique relationship ID, as shown in the
 following packaging markup:
 
 ```xml
-    <Relationships xmlns=https://schemas.openxmlformats.org/package/2006/relationships>
+    <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
       …
       <Relationship Id="rId2" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml" />
       <Relationship Id="rId3" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header2.xml" />

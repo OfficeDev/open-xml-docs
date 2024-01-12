@@ -195,7 +195,7 @@ the "sheet.xml" file in the "worksheets" folder of the .zip file.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheetData>
             <x:row r="1">
                 <x:c r="A1" t="n">

@@ -135,7 +135,7 @@ following sample markup shows a pStyle element that specifies the
 "OverdueAmount" style.
 
 ```xml
-    <w:p  xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:p  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:pPr>
         <w:pStyle w:val="OverdueAmount" />
       </w:pPr>

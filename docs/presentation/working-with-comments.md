@@ -245,7 +245,7 @@ or comment authors before the code was run.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:cmAuthorLst xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:cmAuthorLst xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cmAuthor id="1"
                   name="userName"
                   initials="userInitials"
@@ -260,7 +260,7 @@ article.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:cmLst xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:cmLst xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cm authorId="1"
             dt="2010-09-07T16:01:18.5351166-07:00"
             idx="1">

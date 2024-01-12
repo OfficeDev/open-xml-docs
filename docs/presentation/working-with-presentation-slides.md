@@ -289,7 +289,7 @@ is written to the PresentationML document file referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8" ?> 
-    <p:sld xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:sld xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -298,13 +298,13 @@ is written to the PresentationML document file referenced in the code.
             <p:nvPr /> 
           </p:nvGrpSpPr>
             <p:grpSpPr>
-              <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" /> 
+              <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
             </p:grpSpPr>
             <p:sp>
               <p:nvSpPr>
               <p:cNvPr id="2" name="Title 1" /> 
               <p:cNvSpPr>
-                <a:spLocks noGrp="1" xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" /> 
+                <a:spLocks noGrp="1" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
               </p:cNvSpPr>
                 <p:nvPr>
                   <p:ph /> 
@@ -312,9 +312,9 @@ is written to the PresentationML document file referenced in the code.
                 </p:nvSpPr>
                 <p:spPr /> 
                 <p:txBody>
-                 <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" /> 
-             <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" /> 
-                 <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main">
+                 <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
+             <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
+                 <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
                    <a:endParaRPr lang="en-US" /> 
           </a:p>
                 </p:txBody>
@@ -322,7 +322,7 @@ is written to the PresentationML document file referenced in the code.
            </p:spTree>
         </p:cSld>
         <p:clrMapOvr>
-          <a:masterClrMapping xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" /> 
+          <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" /> 
         </p:clrMapOvr>
     </p:sld>
 ```

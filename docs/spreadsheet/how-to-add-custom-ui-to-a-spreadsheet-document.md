@@ -28,7 +28,7 @@ Before using the Open XML SDK to create a ribbon customization in an Excel workb
 For the purposes of this demonstration, you will need an XML file that contains a customization, and the following code provides a simple customization (or you can create your own by using the Visual Studio Ribbon Designer, and then right-click to export the customization to an XML file). Copy the following content into a text file that is named AddCustomUI.xml for use as part of this example. This XML content describes a ribbon customization that includes a button labeled "Click Me!" in a group named Group1 on the **Add-Ins** tab in Excel. When you click the button, it attempts to run a macro named **SampleMacro** in the host workbook.
 
 ```xml
-    <customUI xmlns="https://schemas.microsoft.com/office/2006/01/customui">
+    <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
         <ribbon>
             <tabs>
                 <tab idMso="TabAddIns">
