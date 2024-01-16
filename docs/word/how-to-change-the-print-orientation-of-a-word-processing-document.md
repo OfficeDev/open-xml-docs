@@ -19,8 +19,7 @@ ms.localizationpriority: medium
 # Change the print orientation of a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
-Office to programmatically set the print orientation of a Microsoft Word
-2010 or Microsoft Word 2013 document. It contains an example
+Office to programmatically set the print orientation of a Microsoft Word document. It contains an example
 **SetPrintOrientation** method to illustrate this task.
 
 

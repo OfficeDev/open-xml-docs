@@ -31,15 +31,14 @@ illustrate this task.
 ## ExtractStylesPart Method
 
 You can use the **ExtractStylesPart** sample method to retrieve an **XDocument** instance that contains the styles or
-stylesWithEffects part for a Microsoft Word 2010 or Microsoft Word 2013
-document. Be aware that in a document created in Word 2010, there will
-only be a single styles part; Word 2013 adds a second stylesWithEffects
-part. To provide for "round-tripping" a document from Word 2013 to Word
-2010 and back, Word 2013 maintains both the original styles part and the
+stylesWithEffects part for a Microsoft Word document. Be aware that in a document created in Word 2010, there will
+only be a single styles part; Word 2013+ adds a second stylesWithEffects
+part. To provide for "round-tripping" a document from Word 2013+ to Word
+2010 and back, Word 2013+ maintains both the original styles part and the
 new styles part. (The Office Open XML File Formats specification
 requires that Microsoft Word ignore any parts that it does not
 recognize; Word 2010 does not notice the stylesWithEffects part that
-Word 2013 adds to the document.) You (and your application) must
+Word 2013+ adds to the document.) You (and your application) must
 interpret the results of retrieving the styles or stylesWithEffects
 part.
 
@@ -47,7 +46,7 @@ The **ExtractStylesPart** procedure accepts a two parameters: the first
 parameter contains a string indicating the path of the file from which
 you want to extract styles, and the second indicates whether you want to
 retrieve the styles part, or the newer stylesWithEffects part
-(basically, you must call this procedure two times for Word 2013
+(basically, you must call this procedure two times for Word 2013+
 documents, retrieving each the part). The procedure returns an **XDocument** instance that contains the complete
 styles or stylesWithEffects part that you requested, with all the style
 information for the document (or a null reference, if the part you

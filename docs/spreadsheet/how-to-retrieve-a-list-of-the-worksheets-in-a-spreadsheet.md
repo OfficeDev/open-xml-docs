@@ -19,7 +19,7 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve a list of the worksheets in a
-Microsoft Excel 2010 or Microsoft Excel 2013 workbook, without loading
+Microsoft Excel workbook, without loading
 the document into Excel. It contains an example **GetAllWorksheets** method to illustrate this task.
 
 

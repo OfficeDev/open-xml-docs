@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Add custom UI to a spreadsheet document
 
-This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to an Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an example **AddCustomUI** method to illustrate
+This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to a Microsoft Excel worksheet. It contains an example **AddCustomUI** method to illustrate
 this task.
 
 

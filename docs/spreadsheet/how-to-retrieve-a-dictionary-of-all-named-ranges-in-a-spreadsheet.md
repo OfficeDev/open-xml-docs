@@ -19,8 +19,7 @@ ms.localizationpriority: medium
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve a dictionary that contains the names
-and ranges of all defined names in an Microsoft Excel 2010 or Microsoft
-Excel 2013 workbook. It contains an example **GetDefinedNames** method
+and ranges of all defined names in a Microsoft Excel workbook. It contains an example **GetDefinedNames** method
 to illustrate this task.
 
 ## GetDefinedNames Method

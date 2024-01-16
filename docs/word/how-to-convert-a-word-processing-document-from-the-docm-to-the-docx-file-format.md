@@ -20,8 +20,7 @@ ms.localizationpriority: high
 # Convert a word processing document from the DOCM to the DOCX file format
 
 This topic shows how to use the classes in the Open XML SDK for
-Office to programmatically convert a Microsoft Word 2010 or Microsoft
-Word 2013 document that contains VBA code (and has a .docm extension) to
+Office to programmatically convert a Microsoft Word document that contains VBA code (and has a .docm extension) to
 a standard document (with a .docx extension). It contains an example
 **ConvertDOCMtoDOCX** method to illustrate this task.
 
@@ -29,8 +28,7 @@ a standard document (with a .docx extension). It contains an example
 
 ## ConvertDOCMtoDOCX Method
 
-The **ConvertDOCMtoDOCX** sample method can be used to convert a Word
-2010 or Word 2013 document that contains VBA code (and has a .docm
+The **ConvertDOCMtoDOCX** sample method can be used to convert a Word document that contains VBA code (and has a .docm
 extension) to a standard document (with a .docx extension). Use this
 method to remove the macros and the vbaProject part that contains them
 from a document stored in .docm file format. The method accepts a single

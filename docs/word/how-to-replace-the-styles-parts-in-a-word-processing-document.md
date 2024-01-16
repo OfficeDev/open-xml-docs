@@ -40,7 +40,7 @@ in .zip files is called the Open Packaging Conventions. For more
 information about the Open Packaging Conventions, see [ISO/IEC 29500-2](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.md?csnumber=51459).
 
 Styles are stored in dedicated parts within a word processing document
-package. An Microsoft Word 2010 document contains a single styles part.
+package. A Microsoft Word 2010 document contains a single styles part.
 Microsoft Word 2013 adds a second stylesWithEffects part. The following
 image from the Document Explorer in the Open XML SDK Productivity
 Tool for Microsoft Office shows the document parts in a sample Word 2013
@@ -49,12 +49,12 @@ document that contains styles.
 Figure 1. Styles parts in a word processing document
 
 ![Styles parts in a word processing document.](../media/OpenXmlCon_HowToReplaceStyles_Fig1.gif)
-In order to provide for "round-tripping" a document from Word 2013 to
-Word 2010 and back, Word 2013 maintains both the original styles part
+In order to provide for "round-tripping" a document from Word 2013+ to
+Word 2010 and back, Word 2013+ maintains both the original styles part
 and the new styles part. (The Office Open XML File Formats specification
 requires that Microsoft Word ignore any parts that it does not
 recognize; Word 2010 does not notice the stylesWithEffects part that
-Word 2013 adds to the document.)
+Word 2013+ adds to the document.)
 
 The code example provided in this topic can be used to replace these
 styles parts.
@@ -158,7 +158,7 @@ stylesWithEffects part.
 ### [C#](#tab/cs-3)
 ```csharp
     // Extract and replace the stylesWithEffects part. To fully support 
-    // round-tripping from Word 2013 to Word 2010, you should 
+    // round-tripping from Word 2013+ to Word 2010, you should 
     // replace this part, as well.
     node = ExtractStylesPart(fromDoc);
     if (node != null)
@@ -169,7 +169,7 @@ stylesWithEffects part.
 ### [Visual Basic](#tab/vb-3)
 ```vb
     ' Extract and replace the stylesWithEffects part. To fully support 
-    ' round-tripping from Word 2013 to Word 2010, you should 
+    ' round-tripping from Word 2013+ to Word 2010, you should 
     ' replace this part, as well.
     node = ExtractStylesPart(fromDoc, True)
     If node IsNot Nothing Then
@@ -188,7 +188,7 @@ following section explains the **ReplaceStylesPart** method.
 The **ReplaceStylesPart** method can be used to
 replace the styles or styleWithEffects part in a document, given an
 **XDocument** instance that contains the same
-part for a Word 2010 or Word 2013 document (as shown in the sample code
+part for a Word 2010 or Word 2013+ document (as shown in the sample code
 earlier in this topic, the **ExtractStylesPart** method can be used to obtain
 that instance). The **ReplaceStylesPart**
 method accepts three parameters: the first parameter contains a string
@@ -198,7 +198,7 @@ contains the styles or stylesWithEffect part from another word
 processing document, and the third indicates whether you want to replace
 the styles part, or the stylesWithEffects part (as shown in the sample
 code earlier in this topic, you will need to call this procedure twice
-for Word 2013 documents, replacing each part with the corresponding part
+for Word 2013+ documents, replacing each part with the corresponding part
 from a source document).
 
 ### [C#](#tab/cs-4)

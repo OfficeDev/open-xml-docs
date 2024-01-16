@@ -191,7 +191,7 @@ following example, which copies the theme part from "MyPkg4.docx" to
 
 
 > [!IMPORTANT]
-> Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word 2013, click the **Page Layout** tab, click **Themes**, and select one of the available themes.
+> Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word, click the **Page Layout** tab, click **Themes**, and select one of the available themes.
 
 After running the program, you can inspect the file "MyPkg3.docx" to see
 the copied theme from the file "MyPkg4.docx."
