@@ -78,7 +78,7 @@ in your computer.
 The theme element constitutes of color, font, and format schemes. In
 this how-to you learn how to change the theme programmatically.
 Therefore, it is useful to familiarize yourself with the theme element.
-The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification can
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification can
 be useful when working with this element.
 
 This element defines the root level complex type associated with a
@@ -97,7 +97,7 @@ In this example, we see how a theme can affect font, colors,
 backgrounds, fills, and effects for different objects in a presentation.
 *end example*]
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the possible child types of the Theme class.
 

@@ -75,7 +75,7 @@ long as you use using.
 ## Comments Element
 In this how-to, you are going to work with comments. Therefore, it is
 useful to familiarize yourself with the structure of the \<**comments**\> element. The following information
-from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
+from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification can be useful when working with this element.
 
 This element specifies all of the comments defined in the current
@@ -95,7 +95,7 @@ document:
 The **comments** element contains the single
 comment specified by this document in this example.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML schema fragment defines the contents of this element.
 

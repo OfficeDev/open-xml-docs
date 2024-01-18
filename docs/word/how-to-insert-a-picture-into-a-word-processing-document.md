@@ -64,8 +64,7 @@ long as you use **using**.
 
 --------------------------------------------------------------------------------
 ## The XML Representation of the Graphic Object
-The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the Graphic Object Data element.
 
 > This element specifies the reference to a graphic object within the
@@ -76,7 +75,7 @@ introduces the Graphic Object Data element.
 > generating application that supports the OOXML framework will have the
 > ability to render the graphical object. *end note*]
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML Schema fragment defines the contents of this element
 

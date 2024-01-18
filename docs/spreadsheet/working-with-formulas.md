@@ -44,7 +44,7 @@ specify the value, and if you omit it, it is the responsibility of the
 Open XML reader to compute the value based on the formula definition
 when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cellvalue).
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the **cellFormula**
 (\<**f**\>) element.
 
@@ -103,7 +103,7 @@ An array value or constant represents a collection of one or more
 elements, whose values can have any type (i.e., the elements of an array
 need not all have the same type).
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 For more information about formula syntax see the ISO/IEC 29500
 specification.

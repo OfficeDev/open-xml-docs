@@ -74,8 +74,7 @@ object that is created or named in the **using** statement, in this case **docum
 ## Structure of the Hyperlink Element
 In this how-to code example, you are going to work with external
 hyperlinks. Therefore, it is best to familiarize yourself with the
-hyperlink element. The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+hyperlink element. The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the **id** (Hyperlink Target).
 
 > Specifies the ID of the relationship whose target shall be used as the
@@ -118,7 +117,7 @@ introduces the **id** (Hyperlink Target).
 > The possible values for this attribute are defined by the
 > ST\_RelationshipId simple type(§22.8.2.1).
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

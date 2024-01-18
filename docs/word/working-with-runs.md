@@ -22,8 +22,7 @@ XML File Format WordprocessingML schema.
 
 ---------------------------------------------------------------------------------
 ## Runs in WordprocessingML 
-The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the Open XML WordprocessingML run element.
 
 The next level of the document hierarchy [after the paragraph] is the
@@ -44,7 +43,7 @@ run properties are bold, border, character style, color, font, font
 size, italic, kerning, disable spelling/grammar check, shading, small
 caps, strikethrough, text direction, and underline.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the most common Open XML SDK classes used when
 working with runs.

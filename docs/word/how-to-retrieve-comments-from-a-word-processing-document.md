@@ -62,8 +62,7 @@ The **comments** and **comment** elements are crucial to working with
 comments in a word processing file. It is important in this code example
 to familiarize yourself with those elements.
 
-The following information from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the comments element.
 
 > **comments (Comments Collection)**
@@ -83,7 +82,7 @@ introduces the comments element.
     </w:comments>
 ```
 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML schema segment defines the contents of the comments
 element.
@@ -98,8 +97,7 @@ element.
 
 ---------------------------------------------------------------------------------
 ## Comment Element
-The following information from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the comment element.
 
 > **comment (Comment Content)**
@@ -127,7 +125,7 @@ introduces the comment element.
 > The **comment** element specifies the presence of a single comment
 > within the comments part.
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
   
 The following XML schema segment defines the contents of the comment

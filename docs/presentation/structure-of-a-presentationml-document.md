@@ -41,7 +41,7 @@ Using the Open XML SDK, you can create document structure and content that uses 
 |        Comments         |              \<cmLst\>               |            [CommentList](/dotnet/api/documentformat.openxml.presentation.commentlist)            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments](working-with-comments.md).                                                                                      |
 |     Comments Author     |           \<cmAuthorLst\>            |      [CommentAuthorList](/dotnet/api/documentformat.openxml.presentation.commentauthorlist)      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments](working-with-comments.md).                                                                            |
 
-*Descriptions adapted from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification, © ISO/IEC29500: 2008.
+*Descriptions adapted from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification, © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Presentation Part
 
@@ -51,7 +51,7 @@ A PresentationML package's main part starts with a \<presentation\> root element
 
 The root element of the Presentation Properties part is the \<presentationPr\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Presentation Properties part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Presentation Properties part as follows:
 
 An instance of this part type contains all the presentation's properties.
 
@@ -81,13 +81,13 @@ A Presentation Properties part shall be located within the package containing th
 
 A Presentation Properties part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Slide Master Part
 
 The root element of the Slide Master part is the \<sldMaster\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Slide Master part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Slide Master part as follows:
 
 An instance of this part type contains the master definition of formatting, text, and objects that appear on each slide in the presentation that is derived from this slide master.
 
@@ -141,13 +141,13 @@ following parts defined by ISO/IEC 29500:
 
 A Slide Master part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Slide Layout Part
 
 The root element of the Slide Layout part is the \<sldLayout\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Slide Layout part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Slide Layout part as follows:
 
 An instance of this part type contains the definition for a slide layout template for this presentation. This template defines the default appearance and positioning of drawing objects on this slide type when it is created.
 
@@ -207,7 +207,7 @@ A Slide Layout part is permitted to have explicit relationships to the following
 
 A Slide Layout part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Slide Part
 
@@ -215,7 +215,7 @@ The root element of the Slide part is the \<sld\> element.
 
 As well as text and graphics, each slide can contain comments and notes, can have a layout, and can be part of one or more custom presentations. A comment is an annotation intended for the person maintaining the presentation slide deck. A note is a reminder or piece of text intended for the presenter or the audience.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Slide part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Slide part as follows:
 
 A Slide part contains the contents of a single slide.
 
@@ -285,13 +285,13 @@ A Slide part is permitted to have explicit relationships to the following parts 
 
 A Slide part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Theme Part
 
 The root element of the Theme part is the \<officeStyleSheet\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML DrawingML Theme part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML DrawingML Theme part as follows:
 
 An instance of this part type contains information about a document's theme, which is a combination of color scheme, font scheme, and format scheme (the latter also being referred to as effects). For a WordprocessingML document, the choice of theme affects the color and style of headings, among other things. For a SpreadsheetML document, the choice of theme affects the color and style of cell contents and charts, among other things. For a PresentationML document, the choice of theme affects the formatting of slides, handouts, and notes via the associated master, among other things.
 
@@ -335,13 +335,13 @@ A Theme part is permitted to contain explicit relationships to the following par
 
 A Theme part shall not have any implicit or explicit relationships to other parts defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Notes Master Part
 
 The root element of the Notes Master part is the \<notesMaster\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Notes Master part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Notes Master part as follows:
 
 An instance of this part type contains information about the content and formatting of all notes pages.
 
@@ -393,13 +393,13 @@ A Notes Master part is permitted to have explicit relationships to the following
 
 The Notes Master part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Notes Slide Part
 
 The root element of the Notes Slide part is the \<notes\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Notes Slide part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Notes Slide part as follows:
 
 An instance of this part type contains the notes for a single slide.
 
@@ -454,13 +454,13 @@ A Notes Slide part is permitted to have explicit relationships to the following 
 
 The Notes Slide part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Handout Master Part
 
 The root element of the Handout Master part is the \<handoutMaster\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Handout Master part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Handout Master part as follows:
 
 An instance of this part type contains the look, position, and size of the slides, notes, header and footer text, date, or page number on the presentation's handout.
 
@@ -513,13 +513,13 @@ A Handout Master part is permitted to have explicit relationships to the followi
 
 A Handout Master part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Comments Part
 
 The root element of the Comments part is the \<cmLst\> element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Comments part as
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Comments part as
 follows:
 
 An instance of this part type contains the comments for a single slide. Each comment is tied to its author via an author-ID. Each comment's index number and author-ID combination are unique.
@@ -561,14 +561,14 @@ A Comments part shall be located within the package containing the relationships
 
 A Comments part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Comments Author Part
 
 The root element of the Comments Author part is the \<cmAuthorLst\>
 element.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML Comments Author part as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Comments Author part as follows:
 
 An instance of this part type contains information about each author who has added a comment to the document. That information includes the author's name, initials, a unique author-ID, a last-comment-index-used count, and a display color. (The color can be used when displaying comments to distinguish comments from different authors.)
 
@@ -600,7 +600,7 @@ A Comment Authors part shall be located within the package containing the relati
 
 A Comment Authors part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ## The Structure of a Minimum Presentation File
 

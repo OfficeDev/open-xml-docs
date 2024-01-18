@@ -19,7 +19,7 @@ Using the Open XML SDK, you can create document structure and content using stro
 | WordprocessingML Element | Open XML SDK Class | Description |
 |---|---|---|
 | document | [Document](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.document) | The root element for the main document part. |
-| body | [Body](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.body) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
+| body | [Body](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.body) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification. |
 | p | [Paragraph](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.paragraph) | A paragraph. |
 | r | [Run](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run) | A run. |
 | t | [Text](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.text) | A range of text. |

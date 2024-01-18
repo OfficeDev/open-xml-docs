@@ -22,7 +22,7 @@ Document](structure-of-a-presentationml-document.md).
 
 ## Comments in PresentationML
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Comments section of the Open XML PresentationML framework as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Comments section of the Open XML PresentationML framework as follows:
 
 A comment is a text note attached to a slide, with the primary purpose
 of allowing readers of a presentation to provide feedback to the
@@ -33,7 +33,7 @@ presentation, but do not appear when a slide show is given. The
 displaying application decides when to display comments and determines
 their visual appearance.
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<cm\> element used to represent comments in a PresentationML document as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML \<cm\> element used to represent comments in a PresentationML document as follows:
 
 This element specifies a single comment attached to a slide. It contains
 the text of the comment, its position on the slide, and attributes
@@ -56,7 +56,7 @@ The following table lists the child elements of the \<cm \> element used when wo
 | \<pos\>           | [Position](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.position)                  |
 | \<text\>          | [Text](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.text)                          |
 
-The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the attributes of the \<cm\> element.
 
 | **Attributes** |  **Description**   |
@@ -75,7 +75,7 @@ therefore commonly associated with the **Comment** class are shown in the follow
 
 ### ExtensionListWithModification Class
 
-The **ExtensionListWithModification** class corresponds to the \<extLst\>element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The **ExtensionListWithModification** class corresponds to the \<extLst\>element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability within which all future extensions of element type \<ext\> are defined. The extension list along with corresponding future extensions is used to extend the storage capabilities of the PresentationML framework. This allows for various new kinds of data to be stored natively within the framework.
@@ -86,7 +86,7 @@ This element specifies the extension list with modification ability within which
 ### Position Class
 
 The **Position** class corresponds to the
-\<pos\>element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<pos\>element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<pos\> element:
 
 This element specifies the positioning information for the placement of
@@ -110,7 +110,7 @@ application chooses to display comments. end note]
 ### Text class
 
 The **Text** class corresponds to the
-\<text\>element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<text\>element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<text\> element:
 
 This element specifies the content of a comment. This is the text with

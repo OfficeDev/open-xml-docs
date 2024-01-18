@@ -24,7 +24,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of
 
 --------------------------------------------------------------------------------
 ## SharedStringTable in SpreadsheetML 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the **SharedStringTable** (\<**sst**\>) element.
 
 An instance of this part type contains one occurrence of each unique
@@ -41,7 +41,7 @@ table that is shared across the workbook is to improve performance in
 opening and saving the file by only reading and writing the repetitive
 information once.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Shared strings optimize space requirements when the spreadsheet contains
 multiple instances of the same string. Spreadsheets that contain

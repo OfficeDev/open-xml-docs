@@ -1,7 +1,7 @@
 ## Packages and Document Parts 
 
 An Open XML document is stored as a package, whose format is defined by
-[ISO/IEC 29500-2](https://www.iso.org/standard/71691.html). The
+[!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)]. The
 package can have multiple parts with relationships between them. The
 relationship between parts controls the category of the document. A
 document can be defined as a word-processing document if its

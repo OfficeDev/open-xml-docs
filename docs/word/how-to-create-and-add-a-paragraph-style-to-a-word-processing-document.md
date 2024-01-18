@@ -222,7 +222,7 @@ applies the style to the paragraph.
 
 WordprocessingML supports six style types, four of which you can specify
 using the type attribute on the style element. The following
-information, from section 17.7.4.17 in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification,
+information, from section 17.7.4.17 in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification,
 introduces style types.
 
 *Style types* refers to the property on a style which defines the type
@@ -261,7 +261,7 @@ type attribute:
 The type attribute has a value of paragraph, which indicates that the
 following style definition is a paragraph style.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 You can set the paragraph, character, table and numbering styles types
 by specifying the corresponding value in the type attribute of the style
@@ -309,7 +309,7 @@ The paragraph style is then applied to paragraphs by referencing the
 styleId attribute value for this style in the paragraph properties'
 **pStyle** element.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ---------------------------------------------------------------------------------
 
@@ -386,7 +386,7 @@ The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
 corresponding class, and then call the **[Append([])](https://learn.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.append)** method add the child element to
 the style. For more information about these properties, see section 17.7
-of the [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
+of the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification.
 
 ### [C#](#tab/cs-4)

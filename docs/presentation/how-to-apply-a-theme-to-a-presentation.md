@@ -65,7 +65,7 @@ object that is created or named in the **using** statement, in this case **theme
 
 -----------------------------------------------------------------------------
 ## Structure of the Theme Element
-The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification can
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification can
 be useful when working with this element.
 
 > This element defines the root level complex type associated with a
@@ -83,7 +83,7 @@ be useful when working with this element.
 > backgrounds, fills, and effects for different objects in a
 > presentation. *end example*]
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the possible child types of the Theme class.
 

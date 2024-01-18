@@ -79,7 +79,7 @@ represented by the main document part. At a minimum, to create a valid
 **WordprocessingML** document using code, add a
 main document part to the document.
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 introduces the WordprocessingML elements required in the main document
 part in order to complete the minimum document scenario.
 
@@ -98,7 +98,7 @@ comprise the main story.
 
 - `t` — A range of text.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Open XML SDK Code Example
 

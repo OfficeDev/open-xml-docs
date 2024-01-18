@@ -22,7 +22,7 @@ Open XML File Format PresentationML schema.
 
 --------------------------------------------------------------------------------
 ## Notes Slides in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<notes\> element
 used to represent notes slides in a PresentationML document as follows:
 
@@ -47,7 +47,7 @@ slide with all of its parts. Notice the cSld element, which specifies
 the common elements that can appear on any slide type and then any
 elements specify additional non-common properties for this notes slide.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The \<notes\> element is the root element of the PresentationML Notes
 Slide part. For more information about the overall structure of the
@@ -65,7 +65,7 @@ that correspond to them.
 |          \<cSld\>          |               [CommonSlideData](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commonslidedata)               |
 |         \<extLst\>         | [ExtensionListWithModification](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
 
-The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the attributes of the \<notes\> element.
 
 
@@ -74,7 +74,7 @@ specification describes the attributes of the \<notes\> element.
 | showMasterPhAnim (Show Master Placeholder Animations) | Specifies whether or not to display animations on placeholders from the master slide.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype. |
 |           showMasterSp (Show Master Shapes)           |       Specifies if shapes on the master slide should be shown on slides or not.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.       |
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ---------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ are therefore commonly associated with the **NotesSlide** class are shown in the
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -100,12 +100,12 @@ by the master is used. If the \<overrideClrMapping\> child element is
 present, it defines a new color scheme specific to the parent notes
 slide, presentation slide, or slide layout.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -119,13 +119,13 @@ The actual data in \<cSld\> describe only the particular parent slide;
 it is only the type of information stored that is common across all
 slides.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### ExtensionListWithModification Class
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -138,7 +138,7 @@ framework.
 [Note: Using this extLst element allows the generating application to
 store whether this extension property has been modified. end note]
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ---------------------------------------------------------------------------------

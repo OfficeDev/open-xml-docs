@@ -22,8 +22,7 @@ Open XML File Format WordprocessingML schema.
 
 --------------------------------------------------------------------------------
 ## Paragraphs in WordprocessingML
-The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the Open XML WordprocessingML element used to represent a
 paragraph in a WordprocessingML document.
 
@@ -39,7 +38,7 @@ examples of paragraph properties are alignment, border, hyphenation
 override, indentation, line spacing, shading, text direction, and
 widow/orphan control.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the most common Open XML SDK classes used when
 working with paragraphs.

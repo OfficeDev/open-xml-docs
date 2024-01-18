@@ -25,7 +25,7 @@ PresentationML document](structure-of-a-presentationml-document.md)**.
 
 ---------------------------------------------------------------------------------
 ## Presentation Slides in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<sld\> element used
 to represent a presentation slide in a PresentationML document as
 follows:
@@ -52,7 +52,7 @@ In the above example the order specified to present the slides is slide
 4, then 3, 2, and finally 5.
 
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The \<sld\> element is the root element of the PresentationML Slide
 part. For more information about the overall structure of the parts and
@@ -84,7 +84,7 @@ class are shown in the following sections.
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -94,12 +94,12 @@ by the master is used. If the \<overrideClrMapping\> child element is
 present, it defines a new color scheme specific to the parent notes
 slide, presentation slide, or slide layout.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -113,13 +113,13 @@ The actual data in \<cSld\> describe only the particular parent slide;
 it is only the type of information stored that is common across all
 slides.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### ExtensionListWithModification Class
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -132,12 +132,12 @@ framework.
 [Note: Using this extLst element allows the generating application to
 store whether this extension property has been modified. end note]
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Timing Class
 
 The **Timing** class corresponds to the
-\<timing\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<timing\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<timing\> element:
 
 This element specifies the timing information for handling all
@@ -147,12 +147,12 @@ More information on the specifics of these time nodes and how they are
 to be defined can be found within the Animation section of the
 PresentationML framework.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Transition Class
 
 The **Transition** class corresponds to the
-\<transition\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<transition\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<transition\> element:
 
 This element specifies the kind of slide transition that should be used
@@ -160,7 +160,7 @@ to transition to the current slide from the previous slide. That is, the
 transition information is stored on the slide that appears after the
 transition is complete.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

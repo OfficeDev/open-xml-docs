@@ -21,7 +21,7 @@ This topic discusses the Open XML SDK for Office [SlideLayout](https://learn.mic
 
 ## Slide Layouts in PresentationML
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<sldLayout\> element used to represent slide layouts in a PresentationML document as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML \<sldLayout\> element used to represent slide layouts in a PresentationML document as follows:
 
 This element specifies an instance of a slide layout. The slide layout
 contains in essence a template slide design that can be applied to any
@@ -46,7 +46,7 @@ classes that correspond to them.
 |         \<timing\>         |                        [Timing](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.timing)                        |
 |       \<transition\>       |                    [Transition](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.transition)                    |
 
-The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the attributes of the \<sldLayout\> element.
 
 
@@ -73,7 +73,7 @@ list.
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -86,7 +86,7 @@ slide, presentation slide, or slide layout.
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -104,7 +104,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -120,7 +120,7 @@ framework.
 ### HeaderFooter Class
 
 The **HeaderFooter** class corresponds to the
-\<hf\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<hf\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<hf\> element:
 
 This element specifies the header and footer information for a slide.
@@ -131,7 +131,7 @@ slide numbering, and custom header and footer text.
 ### Timing Class
 
 The **Timing** class corresponds to the
-\<timing\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<timing\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<timing\> element:
 
 This element specifies the timing information for handling all
@@ -143,7 +143,7 @@ PresentationML framework.
 
 ### Transition Class
 
-The **Transition** class corresponds to the \<transition\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<transition\> element:
+The **Transition** class corresponds to the \<transition\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the \<transition\> element:
 
 This element specifies the kind of slide transition that should be used to transition to the current slide from the previous slide. That is, the transition information is stored on the slide that appears after the transition is complete.
 

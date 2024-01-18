@@ -78,7 +78,7 @@ long as you use **using**.
 --------------------------------------------------------------------------------
 ## The Theme Part
 The theme part contains information about the color, font, and format of
-a document. It is defined in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification as
+a document. It is defined in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification as
 follows.
 
 An instance of this part type contains information about a document's
@@ -110,7 +110,7 @@ is stored in the ZIP item theme/theme1.xml:
 ```
 
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

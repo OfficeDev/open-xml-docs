@@ -30,8 +30,7 @@ document programmatically.
 
 ## Structure of the Run Fonts Element
 
-The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification can
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification can
 be useful when working with **rFonts** element.
 
 This element specifies the fonts which shall be used to display the text
@@ -84,7 +83,7 @@ This text run shall therefore use the Courier New font for all
 characters in the ASCII range, and shall use the Times New Roman font
 for all characters in the Complex Script range.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

@@ -72,8 +72,7 @@ long as you use **using**.
 
 --------------------------------------------------------------------------------
 ## Settings Element
-The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the settings element in a **PresentationML** package.
 
 > This element specifies the settings that are applied to a
@@ -95,7 +94,7 @@ introduces the settings element in a **PresentationML** package.
 > automatic tab stop increments of 0.5" using the **defaultTabStop** element, and no character level
 > white space compression using the **characterSpacingControl** element. 
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

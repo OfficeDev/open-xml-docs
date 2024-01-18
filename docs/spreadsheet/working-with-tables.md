@@ -25,7 +25,7 @@ document, see [Structure of a SpreadsheetML document
 
 ## Tables in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the **table** (\<**table**\>) element.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the **table** (\<**table**\>) element.
 
 A table helps organize and provide structure to lists of information in
 a worksheet. Tables have clearly labeled columns, rows, and data

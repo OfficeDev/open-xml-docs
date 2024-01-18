@@ -20,7 +20,7 @@ This topic discusses the Open XML SDK [Table](https://learn.microsoft.com/dotnet
 
 ## Tables in WordprocessingML
 
-The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification introduces the Open XML WordprocessingML table element.
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the Open XML WordprocessingML table element.
 
 Another type of block-level content in WordprocessingML, A table is a set of paragraphs (and other block-level content) arranged in rows and columns.
 
@@ -28,7 +28,7 @@ Tables in WordprocessingML are defined via the tbl element, which is analogous t
 
 A `tbl` element has two elements that define its properties: `tblPr`, which defines the set of table-wide properties (such as style and width), and `tblGrid`, which defines the grid layout of the table. A `tbl` element can also contain an arbitrary non-zero number of rows, where each row is specified with a `tr` element. Each `tr` element can contain an arbitrary non-zero number of cells, where each cell is specified with a `tc` element.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists some of the most common Open XML SDK classes used when working with tables.
 

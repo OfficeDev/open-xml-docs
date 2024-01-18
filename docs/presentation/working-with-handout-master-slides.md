@@ -19,7 +19,7 @@ ms.localizationpriority: medium
 This topic discusses the Open XML SDK for Office [HandoutMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.handoutmaster) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document](structure-of-a-presentationml-document.md).
 
 ## Handout Master Slides in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<handoutMaster\>
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML \<handoutMaster\>
 element used to represent a handout master slide in a PresentationML document as follows:
 
 This element specifies an instance of a handout master slide. Within a
@@ -30,7 +30,7 @@ slide elements such as shapes and their attached text bodies. There are
 other properties within a handout master slide but cSld encompasses the
 majority of the intended purpose for a handoutMaster slide.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the child elements of the \<handoutMaster\>
 element used when working with handout master slides and the Open XML
@@ -52,7 +52,7 @@ Classes commonly associated with the **HandoutMaster** class are shown in the fo
 
 ### ColorMap Class
 
-The **ColorMap** class corresponds to the \<clrMap\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<clrMap\> element:
+The **ColorMap** class corresponds to the \<clrMap\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the \<clrMap\> element:
 
 This element specifies the mapping layer that transforms one color
 scheme definition to another. Each attribute represents a color name
@@ -72,7 +72,7 @@ accent6="accent6" hlink="hlink" folHlink="folHlink"/>
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -90,7 +90,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -107,7 +107,7 @@ store whether this extension property has been modified.
 ### HeaderFooter Class
 
 The **HeaderFooter** class corresponds to the
-\<hf\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<hf\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<hf\> element:
 
 This element specifies the header and footer information for a slide.

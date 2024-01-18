@@ -64,7 +64,7 @@ object that is created or named in the **using** statement, in this case *doc*.
 
 ## Structure of the Shape Text Body
 
-The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the structure of this element.
 
 > This element specifies the existence of text to be contained within
@@ -72,7 +72,7 @@ introduces the structure of this element.
 > properties are contained within this element. There can be multiple
 > paragraphs and within paragraphs multiple runs of text.
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the child elements of the shape text body and
 the description of each.

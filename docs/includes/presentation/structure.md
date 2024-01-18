@@ -2,7 +2,7 @@
 
 The basic document structure of a **PresentationML** document consists of a number of
 parts, among which is the main part that contains the presentation
-definition. The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+definition. The following text from the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification
 introduces the overall form of a **PresentationML** package.
 
 > The main part of a **PresentationML** package
@@ -33,7 +33,7 @@ introduces the overall form of a **PresentationML** package.
 > parts. For example, all comments in a document are stored in one
 > comment part while each slide has its own part.
 > 
-> © ISO/IEC29500: 2008.
+> [!include[ISO/IEC 29500 version](../iso-iec-29500-version.md)]
 
 The following XML code example represents a presentation that contains
 two slides denoted by the IDs 267 and 256.

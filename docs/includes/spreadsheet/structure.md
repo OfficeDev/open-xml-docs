@@ -42,7 +42,7 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 | **SpreadsheetML Element** | **Open XML SDK Class** | **Description** |
 |:---|:---|:---|
 | workbook | DocumentFormat.OpenXML.Spreadsheet.Workbook | The root element for the main document part. |
-| sheets | DocumentFormat.OpenXML.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
+| sheets | DocumentFormat.OpenXML.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification. |
 | sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
 | worksheet | DocumentFormat.OpenXML.Spreadsheet. Worksheet | A sheet definition file that contains the sheet data. |
 | sheetData | DocumentFormat.OpenXML.Spreadsheet.SheetData | The cell table, grouped together by rows. |

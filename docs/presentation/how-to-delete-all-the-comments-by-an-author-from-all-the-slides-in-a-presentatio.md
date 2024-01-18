@@ -70,7 +70,7 @@ object that is created or named in the **using** statement, in this case *doc*.
 
 ## The Structure of the Comment Element
 
-The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces comments in a presentation package.
 
 > A comment is a text note attached to a slide, with the primary purpose
@@ -82,7 +82,7 @@ introduces comments in a presentation package.
 > displaying application decides when to display comments and determines
 > their visual appearance.
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML element specifies a single comment attached to a
 slide. It contains the text of the comment (**text**), its position on the slide (**pos**), and attributes referring to its author

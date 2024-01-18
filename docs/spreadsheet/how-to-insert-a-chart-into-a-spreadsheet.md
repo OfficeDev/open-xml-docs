@@ -21,7 +21,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to insert
 
 In this how-to, you are going to deal with the row, cell, and cell value
 elements. Therefore it is useful to familiarize yourself with these
-elements. The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+elements. The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces row (\<**row**\>) element.
 
 > The row element expresses information about an entire row of a
@@ -46,7 +46,7 @@ introduces row (\<**row**\>) element.
     </row>
 ```
 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML Schema code example defines the contents of the row
 element.
@@ -74,7 +74,7 @@ element.
 
 ## Cell element
 
-The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces cell (\<**c**\>) element.
 
 > This collection represents a cell in the worksheet. Information about
@@ -93,7 +93,7 @@ introduces cell (\<**c**\>) element.
     </c>
 ```
 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML Schema code example defines the contents of this
 element.
@@ -117,7 +117,7 @@ element.
 
 ## Cell value element
 
-The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces Cell Value (\<**c**\>) element.
 
 > This element expresses the value contained in a cell. If the cell
@@ -131,7 +131,7 @@ introduces Cell Value (\<**c**\>) element.
 > "inline string" may be expressed in an \<**is**\> element under \<**c**\> (instead of a \<**v**\> element under \<**c**\>), in the same way a string would be
 > expressed in the shared string table.
 >
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 In the following example cell B4 contains the number 360.
 

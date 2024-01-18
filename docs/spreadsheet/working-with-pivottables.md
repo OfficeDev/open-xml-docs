@@ -21,7 +21,7 @@ This topic discusses the Open XML SDK **[PivotTableDefinition](https://learn.mi
 
 ## PivotTable in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the **PivotTableDefinition** (\<**pivotTableDefinition**\>) element.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the **PivotTableDefinition** (\<**pivotTableDefinition**\>) element.
 
 PivotTables display aggregated views of data easily and in an
 understandable layout. Hundreds or thousands of pieces of underlying

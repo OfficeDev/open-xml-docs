@@ -29,7 +29,7 @@ API and provides strongly-typed classes to manipulate documents that
 adhere to the Office Open XML File Formats specification. The Office
 Open XML File Formats specification is an open, international,
 [ECMA-376, 5th Edition](https://www.ecma-international.org/publications-and-standards/standards/ecma-376/)
-and [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+and [!include[ISO/IEC 29500 URL](./includes/iso-iec-29500-link.md)]
 standard. The Open XML file formats are useful for developers because
 they are an open standard and are based on well-known technologies: ZIP
 and XML.
@@ -40,7 +40,7 @@ The Open XML SDK encapsulates many common tasks that developers
 perform on Open XML packages, so that you can perform complex operations
 with just a few lines of code.
 
-Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
+Portions of [!include[ISO/IEC 29500 version](./includes/iso-iec-29500-version.md)]<sup>1</sup> are referenced in the SDK.
 
 [!include[Add-ins note](./includes/addinsnote.md)]
 
@@ -69,4 +69,4 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 - [Accessibility features in the Microsoft Office System](https://www.microsoft.com/accessibility/)
 - [Document conventions in Office Developer documentation](https://learn.microsoft.com/previous-versions/office/dn602610(v=office.15))
 
-<sup>1</sup>© ISO/IEC2900:2008. This material is reproduced from ISO/IEC 29500:2008 with permission of the American National Standards Institute (ANSI) on behalf of ISO.
+<sup>1</sup>© [!include[ISO/IEC 29500 version](./includes/iso-iec-29500-version.md)]. This material is reproduced from [!include[ISO/IEC 29500 version](./includes/iso-iec-29500-version.md)] with permission of the American National Standards Institute (ANSI) on behalf of ISO.
