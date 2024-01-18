@@ -1,11 +1,19 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
 Module Program
     Sub Main(args As String())
-    End Sub
 
+        ' <Snippet3>
+
+        ' Comment one of the following lines to test each method separately.
+        ReadExcelFileDOM(args(0))    ' DOM
+        ReadExcelFileSAX(args(0))    ' SAX
+
+        ' </Snippet3>
+    End Sub
 
 
     ' The DOM approach.
@@ -14,6 +22,9 @@ Module Program
 
     Private Sub ReadExcelFileDOM(ByVal fileName As String)
         Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
+
+            ' <Snippet1>
+
             Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
             Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
             Dim sheetData As SheetData = worksheetPart.Worksheet.Elements(Of SheetData)().First()
@@ -24,6 +35,9 @@ Module Program
                     Console.Write(text & " ")
                 Next
             Next
+
+            ' </Snippet1>
+
             Console.WriteLine()
             Console.ReadKey()
         End Using
@@ -31,6 +45,9 @@ Module Program
 
     ' The SAX approach.
     Private Sub ReadExcelFileSAX(ByVal fileName As String)
+
+        ' <Snippet2>
+
         Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
             Dim workbookPart As WorkbookPart = spreadsheetDocument.WorkbookPart
             Dim worksheetPart As WorksheetPart = workbookPart.WorksheetParts.First()
@@ -43,8 +60,13 @@ Module Program
                     Console.Write(text & " ")
                 End If
             End While
+
+            ' </Snippet2>
+
             Console.WriteLine()
             Console.ReadKey()
         End Using
     End Sub
 End Module
+
+' </Snippet0>

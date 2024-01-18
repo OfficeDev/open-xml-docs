@@ -1,9 +1,16 @@
+' <Snippet0>
 Imports System.IO
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
 Module Program
     Sub Main(args As String())
+
+        ' <Snippet2>
+        Dim fileStream As FileStream = New FileStream(args(0), FileMode.OpenOrCreate, FileAccess.ReadWrite)
+        OpenAndAddToSpreadsheetStream(fileStream)
+        ' </Snippet2>
+
     End Sub
 
 
@@ -12,10 +19,14 @@ Module Program
         ' Open a SpreadsheetDocument based on a stream.
         Dim mySpreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(stream, True)
 
+        ' <Snippet1>
+
         ' Add a new worksheet.
         Dim newWorksheetPart As WorksheetPart = mySpreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
         newWorksheetPart.Worksheet = New Worksheet(New SheetData())
         newWorksheetPart.Worksheet.Save()
+
+        ' </Snippet1>
 
         Dim sheets As Sheets = mySpreadsheetDocument.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()
         Dim relationshipId As String = mySpreadsheetDocument.WorkbookPart.GetIdOfPart(newWorksheetPart)
@@ -43,3 +54,5 @@ Module Program
         'Caller must close the stream.
     End Sub
 End Module
+
+' </Snippet0>

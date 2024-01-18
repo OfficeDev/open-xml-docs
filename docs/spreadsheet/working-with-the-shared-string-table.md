@@ -115,7 +115,7 @@ ISO/IEC 29500 specification.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <sst xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" count="6" uniqueCount="5">
+    <sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="6" uniqueCount="5">
         <si>
             <t>Cell A1</t>
         </si>

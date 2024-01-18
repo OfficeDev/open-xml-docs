@@ -1,4 +1,4 @@
-
+// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Drawing.Charts;
@@ -8,16 +8,15 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System.Collections.Generic;
 using System.Linq;
 
-InsertChartInSpreadsheet(args[0], args[1], args[2], new Dictionary<string, int>() { { "First", 1 }, { "Second", 2 }, { "Third", 3 } });
 
 // Given a document name, a worksheet name, a chart title, and a Dictionary collection of text keys
 // and corresponding integer data, creates a column chart with the text as the series and the integers as the values.
-static void InsertChartInSpreadsheet(string docName, string worksheetName, string title,
-Dictionary<string, int> data)
+static void InsertChartInSpreadsheet(string docName, string worksheetName, string title, Dictionary<string, int> data)
 {
     // Open the document for editing.
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))
     {
+        // <Snippet1>
         IEnumerable<Sheet>? sheets = document.WorkbookPart?.Workbook.Descendants<Sheet>().Where(s => s.Name == worksheetName);
 
         if (sheets is null || sheets.Count() == 0)
@@ -48,7 +47,9 @@ Dictionary<string, int> data)
         chartPart.ChartSpace.Append(new EditingLanguage() { Val = new StringValue("en-US") });
         DocumentFormat.OpenXml.Drawing.Charts.Chart chart = chartPart.ChartSpace.AppendChild<DocumentFormat.OpenXml.Drawing.Charts.Chart>(
             new DocumentFormat.OpenXml.Drawing.Charts.Chart());
+        // </Snippet1>
 
+        // <Snippet2>
         // Create a new clustered column chart.
         PlotArea plotArea = chart.AppendChild<PlotArea>(new PlotArea());
         Layout layout = plotArea.AppendChild<Layout>(new Layout());
@@ -82,7 +83,9 @@ Dictionary<string, int> data)
 
             i++;
         }
+        // </Snippet2>
 
+        // <Snippet3>
         barChart.Append(new AxisId() { Val = new UInt32Value(48650112u) });
         barChart.Append(new AxisId() { Val = new UInt32Value(48672768u) });
 
@@ -129,7 +132,9 @@ Dictionary<string, int> data)
 
         // Save the chart part.
         chartPart.ChartSpace.Save();
+        // </Snippet3>
 
+        // <Snippet4>
         // Position the chart on the worksheet using a TwoCellAnchor object.
         drawingsPart.WorksheetDrawing = new WorksheetDrawing();
         TwoCellAnchor twoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild<TwoCellAnchor>(new TwoCellAnchor());
@@ -163,6 +168,10 @@ Spreadsheet.GraphicFrame());
 
         // Save the WorksheetDrawing object.
         drawingsPart.WorksheetDrawing.Save();
+        // </Snippet4>
     }
 
 }
+// </Snippet0>
+
+InsertChartInSpreadsheet(args[0], args[1], args[2], new Dictionary<string, int>() { { "First", 1 }, { "Second", 2 }, { "Third", 3 } });

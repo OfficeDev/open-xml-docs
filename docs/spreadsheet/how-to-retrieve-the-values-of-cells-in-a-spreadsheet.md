@@ -10,7 +10,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 11/20/2023
 ms.localizationpriority: high
 ---
 
@@ -40,57 +40,11 @@ The method returns the value of the specified cell, if it could be
 found. The following code example shows the method signature.
 
 ### [C#](#tab/cs-0)
-```csharp
-    public static string GetCellValue(string fileName, 
-        string sheetName, 
-        string addressName)
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet1)]
 
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Public Function GetCellValue(ByVal fileName As String,
-        ByVal sheetName As String,
-        ByVal addressName As String) As String
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?name=snippet1)]
 ***
-
-
-## Calling the GetCellValue Sample Method
-
-To call the **GetCellValue** method, pass the
-file name, sheet name, and cell address, as shown in the following code
-example.
-
-### [C#](#tab/cs-1)
-```csharp
-    const string fileName = 
-        @"C:\users\public\documents\RetrieveCellValue.xlsx";
-
-    // Retrieve the value in cell A1.
-    string value = GetCellValue(fileName, "Sheet1", "A1");
-    Console.WriteLine(value);
-    // Retrieve the date value in cell A2.
-    value = GetCellValue(fileName, "Sheet1", "A2");
-    Console.WriteLine(
-        DateTime.FromOADate(double.Parse(value)).ToShortDateString());
-```
-
-### [Visual Basic](#tab/vb-1)
-```vb
-    Const fileName As String =
-        "C:\Users\Public\Documents\RetrieveCellValue.xlsx"
-
-    ' Retrieve the value in cell A1.
-    Dim value As String =
-        GetCellValue(fileName, "Sheet1", "A1")
-    Console.WriteLine(value)
-    ' Retrieve the date value in cell A2.
-    value = GetCellValue(fileName, "Sheet1", "A2")
-    Console.WriteLine(
-        DateTime.FromOADate(Double.Parse(value)).ToShortDateString())
-```
-***
-
 
 ## How the Code Works
 
@@ -98,14 +52,10 @@ The code starts by creating a variable to hold the return value, and
 initializes it to null.
 
 ### [C#](#tab/cs-2)
-```csharp
-    string value = null;
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet2)]
 
 ### [Visual Basic](#tab/vb-2)
-```vb
-    Dim value as String = Nothing
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb#snippet2)]
 ***
 
 
@@ -116,24 +66,10 @@ should be open for read-only access (the final **false** parameter). Next, the c
 reference to the workbook part by using the **[WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)** property of the document.
 
 ### [C#](#tab/cs-3)
-```csharp
-    // Open the spreadsheet document for read-only access.
-    using (SpreadsheetDocument document = 
-        SpreadsheetDocument.Open(fileName, false))
-    {
-        // Retrieve a reference to the workbook part.
-        WorkbookPart wbPart = document.WorkbookPart;
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet3)]
 
 ### [Visual Basic](#tab/vb-3)
-```vb
-    ' Open the spreadsheet document for read-only access.
-    Using document As SpreadsheetDocument =
-      SpreadsheetDocument.Open(fileName, False)
-
-        ' Retrieve a reference to the workbook part.
-        Dim wbPart As WorkbookPart = document.WorkbookPart
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?name=snippet3)]
 ***
 
 
@@ -147,31 +83,10 @@ the name and **[Id](https://msdn.microsoft.com/library/office/documentformat.ope
 this is to use a LINQ query, as shown in the following code example.
 
 ### [C#](#tab/cs-4)
-```csharp
-    // Find the sheet with the supplied name, and then use that 
-    // Sheet object to retrieve a reference to the first worksheet.
-    Sheet theSheet = wbPart.Workbook.Descendants<Sheet>().
-      Where(s => s.Name == sheetName).FirstOrDefault();
-
-    // Throw an exception if there is no sheet.
-    if (theSheet == null)
-    {
-        throw new ArgumentException("sheetName");
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet4)]
 
 ### [Visual Basic](#tab/vb-4)
-```vb
-    ' Find the sheet with the supplied name, and then use that Sheet object
-    ' to retrieve a reference to the appropriate worksheet.
-    Dim theSheet As Sheet = wbPart.Workbook.Descendants(Of Sheet)().
-        Where(Function(s) s.Name = sheetName).FirstOrDefault()
-
-    ' Throw an exception if there is no sheet.
-    If theSheet Is Nothing Then
-        Throw New ArgumentException("sheetName")
-    End If
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?name=snippet4)]
 ***
 
 
@@ -186,18 +101,10 @@ the corresponding **[WorksheetPart](https://msdn.microsoft.com/library/office/do
 **[GetPartById](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid.aspx)** method.
 
 ### [C#](#tab/cs-5)
-```csharp
-    // Retrieve a reference to the worksheet part.
-    WorksheetPart wsPart = 
-        (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet5)]
 
 ### [Visual Basic](#tab/vb-5)
-```vb
-    ' Retrieve a reference to the worksheet part.
-    Dim wsPart As WorksheetPart =
-        CType(wbPart.GetPartById(theSheet.Id), WorksheetPart)
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?name=snippet5)]
 ***
 
 
@@ -209,20 +116,10 @@ parameter. After this method call, the variable named **theCell** will either co
 or will contain a null reference.
 
 ### [C#](#tab/cs-6)
-```csharp
-    // Use its Worksheet property to get a reference to the cell 
-    // whose address matches the address you supplied.
-    Cell theCell = wsPart.Worksheet.Descendants<Cell>().
-        Where(c => c.CellReference == addressName).FirstOrDefault();
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet6)]
 
 ### [Visual Basic](#tab/vb-6)
-```vb
-    ' Use its Worksheet property to get a reference to the cell 
-    ' whose address matches the address you supplied.
-    Dim theCell As Cell = wsPart.Worksheet.Descendants(Of Cell).
-        Where(Function(c) c.CellReference = addressName).FirstOrDefault
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?name=snippet6)]
 ***
 
 
@@ -243,23 +140,10 @@ The **[InnerText](https://msdn.microsoft.com/library/office/documentformat.openx
 the cell, and so the next block of code retrieves this value.
 
 ### [C#](#tab/cs-7)
-```csharp
-    // If the cell does not exist, return an empty string.
-    if (theCell != null)
-    {
-        value = theCell.InnerText;
-        // Code removed here…
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet7)]
 
 ### [Visual Basic](#tab/vb-7)
-```vb
-    ' If the cell does not exist, return an empty string.
-    If theCell IsNot Nothing Then
-        value = theCell.InnerText
-        ' Code removed here…
-    End If
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb#snippet7)]
 ***
 
 
@@ -273,38 +157,10 @@ the value of the cell (it is a numeric value). Otherwise, the code
 continues by branching based on the data type.
 
 ### [C#](#tab/cs-8)
-```csharp
-    // If the cell represents an integer number, you are done. 
-    // For dates, this code returns the serialized value that 
-    // represents the date. The code handles strings and 
-    // Booleans individually. For shared strings, the code 
-    // looks up the corresponding value in the shared string 
-    // table. For Booleans, the code converts the value into 
-    // the words TRUE or FALSE.
-    if (theCell.DataType != null)
-    {
-        switch (theCell.DataType.Value)
-        {    
-            // Code removed here…
-        }
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet8)]
 
 ### [Visual Basic](#tab/vb-8)
-```vb
-    ' If the cell represents an numeric value, you are done. 
-    ' For dates, this code returns the serialized value that 
-    ' represents the date. The code handles strings and 
-    ' Booleans individually. For shared strings, the code 
-    ' looks up the corresponding value in the shared string 
-    ' table. For Booleans, the code converts the value into 
-    ' the words TRUE or FALSE.
-    If theCell.DataType IsNot Nothing Then
-        Select Case theCell.DataType.Value
-            ' Code removed here…
-        End Select
-    End If
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?#snippet8)]
 ***
 
 
@@ -312,21 +168,10 @@ If the **DataType** property contains **CellValues.SharedString**, the code must
 reference to the single **[SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.sharedstringtablepart.aspx)**.
 
 ### [C#](#tab/cs-9)
-```csharp
-    // For shared strings, look up the value in the
-    // shared strings table.
-    var stringTable = 
-        wbPart.GetPartsOfType<SharedStringTablePart>()
-        .FirstOrDefault();
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet9)]
 
 ### [Visual Basic](#tab/vb-9)
-```vb
-    ' For shared strings, look up the value in the 
-    ' shared strings table.
-    Dim stringTable = wbPart.
-      GetPartsOfType(Of SharedStringTablePart).FirstOrDefault()
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?#snippet9)]
 ***
 
 
@@ -336,30 +181,10 @@ instead of the string itself) the code returns the **InnerText** property of the
 specified index (first converting the value property to an integer).
 
 ### [C#](#tab/cs-10)
-```csharp
-    // If the shared string table is missing, something 
-    // is wrong. Return the index that is in
-    // the cell. Otherwise, look up the correct text in 
-    // the table.
-    if (stringTable != null)
-    {
-        value = 
-            stringTable.SharedStringTable
-            .ElementAt(int.Parse(value)).InnerText;
-    }
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet10)]
 
 ### [Visual Basic](#tab/vb-10)
-```vb
-    ' If the shared string table is missing, something
-    ' is wrong. Return the index that is in 
-    ' the cell. Otherwise, look up the correct text in 
-    ' the table.
-    If stringTable IsNot Nothing Then
-        value = stringTable.SharedStringTable.
-        ElementAt(Integer.Parse(value)).InnerText
-    End If
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb?#snippet10)]
 ***
 
 
@@ -367,29 +192,10 @@ If the **DataType** property contains **CellValues.Boolean**, the code converts 
 it finds in the cell value into the appropriate text string.
 
 ### [C#](#tab/cs-11)
-```csharp
-    case CellValues.Boolean:
-        switch (value)
-        {
-            case "0":
-                value = "FALSE";
-                break;
-            default:
-                value = "TRUE";
-                break;
-        }
-```
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet11)]
 
 ### [Visual Basic](#tab/vb-11)
-```vb
-    Case CellValues.Boolean
-        Select Case value
-            Case "0"
-                value = "FALSE"
-            Case Else
-                value = "TRUE"
-        End Select
-```
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb#snippet11)]
 ***
 
 
@@ -400,10 +206,10 @@ Finally, the procedure returns the variable **value**, which contains the reques
 The following is the complete **GetCellValue** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb#snippet0)]
 
 ## See also
 

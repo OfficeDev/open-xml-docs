@@ -1,17 +1,9 @@
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-if (args is [{ } fileName, { } sheetName, { } detectRows])
-{
-    GetHiddenRowsOrCols(fileName, sheetName, detectRows);
-}
-else if (args is [{ } fileName2, { } sheetName2])
-{
-    GetHiddenRowsOrCols(fileName2, sheetName2);
-}
 
 static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string detectRows = "false")
 {
@@ -20,7 +12,7 @@ static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string 
     // of hidden column numbers. If detectRows is true, return
     // hidden rows. If detectRows is false, return hidden columns. 
     // Rows and columns are numbered starting with 1.
-
+    // <Snippet1>
     List<uint> itemList = new List<uint>();
 
     using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
@@ -28,34 +20,42 @@ static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string 
         if (document is not null)
         {
             WorkbookPart wbPart = document.WorkbookPart ?? document.AddWorkbookPart();
+            // </Snippet1>
 
+            // <Snippet2>
             Sheet? theSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault((s) => s.Name == sheetName);
 
-            if (theSheet is null)
+            if (theSheet is null || theSheet.Id is null)
             {
                 throw new ArgumentException("sheetName");
             }
+            // </Snippet2>
             else
             {
-                string id = theSheet.Id?.ToString() ?? string.Empty;
+                // <Snippet3>
+
                 // The sheet does exist.
-                WorksheetPart? wsPart = wbPart.GetPartById(id) as WorksheetPart;
+                WorksheetPart? wsPart = wbPart.GetPartById(theSheet.Id!) as WorksheetPart;
                 Worksheet? ws = wsPart?.Worksheet;
+                // </Snippet3>
 
                 if (ws is not null)
                 {
                     if (detectRows.ToLower() == "true")
                     {
+                        // <Snippet4>
                         // Retrieve hidden rows.
                         itemList = ws.Descendants<Row>()
                             .Where((r) => r?.Hidden is not null && r.Hidden.Value)
                             .Select(r => r.RowIndex?.Value)
                             .Cast<uint>()
                             .ToList();
+                        // </Snippet4>
                     }
                     else
                     {
                         // Retrieve hidden columns.
+                        // <Snippet5>
                         var cols = ws.Descendants<Column>().Where((c) => c?.Hidden is not null && c.Hidden.Value);
 
                         foreach (Column item in cols)
@@ -68,6 +68,7 @@ static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string 
                                 }
                             }
                         }
+                        // </Snippet5>
                     }
                 }
             }
@@ -75,4 +76,26 @@ static List<uint> GetHiddenRowsOrCols(string fileName, string sheetName, string 
     }
 
     return itemList;
+}
+// </Snippet0>
+
+List<uint>? items = null;
+
+if (args is [{ } fileName, { } sheetName, { } detectRows])
+{
+    items = GetHiddenRowsOrCols(fileName, sheetName, detectRows);
+}
+else if (args is [{ } fileName2, { } sheetName2])
+{
+    items = GetHiddenRowsOrCols(fileName2, sheetName2);
+}
+
+if (items is null)
+{
+    throw new ArgumentException("Invalid arguments.");
+}
+
+foreach (uint item in items)
+{
+    Console.WriteLine(item);
 }

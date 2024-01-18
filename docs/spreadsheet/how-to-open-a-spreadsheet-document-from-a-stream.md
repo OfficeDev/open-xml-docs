@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 12/05/2023
 ms.localizationpriority: high
 ---
 # Open a spreadsheet document from a stream
@@ -36,59 +36,7 @@ Open XML SDK.
 
 
 --------------------------------------------------------------------------------
-## Getting a SpreadsheetDocument Object 
-
-In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
-Excel document package. To open and work with an Excel document, you
-create an instance of the **SpreadsheetDocument** class from the document.
-After you create the instance from the document, you can then obtain
-access to the main workbook part that contains the worksheets. The text
-in the document is represented in the package as XML using SpreadsheetML
-markup.
-
-To create the class instance from the document, you call one of the
-[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) methods. Several are provided, each
-with a different signature. The sample code in this topic uses the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx) method with a
-signature that requires two parameters. The first parameter takes a full
-path string that represents the document that you want to open. The
-second parameter is either **true** or **false** and represents whether you want the file to
-be opened for editing. Any changes that you make to the document will
-not be saved if this parameter is **false**.
-
-The code that calls the **Open** method is
-shown in the following example.
-
-### [C#](#tab/cs-0)
-```csharp
-    // Open the document for editing.
-    using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))
-```
-
-### [Visual Basic](#tab/vb-0)
-```vb
-    ' Open the document for editing.
-    Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)
-```
-***
-
-
-After you have opened the spreadsheet document package, you can add a
-row to a sheet in the workbook. Each workbook has a workbook part and at
-least one [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). To access the [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx) assign a reference to the existing
-document body, represented by the [WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.workbookpart.aspx), as shown in the following
-code example.
-
-### [C#](#tab/cs-1)
-```csharp
-    WorkbookPart wbPart = document.WorkbookPart;
-```
-
-### [Visual Basic](#tab/vb-1)
-```vb
-    Dim wbPart As WorkbookPart = document.WorkbookPart
-```
-***
-
+## The SpreadsheetDocument Object 
 
 The basic document structure of a SpreadsheetML document consists of the
 [Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
@@ -117,7 +65,7 @@ code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <sheetData>
             <row r="1">
                 <c r="A1">
@@ -154,20 +102,10 @@ create a new [WorksheetPart](https://msdn.microsoft.com/library/office/documentf
 adds the new **WorksheetPart**.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Add a new worksheet.
-    WorksheetPart newWorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart<WorksheetPart>();
-    newWorksheetPart.Worksheet = new Worksheet(new SheetData());
-    newWorksheetPart.Worksheet.Save();
-```
+[!code-csharp[](../../samples/spreadsheet/open_from_a_stream/cs/Program.cs#snippet1)]
 
 ### [Visual Basic](#tab/vb-2)
-```vb
-    ' Add a new worksheet.
-    Dim newWorksheetPart As WorksheetPart = spreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
-    newWorksheetPart.Worksheet = New Worksheet(New SheetData())
-    newWorksheetPart.Worksheet.Save()
-```
+[!code-vb[](../../samples/spreadsheet/open_from_a_stream/vb/Program.vb#snippet1)]
 ***
 
 
@@ -175,26 +113,13 @@ adds the new **WorksheetPart**.
 ## Sample Code 
 In this example, the **OpenAndAddToSpreadsheetStream** method can be used
 to open a spreadsheet document from an already open stream and append
-some text to it. In your program, you can use the following example to
-call the **OpenAndAddToSpreadsheetStream**
-method that uses a file named Sheet11.xslx.
+some text to it. The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs-3)
-```csharp
-    string strDoc = @"C:\Users\Public\Documents\Sheet11.xlsx";
-    ;
-    Stream stream = File.Open(strDoc, FileMode.Open);
-    OpenAndAddToSpreadsheetStream(stream);
-    stream.Close();
-```
+[!code-csharp[](../../samples/spreadsheet/open_from_a_stream/cs/Program.cs#snippet2)]
 
 ### [Visual Basic](#tab/vb-3)
-```vb
-    Dim strDoc As String = "C:\Users\Public\Documents\Sheet11.xlsx"
-    Dim stream As Stream = File.Open(strDoc, FileMode.Open)
-    OpenAndAddToSpreadsheetStream(stream)
-    stream.Close()
-```
+[!code-vb[](../../samples/spreadsheet/open_from_a_stream/vb/Program.vb#snippet2)]
 ***
 
 
@@ -204,10 +129,10 @@ close the stream passed to it. The calling code must do that.
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/spreadsheet/open_from_a_stream/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/open_from_a_stream/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/spreadsheet/open_from_a_stream/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/open_from_a_stream/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
 ## See also 
