@@ -50,13 +50,13 @@ The Open XML SDK support for markup compatibility comes primarily in the form of
 
 ## Set the stage when you open
 
-When you open a document using the Open XML SDK, you have the option of using an overload with a signature that accepts an instance of the **[OpenSettings](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.opensettings.aspx)** class as a parameter. You use the open settings class to provide certain important settings that govern the behavior of the SDK. One set of settings in particular, stored in the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.opensettings.markupcompatibilityprocesssettings.aspx)** property, determines how markup compatibility elements and attributes are processed. You set the property to an instance of the **[MarkupCompatibilityProcessSettings](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.aspx)** class prior to opening a document.
+When you open a document using the Open XML SDK, you have the option of using an overload with a signature that accepts an instance of the **[OpenSettings](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.opensettings)** class as a parameter. You use the open settings class to provide certain important settings that govern the behavior of the SDK. One set of settings in particular, stored in the **[MarkupCompatibilityProcessSettings](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.opensettings.markupcompatibilityprocesssettings)** property, determines how markup compatibility elements and attributes are processed. You set the property to an instance of the **[MarkupCompatibilityProcessSettings](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.markupcompatibilityprocesssettings)** class prior to opening a document.
 
 The class has the following properties:
 
-- **[ProcessMode](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.processmode.aspx)** - Determines the parts that are preprocessed.
+- **[ProcessMode](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.markupcompatibilityprocesssettings.processmode)** - Determines the parts that are preprocessed.
 
-- **[TargetFileFormatVersions](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocesssettings.targetfileformatversions.aspx)** - Specifies the context that applies to preprocessing.
+- **[TargetFileFormatVersions](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.markupcompatibilityprocesssettings.targetfileformatversions)** - Specifies the context that applies to preprocessing.
 
 By default, documents are not preprocessed. If however you do specify open settings and provide markup compatibility process settings, then the document is preprocessed in accordance with those settings.
 
@@ -93,7 +93,7 @@ The **ProcessMode** property determines the parts to be preprocessed. The conten
 
 ## Understand process mode
 
-The process mode specifies which document parts should be preprocessed. You set this property to a member of the **[MarkupCompatibilityProcessMode](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.markupcompatibilityprocessmode.aspx)** enumeration. The default value, **NoProcess**, indicates that no preprocessing is performed. Your application must be able to understand and handle any elements and attributes present in the document markup, including any of the elements and attributes in the Markup Compatibility namespace.
+The process mode specifies which document parts should be preprocessed. You set this property to a member of the **[MarkupCompatibilityProcessMode](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.markupcompatibilityprocessmode)** enumeration. The default value, **NoProcess**, indicates that no preprocessing is performed. Your application must be able to understand and handle any elements and attributes present in the document markup, including any of the elements and attributes in the Markup Compatibility namespace.
 
 You might want to work on specific document parts while leaving the rest untouched. For example, you might want to ensure minimal modification to the file. In that case, specify **ProcessLoadedPartsOnly** for the process mode. With this setting, preprocessing and the associated filtering is only applied to the loaded document parts, not the entire document.
 
@@ -101,7 +101,7 @@ Finally, there is **ProcessAllParts**, which specifies what the name implies. Wh
 
 ## Set the target file format version
 
-The target file format versions property lets you choose to process markup compatibility content in either Office 2010 or Office 2013 context. Set the **TargetFileFormatVersions** property to a member of the **[FileFormatVersions](https://msdn.microsoft.com/library/office/documentformat.openxml.fileformatversions.aspx)** enumeration.
+The target file format versions property lets you choose to process markup compatibility content in either Office 2010 or Office 2013 context. Set the **TargetFileFormatVersions** property to a member of the **[FileFormatVersions](https://learn.microsoft.com/dotnet/api/documentformat.openxml.fileformatversions)** enumeration.
 
 The default value, **Office2010**, means the SDK will assume that namespaces defined in Office 2010 are understood, but not namespaces defined in Office 2013. Thus, during preprocessing, the SDK will ignore the namespaces defined in Office 2013 and choose the Office 2010 compatible alternate-content.
 

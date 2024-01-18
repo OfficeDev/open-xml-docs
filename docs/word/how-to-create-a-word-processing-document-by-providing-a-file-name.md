@@ -23,7 +23,7 @@ Office to programmatically create a word processing document.
 
 --------------------------------------------------------------------------------
 ## Creating a WordprocessingDocument Object
-In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
+In the Open XML SDK, the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
 Word document package. To create a Word document, you create an instance
 of the **WordprocessingDocument** class and
 populate it with parts. At a minimum, the document must have a main
@@ -31,12 +31,12 @@ document part that serves as a container for the main text of the
 document. The text is represented in the package as XML using
 WordprocessingML markup.
 
-To create the class instance you call the [Create(String, WordprocessingDocumentType)](https://msdn.microsoft.com/library/office/cc535610.aspx)
-method. Several [Create()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.create.aspx) methods are provided, each with a
+To create the class instance you call the [Create(String, WordprocessingDocumentType)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.create)
+method. Several [Create()](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.create) methods are provided, each with a
 different signature. The sample code in this topic uses the **Create** method with a signature that requires two
 parameters. The first parameter takes a full path string that represents
 the document that you want to create. The second parameter is a member
-of the [WordprocessingDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessingdocumenttype.aspx) enumeration.
+of the [WordprocessingDocumentType](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessingdocumenttype) enumeration.
 This parameter represents the type of document. For example, there is a
 different member of the **WordProcessingDocumentType** enumeration for each
 of document, template, and the macro enabled variety of document and
@@ -81,7 +81,7 @@ exit the bracketed block, you do not have to explicitly call **Save** and **Clos
 long as you use **using**.
 
 Once you have created the Word document package, you can add parts to
-it. To add the main document part you call the [AddMainDocumentPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.addmaindocumentpart.aspx) method of the **WordprocessingDocument** class. Having done that,
+it. To add the main document part you call the [AddMainDocumentPart()](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.addmaindocumentpart) method of the **WordprocessingDocument** class. Having done that,
 you can set about adding the document structure and text.
 
 

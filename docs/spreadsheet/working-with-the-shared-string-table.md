@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with the shared string table
 
-This topic discusses the Open XML SDK [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) class and how it relates
+This topic discusses the Open XML SDK [SharedStringTable](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
@@ -74,8 +74,8 @@ working with the **SharedStringTable** class.
 
 | **SpreadsheetML Element** |                                                  **Open XML SDK Class**                                                  |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------|
-|            si             | [SharedStringItem](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx) |
-|             t             |             [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.text.aspx)             |
+|            si             | [SharedStringItem](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem) |
+|             t             |             [Text](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.text)             |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK SharedStringTable Class 

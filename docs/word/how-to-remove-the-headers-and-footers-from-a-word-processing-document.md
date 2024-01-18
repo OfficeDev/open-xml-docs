@@ -72,9 +72,9 @@ in the following code example.
 The **RemoveHeadersAndFooters** method works
 with the document you specify, deleting all of the header and footer
 parts and references to those parts. The code starts by opening the
-document, using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
+document, using the [Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method and indicating that the
 document should be opened for read/write access (the final true
-parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
+parameter). Given the open document, the code uses the [MainDocumentPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart) property to navigate to
 the main document, storing the reference in a variable named **docPart**.
 
 ### [C#](#tab/cs-2)
@@ -103,11 +103,11 @@ the main document, storing the reference in a variable named **docPart**.
 
 Given a reference to the document part, the code next determines if it
 has any work to do─that is, if the document contains any headers or
-footers. To decide, the code calls the **Count** method of both the [HeaderParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.headerparts.aspx) and [FooterParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.footerparts.aspx) properties of the document
+footers. To decide, the code calls the **Count** method of both the [HeaderParts](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.maindocumentpart.headerparts) and [FooterParts](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.maindocumentpart.footerparts) properties of the document
 part, and if either returns a value greater than 0, the code continues.
 Be aware that the **HeaderParts** and **FooterParts** properties each return an
-[IEnumerable](https://msdn.microsoft.com/library/9eekhta0.aspx) of
-[HeaderPart](https://msdn.microsoft.com/library/9eekhta0.aspx) or [FooterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.footerpart.aspx) objects, respectively.
+[IEnumerable](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1) of
+[HeaderPart](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1) or [FooterPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.footerpart) objects, respectively.
 
 ### [C#](#tab/cs-3)
 ```csharp
@@ -142,7 +142,7 @@ Be aware that the **HeaderParts** and **FooterParts** properties each return an
 
 Given a collection of references to header and footer parts, you could
 write code to delete each one individually, but that is not necessary
-because of the Open XML SDK. Instead, you can call the [DeleteParts\<T\>](https://msdn.microsoft.com/library/office/cc562335.aspx) method, passing in the
+because of the Open XML SDK. Instead, you can call the [DeleteParts\<T\>](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.openxmlpartcontainer.deleteparts) method, passing in the
 collection of parts to be deleted─this simple method provides a shortcut
 for deleting a collection of parts. Therefore, the following few lines
 of code take the place of the loop that you would otherwise have to
@@ -201,10 +201,10 @@ shown in the section that follows the following code example.
 
 To remove the stranded references, the code first retrieves a collection
 of HeaderReference elements, converts the collection to a List, and then
-loops through the collection, calling the [Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method for each element found. Note
+loops through the collection, calling the [Remove](https://learn.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.remove) method for each element found. Note
 that the code converts the **IEnumerable**
-returned by the [Descendants](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.descendants.aspx) method into a List so that it
-can delete items from the list, and that the [HeaderReference](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.headerreference.aspx) type that is provided by
+returned by the [Descendants](https://learn.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.descendants) method into a List so that it
+can delete items from the list, and that the [HeaderReference](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.headerreference) type that is provided by
 the Open XML SDK makes it easy to refer to elements of type **HeaderReference** in the XML content. (Without that
 additional help, you would have to work with the details of the XML
 content directly.) Once it has removed all the headers, the code repeats

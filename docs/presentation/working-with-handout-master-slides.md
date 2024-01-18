@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with handout master slides
 
-This topic discusses the Open XML SDK for Office [HandoutMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document](structure-of-a-presentationml-document.md).
+This topic discusses the Open XML SDK for Office [HandoutMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.handoutmaster) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document](structure-of-a-presentationml-document.md).
 
 ## Handout Master Slides in PresentationML
 The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<handoutMaster\>
@@ -39,10 +39,10 @@ SDK classes that correspond to them.
 
 | **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-|         \<clrMap\>         |                      [ColorMap](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormap.aspx)                      |
-|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
-|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
-|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
+|         \<clrMap\>         |                      [ColorMap](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.colormap)                      |
+|          \<cSld\>          |               [CommonSlideData](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commonslidedata)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
+|           \<hf\>           |                  [HeaderFooter](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.headerfooter)                  |
 
 ## Open XML SDK HandoutMaster Class
 
@@ -120,7 +120,7 @@ slide numbering, and custom header and footer text.
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **HandoutMaster** class is associated with
-an instance of the [HandoutMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.handoutmasterpart.aspx) class, which represents a
+an instance of the [HandoutMasterPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.handoutmasterpart) class, which represents a
 handout master part, one of the parts of a PresentationML presentation
 file package, and a part that is required for a presentation file that
 contains handouts.
@@ -129,7 +129,7 @@ The **HandoutMaster** class, which represents
 the \<handoutMaster\> element, is therefore also associated with a
 series of other classes that represent the child elements of the
 \<handoutMaster\> element. Among these classes, as shown in the
-following code sample, are the **CommonSlideData** class, the **ColorMap** class, the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, and the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+following code sample, are the **CommonSlideData** class, the **ColorMap** class, the [ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree) class, and the [Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape) class.
 
 ## Open XML SDK Code Example
 
@@ -138,12 +138,12 @@ presentation and creates an instance of an Open XML SDK**HandoutMaster** class i
 part. The **HandoutMaster** class constructor
 creates instances of the **CommonSlideData**
 class and the **ColorMap** class. The **CommonSlideData** class constructor creates an
-instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor, in
-turn, creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
-instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
-of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+instance of the [ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree) class, whose constructor, in
+turn, creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties) class, an
+instance of the [GroupShapeProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.groupshapeproperties) class, and an instance
+of the [Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape) class.
 
-The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation)
 namespace.
 
 ### [C#](#tab/cs)

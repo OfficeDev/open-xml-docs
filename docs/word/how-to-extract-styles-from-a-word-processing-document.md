@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically extract the styles or stylesWithEffects part
 from a word processing document to an
-[XDocument](https://msdn.microsoft.com/library/Bb345449(v=VS.100).aspx)
+[XDocument](https://learn.microsoft.com/dotnet/api/system.xml.linq.xdocument)
 instance. It contains an example **ExtractStylesPart** method to
 illustrate this task.
 
@@ -138,9 +138,9 @@ The code starts by creating a variable named **styles** that the method returns 
 ***
 
 
-The code continues by opening the document by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
+The code continues by opening the document by using the [Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method and indicating that the
 document should be open for read-only access (the final false
-parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
+parameter). Given the open document, the code uses the [MainDocumentPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart) property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ### [C#](#tab/cs-3)
@@ -211,11 +211,11 @@ of the **docPart** variable, and stores it in the
 
 If the requested styles part exists, the code must return the contents
 of the part in an **XDocument** instance. Each
-part provides a [GetStream](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpart.getstream.aspx) method, which returns a Stream.
+part provides a [GetStream](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.openxmlpart.getstream) method, which returns a Stream.
 The code passes the Stream instance to the
-[XmlNodeReader.Create](https://msdn.microsoft.com/library/ay7fxzht(v=VS.100).aspx)
+[XmlNodeReader.Create](https://learn.microsoft.com/dotnet/api/system.xml.xmlreader.create)
 method, and then calls the
-[XDocument.Load](https://msdn.microsoft.com/library/bb356384.aspx)
+[XDocument.Load](https://learn.microsoft.com/dotnet/api/system.xml.linq.xdocument.load)
 method, passing the **XmlNodeReader** as a
 parameter.
 

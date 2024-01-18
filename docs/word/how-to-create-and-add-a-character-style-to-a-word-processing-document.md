@@ -325,8 +325,8 @@ styles element is created and saved to the part.
 
 ## Creating the Style
 
-To create the style, the code instantiates the [Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx) class and sets certain properties,
-such as the [Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx) of style (paragraph), the [StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx), and whether the style is a [CustomStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx).
+To create the style, the code instantiates the [Style](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.style) class and sets certain properties,
+such as the [Type](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.style.type) of style (paragraph), the [StyleId](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.style.styleid), and whether the style is a [CustomStyle](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.style.customstyle).
 
 ### [C#](#tab/cs-3)
 ```csharp
@@ -359,7 +359,7 @@ The code results in the following XML.
 
 The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
-corresponding class, and then call the [Append(\[\])](https://msdn.microsoft.com/library/office/cc801361.aspx) method to add the child element
+corresponding class, and then call the [Append(\[\])](https://learn.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.append) method to add the child element
 to the style. For more information about these properties, see section
 17.7 of the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
 
@@ -390,7 +390,7 @@ to the style. For more information about these properties, see section
 ***
 
 
-Next, the code instantiates a [StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx) object to create a **rPr** (Run Properties) element. You specify the
+Next, the code instantiates a [StyleRunProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.stylerunproperties) object to create a **rPr** (Run Properties) element. You specify the
 character properties that apply to the style, such as font and color, in
 this element. The properties are then appended as children of the **rPr** element.
 

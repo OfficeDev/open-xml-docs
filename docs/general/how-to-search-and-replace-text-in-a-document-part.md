@@ -29,10 +29,10 @@ processing document.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object 
 In the sample code, you start by opening the word processing file by
-instantiating the **[WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** class as shown in
+instantiating the **[WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument)** class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
-**[Open](https://msdn.microsoft.com/library/office/cc562234.aspx)** method, with the Boolean parameter set
+**[Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ### [C#](#tab/cs-0)
@@ -111,4 +111,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
-[Regular Expressions](https://msdn.microsoft.com/library/hs600312.aspx)
+[Regular Expressions](https://learn.microsoft.com/dotnet/standard/base-types/regular-expressions)

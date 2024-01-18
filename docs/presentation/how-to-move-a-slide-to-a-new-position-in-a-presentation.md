@@ -24,11 +24,11 @@ programmatically.
 
 --------------------------------------------------------------------------------
 ## Getting a Presentation Object
-In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
+In the Open XML SDK, the [PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-[Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx) method that uses a
+[Open(String, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. In order to count the number of slides
 in a presentation, it is best to open the file for read-only access in

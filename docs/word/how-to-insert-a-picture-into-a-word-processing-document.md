@@ -25,9 +25,9 @@ This topic shows how to use the classes in the Open XML SDK for Office to progra
 
 ## Opening an Existing Document for Editing
 
-To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
+To open an existing document, instantiate the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
 the following **using** statement. In the same
-statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) method, with the
+statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the
 Boolean parameter set to **true** in order to
 enable editing the document.
 
@@ -93,7 +93,7 @@ The following XML Schema fragment defines the contents of this element
 
 ## How the Sample Code Works
 
-After you have opened the document, add the [ImagePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.imagepart.aspx) object to the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.aspx) object by using a file
+After you have opened the document, add the [ImagePart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.imagepart) object to the [MainDocumentPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.maindocumentpart) object by using a file
 stream as shown in the following code segment.
 
 ### [C#](#tab/cs-1)
@@ -120,7 +120,7 @@ stream as shown in the following code segment.
 
 
 To add the image to the body, first define the reference of the image.
-Then, append the reference to the body. The element should be in a [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx).
+Then, append the reference to the body. The element should be in a [Run](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run).
 
 ### [C#](#tab/cs-2)
 ```csharp

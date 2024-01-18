@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with presentations
 
-This topic discusses the Open XML SDK for Office [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class and how it relates to
+This topic discusses the Open XML SDK for Office [Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentation) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a
@@ -75,16 +75,16 @@ Open XML SDK classes that correspond to them.
 
 | **PresentationML Element** |                                                     **Open XML SDK Class**                                                      |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-|     \<sldMasterIdLst\>     |   [SlideMasterIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemasteridlist.aspx)   |
-|      \<sldMasterId\>       |       [SlideMasterId](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemasterid.aspx)       |
-|        \<sldIdLst\>        |         [SlideIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slideidlist.aspx)         |
-|         \<sldId\>          |             [SlideId](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slideid.aspx)             |
-|    \<notesMasterIdLst\>    |   [NotesMasterIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmasteridlist.aspx)   |
-|   \<handoutMasterIdLst\>   | [HandoutMasterIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmasteridlist.aspx) |
-|      \<custShowLst\>       |      [CustomShowList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.customshowlist.aspx)      |
-|         \<sldSz\>          |           [SlideSize](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidesize.aspx)           |
-|        \<notesSz\>         |           [NotesSize](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notessize.aspx)           |
-|    \<defaultTextStyle\>    |    [DefaultTextStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.defaulttextstyle.aspx)    |
+|     \<sldMasterIdLst\>     |   [SlideMasterIdList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemasteridlist)   |
+|      \<sldMasterId\>       |       [SlideMasterId](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemasterid)       |
+|        \<sldIdLst\>        |         [SlideIdList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slideidlist)         |
+|         \<sldId\>          |             [SlideId](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slideid)             |
+|    \<notesMasterIdLst\>    |   [NotesMasterIdList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesmasteridlist)   |
+|   \<handoutMasterIdLst\>   | [HandoutMasterIdList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.handoutmasteridlist) |
+|      \<custShowLst\>       |      [CustomShowList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.customshowlist)      |
+|         \<sldSz\>          |           [SlideSize](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidesize)           |
+|        \<notesSz\>         |           [NotesSize](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.notessize)           |
+|    \<defaultTextStyle\>    |    [DefaultTextStyle](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.defaulttextstyle)    |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Presentation Class
@@ -311,7 +311,7 @@ text within the presentation slide.
 ## Working with the Presentation Class
 As shown in the Open XML SDK code example that follows, every instance
 of the **Presentation** class is associated
-with an instance of the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, which represents a
+with an instance of the [PresentationPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationpart) class, which represents a
 presentation part, one of the required parts of a PresentationML
 presentation file package.
 
@@ -325,12 +325,12 @@ code example, are the **SlideMasterIdList**,
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following code example from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
-method of the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class of the Open XML
+The following code example from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.create)
+method of the [PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument) class of the Open XML
 SDK to create an instance of that same class that has the specified
-name and file path. Then it uses the [AddPresentationPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx) method to add an
-instance of the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class to the document
-file. Next, it creates an instance of the [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class that represents the
+name and file path. Then it uses the [AddPresentationPart()](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.addpresentationpart) method to add an
+instance of the [PresentationPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationpart) class to the document
+file. Next, it creates an instance of the [Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentation) class that represents the
 presentation. It passes a reference to the **PresentationPart** class instance to the
 **CreatePresentationParts** procedure, which creates the other required
 parts of the presentation file. The **CreatePresentation** procedure

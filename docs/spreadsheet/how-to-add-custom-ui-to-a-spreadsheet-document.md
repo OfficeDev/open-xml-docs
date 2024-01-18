@@ -24,7 +24,7 @@ this task.
 
 ## Creating Custom UI
 
-Before using the Open XML SDK to create a ribbon customization in an Excel workbook, you must first create the customization content. Describing the XML required to create a ribbon customization is beyond the scope of this topic. In addition, you will find it far easier to use the Ribbon Designer in Visual Studio to create the customization for you. For more information about customizing the ribbon by using the Visual Studio Ribbon Designer, see [Ribbon Designer](https://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx) and [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](https://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx).
+Before using the Open XML SDK to create a ribbon customization in an Excel workbook, you must first create the customization content. Describing the XML required to create a ribbon customization is beyond the scope of this topic. In addition, you will find it far easier to use the Ribbon Designer in Visual Studio to create the customization for you. For more information about customizing the ribbon by using the Visual Studio Ribbon Designer, see [Ribbon Designer](https://learn.microsoft.com/visualstudio/vsto/ribbon-designer) and [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](https://learn.microsoft.com/visualstudio/vsto/walkthrough-creating-a-custom-tab-by-using-the-ribbon-designer).
 For the purposes of this demonstration, you will need an XML file that contains a customization, and the following code provides a simple customization (or you can create your own by using the Visual Studio Ribbon Designer, and then right-click to export the customization to an XML file). The samples below are the xml strings used in this example. This XML content describes a ribbon customization that includes a button labeled "Click Me!" in a group named Group1 on the **Add-Ins** tab in Excel. When you click the button, it attempts to run a macro named **SampleMacro** in the host workbook.
 
 ### [C#](#tab/cs-xml)
@@ -85,7 +85,7 @@ Next, as shown in the following code, the sample method attempts to retrieve a r
 
 ## Add the Customization
 
-Given a reference to the ribbon extensibility part, the following code finishes by setting the part's **CustomUI** property to a new [CustomUI](https://msdn.microsoft.com/library/office/documentformat.openxml.office.customui.customui.aspx) object that contains the supplied customization. Once the customization is in place, the code saves the custom UI.
+Given a reference to the ribbon extensibility part, the following code finishes by setting the part's **CustomUI** property to a new [CustomUI](https://learn.microsoft.com/dotnet/api/documentformat.openxml.office.customui.customui) object that contains the supplied customization. Once the customization is in place, the code saves the custom UI.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/spreadsheet/add_custom_ui/cs/Program.cs#snippet3)]

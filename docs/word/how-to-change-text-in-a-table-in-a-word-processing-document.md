@@ -210,7 +210,7 @@ Following is the complete code example.
 ## See also
 
 [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
-[How to: Change Text in a Table in a Word Processing Document](https://msdn.microsoft.com/library/documentformat.openxml.wordprocessing.table(office.14).aspx)
-[Language-Integrated Query (LINQ)](https://msdn.microsoft.com/library/bb397926.aspx)
-[Extension Methods (C\# Programming Guide)](https://msdn.microsoft.com/library/bb383977.aspx)
-[Extension Methods (Visual Basic)](https://msdn.microsoft.com/library/bb384936.aspx)
+[How to: Change Text in a Table in a Word Processing Document](https://learn.microsoft.com/previous-versions/office/developer/office-2010/cc840870(v=office.14))
+[Language-Integrated Query (LINQ)](https://learn.microsoft.com/previous-versions/bb397926(v=vs.140))
+[Extension Methods (C\# Programming Guide)](https://learn.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
+[Extension Methods (Visual Basic)](https://learn.microsoft.com/dotnet/visual-basic/programming-guide/language-features/procedures/extension-methods)

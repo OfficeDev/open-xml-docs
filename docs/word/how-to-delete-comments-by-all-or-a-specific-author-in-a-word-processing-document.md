@@ -78,12 +78,12 @@ the required parameters as shown in the following code.
 
 --------------------------------------------------------------------------------
 ## How the Code Works
-The following code starts by opening the document, using the [WordprocessingDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and
+The following code starts by opening the document, using the [WordprocessingDocument.Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method and
 indicating that the document should be open for read/write access (the
 final **true** parameter value). Next, the code
-retrieves a reference to the comments part, using the [WordprocessingCommentsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.wordprocessingcommentspart.aspx) property of the
+retrieves a reference to the comments part, using the [WordprocessingCommentsPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.maindocumentpart.wordprocessingcommentspart) property of the
 main document part, after having retrieved a reference to the main
-document part from the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property of the word
+document part from the [MainDocumentPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart) property of the word
 processing document. If the comments part is missing, there is no point
 in proceeding, as there cannot be any comments to delete.
 
@@ -138,8 +138,8 @@ delete, and creating a list of comment IDs that correspond to the
 comments to delete. Given these lists, the code can both delete the
 comments from the comments part that contains the comments, and delete
 the references to the comments from the document part.The following code
-starts by retrieving a list of [Comment](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.comment.aspx) elements. To retrieve the list, it
-converts the [Elements](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.elements.aspx) collection exposed by the **commentPart** variable into a list of **Comment** objects.
+starts by retrieving a list of [Comment](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.comment) elements. To retrieve the list, it
+converts the [Elements](https://learn.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.elements) collection exposed by the **commentPart** variable into a list of **Comment** objects.
 
 ### [C#](#tab/cs-3)
 ```csharp
@@ -157,7 +157,7 @@ converts the [Elements](https://msdn.microsoft.com/library/office/documentformat
 
 So far, the list of comments contains all of the comments. If the author
 parameter is not an empty string, the following code limits the list to
-only those comments where the [Author](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.comment.author.aspx) property matches the parameter you
+only those comments where the [Author](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.comment.author) property matches the parameter you
 supplied.
 
 ### [C#](#tab/cs-4)
@@ -181,8 +181,8 @@ supplied.
 
 Before deleting any comments, the code retrieves a list of comments ID
 values, so that it can later delete matching elements from the document
-part. The call to the [Select](https://msdn2.microsoft.com/library/bb357126)
-method effectively projects the list of comments, retrieving an [IEnumerable\<T\>](https://msdn2.microsoft.com/library/9eekhta0)
+part. The call to the [Select](https://learn.microsoft.com/dotnet/api/system.linq.enumerable.select)
+method effectively projects the list of comments, retrieving an [IEnumerable\<T\>](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)
 of strings that contain all the comment ID values.
 
 ### [C#](#tab/cs-5)
@@ -241,7 +241,7 @@ and performs the deletion. The code then saves the comments part.
 Although the code has successfully removed all the comments by this
 point, that is not enough. The code must also remove references to the
 comments from the document part. This action requires three steps
-because the comment reference includes the [CommentRangeStart](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.commentrangestart.aspx), [CommentRangeEnd](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.commentrangeend.aspx), and [CommentReference](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.commentreference.aspx) elements, and the code
+because the comment reference includes the [CommentRangeStart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.commentrangestart), [CommentRangeEnd](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.commentrangeend), and [CommentReference](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.commentreference) elements, and the code
 must remove all three for each comment. Before performing any deletions,
 the code first retrieves a reference to the root element of the main
 document part, as shown in the following code.
@@ -262,7 +262,7 @@ Given a reference to the document element, the following code performs
 its deletion loop three times, once for each of the different elements
 it must delete. In each case, the code looks for all descendants of the
 correct type (**CommentRangeStart**, **CommentRangeEnd**, or **CommentReference**) and limits the list to those
-whose [Id](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.markuprangetype.id.aspx) property value is contained in the list
+whose [Id](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.markuprangetype.id) property value is contained in the list
 of comment IDs to be deleted. Given the list of elements to be deleted,
 the code removes each element in turn. Finally, the code completes by
 saving the document.

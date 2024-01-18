@@ -30,28 +30,28 @@ create a presentation document programmatically.
 A presentation file, like all files defined by the Open XML standard,
 consists of a package file container. This is the file that users see in
 their file explorer; it usually has a .pptx extension. The package file
-is represented in the Open XML SDK by the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class. The
+is represented in the Open XML SDK by the [PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument) class. The
 presentation document contains, among other parts, a presentation part.
-The presentation part, represented in the Open XML SDK by the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, contains the basic
+The presentation part, represented in the Open XML SDK by the [PresentationPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationpart) class, contains the basic
 *PresentationML* definition for the slide presentation. PresentationML
 is the markup language used for creating presentations. Each package can
 contain only one presentation part, and its root element must be
 \<presentation\>.
 
 The API calls used to create a new presentation document package are
-relatively simple. The first step is to call the static [Create(String,PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
-method of the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class, as shown here
+relatively simple. The first step is to call the static [Create(String,PresentationDocumentType)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.create)
+method of the [PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument) class, as shown here
 in the **CreatePresentation** procedure, which is the first part of the
 complete code sample presented later in the article. The
 **CreatePresentation** code calls the override of the **Create** method that takes as arguments the path to
 the new document and the type of presentation document to be created.
 The types of presentation documents available in that argument are
-defined by a [PresentationDocumentType](https://msdn.microsoft.com/library/office/documentformat.openxml.presentationdocumenttype.aspx) enumerated value.
+defined by a [PresentationDocumentType](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentationdocumenttype) enumerated value.
 
-Next, the code calls [AddPresentationPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx), which creates and
+Next, the code calls [AddPresentationPart()](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.addpresentationpart), which creates and
 returns a **PresentationPart**. After the **PresentationPart** class instance is created, a new
-root element for the presentation is added by setting the [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.presentation.aspx) property equal to the instance
-of the [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class returned from a call to
+root element for the presentation is added by setting the [Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationpart.presentation) property equal to the instance
+of the [Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentation) class returned from a call to
 the **Presentation** class constructor.
 
 In order to create a complete, useable, and valid presentation, the code
@@ -79,20 +79,20 @@ slide layout, slide master, and theme parts.
 
 Using the Open XML SDK, you can create presentation structure and
 content by using strongly-typed classes that correspond to
-PresentationML elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
+PresentationML elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation)
 namespace. The following table lists the names of the classes that
 correspond to the presentation, slide, slide master, slide layout, and
 theme elements. The class that corresponds to the theme element is
-actually part of the [DocumentFormat.OpenXml.Drawing](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.aspx) namespace.
+actually part of the [DocumentFormat.OpenXml.Drawing](https://learn.microsoft.com/dotnet/api/documentformat.openxml.drawing) namespace.
 Themes are common to all Open XML markup languages.
 
 | PresentationML Element | Open XML SDK Class |
 |---|---|
-| &lt;presentation&gt; | [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) |
-| &lt;sld&gt; | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) |
-| &lt;sldMaster&gt; | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) |
-| &lt;sldLayout&gt; | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) |
-| &lt;theme&gt; | [Theme](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.aspx) |
+| &lt;presentation&gt; | [Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.presentation) |
+| &lt;sld&gt; | [Slide](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slide) |
+| &lt;sldMaster&gt; | [SlideMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemaster) |
+| &lt;sldLayout&gt; | [SlideLayout](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidelayout) |
+| &lt;theme&gt; | [Theme](https://learn.microsoft.com/dotnet/api/documentformat.openxml.drawing.theme) |
 
 The PresentationML code that follows is the XML in the presentation part
 (in the file presentation.xml) for a simple presentation that contains

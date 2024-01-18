@@ -26,10 +26,10 @@ document.
 ## Getting a WordprocessingDocument Object
 
 In the sample code, you start by opening the word processing file by
-instantiating the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
+instantiating the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
-[Open](https://msdn.microsoft.com/library/office/cc562234.aspx) method, with the Boolean parameter set
+[Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ### [C#](#tab/cs-0)
@@ -103,11 +103,11 @@ The following table lists the possible child types of the Theme class.
 
 | PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
-| custClrLst | [CustomColorList](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.customcolorlist.aspx) |Custom Color List |
-| extLst | [ExtensionList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlist.aspx) | Extension List |
-| extraClrSchemeLst | [ExtraColorSchemeList](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.extracolorschemelist.aspx) | Extra Color Scheme List |
-| objectDefaults | [ObjectDefaults](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.objectdefaults.aspx) | Object Defaults |
-| themeElements | [ThemeElements](https://msdn.microsoft.com/library/office/documentformat.openxml.drawing.theme.themeelements.aspx) | Theme Elements |
+| custClrLst | [CustomColorList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.drawing.customcolorlist) |Custom Color List |
+| extLst | [ExtensionList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.extensionlist) | Extension List |
+| extraClrSchemeLst | [ExtraColorSchemeList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.drawing.theme.extracolorschemelist) | Extra Color Scheme List |
+| objectDefaults | [ObjectDefaults](https://learn.microsoft.com/dotnet/api/documentformat.openxml.drawing.theme.objectdefaults) | Object Defaults |
+| themeElements | [ThemeElements](https://learn.microsoft.com/dotnet/api/documentformat.openxml.drawing.theme.themeelements) | Theme Elements |
 
 The following XML Schema fragment defines the four parts of the theme
 element. The **themeElements** element is the

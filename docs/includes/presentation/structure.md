@@ -65,13 +65,13 @@ two slides denoted by the IDs 267 and 256.
 
 Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
-elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
+elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation)
 namespace. The following table lists the class names of the classes that
 correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
-| sld | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) | Presentation Slide. It is the root element of SlidePart. |
-| sldLayout | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) | Slide Layout. It is the root element of SlideLayoutPart. |
-| sldMaster | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) | Slide Master. It is the root element of SlideMasterPart. |
-| notesMaster | [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
+| sld | [Slide](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slide) | Presentation Slide. It is the root element of SlidePart. |
+| sldLayout | [SlideLayout](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidelayout) | Slide Layout. It is the root element of SlideLayoutPart. |
+| sldMaster | [SlideMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemaster) | Slide Master. It is the root element of SlideMasterPart. |
+| notesMaster | [NotesMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesmaster) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |

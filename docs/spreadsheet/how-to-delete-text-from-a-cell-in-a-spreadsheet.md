@@ -23,7 +23,7 @@ programmatically.
 
 ## How the sample code works
 
-In the following code example, you delete text from a cell in a [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) document package. Then, you verify if other cells within the spreadsheet document still reference the text removed from the row, and if they do not, you remove the text from the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object by using the [Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method. Then you clean up the **SharedStringTablePart** object by calling the **RemoveSharedStringItem** method.
+In the following code example, you delete text from a cell in a [SpreadsheetDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument) document package. Then, you verify if other cells within the spreadsheet document still reference the text removed from the row, and if they do not, you remove the text from the [SharedStringTablePart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.sharedstringtablepart) object by using the [Remove](https://learn.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.remove) method. Then you clean up the **SharedStringTablePart** object by calling the **RemoveSharedStringItem** method.
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/spreadsheet/delete_text_from_a_cell/cs/Program.cs#snippet1)]
@@ -49,13 +49,13 @@ parameter that represents the **SpreadsheetDocument** document package. Then you
 iterate through each **Worksheet** object and
 compare the contents of each **Cell** object to
 the shared string ID. If other cells within the spreadsheet document
-still reference the [SharedStringItem](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx) object, you do not remove
+still reference the [SharedStringItem](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem) object, you do not remove
 the item from the **SharedStringTablePart**
 object. If other cells within the spreadsheet document no longer
 reference the **SharedStringItem** object, you
 remove the item from the **SharedStringTablePart** object. Then you iterate
 through each **Worksheet** object and **Cell** object and refresh the shared string
-references. Finally, you save the worksheet and the [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object.
+references. Finally, you save the worksheet and the [SharedStringTable](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable) object.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/delete_text_from_a_cell/cs/Program.cs#snippet3)]

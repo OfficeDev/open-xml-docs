@@ -25,11 +25,11 @@ programmatically.
 ---------------------------------------------------------------------------------
 ## Getting a PresentationDocument Object
 
-In the Open XML SDK, the **[PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx)** class represents a
+In the Open XML SDK, the **[PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument)** class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-**[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx)**
+**[PresentationDocument.Open(String, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open)**
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. To open a document
 for read-only, specify the value **false** for
@@ -105,4 +105,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 
 [Open XML SDK class library
-reference](https://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+reference](https://learn.microsoft.com/office/open-xml/open-xml-sdk)

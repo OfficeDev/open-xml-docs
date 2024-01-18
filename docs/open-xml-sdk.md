@@ -65,8 +65,8 @@ Portions of ISO/IEC 29500:2008<sup>1</sup> are referenced in the SDK.
 - [Open XML SDK for Microsoft Office](https://www.nuget.org/packages/DocumentFormat.OpenXml)
 - [Microsoft Office Developer Center](https://developer.microsoft.com/office/docs)
 - [Samples on GitHub](https://github.com/OfficeDev)
-- [Open XML SDK copyright notice](https://msdn.microsoft.com/library/6165f4ad-2e4d-4852-921a-087782af364d(Office.15).aspx)
+- [Open XML SDK copyright notice](https://learn.microsoft.com/previous-versions/office/bb509417(v=office.15))
 - [Accessibility features in the Microsoft Office System](https://www.microsoft.com/accessibility/)
-- [Document conventions in Office Developer documentation](https://msdn.microsoft.com/office/aa905365.aspx)
+- [Document conventions in Office Developer documentation](https://learn.microsoft.com/previous-versions/office/dn602610(v=office.15))
 
 <sup>1</sup>© ISO/IEC2900:2008. This material is reproduced from ISO/IEC 29500:2008 with permission of the American National Standards Institute (ANSI) on behalf of ISO.

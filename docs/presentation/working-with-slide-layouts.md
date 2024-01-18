@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 # Working with slide layouts
 
-This topic discusses the Open XML SDK for Office [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) class and how it relates to the Open XML File Format PresentationML schema.
+This topic discusses the Open XML SDK for Office [SlideLayout](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidelayout) class and how it relates to the Open XML File Format PresentationML schema.
 
 ## Slide Layouts in PresentationML
 
@@ -39,12 +39,12 @@ classes that correspond to them.
 
 | **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
-|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
-|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
-|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
-|         \<timing\>         |                        [Timing](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.timing.aspx)                        |
-|       \<transition\>       |                    [Transition](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.transition.aspx)                    |
+|       \<clrMapOvr\>        |              [ColorMapOverride](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.colormapoverride)              |
+|          \<cSld\>          |               [CommonSlideData](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commonslidedata)               |
+|         \<extLst\>         | [ExtensionListWithModification](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
+|           \<hf\>           |                  [HeaderFooter](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.headerfooter)                  |
+|         \<timing\>         |                        [Timing](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.timing)                        |
+|       \<transition\>       |                    [Transition](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.transition)                    |
 
 The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<sldLayout\> element.
@@ -151,24 +151,24 @@ This element specifies the kind of slide transition that should be used to trans
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **SlideLayout** class is associated with an
-instance of the [SlideLayoutPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidelayoutpart.aspx) class, which represents a
+instance of the [SlideLayoutPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.slidelayoutpart) class, which represents a
 slide layout part, one of the required parts of a PresentationML
 presentation file package. Each **SlideLayout**
-class instance must also be associated with instances of the [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) and [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) classes, which are in turn associated
+class instance must also be associated with instances of the [SlideMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemaster) and [Slide](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slide) classes, which are in turn associated
 with similarly named required presentation parts, represented by the
-[SlideMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidemasterpart.aspx) and [SlidePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidepart.aspx)classes.
+[SlideMasterPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.slidemasterpart) and [SlidePart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.slidepart)classes.
 
 The **SlideLayout** class, which represents the
 \<sldLayout\> element, is therefore also associated with a series of
 other classes that represent the child elements of the \<sldLayout\>
 element. Among these classes, as shown in the following code sample, are
-the **CommonSlideData** class, the **ColorMapOverride** class, the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, and the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+the **CommonSlideData** class, the **ColorMapOverride** class, the [ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree) class, and the [Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape) class.
 
 ## Open XML SDK Code Example
 
-The following method from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an Open XML SDK**SlideLayout** class in the new slide layout part. The **SlideLayout** class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn creates additional class instances: an instance of the [NonVisualGroupShapeProperties (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+The following method from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an Open XML SDK**SlideLayout** class in the new slide layout part. The **SlideLayout** class constructor creates instances of the **CommonSlideData** class and the **ColorMapOverride** class. The **CommonSlideData** class constructor creates an instance of the [ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree) class, whose constructor in turn creates additional class instances: an instance of the [NonVisualGroupShapeProperties (https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties) class, an instance of the [GroupShapeProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.groupshapeproperties) class, and an instance of the [Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape) class.
 
-The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation (https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx) namespace.
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation (https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation) namespace.
 
 ### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/working_with_slide_layouts/cs/Program.cs)]

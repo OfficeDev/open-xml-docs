@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with comments
 
-This topic discusses the Open XML SDK for Office [Comment](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.comment.aspx) class and how it relates to the
+This topic discusses the Open XML SDK for Office [Comment](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.comment) class and how it relates to the
 Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML
 Document](structure-of-a-presentationml-document.md).
 
@@ -52,9 +52,9 @@ The following table lists the child elements of the \<cm \> element used when wo
 
 | **PresentationML Element** |                                                               **Open XML SDK Class**                                                 |
 |----------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| \<extLst\>        | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
-| \<pos\>           | [Position](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.position.aspx)                  |
-| \<text\>          | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.text.aspx)                          |
+| \<extLst\>        | [ExtensionListWithModification](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
+| \<pos\>           | [Position](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.position)                  |
+| \<text\>          | [Text](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.text)                          |
 
 The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
 specification describes the attributes of the \<cm\> element.
@@ -132,17 +132,17 @@ their visual appearance.
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **Comment** class is associated with an
-instance of the [SlideCommentsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidecommentspart.aspx) class, which represents a
+instance of the [SlideCommentsPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.slidecommentspart) class, which represents a
 slide comments part, one of the parts of a PresentationML presentation
 file package, and a part that is required for each slide in a
 presentation file that contains comments. Each **Comment** class instance is also associated with an
-instance of the [CommentAuthor](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentauthor.aspx) class, which is in turn
+instance of the [CommentAuthor](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentauthor) class, which is in turn
 associated with a similarly named presentation part, represented by the
-[CommentAuthorsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.commentauthorspart.aspx) class. Comment authors
+[CommentAuthorsPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.commentauthorspart) class. Comment authors
 for a presentation are specified in a comment author list, represented
-by the [CommentAuthorList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentauthorlist.aspx) class, while comments for
+by the [CommentAuthorList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentauthorlist) class, while comments for
 each slide are listed in a comments list for that slide, represented by
-the [CommentList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commentlist.aspx) class.
+the [CommentList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commentlist) class.
 
 The **Comment** class, which represents the \<cm\> element, is therefore also associated with other classes that represent the child elements of the \<cm\> element. Among these classes, as shown in the following code sample, are the **Position** class, which specifies the position of the comment relative to the slide, and the **Text** class, which specifies the text content of the comment.
 

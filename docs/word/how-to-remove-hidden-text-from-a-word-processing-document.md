@@ -87,17 +87,17 @@ markup for a document that contains the text "Example text."
 
 Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these
-classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
+classes in the [DocumentFormat.OpenXml.Wordprocessing](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 WordprocessingML Element|Open XML SDK Class|Description
 --|--|--
-document|[Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) |The root element for the main document part.
-body|[Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
-p|[Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) |A paragraph.
-r|[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) |A run.
-t|[Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) |A range of text.
+document|[Document](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.document) |The root element for the main document part.
+body|[Body](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.body) |The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
+p|[Paragraph](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.paragraph) |A paragraph.
+r|[Run](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run) |A run.
+t|[Text](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.text) |A range of text.
 
 
 ---------------------------------------------------------------------------------

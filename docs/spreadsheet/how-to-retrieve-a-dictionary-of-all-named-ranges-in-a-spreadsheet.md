@@ -27,7 +27,7 @@ to illustrate this task.
 The **GetDefinedNames** method accepts a
 single parameter that indicates the name of the document from which to
 retrieve the defined names. The method returns an
-[Dictionary](https://msdn.microsoft.com/library/xfhwa508.aspx)
+[Dictionary](https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2)
 instance that contains information about the defined names within the
 specified workbook, which may be empty if there are no defined names.
 

@@ -169,7 +169,7 @@ Figure 2. Custom Properties in the Advanced Properties dialog box
 
 ## How the Code Works
 
-The **SetCustomProperty** method starts by setting up some internal variables. Next, it examines the information about the property, and creates a new [CustomDocumentProperty](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.aspx) based on the parameters that you have specified. The code also maintains a variable named **propSet** to indicate whether it successfully created the new property object. This code verifies the
+The **SetCustomProperty** method starts by setting up some internal variables. Next, it examines the information about the property, and creates a new [CustomDocumentProperty](https://learn.microsoft.com/dotnet/api/documentformat.openxml.customproperties.customdocumentproperty) based on the parameters that you have specified. The code also maintains a variable named **propSet** to indicate whether it successfully created the new property object. This code verifies the
 type of the property value, and then converts the input to the correct type, setting the appropriate property of the **CustomDocumentProperty** object.
 
 > [!NOTE]
@@ -300,7 +300,7 @@ type of the property value, and then converts the input to the correct type, set
 ***
 
 
-At this point, if the code has not thrown an exception, you can assume that the property is valid, and the code sets the [FormatId](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.formatid.aspx) and [Name](https://msdn.microsoft.com/library/office/documentformat.openxml.customproperties.customdocumentproperty.name.aspx) properties of the new custom property.
+At this point, if the code has not thrown an exception, you can assume that the property is valid, and the code sets the [FormatId](https://learn.microsoft.com/dotnet/api/documentformat.openxml.customproperties.customdocumentproperty.formatid) and [Name](https://learn.microsoft.com/dotnet/api/documentformat.openxml.customproperties.customdocumentproperty.name) properties of the new custom property.
 
 ### [C#](#tab/cs-4)
 ```csharp
@@ -323,7 +323,7 @@ At this point, if the code has not thrown an exception, you can assume that the 
 ## Working with the Document
 
 Given the **CustomDocumentProperty** object, the code next interacts with the document that you supplied in the parameters to the **SetCustomProperty** procedure. The code starts by opening the document in read/write mode by
-using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class. The code attempts to retrieve a reference to the custom file properties part by using the [CustomFilePropertiesPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart.aspx) property of the document.
+using the [Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method of the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class. The code attempts to retrieve a reference to the custom file properties part by using the [CustomFilePropertiesPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart) property of the document.
 
 ### [C#](#tab/cs-5)
 ```csharp
@@ -370,7 +370,7 @@ If the code cannot find a custom properties part, it creates a new part, and add
 ***
 
 
-Next, the code retrieves a reference to the [Properties](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.customfilepropertiespart.properties.aspx) property of the custom
+Next, the code retrieves a reference to the [Properties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.customfilepropertiespart.properties) property of the custom
 properties part (that is, a reference to the properties themselves). If
 the code had to create a new custom properties part, you know that this
 reference is not null. However, for existing custom properties parts, it

@@ -31,7 +31,7 @@ within the **GetColumnHeading** method.
 The **GetColumnName** method takes the cell
 name as a parameter. It parses the cell name to get the column name by
 creating a regular expression to match the column name portion of the
-cell name. For more information about regular expressions, see [Regular Expression Language Elements](https://msdn.microsoft.com/library/az24scfc.aspx).
+cell name. For more information about regular expressions, see [Regular Expression Language Elements](https://learn.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/spreadsheet/get_a_column_heading/cs/Program.cs#snippet1)]
@@ -69,7 +69,7 @@ gets the cells in the column and orders them by row using the **GetRowIndex** me
 
 If the specified column exists, it gets the first cell in the column
 using the
-[IEnumerable(T).First](https://msdn.microsoft.com/library/bb291976.aspx)
+[IEnumerable(T).First](https://learn.microsoft.com/dotnet/api/system.linq.enumerable.first)
 method. The first cell contains the heading. Otherwise the specified column does not exist and the method returns `null` / `Nothing`
 
 ### [C#](#tab/cs-4)
@@ -79,11 +79,11 @@ method. The first cell contains the heading. Otherwise the specified column does
 ***
 
 
-If the content of the cell is stored in the [SharedStringTablePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.sharedstringtablepart.aspx) object, it gets the
+If the content of the cell is stored in the [SharedStringTablePart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.sharedstringtablepart) object, it gets the
 shared string items and returns the content of the column heading using
 the
-[M:System.Int32.Parse(System.String)](https://msdn.microsoft.com/library/b3h1hf19.aspx)
-method. If the content of the cell is not in the [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) object, it returns the
+[M:System.Int32.Parse(System.String)](https://learn.microsoft.com/dotnet/api/system.int32.parse)
+method. If the content of the cell is not in the [SharedStringTable](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable) object, it returns the
 content of the cell.
 
 ### [C#](#tab/cs-5)

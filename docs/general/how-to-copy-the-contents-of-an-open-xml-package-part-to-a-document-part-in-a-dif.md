@@ -30,10 +30,10 @@ programmatically.
 
 --------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
-To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
+To open an existing document, instantiate the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
 the following two **using** statements. In the
 same statement, you open the word processing file with the specified
-file name by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method, with the Boolean parameter.
+file name by using the [Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the Boolean parameter.
 For the source file that set the parameter to **false** to open it for read-only access. For the
 target file, set the parameter to **true** in
 order to enable editing the document.
