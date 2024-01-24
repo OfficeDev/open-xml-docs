@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with WordprocessingML tables
 
-This topic discusses the Open XML SDK [Table](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.table) class and how it relates to the Office Open XML File Formats WordprocessingML schema.
+This topic discusses the Open XML SDK [Table](/dotnet/api/documentformat.openxml.wordprocessing.table) class and how it relates to the Office Open XML File Formats WordprocessingML schema.
 
 ## Tables in WordprocessingML
 
@@ -43,27 +43,27 @@ The following table lists some of the most common Open XML SDK classes used when
 
 ## Open XML SDK Table Class
 
-The Open XML SDK [Table](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.table) class represents the `<tbl>` element defined in the Open XML File Format schema for WordprocessingML documents as discussed above. Use a Table object to manipulate an individual table in a WordprocessingML document.
+The Open XML SDK [Table](/dotnet/api/documentformat.openxml.wordprocessing.table) class represents the `<tbl>` element defined in the Open XML File Format schema for WordprocessingML documents as discussed above. Use a Table object to manipulate an individual table in a WordprocessingML document.
 
 ## TableProperties Class
 
-The Open XML SDK [TableProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tableproperties) class represents the `<tblPr>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<tblPr>` element defines table-wide properties for a table. Use a TableProperties object to set table-wide properties for a table in a WordprocessingML document.
+The Open XML SDK [TableProperties](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties) class represents the `<tblPr>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<tblPr>` element defines table-wide properties for a table. Use a TableProperties object to set table-wide properties for a table in a WordprocessingML document.
 
 ## TableGrid Class
 
-The Open XML SDK [TableGrid](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablegrid) class represents the `<tblGrid>` element defined in the Open XML File Format schema for WordprocessingML documents. In conjunction with grid column `<gridCol>` child elements, the `<tblGrid>` element defines the columns for a table and specifies the default width of table cells in the columns. Use a TableGrid object to define the columns in a table in a WordprocessingML document.
+The Open XML SDK [TableGrid](/dotnet/api/documentformat.openxml.wordprocessing.tablegrid) class represents the `<tblGrid>` element defined in the Open XML File Format schema for WordprocessingML documents. In conjunction with grid column `<gridCol>` child elements, the `<tblGrid>` element defines the columns for a table and specifies the default width of table cells in the columns. Use a TableGrid object to define the columns in a table in a WordprocessingML document.
 
 ## GridColumn Class
 
-The Open XML SDK [GridColumn](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.gridcolumn) class represents the grid column `<gridCol>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<gridCol>` element is a child element of the `<tblGrid>` element and defines a single column in a table in a WordprocessingML document. Use the GridColumn class to manipulate an individual column in a WordprocessingML document.
+The Open XML SDK [GridColumn](/dotnet/api/documentformat.openxml.wordprocessing.gridcolumn) class represents the grid column `<gridCol>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<gridCol>` element is a child element of the `<tblGrid>` element and defines a single column in a table in a WordprocessingML document. Use the GridColumn class to manipulate an individual column in a WordprocessingML document.
 
 ## TableRow Class
 
-The Open XML SDK [TableRow](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablerow) class represents the table row `<tr>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<tr>` element defines a row in a table in a WordprocessingML document, analogous to the `<tr>` tag in HTML. A table row can also have formatting applied to it using a table row properties `<trPr>` element. The Open XML SDK [TableRowProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablerowproperties) class represents the `<trPr>` element.
+The Open XML SDK [TableRow](/dotnet/api/documentformat.openxml.wordprocessing.tablerow) class represents the table row `<tr>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<tr>` element defines a row in a table in a WordprocessingML document, analogous to the `<tr>` tag in HTML. A table row can also have formatting applied to it using a table row properties `<trPr>` element. The Open XML SDK [TableRowProperties](/dotnet/api/documentformat.openxml.wordprocessing.tablerowproperties) class represents the `<trPr>` element.
 
 ## TableCell Class
 
-The Open XML SDK [TableCell](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablecell) class represents the table cell `<tc>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<tc>` element defines a cell in a table in a WordprocessingML document, analogous to the `<td>` tag in HTML. A table cell can also have formatting applied to it using a table cell properties `<tcPr>` element. The Open XML SDK [TableCellProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.tablecellproperties) class represents the `<tcPr>` element.
+The Open XML SDK [TableCell](/dotnet/api/documentformat.openxml.wordprocessing.tablecell) class represents the table cell `<tc>` element defined in the Open XML File Format schema for WordprocessingML documents. The `<tc>` element defines a cell in a table in a WordprocessingML document, analogous to the `<td>` tag in HTML. A table cell can also have formatting applied to it using a table cell properties `<tcPr>` element. The Open XML SDK [TableCellProperties](/dotnet/api/documentformat.openxml.wordprocessing.tablecellproperties) class represents the `<tcPr>` element.
 
 ## Open XML SDK Code Example
 

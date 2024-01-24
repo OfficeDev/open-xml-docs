@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Working with SpreadsheetML tables
 
-This topic discusses the Open XML SDK **[Table](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.table)** class and how it relates to the Open
+This topic discusses the Open XML SDK **[Table](/dotnet/api/documentformat.openxml.spreadsheet.table)** class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
 overall structure of the parts and elements that make up a SpreadsheetML
 document, see [Structure of a SpreadsheetML document
@@ -68,8 +68,8 @@ The following table lists the common Open XML SDK classes used when working with
 
 | **SpreadsheetML Element** | **Open XML SDK Class**                                               |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------|
-|        tableColumn        | [TableColumn](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.tablecolumn)   |
-|        autoFilter         | [AutoFilter](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.table.autofilter) |
+|        tableColumn        | [TableColumn](/dotnet/api/documentformat.openxml.spreadsheet.tablecolumn)   |
+|        autoFilter         | [AutoFilter](/dotnet/api/documentformat.openxml.spreadsheet.table.autofilter) |
 
 ## Open XML SDK Table Class
 

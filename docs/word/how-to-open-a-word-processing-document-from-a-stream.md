@@ -37,7 +37,7 @@ adds text to the document behind the stream using the Open XML SDK.
 
 ## Creating a WordprocessingDocument Object
 
-In the Open XML SDK, the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
+In the Open XML SDK, the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
 Word document package. To work with a Word document, first create an
 instance of the **WordprocessingDocument**
 class from the document, and then work with that instance. When you
@@ -50,7 +50,7 @@ a Word document, the text in the main document part is represented in
 the package as XML using **WordprocessingML**
 markup.
 
-To create the class instance from the document call the [Open(Stream, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) method. Several **Open** methods are provided, each with a different
+To create the class instance from the document call the [Open(Stream, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) method. Several **Open** methods are provided, each with a different
 signature. The sample code in this topic uses the **Open** method with a signature that requires two
 parameters. The first parameter takes a handle to the stream from which
 you want to open the document. The second parameter is either **true** or **false** and

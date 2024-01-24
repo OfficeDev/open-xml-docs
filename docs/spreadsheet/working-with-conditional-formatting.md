@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with conditional formatting
 
-This topic discusses the Open XML SDK **[ConditionalFormatting](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.conditionalformatting)** class and how it
+This topic discusses the Open XML SDK **[ConditionalFormatting](/dotnet/api/documentformat.openxml.spreadsheet.conditionalformatting)** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
 make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)**.
@@ -46,10 +46,10 @@ class.
 
 | **SpreadsheetML Element** |                                                           **Open XML SDK Class**                                                           |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-|          cfRule           | [ConditionalFormattingRule](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.conditionalformattingrule) |
-|          dataBar          |                   [DataBar](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.databar)                   |
-|        colorScale         |                [ColorScale](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.colorscale)                |
-|          iconSet          |                   [IconSet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.iconset)                   |
+|          cfRule           | [ConditionalFormattingRule](/dotnet/api/documentformat.openxml.spreadsheet.conditionalformattingrule) |
+|          dataBar          |                   [DataBar](/dotnet/api/documentformat.openxml.spreadsheet.databar)                   |
+|        colorScale         |                [ColorScale](/dotnet/api/documentformat.openxml.spreadsheet.colorscale)                |
+|          iconSet          |                   [IconSet](/dotnet/api/documentformat.openxml.spreadsheet.iconset)                   |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Conditional Formatting Class 

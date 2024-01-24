@@ -103,15 +103,15 @@ set the font of the run to Arial, the code creates a **RunFonts** object and the
 ***
 
 
-The code then creates a [Run](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run) object that represents the first text
+The code then creates a [Run](/dotnet/api/documentformat.openxml.wordprocessing.run) object that represents the first text
 run of the document. The code instantiates a **Run** and sets it to the first text run of the
-document. The code then adds the **RunProperties** object to the **Run** object using the [PrependChild\<T\>(T)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.openxmlelement.prependchild) method. The **PrependChild** method adds an element as the first
+document. The code then adds the **RunProperties** object to the **Run** object using the [PrependChild\<T\>(T)](/dotnet/api/documentformat.openxml.openxmlelement.prependchild) method. The **PrependChild** method adds an element as the first
 child element to the specified element in the in-memory XML structure.
 In this case, running the code sample produces an in-memory XML
 structure where the **RunProperties** element
 is added as the first child element of the **Run** element. It then saves the changes back to
-the [Save(MainDocumentPart)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.document.save) object. Calling the
-**Save** method of the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) object commits
+the [Save(MainDocumentPart)](/dotnet/api/documentformat.openxml.wordprocessing.document.save) object. Calling the
+**Save** method of the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) object commits
 changes made to the in-memory representation of the **MainDocumentPart** part back into the XML file for
 the **MainDocumentPart** (the document.xml file
 in the Wordprocessing package).

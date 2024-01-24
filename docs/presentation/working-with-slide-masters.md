@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 # Working with slide masters
 
-This topic discusses the Open XML SDK for Office **[SlideMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidemaster)** class and how it relates to the Open XML File Format PresentationML schema.
+This topic discusses the Open XML SDK for Office **[SlideMaster](/dotnet/api/documentformat.openxml.presentation.slidemaster)** class and how it relates to the Open XML File Format PresentationML schema.
 
 ## Slide Masters in PresentationML
 
@@ -30,14 +30,14 @@ The following table lists the child elements of the \<sldMaster\> element used w
 
 | **PresentationML Element** | **Open XML SDK Class**                                                                                                 |
 |:---------------------------|:---------------------------------------------------------------------------------------------------------------------------|
-| \<clrMap\>                 | [ColorMap](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.colormap)                    |
-| \<cSld\>                   | [CommonSlideData](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commonslidedata)      |
-| \<extLst\>                 | [ExtensionListWithModification](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
-| \<hf\>                     | [HeaderFooter](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.headerfooter)            |
-| \<sldLayoutIdLst\>         | [SlideLayoutIdList](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidelayoutidlist)  |
-| \<timing\>                 | [Timing](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.timing)                        |
-| \<transition\>             | [Transition](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.transition)                |
-| \<txStyles\>               | [TextStyles](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.textstyles)                |
+| \<clrMap\>                 | [ColorMap](/dotnet/api/documentformat.openxml.presentation.colormap)                    |
+| \<cSld\>                   | [CommonSlideData](/dotnet/api/documentformat.openxml.presentation.commonslidedata)      |
+| \<extLst\>                 | [ExtensionListWithModification](/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
+| \<hf\>                     | [HeaderFooter](/dotnet/api/documentformat.openxml.presentation.headerfooter)            |
+| \<sldLayoutIdLst\>         | [SlideLayoutIdList](/dotnet/api/documentformat.openxml.presentation.slidelayoutidlist)  |
+| \<timing\>                 | [Timing](/dotnet/api/documentformat.openxml.presentation.timing)                        |
+| \<transition\>             | [Transition](/dotnet/api/documentformat.openxml.presentation.transition)                |
+| \<txStyles\>               | [TextStyles](/dotnet/api/documentformat.openxml.presentation.textstyles)                |
 
 The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the attributes of the \<sldMaster\> element.
@@ -138,16 +138,16 @@ In the previous example the title text is set according to the above formatting 
 
 ## Working with the SlideMaster Class
 
-As shown in the Open XML SDK code sample that follows, every instance of the **SlideMaster** class is associated with an instance of the **[SlideMasterPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.slidemasterpart)** class, which represents a slide master part, one of the required parts of a PresentationML presentation file package. Each **SlideMaster** class instance must also be associated with instances of the **[SlideLayout](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slidelayout)** and <**[Slide](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slide)** classes, which are in turn associated with similarly named required presentation parts, represented by the **[SlideLayoutPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.slidelayoutpart)** and **[SlidePart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.slidepart)** classes.
+As shown in the Open XML SDK code sample that follows, every instance of the **SlideMaster** class is associated with an instance of the **[SlideMasterPart](/dotnet/api/documentformat.openxml.packaging.slidemasterpart)** class, which represents a slide master part, one of the required parts of a PresentationML presentation file package. Each **SlideMaster** class instance must also be associated with instances of the **[SlideLayout](/dotnet/api/documentformat.openxml.presentation.slidelayout)** and <**[Slide](/dotnet/api/documentformat.openxml.presentation.slide)** classes, which are in turn associated with similarly named required presentation parts, represented by the **[SlideLayoutPart](/dotnet/api/documentformat.openxml.packaging.slidelayoutpart)** and **[SlidePart](/dotnet/api/documentformat.openxml.packaging.slidepart)** classes.
 
 The **SlideMaster** class, which represents the \<sldMaster\> element, is therefore also associated with a series of other classes that represent the child elements of the \<sldMaster\>
-element. Among these classes, as shown in the following code sample, are the **CommonSlideData** class, the **ColorMap** class, the **[ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree)** class, and the **[Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape)** class.
+element. Among these classes, as shown in the following code sample, are the **CommonSlideData** class, the **ColorMap** class, the **[ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree)** class, and the **[Shape](/dotnet/api/documentformat.openxml.presentation.shape)** class.
 
 ## Open XML SDK Code Example
 
-The following method from the article [How to: Create a presentation document by providing a file name](/office/open-xml/how-to-create-a-presentation-document-by-providing-a-file-name) adds a new slidemaster part to an existing presentation and creates an instance of an Open XML SDK**SlideMaster** class in the new slide master part. The **SlideMaster** class constructor creates instances of the **CommonSlideData** class and the **ColorMap**, **SlideLayoutIdList**, and **TextStyles** classes. The **CommonSlideData** class constructor creates an instance of the **[ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree)** class, whose constructor in turn creates additional class instances: an instance of the **[NonVisualGroupShapeProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties)** class, an instance of the **[GroupShapeProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.groupshapeproperties)** class, and an instance of the **[Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape)** class, among others.
+The following method from the article [How to: Create a presentation document by providing a file name](/office/open-xml/how-to-create-a-presentation-document-by-providing-a-file-name) adds a new slidemaster part to an existing presentation and creates an instance of an Open XML SDK**SlideMaster** class in the new slide master part. The **SlideMaster** class constructor creates instances of the **CommonSlideData** class and the **ColorMap**, **SlideLayoutIdList**, and **TextStyles** classes. The **CommonSlideData** class constructor creates an instance of the **[ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree)** class, whose constructor in turn creates additional class instances: an instance of the **[NonVisualGroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties)** class, an instance of the **[GroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.groupshapeproperties)** class, and an instance of the **[Shape](/dotnet/api/documentformat.openxml.presentation.shape)** class, among others.
 
-The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation)** namespace.
+The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation)** namespace.
 
 ### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/working_with_slide_masters/cs/Program.cs)]

@@ -24,11 +24,11 @@ all of the text in all of the slides in a presentation programmatically.
 --------------------------------------------------------------------------------
 ## Getting a PresentationDocument object 
 
-In the Open XML SDK, the [PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
+In the Open XML SDK, the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-[PresentationDocument.Open(String, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open)
+[PresentationDocument.Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open)
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. To open a document
 for read/write access, assign the value **true** to this parameter; for read-only access
@@ -121,4 +121,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 
 [Open XML SDK class library
-reference](https://learn.microsoft.com/office/open-xml/open-xml-sdk)
+reference](/office/open-xml/open-xml-sdk)

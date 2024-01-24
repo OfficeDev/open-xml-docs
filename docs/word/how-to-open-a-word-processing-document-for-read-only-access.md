@@ -33,7 +33,7 @@ programmatically open a read-only word processing document.
 
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object 
-In the Open XML SDK, the [WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
+In the Open XML SDK, the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
 Word document package. To work with a Word document, first create an
 instance of the **WordprocessingDocument**
 class from the document, and then work with that instance. Once you
@@ -51,10 +51,10 @@ editable are listed in the following table.
 
 Open Method|Class Library Reference Topic|Description
 --|--|--
-Open(String, Boolean)|[Open(String, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified file.
-Open(Stream, Boolean)|[Open(Stream, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified IO stream.
-Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified file.
-Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified I/O stream.
+Open(String, Boolean)|[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified file.
+Open(Stream, Boolean)|[Open(Stream, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified IO stream.
+Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified file.
+Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified I/O stream.
 
 The table above lists only those **Open**
 methods that accept a Boolean value as the second parameter to specify

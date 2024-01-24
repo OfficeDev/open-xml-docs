@@ -29,7 +29,7 @@ programmatically.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
 The code example starts with opening a package file by passing a file
-name as an argument to one of the overloaded [Open()](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) methods of the [DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument)
+name as an argument to one of the overloaded [Open()](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) methods of the [DocumentFormat.OpenXml.Packaging.WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument)
 that takes a string and a Boolean value that specifies whether the file
 should be opened in read/write mode or not. In this case, the Boolean
 value is **true** specifying that the file

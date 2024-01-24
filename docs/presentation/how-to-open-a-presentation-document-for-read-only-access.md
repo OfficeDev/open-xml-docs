@@ -35,20 +35,20 @@ document.
 
 ## Create an Instance of the PresentationDocument Class 
 
-In the Open XML SDK, the [PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
+In the Open XML SDK, the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call one
-of the [Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) methods. Several Open methods are
+of the [Open](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) methods. Several Open methods are
 provided, each with a different signature. The following table contains
 a subset of the overloads for the **Open**
 method that you can use to open the package.
 
 | Name | Description |
 |---|---|
-| [Open(String, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) | Create a new instance of the **PresentationDocument** class from the specified file. |
-| [Open(Stream, Boolean)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) | Create a new instance of the **PresentationDocument** class from the I/O stream. |
-| [Open(Package)](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) | Create a new instance of the **PresentationDocument** class from the specified package. |
+| [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) | Create a new instance of the **PresentationDocument** class from the specified file. |
+| [Open(Stream, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) | Create a new instance of the **PresentationDocument** class from the I/O stream. |
+| [Open(Package)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) | Create a new instance of the **PresentationDocument** class from the specified package. |
 
 
 The previous table includes two **Open**
@@ -57,7 +57,7 @@ whether a document is editable. To open a document for read-only access,
 specify the value **false** for this parameter.
 
 For example, you can open the presentation file as read-only and assign
-it to a [PresentationDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument) object as shown in the
+it to a [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) object as shown in the
 following **using** statement. In this code,
 the **presentationFile** parameter is a string
 that represents the path of the file from which you want to open the

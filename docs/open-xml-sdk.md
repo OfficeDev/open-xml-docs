@@ -65,8 +65,8 @@ Portions of [!include[ISO/IEC 29500 version](./includes/iso-iec-29500-version.md
 - [Open XML SDK for Microsoft Office](https://www.nuget.org/packages/DocumentFormat.OpenXml)
 - [Microsoft Office Developer Center](https://developer.microsoft.com/office/docs)
 - [Samples on GitHub](https://github.com/OfficeDev)
-- [Open XML SDK copyright notice](https://learn.microsoft.com/previous-versions/office/bb509417(v=office.15))
+- [Open XML SDK copyright notice](/previous-versions/office/bb509417(v=office.15))
 - [Accessibility features in the Microsoft Office System](https://www.microsoft.com/accessibility/)
-- [Document conventions in Office Developer documentation](https://learn.microsoft.com/previous-versions/office/dn602610(v=office.15))
+- [Document conventions in Office Developer documentation](/previous-versions/office/dn602610(v=office.15))
 
 <sup>1</sup>© [!include[ISO/IEC 29500 version](./includes/iso-iec-29500-version.md)]. This material is reproduced from [!include[ISO/IEC 29500 version](./includes/iso-iec-29500-version.md)] with permission of the American National Standards Institute (ANSI) on behalf of ISO.

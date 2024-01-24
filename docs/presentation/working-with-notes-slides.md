@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with notes slides
 
-This topic discusses the Open XML SDK for Office [NotesSlide](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesslide) class and how it relates to the
+This topic discusses the Open XML SDK for Office [NotesSlide](/dotnet/api/documentformat.openxml.presentation.notesslide) class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
@@ -61,9 +61,9 @@ that correspond to them.
 
 | **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       \<clrMapOvr\>        |              [ColorMapOverride](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.colormapoverride)              |
-|          \<cSld\>          |               [CommonSlideData](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.commonslidedata)               |
-|         \<extLst\>         | [ExtensionListWithModification](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
+|       \<clrMapOvr\>        |              [ColorMapOverride](/dotnet/api/documentformat.openxml.presentation.colormapoverride)              |
+|          \<cSld\>          |               [CommonSlideData](/dotnet/api/documentformat.openxml.presentation.commonslidedata)               |
+|         \<extLst\>         | [ExtensionListWithModification](/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
 
 The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the attributes of the \<notes\> element.
@@ -145,19 +145,19 @@ store whether this extension property has been modified. end note]
 ## Working with the NotesSlide Class
 As shown in the Open XML SDK code sample that follows, every instance of
 the **NotesSlide** class is associated with an
-instance of the [NotesSlidePart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.notesslidepart) class, which represents a
+instance of the [NotesSlidePart](/dotnet/api/documentformat.openxml.packaging.notesslidepart) class, which represents a
 notes slide part, one of the parts of a PresentationML presentation file
 package, and a part that is required for each notes slide in a
 presentation file. Each **NotesSlide** class
-instance may also be associated with an instance of the [NotesMaster](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.notesmaster) class, which in turn is
+instance may also be associated with an instance of the [NotesMaster](/dotnet/api/documentformat.openxml.presentation.notesmaster) class, which in turn is
 associated with a similarly named presentation part, represented by the
-[NotesMasterPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.notesmasterpart) class.
+[NotesMasterPart](/dotnet/api/documentformat.openxml.packaging.notesmasterpart) class.
 
 The **NotesSlide** class, which represents the
 \<notes\> element, is therefore also associated with a series of other
 classes that represent the child elements of the \<notes\> element.
 Among these classes, as shown in the following code sample, are the
-**CommonSlideData** class and the **ColorMapOverride** class. The [ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree) class and the [Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape) classes are in turn associated with
+**CommonSlideData** class and the **ColorMapOverride** class. The [ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree) class and the [Shape](/dotnet/api/documentformat.openxml.presentation.shape) classes are in turn associated with
 the **CommonSlideData** class.
 
 
@@ -168,12 +168,12 @@ presentation and creates an instance of an Open XML SDK**NotesSlide** class in t
 **NotesSlide** class constructor creates
 instances of the **CommonSlideData** class and
 the **ColorMap** class. The **CommonSlideData** class constructor creates an
-instance of the [ShapeTree](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shapetree) class, whose constructor in turn
-creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties) class, an
-instance of the [GroupShapeProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.groupshapeproperties) class, and an instance
-of the [Shape](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.shape) class.
+instance of the [ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree) class, whose constructor in turn
+creates additional class instances: an instance of the [NonVisualGroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties) class, an
+instance of the [GroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.groupshapeproperties) class, and an instance
+of the [Shape](/dotnet/api/documentformat.openxml.presentation.shape) class.
 
-The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation)
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation)
 namespace.
 
 ### [C#](#tab/cs)

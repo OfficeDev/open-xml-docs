@@ -81,8 +81,8 @@ values, as shown in the following code.
 
 ## How the Code Works
 
-The code starts by creating an integer variable, **slidesCount**, to hold the number of slides. The code then opens the specified presentation by using the [PresentationDocument.Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) method and indicating that the document should be open for read-only access (the
-final **false** parameter value). Given the open presentation, the code uses the [PresentationPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationdocument.presentationpart) property to navigate to the main presentation part, storing the reference in a variable named **presentationPart**.
+The code starts by creating an integer variable, **slidesCount**, to hold the number of slides. The code then opens the specified presentation by using the [PresentationDocument.Open](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) method and indicating that the document should be open for read-only access (the
+final **false** parameter value). Given the open presentation, the code uses the [PresentationPart](/dotnet/api/documentformat.openxml.packaging.presentationdocument.presentationpart) property to navigate to the main presentation part, storing the reference in a variable named **presentationPart**.
 
 ### [C#](#tab/cs-2)
 ```csharp
@@ -113,7 +113,7 @@ final **false** parameter value). Given the open presentation, the code uses the
 
 ## Retrieving the Count of All Slides
 
-If the presentation part reference is not null (and it will not be, for any valid presentation that loads correctly into PowerPoint), the code next calls the **Count** method on the value of the [SlideParts](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.presentationpart.slideparts) property of the presentation part. If you requested all slides, including hidden slides, that is all there is to do. There is slightly more work to be done if you want to exclude hidden slides, as shown in the following code.
+If the presentation part reference is not null (and it will not be, for any valid presentation that loads correctly into PowerPoint), the code next calls the **Count** method on the value of the [SlideParts](/dotnet/api/documentformat.openxml.packaging.presentationpart.slideparts) property of the presentation part. If you requested all slides, including hidden slides, that is all there is to do. There is slightly more work to be done if you want to exclude hidden slides, as shown in the following code.
 
 ### [C#](#tab/cs-3)
 ```csharp
@@ -144,14 +144,14 @@ If the presentation part reference is not null (and it will not be, for any vali
 
 If you requested that the code should limit the return value to include
 only visible slides, the code must filter its collection of slides to
-include only those slides that have a [Show](https://learn.microsoft.com/dotnet/api/documentformat.openxml.presentation.slide.show) property that contains a value, and
+include only those slides that have a [Show](/dotnet/api/documentformat.openxml.presentation.slide.show) property that contains a value, and
 the value is **true**. If the **Show** property is null, that also indicates that
 the slide is visible. This is the most likely scenario—PowerPoint does
 not set the value of this property, in general, unless the slide is to
 be hidden. The only way the **Show** property
 would exist and have a value of **true** would
 be if you had hidden and then unhidden the slide. The following code
-uses the [Where](https://learn.microsoft.com/dotnet/api/system.linq.enumerable.where)**
+uses the [Where](/dotnet/api/system.linq.enumerable.where)**
 function with a lambda expression to do the work.
 
 ### [C#](#tab/cs-4)

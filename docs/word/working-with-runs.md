@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with runs
 
-This topic discusses the Open XML SDK **[Run](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run)** class and how it relates to the Open
+This topic discusses the Open XML SDK **[Run](/dotnet/api/documentformat.openxml.wordprocessing.run)** class and how it relates to the Open
 XML File Format WordprocessingML schema.
 
 
@@ -57,7 +57,7 @@ working with runs.
 
 ---------------------------------------------------------------------------------
 ## Run Class 
-The Open XML SDK <strong>[Run](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run)</strong> class represents the run `<r>` element defined in the Open XML File Format
+The Open XML SDK <strong>[Run](/dotnet/api/documentformat.openxml.wordprocessing.run)</strong> class represents the run `<r>` element defined in the Open XML File Format
 schema for WordprocessingML documents as discussed above. Use a **Run** object to manipulate an individual `<r>` element in a WordprocessingML document.
 
 ### RunProperties Class
@@ -67,13 +67,13 @@ using the run properties `<rPr>` element.
 Some examples of run properties are bold, border, character style,
 color, font, font size, italic, kerning, disable spelling/grammar check,
 shading, small caps, strikethrough, text direction, and underline. Use a
-**[RunProperties](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.runproperties)** object to set the properties
+**[RunProperties](/dotnet/api/documentformat.openxml.wordprocessing.runproperties)** object to set the properties
 for a run in a WordprocessingML document.
 
 ### Text Object
 
 With the `<r>` element, the text (`<t>`) element is the container for the text that
-makes up the document content. The OXML SDK **[Text](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.text)** class represents the `<t>` element. Use a **Text** object to place text in a Wordprocessing
+makes up the document content. The OXML SDK **[Text](/dotnet/api/documentformat.openxml.wordprocessing.text)** class represents the `<t>` element. Use a **Text** object to place text in a Wordprocessing
 document.
 
 

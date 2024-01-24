@@ -26,7 +26,7 @@ The sample code starts by passing in to the method **CalculateSumOfCellRange** a
 The code then opens the file for editing as a **SpreadsheetDocument** document package for read/write access, the code gets the specified **Worksheet** object. It then gets the index of the row for the first and last cell in the contiguous range by calling the **GetRowIndex** method. It gets the name of the column for the first and last cell in the contiguous range by calling the **GetColumnName** method.
 
 For each **Row** object within the contiguous range, the code iterates through each **Cell** object and determines if the column of the cell is within the contiguous
-range by calling the **CompareColumn** method. If the cell is within the contiguous range, the code adds the value of the cell to the sum. Then it gets the **SharedStringTablePart** object if it exists. If it does not exist, it creates one using the **[AddNewPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart)** method. It inserts the result into the **SharedStringTablePart** object by calling the **InsertSharedStringItem** method.
+range by calling the **CompareColumn** method. If the cell is within the contiguous range, the code adds the value of the cell to the sum. Then it gets the **SharedStringTablePart** object if it exists. If it does not exist, it creates one using the **[AddNewPart](/dotnet/api/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart)** method. It inserts the result into the **SharedStringTablePart** object by calling the **InsertSharedStringItem** method.
 
 The code inserts a new cell for the result into the worksheet by calling the **InsertCellInWorksheet** method and set the value of the cell. For more information, see [how to insert a cell in a spreadsheet](how-to-insert-text-into-a-cell-in-a-spreadsheet.md#how-the-sample-code-works), and then save the worksheet.
 
@@ -37,7 +37,7 @@ The code inserts a new cell for the result into the worksheet by calling the **I
 ***
 
 To get the row index the code passes a parameter that represents the name of the cell, and creates a new regular expression to match the row
-index portion of the cell name. For more information about regular expressions, see [Regular Expression Language Elements](/dotnet/standard/base-types/regular-expression-language-quick-reference). It gets the row index by calling the **[Regex.Match](https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex.match)** method, and then returns the row index.
+index portion of the cell name. For more information about regular expressions, see [Regular Expression Language Elements](/dotnet/standard/base-types/regular-expression-language-quick-reference). It gets the row index by calling the **[Regex.Match](/dotnet/api/system.text.regularexpressions.regex.match)** method, and then returns the row index.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/spreadsheet/calculate_the_sum_of_a_range_of_cells/cs/Program.cs#snippet2)]
@@ -64,7 +64,7 @@ To compare two columns the code passes in two parameters that represent the colu
 ***
 
 
-To insert a **SharedStringItem**, the code passes in a parameter that represents the text to insert into the cell and a parameter that represents the  **SharedStringTablePart** object for the spreadsheet. If the **ShareStringTablePart** object does not contain a **[SharedStringTable](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable)** object then it creates one. If the text already exists in the **ShareStringTable** object, then it returns the index for the **[SharedStringItem](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem)** object that represents the text. If the text does not exist, create a new **SharedStringItem** object that represents the text. It then returns the index for the **SharedStringItem** object that represents the text.
+To insert a **SharedStringItem**, the code passes in a parameter that represents the text to insert into the cell and a parameter that represents the  **SharedStringTablePart** object for the spreadsheet. If the **ShareStringTablePart** object does not contain a **[SharedStringTable](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable)** object then it creates one. If the text already exists in the **ShareStringTable** object, then it returns the index for the **[SharedStringItem](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem)** object that represents the text. If the text does not exist, create a new **SharedStringItem** object that represents the text. It then returns the index for the **SharedStringItem** object that represents the text.
 
 ### [C#](#tab/cs-5)
 [!code-csharp[](../../samples/spreadsheet/calculate_the_sum_of_a_range_of_cells/cs/Program.cs#snippet5)]

@@ -123,7 +123,7 @@ stylesWithEffects part second, and relies on two supporting methods to
 do most of the work. The **ExtractStylesPart**
 method has the job of extracting the content of the styles or
 stylesWithEffects part, and placing it in an
-[XDocument](https://learn.microsoft.com/dotnet/api/system.xml.linq.xdocument)
+[XDocument](/dotnet/api/system.xml.linq.xdocument)
 object. The **ReplaceStylesPart** method takes
 the object created by **ExtractStylesPart** and
 uses its content to replace the styles or stylesWithEffects part in the
@@ -224,9 +224,9 @@ The **ReplaceStylesPart** method examines the
 document you specify, looking for the styles or stylesWithEffects part.
 If the requested part exists, the method saves the supplied **XDocument** into the selected part.
 
-The code starts by opening the document by using the **[Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** method and indicating that the
+The code starts by opening the document by using the **[Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** method and indicating that the
 document should be open for read/write access (the final **true** parameter). Given the open document, the code
-uses the **[MainDocumentPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart)** property to navigate to
+uses the **[MainDocumentPart](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart)** property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ### [C#](#tab/cs-5)
@@ -292,12 +292,12 @@ requested styles part, and stores it in the **stylesPart** variable.
 
 Assuming that the requested part exists, the code must save the entire
 contents of the **XDocument** passed to the
-method to the part. Each part provides a **[GetStream](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.openxmlpart.getstream)** method, which returns a Stream.
+method to the part. Each part provides a **[GetStream](/dotnet/api/documentformat.openxml.packaging.openxmlpart.getstream)** method, which returns a Stream.
 The code passes the Stream instance to the constructor of the
-[StreamWriter](https://learn.microsoft.com/dotnet/api/system.io.streamwriter.-ctor)
+[StreamWriter](/dotnet/api/system.io.streamwriter.-ctor)
 class, creating a stream writer around the stream of the part. Finally,
 the code calls the
-[Save](https://learn.microsoft.com/dotnet/api/system.xml.linq.xdocument.save) method of
+[Save](/dotnet/api/system.xml.linq.xdocument.save) method of
 the XDocument, saving its contents into the styles part.
 
 ### [C#](#tab/cs-7)

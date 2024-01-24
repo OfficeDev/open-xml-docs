@@ -37,7 +37,7 @@ You can use the **GetHiddenRowsOrCols** method to retrieve a list of the hidden 
 
 ## How the Code Works
 
-The code opens the document, by using the [SpreadsheetDocument.Open](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open) method and indicating that the document should be open for read-only access (the final **false** parameter value). Next the code retrieves a reference to the workbook part, by using the [WorkbookPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.workbookpart) property of the document.
+The code opens the document, by using the [SpreadsheetDocument.Open](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open) method and indicating that the document should be open for read-only access (the final **false** parameter value). Next the code retrieves a reference to the workbook part, by using the [WorkbookPart](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.workbookpart) property of the document.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/cs/Program.cs#snippet1)]
@@ -47,8 +47,8 @@ The code opens the document, by using the [SpreadsheetDocument.Open](https://lea
 ***
 
 
-To find the hidden rows or columns, the code must first retrieve a reference to the specified sheet, given its name. This is not as easy as you might think. The code must look through all the sheet-type descendants of the workbook part's [Workbook](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.workbookpart.workbook) property, examining the [Name](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet.name) property of each sheet that it finds.
-Note that this search simply looks through the relations of the workbook, and does not actually find a worksheet part. It simply finds a reference to a [Sheet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet) object, which contains information such as the name and [Id](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet.id) property of the sheet. The simplest way to accomplish this is to use a LINQ query.
+To find the hidden rows or columns, the code must first retrieve a reference to the specified sheet, given its name. This is not as easy as you might think. The code must look through all the sheet-type descendants of the workbook part's [Workbook](/dotnet/api/documentformat.openxml.packaging.workbookpart.workbook) property, examining the [Name](/dotnet/api/documentformat.openxml.spreadsheet.sheet.name) property of each sheet that it finds.
+Note that this search simply looks through the relations of the workbook, and does not actually find a worksheet part. It simply finds a reference to a [Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet) object, which contains information such as the name and [Id](/dotnet/api/documentformat.openxml.spreadsheet.sheet.id) property of the sheet. The simplest way to accomplish this is to use a LINQ query.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/cs/Program.cs#snippet2)]
@@ -57,7 +57,7 @@ Note that this search simply looks through the relations of the workbook, and do
 [!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/vb/Program.vb#snippet2)]
 ***
 
-The sheet information you already retrieved provides an **Id** property, and given that **Id** property, the code can retrieve a reference to the corresponding [WorksheetPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.worksheet.worksheetpart) property by calling the [GetPartById](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid) method of the [WorkbookPart](https://learn.microsoft.com/dotnet/api/documentformat.openxml.packaging.workbookpart) object.
+The sheet information you already retrieved provides an **Id** property, and given that **Id** property, the code can retrieve a reference to the corresponding [WorksheetPart](/dotnet/api/documentformat.openxml.spreadsheet.worksheet.worksheetpart) property by calling the [GetPartById](/dotnet/api/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid) method of the [WorkbookPart](/dotnet/api/documentformat.openxml.packaging.workbookpart) object.
 
 ### [C#](#tab/cs-5)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/cs/Program.cs#snippet3)]
@@ -80,7 +80,7 @@ The code uses the **detectRows** parameter that you specified when you called th
 [!code-vb[](../../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/vb/Program.vb#snippet4)]
 ***
 
-Retrieving the list of hidden columns is a bit trickier, because Excel collapses groups of hidden columns into a single element, and provides [Min](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.column.min) and [Max](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.column.max) properties that describe the first and last columns in the group. Therefore, the code that retrieves the list of hidden columns starts the same as the code that retrieves hidden rows. However, it must iterate through the index values (looping each item in the collection of hidden columns, adding each index from the **Min** to the **Max** value, inclusively).
+Retrieving the list of hidden columns is a bit trickier, because Excel collapses groups of hidden columns into a single element, and provides [Min](/dotnet/api/documentformat.openxml.spreadsheet.column.min) and [Max](/dotnet/api/documentformat.openxml.spreadsheet.column.max) properties that describe the first and last columns in the group. Therefore, the code that retrieves the list of hidden columns starts the same as the code that retrieves hidden rows. However, it must iterate through the index values (looping each item in the collection of hidden columns, adding each index from the **Min** to the **Max** value, inclusively).
 
 ### [C#](#tab/cs-8)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/cs/Program.cs#snippet5)]

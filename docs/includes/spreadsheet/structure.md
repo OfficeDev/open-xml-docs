@@ -1,6 +1,6 @@
 ## Basic structure of a spreadsheetML document
 
-The basic document structure of a **SpreadsheetML** document consists of the [Sheets](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheets) and [Sheet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheet) elements, which reference the worksheets in the workbook. A separate XML file is created for each worksheet. For example, the **SpreadsheetML** for a [Workbook](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.workbook) that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
+The basic document structure of a **SpreadsheetML** document consists of the [Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets) and [Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet) elements, which reference the worksheets in the workbook. A separate XML file is created for each worksheet. For example, the **SpreadsheetML** for a [Workbook](/dotnet/api/documentformat.openxml.spreadsheet.workbook) that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
@@ -13,8 +13,8 @@ The basic document structure of a **SpreadsheetML** document consists of the [Sh
 ```
 
 The worksheet XML files contain one or more block level elements such as
-[sheetData](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheetdata) represents the cell table and contains
-one or more [Row](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.row) elements. A **row** contains one or more [Cell](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cell) elements. Each cell contains a [CellValue](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) element that represents the value
+[sheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata) represents the cell table and contains
+one or more [Row](/dotnet/api/documentformat.openxml.spreadsheet.row) elements. A **row** contains one or more [Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell) elements. Each cell contains a [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) element that represents the value
 of the cell. For example, the **SpreadsheetML**
 for the first worksheet in a workbook, that only has the value 100 in
 cell A1, is located in the Sheet1.xml file and is shown in the following

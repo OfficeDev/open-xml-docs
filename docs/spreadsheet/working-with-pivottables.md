@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Working with PivotTables
 
-This topic discusses the Open XML SDK **[PivotTableDefinition](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.pivottabledefinition)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
+This topic discusses the Open XML SDK **[PivotTableDefinition](/dotnet/api/documentformat.openxml.spreadsheet.pivottabledefinition)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 ## PivotTable in SpreadsheetML
 
@@ -89,9 +89,9 @@ The following table lists the common Open XML SDK classes used when working with
 
 | **SpreadsheetML Element** | **Open XML SDK Class**                                                      |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------|
-|  pivotField            | [PivotField](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.pivotfield)           |
-|  pivotCacheDefinition  | [PivotCacheDefinition](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.pivotcachedefinition) |
-|  pivotCacheRecords     | [PivotCacheRecords](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.pivotcacherecords)    |
+|  pivotField            | [PivotField](/dotnet/api/documentformat.openxml.spreadsheet.pivotfield)           |
+|  pivotCacheDefinition  | [PivotCacheDefinition](/dotnet/api/documentformat.openxml.spreadsheet.pivotcachedefinition) |
+|  pivotCacheRecords     | [PivotCacheRecords](/dotnet/api/documentformat.openxml.spreadsheet.pivotcacherecords)    |
 
 ## Open XML SDK PivotTableDefinition Class
 

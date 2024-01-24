@@ -29,7 +29,7 @@ after running the validation check. The second method, **ValidateCorruptedWordDo
 inserting some text into the body, which causes a schema error. It then
 validates the Word file, in which case the method throws an exception on
 trying to open the corrupted file. The validation is done by using the
-[Validate](https://learn.microsoft.com/dotnet/api/documentformat.openxml.validation.openxmlvalidator.validate) method. The code displays
+[Validate](/dotnet/api/documentformat.openxml.validation.openxmlvalidator.validate) method. The code displays
 information about any errors that are found, in addition to the count of
 errors.
 

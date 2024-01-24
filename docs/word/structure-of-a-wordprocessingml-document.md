@@ -38,15 +38,15 @@ represents the element in the Open XML SDK API.
 
 | **Package Part** | **WordprocessingML Element** | **Open XML SDK Class** | **Description** |
 |---|---|---|---|
-| Main Document|document | [Document](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.document) | The root element for the main document part. |
-| Comments | comments | [Comments](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.comments) | The root element for the comments part. |
-| Document Settings | settings | [Settings](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.settings) | The root element for the document settings part. |
-| Endnotes | endnotes | [Endnotes](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.endnotes) | The root element for the endnotes part. |
-| Footer | ftr | [Footer](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.footer) | The root element for the footer part. |
-| Footnotes | footnotes | [Footnotes](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.footnotes) | The root element for the footnotes part. |
-| Glossary Document | glossaryDocument | [GlossaryDocument](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.glossarydocument) | The root element for the glossary document part. |
-| Header | hdr | [Header](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.header) | The root element for the header part. |
-| Style Definitions | styles | [Styles](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.styles) | The root element for a Style Definitions part. |
+| Main Document|document | [Document](/dotnet/api/documentformat.openxml.wordprocessing.document) | The root element for the main document part. |
+| Comments | comments | [Comments](/dotnet/api/documentformat.openxml.wordprocessing.comments) | The root element for the comments part. |
+| Document Settings | settings | [Settings](/dotnet/api/documentformat.openxml.wordprocessing.settings) | The root element for the document settings part. |
+| Endnotes | endnotes | [Endnotes](/dotnet/api/documentformat.openxml.wordprocessing.endnotes) | The root element for the endnotes part. |
+| Footer | ftr | [Footer](/dotnet/api/documentformat.openxml.wordprocessing.footer) | The root element for the footer part. |
+| Footnotes | footnotes | [Footnotes](/dotnet/api/documentformat.openxml.wordprocessing.footnotes) | The root element for the footnotes part. |
+| Glossary Document | glossaryDocument | [GlossaryDocument](/dotnet/api/documentformat.openxml.wordprocessing.glossarydocument) | The root element for the glossary document part. |
+| Header | hdr | [Header](/dotnet/api/documentformat.openxml.wordprocessing.header) | The root element for the header part. |
+| Style Definitions | styles | [Styles](/dotnet/api/documentformat.openxml.wordprocessing.styles) | The root element for a Style Definitions part. |
 
 
 ## Minimum Document Scenario

@@ -14,14 +14,14 @@ The basic document structure of a **WordProcessingML** document consists of the 
     </w:document>
 ```
 
-Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing) namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements.
+Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](/dotnet/api/documentformat.openxml.wordprocessing) namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 | WordprocessingML Element | Open XML SDK Class | Description |
 |---|---|---|
-| document | [Document](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.document) | The root element for the main document part. |
-| body | [Body](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.body) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification. |
-| p | [Paragraph](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.paragraph) | A paragraph. |
-| r | [Run](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.run) | A run. |
-| t | [Text](https://learn.microsoft.com/dotnet/api/documentformat.openxml.wordprocessing.text) | A range of text. |
+| document | [Document](/dotnet/api/documentformat.openxml.wordprocessing.document) | The root element for the main document part. |
+| body | [Body](/dotnet/api/documentformat.openxml.wordprocessing.body) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification. |
+| p | [Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph) | A paragraph. |
+| r | [Run](/dotnet/api/documentformat.openxml.wordprocessing.run) | A run. |
+| t | [Text](/dotnet/api/documentformat.openxml.wordprocessing.text) | A range of text. |
 
 For more information about the overall structure of the parts and elements of a WordprocessingML document, see [Structure of a WordprocessingML document](../../word/structure-of-a-wordprocessingml-document.md).

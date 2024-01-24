@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with sheets
 
-This topic discusses the Open XML SDK [Worksheet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.worksheet), [Chartsheet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.chartsheet), and [DialogSheet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.dialogsheet) classes and how they relate to
+This topic discusses the Open XML SDK [Worksheet](/dotnet/api/documentformat.openxml.spreadsheet.worksheet), [Chartsheet](/dotnet/api/documentformat.openxml.spreadsheet.chartsheet), and [DialogSheet](/dotnet/api/documentformat.openxml.spreadsheet.dialogsheet) classes and how they relate to
 the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
@@ -105,14 +105,14 @@ string table. For more information about using the shared string table
 to store string values, see [Working with the shared string table](working-with-the-shared-string-table.md).
 
 The following table lists the common Open XML SDK classes used when
-working with the [Worksheet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.worksheet) class.
+working with the [Worksheet](/dotnet/api/documentformat.openxml.spreadsheet.worksheet) class.
 
 | **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
-| sheetData | [SheetData](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.sheetdata) |
-| row | [Row](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.row) |
-| c | [Cell](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cell) |
-| v | [CellValue](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) |
+| sheetData | [SheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata) |
+| row | [Row](/dotnet/api/documentformat.openxml.spreadsheet.row) |
+| c | [Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell) |
+| v | [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) |
 
 For more information about optional spreadsheet elements, such as sheet
 properties and supporting sheet features, see the ISO/IEC 29500
@@ -230,11 +230,11 @@ relationship in the Chartsheet part's relationship item:
 © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the common Open XML SDK classes used when
-working with the [Chartsheet](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.chartsheet) class.
+working with the [Chartsheet](/dotnet/api/documentformat.openxml.spreadsheet.chartsheet) class.
 
 | **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
-| drawing | [Drawing](https://learn.microsoft.com/dotnet/api/documentformat.openxml.spreadsheet.drawing) |
+| drawing | [Drawing](/dotnet/api/documentformat.openxml.spreadsheet.drawing) |
 
 ### Drawing Class
 
