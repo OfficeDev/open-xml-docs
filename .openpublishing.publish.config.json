@@ -13,6 +13,7 @@
           "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
         ]
       },
+      "xref_query_tags": ["/dotnet"],
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
