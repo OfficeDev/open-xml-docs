@@ -30,7 +30,7 @@ document programmatically.
 ## Getting a WordprocessingDocument Object
 The code starts with opening a package file by passing a file name to
 one of the overloaded [Open()](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) methods (Visual Basic .NET Shared
-method or C\# static method) of the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class that takes a
+method or C\# static method) of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class that takes a
 string and a Boolean value that specifies whether the file should be
 opened in read/write mode or not. In this case, the Boolean value is
 **false** specifying that the file should be
@@ -60,7 +60,7 @@ alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
+object that is created or named in the **using** statement, in this case **wordDoc**. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
 automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 the **Dispose** method is automatically called
 when you exit the block; you do not have to explicitly call **Save** and **Close**─as

@@ -21,7 +21,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to add a 
 
 ## Get a WordprocessingDocument object
 
-The code starts with opening a package file by passing a file name to one of the overloaded **[Open()](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument)** that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is **true** specifying that the file should be opened in read/write mode.
+The code starts with opening a package file by passing a file name to one of the overloaded <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> methods of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is `true` specifying that the file should be opened in read/write mode.
 
 ### [C#](#tab/cs-0)
 ```csharp
@@ -40,14 +40,14 @@ The code starts with opening a package file by passing a file name to one of the
 ***
 
 
-The **using** statement provides a recommended alternative to the typical .Create, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
+The **using** statement provides a recommended alternative to the typical .Create, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **wordDoc**. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
 automatically saves and closes the object as part of its **System.IDisposable** implementation, and because the **Dispose** method is automatically called when you exit the block; you do not have to explicitly call **Save** and **Close**, as long as you use **using**.
 
 [!include[Structure](../includes/word/structure.md)]
 
 ## How the sample code works
 
-After opening the document for editing, in the **using** statement, as a **WordprocessingDocument** object, the code creates a reference to the **MainDocumentPart** part and adds a new custom XML part. It then reads the contents of the external
+After opening the document for editing, in the **using** statement, as a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object, the code creates a reference to the **MainDocumentPart** part and adds a new custom XML part. It then reads the contents of the external
 file that contains the custom XML and writes it to the **CustomXmlPart** part.
 
 > [!NOTE]

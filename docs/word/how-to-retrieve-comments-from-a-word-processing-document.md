@@ -24,7 +24,7 @@ part in a word processing document.
 
 --------------------------------------------------------------------------------
 ## Open the Existing Document for Read-only Access
-To open an existing document, instantiate the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
+To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
 the following **using** statement. In the same
 statement, open the word processing file at the specified **fileName** by using the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method. To open the
 file for editing the Boolean parameter is set to **true**. In this example you just need to read the

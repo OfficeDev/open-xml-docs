@@ -24,7 +24,7 @@ word processing document.
 
 --------------------------------------------------------------------------------
 ## Open the Existing Document for Editing
-To open an existing document, instantiate the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
+To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
 the following **using** statement. In the same
 statement, open the word processing file at the specified *filepath* by
 using the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the

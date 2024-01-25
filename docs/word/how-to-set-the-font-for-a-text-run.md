@@ -111,7 +111,7 @@ In this case, running the code sample produces an in-memory XML
 structure where the **RunProperties** element
 is added as the first child element of the **Run** element. It then saves the changes back to
 the [Save(MainDocumentPart)](/dotnet/api/documentformat.openxml.wordprocessing.document.save) object. Calling the
-**Save** method of the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) object commits
+**Save** method of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object commits
 changes made to the in-memory representation of the **MainDocumentPart** part back into the XML file for
 the **MainDocumentPart** (the document.xml file
 in the Wordprocessing package).

@@ -30,7 +30,7 @@ programmatically.
 
 --------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
-To open an existing document, instantiate the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
+To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
 the following two **using** statements. In the
 same statement, you open the word processing file with the specified
 file name by using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the Boolean parameter.
@@ -57,19 +57,16 @@ order to enable editing the document.
 ```
 ***
 
-
-The **using** statement provides a recommended
+The `using` statement provides a recommended
 alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
+that the <xref:System.IDisposable.Dispose> method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the using
 statement establishes a scope for the object that is created or named in
-the **using** statement. Because the **WordprocessingDocument** class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-**Dispose** is automatically called when you
-exit the block, you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
-
+the `using` statement. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
+automatically saves and closes the object as part of its <xref:System.IDisposable> implementation, and because
+<xref:System.IDisposable.Dispose> is automatically called when you
+exit the block, you do not have to explicitly call <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Save%2A>.
 
 --------------------------------------------------------------------------------
 
@@ -117,9 +114,9 @@ is stored in the ZIP item theme/theme1.xml:
 ## How the Sample Code Works
 To copy the contents of a document part in an Open XML package to a
 document part in a different package, the full path of the each word
-processing document is passed in as a parameter to the **CopyThemeContent** method. The code then opens both
-documents as **WordprocessingDocument**
-objects, and creates variables that reference the **ThemePart** parts in each of the packages.
+processing document is passed in as a parameter to the `CopyThemeContent` method. The code then opens both
+documents as <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
+objects, and creates variables that reference the <xref:DocumentFormat.OpenXml.Packaging.ThemePart> parts in each of the packages.
 
 ### [C#](#tab/cs-1)
 ```csharp
@@ -144,8 +141,8 @@ objects, and creates variables that reference the **ThemePart** parts in each of
 ***
 
 
-The code then reads the contents of the source **ThemePart** part by using a **StreamReader** object and writes to the target
-**ThemePart** part by using a **StreamWriter** object.
+The code then reads the contents of the source <xref:DocumentFormat.OpenXml.Packaging.ThemePart>  part by using a **StreamReader** object and writes to the target
+<xref:DocumentFormat.OpenXml.Packaging.ThemePart> part by using a <xref:System.IO.StreamWriter>.
 
 ### [C#](#tab/cs-2)
 ```csharp
@@ -170,7 +167,7 @@ The code then reads the contents of the source **ThemePart** part by using a **S
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code copies the contents of one document part in an Open
-XML package to a document part in a different package. To call the **CopyThemeContent** method, you can use the
+XML package to a document part in a different package. To call the `CopyThemeContent`` method, you can use the
 following example, which copies the theme part from "MyPkg4.docx" to
 "MyPkg3.docx."
 
@@ -207,9 +204,4 @@ Following is the complete sample code in both C\# and Visual Basic.
 --------------------------------------------------------------------------------
 ## See also
 
-
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
-
-
-
-

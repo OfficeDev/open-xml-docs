@@ -29,7 +29,7 @@ processing document.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object 
 In the sample code, you start by opening the word processing file by
-instantiating the **[WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument)** class as shown in
+instantiating the **<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>** class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
 **[Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** method, with the Boolean parameter set
@@ -59,7 +59,7 @@ that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
 object that is created or named in the **using** statement, in this case *wordDoc*. Because
-the **WordprocessingDocument** class in the
+the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the
 Open XML SDK automatically saves and closes the object as part of its
 **System.IDisposable** implementation, and
 because **Dispose** is automatically called

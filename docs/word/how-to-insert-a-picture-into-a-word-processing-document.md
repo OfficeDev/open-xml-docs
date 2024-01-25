@@ -25,7 +25,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to progra
 
 ## Opening an Existing Document for Editing
 
-To open an existing document, instantiate the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
+To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
 the following **using** statement. In the same
 statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the
 Boolean parameter set to **true** in order to
@@ -56,7 +56,7 @@ that is used by the Open XML SDK to clean up resources) is automatically
 called when the closing brace is reached. The block that follows the
 **using** statement establishes a scope for the
 object that is created or named in the **using** statement, in this case
-*wordprocessingDocument*. Because the **WordprocessingDocument** class in the Open XML SDK
+*wordprocessingDocument*. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
 automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 **Dispose** is automatically called when you
 exit the block, you do not have to explicitly call **Save** and **Close**─as

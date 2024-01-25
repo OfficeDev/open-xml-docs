@@ -37,13 +37,13 @@ adds text to the document behind the stream using the Open XML SDK.
 
 ## Creating a WordprocessingDocument Object
 
-In the Open XML SDK, the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class represents a
 Word document package. To work with a Word document, first create an
-instance of the **WordprocessingDocument**
+instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
 class from the document, and then work with that instance. When you
 create the instance from the document, you can then obtain access to the
 main document part that contains the text of the document. Every Open
-XML package contains some number of parts. At a minimum, a **WordProcessingDocument** must contain a main
+XML package contains some number of parts. At a minimum, a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> must contain a main
 document part that acts as a container for the main text of the
 document. The package can also contain additional parts. Notice that in
 a Word document, the text in the main document part is represented in
