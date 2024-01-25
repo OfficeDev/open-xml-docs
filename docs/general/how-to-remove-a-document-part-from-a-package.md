@@ -59,7 +59,7 @@ alternative to the typical .Create, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
+object that is created or named in the **using** statement, in this case **wordDoc**. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
 automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 the **Dispose** method is automatically called
 when you exit the block; you do not have to explicitly call **Save** and **Close**─as
@@ -99,7 +99,7 @@ introduces the settings element in a **PresentationML** package.
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
-After you have opened the document, in the **using** statement, as a **WordprocessingDocument** object, you create a
+After you have opened the document, in the **using** statement, as a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object, you create a
 reference to the **DocumentSettingsPart** part.
 You can then check if that part exists, if so, delete that part from the
 package. In this instance, the **settings.xml**

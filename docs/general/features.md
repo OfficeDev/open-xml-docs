@@ -39,12 +39,13 @@ private sealed class PrivateFeature
 {
 }
 ```
+
 > [!NOTE]
 > The feature collection on elements is readonly. This is due to memory issues if it is made writeable. If this is needed, please engage on https://github.com/dotnet/open-xml-sdk to let us know your scenario.
 
 ## Visualizing Registered Features
 
-The in-box implementations of the `IFeatureCollection` provide a helpful debug view so you can see what features are available and what their properties/fields are:
+The in-box implementations of the <xref:DocumentFormat.OpenXml.Features.IFeatureCollection> provide a helpful debug view so you can see what features are available and what their properties/fields are:
 
 ![Features Debug View](../media/feature-debug-view.png)
 
@@ -163,7 +164,7 @@ Assert.Equal(2, shared.Count);
 
 ### IPartRootXElementFeature
 
-This feature allows operating on an `OpenXmlPart` by using XLinq features and directly manipulating `XElement` nodes.
+This feature allows operating on an <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPart> by using XLinq features and directly manipulating <xref:System.Xml.Linq.XElement> nodes.
 
 ```csharp
 OpenXmlPart part = GetSomePart();
@@ -177,4 +178,4 @@ var node = new(W.document, new XAttribute(XNamespace.Xmlns + "w", W.w),
 part.SetXElement(node);
 ```
 
-This `XElement` is cached but will be kept in sync with the underlying part if it were to change.
+This <xref:System.Xml.Linq.XElement> is cached but will be kept in sync with the underlying part if it were to change.

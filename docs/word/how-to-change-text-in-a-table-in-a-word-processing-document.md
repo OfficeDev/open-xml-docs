@@ -23,7 +23,7 @@ This topic shows how to use the Open XML SDK for Office to programmatically chan
 
 ## Open the Existing Document
 
-To open an existing document, instantiate the **WordprocessingDocument** class as shown in the following **using** statement. In the same statement, open the word processing file at the specified **filepath** by using the **Open** method, with the Boolean parameter set to **true** to enable editing the document.
+To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in the following **using** statement. In the same statement, open the word processing file at the specified **filepath** by using the **Open** method, with the Boolean parameter set to **true** to enable editing the document.
 
 ### [C#](#tab/cs-0)
 ```csharp
@@ -48,7 +48,7 @@ alternative to the typical .Open, .Save, .Close sequence. It ensures
 that the **Dispose** method (internal method
 used by the Open XML SDK to clean up resources) is automatically called
 when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **doc**. Because the **WordprocessingDocument** class in the Open XML SDK
+object that is created or named in the **using** statement, in this case **doc**. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
 automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
 **Dispose** is automatically called when you
 exit the block, you do not have to explicitly call **Save** and **Close**─as

@@ -34,9 +34,9 @@ elements, and their corresponding Open XML SDK classes.
 
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object
-In the Open XML SDK, the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class represents a
 Word document package. To open and work with a Word document, create an
-instance of the **WordprocessingDocument**
+instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
 class from the document. When you create the instance from the document,
 you can then obtain access to the main document part that contains the
 text of the document. The text in the main document part is represented

@@ -24,7 +24,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to progra
 
 ## Retrieving Application Properties
 
-To retrieve application document properties, you can retrieve the **ExtendedFilePropertiesPart** property of a **WordprocessingDocument** object, and then retrieve the specific application property you need. To do this, you must first get a reference to the document, as shown in the following code.
+To retrieve application document properties, you can retrieve the **ExtendedFilePropertiesPart** property of a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object, and then retrieve the specific application property you need. To do this, you must first get a reference to the document, as shown in the following code.
 
 ### [C#](#tab/cs-0)
 ```csharp
@@ -49,7 +49,7 @@ To retrieve application document properties, you can retrieve the **ExtendedFile
 ***
 
 
-Given the reference to the **WordProcessingDocument** object, you can retrieve a reference to the **ExtendedFilePropertiesPart** property of the document. This object provides its own properties, each of which exposes one of the application document properties.
+Given the reference to the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object, you can retrieve a reference to the **ExtendedFilePropertiesPart** property of the document. This object provides its own properties, each of which exposes one of the application document properties.
 
 ### [C#](#tab/cs-1)
 ```csharp

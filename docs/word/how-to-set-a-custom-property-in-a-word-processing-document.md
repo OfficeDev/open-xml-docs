@@ -323,7 +323,7 @@ At this point, if the code has not thrown an exception, you can assume that the 
 ## Working with the Document
 
 Given the **CustomDocumentProperty** object, the code next interacts with the document that you supplied in the parameters to the **SetCustomProperty** procedure. The code starts by opening the document in read/write mode by
-using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method of the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class. The code attempts to retrieve a reference to the custom file properties part by using the [CustomFilePropertiesPart](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart) property of the document.
+using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class. The code attempts to retrieve a reference to the custom file properties part by using the [CustomFilePropertiesPart](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.customfilepropertiespart) property of the document.
 
 ### [C#](#tab/cs-5)
 ```csharp

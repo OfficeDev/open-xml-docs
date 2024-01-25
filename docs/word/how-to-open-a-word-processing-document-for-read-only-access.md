@@ -33,13 +33,13 @@ programmatically open a read-only word processing document.
 
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object 
-In the Open XML SDK, the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class represents a
 Word document package. To work with a Word document, first create an
-instance of the **WordprocessingDocument**
+instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
 class from the document, and then work with that instance. Once you
 create the instance from the document, you can then obtain access to the
 main document part that contains the text of the document. Every Open
-XML package contains some number of parts. At a minimum, a **WordProcessingDocument** must contain a main
+XML package contains some number of parts. At a minimum, a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> must contain a main
 document part that acts as a container for the main text of the
 document. The package can also contain additional parts. Notice that in
 a Word document, the text in the main document part is represented in
@@ -51,10 +51,10 @@ editable are listed in the following table.
 
 Open Method|Class Library Reference Topic|Description
 --|--|--
-Open(String, Boolean)|[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified file.
-Open(Stream, Boolean)|[Open(Stream, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified IO stream.
-Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified file.
-Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the **WordprocessingDocument** class from the specified I/O stream.
+Open(String, Boolean)|[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified file.
+Open(Stream, Boolean)|[Open(Stream, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified IO stream.
+Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified file.
+Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified I/O stream.
 
 The table above lists only those **Open**
 methods that accept a Boolean value as the second parameter to specify
@@ -62,7 +62,7 @@ whether a document is editable. To open a document for read only access,
 you specify false for this parameter.
 
 Notice that two of the **Open** methods create
-an instance of the **WordprocessingDocument**
+an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
 class based on a string as the first parameter. The first example in the
 sample code uses this technique. It uses the first **Open** method in the table above; with a signature
 that requires two parameters. The first parameter takes a string that
@@ -90,7 +90,7 @@ Method.
 
 
 The other two **Open** methods create an
-instance of the **WordprocessingDocument**
+instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
 class based on an input/output stream. You might employ this approach,
 for instance, if you have a Microsoft SharePoint Foundation 2010
 application that uses stream input/output, and you want to use the Open
@@ -123,7 +123,7 @@ that takes a Boolean as the second parameter to indicate whether the
 document should be opened for editing.
 
 The recommended method is to open the package read-only to begin with
-prior to creating the instance of the **WordprocessingDocument** class, as shown in the
+prior to creating the instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class, as shown in the
 second example in the sample code. The following code example performs
 this operation.
 
