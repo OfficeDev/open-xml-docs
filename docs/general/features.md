@@ -7,7 +7,6 @@ author: o365devx
 ms.topic: conceptual
 ms.date: 11/13/2023
 ms.localizationpriority: medium
-monikerRange: ">=openxml-2.14.0"
 ---
 
 # Custom SDK Features
@@ -161,21 +160,3 @@ body2.AddChild(p2);
 Assert.NotEqual(p1.ParagraphId, p2.ParagraphId);
 Assert.Equal(2, shared.Count);
 ```
-
-### <xref:DocumentFormat.OpenXml.Features.IPartRootXElementFeature>
-
-This feature allows operating on an <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPart> by using XLinq features and directly manipulating <xref:System.Xml.Linq.XElement> nodes.
-
-```csharp
-OpenXmlPart part = GetSomePart();
-
-var node = new(W.document, new XAttribute(XNamespace.Xmlns + "w", W.w),
-    new XElement(W.body,
-        new XElement(W.p,
-            new XElement(W.r,
-                new XElement(W.t, "Hello World!")))));
-
-part.SetXElement(node);
-```
-
-This <xref:System.Xml.Linq.XElement> is cached but will be kept in sync with the underlying part if it were to change.
