@@ -19,7 +19,6 @@ ms.localizationpriority: high
 
 This section provides how-to topics for working with documents and packages using the Open XML SDK.
 
-
 ## In this section
 
 - [Features in Open XML SDK](features.md)

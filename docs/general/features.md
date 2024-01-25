@@ -7,6 +7,7 @@ author: o365devx
 ms.topic: conceptual
 ms.date: 11/13/2023
 ms.localizationpriority: medium
+monikerRange: ">=openxml-2.14.0"
 ---
 
 # Custom SDK Features
