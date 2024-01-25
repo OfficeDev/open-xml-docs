@@ -1,9 +1,11 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module MyModule
 
     Sub Main(args As String())
+        CreateWordDoc(args(0), args(1))
     End Sub
 
     Sub CreateWordDoc(filepath As String, msg As String)
@@ -17,8 +19,9 @@ Module MyModule
             Dim para As Paragraph = body.AppendChild(New Paragraph())
             Dim run As Run = para.AppendChild(New Run())
 
-            ' String msg contains the text, "Hello, Word!"
+            ' String msg contains the text from the msg parameter
             run.AppendChild(New Text(msg))
         End Using
     End Sub
 End Module
+' </Snippet0>

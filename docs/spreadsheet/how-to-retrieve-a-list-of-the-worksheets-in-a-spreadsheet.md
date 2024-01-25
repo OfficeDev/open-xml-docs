@@ -19,7 +19,7 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve a list of the worksheets in a
-Microsoft Excel 2010 or Microsoft Excel 2013 workbook, without loading
+Microsoft Excel workbook, without loading
 the document into Excel. It contains an example **GetAllWorksheets** method to illustrate this task.
 
 
@@ -43,8 +43,8 @@ examine.
 
 
 The method works with the workbook you specify, returning an instance of
-the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx)** object, from which you can retrieve
-a reference to each **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** object.
+the **[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets)** object, from which you can retrieve
+a reference to each **[Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet)** object.
 
 --------------------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ workbook).
 
 
 The code then continues by opening the document in read-only mode, and
-retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.workbookpart.aspx)**.
+retrieving a reference to the **[WorkbookPart](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.workbookpart)**.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet4)]
@@ -91,7 +91,7 @@ retrieving a reference to the **[WorkbookPart](https://msdn.microsoft.com/librar
 ***
 
 
-To get access to the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx)** object, the code retrieves the value of the **[Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.workbookpart.workbook.aspx)** property from the **WorkbookPart**, and then retrieves a reference to the **Sheets** object from the **[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.sheets.aspx)** property of the **Workbook**. The **Sheets** object contains the collection of **[Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx)** objects that provide the method's return value.
+To get access to the **[Workbook](/dotnet/api/documentformat.openxml.spreadsheet.workbook)** object, the code retrieves the value of the **[Workbook](/dotnet/api/documentformat.openxml.packaging.workbookpart.workbook)** property from the **WorkbookPart**, and then retrieves a reference to the **Sheets** object from the **[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.workbook.sheets)** property of the **Workbook**. The **Sheets** object contains the collection of **[Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet)** objects that provide the method's return value.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet5)]

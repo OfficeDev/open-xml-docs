@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with the calculation chain
 
-This topic discusses the Open XML SDK [CalculationChain](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.calculationchain.aspx) class and how it relates
+This topic discusses the Open XML SDK [CalculationChain](/dotnet/api/documentformat.openxml.spreadsheet.calculationchain) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
@@ -24,7 +24,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of
 
 ## CalculationChain in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the **CalculationChain** (\<**calcChain**\>) element.
 
 An instance of this part type contains an ordered set of references to
@@ -67,7 +67,7 @@ expressed in the Calculation Chain part does not force or dictate to the
 implementing application the order in which calculations must be
 performed at runtime.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the common Open XML SDK classes used when
 working with the **CalculationChain** class.
@@ -101,7 +101,7 @@ attribute r indicates the cell's address in the sheet. The index
 attribute i indicates the index of the sheet with which that cell is
 associated.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SpreadsheetML
 

@@ -41,9 +41,9 @@ The following sections in this topic explain the implementation of this method a
 
 ## Get a WordprocessingDocument object
 
-The Sample Code section also shows the code required to set up for calling the sample method. To use the method to apply a style to a paragraph in a document, you first need a reference to the open document. In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a Word document package. To open and work with a Word document, create an instance of the **WordprocessingDocument** class from the document. After you create the instance, use it to obtain access to the main document part that contains the text of the document. The content in the main document part is represented in the package as XML using WordprocessingML markup.
+The Sample Code section also shows the code required to set up for calling the sample method. To use the method to apply a style to a paragraph in a document, you first need a reference to the open document. In the Open XML SDK, the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a Word document package. To open and work with a Word document, create an instance of the **WordprocessingDocument** class from the document. After you create the instance, use it to obtain access to the main document part that contains the text of the document. The content in the main document part is represented in the package as XML using WordprocessingML markup.
 
-To create the class instance, call one of the overloads of the [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method. The following sample code shows how to use the [WordprocessingDocument.Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) overload. The first parameter takes a string that represents the full path to the document to open. The second parameter takes a value of **true** or **false** and represents whether to open the file for editing. In this example the parameter is **true** to enable read/write access to the file.
+To create the class instance, call one of the overloads of the [Open()](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method. The following sample code shows how to use the [WordprocessingDocument.Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) overload. The first parameter takes a string that represents the full path to the document to open. The second parameter takes a value of **true** or **false** and represents whether to open the file for editing. In this example the parameter is **true** to enable read/write access to the file.
 
 ### [C#](#tab/cs-1)
 ```csharp
@@ -68,7 +68,7 @@ To create the class instance, call one of the overloads of the [Open()](https://
 
 ## Get the paragraph to style
 
-After opening the file, the sample code retrieves a reference to the first paragraph. Because a typical word processing document body contains many types of elements, the code filters the descendants in the body of the document to those of type **Paragraph**. The [ElementAtOrDefault](https://msdn.microsoft.com/library/bb494386.aspx) method is then employed to retrieve a reference to the paragraph. Because the elements are indexed starting at zero, you pass a zero to retrieve the reference to the first paragraph, as shown in the following code example.
+After opening the file, the sample code retrieves a reference to the first paragraph. Because a typical word processing document body contains many types of elements, the code filters the descendants in the body of the document to those of type **Paragraph**. The [ElementAtOrDefault](/dotnet/api/system.linq.enumerable.elementatordefault) method is then employed to retrieve a reference to the paragraph. Because the elements are indexed starting at zero, you pass a zero to retrieve the reference to the first paragraph, as shown in the following code example.
 
 ### [C#](#tab/cs-2)
 ```csharp
@@ -99,7 +99,7 @@ After opening the file, the sample code retrieves a reference to the first parag
 
 The reference to the found paragraph is stored in a variable named p. If
 a paragraph is not found at the specified index, the
-[ElementAtOrDefault](https://msdn.microsoft.com/library/bb494386.aspx)
+[ElementAtOrDefault](/dotnet/api/system.linq.enumerable.elementatordefault)
 method returns null as the default value. This provides an opportunity
 to test for null and throw an error with an appropriate error message.
 
@@ -135,7 +135,7 @@ following sample markup shows a pStyle element that specifies the
 "OverdueAmount" style.
 
 ```xml
-    <w:p  xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:p  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:pPr>
         <w:pStyle w:val="OverdueAmount" />
       </w:pPr>
@@ -144,10 +144,10 @@ following sample markup shows a pStyle element that specifies the
 ```
 
 In the Open XML SDK, the **pPr** element is
-represented by the [ParagraphProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraphproperties.aspx) class. The code
+represented by the [ParagraphProperties](/dotnet/api/documentformat.openxml.wordprocessing.paragraphproperties) class. The code
 determines if the element exists, and creates a new instance of the
 **ParagraphProperties** class if it does not.
-The **pPr** element is a child of the **p** (paragraph) element; consequently, the [PrependChild\<T\>(T)](https://msdn.microsoft.com/library/office/cc883719.aspx) method is used to add
+The **pPr** element is a child of the **p** (paragraph) element; consequently, the [PrependChild\<T\>(T)](/dotnet/api/documentformat.openxml.openxmlelement.prependchild) method is used to add
 the instance, as shown in the following code example.
 
 ### [C#](#tab/cs-3)
@@ -221,7 +221,7 @@ The **AddStylesPartToPackage** example method
 does the work of adding the styles part. It creates a part of the **StyleDefinitionsPart** type, adding it as a child
 to the main document part. The code then appends the **Styles** root element, which is the parent element
 that contains all of the styles. The **Styles**
-element is represented by the [Styles](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.styles.aspx) class in the Open XML SDK. Finally,
+element is represented by the [Styles](/dotnet/api/documentformat.openxml.wordprocessing.styles) class in the Open XML SDK. Finally,
 the code saves the part.
 
 ### [C#](#tab/cs-5)
@@ -327,7 +327,7 @@ to add the style.
 
 
 Within the **IsStyleInDocument** example
-method, the work begins with retrieving the **Styles** element through the **Styles** property of the [StyleDefinitionsPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.styledefinitionspart.aspx) of the main document
+method, the work begins with retrieving the **Styles** element through the **Styles** property of the [StyleDefinitionsPart](/dotnet/api/documentformat.openxml.packaging.maindocumentpart.styledefinitionspart) of the main document
 part, and then determining whether any styles exist as children of that
 element. All style elements are stored as children of the styles
 element.
@@ -337,7 +337,7 @@ styleid is an attribute of the style that is used in many places in the
 document to refer to the style, and can be thought of as its primary
 identifier. Typically you use the styleid to identify a style in code.
 The
-[FirstOrDefault](https://msdn.microsoft.com/library/bb340482.aspx)
+[FirstOrDefault](/dotnet/api/system.linq.enumerable.firstordefault)
 method defaults to null if no match is found, so the code verifies for
 null to see whether a style was matched, as shown in the following
 excerpt.
@@ -409,8 +409,8 @@ The second parameter takes the styleid of the style, and the third
 parameter takes the style name. The **AddNewStyle** code creates the named style
 definition within the specified part.
 
-To create the style, the code instantiates the [Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx) class and sets certain properties,
-such as the [Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx) of style (paragraph) and [StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx). As mentioned above, the styleid is
+To create the style, the code instantiates the [Style](/dotnet/api/documentformat.openxml.wordprocessing.style) class and sets certain properties,
+such as the [Type](/dotnet/api/documentformat.openxml.wordprocessing.style.type) of style (paragraph) and [StyleId](/dotnet/api/documentformat.openxml.wordprocessing.style.styleid). As mentioned above, the styleid is
 used by the document to refer to the style, and can be thought of as its
 primary identifier. Typically you use the styleid to identify a style in
 code. A style can also have a separate user friendly style name to be
@@ -435,7 +435,7 @@ the font and color characteristics for the runs in a paragraph, you use
 the run properties.
 
 To create the **rPr** element with the
-appropriate child elements, the code creates an instance of the [StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx) class and then appends
+appropriate child elements, the code creates an instance of the [StyleRunProperties](/dotnet/api/documentformat.openxml.wordprocessing.stylerunproperties) class and then appends
 instances of the appropriate property classes. For this code example,
 the style specifies the Lucida Console font, a point size of 12,
 rendered in bold and italic, using the Accent2 color from the document
@@ -539,7 +539,7 @@ Now, the example code has located the paragraph, added the required
 paragraph properties element if required, checked for the styles part
 and added it if required, and checked for the style and added it if
 required. Now, set the paragraph style. To accomplish this task, the
-code creates an instance of the [ParagraphStyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraphstyleid.aspx) class with the styleid and
+code creates an instance of the [ParagraphStyleId](/dotnet/api/documentformat.openxml.wordprocessing.paragraphstyleid) class with the styleid and
 then places a reference to that instance in the **ParagraphStyleId** property of the paragraph
 properties object. This creates and assigns the appropriate value to the
 **pStyle** element that specifies the style to use for the paragraph.

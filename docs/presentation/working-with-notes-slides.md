@@ -16,13 +16,13 @@ ms.localizationpriority: medium
 ---
 # Working with notes slides
 
-This topic discusses the Open XML SDK for Office [NotesSlide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
+This topic discusses the Open XML SDK for Office [NotesSlide](/dotnet/api/documentformat.openxml.presentation.notesslide) class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
 --------------------------------------------------------------------------------
 ## Notes Slides in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<notes\> element
 used to represent notes slides in a PresentationML document as follows:
 
@@ -47,7 +47,7 @@ slide with all of its parts. Notice the cSld element, which specifies
 the common elements that can appear on any slide type and then any
 elements specify additional non-common properties for this notes slide.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The \<notes\> element is the root element of the PresentationML Notes
 Slide part. For more information about the overall structure of the
@@ -61,11 +61,11 @@ that correspond to them.
 
 | **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
-|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
-|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+|       \<clrMapOvr\>        |              [ColorMapOverride](/dotnet/api/documentformat.openxml.presentation.colormapoverride)              |
+|          \<cSld\>          |               [CommonSlideData](/dotnet/api/documentformat.openxml.presentation.commonslidedata)               |
+|         \<extLst\>         | [ExtensionListWithModification](/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
 
-The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the attributes of the \<notes\> element.
 
 
@@ -74,7 +74,7 @@ specification describes the attributes of the \<notes\> element.
 | showMasterPhAnim (Show Master Placeholder Animations) | Specifies whether or not to display animations on placeholders from the master slide.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype. |
 |           showMasterSp (Show Master Shapes)           |       Specifies if shapes on the master slide should be shown on slides or not.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.       |
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ---------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ are therefore commonly associated with the **NotesSlide** class are shown in the
 ### ColorMapOverride Class
 
 The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<clrMapOvr\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<clrMapOvr\> element:
 
 This element provides a mechanism with which to override the color
@@ -100,12 +100,12 @@ by the master is used. If the \<overrideClrMapping\> child element is
 present, it defines a new color scheme specific to the parent notes
 slide, presentation slide, or slide layout.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -119,13 +119,13 @@ The actual data in \<cSld\> describe only the particular parent slide;
 it is only the type of information stored that is common across all
 slides.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### ExtensionListWithModification Class
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -138,26 +138,26 @@ framework.
 [Note: Using this extLst element allows the generating application to
 store whether this extension property has been modified. end note]
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ---------------------------------------------------------------------------------
 ## Working with the NotesSlide Class
 As shown in the Open XML SDK code sample that follows, every instance of
 the **NotesSlide** class is associated with an
-instance of the [NotesSlidePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.notesslidepart.aspx) class, which represents a
+instance of the [NotesSlidePart](/dotnet/api/documentformat.openxml.packaging.notesslidepart) class, which represents a
 notes slide part, one of the parts of a PresentationML presentation file
 package, and a part that is required for each notes slide in a
 presentation file. Each **NotesSlide** class
-instance may also be associated with an instance of the [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) class, which in turn is
+instance may also be associated with an instance of the [NotesMaster](/dotnet/api/documentformat.openxml.presentation.notesmaster) class, which in turn is
 associated with a similarly named presentation part, represented by the
-[NotesMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.notesmasterpart.aspx) class.
+[NotesMasterPart](/dotnet/api/documentformat.openxml.packaging.notesmasterpart) class.
 
 The **NotesSlide** class, which represents the
 \<notes\> element, is therefore also associated with a series of other
 classes that represent the child elements of the \<notes\> element.
 Among these classes, as shown in the following code sample, are the
-**CommonSlideData** class and the **ColorMapOverride** class. The [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class and the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) classes are in turn associated with
+**CommonSlideData** class and the **ColorMapOverride** class. The [ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree) class and the [Shape](/dotnet/api/documentformat.openxml.presentation.shape) classes are in turn associated with
 the **CommonSlideData** class.
 
 
@@ -168,12 +168,12 @@ presentation and creates an instance of an Open XML SDK**NotesSlide** class in t
 **NotesSlide** class constructor creates
 instances of the **CommonSlideData** class and
 the **ColorMap** class. The **CommonSlideData** class constructor creates an
-instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn
-creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
-instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
-of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+instance of the [ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree) class, whose constructor in turn
+creates additional class instances: an instance of the [NonVisualGroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties) class, an
+instance of the [GroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.groupshapeproperties) class, and an instance
+of the [Shape](/dotnet/api/documentformat.openxml.presentation.shape) class.
 
-The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation)
 namespace.
 
 ### [C#](#tab/cs)
@@ -189,7 +189,7 @@ the PresentationML document referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:notes xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:notes xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -199,7 +199,7 @@ the PresentationML document referenced in the code.
             <p:nvPr />
           </p:nvGrpSpPr>
           <p:grpSpPr>
-            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
           </p:grpSpPr>
           <p:sp>
             <p:nvSpPr>
@@ -207,7 +207,7 @@ the PresentationML document referenced in the code.
                        name="" />
               <p:cNvSpPr>
                 <a:spLocks noGrp="1"
-                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
               </p:cNvSpPr>
               <p:nvPr>
                 <p:ph />
@@ -215,9 +215,9 @@ the PresentationML document referenced in the code.
             </p:nvSpPr>
             <p:spPr />
             <p:txBody>
-              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
                 <a:endParaRPr />
               </a:p>
             </p:txBody>
@@ -225,7 +225,7 @@ the PresentationML document referenced in the code.
         </p:spTree>
       </p:cSld>
       <p:clrMapOvr>
-        <a:masterClrMapping xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
       </p:clrMapOvr>
     </p:notes>
 ```

@@ -18,7 +18,7 @@ Module Program
         End If
 
         ' Extract and copy the stylesWithEffects part. To fully support 
-        ' round-tripping from Word 2013 to Word 2010, you should 
+        ' round-tripping from Word 2013+ to Word 2010, you should 
         ' replace this part, as well.
         node = ExtractStylesPart(fromDoc, True)
         If node IsNot Nothing Then

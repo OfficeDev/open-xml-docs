@@ -16,10 +16,10 @@ ms.localizationpriority: medium
 ---
 # Working with handout master slides
 
-This topic discusses the Open XML SDK for Office [HandoutMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmaster.aspx) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document](structure-of-a-presentationml-document.md).
+This topic discusses the Open XML SDK for Office [HandoutMaster](/dotnet/api/documentformat.openxml.presentation.handoutmaster) class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML document](structure-of-a-presentationml-document.md).
 
 ## Handout Master Slides in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<handoutMaster\>
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML \<handoutMaster\>
 element used to represent a handout master slide in a PresentationML document as follows:
 
 This element specifies an instance of a handout master slide. Within a
@@ -30,7 +30,7 @@ slide elements such as shapes and their attached text bodies. There are
 other properties within a handout master slide but cSld encompasses the
 majority of the intended purpose for a handoutMaster slide.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the child elements of the \<handoutMaster\>
 element used when working with handout master slides and the Open XML
@@ -39,10 +39,10 @@ SDK classes that correspond to them.
 
 | **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-|         \<clrMap\>         |                      [ColorMap](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormap.aspx)                      |
-|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
-|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
-|           \<hf\>           |                  [HeaderFooter](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.headerfooter.aspx)                  |
+|         \<clrMap\>         |                      [ColorMap](/dotnet/api/documentformat.openxml.presentation.colormap)                      |
+|          \<cSld\>          |               [CommonSlideData](/dotnet/api/documentformat.openxml.presentation.commonslidedata)               |
+|         \<extLst\>         | [ExtensionListWithModification](/dotnet/api/documentformat.openxml.presentation.extensionlistwithmodification) |
+|           \<hf\>           |                  [HeaderFooter](/dotnet/api/documentformat.openxml.presentation.headerfooter)                  |
 
 ## Open XML SDK HandoutMaster Class
 
@@ -52,7 +52,7 @@ Classes commonly associated with the **HandoutMaster** class are shown in the fo
 
 ### ColorMap Class
 
-The **ColorMap** class corresponds to the \<clrMap\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<clrMap\> element:
+The **ColorMap** class corresponds to the \<clrMap\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the \<clrMap\> element:
 
 This element specifies the mapping layer that transforms one color
 scheme definition to another. Each attribute represents a color name
@@ -72,7 +72,7 @@ accent6="accent6" hlink="hlink" folHlink="folHlink"/>
 ### CommonSlideData Class
 
 The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<cSld\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<cSld\> element:
 
 This element specifies a container for the type of slide information
@@ -90,7 +90,7 @@ slides.
 
 The **ExtensionListWithModification** class
 corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+[!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<extLst\> element:
 
 This element specifies the extension list with modification ability
@@ -107,7 +107,7 @@ store whether this extension property has been modified.
 ### HeaderFooter Class
 
 The **HeaderFooter** class corresponds to the
-\<hf\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<hf\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the \<hf\> element:
 
 This element specifies the header and footer information for a slide.
@@ -120,7 +120,7 @@ slide numbering, and custom header and footer text.
 
 As shown in the Open XML SDK code sample that follows, every instance of
 the **HandoutMaster** class is associated with
-an instance of the [HandoutMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.handoutmasterpart.aspx) class, which represents a
+an instance of the [HandoutMasterPart](/dotnet/api/documentformat.openxml.packaging.handoutmasterpart) class, which represents a
 handout master part, one of the parts of a PresentationML presentation
 file package, and a part that is required for a presentation file that
 contains handouts.
@@ -129,7 +129,7 @@ The **HandoutMaster** class, which represents
 the \<handoutMaster\> element, is therefore also associated with a
 series of other classes that represent the child elements of the
 \<handoutMaster\> element. Among these classes, as shown in the
-following code sample, are the **CommonSlideData** class, the **ColorMap** class, the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, and the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+following code sample, are the **CommonSlideData** class, the **ColorMap** class, the [ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree) class, and the [Shape](/dotnet/api/documentformat.openxml.presentation.shape) class.
 
 ## Open XML SDK Code Example
 
@@ -138,12 +138,12 @@ presentation and creates an instance of an Open XML SDK**HandoutMaster** class i
 part. The **HandoutMaster** class constructor
 creates instances of the **CommonSlideData**
 class and the **ColorMap** class. The **CommonSlideData** class constructor creates an
-instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor, in
-turn, creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
-instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
-of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
+instance of the [ShapeTree](/dotnet/api/documentformat.openxml.presentation.shapetree) class, whose constructor, in
+turn, creates additional class instances: an instance of the [NonVisualGroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.nonvisualgroupshapeproperties) class, an
+instance of the [GroupShapeProperties](/dotnet/api/documentformat.openxml.presentation.groupshapeproperties) class, and an instance
+of the [Shape](/dotnet/api/documentformat.openxml.presentation.shape) class.
 
-The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
+The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation)
 namespace.
 
 ### [C#](#tab/cs)
@@ -158,7 +158,7 @@ the PresentationML document referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:handoutMaster xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:handoutMaster xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -168,7 +168,7 @@ the PresentationML document referenced in the code.
             <p:nvPr />
           </p:nvGrpSpPr>
           <p:grpSpPr>
-            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
           </p:grpSpPr>
           <p:sp>
             <p:nvSpPr>
@@ -176,7 +176,7 @@ the PresentationML document referenced in the code.
                        name="Title 1" />
               <p:cNvSpPr>
                 <a:spLocks noGrp="1"
-                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
               </p:cNvSpPr>
               <p:nvPr>
                 <p:ph />
@@ -184,9 +184,9 @@ the PresentationML document referenced in the code.
             </p:nvSpPr>
             <p:spPr />
             <p:txBody>
-              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
                 <a:endParaRPr lang="en-US" />
               </a:p>
             </p:txBody>

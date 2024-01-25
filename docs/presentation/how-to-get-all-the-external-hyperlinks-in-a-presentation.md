@@ -24,11 +24,11 @@ programmatically.
 
 --------------------------------------------------------------------------------
 ## Getting a PresentationDocument Object
-In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
+In the Open XML SDK, the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-[PresentationDocument.Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx)
+[PresentationDocument.Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open)
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. Set this second
 parameter to **false** to open the file for
@@ -74,8 +74,7 @@ object that is created or named in the **using** statement, in this case **docum
 ## Structure of the Hyperlink Element
 In this how-to code example, you are going to work with external
 hyperlinks. Therefore, it is best to familiarize yourself with the
-hyperlink element. The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+hyperlink element. The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the **id** (Hyperlink Target).
 
 > Specifies the ID of the relationship whose target shall be used as the
@@ -118,7 +117,7 @@ introduces the **id** (Hyperlink Target).
 > The possible values for this attribute are defined by the
 > ST\_RelationshipId simple type(§22.8.2.1).
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

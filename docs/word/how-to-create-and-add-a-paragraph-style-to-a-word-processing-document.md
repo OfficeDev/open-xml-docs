@@ -222,7 +222,7 @@ applies the style to the paragraph.
 
 WordprocessingML supports six style types, four of which you can specify
 using the type attribute on the style element. The following
-information, from section 17.7.4.17 in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification,
+information, from section 17.7.4.17 in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification,
 introduces style types.
 
 *Style types* refers to the property on a style which defines the type
@@ -261,7 +261,7 @@ type attribute:
 The type attribute has a value of paragraph, which indicates that the
 following style definition is a paragraph style.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 You can set the paragraph, character, table and numbering styles types
 by specifying the corresponding value in the type attribute of the style
@@ -309,7 +309,7 @@ The paragraph style is then applied to paragraphs by referencing the
 styleId attribute value for this style in the paragraph properties'
 **pStyle** element.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ---------------------------------------------------------------------------------
 
@@ -348,9 +348,9 @@ styles element is created and saved to the part.
 
 ## Creating the Style
 
-To create the style, the code instantiates the **[Style](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.aspx)** class and sets certain properties,
-such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.type.aspx)** of style (paragraph), the **[StyleId](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.styleid.aspx)**, whether the style is a **[CustomStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.customstyle.aspx)**, and whether the style is the
-**[Default](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.style.default.aspx)** style for its type.
+To create the style, the code instantiates the **[Style](/dotnet/api/documentformat.openxml.wordprocessing.style)** class and sets certain properties,
+such as the **[Type](/dotnet/api/documentformat.openxml.wordprocessing.style.type)** of style (paragraph), the **[StyleId](/dotnet/api/documentformat.openxml.wordprocessing.style.styleid)**, whether the style is a **[CustomStyle](/dotnet/api/documentformat.openxml.wordprocessing.style.customstyle)**, and whether the style is the
+**[Default](/dotnet/api/documentformat.openxml.wordprocessing.style.default)** style for its type.
 
 ### [C#](#tab/cs-3)
 ```csharp
@@ -376,7 +376,7 @@ such as the **[Type](https://msdn.microsoft.com/library/office/documentformat.op
 The code results in the following XML.
 
 ```xml
-    <w:styles xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:style w:type="paragraph" w:styleId="OverdueAmountPara" w:default="false" w:customStyle="true">
       </w:style>
     </w:styles>
@@ -384,9 +384,9 @@ The code results in the following XML.
 
 The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
-corresponding class, and then call the **[Append([])](https://msdn.microsoft.com/library/office/cc801361.aspx)** method add the child element to
+corresponding class, and then call the **[Append([])](/dotnet/api/documentformat.openxml.openxmlelement.append)** method add the child element to
 the style. For more information about these properties, see section 17.7
-of the [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
+of the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification.
 
 ### [C#](#tab/cs-4)
@@ -454,7 +454,7 @@ specification.
 ***
 
 
-Next, the code instantiates a **[StyleRunProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.stylerunproperties.aspx)** object to create a **rPr** (Run Properties) element. You specify the character properties that apply to the style, such as font and color, in this element. The properties are then appended as children of the **rPr** element.
+Next, the code instantiates a **[StyleRunProperties](/dotnet/api/documentformat.openxml.wordprocessing.stylerunproperties)** object to create a **rPr** (Run Properties) element. You specify the character properties that apply to the style, such as font and color, in this element. The properties are then appended as children of the **rPr** element.
 
 When the run properties are created, the code appends the **rPr** element to the style, and the style element to the styles root element in the styles part.
 

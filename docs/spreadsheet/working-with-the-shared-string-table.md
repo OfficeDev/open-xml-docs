@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with the shared string table
 
-This topic discusses the Open XML SDK [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) class and how it relates
+This topic discusses the Open XML SDK [SharedStringTable](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable) class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
@@ -24,7 +24,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of
 
 --------------------------------------------------------------------------------
 ## SharedStringTable in SpreadsheetML 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the **SharedStringTable** (\<**sst**\>) element.
 
 An instance of this part type contains one occurrence of each unique
@@ -41,7 +41,7 @@ table that is shared across the workbook is to improve performance in
 opening and saving the file by only reading and writing the repetitive
 information once.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Shared strings optimize space requirements when the spreadsheet contains
 multiple instances of the same string. Spreadsheets that contain
@@ -74,8 +74,8 @@ working with the **SharedStringTable** class.
 
 | **SpreadsheetML Element** |                                                  **Open XML SDK Class**                                                  |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------|
-|            si             | [SharedStringItem](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx) |
-|             t             |             [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.text.aspx)             |
+|            si             | [SharedStringItem](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem) |
+|             t             |             [Text](/dotnet/api/documentformat.openxml.spreadsheet.text)             |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK SharedStringTable Class 
@@ -222,7 +222,7 @@ referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:sst xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:sst xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:si>
         <x:t>hello</x:t>
       </x:si>
@@ -232,7 +232,7 @@ In addition, the following XML is written to the new worksheet XML file.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:sheetData>
         <x:row r="1">
           <x:c r="A1" t="s">

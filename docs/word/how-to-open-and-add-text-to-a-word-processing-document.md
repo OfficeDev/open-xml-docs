@@ -34,7 +34,7 @@ elements, and their corresponding Open XML SDK classes.
 
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object
-In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
+In the Open XML SDK, the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class represents a
 Word document package. To open and work with a Word document, create an
 instance of the **WordprocessingDocument**
 class from the document. When you create the instance from the document,
@@ -43,7 +43,7 @@ text of the document. The text in the main document part is represented
 in the package as XML using **WordprocessingML** markup.
 
 To create the class instance from the document you call one of the **Open** methods. Several are provided, each with a
-different signature. The sample code in this topic uses the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) method with a
+different signature. The sample code in this topic uses the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document to open. The second parameter
 is either **true** or **false** and represents whether you want the file to

@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 # Retrieve application property values from a word processing document
 
-This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve an application property from a Microsoft Word 2013 document, without loading the document into Word. It contains example code to illustrate this task.
+This topic shows how to use the classes in the Open XML SDK for Office to programmatically retrieve an application property from a Microsoft Word document, without loading the document into Word. It contains example code to illustrate this task.
 
 
 

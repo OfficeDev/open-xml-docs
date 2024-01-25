@@ -74,7 +74,7 @@ code example shows the **WordprocessingML**
 markup for a document that contains the text "Example text."
 
 ```xml
-    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>
@@ -87,17 +87,17 @@ markup for a document that contains the text "Example text."
 
 Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these
-classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx)
+classes in the [DocumentFormat.OpenXml.Wordprocessing](/dotnet/api/documentformat.openxml.wordprocessing)
 namespace. The following table lists the class names of the classes that
 correspond to the **document**, **body**, **p**, **r**, and **t** elements.
 
 WordprocessingML Element|Open XML SDK Class|Description
 --|--|--
-document|[Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) |The root element for the main document part.
-body|[Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) |The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
-p|[Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) |A paragraph.
-r|[Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) |A run.
-t|[Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) |A range of text.
+document|[Document](/dotnet/api/documentformat.openxml.wordprocessing.document) |The root element for the main document part.
+body|[Body](/dotnet/api/documentformat.openxml.wordprocessing.body) |The container for the block level structures such as paragraphs, tables, annotations and others specified in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification.
+p|[Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph) |A paragraph.
+r|[Run](/dotnet/api/documentformat.openxml.wordprocessing.run) |A run.
+t|[Text](/dotnet/api/documentformat.openxml.wordprocessing.text) |A range of text.
 
 
 ---------------------------------------------------------------------------------
@@ -113,7 +113,7 @@ direct formatting, setting it to **true** or
 **false** sets the absolute state of the
 resulting property.
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the **vanish** element.
 
 > **vanish (Hidden Text)**
@@ -144,7 +144,7 @@ introduces the **vanish** element.
 > of this run, so the contents of this run will be hidden when the
 > document contents are displayed. *end example*]
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML schema segment defines the contents of this element.
 

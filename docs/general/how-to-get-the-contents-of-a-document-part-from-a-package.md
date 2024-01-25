@@ -29,8 +29,8 @@ document programmatically.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
 The code starts with opening a package file by passing a file name to
-one of the overloaded [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) methods (Visual Basic .NET Shared
-method or C\# static method) of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class that takes a
+one of the overloaded [Open()](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) methods (Visual Basic .NET Shared
+method or C\# static method) of the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class that takes a
 string and a Boolean value that specifies whether the file should be
 opened in read/write mode or not. In this case, the Boolean value is
 **false** specifying that the file should be
@@ -75,7 +75,7 @@ long as you use using.
 ## Comments Element
 In this how-to, you are going to work with comments. Therefore, it is
 useful to familiarize yourself with the structure of the \<**comments**\> element. The following information
-from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
+from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification can be useful when working with this element.
 
 This element specifies all of the comments defined in the current
@@ -95,7 +95,7 @@ document:
 The **comments** element contains the single
 comment specified by this document in this example.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML schema fragment defines the contents of this element.
 
@@ -197,4 +197,4 @@ Following is the complete code example in both C\# and Visual Basic.
 
 
 [Open XML SDK class library
-reference](https://msdn.microsoft.com/library/36c8a76e-ce1b-5959-7e85-5d77db7f46d6(Office.15).aspx)
+reference](/office/open-xml/open-xml-sdk)

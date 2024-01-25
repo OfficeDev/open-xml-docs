@@ -21,7 +21,7 @@ This topic discusses the Open XML SDK for Office **Animate** class and how it re
 
 ## Animation in PresentationML
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Animation section of the Open XML PresentationML framework as follows:
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Animation section of the Open XML PresentationML framework as follows:
 
 The Animation section of the PresentationML framework stores the movement and related information of objects. This schema is loosely based on the syntax and concepts from the Synchronized Multimedia Integration Language (SMIL), a W3C Recommendation for describing multimedia presentations using XML. The schema describes all the animations effects that reside on a slide and also the animation that occurs when going from slide to slide (slide transition). Animations on a slide are inherently time-based and consist of an animation effects on an object or text. Slide transitions however do not follow this concept and always appear before any animation on a slide. All elements described in this schema are contained within the slide XML file. More specifically they are in the \<transition\> and the \<timing\> element as shown below:
 
@@ -34,7 +34,7 @@ The Animation section of the PresentationML framework stores the movement and re
 </p:sld>
 ```
 
-Animation consists of several behaviors, the most basic of which is the Animate behavior, represented by the \<anim\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<anim\> element used to represent basic animation behavior in a PresentationML document as follows:
+Animation consists of several behaviors, the most basic of which is the Animate behavior, represented by the \<anim\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML \<anim\> element used to represent basic animation behavior in a PresentationML document as follows:
 
 This element is a generic animation element that requires little or no semantic understanding of the attribute being animated. It can animate text within a shape or even the shape itself.[Example: Consider trying to emphasize text within a shape by changing the size of its font by 150%. The \<anim\> element should be used as follows:
 
@@ -63,7 +63,7 @@ The following table lists the child elements of the \<anim\> element used when w
 |         \<cBhvr\>          |       CommonBehavior       |
 |         \<tavLst\>         |    TimeAnimateValueList    |
 
-The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the attributes of the \<anim\> element.
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the attributes of the \<anim\> element.
 
 | **Attributes** | **Description**                                             |
 |:---------------|:-----------------------------------------------------------------|
@@ -82,7 +82,7 @@ Classes that represent child elements of the \<anim\> element and that are there
 
 ### CommonBehavior Class
 
-The **CommonBehavior** class corresponds to the \<cBhvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<cBhvr\>element:
+The **CommonBehavior** class corresponds to the \<cBhvr\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the \<cBhvr\>element:
 
 This element describes the common behaviors of animations.  
 
@@ -108,7 +108,7 @@ Consider trying to emphasize text within a shape by changing the size of its fon
 
 ### TimeAnimateValueList Class
 
-The **TimeAnimateValueList** class corresponds to the \<tavLst\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<tavLst\> element:
+The **TimeAnimateValueList** class corresponds to the \<tavLst\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the \<tavLst\> element:
 
 This element specifies a list of time animated value elements.
 

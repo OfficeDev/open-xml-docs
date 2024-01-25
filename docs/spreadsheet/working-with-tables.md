@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 # Working with SpreadsheetML tables
 
-This topic discusses the Open XML SDK **[Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
+This topic discusses the Open XML SDK **[Table](/dotnet/api/documentformat.openxml.spreadsheet.table)** class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
 overall structure of the parts and elements that make up a SpreadsheetML
 document, see [Structure of a SpreadsheetML document
@@ -25,7 +25,7 @@ document, see [Structure of a SpreadsheetML document
 
 ## Tables in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the **table** (\<**table**\>) element.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the **table** (\<**table**\>) element.
 
 A table helps organize and provide structure to lists of information in
 a worksheet. Tables have clearly labeled columns, rows, and data
@@ -68,8 +68,8 @@ The following table lists the common Open XML SDK classes used when working with
 
 | **SpreadsheetML Element** | **Open XML SDK Class**                                               |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------|
-|        tableColumn        | [TableColumn](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
-|        autoFilter         | [AutoFilter](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx) |
+|        tableColumn        | [TableColumn](/dotnet/api/documentformat.openxml.spreadsheet.tablecolumn)   |
+|        autoFilter         | [AutoFilter](/dotnet/api/documentformat.openxml.spreadsheet.table.autofilter) |
 
 ## Open XML SDK Table Class
 
@@ -156,7 +156,7 @@ displayed in the table, and contains the **tablePart** element that references t
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
+    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
         <dimension ref="A1:C4"/>
         <sheetViews>
             <sheetView tabSelected="1" workbookViewId="0">

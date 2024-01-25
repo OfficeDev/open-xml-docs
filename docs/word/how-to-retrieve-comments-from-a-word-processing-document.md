@@ -24,9 +24,9 @@ part in a word processing document.
 
 --------------------------------------------------------------------------------
 ## Open the Existing Document for Read-only Access
-To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
+To open an existing document, instantiate the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
 the following **using** statement. In the same
-statement, open the word processing file at the specified **fileName** by using the [Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562234.aspx) method. To open the
+statement, open the word processing file at the specified **fileName** by using the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method. To open the
 file for editing the Boolean parameter is set to **true**. In this example you just need to read the
 file; therefore, you can open the file for read-only access by setting
 the Boolean parameter to **false**.
@@ -62,8 +62,7 @@ The **comments** and **comment** elements are crucial to working with
 comments in a word processing file. It is important in this code example
 to familiarize yourself with those elements.
 
-The following information from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the comments element.
 
 > **comments (Comments Collection)**
@@ -83,7 +82,7 @@ introduces the comments element.
     </w:comments>
 ```
 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML schema segment defines the contents of the comments
 element.
@@ -98,8 +97,7 @@ element.
 
 ---------------------------------------------------------------------------------
 ## Comment Element
-The following information from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the comment element.
 
 > **comment (Comment Content)**
@@ -127,7 +125,7 @@ introduces the comment element.
 > The **comment** element specifies the presence of a single comment
 > within the comments part.
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
   
 The following XML schema segment defines the contents of the comment

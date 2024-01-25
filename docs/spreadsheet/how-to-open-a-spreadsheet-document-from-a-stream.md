@@ -39,7 +39,7 @@ Open XML SDK.
 ## The SpreadsheetDocument Object 
 
 The basic document structure of a SpreadsheetML document consists of the
-[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
+[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets) and [Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet) elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
 worksheet. For example, the SpreadsheetML for a workbook that has two
 worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
@@ -47,7 +47,7 @@ file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
+    <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
         <sheets>
             <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
             <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
@@ -56,8 +56,8 @@ file and is shown in the following code example.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-[SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
-one or more [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the value
+[SheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata). **sheetData** represents the cell table and contains
+one or more [Row](/dotnet/api/documentformat.openxml.spreadsheet.row) elements. A **row** contains one or more [Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell) elements. Each cell contains a [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) element that represents the value
 of the cell. For example, the **SpreadsheetML**
 for the first worksheet in a workbook, that only has the value 100 in
 cell A1, is located in the Sheet1.xml file and is shown in the following
@@ -85,7 +85,7 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 SpreadsheetML Element|Open XML SDK Class|Description
 --|--|--
 workbook|DocumentFormat.OpenXml.Spreadsheet.Workbook|The root element for the main document part.
-sheets|DocumentFormat.OpenXml.Spreadsheet.Sheets|The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
+sheets|DocumentFormat.OpenXml.Spreadsheet.Sheets|The container for the block level structures such as sheet, fileVersion, and others specified in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification.
 sheet|DocumentFormat.OpenXml.Spreadsheet.Sheet|A sheet that points to a sheet definition file.
 worksheet|DocumentFormat.OpenXml.Spreadsheet.Worksheet|A sheet definition file that contains the sheet data.
 sheetData|DocumentFormat.OpenXml.Spreadsheet.SheetData|The cell table, grouped together by rows.
@@ -97,8 +97,8 @@ v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 --------------------------------------------------------------------------------
 ## Generating the SpreadsheetML Markup to Add a Worksheet 
 When you have access to the body of the main document part, you add a
-worksheet by calling [AddNewPart\<T\>(String, String)](https://msdn.microsoft.com/library/office/cc562372.aspx) method to
-create a new [WorksheetPart](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.worksheetpart.aspx). The following code example
+worksheet by calling [AddNewPart\<T\>(String, String)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.addnewpart) method to
+create a new [WorksheetPart](/dotnet/api/documentformat.openxml.spreadsheet.worksheet.worksheetpart). The following code example
 adds the new **WorksheetPart**.
 
 ### [C#](#tab/cs-2)

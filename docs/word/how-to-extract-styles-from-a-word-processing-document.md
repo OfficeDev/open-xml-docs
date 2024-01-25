@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically extract the styles or stylesWithEffects part
 from a word processing document to an
-[XDocument](https://msdn.microsoft.com/library/Bb345449(v=VS.100).aspx)
+[XDocument](/dotnet/api/system.xml.linq.xdocument)
 instance. It contains an example **ExtractStylesPart** method to
 illustrate this task.
 
@@ -31,15 +31,14 @@ illustrate this task.
 ## ExtractStylesPart Method
 
 You can use the **ExtractStylesPart** sample method to retrieve an **XDocument** instance that contains the styles or
-stylesWithEffects part for a Microsoft Word 2010 or Microsoft Word 2013
-document. Be aware that in a document created in Word 2010, there will
-only be a single styles part; Word 2013 adds a second stylesWithEffects
-part. To provide for "round-tripping" a document from Word 2013 to Word
-2010 and back, Word 2013 maintains both the original styles part and the
+stylesWithEffects part for a Microsoft Word document. Be aware that in a document created in Word 2010, there will
+only be a single styles part; Word 2013+ adds a second stylesWithEffects
+part. To provide for "round-tripping" a document from Word 2013+ to Word
+2010 and back, Word 2013+ maintains both the original styles part and the
 new styles part. (The Office Open XML File Formats specification
 requires that Microsoft Word ignore any parts that it does not
 recognize; Word 2010 does not notice the stylesWithEffects part that
-Word 2013 adds to the document.) You (and your application) must
+Word 2013+ adds to the document.) You (and your application) must
 interpret the results of retrieving the styles or stylesWithEffects
 part.
 
@@ -47,7 +46,7 @@ The **ExtractStylesPart** procedure accepts a two parameters: the first
 parameter contains a string indicating the path of the file from which
 you want to extract styles, and the second indicates whether you want to
 retrieve the styles part, or the newer stylesWithEffects part
-(basically, you must call this procedure two times for Word 2013
+(basically, you must call this procedure two times for Word 2013+
 documents, retrieving each the part). The procedure returns an **XDocument** instance that contains the complete
 styles or stylesWithEffects part that you requested, with all the style
 information for the document (or a null reference, if the part you
@@ -139,9 +138,9 @@ The code starts by creating a variable named **styles** that the method returns 
 ***
 
 
-The code continues by opening the document by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
+The code continues by opening the document by using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method and indicating that the
 document should be open for read-only access (the final false
-parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
+parameter). Given the open document, the code uses the [MainDocumentPart](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart) property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ### [C#](#tab/cs-3)
@@ -212,11 +211,11 @@ of the **docPart** variable, and stores it in the
 
 If the requested styles part exists, the code must return the contents
 of the part in an **XDocument** instance. Each
-part provides a [GetStream](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpart.getstream.aspx) method, which returns a Stream.
+part provides a [GetStream](/dotnet/api/documentformat.openxml.packaging.openxmlpart.getstream) method, which returns a Stream.
 The code passes the Stream instance to the
-[XmlNodeReader.Create](https://msdn.microsoft.com/library/ay7fxzht(v=VS.100).aspx)
+[XmlNodeReader.Create](/dotnet/api/system.xml.xmlreader.create)
 method, and then calls the
-[XDocument.Load](https://msdn.microsoft.com/library/bb356384.aspx)
+[XDocument.Load](/dotnet/api/system.xml.linq.xdocument.load)
 method, passing the **XmlNodeReader** as a
 parameter.
 

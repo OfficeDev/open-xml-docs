@@ -1,7 +1,6 @@
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-
-CreateWordDoc(args[0], args[1]);
 
 static void CreateWordDoc(string filepath, string msg)
 {
@@ -16,7 +15,10 @@ static void CreateWordDoc(string filepath, string msg)
         Paragraph para = body.AppendChild(new Paragraph());
         Run run = para.AppendChild(new Run());
 
-        // String msg contains the text, "Hello, Word!"
+        // String msg contains the text from the msg parameter"
         run.AppendChild(new Text(msg));
     }
 }
+// </Snippet0>
+
+CreateWordDoc(args[0], args[1]);

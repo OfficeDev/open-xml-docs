@@ -24,11 +24,11 @@ programmatically.
 
 ## Getting a PresentationDocument Object
 
-In the Open XML SDK, the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class represents a
+In the Open XML SDK, the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-[Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562287.aspx) method that uses a
+[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. To open a document for read/write,
 specify the value **true** for this parameter
@@ -64,7 +64,7 @@ object that is created or named in the **using** statement, in this case *doc*.
 
 ## Structure of the Shape Text Body
 
-The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
 introduces the structure of this element.
 
 > This element specifies the existence of text to be contained within
@@ -72,7 +72,7 @@ introduces the structure of this element.
 > properties are contained within this element. There can be multiple
 > paragraphs and within paragraphs multiple runs of text.
 > 
-> © ISO/IEC29500: 2008.
+> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the child elements of the shape text body and
 the description of each.

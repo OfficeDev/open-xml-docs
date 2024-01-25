@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with presentations
 
-This topic discusses the Open XML SDK for Office [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class and how it relates to
+This topic discusses the Open XML SDK for Office [Presentation](/dotnet/api/documentformat.openxml.presentation.presentation) class and how it relates to
 the Open XML File Format PresentationML schema. For more information
 about the overall structure of the parts and elements that make up a
 PresentationML document, see [Structure of a
@@ -25,7 +25,7 @@ PresentationML document](structure-of-a-presentationml-document.md).
 
 ---------------------------------------------------------------------------------
 ## Presentations in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<presentation\>
 element used to represent a presentation in a PresentationML document as
 follows:
@@ -55,7 +55,7 @@ size and default text styles.
 </p:presentation>
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The \<presentation\> element typically contains child elements that list
 slide masters, slides, and custom slide shows contained within the
@@ -75,16 +75,16 @@ Open XML SDK classes that correspond to them.
 
 | **PresentationML Element** |                                                     **Open XML SDK Class**                                                      |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-|     \<sldMasterIdLst\>     |   [SlideMasterIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemasteridlist.aspx)   |
-|      \<sldMasterId\>       |       [SlideMasterId](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemasterid.aspx)       |
-|        \<sldIdLst\>        |         [SlideIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slideidlist.aspx)         |
-|         \<sldId\>          |             [SlideId](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slideid.aspx)             |
-|    \<notesMasterIdLst\>    |   [NotesMasterIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmasteridlist.aspx)   |
-|   \<handoutMasterIdLst\>   | [HandoutMasterIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.handoutmasteridlist.aspx) |
-|      \<custShowLst\>       |      [CustomShowList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.customshowlist.aspx)      |
-|         \<sldSz\>          |           [SlideSize](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidesize.aspx)           |
-|        \<notesSz\>         |           [NotesSize](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notessize.aspx)           |
-|    \<defaultTextStyle\>    |    [DefaultTextStyle](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.defaulttextstyle.aspx)    |
+|     \<sldMasterIdLst\>     |   [SlideMasterIdList](/dotnet/api/documentformat.openxml.presentation.slidemasteridlist)   |
+|      \<sldMasterId\>       |       [SlideMasterId](/dotnet/api/documentformat.openxml.presentation.slidemasterid)       |
+|        \<sldIdLst\>        |         [SlideIdList](/dotnet/api/documentformat.openxml.presentation.slideidlist)         |
+|         \<sldId\>          |             [SlideId](/dotnet/api/documentformat.openxml.presentation.slideid)             |
+|    \<notesMasterIdLst\>    |   [NotesMasterIdList](/dotnet/api/documentformat.openxml.presentation.notesmasteridlist)   |
+|   \<handoutMasterIdLst\>   | [HandoutMasterIdList](/dotnet/api/documentformat.openxml.presentation.handoutmasteridlist) |
+|      \<custShowLst\>       |      [CustomShowList](/dotnet/api/documentformat.openxml.presentation.customshowlist)      |
+|         \<sldSz\>          |           [SlideSize](/dotnet/api/documentformat.openxml.presentation.slidesize)           |
+|        \<notesSz\>         |           [NotesSize](/dotnet/api/documentformat.openxml.presentation.notessize)           |
+|    \<defaultTextStyle\>    |    [DefaultTextStyle](/dotnet/api/documentformat.openxml.presentation.defaulttextstyle)    |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Presentation Class
@@ -100,7 +100,7 @@ sections.
 
 All slides that share the same master inherit the same layout from that
 master. The **SlideMasterIdList** class
-corresponds to the \<sldMasterIdList\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+corresponds to the \<sldMasterIdList\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<sldMasterIdList\>
 element used to represent a slide master ID list in a PresentationML
 document as follows:
@@ -110,12 +110,12 @@ slide master slides that are available within the corresponding
 presentation. A slide master is a slide that is specifically designed to
 be a template for all related child layout slides.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideMasterId Class
 
 The **SlideMasterId** class corresponds to the
-\<sldMasterId\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<sldMasterId\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<sldMasterId\>
 element used to represent a slide master ID in a PresentationML document
 as follows:
@@ -139,12 +139,12 @@ embedTrueTypeFonts="1">
 </p:presentation>
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideIdList Class
 
 The **SlideIdList** class corresponds to the
-\<sldIdLst\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<sldIdLst\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<sldIdLst\> element
 used to represent a slide ID list in a PresentationML document as
 follows:
@@ -154,12 +154,12 @@ slides that are available within the corresponding presentation. A slide
 contains the information that is specific to a single slide such as
 slide-specific shape and text information.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideId Class
 
 The **SlideId** class corresponds to the
-\<sldId\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<sldId\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<sldId\> element
 used to represent a slide ID in a PresentationML document as follows:
 
@@ -186,12 +186,12 @@ embedTrueTypeFonts="1">
 </p:presentation>
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### NotesMasterIdList Class
 
 The **NotesMasterIdList** class corresponds to
-the \<notesMasterIdLst\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+the \<notesMasterIdLst\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<notesMasterIdLst\>
 element used to represent a notes master ID list in a PresentationML
 document as follows:
@@ -201,12 +201,12 @@ notes master slides that are available within the corresponding
 presentation. A notes master is a slide that is specifically designed
 for the printing of the slide along with any attached notes.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### HandoutMasterIdList Class
 
 The **HandoutMasterIdList** class corresponds
-to the \<handoutMasterIdLst\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+to the \<handoutMasterIdLst\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML
 \<handoutMasterIdLst\> element used to represent a handout master ID
 list in a PresentationML document as follows:
@@ -216,12 +216,12 @@ handout master slides that are available within the corresponding
 presentation. A handout master is a slide that is specifically designed
 for printing as a handout.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CustomShowList Class
 
 The **CustomShowList** class corresponds to the
-\<custShowLst\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<custShowLst\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<custShowLst\>
 element used to represent a custom show list in a PresentationML
 document as follows:
@@ -231,12 +231,12 @@ within the corresponding presentation. A custom show is a defined slide
 sequence that allows for the displaying of the slides with the
 presentation in any arbitrary order.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideSize Class
 
 The **SlideSize** class corresponds to the
-\<sldSz\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<sldSz\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<sldSz\> element
 used to represent presentation slide size in a PresentationML document
 as follows:
@@ -258,12 +258,12 @@ embedTrueTypeFonts="1">
 </p:presentation>  
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### NotesSize Class
 
 The **NotesSize** class corresponds to the
-\<notesSz\> element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+\<notesSz\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<notesSz\> element
 used to represent notes slide size in a PresentationML document as
 follows:
@@ -288,12 +288,12 @@ embedTrueTypeFonts="1">
 </p:presentation>
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### DefaultTextStyle Class
 
 The DefaultTextStyle class corresponds to the \<defaultTextStyle\>
-element. The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification describes the Open XML PresentationML \<defaultTextStyle\>
 element used to represent default text style in a PresentationML
 document as follows:
@@ -304,14 +304,14 @@ when inserting a new slide if that slide is not associated with a master
 slide or if no styling information has been otherwise specified for the
 text within the presentation slide.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------
 ## Working with the Presentation Class
 As shown in the Open XML SDK code example that follows, every instance
 of the **Presentation** class is associated
-with an instance of the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class, which represents a
+with an instance of the [PresentationPart](/dotnet/api/documentformat.openxml.packaging.presentationpart) class, which represents a
 presentation part, one of the required parts of a PresentationML
 presentation file package.
 
@@ -325,12 +325,12 @@ code example, are the **SlideMasterIdList**,
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following code example from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](https://msdn.microsoft.com/library/office/cc535977.aspx)
-method of the [PresentationDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.aspx) class of the Open XML
+The following code example from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) uses the [Create(String, PresentationDocumentType)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.create)
+method of the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class of the Open XML
 SDK to create an instance of that same class that has the specified
-name and file path. Then it uses the [AddPresentationPart()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationdocument.addpresentationpart.aspx) method to add an
-instance of the [PresentationPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.presentationpart.aspx) class to the document
-file. Next, it creates an instance of the [Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.presentation.aspx) class that represents the
+name and file path. Then it uses the [AddPresentationPart()](/dotnet/api/documentformat.openxml.packaging.presentationdocument.addpresentationpart) method to add an
+instance of the [PresentationPart](/dotnet/api/documentformat.openxml.packaging.presentationpart) class to the document
+file. Next, it creates an instance of the [Presentation](/dotnet/api/documentformat.openxml.presentation.presentation) class that represents the
 presentation. It passes a reference to the **PresentationPart** class instance to the
 **CreatePresentationParts** procedure, which creates the other required
 parts of the presentation file. The **CreatePresentation** procedure
@@ -353,12 +353,12 @@ PresentationML document referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8" ?>
-    <p:presentation xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:presentation xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
      <p:sldMasterIdLst>
-      <p:sldMasterId id="2147483648" r:id="rId1" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
+      <p:sldMasterId id="2147483648" r:id="rId1" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
      </p:sldMasterIdLst>
      <p:sldIdLst>
-      <p:sldId id="256" r:id="rId2" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
+      <p:sldId id="256" r:id="rId2" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
      </p:sldIdLst>
      <p:sldSz cx="9144000" cy="6858000" type="screen4x3"/>
      <p:notesSz cx="6858000" cy="9144000"/>

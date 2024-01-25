@@ -40,7 +40,7 @@ in .zip files is called the Open Packaging Conventions. For more
 information about the Open Packaging Conventions, see [ISO/IEC 29500-2](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.md?csnumber=51459).
 
 Styles are stored in dedicated parts within a word processing document
-package. An Microsoft Word 2010 document contains a single styles part.
+package. A Microsoft Word 2010 document contains a single styles part.
 Microsoft Word 2013 adds a second stylesWithEffects part. The following
 image from the Document Explorer in the Open XML SDK Productivity
 Tool for Microsoft Office shows the document parts in a sample Word 2013
@@ -49,12 +49,12 @@ document that contains styles.
 Figure 1. Styles parts in a word processing document
 
 ![Styles parts in a word processing document.](../media/OpenXmlCon_HowToReplaceStyles_Fig1.gif)
-In order to provide for "round-tripping" a document from Word 2013 to
-Word 2010 and back, Word 2013 maintains both the original styles part
+In order to provide for "round-tripping" a document from Word 2013+ to
+Word 2010 and back, Word 2013+ maintains both the original styles part
 and the new styles part. (The Office Open XML File Formats specification
 requires that Microsoft Word ignore any parts that it does not
 recognize; Word 2010 does not notice the stylesWithEffects part that
-Word 2013 adds to the document.)
+Word 2013+ adds to the document.)
 
 The code example provided in this topic can be used to replace these
 styles parts.
@@ -123,7 +123,7 @@ stylesWithEffects part second, and relies on two supporting methods to
 do most of the work. The **ExtractStylesPart**
 method has the job of extracting the content of the styles or
 stylesWithEffects part, and placing it in an
-[XDocument](https://msdn.microsoft.com/library/Bb345449(v=VS.100).aspx)
+[XDocument](/dotnet/api/system.xml.linq.xdocument)
 object. The **ReplaceStylesPart** method takes
 the object created by **ExtractStylesPart** and
 uses its content to replace the styles or stylesWithEffects part in the
@@ -158,7 +158,7 @@ stylesWithEffects part.
 ### [C#](#tab/cs-3)
 ```csharp
     // Extract and replace the stylesWithEffects part. To fully support 
-    // round-tripping from Word 2013 to Word 2010, you should 
+    // round-tripping from Word 2013+ to Word 2010, you should 
     // replace this part, as well.
     node = ExtractStylesPart(fromDoc);
     if (node != null)
@@ -169,7 +169,7 @@ stylesWithEffects part.
 ### [Visual Basic](#tab/vb-3)
 ```vb
     ' Extract and replace the stylesWithEffects part. To fully support 
-    ' round-tripping from Word 2013 to Word 2010, you should 
+    ' round-tripping from Word 2013+ to Word 2010, you should 
     ' replace this part, as well.
     node = ExtractStylesPart(fromDoc, True)
     If node IsNot Nothing Then
@@ -188,7 +188,7 @@ following section explains the **ReplaceStylesPart** method.
 The **ReplaceStylesPart** method can be used to
 replace the styles or styleWithEffects part in a document, given an
 **XDocument** instance that contains the same
-part for a Word 2010 or Word 2013 document (as shown in the sample code
+part for a Word 2010 or Word 2013+ document (as shown in the sample code
 earlier in this topic, the **ExtractStylesPart** method can be used to obtain
 that instance). The **ReplaceStylesPart**
 method accepts three parameters: the first parameter contains a string
@@ -198,7 +198,7 @@ contains the styles or stylesWithEffect part from another word
 processing document, and the third indicates whether you want to replace
 the styles part, or the stylesWithEffects part (as shown in the sample
 code earlier in this topic, you will need to call this procedure twice
-for Word 2013 documents, replacing each part with the corresponding part
+for Word 2013+ documents, replacing each part with the corresponding part
 from a source document).
 
 ### [C#](#tab/cs-4)
@@ -224,9 +224,9 @@ The **ReplaceStylesPart** method examines the
 document you specify, looking for the styles or stylesWithEffects part.
 If the requested part exists, the method saves the supplied **XDocument** into the selected part.
 
-The code starts by opening the document by using the **[Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** method and indicating that the
+The code starts by opening the document by using the **[Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** method and indicating that the
 document should be open for read/write access (the final **true** parameter). Given the open document, the code
-uses the **[MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx)** property to navigate to
+uses the **[MainDocumentPart](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart)** property to navigate to
 the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
 
 ### [C#](#tab/cs-5)
@@ -292,12 +292,12 @@ requested styles part, and stores it in the **stylesPart** variable.
 
 Assuming that the requested part exists, the code must save the entire
 contents of the **XDocument** passed to the
-method to the part. Each part provides a **[GetStream](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpart.getstream.aspx)** method, which returns a Stream.
+method to the part. Each part provides a **[GetStream](/dotnet/api/documentformat.openxml.packaging.openxmlpart.getstream)** method, which returns a Stream.
 The code passes the Stream instance to the constructor of the
-[StreamWriter](https://msdn.microsoft.com/library/wtbhzte9(v=VS.100).aspx)
+[StreamWriter](/dotnet/api/system.io.streamwriter.-ctor)
 class, creating a stream writer around the stream of the part. Finally,
 the code calls the
-[Save](https://msdn.microsoft.com/library/cc838476.aspx) method of
+[Save](/dotnet/api/system.xml.linq.xdocument.save) method of
 the XDocument, saving its contents into the styles part.
 
 ### [C#](#tab/cs-7)

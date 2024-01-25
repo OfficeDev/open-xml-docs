@@ -33,7 +33,7 @@ programmatically open a read-only spreadsheet document.
 
 --------------------------------------------------------------------------------
 ## Getting a SpreadsheetDocument Object
-In the Open XML SDK, the [SpreadsheetDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.aspx) class represents an
+In the Open XML SDK, the [SpreadsheetDocument](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument) class represents an
 Excel document package. To create an Excel document, you create an
 instance of the **SpreadsheetDocument** class
 and populate it with parts. At a minimum, the document must have a
@@ -42,16 +42,16 @@ one worksheet part. The text is represented in the package as XML using
 SpreadsheetML markup.
 
 To create the class instance from the document that you call one of the
-[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.spreadsheetdocument.open.aspx) overload methods. Several **Open** methods are provided, each with a different
+[Open()](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open) overload methods. Several **Open** methods are provided, each with a different
 signature. The methods that let you specify whether a document is
 editable are listed in the following table.
 
 |Open|Class Library Reference Topic|Description|
 --|--|--
-Open(String, Boolean)|[Open(String, Boolean)](https://msdn.microsoft.com/library/office/cc562356.aspx)|Create an instance of the SpreadsheetDocument class from the specified file.
-Open(Stream, Boolean)|[Open(Stream, Boolean](https://msdn.microsoft.com/library/office/cc562185.aspx)|Create an instance of the SpreadsheetDocument class from the specified IO stream.
-Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](https://msdn.microsoft.com/library/office/ee880344.aspx)|Create an instance of the SpreadsheetDocument class from the specified file.
-Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](https://msdn.microsoft.com/library/office/ee840773.aspx)|Create an instance of the SpreadsheetDocument class from the specified I/O stream.
+Open(String, Boolean)|[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open)|Create an instance of the SpreadsheetDocument class from the specified file.
+Open(Stream, Boolean)|[Open(Stream, Boolean](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open)|Create an instance of the SpreadsheetDocument class from the specified IO stream.
+Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open)|Create an instance of the SpreadsheetDocument class from the specified file.
+Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open)|Create an instance of the SpreadsheetDocument class from the specified I/O stream.
 
 The table earlier in this topic lists only those **Open** methods that accept a Boolean value as the
 second parameter to specify whether a document is editable. To open a
@@ -117,15 +117,15 @@ operation.
 ---------------------------------------------------------------------------------
 ## Basic Document Structure
 The basic document structure of a SpreadsheetML document consists of the
-[Sheets](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheets.aspx) and [Sheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheet.aspx) elements, which reference the
-worksheets in the [Workbook](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.workbook.aspx). A separate XML file is created
-for each [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx). For example, the SpreadsheetML
+[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets) and [Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet) elements, which reference the
+worksheets in the [Workbook](/dotnet/api/documentformat.openxml.spreadsheet.workbook). A separate XML file is created
+for each [Worksheet](/dotnet/api/documentformat.openxml.spreadsheet.worksheet). For example, the SpreadsheetML
 for a workbook that has two worksheets name MySheet1 and MySheet2 is
 located in the Workbook.xml file and is as follows.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns=https://schemas.openxmlformats.org/spreadsheetml/2006/main xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
+    <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
         <sheets>
             <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
             <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
@@ -134,8 +134,8 @@ located in the Workbook.xml file and is as follows.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-[SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx). **sheetData** represents the cell table and contains
-one or more [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) elements. A **row** contains one or more [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) elements. Each cell contains a [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) element that represents the value
+[SheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata). **sheetData** represents the cell table and contains
+one or more [Row](/dotnet/api/documentformat.openxml.spreadsheet.row) elements. A **row** contains one or more [Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell) elements. Each cell contains a [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) element that represents the value
 of the cell. For example, the SpreadsheetML for the first worksheet in a
 workbook, that only has the value 100 in cell A1, is located in the
 Sheet1.xml file and is as follows.
@@ -162,7 +162,7 @@ the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elemen
 SpreadsheetML Element|Open XML SDK Class|Description
 --|--|--
 workbook|DocumentFormat.OpenXml.Spreadsheet.Workbook|The root element for the main document part.
-sheets|DocumentFormat.OpenXml.Spreadsheet.Sheets|The container for the block level structures such as sheet, fileVersion, and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification.
+sheets|DocumentFormat.OpenXml.Spreadsheet.Sheets|The container for the block level structures such as sheet, fileVersion, and others specified in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification.
 sheet|DocumentFormat.OpenXml.Spreadsheet.Sheet|A sheet that points to a sheet definition file.
 worksheet|DocumentFormat.OpenXml.Spreadsheet.Worksheet|A sheet definition file that contains the sheet data.
 sheetData|DocumentFormat.OpenXml.Spreadsheet.SheetData|The cell table, grouped together by rows.

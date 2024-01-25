@@ -17,11 +17,11 @@ ms.localizationpriority: high
 
 # Working with PivotTables
 
-This topic discusses the Open XML SDK **[PivotTableDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivottabledefinition.aspx)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
+This topic discusses the Open XML SDK **[PivotTableDefinition](/dotnet/api/documentformat.openxml.spreadsheet.pivottabledefinition)** class and how it relates to the Open XML File Format SpreadsheetML schema. For more information about the overall structure of the parts and elements that make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 ## PivotTable in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the **PivotTableDefinition** (\<**pivotTableDefinition**\>) element.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the **PivotTableDefinition** (\<**pivotTableDefinition**\>) element.
 
 PivotTables display aggregated views of data easily and in an
 understandable layout. Hundreds or thousands of pieces of underlying
@@ -89,9 +89,9 @@ The following table lists the common Open XML SDK classes used when working with
 
 | **SpreadsheetML Element** | **Open XML SDK Class**                                                      |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------|
-|  pivotField            | [PivotField](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotfield.aspx)           |
-|  pivotCacheDefinition  | [PivotCacheDefinition](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcachedefinition.aspx) |
-|  pivotCacheRecords     | [PivotCacheRecords](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.pivotcacherecords.aspx)    |
+|  pivotField            | [PivotField](/dotnet/api/documentformat.openxml.spreadsheet.pivotfield)           |
+|  pivotCacheDefinition  | [PivotCacheDefinition](/dotnet/api/documentformat.openxml.spreadsheet.pivotcachedefinition) |
+|  pivotCacheRecords     | [PivotCacheRecords](/dotnet/api/documentformat.openxml.spreadsheet.pivotcacherecords)    |
 
 ## Open XML SDK PivotTableDefinition Class
 

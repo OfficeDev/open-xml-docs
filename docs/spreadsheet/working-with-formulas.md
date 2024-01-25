@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with formulas
 
-This topic discusses the Open XML SDK [CellFormula](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
+This topic discusses the Open XML SDK [CellFormula](/dotnet/api/documentformat.openxml.spreadsheet.cellformula) class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a
@@ -42,9 +42,9 @@ to postpone calculation of the formula values when the spreadsheet is
 opened, which saves time when opening a worksheet. You do not have to
 specify the value, and if you omit it, it is the responsibility of the
 Open XML reader to compute the value based on the formula definition
-when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx).
+when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue).
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the **cellFormula**
 (\<**f**\>) element.
 
@@ -103,7 +103,7 @@ An array value or constant represents a collection of one or more
 elements, whose values can have any type (i.e., the elements of an array
 need not all have the same type).
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 For more information about formula syntax see the ISO/IEC 29500
 specification.
@@ -116,7 +116,7 @@ and is contained in the "sheet1.xml" file.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
+    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
         <dimension ref="A1:A6"/>
         <sheetViews>
             <sheetView tabSelected="1" workbookViewId="0">

@@ -21,7 +21,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to add a 
 
 ## Get a WordprocessingDocument object
 
-The code starts with opening a package file by passing a file name to one of the overloaded **[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is **true** specifying that the file should be opened in read/write mode.
+The code starts with opening a package file by passing a file name to one of the overloaded **[Open()](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument)** that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is **true** specifying that the file should be opened in read/write mode.
 
 ### [C#](#tab/cs-0)
 ```csharp

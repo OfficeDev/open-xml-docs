@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/16/2024
 ms.localizationpriority: high
 ---
 # Set the font for a text run
@@ -27,50 +27,10 @@ document programmatically.
 
 
 --------------------------------------------------------------------------------
-## Create a WordprocessingDocument Object
-The code example opens a word processing document package by passing a
-file name as an argument to one of the overloaded [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) methods of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class that takes a
-string and a Boolean value that specifies whether the file should be
-opened in read/write mode or not. In this case, the Boolean value is
-**true** specifying that the file should be
-opened in read/write mode.
 
-### [C#](#tab/cs-0)
-```csharp
-    // Open a Wordprocessing document for editing.
-    using (WordprocessingDocument package = WordprocessingDocument.Open(fileName, true))
-    {
-        // Insert other code here.
-    }
-```
-
-### [Visual Basic](#tab/vb-0)
-```vb
-    ' Open a Wordprocessing document for editing.
-    Dim package As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
-    Using (package)
-        ' Insert other code here.
-    End Using
-```
-***
-
-
-The **using** statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing bracket is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **package**. Because the **WordprocessingDocument** class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-the **Dispose** method is automatically called
-when you exit the block; you do not have to explicitly call **Save** and **Close**─as
-long as you use using.
-
-
---------------------------------------------------------------------------------
 ## Structure of the Run Fonts Element
-The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification can
+
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification can
 be useful when working with **rFonts** element.
 
 This element specifies the fonts which shall be used to display the text
@@ -123,110 +83,61 @@ This text run shall therefore use the Courier New font for all
 characters in the ASCII range, and shall use the Times New Roman font
 for all characters in the Complex Script range.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
+
 After opening the package file for read/write, the code creates a **RunProperties** object that contains a **RunFonts** object that has its **Ascii** property set to "Arial". **RunProperties** and **RunFonts** objects represent run properties
-(\<**rPr**\>) elements and run fonts elements
-(\<**rFont**\>), respectively, in the Open XML
+`rPr` elements and run fonts elements
+`rFont`, respectively, in the Open XML
 Wordprocessing schema. Use a **RunProperties**
 object to specify the properties of a given text run. In this case, to
 set the font of the run to Arial, the code creates a **RunFonts** object and then sets the **Ascii** value to "Arial".
 
 ### [C#](#tab/cs-1)
-```csharp
-    // Use an object initializer for RunProperties and rPr.
-    RunProperties rPr = new RunProperties(
-        new RunFonts()
-        {
-            Ascii = "Arial"
-        });
-```
-
+[!code-csharp[](../../samples/word/set_the_font_for_a_text_run/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    ' Use an object initializer for RunProperties and rPr.
-    Dim rPr As New RunProperties(New RunFonts() With {.Ascii = "Arial"})
-```
+[!code-vb[](../../samples/word/set_the_font_for_a_text_run/vb/Program.vb#snippet1)]
 ***
 
 
-The code then creates a [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) object that represents the first text
+The code then creates a [Run](/dotnet/api/documentformat.openxml.wordprocessing.run) object that represents the first text
 run of the document. The code instantiates a **Run** and sets it to the first text run of the
-document. The code then adds the **RunProperties** object to the **Run** object using the [PrependChild\<T\>(T)](https://msdn.microsoft.com/library/office/cc883719.aspx) method. The **PrependChild** method adds an element as the first
+document. The code then adds the **RunProperties** object to the **Run** object using the [PrependChild\<T\>(T)](/dotnet/api/documentformat.openxml.openxmlelement.prependchild) method. The **PrependChild** method adds an element as the first
 child element to the specified element in the in-memory XML structure.
 In this case, running the code sample produces an in-memory XML
 structure where the **RunProperties** element
 is added as the first child element of the **Run** element. It then saves the changes back to
-the [Save(MainDocumentPart)](https://msdn.microsoft.com/library/office/cc846392.aspx) object. Calling the
-**Save** method of the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) object commits
+the [Save(MainDocumentPart)](/dotnet/api/documentformat.openxml.wordprocessing.document.save) object. Calling the
+**Save** method of the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) object commits
 changes made to the in-memory representation of the **MainDocumentPart** part back into the XML file for
 the **MainDocumentPart** (the document.xml file
 in the Wordprocessing package).
 
 ### [C#](#tab/cs-2)
-```csharp
-    Run r = package.MainDocumentPart.Document.Descendants<Run>().First();
-    r.PrependChild<RunProperties>(rPr);
-
-    // Save changes to the MainDocumentPart part.
-    package.MainDocumentPart.Document.Save();
-```
-
+[!code-csharp[](../../samples/word/set_the_font_for_a_text_run/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-2)
-```vb
-    Dim r As Run = package.MainDocumentPart.Document.Descendants(Of Run)().First()
-    r.PrependChild(Of RunProperties)(rPr)
-
-    ' Save changes to the MainDocumentPart part.
-    package.MainDocumentPart.Document.Save()
-```
+[!code-vb[](../../samples/word/set_the_font_for_a_text_run/vb/Program.vb#snippet2)]
 ***
 
 
 --------------------------------------------------------------------------------
-## Sample Code
-The following is the code you can use to change the font of the first
-paragraph of a Word-processing document. For instance, you can invoke
-the **SetRunFont** method in your program to
-change the font in the file "myPkg9.docx" by using the following call.
-
-### [C#](#tab/cs-3)
-```csharp
-    string fileName = @"C:\Users\Public\Documents\MyPkg9.docx";
-    SetRunFont(fileName);
-```
-
-### [Visual Basic](#tab/vb-3)
-```vb
-    Dim fileName As String = "C:\Users\Public\Documents\MyPkg9.docx"
-    SetRunFont(fileName)
-```
-***
-
-
-After running the program check your file "MyPkg9.docx" to see the
-changed font.
 
 > [!NOTE]
-> This code example assumes that the test word processing document (MyPakg9.docx) contains at least one text run.
+> This code example assumes that the test word processing document at fileName path contains at least one text run.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/set_the_font_for_a_text_run/cs/Program.cs)]
+[!code-csharp[](../../samples/word/set_the_font_for_a_text_run/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/set_the_font_for_a_text_run/vb/Program.vb)]
+[!code-vb[](../../samples/word/set_the_font_for_a_text_run/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
 ## See also
 
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
-
-[Object Initializers: Named and Anonymous Types](https://msdn.microsoft.com/library/bb385125.aspx)
-
-[Object and Collection Initializers (C\# Programming Guide)](https://msdn.microsoft.com/library/bb384062.aspx)

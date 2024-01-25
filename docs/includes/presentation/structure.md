@@ -2,7 +2,7 @@
 
 The basic document structure of a **PresentationML** document consists of a number of
 parts, among which is the main part that contains the presentation
-definition. The following text from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
+definition. The following text from the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification
 introduces the overall form of a **PresentationML** package.
 
 > The main part of a **PresentationML** package
@@ -33,7 +33,7 @@ introduces the overall form of a **PresentationML** package.
 > parts. For example, all comments in a document are stored in one
 > comment part while each slide has its own part.
 > 
-> © ISO/IEC29500: 2008.
+> [!include[ISO/IEC 29500 version](../iso-iec-29500-version.md)]
 
 The following XML code example represents a presentation that contains
 two slides denoted by the IDs 267 and 256.
@@ -65,13 +65,13 @@ two slides denoted by the IDs 267 and 256.
 
 Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
-elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
+elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation)
 namespace. The following table lists the class names of the classes that
 correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
-| sld | [Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx) | Presentation Slide. It is the root element of SlidePart. |
-| sldLayout | [SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx) | Slide Layout. It is the root element of SlideLayoutPart. |
-| sldMaster | [SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx) | Slide Master. It is the root element of SlideMasterPart. |
-| notesMaster | [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
+| sld | [Slide](/dotnet/api/documentformat.openxml.presentation.slide) | Presentation Slide. It is the root element of SlidePart. |
+| sldLayout | [SlideLayout](/dotnet/api/documentformat.openxml.presentation.slidelayout) | Slide Layout. It is the root element of SlideLayoutPart. |
+| sldMaster | [SlideMaster](/dotnet/api/documentformat.openxml.presentation.slidemaster) | Slide Master. It is the root element of SlideMasterPart. |
+| notesMaster | [NotesMaster](/dotnet/api/documentformat.openxml.presentation.notesmaster) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |

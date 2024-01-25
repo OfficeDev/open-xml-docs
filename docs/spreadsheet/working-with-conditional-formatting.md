@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ---
 # Working with conditional formatting
 
-This topic discusses the Open XML SDK **[ConditionalFormatting](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformatting.aspx)** class and how it
+This topic discusses the Open XML SDK **[ConditionalFormatting](/dotnet/api/documentformat.openxml.spreadsheet.conditionalformatting)** class and how it
 relates to the Open XML File Format SpreadsheetML schema. For more
 information about the overall structure of the parts and elements that
 make up a SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)**.
@@ -46,10 +46,10 @@ class.
 
 | **SpreadsheetML Element** |                                                           **Open XML SDK Class**                                                           |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-|          cfRule           | [ConditionalFormattingRule](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.conditionalformattingrule.aspx) |
-|          dataBar          |                   [DataBar](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.databar.aspx)                   |
-|        colorScale         |                [ColorScale](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.colorscale.aspx)                |
-|          iconSet          |                   [IconSet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.iconset.aspx)                   |
+|          cfRule           | [ConditionalFormattingRule](/dotnet/api/documentformat.openxml.spreadsheet.conditionalformattingrule) |
+|          dataBar          |                   [DataBar](/dotnet/api/documentformat.openxml.spreadsheet.databar)                   |
+|        colorScale         |                [ColorScale](/dotnet/api/documentformat.openxml.spreadsheet.colorscale)                |
+|          iconSet          |                   [IconSet](/dotnet/api/documentformat.openxml.spreadsheet.iconset)                   |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Conditional Formatting Class 
@@ -59,7 +59,7 @@ Open XML File Format schema for SpreadsheetML documents. Use the **ConditionalFo
 individual \<**conditionalFormatting**\>
 elements in a SpreadsheetML document.
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the **ConditionalFormatting** (\<**conditionalFormatting**\>) element.
 
 A Conditional Format is a format, such as cell shading or font color,
@@ -77,7 +77,7 @@ applied to cells that match the criteria.
     </conditionalFormatting>
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Conditional Formatting Rule Class
 
@@ -106,7 +106,7 @@ whose values are greater than 0.5. Note that in this case the content of
 Only rules with a type attribute value of expression support formula
 syntax.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Each conditional format is allowed to specify various formatting rules.
 You can apply color scale and data bar formatting at the same time for
@@ -154,7 +154,7 @@ default, 10% and 90% respectively.)
 
 The minimum difference in length (or increment amount) is 1 pixel.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Data bars take a single color and display it as a bar. The length of the
 bar indicates the relative height of the cell value. A data bar uses a
@@ -189,7 +189,7 @@ Example:
     </colorScale>
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Color scales provide a display that indicates the relative value between
 all cell items, similar to a data bar. A color scale uses a separate
@@ -222,7 +222,7 @@ value is greater than or equal to the 67th percentile.
     </iconSet>
 ```
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Using icon sets you can apply different sets of icons to the cells that
 contain your data. The icon set uses a range of values to identify which

@@ -30,10 +30,10 @@ programmatically.
 
 --------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
-To open an existing document, instantiate the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class as shown in
+To open an existing document, instantiate the [WordprocessingDocument](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument) class as shown in
 the following two **using** statements. In the
 same statement, you open the word processing file with the specified
-file name by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method, with the Boolean parameter.
+file name by using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the Boolean parameter.
 For the source file that set the parameter to **false** to open it for read-only access. For the
 target file, set the parameter to **true** in
 order to enable editing the document.
@@ -78,7 +78,7 @@ long as you use **using**.
 --------------------------------------------------------------------------------
 ## The Theme Part
 The theme part contains information about the color, font, and format of
-a document. It is defined in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification as
+a document. It is defined in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification as
 follows.
 
 An instance of this part type contains information about a document's
@@ -110,7 +110,7 @@ is stored in the ZIP item theme/theme1.xml:
 ```
 
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------
@@ -191,7 +191,7 @@ following example, which copies the theme part from "MyPkg4.docx" to
 
 
 > [!IMPORTANT]
-> Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word 2013, click the **Page Layout** tab, click **Themes**, and select one of the available themes.
+> Before you run the program, make sure that the source document (MyPkg4.docx) has the theme part set; otherwise, an exception would be thrown. To add a theme to a document, open it in Microsoft Word, click the **Page Layout** tab, click **Themes**, and select one of the available themes.
 
 After running the program, you can inspect the file "MyPkg3.docx" to see
 the copied theme from the file "MyPkg4.docx."

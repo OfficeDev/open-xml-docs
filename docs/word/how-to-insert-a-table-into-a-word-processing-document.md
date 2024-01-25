@@ -112,10 +112,10 @@ table row using the **tr** element.
 
 ## How the Sample Code Works
 
-In sample code, after you open the document in the **using** statement, you create a new [Table](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.table.aspx) object. Then you create a [TableProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tableproperties.aspx) object and specify its
+In sample code, after you open the document in the **using** statement, you create a new [Table](/dotnet/api/documentformat.openxml.wordprocessing.table) object. Then you create a [TableProperties](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties) object and specify its
 border information. The **TableProperties**
-class contains an overloaded constructor [TableProperties()](https://msdn.microsoft.com/library/office/cc882762.aspx) that takes a **params** array of type [OpenXmlElement](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.aspx). The code uses this
-constructor to instantiate a **TableProperties** object with [BorderType](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.bordertype.aspx) objects for each border,
+class contains an overloaded constructor [TableProperties()](/dotnet/api/documentformat.openxml.wordprocessing.tableproperties.-ctor) that takes a **params** array of type [OpenXmlElement](/dotnet/api/documentformat.openxml.openxmlelement). The code uses this
+constructor to instantiate a **TableProperties** object with [BorderType](/dotnet/api/documentformat.openxml.wordprocessing.bordertype) objects for each border,
 instantiating each **BorderType** and
 specifying its value using object initializers. After it has been
 instantiated, append the **TableProperties**
@@ -163,20 +163,20 @@ object to the table.
 
 
 The code creates a table row. This section of the code makes extensive
-use of the overloaded [Append\[\])](https://msdn.microsoft.com/library/office/cc801361.aspx) methods, which classes derived
+use of the overloaded [Append\[\])](/dotnet/api/documentformat.openxml.openxmlelement.append) methods, which classes derived
 from **OpenXmlElement** inherit. The **Append** methods provide a way to either append a
 single element or to append a portion of an XML tree, to the end of the
 list of child elements under a given parent element. Next, the code
-creates a [TableCell](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tablecell.aspx) object, which represents an
+creates a [TableCell](/dotnet/api/documentformat.openxml.wordprocessing.tablecell) object, which represents an
 individual table cell, and specifies the width property of the table
-cell using a [TableCellProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tablecellproperties.aspx) object, and the cell
-content ("Hello, World!") using a [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) object. In the Open XML Wordprocessing
+cell using a [TableCellProperties](/dotnet/api/documentformat.openxml.wordprocessing.tablecellproperties) object, and the cell
+content ("Hello, World!") using a [Text](/dotnet/api/documentformat.openxml.wordprocessing.text) object. In the Open XML Wordprocessing
 schema, a paragraph element (**\<p\>**)
 contains run elements (**\<r\>**) which, in
 turn, contain text elements (**\<t\>**). To
-insert text within a table cell using the API, you must create a [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) object that contains a **Run** object that contains a **Text** object that contains the text you want to
+insert text within a table cell using the API, you must create a [Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph) object that contains a **Run** object that contains a **Text** object that contains the text you want to
 insert in the cell. You then append the **Paragraph** object to the **TableCell** object. This creates the proper XML
-structure for inserting text into a cell. The **TableCell** is then appended to the [TableRow](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.tablerow.aspx) object.
+structure for inserting text into a cell. The **TableCell** is then appended to the [TableRow](/dotnet/api/documentformat.openxml.wordprocessing.tablerow) object.
 
 ### [C#](#tab/cs-2)
 ```csharp
@@ -217,9 +217,9 @@ structure for inserting text into a cell. The **TableCell** is then appended to 
 
 
 The code then creates a second table cell. The final section of code
-creates another table cell using the overloaded **TableCell** constructor [TableCell(String)](https://msdn.microsoft.com/library/office/cc803944.aspx) that takes the [OuterXml](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.outerxml.aspx) property of an existing **TableCell** object as its only argument. After
+creates another table cell using the overloaded **TableCell** constructor [TableCell(String)](/dotnet/api/documentformat.openxml.wordprocessing.tablecell.-ctor) that takes the [OuterXml](/dotnet/api/documentformat.openxml.openxmlelement.outerxml) property of an existing **TableCell** object as its only argument. After
 creating the second table cell, the code appends the **TableCell** to the **TableRow**, appends the **TableRow** to the **Table**, and the **Table**
-to the [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) object.
+to the [Document](/dotnet/api/documentformat.openxml.wordprocessing.document) object.
 
 ### [C#](#tab/cs-3)
 ```csharp
@@ -298,6 +298,6 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
-[Object Initializers: Named and Anonymous Types (Visual Basic .NET)](https://msdn.microsoft.com/library/bb385125.aspx)
+[Object Initializers: Named and Anonymous Types (Visual Basic .NET)](/dotnet/visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types)
 
-[Object and Collection Initializers (C\# Programming Guide)](https://msdn.microsoft.com/library/bb384062.aspx)
+[Object and Collection Initializers (C\# Programming Guide)](/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers)

@@ -1,9 +1,11 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module MyModule
 
     Sub Main(args As String())
+        WriteToWordDoc(args(0), args(1))
     End Sub
 
     Public Sub WriteToWordDoc(ByVal filepath As String, ByVal txt As String)
@@ -21,3 +23,4 @@ Module MyModule
 
     End Sub
 End Module
+' </Snippet0>
