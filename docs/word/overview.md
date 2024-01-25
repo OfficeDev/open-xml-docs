@@ -65,7 +65,7 @@ This section provides how-to topics for working with word processing documents u
 
 - [Retrieve comments from a word processing document](how-to-retrieve-comments-from-a-word-processing-document.md)  
 
-- [Retrieve property values from a Word document by using the Open XML API](how-to-retrieve-application-property-values-from-a-word-processing-document)
+- [Retrieve property values from a Word document by using the Open XML API](how-to-retrieve-application-property-values-from-a-word-processing-document.md)
 
 - [Set a custom property in a word processing document](how-to-set-a-custom-property-in-a-word-processing-document.md)  
 
