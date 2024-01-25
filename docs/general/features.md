@@ -53,7 +53,7 @@ The in-box implementations of the <xref:DocumentFormat.OpenXml.Features.IFeature
 
 The features that are currently available are described below and at what scope they are available:
 
-### IDisposableFeature
+### <xref:DocumentFormat.OpenXml.Features.IDisposableFeature>
 
 This feature allows for registering actions that need to run when a package or a part is destroyed or disposed:
 
@@ -67,7 +67,7 @@ part.Features.Get<IDisposableFeature>().Register(() => /* Some action that is ca
 
 Packages and parts will have their own implementations of this feature. Elements will retrieve the feature for their containing part if available.
 
-### IPackageEventsFeature
+### <xref:DocumentFormat.OpenXml.Features.IPackageEventsFeature>
 
 This feature allows getting event notifications of when a package is changed:
 
@@ -81,7 +81,7 @@ var feature = package.Features.GetRequired<IPackageEventsFeature>();
 > [!NOTE]
 > There may be times when the package is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
 
-### IPartEventsFeature
+### <xref:DocumentFormat.OpenXml.Features.IPartEventsFeature>
 
 This feature allows getting event notifications of when an event is being created. This is a feature that is added to the part or package:
 
@@ -97,7 +97,7 @@ Generally, assume that there may be a singleton implementation for the events an
 > [!NOTE]
 > There may be times when the part is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
 
-### IPartRootEventsFeature
+### <xref:DocumentFormat.OpenXml.Features.IPartRootEventsFeature>
 
 This feature allows getting event notifications of when a part root is being modified/loaded/created/etc. This is a feature that is added to the part level feature:
 
@@ -113,11 +113,11 @@ Generally, assume that there may be a singleton implementation for the events an
 > [!NOTE]
 > There may be times when the part root is changed but an event is not fired. Not all areas have been identified where it would make sense to raise an event. Please file an issue if you find one.
 
-### IRandomNumberGeneratorFeature
+### <xref:DocumentFormat.OpenXml.Features.IRandomNumberGeneratorFeature>
 
 This feature allows for a shared service to generate random numbers and fill an array.
 
-### IParagraphIdGeneratorFeature
+### <xref:DocumentFormat.OpenXml.Features.IParagraphIdGeneratorFeature>
 
 This feature allows for population and tracking of elements that contain paragraph ids. By default, this will ensure uniqueness of values and ensure that values that do exist are valid per the constraints of the standard. To use this feature:
 
@@ -162,7 +162,7 @@ Assert.NotEqual(p1.ParagraphId, p2.ParagraphId);
 Assert.Equal(2, shared.Count);
 ```
 
-### IPartRootXElementFeature
+### <xref:DocumentFormat.OpenXml.Features.IPartRootXElementFeature>
 
 This feature allows operating on an <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPart> by using XLinq features and directly manipulating <xref:System.Xml.Linq.XElement> nodes.
 
