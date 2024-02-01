@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 02/01/2024
 ms.localizationpriority: medium
 ---
 # Replace the styles parts in a word processing document
@@ -20,8 +20,8 @@ ms.localizationpriority: medium
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically replace the styles in a word processing
 document with the styles from another word processing document. It
-contains an example **ReplaceStyles** method to illustrate this task, as
-well as the **ReplaceStylesPart** and **ExtractStylesPart** supporting
+contains an example `ReplaceStyles` method to illustrate this task, as
+well as the `ReplaceStylesPart` and `ExtractStylesPart` supporting
 methods.
 
 
@@ -37,18 +37,19 @@ a particular content type, and can contain content equal to the content
 of an external XML file, binary file, image file, and so on, depending
 on the type. The standard that defines how Open XML documents are stored
 in .zip files is called the Open Packaging Conventions. For more
-information about the Open Packaging Conventions, see [ISO/IEC 29500-2](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.md?csnumber=51459).
+information about the Open Packaging Conventions, see [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-2-link.md)].
 
 Styles are stored in dedicated parts within a word processing document
 package. A Microsoft Word 2010 document contains a single styles part.
-Microsoft Word 2013 adds a second stylesWithEffects part. The following
+later versions of Microsoft Word add a second stylesWithEffects part. The following
 image from the Document Explorer in the Open XML SDK Productivity
-Tool for Microsoft Office shows the document parts in a sample Word 2013
+Tool for Microsoft Office shows the document parts in a sample Word 2013+
 document that contains styles.
 
 Figure 1. Styles parts in a word processing document
 
 ![Styles parts in a word processing document.](../media/OpenXmlCon_HowToReplaceStyles_Fig1.gif)
+
 In order to provide for "round-tripping" a document from Word 2013+ to
 Word 2010 and back, Word 2013+ maintains both the original styles part
 and the new styles part. (The Office Open XML File Formats specification
@@ -63,27 +64,23 @@ styles parts.
 
 ## ReplaceStyles Method
 
-You can use the **ReplaceStyles** sample method to replace the styles in
+You can use the `ReplaceStyles` sample method to replace the styles in
 a word processing document with the styles in another word processing
-document. The **ReplaceStyles** method accepts two parameters: the first
+document. The `ReplaceStyles` method accepts two parameters: the first
 parameter contains a string that indicates the path of the file that
 contains the styles to extract. The second parameter contains a string
 that indicates the path of the file to which to copy the styles,
 effectively completely replacing the styles.
 
 ### [C#](#tab/cs-0)
-```csharp
-    public static void ReplaceStyles(string fromDoc, string toDoc)
-```
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet1)]
 
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Public Sub ReplaceStyles(fromDoc As String, toDoc As String)
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet1)]
 ***
 
 
-The complete code listing for the **ReplaceStyles** method and its supporting methods
+The complete code listing for the `ReplaceStyles` method and its supporting methods
 can be found in the [Sample Code](#sample-code) section.
 
 ---------------------------------------------------------------------------------
@@ -99,18 +96,9 @@ have been replaced, and consequently the appearance of the text in the
 document will reflect the new styles.
 
 ### [C#](#tab/cs-1)
-```csharp
-    const string fromDoc = @"C:\Users\Public\Documents\StylesFrom.docx";
-    const string toDoc = @"C:\Users\Public\Documents\StylesTo.docx";
-    ReplaceStyles(fromDoc, toDoc);
-```
-
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    Const fromDoc As String = "C:\Users\Public\Documents\StylesFrom.docx"
-    Const toDoc As String = "C:\Users\Public\Documents\StylesTo.docx"
-    ReplaceStyles(fromDoc, toDoc)
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet2)]
 ***
 
 
@@ -120,35 +108,22 @@ document will reflect the new styles.
 
 The code extracts and replaces the styles part first, and then the
 stylesWithEffects part second, and relies on two supporting methods to
-do most of the work. The **ExtractStylesPart**
+do most of the work. The `ExtractStylesPart`
 method has the job of extracting the content of the styles or
-stylesWithEffects part, and placing it in an
-[XDocument](/dotnet/api/system.xml.linq.xdocument)
-object. The **ReplaceStylesPart** method takes
-the object created by **ExtractStylesPart** and
+stylesWithEffects part, and placing it in an <xref:System.Xml.Linq.XDocument>
+object. The `ReplaceStylesPart` method takes
+the object created by `ExtractStylesPart` and
 uses its content to replace the styles or stylesWithEffects part in the
 target document.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Extract and replace the styles part.
-    var node = ExtractStylesPart(fromDoc, false);
-    if (node != null)
-        ReplaceStylesPart(toDoc, node, false);
-```
-
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet3)]
 ### [Visual Basic](#tab/vb-2)
-```vb
-    ' Extract and replace the styles part.
-    Dim node = ExtractStylesPart(fromDoc, False)
-    If node IsNot Nothing Then
-        ReplaceStylesPart(toDoc, node, False)
-    End If
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet3)]
 ***
 
 
-The final parameter in the signature for either the **ExtractStylesPart** or the **ReplaceStylesPart** method determines whether the
+The final parameter in the signature for either the `ExtractStylesPart` or the `ReplaceStylesPart` method determines whether the
 styles part or the stylesWithEffects part is employed. A value of false
 indicates that you want to extract and replace the styles part. The
 absence of a value (the parameter is optional), or a value of true (the
@@ -156,44 +131,27 @@ default), means that you want to extract and replace the
 stylesWithEffects part.
 
 ### [C#](#tab/cs-3)
-```csharp
-    // Extract and replace the stylesWithEffects part. To fully support 
-    // round-tripping from Word 2013+ to Word 2010, you should 
-    // replace this part, as well.
-    node = ExtractStylesPart(fromDoc);
-    if (node != null)
-        ReplaceStylesPart(toDoc, node);
-    return;
-```
-
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-3)
-```vb
-    ' Extract and replace the stylesWithEffects part. To fully support 
-    ' round-tripping from Word 2013+ to Word 2010, you should 
-    ' replace this part, as well.
-    node = ExtractStylesPart(fromDoc, True)
-    If node IsNot Nothing Then
-        ReplaceStylesPart(toDoc, node, True)
-    End If
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet4)]
 ***
 
-For more information about the **ExtractStylesPart** method, see [the associated sample](how-to-extract-styles-from-a-word-processing-document.md). The
-following section explains the **ReplaceStylesPart** method.
+For more information about the `ExtractStylesPart` method, see [the associated sample](how-to-extract-styles-from-a-word-processing-document.md). The
+following section explains the `ReplaceStylesPart` method.
 
 ---------------------------------------------------------------------------------
 
 ## ReplaceStylesPart Method
 
-The **ReplaceStylesPart** method can be used to
+The `ReplaceStylesPart` method can be used to
 replace the styles or styleWithEffects part in a document, given an
-**XDocument** instance that contains the same
+`XDocument` instance that contains the same
 part for a Word 2010 or Word 2013+ document (as shown in the sample code
-earlier in this topic, the **ExtractStylesPart** method can be used to obtain
-that instance). The **ReplaceStylesPart**
+earlier in this topic, the `ExtractStylesPart` method can be used to obtain
+that instance). The `ReplaceStylesPart`
 method accepts three parameters: the first parameter contains a string
 that indicates the path to the file that you want to modify. The second
-parameter contains an **XDocument** object that
+parameter contains an `XDocument` object that
 contains the styles or stylesWithEffect part from another word
 processing document, and the third indicates whether you want to replace
 the styles part, or the stylesWithEffects part (as shown in the sample
@@ -202,17 +160,9 @@ for Word 2013+ documents, replacing each part with the corresponding part
 from a source document).
 
 ### [C#](#tab/cs-4)
-```csharp
-    public static void ReplaceStylesPart(string fileName, XDocument newStyles,
-      bool setStylesWithEffectsPart = true)
-```
-
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet5)]
 ### [Visual Basic](#tab/vb-4)
-```vb
-    Public Sub ReplaceStylesPart(
-      ByVal fileName As String, ByVal newStyles As XDocument,
-      Optional ByVal setStylesWithEffectsPart As Boolean = True)
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet5)]
 ***
 
 
@@ -220,69 +170,34 @@ from a source document).
 
 ## How the ReplaceStylesPart Code Works
 
-The **ReplaceStylesPart** method examines the
+The `ReplaceStylesPart` method examines the
 document you specify, looking for the styles or stylesWithEffects part.
-If the requested part exists, the method saves the supplied **XDocument** into the selected part.
+If the requested part exists, the method saves the supplied `XDocument` into the selected part.
 
-The code starts by opening the document by using the **[Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open)** method and indicating that the
-document should be open for read/write access (the final **true** parameter). Given the open document, the code
-uses the **[MainDocumentPart](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart)** property to navigate to
-the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
+The code starts by opening the document by using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> method and indicating that the
+document should be open for read/write access (the final `true` parameter). Given the open document, the code
+uses the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart> property to navigate to
+the main document part, and then prepares a variable named `stylesPart` to hold a reference to the styles part.
 
 ### [C#](#tab/cs-5)
-```csharp
-    // Open the document for write access and get a reference.
-    using (var document = 
-        WordprocessingDocument.Open(fileName, true))
-    {
-        // Get a reference to the main document part.
-        var docPart = document.MainDocumentPart;
-
-        // Assign a reference to the appropriate part to the
-        // stylesPart variable.
-        StylesPart stylesPart = null;
-```
-
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet6)]
 ### [Visual Basic](#tab/vb-5)
-```vb
-    ' Open the document for write access and get a reference.
-    Using document = WordprocessingDocument.Open(fileName, True)
-
-        ' Get a reference to the main document part.
-        Dim docPart = document.MainDocumentPart
-
-        ' Assign a reference to the appropriate part to the
-        ' stylesPart variable.
-        Dim stylesPart As StylesPart = Nothing
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet6)]
 ***
-
 
 ---------------------------------------------------------------------------------
 
 ## Find the Correct Styles Part
 
 The code next retrieves a reference to the requested styles part, using
-the **setStylesWithEffectsPart** Boolean
+the `setStylesWithEffectsPart` Boolean
 parameter. Based on this value, the code retrieves a reference to the
-requested styles part, and stores it in the **stylesPart** variable.
+requested styles part, and stores it in the `stylesPart` variable.
 
 ### [C#](#tab/cs-6)
-```csharp
-    if (setStylesWithEffectsPart)
-        stylesPart = docPart.StylesWithEffectsPart;
-    else
-        stylesPart = docPart.StyleDefinitionsPart;
-```
-
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet7)]
 ### [Visual Basic](#tab/vb-6)
-```vb
-    If setStylesWithEffectsPart Then
-        stylesPart = docPart.StylesWithEffectsPart
-    Else
-        stylesPart = docPart.StyleDefinitionsPart
-    End If
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet7)]
 ***
 
 
@@ -291,33 +206,17 @@ requested styles part, and stores it in the **stylesPart** variable.
 ## Save the Part Contents
 
 Assuming that the requested part exists, the code must save the entire
-contents of the **XDocument** passed to the
-method to the part. Each part provides a **[GetStream](/dotnet/api/documentformat.openxml.packaging.openxmlpart.getstream)** method, which returns a Stream.
-The code passes the Stream instance to the constructor of the
-[StreamWriter](/dotnet/api/system.io.streamwriter.-ctor)
+contents of the `XDocument` passed to the
+method to the part. Each part provides a <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream> method, which returns a <xref:System.IO.Stream>.
+The code passes the Stream instance to the constructor of the <xref:System.IO.StreamWriter.%23ctor(System.IO.Stream)>
 class, creating a stream writer around the stream of the part. Finally,
-the code calls the
-[Save](/dotnet/api/system.xml.linq.xdocument.save) method of
+the code calls the <xref:System.Xml.Linq.XDocument.Save(System.IO.Stream)> method of
 the XDocument, saving its contents into the styles part.
 
 ### [C#](#tab/cs-7)
-```csharp
-    // If the part exists, populate it with the new styles.
-    if (stylesPart != null)
-    {
-        newStyles.Save(new StreamWriter(stylesPart.GetStream(
-          FileMode.Create, FileAccess.Write)));
-    }
-```
-
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet8)]
 ### [Visual Basic](#tab/vb-7)
-```vb
-    ' If the part exists, populate it with the new styles.
-    If stylesPart IsNot Nothing Then
-        newStyles.Save(New StreamWriter(
-          stylesPart.GetStream(FileMode.Create, FileAccess.Write)))
-    End If
-```
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet8)]
 ***
 
 
@@ -325,14 +224,14 @@ the XDocument, saving its contents into the styles part.
 
 ## Sample Code
 
-The following is the complete **ReplaceStyles**, **ReplaceStylesPart**, and **ExtractStylesPart** methods in C\# and Visual
+The following is the complete `ReplaceStyles`, `ReplaceStylesPart`, and `ExtractStylesPart` methods in C\# and Visual
 Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs)]
+[!code-csharp[](../../samples/word/replace_the_styles_parts/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb)]
+[!code-vb[](../../samples/word/replace_the_styles_parts/vb/Program.vb#snippet0)]
 
 ---------------------------------------------------------------------------------
 
