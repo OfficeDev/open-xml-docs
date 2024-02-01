@@ -1,16 +1,16 @@
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-AddHeaderFromTo(args[0], args[1]);
 
-static void AddHeaderFromTo(string filepathFrom, string filepathTo)
+static void AddHeaderFromTo(string fromFile, string toFile)
 {
     // Replace header in target document with header of source document.
-    using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(filepathTo, true))
-    using (WordprocessingDocument wdDocSource = WordprocessingDocument.Open(filepathFrom, true))
+    using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(toFile, true))
+    using (WordprocessingDocument wdDocSource = WordprocessingDocument.Open(fromFile, true))
     {
         if (wdDocSource.MainDocumentPart is null || wdDocSource.MainDocumentPart.HeaderParts is null)
         {
@@ -61,3 +61,11 @@ static void AddHeaderFromTo(string filepathFrom, string filepathTo)
         }
     }
 }
+// </Snippet0>
+
+// <Snippet1>
+string fromFile = args[0];
+string toFile = args[1];
+
+AddHeaderFromTo(fromFile, toFile);
+// </Snippet1>
