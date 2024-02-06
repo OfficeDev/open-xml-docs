@@ -1,39 +1,49 @@
-Imports System.IO
-Imports System.Xml
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module Program
     Sub Main(args As String())
+        Dim fileName As String = args(0)
+
+        WDDeleteHiddenText(fileName)
     End Sub
 
 
 
-    Public Sub WDDeleteHiddenText(ByVal docName As String)
+    Public Sub WDDeleteHiddenText(ByVal fileName As String)
         ' Given a document name, delete all the hidden text.
-        Const wordmlNamespace As String = "https://schemas.openxmlformats.org/wordprocessingml/2006/main"
 
-        Using wdDoc As WordprocessingDocument = WordprocessingDocument.Open(docName, True)
-            ' Manage namespaces to perform XPath queries.
-            Dim nt As New NameTable()
-            Dim nsManager As New XmlNamespaceManager(nt)
-            nsManager.AddNamespace("w", wordmlNamespace)
+        ' <Snippet1>
+        Using doc As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
+            ' </Snippet1>
 
-            ' Get the document part from the package.
-            ' Load the XML in the document part into an XmlDocument instance.
-            Dim xdoc As New XmlDocument(nt)
-            xdoc.Load(wdDoc.MainDocumentPart.GetStream())
-            Dim hiddenNodes As XmlNodeList = xdoc.SelectNodes("//w:vanish", nsManager)
-            For Each hiddenNode As System.Xml.XmlNode In hiddenNodes
-                Dim topNode As XmlNode = hiddenNode.ParentNode.ParentNode
-                Dim topParentNode As XmlNode = topNode.ParentNode
-                topParentNode.RemoveChild(topNode)
-                If Not (topParentNode.HasChildNodes) Then
-                    topParentNode.ParentNode.RemoveChild(topParentNode)
+            ' <Snippet2>
+            If doc.MainDocumentPart Is Nothing Or doc.MainDocumentPart.Document.Body Is Nothing Then
+                Throw New ArgumentNullException("MainDocumentPart and/or Body is Nothing.")
+            End If
+
+            'Get a list of all the Vanish elements
+            Dim vanishes As List(Of Vanish) = doc.MainDocumentPart.Document.Body.Descendants(Of Vanish).ToList()
+            ' </Snippet2>
+
+            ' <Snippet3>
+            ' Loop over the list of Vanish elements
+            For Each vanish In vanishes
+                Dim parent = vanish.Parent
+                Dim grandparent = parent.Parent
+
+                ' If the grandparent is a Run remove it
+                If TypeOf grandparent Is Run Then
+                    grandparent.Remove()
+
+                    ' If it's not a run remove the Vanish
+                ElseIf parent IsNot Nothing Then
+                    parent.RemoveAllChildren(Of Vanish)()
                 End If
             Next
-
-            ' Save the document XML back to its document part.
-            xdoc.Save(wdDoc.MainDocumentPart.GetStream(FileMode.Create, FileAccess.Write))
+            ' </Snippet3>
         End Using
     End Sub
 End Module
+' </Snippet0>

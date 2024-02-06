@@ -5,10 +5,18 @@ Imports DocumentFormat.OpenXml.VariantTypes
 
 Module Program
     Sub Main(args As String())
+        ' <Snippet3>
+        Dim fileName As String = args(0)
+
+        Console.WriteLine(String.Join("Manager = ", SetCustomProperty(fileName, "Manager", "George", PropertyTypes.Text)))
+
+        Console.WriteLine(String.Join("Manager = ", SetCustomProperty(fileName, "Manager", "Olga", PropertyTypes.Text)))
+
+        Console.WriteLine(String.Join("ReviewDate = ", SetCustomProperty(fileName, "ReviewDate", #01/26/2024#, PropertyTypes.DateTime)))
+        ' </Snippet3>
     End Sub
 
-
-
+    ' <Snippet1>
     Public Enum PropertyTypes
         YesNo
         Text
@@ -16,17 +24,21 @@ Module Program
         NumberInteger
         NumberDouble
     End Enum
+    ' </Snippet1>
 
+    ' <Snippet2>
     Public Function SetCustomProperty(
         ByVal fileName As String,
         ByVal propertyName As String,
         ByVal propertyValue As Object,
         ByVal propertyType As PropertyTypes) As String
+        ' </Snippet2>
 
         ' Given a document name, a property name/value, and the property type, 
         ' add a custom property to a document. The method returns the original 
         ' value, if it existed.
 
+        ' <Snippet4>
         Dim returnValue As String = Nothing
 
         Dim newProp As New CustomDocumentProperty
@@ -77,36 +89,52 @@ Module Program
             ' property to a valid value, throw an exception.
             Throw New InvalidDataException("propertyValue")
         End If
+        ' </Snippet4>
 
+        ' <Snippet5>
         ' Now that you have handled the parameters, start
         ' working on the document.
         newProp.FormatId = "{D5CDD505-2E9C-101B-9397-08002B2CF9AE}"
         newProp.Name = propertyName
+        ' </Snippet5>
 
+        ' <Snippet6>
         Using document = WordprocessingDocument.Open(fileName, True)
             Dim customProps = document.CustomFilePropertiesPart
+            ' </Snippet6>
+
+            ' <Snippet7>
             If customProps Is Nothing Then
                 ' No custom properties? Add the part, and the
                 ' collection of properties now.
                 customProps = document.AddCustomFilePropertiesPart
                 customProps.Properties = New Properties
             End If
+            ' </Snippet7>
 
+            ' <Snippet8>
             Dim props = customProps.Properties
+
             If props IsNot Nothing Then
+                ' </Snippet8>
+
                 ' This will trigger an exception is the property's Name property 
                 ' is null, but if that happens, the property is damaged, and 
                 ' probably should raise an exception.
-                Dim prop = props.
-                  Where(Function(p) CType(p, CustomDocumentProperty).
-                          Name.Value = propertyName).FirstOrDefault()
+
+                ' <Snippet9>
+                Dim prop = props.Where(Function(p) CType(p, CustomDocumentProperty).Name.Value = propertyName).FirstOrDefault()
+
                 ' Does the property exist? If so, get the return value, 
                 ' and then delete the property.
+
                 If prop IsNot Nothing Then
                     returnValue = prop.InnerText
                     prop.Remove()
                 End If
+                ' </Snippet9>
 
+                ' <Snippet10>
                 ' Append the new property, and 
                 ' fix up all the property ID values. 
                 ' The PropertyId value must start at 2.
@@ -117,10 +145,14 @@ Module Program
                     pid += 1
                 Next
                 props.Save()
+                ' </Snippet10>
+
             End If
         End Using
 
+        ' <Snippet11>
         Return returnValue
+        ' </Snippet11>
 
     End Function
 End Module

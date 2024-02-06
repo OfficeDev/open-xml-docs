@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 02/01/2024
 ms.localizationpriority: high
 ---
 # Replace the header in a word processing document
@@ -28,10 +28,8 @@ programmatically.
 In this example you are going to delete the header part from the target
 file and create another header part. You are also going to delete the
 reference to the existing header and create a reference to the new
-header. Therefore it is useful to familarize yourself with headers and
-the header reference element. The following information from the
-[!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
-specification introduces the header reference element.
+header. Therefore it is useful to familiarize yourself with headers and
+the header reference element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the header reference element.
 
 ## headerReference (Header Reference)
 
@@ -102,7 +100,7 @@ using the following WordprocessingML:
 The resulting section shall use the header part with relationship id
 **rId3** for the first page, the header part with
 relationship id **rId2** for all subsequent even
-pages, and the header part with relationship id **rId5** for all subsequent odd pages. *end example*]
+pages, and the header part with relationship id **rId5** for all subsequent odd pages. *end example*
 
 © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
@@ -110,33 +108,24 @@ pages, and the header part with relationship id **rId5** for all subsequent odd 
 
 The following code example shows how to replace the header in a word
 processing document with the header from another word processing
-document. To call the method, **AddHeaderFromTo**, you can use the following code
+document. To call the method, `AddHeaderFromTo`, you can use the following code
 segment as an example.
 
 ### [C#](#tab/cs-0)
-```csharp
-    string filepathFrom = @"C:\Users\Public\Documents\Word15a.docx";
-    string filepathTo=@"C:\Users\Public\Documents\Word15b.docx";
-    AddHeaderFromTo(filepathFrom, filepathTo);
-```
-
+[!code-csharp[](../../samples/word/replace_the_header/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Dim filepathFrom As String = "C:\Users\Public\Documents\word15a.docx"
-    Dim filepathTo As String = "C:\Users\Public\Documents\Word15b.docx"
-    AddHeaderFromTo(filepathFrom, filepathTo)
-```
+[!code-vb[](../../samples/word/replace_the_header/vb/Program.vb#snippet1)]
 ***
 
 
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/replace_the_header/cs/Program.cs)]
+[!code-csharp[](../../samples/word/replace_the_header/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/replace_the_header/vb/Program.vb)]
+[!code-vb[](../../samples/word/replace_the_header/vb/Program.vb#snippet0)]
 
 ## See also
 
-- [Open XML SDK class library reference]/office/open-xml/open-xml-sdk)
+- [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

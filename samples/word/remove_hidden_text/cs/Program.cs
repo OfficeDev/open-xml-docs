@@ -1,67 +1,53 @@
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
-using System.IO;
-using System.Xml;
+using System.Collections.Generic;
+using System.Linq;
 
-WDDeleteHiddenText(args[0]);
 
 static void WDDeleteHiddenText(string docName)
 {
     // Given a document name, delete all the hidden text.
-    const string wordmlNamespace = "https://schemas.openxmlformats.org/wordprocessingml/2006/main";
 
-    using (WordprocessingDocument wdDoc = WordprocessingDocument.Open(docName, true))
+    // <Snippet1>
+    using (WordprocessingDocument doc = WordprocessingDocument.Open(docName, true))
     {
-        // Manage namespaces to perform XPath queries.
-        NameTable nt = new NameTable();
-        XmlNamespaceManager nsManager = new XmlNamespaceManager(nt);
-        nsManager.AddNamespace("w", wordmlNamespace);
+        // </Snippet1>
 
-        if (wdDoc.MainDocumentPart is null || wdDoc.MainDocumentPart.Document.Body is null)
+        // <Snippet2>
+        if (doc.MainDocumentPart is null || doc.MainDocumentPart.Document.Body is null)
         {
             throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
 
-        // Get the document part from the package.
-        // Load the XML in the document part into an XmlDocument instance.
-        XmlDocument xdoc = new XmlDocument(nt);
-        using (Stream stream = wdDoc.MainDocumentPart.GetStream())
+        // Get a list of all the Vanish elements
+        List<Vanish> vanishes = doc.MainDocumentPart.Document.Body.Descendants<Vanish>().ToList();
+        // </Snippet2>
+
+        // <Snippet3>
+        // Loop over the list of Vanish elements
+        foreach (Vanish vanish in vanishes)
         {
-            xdoc.Load(stream);
-            XmlNodeList? hiddenNodes = xdoc.SelectNodes("//w:vanish", nsManager);
+            var parent = vanish?.Parent;
+            var grandparent = parent?.Parent;
 
-            if (hiddenNodes is null)
+            // If the grandparent is a Run remove it
+            if (grandparent is Run)
             {
-                return;  // No hidden text.
+                grandparent.Remove();
             }
-
-            foreach (System.Xml.XmlNode hiddenNode in hiddenNodes)
+            // If it's not a run remove the Vanish
+            else if (parent is not null)
             {
-                if (hiddenNode.ParentNode is null || hiddenNode.ParentNode.ParentNode is null || hiddenNode.ParentNode.ParentNode.ParentNode is null)
-                {
-                    continue;
-                }
-
-                XmlNode topNode = hiddenNode.ParentNode.ParentNode;
-                XmlNode topParentNode = topNode.ParentNode;
-                topParentNode.RemoveChild(topNode);
-
-                if (topParentNode.ParentNode is null)
-                {
-                    continue;
-                }
-
-                if (!topParentNode.HasChildNodes)
-                {
-                    topParentNode.ParentNode.RemoveChild(topParentNode);
-                }
+                parent.RemoveAllChildren<Vanish>();
             }
         }
-
-        using (Stream stream2 = wdDoc.MainDocumentPart.GetStream(FileMode.Create, FileAccess.Write))
-        {
-            // Save the document XML back to its document part.
-            xdoc.Save(stream2);
-        }
+        // </Snippet3>
     }
 }
+// </Snippet0>
+
+string fileName = args[0];
+
+WDDeleteHiddenText(fileName);
