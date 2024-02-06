@@ -51,7 +51,7 @@ static void ReplaceStylesPart(string fileName, XDocument newStyles, bool setStyl
     // Open the document for write access and get a reference.
     using (var document = WordprocessingDocument.Open(fileName, true))
     {
-        if (document.MainDocumentPart is null || document.MainDocumentPart.StyleDefinitionsPart is null && document.MainDocumentPart.StylesWithEffectsPart is null)
+        if (document.MainDocumentPart is null || (document.MainDocumentPart.StyleDefinitionsPart is null && document.MainDocumentPart.StylesWithEffectsPart is null))
         {
             throw new ArgumentNullException("MainDocumentPart and/or one or both of the Styles parts is null.");
         }

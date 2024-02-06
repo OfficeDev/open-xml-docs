@@ -57,7 +57,7 @@ Module Program
         ' Open the document for write access and get a reference.
         Using document = WordprocessingDocument.Open(fileName, True)
 
-            If document.MainDocumentPart Is Nothing Then
+            If document.MainDocumentPart Is Nothing Or (document.MainDocumentPart.StyleDefinitionsPart Is Nothing And document.MainDocumentPart.StylesWithEffectsPart Is Nothing) Then
                 Throw New ArgumentNullException("MainDocumentPart and/or one or both of the Styles parts is nothing.")
             End If
 
