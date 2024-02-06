@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 02/02/2024
 ms.localizationpriority: medium
 ---
 # Remove hidden text from a word processing document
@@ -21,100 +21,26 @@ Office to programmatically remove hidden text from a word processing
 document.
 
 
-
----------------------------------------------------------------------------------
-## Getting a WordprocessingDocument Object
-To open an existing document, you instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in the
-following **using** statement. In the same
-statement, you open the word processing file with the specified
-*fileName* by using the **Open** method, with
-the Boolean parameter set to **true** in order
-to enable editing the document.
-
-### [C#](#tab/cs-0)
-```csharp
-    using (WordprocessingDocument doc = 
-        WordprocessingDocument.Open(fileName, true))
-    {
-       // Insert other code here. 
-    }
-```
-
-### [Visual Basic](#tab/vb-0)
-```vb
-    Using wdDoc As WordprocessingDocument = _
-            WordprocessingDocument.Open(filepath, True)
-        ' Insert other code here.
-    End Using
-```
-***
-
-
-The **using** statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the using
-statement establishes a scope for the object that is created or named in
-the using statement, in this case doc. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-**Dispose** is automatically called when you
-exit the block, you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
-
-
 --------------------------------------------------------------------------------
-## Structure of a WordProcessingML Document
-The basic document structure of a **WordProcessingML** document consists of the **document** and **body**
-elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph
-contains one or more **r** elements. The **r** stands for run, which is a region of text with
-a common set of properties, such as formatting. A run contains one or
-more **t** elements. The **t** element contains a range of text. The following
-code example shows the **WordprocessingML**
-markup for a document that contains the text "Example text."
 
-```xml
-    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
-      <w:body>
-        <w:p>
-          <w:r>
-            <w:t>Example text.</w:t>
-          </w:r>
-        </w:p>
-      </w:body>
-    </w:document>
-```
-
-Using the Open XML SDK, you can create document structure and
-content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these
-classes in the [DocumentFormat.OpenXml.Wordprocessing](/dotnet/api/documentformat.openxml.wordprocessing)
-namespace. The following table lists the class names of the classes that
-correspond to the **document**, **body**, **p**, **r**, and **t** elements.
-
-WordprocessingML Element|Open XML SDK Class|Description
---|--|--
-document|[Document](/dotnet/api/documentformat.openxml.wordprocessing.document) |The root element for the main document part.
-body|[Body](/dotnet/api/documentformat.openxml.wordprocessing.body) |The container for the block level structures such as paragraphs, tables, annotations and others specified in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification.
-p|[Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph) |A paragraph.
-r|[Run](/dotnet/api/documentformat.openxml.wordprocessing.run) |A run.
-t|[Text](/dotnet/api/documentformat.openxml.wordprocessing.text) |A range of text.
-
+[!include[Word Structure](../includes/word/structure.md)]
 
 ---------------------------------------------------------------------------------
 ## Structure of the Vanish Element
-The **vanish** element plays an important role in hiding the text in a
-Word file. The **Hidden** formatting property is a toggle property,
+
+The `vanish` element plays an important role in hiding the text in a
+Word file. The `Hidden` formatting property is a toggle property,
 which means that its behavior differs between using it within a style
 definition and using it as direct formatting. When used as part of a
 style definition, setting this property toggles its current state.
-Setting it to **false** (or an equivalent)
+Setting it to `false` (or an equivalent)
 results in keeping the current setting unchanged. However, when used as
-direct formatting, setting it to **true** or
-**false** sets the absolute state of the
+direct formatting, setting it to `true` or
+`false` sets the absolute state of the
 resulting property.
 
 The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
-introduces the **vanish** element.
+introduces the `vanish` element.
 
 > **vanish (Hidden Text)**
 > 
@@ -126,7 +52,7 @@ introduces the **vanish** element.
 > This formatting property is a *toggle property* (§17.7.3).
 > 
 > If this element is not present, the default value is to leave the
-> formatting applied at previous level in the *style hierarchy* .If this
+> formatting applied at previous level in the *style hierarchy*. If this
 > element is never applied in the style hierarchy, then this text shall
 > not be hidden when displayed in a document.
 > 
@@ -154,44 +80,59 @@ The following XML schema segment defines the contents of this element.
     </complexType>
 ```
 
-The **val** property in the code above is a binary value that can be
-turned on or off. If given a value of **on**, **1**, or **true** the property is turned on. If given the
-value **off**, **0**, or **false** the property
+The `val` property in the code above is a binary value that can be
+turned on or off. If given a value of `on`, `1`, or `true` the property is turned on. If given the
+value `off`, `0`, or `false` the property
 is turned off.
 
+## How the Code Works
 
---------------------------------------------------------------------------------
-## Sample Code
-The following code example shows how to remove all of the hidden text
-from a document. You can call the method, WDDeleteHiddenText, by using
-the following call as an example to delete the hidden text from a file
-named "Word14.docx."
+The `WDDeleteHiddenText` method works with the document you specify and removes all of the `run` elements that are hidden and removes extra `vanish` elements. The code starts by opening the
+document, using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> method and indicating that the
+document should be opened for read/write access (the final true
+parameter). Given the open document, the code uses the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart> property to navigate to
+the main document, storing the reference in a variable.
 
-### [C#](#tab/cs-1)
-```csharp
-    string docName = @"C:\Users\Public\Documents\Word14.docx";
-    WDDeleteHiddenText(docName);
-```
-
-### [Visual Basic](#tab/vb-1)
-```vb
-    Dim docName As String = "C:\Users\Public\Documents\Word14.docx"
-    WDDeleteHiddenText(docName)
-```
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet1)]
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet1)]
 ***
 
+## Get a List of Vanish Elements
+
+The code first checks that `doc.MainDocumentPart` and `doc.MainDocumentPart.Document.Body` are not null and throws an exception if one is missing. Then uses the <xref:DocumentFormat.OpenXml.OpenXmlElement.Descendants> passing it the <xref:DocumentFormat.OpenXml.Wordprocessing.Vanish> type to get an `IEnumerable` of the `Vanish` elements and casts them to a list.
+
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet2)]
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet2)]
+***
+
+## Remove Runs with Hidden Text and Extra Vanish Elements
+
+To remove the hidden text we next loop over the `List` of `Vanish` elements. The `Vanish` element is a child of the <xref:DocumentFormat.OpenXml.Wordprocessing.RunProperties> but `RunProperties` can be a child of a <xref:DocumentFormat.OpenXml.Wordprocessing.Run> or xref:DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties>, so we get the parent and grandparent of each `Vanish` and check its type. Then if the grandparent is a `Run` we remove that run and if not 
+we we remove the `Vanish` child elements from the parent.
+
+### [C#](#tab/cs)
+[!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet3)]
+### [Visual Basic](#tab/vb)
+[!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet3)]
+***
+--------------------------------------------------------------------------------
+## Sample Code
 
 > [!NOTE]
-> This example assumes that the file Word14.docx contains some hidden text. In order to hide part of the file text, select it, and click CTRL+D to show the **Font** dialog box. Select the **Hidden** box and click **OK**.
+> This example assumes that the file being opened contains some hidden text. In order to hide part of the file text, select it, and click CTRL+D to show the **Font** dialog box. Select the **Hidden** box and click **OK**.
 
 
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs)]
+[!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb)]
+[!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
 ## See also

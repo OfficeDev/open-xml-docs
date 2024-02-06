@@ -1,8 +1,15 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module Program
     Sub Main(args As String())
+        ' <Snippet1>
+        Dim fromFile As String = args(0)
+        Dim toFile As String = args(1)
+
+        AddHeaderFromTo(fromFile, toFile)
+        ' </Snippet1>
     End Sub
 
 
@@ -44,3 +51,4 @@ Module Program
         End Using
     End Sub
 End Module
+' </Snippet0>
