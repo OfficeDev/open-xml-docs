@@ -12,55 +12,31 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 02/08/2024
 ms.localizationpriority: high
 ---
 # Insert a picture into a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add a picture to a word processing document.
 
-
-
 --------------------------------------------------------------------------------
 
 ## Opening an Existing Document for Editing
 
-To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
-the following **using** statement. In the same
-statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the
-Boolean parameter set to **true** in order to
+To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
+class as shown in the following `using` statement. In the same
+statement, open the word processing file at the specified `filepath`by using the
+<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)>
+method, with the Boolean parameter set to `true` in order to
 enable editing the document.
 
 ### [C#](#tab/cs-0)
-```csharp
-    using (WordprocessingDocument wordprocessingDocument =
-           WordprocessingDocument.Open(filepath, true)) 
-    { 
-        // Insert other code here. 
-    }
-```
-
+[!code-csharp[](../../samples/word/insert_a_picture/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Using wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
-        ' Insert other code here. 
-    End Using
-```
+[!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb#snippet1)]
 ***
 
-
-The **using** statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-that is used by the Open XML SDK to clean up resources) is automatically
-called when the closing brace is reached. The block that follows the
-**using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case
-*wordprocessingDocument*. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-**Dispose** is automatically called when you
-exit the block, you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
+[!include[Using Statement](../includes/using-statement.md)]
 
 --------------------------------------------------------------------------------
 ## The XML Representation of the Graphic Object

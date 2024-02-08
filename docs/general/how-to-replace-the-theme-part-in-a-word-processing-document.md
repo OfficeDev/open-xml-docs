@@ -49,19 +49,7 @@ to **true** to enable editing the document.
 ```
 ***
 
-
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case *wordDoc*. Because
-the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the
-Open XML SDK automatically saves and closes the object as part of its
-**System.IDisposable** implementation, and
-because **Dispose** is automatically called
-when you exit the block, you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
+[!include[Using Statement](../includes/using-statement.md)]
 
 
 ## How to Change Theme in a Word Package
