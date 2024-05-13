@@ -29,7 +29,7 @@ In the sample code, you start by opening the word processing file by
 instantiating the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
 the following **using** statement. In the same
 statement, you open the word processing file *document* by using the
-[Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the Boolean parameter set
+<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> method, with the Boolean parameter set
 to **true** to enable editing the document.
 
 ### [C#](#tab/cs-0)

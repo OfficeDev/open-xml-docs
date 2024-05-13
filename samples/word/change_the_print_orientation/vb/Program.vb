@@ -4,28 +4,52 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module Program
     Sub Main(args As String())
+        ' <Snippet2>
+        SetPrintOrientation(args(0), args(1))
+        ' </Snippet2>
     End Sub
 
 
 
     ' Given a document name, set the print orientation for 
     ' all the sections of the document.
-    Public Sub SetPrintOrientation(
-      ByVal fileName As String, ByVal newOrientation As PageOrientationValues)
-        Using document =
-            WordprocessingDocument.Open(fileName, True)
+
+    ' <Snippet0>
+    ' <Snippet1>
+    Public Sub SetPrintOrientation(ByVal fileName As String, ByVal orientation As String)
+        ' </Snippet1>
+
+        ' <Snippet3>
+        Dim newOrientation As PageOrientationValues
+
+        Select Case orientation
+            Case "landscape"
+                newOrientation = PageOrientationValues.Landscape
+            Case "portrait"
+                newOrientation = PageOrientationValues.Portrait
+            Case Else
+                Throw New ArgumentException("Invalid orientation")
+        End Select
+
+
+        Using document = WordprocessingDocument.Open(fileName, True)
             Dim documentChanged As Boolean = False
 
             Dim docPart = document.MainDocumentPart
             Dim sections = docPart.Document.Descendants(Of SectionProperties)()
+            ' </Snippet3>
 
+            ' <Snippet4>
             For Each sectPr As SectionProperties In sections
 
                 Dim pageOrientationChanged As Boolean = False
 
-                Dim pgSz As PageSize =
-                    sectPr.Descendants(Of PageSize).FirstOrDefault
+                Dim pgSz As PageSize = sectPr.Descendants(Of PageSize).FirstOrDefault
+
+                ' <Snippet5>
                 If pgSz IsNot Nothing Then
+                    ' </Snippet4>
+
                     ' No Orient property? Create it now. Otherwise, just 
                     ' set its value. Assume that the default orientation 
                     ' is Portrait.
@@ -49,7 +73,9 @@ Module Program
                             documentChanged = True
                         End If
                     End If
+                    ' </Snippet5>
 
+                    ' <Snippet6>
                     If pageOrientationChanged Then
                         ' Changing the orientation is not enough. You must also 
                         ' change the page size.
@@ -57,9 +83,10 @@ Module Program
                         Dim height = pgSz.Height
                         pgSz.Width = height
                         pgSz.Height = width
+                        ' </Snippet6>
 
-                        Dim pgMar As PageMargin =
-                          sectPr.Descendants(Of PageMargin).FirstOrDefault()
+                        ' <Snippet7>
+                        Dim pgMar As PageMargin = sectPr.Descendants(Of PageMargin).FirstOrDefault()
                         If pgMar IsNot Nothing Then
                             ' Rotate margins. Printer settings control how far you 
                             ' rotate when switching to landscape mode. Not having those
@@ -73,18 +100,20 @@ Module Program
 
                             pgMar.Top = CType(left, Int32Value)
                             pgMar.Bottom = CType(right, Int32Value)
-                            pgMar.Left = CType(System.Math.Max(0,
-                                CType(bottom, Int32Value)), UInt32Value)
-                            pgMar.Right = CType(System.Math.Max(0,
-                                CType(top, Int32Value)), UInt32Value)
+                            pgMar.Left = CType(System.Math.Max(0, CType(bottom, Int32Value)), UInt32Value)
+                            pgMar.Right = CType(System.Math.Max(0, CType(top, Int32Value)), UInt32Value)
                         End If
+                        ' </Snippet7>
                     End If
                 End If
             Next
 
+            ' <Snippet8>
             If documentChanged Then
                 docPart.Document.Save()
             End If
+            ' </Snippet8>
         End Using
     End Sub
+    ' </Snippet0>
 End Module

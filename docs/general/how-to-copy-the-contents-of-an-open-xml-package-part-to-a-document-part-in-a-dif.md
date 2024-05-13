@@ -33,7 +33,7 @@ programmatically.
 To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
 the following two **using** statements. In the
 same statement, you open the word processing file with the specified
-file name by using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the Boolean parameter.
+file name by using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> method, with the Boolean parameter.
 For the source file that set the parameter to **false** to open it for read-only access. For the
 target file, set the parameter to **true** in
 order to enable editing the document.
