@@ -1,18 +1,37 @@
-
+// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Linq;
 
+// <Snippet2>
+using (WordprocessingDocument doc = WordprocessingDocument.Open(args[0], true))
+// </Snippet2>
+{
+    // <Snippet3>
+    // Get the first paragraph in the document.
+    Paragraph? paragraph = doc?.MainDocumentPart?.Document?.Body?.Descendants<Paragraph>().ElementAtOrDefault(0);
+    // </Snippet3>
+
+    if (paragraph is not null)
+    {
+        ApplyStyleToParagraph(doc!, "MyStyle", "MyStyleName", paragraph);
+    }
+}
+
 
 // Apply a style to a paragraph.
+// <Snippet1>
 static void ApplyStyleToParagraph(WordprocessingDocument doc, string styleid, string stylename, Paragraph p)
+// </Snippet1>
 {
     if (doc is null)
     {
         throw new ArgumentNullException(nameof(doc));
     }
+
+    // <Snippet4>
     // If the paragraph has no ParagraphProperties object, create one.
     if (p.Elements<ParagraphProperties>().Count() == 0)
     {
@@ -21,7 +40,11 @@ static void ApplyStyleToParagraph(WordprocessingDocument doc, string styleid, st
 
     // Get the paragraph properties element of the paragraph.
     ParagraphProperties pPr = p.Elements<ParagraphProperties>().First();
+    // </Snippet4>
 
+    // <Snippet7>
+
+    // <Snippet5>
     // Get the Styles part for this document.
     StyleDefinitionsPart? part = doc.MainDocumentPart?.StyleDefinitionsPart;
 
@@ -29,6 +52,7 @@ static void ApplyStyleToParagraph(WordprocessingDocument doc, string styleid, st
     if (part is null)
     {
         part = AddStylesPartToPackage(doc);
+    // </Snippet5>
         AddNewStyle(part, styleid, stylename);
     }
     else
@@ -47,11 +71,13 @@ static void ApplyStyleToParagraph(WordprocessingDocument doc, string styleid, st
                 styleid = styleidFromName;
         }
     }
+    // </Snippet7>
 
     // Set the style of the paragraph.
     pPr.ParagraphStyleId = new ParagraphStyleId() { Val = styleid };
 }
 
+// <Snippet8>
 // Return true if the style id is in the document, false otherwise.
 static bool IsStyleIdInDocument(WordprocessingDocument doc, string styleid)
 {
@@ -82,6 +108,7 @@ static bool IsStyleIdInDocument(WordprocessingDocument doc, string styleid)
 
     return true;
 }
+// </Snippet8>
 
 // Return styleid that matches the styleName, or null when there's no match.
 static string? GetStyleIdFromStyleName(WordprocessingDocument doc, string styleName)
@@ -106,6 +133,7 @@ static string? GetStyleIdFromStyleName(WordprocessingDocument doc, string styleN
     return styleId;
 }
 
+// <Snippet9>
 // Create a new style with the specified styleid and stylename and add it to the specified
 // style definitions part.
 static void AddNewStyle(StyleDefinitionsPart styleDefinitionsPart, string styleid, string stylename)
@@ -148,7 +176,9 @@ static void AddNewStyle(StyleDefinitionsPart styleDefinitionsPart, string stylei
     // Add the style to the styles part.
     styles.Append(style);
 }
+// </Snippet9>
 
+// <Snippet6>
 // Add a StylesDefinitionsPart to the document.  Returns a reference to it.
 static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument doc)
 {
@@ -159,3 +189,5 @@ static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument doc)
 
     return part;
 }
+// </Snippet6>
+// </Snippet0>
