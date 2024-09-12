@@ -1,19 +1,29 @@
+// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 
-AddTable(args[0], args[1]);
+// <Snippet2>
+string fileName = args[0];
+
+AddTable(fileName, new string[,] {
+    { "Texas", "TX" },
+        { "California", "CA" },
+        { "New York", "NY" },
+        { "Massachusetts", "MA" }
+});
+// </Snippet2>
 
 // Take the data from a two-dimensional array and build a table at the 
 // end of the supplied document.
-static void AddTable(string fileName, string json)
+// <Snippet1>
+static void AddTable(string fileName, string[,] data)
+// </Snippet1>
 {
-    // read the data from the json file
-    var data = System.Text.Json.JsonSerializer.Deserialize<string[][]>(json);
-
     if (data is not null)
     {
+        // <Snippet3>
         using (var document = WordprocessingDocument.Open(fileName, true))
         {
             if (document.MainDocumentPart is null || document.MainDocumentPart.Document.Body is null)
@@ -22,7 +32,8 @@ static void AddTable(string fileName, string json)
             }
 
             var doc = document.MainDocumentPart.Document;
-
+            // </Snippet3>
+            // <Snippet4>
             Table table = new();
 
             TableProperties props = new(
@@ -59,14 +70,15 @@ static void AddTable(string fileName, string json)
                 }));
 
             table.AppendChild<TableProperties>(props);
-
-            for (var i = 0; i < data.Length; i++)
+            // </Snippet4>
+            // <Snippet5>
+            for (var i = 0; i < data.GetUpperBound(0); i++)
             {
                 var tr = new TableRow();
-                for (var j = 0; j < data[i].Length; j++)
+                for (var j = 0; j < data.GetUpperBound(1); j++)
                 {
                     var tc = new TableCell();
-                    tc.Append(new Paragraph(new Run(new Text(data[i][j]))));
+                    tc.Append(new Paragraph(new Run(new Text(data[i, j]))));
 
                     // Assume you want columns that are automatically sized.
                     tc.Append(new TableCellProperties(
@@ -76,8 +88,12 @@ static void AddTable(string fileName, string json)
                 }
                 table.Append(tr);
             }
+            // </Snippet5>
+            // <Snippet6>
             doc.Body.Append(table);
             doc.Save();
+            // </Snippet6>
         }
     }
 }
+// </Snippet0>
