@@ -8,26 +8,24 @@ static void OpenAndAddToWordprocessingStream(Stream stream, string txt)
 {
     // <Snippet1>
     // Open a WordProcessingDocument based on a stream.
-    WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(stream, true);
-    // </Snippet1>
+    using (WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(stream, true))
+    {
+        // </Snippet1>
 
-    // <Snippet2>
-    // Assign a reference to the document body.
-    MainDocumentPart mainDocumentPart = wordprocessingDocument.MainDocumentPart ?? wordprocessingDocument.AddMainDocumentPart();
-    mainDocumentPart.Document ??= new Document();
-    Body body = mainDocumentPart.Document.Body ?? mainDocumentPart.Document.AppendChild(new Body());
-    // </Snippet2>
+        // <Snippet2>
+        // Assign a reference to the document body.
+        MainDocumentPart mainDocumentPart = wordprocessingDocument.MainDocumentPart ?? wordprocessingDocument.AddMainDocumentPart();
+        mainDocumentPart.Document ??= new Document();
+        Body body = mainDocumentPart.Document.Body ?? mainDocumentPart.Document.AppendChild(new Body());
+        // </Snippet2>
 
-    // <Snippet3>
-    // Add new text.
-    Paragraph para = body.AppendChild(new Paragraph());
-    Run run = para.AppendChild(new Run());
-    run.AppendChild(new Text(txt));
-    // </Snippet3>
-
-    // Dispose the document handle.
-    wordprocessingDocument.Dispose();
-
+        // <Snippet3>
+        // Add new text.
+        Paragraph para = body.AppendChild(new Paragraph());
+        Run run = para.AppendChild(new Run());
+        run.AppendChild(new Text(txt));
+        // </Snippet3>
+    }
     // Caller must close the stream.
 }
 // </Snippet0>

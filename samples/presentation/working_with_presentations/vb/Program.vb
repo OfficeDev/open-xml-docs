@@ -5,19 +5,19 @@ Imports DocumentFormat.OpenXml.Presentation
 Module MyModule
 
     Sub Main(args As String())
+        Dim filepath As String = args(0)
+        CreatePresentation(filepath)
     End Sub
 
     Sub CreatePresentation(ByVal filepath As String)
 
         ' Create a presentation at a specified file path. The presentation document type is pptx, by default.
-        Dim presentationDoc As PresentationDocument = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation)
-        Dim presentationPart As PresentationPart = presentationDoc.AddPresentationPart()
-        presentationPart.Presentation = New Presentation()
+        Using presentationDoc As PresentationDocument = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation)
+            Dim presentationPart As PresentationPart = presentationDoc.AddPresentationPart()
+            presentationPart.Presentation = New Presentation()
 
-        CreatePresentationPartsFromPresentation(presentationPart)
-
-        ' Dispose the presentation handle.
-        presentationDoc.Dispose()
+            CreatePresentationPartsFromPresentation(presentationPart)
+        End Using
     End Sub
     Sub CreatePresentationPartsFromPresentation(ByVal presentationPart As PresentationPart)
         Dim slideMasterIdList1 As New SlideMasterIdList(New SlideMasterId() With {

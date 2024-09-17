@@ -7,31 +7,30 @@ static void OpenAndAddTextToWordDocument(string filepath, string txt)
 {
     // <Snippet1>
     // Open a WordprocessingDocument for editing using the filepath.
-    WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(filepath, true);
-
-    if (wordprocessingDocument is null)
+    using (WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(filepath, true))
     {
-        throw new ArgumentNullException(nameof(wordprocessingDocument));
+
+        if (wordprocessingDocument is null)
+        {
+            throw new ArgumentNullException(nameof(wordprocessingDocument));
+        }
+        // </Snippet1>
+
+        // <Snippet2>
+        // Assign a reference to the existing document body.
+        MainDocumentPart mainDocumentPart = wordprocessingDocument.MainDocumentPart ?? wordprocessingDocument.AddMainDocumentPart();
+        mainDocumentPart.Document ??= new Document();
+        mainDocumentPart.Document.Body ??= mainDocumentPart.Document.AppendChild(new Body());
+        Body body = wordprocessingDocument.MainDocumentPart!.Document!.Body!;
+        // </Snippet2>
+
+        // <Snippet3>
+        // Add new text.
+        Paragraph para = body.AppendChild(new Paragraph());
+        Run run = para.AppendChild(new Run());
+        run.AppendChild(new Text(txt));
+        // </Snippet3>
     }
-    // </Snippet1>
-
-    // <Snippet2>
-    // Assign a reference to the existing document body.
-    MainDocumentPart mainDocumentPart = wordprocessingDocument.MainDocumentPart ?? wordprocessingDocument.AddMainDocumentPart();
-    mainDocumentPart.Document ??= new Document();
-    mainDocumentPart.Document.Body ??= mainDocumentPart.Document.AppendChild(new Body());
-    Body body = wordprocessingDocument.MainDocumentPart!.Document!.Body!;
-    // </Snippet2>
-
-    // <Snippet3>
-    // Add new text.
-    Paragraph para = body.AppendChild(new Paragraph());
-    Run run = para.AppendChild(new Run());
-    run.AppendChild(new Text(txt));
-    // </Snippet3>
-
-    // There is no using block, so Dispose the handle explicitly.
-    wordprocessingDocument.Dispose();
 }
 // </Snippet0>
 
