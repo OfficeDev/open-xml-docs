@@ -316,10 +316,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "working_with_slide_layouts_
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "working_with_slide_layouts_vb", "presentation\working_with_slide_layouts\vb\working_with_slide_layouts_vb.vbproj", "{17B288EA-CB7B-4A5D-801B-01E0E5987ABC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "working_with_slide_masters_cs", "presentation\working_with_slide_masters\cs\working_with_slide_masters_cs.csproj", "{BB753EC8-6FB0-4003-AB04-925B63B4A80A}"
-EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "working_with_slide_masters_vb", "presentation\working_with_slide_masters\vb\working_with_slide_masters_vb.vbproj", "{7A2EE9A7-F078-4161-91B8-9BE4D726144A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "working_with_the_shared_string_table_cs", "spreadsheet\working_with_the_shared_string_table\cs\working_with_the_shared_string_table_cs.csproj", "{08588641-5EF4-4CED-9B53-A19C6ED503BC}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "working_with_the_shared_string_table_vb", "spreadsheet\working_with_the_shared_string_table\vb\working_with_the_shared_string_table_vb.vbproj", "{F0CF5756-9899-4DEA-A884-95E06DE2E960}"
@@ -944,14 +940,6 @@ Global
 		{17B288EA-CB7B-4A5D-801B-01E0E5987ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17B288EA-CB7B-4A5D-801B-01E0E5987ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17B288EA-CB7B-4A5D-801B-01E0E5987ABC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB753EC8-6FB0-4003-AB04-925B63B4A80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB753EC8-6FB0-4003-AB04-925B63B4A80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB753EC8-6FB0-4003-AB04-925B63B4A80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB753EC8-6FB0-4003-AB04-925B63B4A80A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A2EE9A7-F078-4161-91B8-9BE4D726144A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A2EE9A7-F078-4161-91B8-9BE4D726144A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A2EE9A7-F078-4161-91B8-9BE4D726144A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A2EE9A7-F078-4161-91B8-9BE4D726144A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08588641-5EF4-4CED-9B53-A19C6ED503BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{08588641-5EF4-4CED-9B53-A19C6ED503BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08588641-5EF4-4CED-9B53-A19C6ED503BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -1135,8 +1123,6 @@ Global
 		{B3AE6F9D-005A-404D-900A-57ED5DA90A7E} = {7ACDC26B-C774-4004-8553-87E862D1E71F}
 		{78503AA3-A868-4C64-BEDF-B7723D501DD0} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
 		{17B288EA-CB7B-4A5D-801B-01E0E5987ABC} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
-		{BB753EC8-6FB0-4003-AB04-925B63B4A80A} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
-		{7A2EE9A7-F078-4161-91B8-9BE4D726144A} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
 		{08588641-5EF4-4CED-9B53-A19C6ED503BC} = {7ACDC26B-C774-4004-8553-87E862D1E71F}
 		{F0CF5756-9899-4DEA-A884-95E06DE2E960} = {7ACDC26B-C774-4004-8553-87E862D1E71F}
 		{6A9A6136-3F51-4FCA-B2CA-82AB69160895} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}

@@ -94,7 +94,7 @@ Namespace CreatePresentationDocument
             slideLayoutPart1.SlideLayout = slideLayout
             Return slideLayoutPart1
         End Function
-
+        ' <Snippet99>
         Private Shared Function CreateSlideMasterPart(ByVal slideLayoutPart1 As SlideLayoutPart) As SlideMasterPart
             Dim slideMasterPart1 As SlideMasterPart = slideLayoutPart1.AddNewPart(Of SlideMasterPart)("rId1")
             Dim slideMaster As New SlideMaster(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With {
@@ -129,6 +129,7 @@ Namespace CreatePresentationDocument
 
             Return slideMasterPart1
         End Function
+        ' </Snippet99>
 
         Private Shared Function CreateTheme(ByVal slideMasterPart1 As SlideMasterPart) As ThemePart
             Dim themePart1 As ThemePart = slideMasterPart1.AddNewPart(Of ThemePart)("rId5")

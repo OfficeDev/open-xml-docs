@@ -96,7 +96,7 @@ static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
     slideLayoutPart1.SlideLayout = slideLayout;
     return slideLayoutPart1;
 }
-
+// <Snippet99>
 static SlideMasterPart CreateSlideMasterPart(SlideLayoutPart slideLayoutPart1)
 {
     SlideMasterPart slideMasterPart1 = slideLayoutPart1.AddNewPart<SlideMasterPart>("rId1");
@@ -124,6 +124,7 @@ static SlideMasterPart CreateSlideMasterPart(SlideLayoutPart slideLayoutPart1)
 
     return slideMasterPart1;
 }
+// </Snippet99>
 
 static ThemePart CreateTheme(SlideMasterPart slideMasterPart1)
 {
