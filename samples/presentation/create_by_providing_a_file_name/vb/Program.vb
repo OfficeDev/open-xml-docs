@@ -14,6 +14,7 @@ Namespace CreatePresentationDocument
 
         End Sub
 
+        ' <Snippet101>
         Public Shared Sub CreatePresentation(ByVal filepath As String)
             ' Create a presentation at a specified file path. The presentation document type is pptx, by default.
             Dim presentationDoc As PresentationDocument = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation)
@@ -61,6 +62,8 @@ Namespace CreatePresentationDocument
             presentationPart.AddPart(slideMasterPart1, "rId1")
             presentationPart.AddPart(themePart1, "rId5")
         End Sub
+        ' </Snippet101>
+
 
         Private Shared Function CreateSlidePart(ByVal presentationPart As PresentationPart) As SlidePart
             Dim slidePart1 As SlidePart = presentationPart.AddNewPart(Of SlidePart)("rId2")
