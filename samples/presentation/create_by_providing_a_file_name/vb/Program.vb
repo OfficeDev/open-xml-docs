@@ -78,6 +78,7 @@ Namespace CreatePresentationDocument
             Return slidePart1
         End Function
 
+        ' <Snippet100>
         Private Shared Function CreateSlideLayoutPart(ByVal slidePart1 As SlidePart) As SlideLayoutPart
             Dim slideLayoutPart1 As SlideLayoutPart = slidePart1.AddNewPart(Of SlideLayoutPart)("rId1")
             Dim slideLayout As New SlideLayout(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With {
@@ -94,6 +95,8 @@ Namespace CreatePresentationDocument
             slideLayoutPart1.SlideLayout = slideLayout
             Return slideLayoutPart1
         End Function
+        ' </Snippet100>
+
         ' <Snippet99>
         Private Shared Function CreateSlideMasterPart(ByVal slideLayoutPart1 As SlideLayoutPart) As SlideMasterPart
             Dim slideMasterPart1 As SlideMasterPart = slideLayoutPart1.AddNewPart(Of SlideMasterPart)("rId1")

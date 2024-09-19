@@ -72,6 +72,7 @@ static SlidePart CreateSlidePart(PresentationPart presentationPart)
     return slidePart1;
 }
 
+// <Snippet100>
 static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
 {
     SlideLayoutPart slideLayoutPart1 = slidePart1.AddNewPart<SlideLayoutPart>("rId1");
@@ -96,6 +97,8 @@ static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
     slideLayoutPart1.SlideLayout = slideLayout;
     return slideLayoutPart1;
 }
+// </Snippet100>
+
 // <Snippet99>
 static SlideMasterPart CreateSlideMasterPart(SlideLayoutPart slideLayoutPart1)
 {
