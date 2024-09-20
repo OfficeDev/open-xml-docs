@@ -48,7 +48,7 @@ static void CreatePresentationParts(PresentationPart presentationPart)
     presentationPart.AddPart(themePart1, "rId5");
 }
 // </Snippet101>
-
+// <Snippet102>
 static SlidePart CreateSlidePart(PresentationPart presentationPart)
 {
     SlidePart slidePart1 = presentationPart.AddNewPart<SlidePart>("rId2");
@@ -60,6 +60,7 @@ static SlidePart CreateSlidePart(PresentationPart presentationPart)
                         new P.NonVisualGroupShapeDrawingProperties(),
                         new ApplicationNonVisualDrawingProperties()),
                     new GroupShapeProperties(new TransformGroup()),
+                    // <Snippet103>
                     new P.Shape(
                         new P.NonVisualShapeProperties(
                             new P.NonVisualDrawingProperties() { Id = (UInt32Value)2U, Name = "Title 1" },
@@ -70,9 +71,11 @@ static SlidePart CreateSlidePart(PresentationPart presentationPart)
                             new BodyProperties(),
                             new ListStyle(),
                             new Paragraph(new EndParagraphRunProperties() { Language = "en-US" }))))),
+                            // </Snippet103>
             new ColorMapOverride(new MasterColorMapping()));
     return slidePart1;
 }
+// </Snippet102>
 
 // <Snippet100>
 static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
