@@ -253,7 +253,9 @@ The following snippets add the required <xref:DocumentFormat.OpenXml.Packaging.N
 [!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet4)]
 ***
 
-Below is the complete code sample to create a new notes slide part and its corresponding elements and parts.
+## Sample code
+
+The following is the complete code sample in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet0)]
