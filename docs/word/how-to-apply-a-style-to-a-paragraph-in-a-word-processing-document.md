@@ -37,7 +37,7 @@ The following sections in this topic explain the implementation of this method a
 
 The Sample Code section also shows the code required to set up for calling the sample method. To use the method to apply a style to a paragraph in a document, you first need a reference to the open document. In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class represents a Word document package. To open and work with a Word document, create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the document. After you create the instance, use it to obtain access to the main document part that contains the text of the document. The content in the main document part is represented in the package as XML using WordprocessingML markup.
 
-To create the class instance, call one of the overloads of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open> method. The following sample code shows how to use the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open> overload. The first parameter takes a string that represents the full path to the document to open. The second parameter takes a value of `true` or `false` and represents whether to open the file for editing. In this example the parameter is `true` to enable read/write access to the file.
+To create the class instance, call one of the overloads of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open*> method. The following sample code shows how to use the `DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(String, Boolean)` overload. The first parameter takes a string that represents the full path to the document to open. The second parameter takes a value of `true` or `false` and represents whether to open the file for editing. In this example the parameter is `true` to enable read/write access to the file.
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/word/apply_a_style_to_a_paragraph/cs/Program.cs#snippet2)]
@@ -50,7 +50,7 @@ To create the class instance, call one of the overloads of the <xref:DocumentFor
 
 ## Get the paragraph to style
 
-After opening the file, the sample code retrieves a reference to the first paragraph. Because a typical word processing document body contains many types of elements, the code filters the descendants in the body of the document to those of type `Paragraph`. The <xref:System.Linq.Enumerable.ElementAtOrDefault> method is then employed to retrieve a reference to the paragraph. Because the elements are indexed starting at zero, you pass a zero to retrieve the reference to the first paragraph, as shown in the following code example.
+After opening the file, the sample code retrieves a reference to the first paragraph. Because a typical word processing document body contains many types of elements, the code filters the descendants in the body of the document to those of type `Paragraph`. The <xref:System.Linq.Enumerable.ElementAtOrDefault*> method is then employed to retrieve a reference to the paragraph. Because the elements are indexed starting at zero, you pass a zero to retrieve the reference to the first paragraph, as shown in the following code example.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/word/apply_a_style_to_a_paragraph/cs/Program.cs#snippet3)]
@@ -60,7 +60,7 @@ After opening the file, the sample code retrieves a reference to the first parag
 
 
 The reference to the found paragraph is stored in a variable named paragraph. If
-a paragraph is not found at the specified index, the <xref:System.Linq.Enumerable.ElementAtOrDefault>
+a paragraph is not found at the specified index, the `ElementAtOrDefault`
 method returns null as the default value. This provides an opportunity
 to test for null and throw an error with an appropriate error message.
 
@@ -108,7 +108,7 @@ In the Open XML SDK, the `pPr` element is
 represented by the <xref:DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties> class. The code
 determines if the element exists, and creates a new instance of the
 `ParagraphProperties` class if it does not.
-The `pPr` element is a child of the `p` (paragraph) element; consequently, the <xref:DocumentFormat.OpenXml.OpenXmlElement.PrependChild> method is used to add
+The `pPr` element is a child of the `p` (paragraph) element; consequently, the <xref:DocumentFormat.OpenXml.OpenXmlElement.PrependChild*> method is used to add
 the instance, as shown in the following code example.
 
 ### [C#](#tab/cs-3)
@@ -143,7 +143,7 @@ The `AddStylesPartToPackage` example method
 does the work of adding the styles part. It creates a part of the `StyleDefinitionsPart` type, adding it as a child
 to the main document part. The code then appends the `Styles` root element, which is the parent element
 that contains all of the styles. The `Styles`
-element is represented by the <xref:DocumentFormat.OpenXml.WordProcessing.Styles> class in the Open XML SDK. Finally,
+element is represented by the <xref:DocumentFormat.OpenXml.Wordprocessing.Styles> class in the Open XML SDK. Finally,
 the code saves the part.
 
 ### [C#](#tab/cs-5)
@@ -190,7 +190,7 @@ If styles do exist, the code looks for a match on the styleid. The
 styleid is an attribute of the style that is used in many places in the
 document to refer to the style, and can be thought of as its primary
 identifier. Typically you use the styleid to identify a style in code.
-The <xref:System.Linq.Enumerable.FirstOrDefault>
+The <xref:System.Linq.Enumerable.FirstOrDefault*>
 method defaults to null if no match is found, so the code verifies for
 null to see whether a style was matched, as shown in the following
 excerpt.
@@ -260,6 +260,7 @@ example.
 [!code-vb[](../../samples/word/apply_a_style_to_a_paragraph/vb/Program.vb#snippet9)]
 ***
 
+## Sample Code
 
 The following is the complete code sample in both C\# and Visual Basic.
 
