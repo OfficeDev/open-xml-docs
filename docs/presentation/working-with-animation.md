@@ -11,13 +11,13 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 11/26/2024
 ms.localizationpriority: medium
 ---
 
 # Working with animation
 
-This topic discusses the Open XML SDK for Office **Animate** class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
+This topic discusses the Open XML SDK for Office `Animate` class and how it relates to the Open XML File Format PresentationML schema. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
 ## Animation in PresentationML
 
@@ -34,9 +34,9 @@ The Animation section of the PresentationML framework stores the movement and re
 </p:sld>
 ```
 
-Animation consists of several behaviors, the most basic of which is the Animate behavior, represented by the \<anim\> element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML \<anim\> element used to represent basic animation behavior in a PresentationML document as follows:
+Animation consists of several behaviors, the most basic of which is the Animate behavior, represented by the `<anim/>` element. The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML `<anim/>` element used to represent basic animation behavior in a PresentationML document as follows:
 
-This element is a generic animation element that requires little or no semantic understanding of the attribute being animated. It can animate text within a shape or even the shape itself.[Example: Consider trying to emphasize text within a shape by changing the size of its font by 150%. The \<anim\> element should be used as follows:
+This element is a generic animation element that requires little or no semantic understanding of the attribute being animated. It can animate text within a shape or even the shape itself.[Example: Consider trying to emphasize text within a shape by changing the size of its font by 150%. The `<anim/>` element should be used as follows:
 
 ```xml
 <p:anim to="1.5" calcmode="lin" valueType="num">  
@@ -56,14 +56,14 @@ This element is a generic animation element that requires little or no semantic 
 </p:anim>
 ```
 
-The following table lists the child elements of the \<anim\> element used when working with animation and the Open XML SDK classes that correspond to them.
+The following table lists the child elements of the `<anim/>` element used when working with animation and the Open XML SDK classes that correspond to them.
 
 | **PresentationML Element** | **Open XML SDK Class** |
 |:---------------------------|:----------------------------|
-|         \<cBhvr\>          |       CommonBehavior       |
-|         \<tavLst\>         |    TimeAnimateValueList    |
+|         `<cBhvr/>`          |       <xref:DocumentFormat.OpenXml.Presentation.CommonBehavior>       |
+|         `<tavLst/>`         |    <xref:DocumentFormat.OpenXml.Presentation.TimeAnimateValueList>    |
 
-The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the attributes of the \<anim\> element.
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the attributes of the `<anim/>` element.
 
 | **Attributes** | **Description**                                             |
 |:---------------|:-----------------------------------------------------------------|
@@ -75,18 +75,18 @@ The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29
 
 ## Open XML SDK Animate Class
 
-The OXML SDK **Animate** class represents the \<anim\> element defined in the Open XML File Format schema for PresentationML documents. Use the **Animate**
-class to manipulate individual \<anim\> elements in a PresentationML document.
+The OXML SDK `Animate` class represents the `<anim/>` element defined in the Open XML File Format schema for PresentationML documents. Use the `Animate`
+class to manipulate individual `<anim/>` elements in a PresentationML document.
 
-Classes that represent child elements of the \<anim\> element and that are therefore commonly associated with the **Animate** class are shown in the following list.
+Classes that represent child elements of the `<anim/>` element and that are therefore commonly associated with the `Animate` class are shown in the following list.
 
 ### CommonBehavior Class
 
-The **CommonBehavior** class corresponds to the \<cBhvr\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the \<cBhvr\>element:
+The `CommonBehavior` class corresponds to the `<cBhvr/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<cBhvr/>`element:
 
 This element describes the common behaviors of animations.  
 
-Consider trying to emphasize text within a shape by changing the size of its font. The \<anim\> element should be used as follows:
+Consider trying to emphasize text within a shape by changing the size of its font. The `<anim/>` element should be used as follows:
 
 ```xml
 <p:anim to="1.5" calcmode="lin" valueType="num">  
@@ -108,11 +108,11 @@ Consider trying to emphasize text within a shape by changing the size of its fon
 
 ### TimeAnimateValueList Class
 
-The **TimeAnimateValueList** class corresponds to the \<tavLst\> element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the \<tavLst\> element:
+The `TimeAnimateValueList` class corresponds to the `<tavLst/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<tavLst/>` element:
 
 This element specifies a list of time animated value elements.
 
-Example: Consider a shape with a "fly-in" animation. The \<tav\> element should be used as follows:
+Example: Consider a shape with a "fly-in" animation. The `<tav/>` element should be used as follows:
 
 ```xml
 <p:anim calcmode="lin" valueType="num">  
@@ -134,7 +134,7 @@ Example: Consider a shape with a "fly-in" animation. The \<tav\> element should 
 
 ## Working with the Animate Class
 
-The **Animate** class, which represents the \<anim\> element, is therefore also associated with other classes that represent the child elements of the \<anim\> element, including the **CommonBehavior** class, which describes common animation behaviors, and the **TimeAnimateValueList** class, which specifies a list of time-animated value elements, as shown in the previous XML code. Other classes associated with the **Animate** class are the **Timing** class, which specifies timing information for all the animations on the slide, and the **TargetElement** class, which specifies the target child elements to which the animation effects are applied.
+The `Animate` class, which represents the `<anim/>` element, is therefore also associated with other classes that represent the child elements of the `<anim/>` element, including the `CommonBehavior` class, which describes common animation behaviors, and the `TimeAnimateValueList` class, which specifies a list of time-animated value elements, as shown in the previous XML code. Other classes associated with the `Animate` class are the <xref:DocumentFormat.OpenXml.Presentation.Timing> class, which specifies timing information for all the animations on the slide, and the <xref:DocumentFormat.OpenXml.Presentation.TargetElement> class, which specifies the target child elements to which the animation effects are applied.
 
 ## See also
 
