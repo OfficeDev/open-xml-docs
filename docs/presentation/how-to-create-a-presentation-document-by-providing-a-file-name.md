@@ -92,7 +92,7 @@ Themes are common to all Open XML markup languages.
 | &lt;sld&gt; | <xref:DocumentFormat.OpenXml.Presentation.Slide> |
 | &lt;sldMaster&gt; | <xref:DocumentFormat.OpenXml.Presentation.SlideMaster> |
 | &lt;sldLayout&gt; | <xref:DocumentFormat.OpenXml.Presentation.SlideLayout> |
-| &lt;theme&gt; | [Theme](/dotnet/api/documentformat.openxml.drawing.theme) |
+| &lt;theme&gt; | <xref:DocumentFormat.OpenXml.Drawing.Theme> |
 
 The PresentationML code that follows is the XML in the presentation part
 (in the file presentation.xml) for a simple presentation that contains
