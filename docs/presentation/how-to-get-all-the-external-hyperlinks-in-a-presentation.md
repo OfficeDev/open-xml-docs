@@ -24,7 +24,7 @@ programmatically.
 
 --------------------------------------------------------------------------------
 ## Getting a PresentationDocument Object
-In the Open XML SDK, the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument> class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the

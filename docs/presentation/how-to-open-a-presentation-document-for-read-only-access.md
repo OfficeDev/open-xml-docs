@@ -35,7 +35,7 @@ document.
 
 ## Create an Instance of the PresentationDocument Class 
 
-In the Open XML SDK, the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument> class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call one
@@ -57,7 +57,7 @@ whether a document is editable. To open a document for read-only access,
 specify the value **false** for this parameter.
 
 For example, you can open the presentation file as read-only and assign
-it to a [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) object as shown in the
+it to a <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument> object as shown in the
 following **using** statement. In this code,
 the **presentationFile** parameter is a string
 that represents the path of the file from which you want to open the

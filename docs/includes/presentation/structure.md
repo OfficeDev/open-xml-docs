@@ -65,13 +65,13 @@ two slides denoted by the IDs 267 and 256.
 
 Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
-elements. You can find these classes in the [DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation)
+elements. You can find these classes in the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" />
 namespace. The following table lists the class names of the classes that
 correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
 
 | PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
-| sld | [Slide](/dotnet/api/documentformat.openxml.presentation.slide) | Presentation Slide. It is the root element of SlidePart. |
-| sldLayout | [SlideLayout](/dotnet/api/documentformat.openxml.presentation.slidelayout) | Slide Layout. It is the root element of SlideLayoutPart. |
-| sldMaster | [SlideMaster](/dotnet/api/documentformat.openxml.presentation.slidemaster) | Slide Master. It is the root element of SlideMasterPart. |
-| notesMaster | [NotesMaster](/dotnet/api/documentformat.openxml.presentation.notesmaster) | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
+| sld | <xref:DocumentFormat.OpenXml.Presentation.Slide> | Presentation Slide. It is the root element of SlidePart. |
+| sldLayout | <xref:DocumentFormat.OpenXml.Presentation.SlideLayout> | Slide Layout. It is the root element of SlideLayoutPart. |
+| sldMaster | <xref:DocumentFormat.OpenXml.Presentation.SlideMaster> | Slide Master. It is the root element of SlideMasterPart. |
+| notesMaster | <xref:DocumentFormat.OpenXml.Presentation.NotesMaster> | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
