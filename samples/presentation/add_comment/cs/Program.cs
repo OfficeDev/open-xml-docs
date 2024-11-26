@@ -42,7 +42,7 @@ static void AddCommentToPresentation(string file, string initials, string name, 
 
         // Get the first slide, using the GetFirstSlide method.
         SlidePart slidePart1 = GetFirstSlide(doc);
-
+        // <ExtSnippet1>
         // Declare a comments part.
         SlideCommentsPart commentsPart;
 
@@ -82,7 +82,7 @@ static void AddCommentToPresentation(string file, string initials, string name, 
         comment.Append(
             new Position() { X = 100, Y = 200 },
             new Text() { Text = text });
-
+        // </ExtSnippet1>
         // Save the comment authors part.
         authorList.Save();
 
