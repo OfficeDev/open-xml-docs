@@ -93,9 +93,9 @@ document should be opened for read/write access (the final true
 parameter). Given the open document, the code uses the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart> property to navigate to
 the main document, storing the reference in a variable.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-0)
 [!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet1)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-0)
 [!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet1)]
 ***
 
@@ -103,9 +103,9 @@ the main document, storing the reference in a variable.
 
 The code first checks that `doc.MainDocumentPart` and `doc.MainDocumentPart.Document.Body` are not null and throws an exception if one is missing. Then uses the <xref:DocumentFormat.OpenXml.OpenXmlElement.Descendants> passing it the <xref:DocumentFormat.OpenXml.Wordprocessing.Vanish> type to get an `IEnumerable` of the `Vanish` elements and casts them to a list.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet2)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-1)
 [!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet2)]
 ***
 
@@ -114,9 +114,9 @@ The code first checks that `doc.MainDocumentPart` and `doc.MainDocumentPart.Docu
 To remove the hidden text we next loop over the `List` of `Vanish` elements. The `Vanish` element is a child of the <xref:DocumentFormat.OpenXml.Wordprocessing.RunProperties> but `RunProperties` can be a child of a <xref:DocumentFormat.OpenXml.Wordprocessing.Run> or xref:DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties>, so we get the parent and grandparent of each `Vanish` and check its type. Then if the grandparent is a `Run` we remove that run and if not 
 we we remove the `Vanish` child elements from the parent.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet3)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-2)
 [!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet3)]
 ***
 --------------------------------------------------------------------------------
@@ -128,10 +128,10 @@ we we remove the `Vanish` child elements from the parent.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/word/remove_hidden_text/cs/Program.cs#snippet0)]
 
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-3)
 [!code-vb[](../../samples/word/remove_hidden_text/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
