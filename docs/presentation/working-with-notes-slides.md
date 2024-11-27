@@ -173,9 +173,9 @@ the `CommonSlideData` class.
 In the snippet below, a presentation is opened with `Presentation.Open` and the first <xref:DocumentFormat.OpenXml.Packaging.SlidePart>
 is retrieved or added if the presentation does not already have a `SlidePart`.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-0)
 [!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet1)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-0)
 [!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet1)]
 ***
 
@@ -188,18 +188,18 @@ instance of the <xref:DocumentFormat.OpenXml.Presentation.GroupShapeProperties> 
 of the <xref:DocumentFormat.OpenXml.Presentation.Shape> class.
 
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet2)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-1)
 [!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet2)]
 ***
 
 The `Shape` constructor creates an instance of <xref:DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties>, <xref:DocumentFormat.OpenXml.Presentation.ShapeProperties>, and <xref:DocumentFormat.OpenXml.Presentation.TextBody> classes along with their required child elements. The `TextBody`
 contains the <xref:DocumentFormat.OpenXml.Drawing.Paragraph>, that has a <xref:DocumentFormat.OpenXml.Drawing.Run>, which contains the text of the note. The slide part is then added to the notes slide part.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet3)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-2)
 [!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet3)]
 ***
 
@@ -247,9 +247,9 @@ The notes slide part created with the code above contains the following XML
 
 The following snippets add the required <xref:DocumentFormat.OpenXml.Packaging.NotesMasterPart> and <xref:DocumentFormat.OpenXml.Packaging.ThemePart> if they are missing.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet4)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-3)
 [!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet4)]
 ***
 
@@ -257,9 +257,9 @@ The following snippets add the required <xref:DocumentFormat.OpenXml.Packaging.N
 
 The following is the complete code sample in both C\# and Visual Basic.
 
-### [C#](#tab/cs)
+### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet0)]
-### [Visual Basic](#tab/vb)
+### [Visual Basic](#tab/vb-4)
 [!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet0)]
 ***
 
