@@ -29,7 +29,7 @@ In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocu
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) method that uses a
+<xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open*#documentformat-openxml-packaging-presentationdocument-open(system-string-system-boolean)> method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. To open a document for read-only access,
 specify the value **false** for this parameter.
