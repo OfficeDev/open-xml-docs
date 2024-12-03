@@ -57,7 +57,7 @@ order to enable editing the document.
 ```
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 --------------------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ is stored in the ZIP item theme/theme1.xml:
 ```
 
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

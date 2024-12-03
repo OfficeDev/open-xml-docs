@@ -54,7 +54,7 @@ should be opened in read/write mode.
 ***
 
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 
 ---------------------------------------------------------------------------------
@@ -85,7 +85,7 @@ introduces the settings element in a **PresentationML** package.
 > automatic tab stop increments of 0.5" using the **defaultTabStop** element, and no character level
 > white space compression using the **characterSpacingControl** element. 
 > 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

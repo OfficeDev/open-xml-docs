@@ -53,7 +53,7 @@ to **true** to enable editing the document.
 ***
 
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 
 --------------------------------------------------------------------------------

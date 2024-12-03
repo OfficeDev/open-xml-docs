@@ -49,7 +49,7 @@ to **true** to enable editing the document.
 ```
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 
 ## How to Change Theme in a Word Package
@@ -85,7 +85,7 @@ In this example, we see how a theme can affect font, colors,
 backgrounds, fills, and effects for different objects in a presentation.
 *end example*]
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the possible child types of the Theme class.
 

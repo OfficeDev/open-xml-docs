@@ -59,7 +59,7 @@ template.
 ```
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 Once you have created the Word document package, you can add parts to
 it. To add the main document part you call <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.AddMainDocumentPart%2A>. Having done that,

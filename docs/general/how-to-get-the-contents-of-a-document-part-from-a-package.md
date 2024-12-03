@@ -54,7 +54,7 @@ opened in read-only mode to avoid accidental changes.
 ```
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 
 ---------------------------------------------------------------------------------
@@ -85,7 +85,7 @@ document:
 The **comments** element contains the single
 comment specified by this document in this example.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML schema fragment defines the contents of this element.
 

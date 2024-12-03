@@ -40,7 +40,7 @@ The code starts with opening a package file by passing a file name to one of the
 ***
 
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 [!include[Structure](../includes/word/structure.md)]
 
