@@ -59,12 +59,7 @@ Options.
 ***
 
 
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case *doc*.
+[!include[Using Statement](../includes/presentation/using-statement.md)] `doc`.
 
 [!include[Structure](../includes/presentation/structure.md)]
 
@@ -82,7 +77,7 @@ introduces comments in a presentation package.
 > displaying application decides when to display comments and determines
 > their visual appearance.
 > 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML element specifies a single comment attached to a
 slide. It contains the text of the comment (**text**), its position on the slide (**pos**), and attributes referring to its author

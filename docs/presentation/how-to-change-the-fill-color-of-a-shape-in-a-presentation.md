@@ -53,12 +53,7 @@ you want to open the document.
 ***
 
 
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case *ppt*.
+[!include[Using Statement](../includes/presentation/using-statement.md)] `ppt`.
 
 
 ## The Structure of the Shape Tree 
@@ -102,7 +97,7 @@ introduces the overall form of a **PresentationML** package.
 > In the above example the shape tree specifies all the shape properties
 > for this slide. *end example*]
 > 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the child elements of the Shape Tree along
 with the description of each.

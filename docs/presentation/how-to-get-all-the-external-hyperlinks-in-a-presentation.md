@@ -58,12 +58,7 @@ path for the file from which you want to open the document.
 ***
 
 
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **document**.
+[!include[Using Statement](../includes/presentation/using-statement.md)] `document`.
 
 
 --------------------------------------------------------------------------------
@@ -117,7 +112,7 @@ introduces the **id** (Hyperlink Target).
 > The possible values for this attribute are defined by the
 > ST\_RelationshipId simple type(§22.8.2.1).
 > 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------
