@@ -15,8 +15,8 @@ Module Program
                 Throw New Exception("Presentation Document does not exist")
             End If
 
-            ' Get the first slide in the presentation or use the InsertNewSlide.InsertNewSlideFromPresentation helper method to insert a new slide.
-            Dim slidePart As SlidePart = If(presentationDocument.PresentationPart?.SlideParts.FirstOrDefault(), InsertNewSlide.InsertNewSlideFromPresentation(presentationDocument, 1, "my new slide"))
+            ' Get the first slide in the presentation or use the InsertNewSlide.InsertNewSlideIntoPresentation helper method to insert a new slide.
+            Dim slidePart As SlidePart = If(presentationDocument.PresentationPart?.SlideParts.FirstOrDefault(), InsertNewSlide.InsertNewSlideIntoPresentation(presentationDocument, 1, "my new slide"))
 
             ' Add a new NoteSlidePart if one does not already exist
             Dim notesSlidePart As NotesSlidePart = If(slidePart.NotesSlidePart, slidePart.AddNewPart(Of NotesSlidePart)())

@@ -13,8 +13,8 @@ string pptxPath = args[0];
 // <Snippet1>
 using (PresentationDocument presentationDocument = PresentationDocument.Open(pptxPath, true) ?? throw new Exception("Presentation Document does not exist"))
 {
-    // Get the first slide in the presentation or use the InsertNewSlide.InsertNewSlideFromPresentation helper method to insert a new slide.
-    SlidePart slidePart = presentationDocument.PresentationPart?.SlideParts.FirstOrDefault() ?? InsertNewSlide.InsertNewSlideFromPresentation(presentationDocument, 1, "my new slide");
+    // Get the first slide in the presentation or use the InsertNewSlide.InsertNewSlideIntoPresentation helper method to insert a new slide.
+    SlidePart slidePart = presentationDocument.PresentationPart?.SlideParts.FirstOrDefault() ?? InsertNewSlide.InsertNewSlideIntoPresentation(presentationDocument, 1, "my new slide");
 
     // Add a new NoteSlidePart if one does not already exist
     NotesSlidePart notesSlidePart = slidePart.NotesSlidePart ?? slidePart.AddNewPart<NotesSlidePart>();

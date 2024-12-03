@@ -2,10 +2,9 @@
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Presentation;
-using System;
-using System.Threading.Tasks;
-using Drawing = DocumentFormat.OpenXml.Drawing;
 using SlideHelpers;
+using System;
+using Drawing = DocumentFormat.OpenXml.Drawing;
 
 public static class Program
 {
@@ -19,19 +18,22 @@ namespace SlideHelpers
 {
     public class InsertNewSlide
     {
+        // <Snippet>
         // Insert a slide into the specified presentation.
         public static void InsertNew(string presentationFile, int position, string slideTitle)
         {
+            // <Snippet1>
             // Open the source document as read/write. 
             using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, true))
+            // </Snippet1>
             {
                 // Pass the source document and the position and title of the slide to be inserted to the next method.
-                InsertNewSlideFromPresentation(presentationDocument, position, slideTitle);
+                InsertNewSlideIntoPresentation(presentationDocument, position, slideTitle);
             }
         }
 
         // Insert the specified slide into the presentation at the specified position.
-        public static SlidePart InsertNewSlideFromPresentation(PresentationDocument presentationDocument, int position, string slideTitle)
+        public static SlidePart InsertNewSlideIntoPresentation(PresentationDocument presentationDocument, int position, string slideTitle)
         {
             PresentationPart? presentationPart = presentationDocument.PresentationPart;
 

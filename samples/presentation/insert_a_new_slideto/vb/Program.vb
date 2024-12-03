@@ -1,30 +1,30 @@
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
-Imports System
-Imports System.Threading.Tasks
 Imports Drawing = DocumentFormat.OpenXml.Drawing
-Imports insert_a_new_slideto_vb.SlideHelpers
 
 Public Module Program
     Public Sub Main(args As String())
-        InsertNewSlide.InsertNew(args(0), Integer.Parse(args(1)), args(2))
+        SlideHelpers.InsertNewSlide.InsertNew(args(0), Integer.Parse(args(1)), args(2))
     End Sub
 End Module
 
 Namespace SlideHelpers
     Public Class InsertNewSlide
+        ' <Snippet>
         ' Insert a slide into the specified presentation.
         Public Shared Sub InsertNew(presentationFile As String, position As Integer, slideTitle As String)
+            ' <Snippet1>
             ' Open the source document as read/write. 
             Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, True)
+                ' </Snippet1>
                 ' Pass the source document and the position and title of the slide to be inserted to the next method.
-                InsertNewSlideFromPresentation(presentationDocument, position, slideTitle)
+                InsertNewSlideIntoPresentation(presentationDocument, position, slideTitle)
             End Using
         End Sub
 
         ' Insert the specified slide into the presentation at the specified position.
-        Public Shared Function InsertNewSlideFromPresentation(presentationDocument As PresentationDocument, position As Integer, slideTitle As String) As SlidePart
+        Public Shared Function InsertNewSlideIntoPresentation(presentationDocument As PresentationDocument, position As Integer, slideTitle As String) As SlidePart
             Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
 
             ' Verify that the presentation is not empty.
@@ -70,9 +70,10 @@ Namespace SlideHelpers
             drawingObjectId += 1
 
             ' Specify the required shape properties for the body shape.
-            bodyShape.NonVisualShapeProperties = New NonVisualShapeProperties(New NonVisualDrawingProperties() With {.Id = drawingObjectId, .Name = "Content Placeholder"},
-                    New NonVisualShapeDrawingProperties(New Drawing.ShapeLocks() With {.NoGrouping = True}),
-                    New ApplicationNonVisualDrawingProperties(New PlaceholderShape() With {.Index = 1}))
+            bodyShape.NonVisualShapeProperties = New NonVisualShapeProperties(
+                New NonVisualDrawingProperties() With {.Id = drawingObjectId, .Name = "Content Placeholder"},
+                New NonVisualShapeDrawingProperties(New Drawing.ShapeLocks() With {.NoGrouping = True}),
+                New ApplicationNonVisualDrawingProperties(New PlaceholderShape() With {.Index = 1}))
             bodyShape.ShapeProperties = New ShapeProperties()
 
             ' Specify the text of the body shape.
@@ -97,10 +98,7 @@ Namespace SlideHelpers
             Dim slideIds As OpenXmlElementList = If(slideIdList?.ChildElements, Nothing)
 
             For Each slideId As SlideId In slideIds
-
-                Dim slideIdVal As UInteger = slideId.Id
-
-                If slideId.Id IsNot Nothing AndAlso slideIdVal > maxSlideId Then
+                If slideId.Id IsNot Nothing AndAlso CUInt(slideId.Id) > maxSlideId Then
                     maxSlideId = slideId.Id
                 End If
 
