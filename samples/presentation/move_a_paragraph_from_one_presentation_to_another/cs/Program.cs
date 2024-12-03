@@ -6,13 +6,16 @@ using System.Linq;
 using Drawing = DocumentFormat.OpenXml.Drawing;
 
 MoveParagraphToPresentation(args[0], args[1]);
-
+// <Snippet>
+// <Snippet2>
 // Moves a paragraph range in a TextBody shape in the source document
 // to another TextBody shape in the target document.
 static void MoveParagraphToPresentation(string sourceFile, string targetFile)
 {
     // Open the source file as read/write.
+    // <Snippet1>
     using (PresentationDocument sourceDoc = PresentationDocument.Open(sourceFile, true))
+    // </Snippet1
     // Open the target file as read/write.
     using (PresentationDocument targetDoc = PresentationDocument.Open(targetFile, true))
     {
@@ -38,10 +41,10 @@ static void MoveParagraphToPresentation(string sourceFile, string targetFile)
         textBody2.Append(p1.CloneNode(true));
 
         // Remove the source paragraph from the source file.
-        textBody1.RemoveChild<Drawing.Paragraph>(p1);
+        textBody1.RemoveChild(p1);
 
         // Replace the removed paragraph with a placeholder.
-        textBody1.AppendChild<Drawing.Paragraph>(new Drawing.Paragraph());
+        textBody1.AppendChild(new Drawing.Paragraph());
 
         // Save the slide in the source file.
         slide1.Slide.Save();
@@ -50,7 +53,8 @@ static void MoveParagraphToPresentation(string sourceFile, string targetFile)
         slide2.Slide.Save();
     }
 }
-
+// </Snippet2>
+// <Snippet3>
 // Get the slide part of the first slide in the presentation document.
 static SlidePart GetFirstSlide(PresentationDocument presentationDocument)
 {
@@ -70,3 +74,5 @@ static SlidePart GetFirstSlide(PresentationDocument presentationDocument)
 
     return slidePart;
 }
+// </Snippet3>
+// </Snippet>
