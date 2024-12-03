@@ -35,7 +35,7 @@ the Boolean parameter to `false`.
 [!code-vb[](../../samples/word/retrieve_comments/vb/Program.vb#snippet1)]
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 --------------------------------------------------------------------------------
 ## Comments Element

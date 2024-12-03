@@ -36,7 +36,7 @@ enable editing the document.
 [!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb#snippet1)]
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 --------------------------------------------------------------------------------
 ## The XML Representation of the Graphic Object

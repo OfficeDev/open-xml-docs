@@ -37,7 +37,7 @@ editing the document.
 [!code-vb[](../../samples/word/insert_a_table/vb/Program.vb#snippet1)]
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 
 ## Structure of a Table

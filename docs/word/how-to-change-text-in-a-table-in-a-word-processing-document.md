@@ -31,7 +31,7 @@ To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packa
 [!code-vb[](../../samples/word/change_text_a_table/vb/Program.vb#snippet1)]
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 ## The Structure of a Table
 

@@ -58,7 +58,7 @@ bracketed block, as shown in the following code example.
 [!code-vb[](../../samples/word/create_by_providing_a_file_name/vb/Program.vb#snippet1)]
 ***
 
-[!include[Using Statement](../includes/using-statement.md)]
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 Once you have created the Word document package, you can add parts to
 it. To add the main document part you call the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.AddMainDocumentPart%2A> method of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class. Having done that,
