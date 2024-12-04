@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 12/04/2024
 ms.localizationpriority: medium
 ---
 # Get the titles of all the slides in a presentation
@@ -25,34 +25,23 @@ programmatically.
 ---------------------------------------------------------------------------------
 ## Getting a PresentationDocument Object
 
-In the Open XML SDK, the **<xref:DocumentFormat.OpenXml.Packaging.PresentationDocument>** class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument> class represents a
 presentation document package. To work with a presentation document,
-first create an instance of the **PresentationDocument** class, and then work with
+first create an instance of the `PresentationDocument` class, and then work with
 that instance. To create the class instance from the document call the
-**[PresentationDocument.Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open)**
+<xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open#documentformat-openxml-packaging-presentationdocument-open(system-string-system-boolean)>
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. To open a document
-for read-only, specify the value **false** for
-this parameter as shown in the following **using** statement. In this code, the **presentationFile** parameter is a string that
+for read-only, specify the value `false` for
+this parameter as shown in the following `using` statement. In this code, the `presentationFile` parameter is a string that
 represents the path for the file from which you want to open the
 document.
 
-### [C#](#tab/cs-0)
-```csharp
-    // Open the presentation as read-only.
-    using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
-    {
-        // Insert other code here.
-    }
-```
+### [C#](#tab/cs-1)
+[!code-csharp[](../../samples/presentation/get_the_titles_of_all_the_slides/cs/Program.cs#snippet1)]
 
-### [Visual Basic](#tab/vb-0)
-```vb
-    ' Open the presentation as read-only.
-    Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
-        ' Insert other code here.
-    End Using
-```
+### [Visual Basic](#tab/vb-1)
+[!code-vb[](../../samples/presentation/get_the_titles_of_all_the_slides/vb/Program.vb#snippet1)]
 ***
 
 
@@ -63,23 +52,17 @@ document.
 
 ## Sample Code 
 
-The following is the complete sample code that you can use to get the
+The following sample code gets all the
 titles of the slides in a presentation file. For example you can use the
-following **foreach** statement in your program
-to return all the titles in the presentation file, "Myppt9.pptx."
+following `foreach` statement in your program
+to return all the titles in the presentation file located at
+the first argument.
 
-### [C#](#tab/cs-1)
-```csharp
-    foreach (string s in GetSlideTitles(@"C:\Users\Public\Documents\Myppt9.pptx"))
-       Console.WriteLine(s);
-```
+### [C#](#tab/cs-2)
+[!code-csharp[](../../samples/presentation/get_the_titles_of_all_the_slides/cs/Program.cs#snippet2)]
 
-### [Visual Basic](#tab/vb-1)
-```vb
-    For Each s As String In GetSlideTitles("C:\Users\Public\Documents\Myppt9.pptx")
-       Console.WriteLine(s)
-    Next
-```
+### [Visual Basic](#tab/vb-2)
+[!code-vb[](../../samples/presentation/get_the_titles_of_all_the_slides/vb/Program.vb#snippet2)]
 ***
 
 
@@ -89,10 +72,11 @@ the presentation, each on a separate line.
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/presentation/get_the_titles_of_all_the_slides/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/get_the_titles_of_all_the_slides/cs/Program.cs#snippet)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/presentation/get_the_titles_of_all_the_slides/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/get_the_titles_of_all_the_slides/vb/Program.vb#snippet)]
+***
 
 --------------------------------------------------------------------------------
 ## See also 
