@@ -8,20 +8,33 @@ using System.Linq;
 using System.Text;
 using A = DocumentFormat.OpenXml.Drawing;
 
-if (args is [{ } sldText, { } slideIndex])
+if (args is [{ } filePath, { } slideIndex])
 {
-    GetSlideIdAndText(out string text, sldText, int.Parse(slideIndex));
+    GetSlideIdAndText(out string text, filePath, int.Parse(slideIndex));
+    Console.WriteLine($"Side #{slideIndex + 1} contains: {text}");
 }
 
-if (args is [{ } presentationFile])
+// <Snippet2>
+if (args is [{ } path])
 {
-    CountSlides(presentationFile);
-}
+    int numberOfSlides = CountSlides(path);
+    Console.WriteLine($"Number of slides = {numberOfSlides}");
 
+    for (int i = 0;  i < numberOfSlides; i++)
+    {
+        GetSlideIdAndText(out string text, path, i);
+        Console.WriteLine($"Side #{i + 1} contains: {text}");
+    }
+}
+// </Snippet2>
+
+// <Snippet>
 static int CountSlides(string presentationFile)
 {
+    // <Snippet1>
     // Open the presentation as read-only.
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
+    // </Snippet1>
     {
         // Pass the presentation to the next CountSlides method
         // and return the slide count.
@@ -89,3 +102,4 @@ static void GetSlideIdAndText(out string sldText, string docName, int index)
         sldText = paragraphText.ToString();
     }
 }
+// </Snippet>
