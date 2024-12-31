@@ -7,7 +7,7 @@ introduces the overall form of a **PresentationML** package.
 
 > The main part of a **PresentationML** package
 > starts with a presentation root element. That element contains a
-> presentation, which, in turn, refers to a **slide** list, a *slide master* list, a *notes
+> presentation, which, in turn, refers to a *slide* list, a *slide master* list, a *notes
 > master* list, and a *handout master* list. The slide list refers to
 > all of the slides in the presentation; the slide master list refers to
 > the entire slide masters used in the presentation; the notes master
@@ -30,8 +30,8 @@ introduces the overall form of a **PresentationML** package.
 > A **PresentationML** document is not stored
 > as one large body in a single part. Instead, the elements that
 > implement certain groupings of functionality are stored in separate
-> parts. For example, all comments in a document are stored in one
-> comment part while each slide has its own part.
+> parts. For example, all authors in a document are stored in one
+> authors part while each slide has its own part.
 > 
 > [!include[ISO/IEC 29500 version](../iso-iec-29500-version.md)]
 
