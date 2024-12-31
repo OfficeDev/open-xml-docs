@@ -7,8 +7,9 @@ using P = DocumentFormat.OpenXml.Presentation;
 
 
 CreatePresentation(args[0]);
-
+// <Snippet0>
 // <Snippet101>
+// <Snippet1>
 static void CreatePresentation(string filepath)
 {
     // Create a presentation at a specified file path. The presentation document type is pptx, by default.
@@ -21,6 +22,7 @@ static void CreatePresentation(string filepath)
     //Dispose the presentation handle
     presentationDoc.Dispose();
 }
+// </Snippet1>
 
 static void CreatePresentationParts(PresentationPart presentationPart)
 {
@@ -291,3 +293,4 @@ static ThemePart CreateTheme(SlideMasterPart slideMasterPart1)
     return themePart1;
 
 }
+// </Snippet0>
