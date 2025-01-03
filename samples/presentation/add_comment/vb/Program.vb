@@ -1,105 +1,131 @@
+Imports DocumentFormat.OpenXml
+Imports DocumentFormat.OpenXml.Drawing
+Imports DocumentFormat.OpenXml.Office2016.Presentation.Command
+Imports DocumentFormat.OpenXml.Office2021.PowerPoint.Comment
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
-Imports System
-Imports System.Linq
 
 Module Program
     Sub Main(args As String())
         AddCommentToPresentation(args(0), args(1), args(2), String.Join(" ", args.Skip(3)))
     End Sub
 
+    ' <Snippet0>
     Sub AddCommentToPresentation(file As String, initials As String, name As String, text As String)
-        Using doc As PresentationDocument = PresentationDocument.Open(file, True)
-            ' Declare a CommentAuthorsPart object.
-            Dim authorsPart As CommentAuthorsPart
+        Using presentationDocument As PresentationDocument = PresentationDocument.Open(file, True)
+            Dim presentationPart As PresentationPart = presentationDocument?.PresentationPart
 
-            ' If the presentation does not contain a comment authors part, add a new one.
-            Dim presentationPart As PresentationPart = If(doc.PresentationPart, doc.AddPresentationPart())
-
-            ' Verify that there is an existing comment authors part and add a new one if not.
-            authorsPart = If(presentationPart.CommentAuthorsPart, presentationPart.AddNewPart(Of CommentAuthorsPart)())
-
-            ' Verify that there is a comment author list in the comment authors part and add one if not.
-            Dim authorList As CommentAuthorList = If(authorsPart.CommentAuthorList, New CommentAuthorList())
-            authorsPart.CommentAuthorList = authorList
-
-            ' Declare a new author ID as either the max existing ID + 1 or 1 if there are no existing IDs.
-            Dim authorId As UInteger = If(authorList.Elements(Of CommentAuthor)().Select(Function(a) a.Id?.Value).Max(), 0)
-            authorId += 1
-
-            ' If there is an existing author with matching name and initials, use that author otherwise create a new CommentAuthor.
-            Dim foo = authorList.Elements(Of CommentAuthor)().Where(Function(a) a.Name = name AndAlso a.Initials = initials).FirstOrDefault()
-            Dim author As CommentAuthor = If(foo, authorList.AppendChild(New CommentAuthor() With {
-                .Id = authorId,
-                .Name = name,
-                .Initials = initials,
-                .ColorIndex = 0
-            }))
-            ' get the author id
-            authorId = If(author.Id, authorId)
-
-            ' Get the first slide, using the GetFirstSlide method.
-            Dim slidePart1 As SlidePart = GetFirstSlide(doc)
-            ' <ExtSnippet1>
-            ' Declare a comments part.
-            Dim commentsPart As SlideCommentsPart
-
-            ' Verify that there is a comments part in the first slide part.
-            If slidePart1.GetPartsOfType(Of SlideCommentsPart)().Count() = 0 Then
-                ' If not, add a new comments part.
-                commentsPart = slidePart1.AddNewPart(Of SlideCommentsPart)()
-            Else
-                ' Else, use the first comments part in the slide part.
-                commentsPart = slidePart1.GetPartsOfType(Of SlideCommentsPart)().First()
+            If (presentationPart Is Nothing) Then
+                Throw New MissingFieldException("PresentationPart")
             End If
 
-            ' If the comment list does not exist.
-            If commentsPart.CommentList Is Nothing Then
-                ' Add a new comments list.
-                commentsPart.CommentList = New CommentList()
+            ' <Snippet1>
+            ' create missing PowerPointAuthorsPart if it is null
+            If presentationDocument.PresentationPart.authorsPart Is Nothing Then
+                presentationDocument.PresentationPart.AddNewPart(Of PowerPointAuthorsPart)()
+            End If
+            ' </Snippet1>
+
+            ' <Snippet2>
+            ' Add missing AuthorList if it is null
+            If presentationDocument.PresentationPart.authorsPart Is Nothing Or presentationDocument.PresentationPart.authorsPart.AuthorList Is Nothing Then
+                presentationDocument.PresentationPart.authorsPart.AuthorList = New AuthorList()
             End If
 
-            ' Get the new comment ID.
-            Dim commentIdx As UInteger = If(author.LastIndex, 1)
-            author.LastIndex = commentIdx
+            ' Get the author or create a new one
+            Dim author As Author = presentationDocument.PresentationPart.authorsPart.AuthorList _
+                .ChildElements.OfType(Of Author)().Where(Function(a) a.Name?.Value = name).FirstOrDefault()
 
-            ' Add a new comment.
-            Dim comment As Comment = commentsPart.CommentList.AppendChild(Of Comment)(
-                New Comment() With {
-                    .AuthorId = authorId,
-                    .Index = commentIdx,
-                    .DateTime = DateTime.Now
-                })
+            If author Is Nothing Then
+                Dim authorId As String = String.Concat("{", Guid.NewGuid(), "}")
+                Dim userId As String = String.Concat(If(name.Split(" "c).FirstOrDefault(), "user"), "@example.com::", Guid.NewGuid())
+                author = New Author() With {.Id = authorId, .Name = name, .Initials = initials, .UserId = userId, .ProviderId = String.Empty}
 
-            ' Add the position child node to the comment element.
-            comment.Append(
-                New Position() With {.X = 100, .Y = 200},
-                New Text() With {.Text = text})
-            ' </ExtSnippet1>
-            ' Save the comment authors part.
-            authorList.Save()
+                presentationDocument.PresentationPart.authorsPart.AuthorList.AppendChild(author)
+            End If
+            ' </Snippet2>
 
-            ' Save the comments part.
-            commentsPart.CommentList.Save()
+            ' <Snippet3>
+            ' Get the Id of the slide to add the comment to
+            Dim slideId As SlideId = presentationDocument.PresentationPart.Presentation.SlideIdList?.Elements(Of SlideId)()?.FirstOrDefault()
+
+            ' If slideId is null, there are no slides, so return
+            If slideId Is Nothing Then Return
+            ' </Snippet3>
+            Dim ran As New Random()
+            Dim cid As UInt32Value = Convert.ToUInt32(ran.Next(100000000, 999999999))
+
+            ' <Snippet4>
+            ' Get the relationship id of the slide if it exists
+            Dim relId As String = slideId.RelationshipId
+
+            ' Use the relId to get the slide if it exists, otherwise take the first slide in the sequence
+            Dim slidePart As SlidePart = If(relId IsNot Nothing, CType(presentationPart.GetPartById(relId), SlidePart), presentationDocument.PresentationPart.SlideParts.First())
+
+            ' If the slide part has comments parts take the first PowerPointCommentsPart
+            ' otherwise add a new one
+            Dim powerPointCommentPart As PowerPointCommentPart = slidePart.commentParts.FirstOrDefault()
+
+            If (powerPointCommentPart Is Nothing) Then
+                powerPointCommentPart = slidePart.AddNewPart(Of PowerPointCommentPart)()
+            End If
+            ' </Snippet4>
+
+            ' <Snippet5>
+            ' Create the comment using the new modern comment class DocumentFormat.OpenXml.Office2021.PowerPoint.Comment.Comment
+            Dim comment As New DocumentFormat.OpenXml.Office2021.PowerPoint.Comment.Comment(
+                New SlideMonikerList(
+                    New DocumentMoniker(),
+                    New SlideMoniker() With {
+                        .CId = cid,
+                        .SldId = slideId.Id
+                    }),
+                New TextBodyType(
+                    New BodyProperties(),
+                    New ListStyle(),
+                    New Paragraph(New Run(New DocumentFormat.OpenXml.Drawing.Text(text))))) With {
+                .Id = String.Concat("{", Guid.NewGuid(), "}"),
+                .AuthorId = author.Id,
+                .Created = DateTime.Now
+            }
+
+            ' If the comment list does not exist, add one.
+            If (powerPointCommentPart.CommentList Is Nothing) Then
+                powerPointCommentPart.CommentList = New DocumentFormat.OpenXml.Office2021.PowerPoint.Comment.CommentList()
+            End If
+            ' Add the comment to the comment list
+            powerPointCommentPart.CommentList.AppendChild(comment)
+            ' </Snippet5>
+
+            ' <Snippet6>
+            ' Get the presentation extension list if it exists
+            Dim presentationExtensionList As SlideExtensionList = slidePart.Slide.ChildElements.OfType(Of SlideExtensionList)().FirstOrDefault()
+            ' Create a boolean that determines if this is the slide's first comment
+            Dim isFirstComment As Boolean = False
+
+            ' If the presentation extension list is null, add one and set this as the first comment for the slide
+            If presentationExtensionList Is Nothing Then
+                isFirstComment = True
+                slidePart.Slide.AppendChild(New SlideExtensionList())
+                presentationExtensionList = slidePart.Slide.ChildElements.OfType(Of SlideExtensionList)().First()
+            End If
+
+            ' Get the slide extension if it exists
+            Dim presentationExtension As SlideExtension = presentationExtensionList.ChildElements.OfType(Of SlideExtension)().FirstOrDefault()
+
+            ' If the slide extension is null, add it and set this as a new comment
+            If presentationExtension Is Nothing Then
+                isFirstComment = True
+                presentationExtensionList.AddChild(New SlideExtension() With {.Uri = "{6950BFC3-D8DA-4A85-94F7-54DA5524770B}"})
+                presentationExtension = presentationExtensionList.ChildElements.OfType(Of SlideExtension)().First()
+            End If
+
+            ' If this is the first comment for the slide add the comment relationship
+            If isFirstComment Then
+                presentationExtension.AddChild(New CommentRelationship() With {.Id = slidePart.GetIdOfPart(powerPointCommentPart)})
+            End If
+            ' </Snippet6>
         End Using
     End Sub
-
-    ' Get the slide part of the first slide in the presentation document.
-    Function GetFirstSlide(presentationDocument As PresentationDocument) As SlidePart
-        ' Get relationship ID of the first slide
-        Dim part As PresentationPart = presentationDocument?.PresentationPart
-        Dim slideId As SlideId = part?.Presentation?.SlideIdList?.GetFirstChild(Of SlideId)()
-        Dim relId As String = slideId?.RelationshipId
-        If relId Is Nothing Then
-            Throw New ArgumentNullException("The first slide does not contain a relationship ID.")
-        End If
-        ' Get the slide part by the relationship ID.
-        Dim slidePart As SlidePart = TryCast(part?.GetPartById(relId), SlidePart)
-
-        If slidePart Is Nothing Then
-            Throw New ArgumentNullException("The slide part is null.")
-        End If
-
-        Return slidePart
-    End Function
+    ' </Snippet0>
 End Module
