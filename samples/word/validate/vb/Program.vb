@@ -30,8 +30,6 @@ Module Program
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
             End Try
-
-            wordprocessingDocument__1.Dispose()
         End Using
     End Sub
 

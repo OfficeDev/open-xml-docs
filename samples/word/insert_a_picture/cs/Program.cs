@@ -1,3 +1,4 @@
+// <Snippet>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -7,17 +8,19 @@ using A = DocumentFormat.OpenXml.Drawing;
 using DW = DocumentFormat.OpenXml.Drawing.Wordprocessing;
 using PIC = DocumentFormat.OpenXml.Drawing.Pictures;
 
-InsertAPicture(args[0], args[1]);
 
 static void InsertAPicture(string document, string fileName)
 {
+    // <Snippet1>
     using (WordprocessingDocument wordprocessingDocument = WordprocessingDocument.Open(document, true))
+    // </Snippet1>
     {
         if (wordprocessingDocument.MainDocumentPart is null)
         {
             throw new ArgumentNullException("MainDocumentPart is null.");
         }
 
+        // <Snippet2>
         MainDocumentPart mainPart = wordprocessingDocument.MainDocumentPart;
 
         ImagePart imagePart = mainPart.AddImagePart(ImagePartType.Jpeg);
@@ -28,11 +31,13 @@ static void InsertAPicture(string document, string fileName)
         }
 
         AddImageToBody(wordprocessingDocument, mainPart.GetIdOfPart(imagePart));
+        // </Snippet2>
     }
 }
 
 static void AddImageToBody(WordprocessingDocument wordDoc, string relationshipId)
 {
+    // <Snippet3>
     // Define the reference of the image.
     var element =
          new Drawing(
@@ -104,4 +109,13 @@ static void AddImageToBody(WordprocessingDocument wordDoc, string relationshipId
 
     // Append the reference to body, the element should be in a Run.
     wordDoc.MainDocumentPart.Document.Body.AppendChild(new Paragraph(new Run(element)));
+    // </Snippet3>
 }
+// </Snippet>
+
+// <Snippet4>
+string documentPath = args[0];
+string picturePath = args[1];
+
+InsertAPicture(documentPath, picturePath);
+// </Snippet4>

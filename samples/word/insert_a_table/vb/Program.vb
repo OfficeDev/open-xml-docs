@@ -1,3 +1,4 @@
+' <Snippet>
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
@@ -12,6 +13,10 @@ Imports TopBorder = DocumentFormat.OpenXml.Wordprocessing.TopBorder
 Module MyModule
 
     Sub Main(args As String())
+        ' <Snippet5>
+        Dim filePath As String = args(0)
+        CreateTable(filePath)
+        ' </Snippet5>
     End Sub
 
 
@@ -20,21 +25,52 @@ Module MyModule
         ' Use the file name and path passed in as an argument 
         ' to open an existing Word 2007 document.
 
+        ' <Snippet1>
         Using doc As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
+            ' </Snippet1>
+
+            ' <Snippet2>
             ' Create an empty table.
             Dim table As New Table()
 
             ' Create a TableProperties object and specify its border information.
             Dim tblProp As New TableProperties(New TableBorders(
-            New TopBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
-            New BottomBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
-            New LeftBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
-            New RightBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
-            New InsideHorizontalBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24},
-            New InsideVerticalBorder() With {.Val = New EnumValue(Of BorderValues)(BorderValues.Dashed), .Size = 24}))
+            New TopBorder() With
+                {
+                    .Val = New EnumValue(Of BorderValues)(BorderValues.Dashed),
+                    .Size = 24
+                },
+            New BottomBorder() With
+                {
+                    .Val = New EnumValue(Of BorderValues)(BorderValues.Dashed),
+                    .Size = 24
+                },
+            New LeftBorder() With
+                {
+                    .Val = New EnumValue(Of BorderValues)(BorderValues.Dashed),
+                    .Size = 24
+                },
+            New RightBorder() With
+                {
+                    .Val = New EnumValue(Of BorderValues)(BorderValues.Dashed),
+                    .Size = 24
+                },
+            New InsideHorizontalBorder() With
+                {
+                    .Val = New EnumValue(Of BorderValues)(BorderValues.Dashed),
+                    .Size = 24
+                },
+            New InsideVerticalBorder() With
+                {
+                    .Val = New EnumValue(Of BorderValues)(BorderValues.Dashed),
+                    .Size = 24
+                })
+            )
             ' Append the TableProperties object to the empty table.
             table.AppendChild(Of TableProperties)(tblProp)
+            ' </Snippet2>
 
+            ' <Snippet3>
             ' Create a row.
             Dim tr As New TableRow()
 
@@ -49,7 +85,9 @@ Module MyModule
 
             ' Append the table cell to the table row.
             tr.Append(tc1)
+            ' </Snippet3>
 
+            ' <Snippet4>
             ' Create a second table cell by copying the OuterXml value of the first table cell.
             Dim tc2 As New TableCell(tc1.OuterXml)
 
@@ -61,6 +99,8 @@ Module MyModule
 
             ' Append the table to the document.
             doc.MainDocumentPart.Document.Body.Append(table)
+            ' </Snippet4>
         End Using
     End Sub
 End Module
+' </Snippet>

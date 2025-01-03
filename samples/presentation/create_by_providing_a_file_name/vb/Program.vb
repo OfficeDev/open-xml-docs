@@ -15,14 +15,12 @@ Module Program
     ' <Snippet1>
     Sub CreatePresentation(filepath As String)
         ' Create a presentation at a specified file path. The presentation document type is pptx, by default.
-        Dim presentationDoc As PresentationDocument = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation)
-        Dim presentationPart As PresentationPart = presentationDoc.AddPresentationPart()
-        presentationPart.Presentation = New Presentation()
+        Using presentationDoc As PresentationDocument = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation)
+            Dim presentationPart As PresentationPart = presentationDoc.AddPresentationPart()
+            presentationPart.Presentation = New Presentation()
 
-        CreatePresentationParts(presentationPart)
-
-        'Dispose the presentation handle
-        presentationDoc.Dispose()
+            CreatePresentationParts(presentationPart)
+        End Using
     End Sub
     ' </Snippet1>
 
@@ -64,8 +62,8 @@ Module Program
                             New BodyProperties(),
                             New ListStyle(),
                             New Paragraph(New EndParagraphRunProperties() With {.Language = "en-US"})))
-
         ' </Snippet103>
+
         slidePart1.Slide = New Slide(
             New CommonSlideData(
                 New ShapeTree(
@@ -73,9 +71,8 @@ Module Program
                         New P.NonVisualDrawingProperties() With {.Id = CType(1UI, UInt32Value), .Name = ""},
                         New P.NonVisualGroupShapeDrawingProperties(),
                         New ApplicationNonVisualDrawingProperties()),
-                    New GroupShapeProperties(New TransformGroup()),
-                   shape)),
-            New ColorMapOverride(New MasterColorMapping()))
+                    New GroupShapeProperties(New TransformGroup(shape))),
+            New ColorMapOverride(New MasterColorMapping())))
         Return slidePart1
     End Function
     ' </Snippet102>

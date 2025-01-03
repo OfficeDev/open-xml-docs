@@ -33,7 +33,7 @@ programmatically.
 To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
 the following two **using** statements. In the
 same statement, you open the word processing file with the specified
-file name by using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the Boolean parameter.
+file name by using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> method, with the Boolean parameter.
 For the source file that set the parameter to **false** to open it for read-only access. For the
 target file, set the parameter to **true** in
 order to enable editing the document.
@@ -57,16 +57,7 @@ order to enable editing the document.
 ```
 ***
 
-The `using` statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the <xref:System.IDisposable.Dispose> method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the using
-statement establishes a scope for the object that is created or named in
-the `using` statement. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
-automatically saves and closes the object as part of its <xref:System.IDisposable> implementation, and because
-<xref:System.IDisposable.Dispose> is automatically called when you
-exit the block, you do not have to explicitly call <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Save%2A>.
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 --------------------------------------------------------------------------------
 
@@ -107,7 +98,7 @@ is stored in the ZIP item theme/theme1.xml:
 ```
 
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

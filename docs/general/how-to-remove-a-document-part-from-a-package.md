@@ -54,16 +54,7 @@ should be opened in read/write mode.
 ***
 
 
-The **using** statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **wordDoc**. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-the **Dispose** method is automatically called
-when you exit the block; you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 
 ---------------------------------------------------------------------------------
@@ -94,7 +85,7 @@ introduces the settings element in a **PresentationML** package.
 > automatic tab stop increments of 0.5" using the **defaultTabStop** element, and no character level
 > white space compression using the **characterSpacingControl** element. 
 > 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

@@ -12,55 +12,31 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 02/08/2024
 ms.localizationpriority: high
 ---
 # Insert a picture into a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for Office to programmatically add a picture to a word processing document.
 
-
-
 --------------------------------------------------------------------------------
 
 ## Opening an Existing Document for Editing
 
-To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class as shown in
-the following **using** statement. In the same
-statement, open the word processing file at the specified **filepath** by using the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method, with the
-Boolean parameter set to **true** in order to
+To open an existing document, instantiate the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
+class as shown in the following `using` statement. In the same
+statement, open the word processing file at the specified `filepath`
+by using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)>
+method, with the Boolean parameter set to `true` in order to
 enable editing the document.
 
 ### [C#](#tab/cs-0)
-```csharp
-    using (WordprocessingDocument wordprocessingDocument =
-           WordprocessingDocument.Open(filepath, true)) 
-    { 
-        // Insert other code here. 
-    }
-```
-
+[!code-csharp[](../../samples/word/insert_a_picture/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Using wordprocessingDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
-        ' Insert other code here. 
-    End Using
-```
+[!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb#snippet1)]
 ***
 
-
-The **using** statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-that is used by the Open XML SDK to clean up resources) is automatically
-called when the closing brace is reached. The block that follows the
-**using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case
-*wordprocessingDocument*. Because the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-**Dispose** is automatically called when you
-exit the block, you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 --------------------------------------------------------------------------------
 ## The XML Representation of the Graphic Object
@@ -92,151 +68,24 @@ The following XML Schema fragment defines the contents of this element
 
 ## How the Sample Code Works
 
-After you have opened the document, add the [ImagePart](/dotnet/api/documentformat.openxml.packaging.imagepart) object to the [MainDocumentPart](/dotnet/api/documentformat.openxml.packaging.maindocumentpart) object by using a file
+After you have opened the document, add the <xref:DocumentFormat.OpenXml.Packaging.ImagePart>
+object to the <xref:DocumentFormat.OpenXml.Packaging.MainDocumentPart> object by using a file
 stream as shown in the following code segment.
 
 ### [C#](#tab/cs-1)
-```csharp
-    MainDocumentPart mainPart = wordprocessingDocument.MainDocumentPart;
-    ImagePart imagePart = mainPart.AddImagePart(ImagePartType.Jpeg);
-    using (FileStream stream = new FileStream(fileName, FileMode.Open))
-    {
-        imagePart.FeedData(stream);
-    }
-    AddImageToBody(wordprocessingDocument, mainPart.GetIdOfPart(imagePart));
-```
-
+[!code-csharp[](../../samples/word/insert_a_picture/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    Dim mainPart As MainDocumentPart = wordprocessingDocument.MainDocumentPart
-    Dim imagePart As ImagePart = mainPart.AddImagePart(ImagePartType.Jpeg)
-    Using stream As New FileStream(fileName, FileMode.Open)
-        imagePart.FeedData(stream)
-    End Using
-    AddImageToBody(wordprocessingDocument, mainPart.GetIdOfPart(imagePart))
-```
+[!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb#snippet2)]
 ***
 
 
 To add the image to the body, first define the reference of the image.
-Then, append the reference to the body. The element should be in a [Run](/dotnet/api/documentformat.openxml.wordprocessing.run).
+Then, append the reference to the body. The element should be in a <xref:DocumentFormat.OpenXml.Wordprocessing.Run>.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Define the reference of the image.
-    var element =
-         new Drawing(
-             new DW.Inline(
-                 new DW.Extent() { Cx = 990000L, Cy = 792000L },
-                 new DW.EffectExtent()
-                 {
-                     LeftEdge = 0L,
-                     TopEdge = 0L,
-                     RightEdge = 0L,
-                     BottomEdge = 0L
-                 },
-                 new DW.DocProperties()
-                 {
-                     Id = (UInt32Value)1U,
-                     Name = "Picture 1"
-                 },
-                 new DW.NonVisualGraphicFrameDrawingProperties(
-                     new A.GraphicFrameLocks() { NoChangeAspect = true }),
-                 new A.Graphic(
-                     new A.GraphicData(
-                         new PIC.Picture(
-                             new PIC.NonVisualPictureProperties(
-                                 new PIC.NonVisualDrawingProperties()
-                                 {
-                                     Id = (UInt32Value)0U,
-                                     Name = "New Bitmap Image.jpg"
-                                 },
-                                 new PIC.NonVisualPictureDrawingProperties()),
-                             new PIC.BlipFill(
-                                 new A.Blip(
-                                     new A.BlipExtensionList(
-                                         new A.BlipExtension()
-                                         {
-                                             Uri =
-                                               "{28A0092B-C50C-407E-A947-70E740481C1C}"
-                                         })
-                                 )
-                                 {
-                                     Embed = relationshipId,
-                                     CompressionState =
-                                     A.BlipCompressionValues.Print
-                                 },
-                                 new A.Stretch(
-                                     new A.FillRectangle())),
-                             new PIC.ShapeProperties(
-                                 new A.Transform2D(
-                                     new A.Offset() { X = 0L, Y = 0L },
-                                     new A.Extents() { Cx = 990000L, Cy = 792000L }),
-                                 new A.PresetGeometry(
-                                     new A.AdjustValueList()
-                                 ) { Preset = A.ShapeTypeValues.Rectangle }))
-                     ) { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" })
-             )
-             {
-                 DistanceFromTop = (UInt32Value)0U,
-                 DistanceFromBottom = (UInt32Value)0U,
-                 DistanceFromLeft = (UInt32Value)0U,
-                 DistanceFromRight = (UInt32Value)0U,
-                 EditId = "50D07946"
-             });
-
-    // Append the reference to the body. The element should be in 
-    // a DocumentFormat.OpenXml.Wordprocessing.Run.
-    wordDoc.MainDocumentPart.Document.Body.AppendChild(new Paragraph(new Run(element)));
-```
-
+[!code-csharp[](../../samples/word/insert_a_picture/cs/Program.cs#snippet3)]
 ### [Visual Basic](#tab/vb-2)
-```vb
-    ' Define the image reference.
-    Dim element = New Drawing( _
-                          New DW.Inline( _
-                      New DW.Extent() With {.Cx = 990000L, .Cy = 792000L}, _
-                      New DW.EffectExtent() With {.LeftEdge = 0L, .TopEdge = 0L, .RightEdge = 0L, .BottomEdge = 0L}, _
-                      New DW.DocProperties() With {.Id = CType(1UI, UInt32Value), .Name = "Picture1"}, _
-                      New DW.NonVisualGraphicFrameDrawingProperties( _
-                          New A.GraphicFrameLocks() With {.NoChangeAspect = True} _
-                          ), _
-                      New A.Graphic(New A.GraphicData( _
-                                    New PIC.Picture( _
-                                        New PIC.NonVisualPictureProperties( _
-                                            New PIC.NonVisualDrawingProperties() With {.Id = 0UI, .Name = "Koala.jpg"}, _
-                                            New PIC.NonVisualPictureDrawingProperties() _
-                                            ), _
-                                        New PIC.BlipFill( _
-                                            New A.Blip( _
-                                                New A.BlipExtensionList( _
-                                                    New A.BlipExtension() With {.Uri = "{28A0092B-C50C-407E-A947-70E740481C1C}"}) _
-                                                ) With {.Embed = relationshipId, .CompressionState = A.BlipCompressionValues.Print}, _
-                                            New A.Stretch( _
-                                                New A.FillRectangle() _
-                                                ) _
-                                            ), _
-                                        New PIC.ShapeProperties( _
-                                            New A.Transform2D( _
-                                                New A.Offset() With {.X = 0L, .Y = 0L}, _
-                                                New A.Extents() With {.Cx = 990000L, .Cy = 792000L}), _
-                                            New A.PresetGeometry( _
-                                                New A.AdjustValueList() _
-                                                ) With {.Preset = A.ShapeTypeValues.Rectangle} _
-                                            ) _
-                                        ) _
-                                    ) With {.Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture"} _
-                                ) _
-                            ) With {.DistanceFromTop = 0UI, _
-                                    .DistanceFromBottom = 0UI, _
-                                    .DistanceFromLeft = 0UI, _
-                                    .DistanceFromRight = 0UI} _
-                        )
-
-    ' Append the reference to the body, the element should be in 
-    ' a DocumentFormat.OpenXml.Wordprocessing.Run.
-    wordDoc.MainDocumentPart.Document.Body.AppendChild(New Paragraph(New Run(element)))
-```
+[!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb#snippet3)]
 ***
 
 
@@ -244,37 +93,26 @@ Then, append the reference to the body. The element should be in a [Run](/dotnet
 
 ## Sample Code
 The following code example adds a picture to an existing word document.
-In your code, you can call the **InsertAPicture** method by passing in the path of
+In your code, you can call the `InsertAPicture` method by passing in the path of
 the word document, and the path of the file that contains the picture.
-For example, the following call inserts the picture "MyPic.jpg" into the
-file "Word9.docx," located at the specified paths.
+For example, the following call inserts the picture.
 
 ### [C#](#tab/cs-3)
-```csharp
-    string document = @"C:\Users\Public\Documents\Word9.docx";
-    string fileName = @"C:\Users\Public\Documents\MyPic.jpg";
-    InsertAPicture(document, fileName);
-```
-
+[!code-csharp[](../../samples/word/insert_a_picture/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-3)
-```vb
-    Dim document As String = "C:\Users\Public\Documents\Word9.docx"
-    Dim fileName As String = "C:\Users\Public\Documents\MyPic.jpg"
-    InsertAPicture(document, fileName)
-```
+[!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb#snippet4)]
 ***
 
 
-After you run the code, look at the file "Word9.docx" to see the
-inserted picture.
+After you run the code, look at the file to see the inserted picture.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/insert_a_picture/cs/Program.cs)]
+[!code-csharp[](../../samples/word/insert_a_picture/cs/Program.cs#snippet)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb)]
+[!code-vb[](../../samples/word/insert_a_picture/vb/Program.vb#snippet)]
 
 --------------------------------------------------------------------------------
 
