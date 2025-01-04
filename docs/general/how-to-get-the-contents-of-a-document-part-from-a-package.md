@@ -29,7 +29,7 @@ document programmatically.
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
 The code starts with opening a package file by passing a file name to
-one of the overloaded [Open()](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) methods (Visual Basic .NET Shared
+one of the overloaded <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open*> methods (Visual Basic .NET Shared
 method or C\# static method) of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class that takes a
 string and a Boolean value that specifies whether the file should be
 opened in read/write mode or not. In this case, the Boolean value is
