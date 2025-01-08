@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with the calculation chain
 
-This topic discusses the Open XML SDK [CalculationChain](/dotnet/api/documentformat.openxml.spreadsheet.calculationchain) class and how it relates
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.CalculationChain> class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).

@@ -83,7 +83,7 @@ This text run shall therefore use the Courier New font for all
 characters in the ASCII range, and shall use the Times New Roman font
 for all characters in the Complex Script range.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------
@@ -103,14 +103,14 @@ set the font of the run to Arial, the code creates a **RunFonts** object and the
 ***
 
 
-The code then creates a [Run](/dotnet/api/documentformat.openxml.wordprocessing.run) object that represents the first text
+The code then creates a <xref:DocumentFormat.OpenXml.Wordprocessing.Run> object that represents the first text
 run of the document. The code instantiates a **Run** and sets it to the first text run of the
-document. The code then adds the **RunProperties** object to the **Run** object using the [PrependChild\<T\>(T)](/dotnet/api/documentformat.openxml.openxmlelement.prependchild) method. The **PrependChild** method adds an element as the first
+document. The code then adds the **RunProperties** object to the **Run** object using the <xref:DocumentFormat.OpenXml.OpenXmlElement.PrependChild*> method. The **PrependChild** method adds an element as the first
 child element to the specified element in the in-memory XML structure.
 In this case, running the code sample produces an in-memory XML
 structure where the **RunProperties** element
 is added as the first child element of the **Run** element. It then saves the changes back to
-the [Save(MainDocumentPart)](/dotnet/api/documentformat.openxml.wordprocessing.document.save) object. Calling the
+the <xref:DocumentFormat.OpenXml.Wordprocessing.Document.Save*> object. Calling the
 **Save** method of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object commits
 changes made to the in-memory representation of the **MainDocumentPart** part back into the XML file for
 the **MainDocumentPart** (the document.xml file

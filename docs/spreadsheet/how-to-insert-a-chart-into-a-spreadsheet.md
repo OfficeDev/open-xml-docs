@@ -46,7 +46,7 @@ introduces row (\<**row**\>) element.
     </row>
 ```
 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML Schema code example defines the contents of the row
 element.
@@ -93,7 +93,7 @@ introduces cell (\<**c**\>) element.
     </c>
 ```
 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following XML Schema code example defines the contents of this
 element.
@@ -131,7 +131,7 @@ introduces Cell Value (\<**c**\>) element.
 > "inline string" may be expressed in an \<**is**\> element under \<**c**\> (instead of a \<**v**\> element under \<**c**\>), in the same way a string would be
 > expressed in the shared string table.
 >
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 In the following example cell B4 contains the number 360.
 
@@ -143,7 +143,7 @@ In the following example cell B4 contains the number 360.
 
 ## How the sample code works
 
-After opening the spreadsheet file for read/write access, the code verifies if the specified worksheet exists. It then adds a new [DrawingsPart](/dotnet/api/documentformat.openxml.packaging.drawingspart) object using the [AddNewPart](/dotnet/api/documentformat.openxml.packaging.openxmlpartcontainer.addnewpart) method, appends it to the worksheet, and saves the worksheet part. The code then adds a new [ChartPart](/dotnet/api/documentformat.openxml.packaging.chartpart) object, appends a new [ChartSpace](/dotnet/api/documentformat.openxml.packaging.chartpart.chartspace) object to the **ChartPart** object, and then appends a new [EditingLanguage](/dotnet/api/documentformat.openxml.drawing.charts.chartspace.editinglanguage) object to the **ChartSpace*** object that specifies the language for the chart is English-US.
+After opening the spreadsheet file for read/write access, the code verifies if the specified worksheet exists. It then adds a new <xref:DocumentFormat.OpenXml.Packaging.DrawingsPart> object using the <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.AddNewPart*> method, appends it to the worksheet, and saves the worksheet part. The code then adds a new <xref:DocumentFormat.OpenXml.Packaging.ChartPart> object, appends a new <xref:DocumentFormat.OpenXml.Packaging.ChartPart.ChartSpace*> object to the **ChartPart** object, and then appends a new <xref:DocumentFormat.OpenXml.Drawing.Charts.ChartSpace.EditingLanguage*> object to the **ChartSpace*** object that specifies the language for the chart is English-US.
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/spreadsheet/insert_a_chartto/cs/Program.cs#snippet1)]
@@ -153,10 +153,11 @@ After opening the spreadsheet file for read/write access, the code verifies if t
 ***
 
 
-The code creates a new clustered column chart by creating a new [BarChart](/dotnet/api/documentformat.openxml.drawing.charts.barchart) object with [BarDirectionValues](/dotnet/api/documentformat.openxml.drawing.charts.bardirectionvalues) object set to **Column** and [BarGroupingValues](/dotnet/api/documentformat.openxml.drawing.charts.bargroupingvalues) object set to **Clustered**.
+The code creates a new clustered column chart by creating a new <xref:DocumentFormat.OpenXml.Drawing.Charts.BarChart> object with 
+<xref:DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues> object set to **Column** and <xref:DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues> object set to **Clustered**.
 
 The code then iterates through each key in the **Dictionary** class. For each key, it appends a
-[BarChartSeries](/dotnet/api/documentformat.openxml.drawing.charts.barchartseries) object to the **BarChart** object and sets the [SeriesText](/dotnet/api/documentformat.openxml.drawing.charts.seriestext) object of the **BarChartSeries** object to equal the key. For each key, it appends a [NumberLiteral](/dotnet/api/documentformat.openxml.drawing.charts.numberliteral) object to the **Values** collection of the **BarChartSeries** object and sets the **NumberLiteral** object to equal the **Dictionary** class value corresponding to the key.
+<xref:DocumentFormat.OpenXml.Drawing.Charts.BarChartSeries> object to the **BarChart** object and sets the <xref:DocumentFormat.OpenXml.Drawing.Charts.SeriesText> object of the **BarChartSeries** object to equal the key. For each key, it appends a <xref:DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral> object to the **Values** collection of the **BarChartSeries** object and sets the **NumberLiteral** object to equal the **Dictionary** class value corresponding to the key.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/spreadsheet/insert_a_chartto/cs/Program.cs#snippet2)]
@@ -166,7 +167,7 @@ The code then iterates through each key in the **Dictionary** class. For each ke
 ***
 
 
-The code adds the [CategoryAxis](/dotnet/api/documentformat.openxml.drawing.charts.categoryaxis) object and [ValueAxis](/dotnet/api/documentformat.openxml.drawing.charts.valueaxis) object to the chart and sets the value of the following properties: [Scaling](/dotnet/api/documentformat.openxml.drawing.charts.scaling), [AxisPosition](/dotnet/api/documentformat.openxml.drawing.charts.axisposition), [TickLabelPosition](/dotnet/api/documentformat.openxml.drawing.charts.ticklabelposition), [CrossingAxis](/dotnet/api/documentformat.openxml.drawing.charts.crossingaxis), [Crosses](/dotnet/api/documentformat.openxml.drawing.charts.crosses), [AutoLabeled](/dotnet/api/documentformat.openxml.drawing.charts.autolabeled), [LabelAlignment](/dotnet/api/documentformat.openxml.drawing.charts.labelalignment), and [LabelOffset](/dotnet/api/documentformat.openxml.drawing.charts.labeloffset). It also adds the [Legend](/dotnet/api/documentformat.openxml.drawing.charts.chart.legend) object to the chart and saves the chart part.
+The code adds the <xref:DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis> object and <xref:DocumentFormat.OpenXml.Drawing.Charts.ValueAxis> object to the chart and sets the value of the following properties: <xref:DocumentFormat.OpenXml.Drawing.Charts.Scaling>, <xref:DocumentFormat.OpenXml.Drawing.Charts.AxisPosition>, <xref:DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition>, <xref:DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis>, <xref:DocumentFormat.OpenXml.Drawing.Charts.Crosses>, <xref:DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled>, <xref:DocumentFormat.OpenXml.Drawing.Charts.LabelAlignment>, and <xref:DocumentFormat.OpenXml.Drawing.Charts.LabelOffset>. It also adds the <xref:DocumentFormat.OpenXml.Drawing.Charts.Chart.Legend*> object to the chart and saves the chart part.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/insert_a_chartto/cs/Program.cs#snippet3)]
@@ -176,7 +177,7 @@ The code adds the [CategoryAxis](/dotnet/api/documentformat.openxml.drawing.char
 ***
 
 
-The code positions the chart on the worksheet by creating a [WorksheetDrawing](/dotnet/api/documentformat.openxml.packaging.drawingspart.worksheetdrawing) object and appending a **TwoCellAnchor** object. The **TwoCellAnchor** object specifies how to move or resize the chart if you move the rows and columns between the [FromMarker](/dotnet/api/documentformat.openxml.drawing.spreadsheet.frommarker) and [ToMarker](/dotnet/api/documentformat.openxml.drawing.spreadsheet.tomarker) anchors. The code then creates a [GraphicFrame](/dotnet/api/documentformat.openxml.drawing.spreadsheet.graphicframe) object to contain the chart and names the chart "Chart 1," and saves the worksheet drawing.
+The code positions the chart on the worksheet by creating a <xref:DocumentFormat.OpenXml.Packaging.DrawingsPart.WorksheetDrawing*> object and appending a **TwoCellAnchor** object. The **TwoCellAnchor** object specifies how to move or resize the chart if you move the rows and columns between the <xref:DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker> and <xref:DocumentFormat.OpenXml.Drawing.Spreadsheet.ToMarker> anchors. The code then creates a <xref:DocumentFormat.OpenXml.Drawing.Spreadsheet.GraphicFrame> object to contain the chart and names the chart "Chart 1," and saves the worksheet drawing.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/spreadsheet/insert_a_chartto/cs/Program.cs#snippet4)]

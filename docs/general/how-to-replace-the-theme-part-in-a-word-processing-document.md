@@ -91,11 +91,11 @@ The following table lists the possible child types of the Theme class.
 
 | PresentationML Element | Open XML SDK Class | Description |
 |---|---|---|
-| custClrLst | [CustomColorList](/dotnet/api/documentformat.openxml.drawing.customcolorlist) |Custom Color List |
-| extLst | [ExtensionList](/dotnet/api/documentformat.openxml.presentation.extensionlist) | Extension List |
-| extraClrSchemeLst | [ExtraColorSchemeList](/dotnet/api/documentformat.openxml.drawing.theme.extracolorschemelist) | Extra Color Scheme List |
-| objectDefaults | [ObjectDefaults](/dotnet/api/documentformat.openxml.drawing.theme.objectdefaults) | Object Defaults |
-| themeElements | [ThemeElements](/dotnet/api/documentformat.openxml.drawing.theme.themeelements) | Theme Elements |
+| custClrLst | <xref:DocumentFormat.OpenXml.Drawing.CustomColorList> |Custom Color List |
+| extLst | <xref:DocumentFormat.OpenXml.Presentation.ExtensionList> | Extension List |
+| extraClrSchemeLst | <xref:DocumentFormat.OpenXml.Drawing.Theme.ExtraColorSchemeList*> | Extra Color Scheme List |
+| objectDefaults | <xref:DocumentFormat.OpenXml.Drawing.Theme.ObjectDefaults*> | Object Defaults |
+| themeElements | <xref:DocumentFormat.OpenXml.Drawing.Theme.ThemeElements*> | Theme Elements |
 
 The following XML Schema fragment defines the four parts of the theme
 element. The **themeElements** element is the

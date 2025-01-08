@@ -30,7 +30,8 @@ After you have opened the file for read-only access, you instantiate the **Sheet
 ***
 
 
-You then you iterate through the **Sheets** collection and display **[OpenXmlElement](/dotnet/api/documentformat.openxml.openxmlelement)** and the **[OpenXmlAttribute](/dotnet/api/documentformat.openxml.openxmlattribute)** in each element.
+You then you iterate through the **Sheets** collection and display <xref:DocumentFormat.OpenXml.OpenXmlElement> and the
+<xref:DocumentFormat.OpenXml.OpenXmlAttribute> in each element.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/spreadsheet/get_worksheetformation_from_a_package/cs/Program.cs#snippet2)]

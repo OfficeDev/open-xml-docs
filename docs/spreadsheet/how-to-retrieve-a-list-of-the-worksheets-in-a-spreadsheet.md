@@ -43,8 +43,8 @@ examine.
 
 
 The method works with the workbook you specify, returning an instance of
-the **[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets)** object, from which you can retrieve
-a reference to each **[Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet)** object.
+the <xref:DocumentFormat.OpenXml.Spreadsheet.Sheets> object, from which you can retrieve
+a reference to each <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet> object.
 
 --------------------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ workbook).
 
 
 The code then continues by opening the document in read-only mode, and
-retrieving a reference to the **[WorkbookPart](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.workbookpart)**.
+retrieving a reference to the **<xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart*>**.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet4)]
@@ -91,7 +91,7 @@ retrieving a reference to the **[WorkbookPart](/dotnet/api/documentformat.openxm
 ***
 
 
-To get access to the **[Workbook](/dotnet/api/documentformat.openxml.spreadsheet.workbook)** object, the code retrieves the value of the **[Workbook](/dotnet/api/documentformat.openxml.packaging.workbookpart.workbook)** property from the **WorkbookPart**, and then retrieves a reference to the **Sheets** object from the **[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.workbook.sheets)** property of the **Workbook**. The **Sheets** object contains the collection of **[Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet)** objects that provide the method's return value.
+To get access to the <xref:DocumentFormat.OpenXml.Spreadsheet.Workbook> object, the code retrieves the value of the <xref:DocumentFormat.OpenXml.Packaging.WorkbookPart.Workbook*> property from the **WorkbookPart**, and then retrieves a reference to the **Sheets** object from the <xref:DocumentFormat.OpenXml.Spreadsheet.Workbook.Sheets*> property of the **Workbook**. The **Sheets** object contains the collection of <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet> objects that provide the method's return value.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_worksheets/cs/Program.cs#snippet5)]

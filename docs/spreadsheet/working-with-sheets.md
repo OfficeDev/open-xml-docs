@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with sheets
 
-This topic discusses the Open XML SDK [Worksheet](/dotnet/api/documentformat.openxml.spreadsheet.worksheet), [Chartsheet](/dotnet/api/documentformat.openxml.spreadsheet.chartsheet), and [DialogSheet](/dotnet/api/documentformat.openxml.spreadsheet.dialogsheet) classes and how they relate to
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet>, <xref:DocumentFormat.OpenXml.Spreadsheet.Chartsheet>, and <xref:DocumentFormat.OpenXml.Spreadsheet.DialogSheet> classes and how they relate to
 the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
@@ -40,7 +40,7 @@ these are also included in the sheet definition on disk.
 
 Other types of sheets include chart sheets and dialog sheets.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ## Open XML SDK Worksheet Class
@@ -80,7 +80,7 @@ simplify the logic required to insert a new sheetData collection into an
 existing (but empty) sheet, the sheetData collection is required, even
 when empty.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 A typical spreadsheet has at least one worksheet. The worksheet contains
 a table like structure for defining data, represented by the **sheetData** element. A sheet that contains data
@@ -105,14 +105,14 @@ string table. For more information about using the shared string table
 to store string values, see [Working with the shared string table](working-with-the-shared-string-table.md).
 
 The following table lists the common Open XML SDK classes used when
-working with the [Worksheet](/dotnet/api/documentformat.openxml.spreadsheet.worksheet) class.
+working with the <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet> class.
 
 | **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
-| sheetData | [SheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata) |
-| row | [Row](/dotnet/api/documentformat.openxml.spreadsheet.row) |
-| c | [Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell) |
-| v | [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) |
+| sheetData | <xref:DocumentFormat.OpenXml.Spreadsheet.SheetData> |
+| row | <xref:DocumentFormat.OpenXml.Spreadsheet.Row> |
+| c | <xref:DocumentFormat.OpenXml.Spreadsheet.Cell> |
+| v | <xref:DocumentFormat.OpenXml.Spreadsheet.CellValue> |
 
 For more information about optional spreadsheet elements, such as sheet
 properties and supporting sheet features, see the ISO/IEC 29500
@@ -126,7 +126,7 @@ introduces the **sheet data** (\<**sheetData**\>) element.
 The cell table is the core structure of a worksheet. It consists of all
 the text, numbers, and formulas in the grid.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Row Class
 
@@ -138,7 +138,7 @@ The cells in the cell table are organized by row. Each row has an index
 indicates the number of cells defined for it, as well as their relative
 position in the sheet. In this example, the first row of data is row 2.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Cell Class
 
@@ -152,7 +152,7 @@ also indicate a style identifier (attribute s) and a data type
 order to optimize load/save operations, default data values are not
 written out.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CellValue Class
 
@@ -172,7 +172,7 @@ information. To determine whether the 0 in v is a number or an index to
 a string, the cell's data type must be examined. When the data type
 indicates string, then it is an index and not a numeric value.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Open XML SDK Code Example
 
@@ -227,14 +227,14 @@ relationship in the Chartsheet part's relationship item:
 </chartsheet>
 ```
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the common Open XML SDK classes used when
-working with the [Chartsheet](/dotnet/api/documentformat.openxml.spreadsheet.chartsheet) class.
+working with the <xref:DocumentFormat.OpenXml.Spreadsheet.Chartsheet> class.
 
 | **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
-| drawing | [Drawing](/dotnet/api/documentformat.openxml.spreadsheet.drawing) |
+| drawing | <xref:DocumentFormat.OpenXml.Spreadsheet.Drawing> |
 
 ### Drawing Class
 
@@ -250,7 +250,7 @@ such part shall be the target of an explicit relationship from a
 Worksheet part (§12.3.24), or a Chartsheet part (§12.3.2). There shall
 be only one Drawings part per worksheet or chartsheet.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ## Open XML SDK Dialogsheet Class
@@ -280,4 +280,4 @@ Example: sheet1.xml contains the following:
 </dialogsheet>
 ```
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]

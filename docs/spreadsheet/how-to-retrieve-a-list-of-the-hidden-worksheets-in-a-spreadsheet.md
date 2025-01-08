@@ -20,7 +20,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to progra
 
 ## GetHiddenSheets method
 
-You can use the **GetHiddenSheets** method, to retrieve a list of the hidden worksheets in a workbook. The **GetHiddenSheets** method accepts a single parameter, a string that indicates the path of the file that you want to examine. The method works with the workbook you specify, filling a **[List\<T\>](/dotnet/api/system.collections.generic.list-1)** instance with a reference to each hidden **Sheet** object.
+You can use the **GetHiddenSheets** method, to retrieve a list of the hidden worksheets in a workbook. The **GetHiddenSheets** method accepts a single parameter, a string that indicates the path of the file that you want to examine. The method works with the workbook you specify, filling a <xref:System.Collections.Generic.List`1> instance with a reference to each hidden **Sheet** object.
 
 ## Retrieve the collection of worksheets
 

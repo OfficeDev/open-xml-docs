@@ -28,7 +28,7 @@ programmatically.
 --------------------------------------------------------------------------------
 ## Sample Code 
 
-The following code merges two adjacent cells in a **[SpreadsheetDocument](/dotnet/api/documentformat.openxml.spreadsheet.row)** document package. When
+The following code merges two adjacent cells in a <xref:DocumentFormat.OpenXml.Spreadsheet.Row> document package. When
 merging two cells, only the content from one of the cells is preserved.
 In left-to-right languages, the content in the upper-left cell is
 preserved. In right-to-left languages, the content in the upper-right

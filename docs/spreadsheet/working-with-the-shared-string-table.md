@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with the shared string table
 
-This topic discusses the Open XML SDK [SharedStringTable](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable) class and how it relates
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable> class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
@@ -41,7 +41,7 @@ table that is shared across the workbook is to improve performance in
 opening and saving the file by only reading and writing the repetitive
 information once.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Shared strings optimize space requirements when the spreadsheet contains
 multiple instances of the same string. Spreadsheets that contain
@@ -74,8 +74,8 @@ working with the **SharedStringTable** class.
 
 | **SpreadsheetML Element** |                                                  **Open XML SDK Class**                                                  |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------|
-|            si             | [SharedStringItem](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringitem) |
-|             t             |             [Text](/dotnet/api/documentformat.openxml.spreadsheet.text)             |
+|            si             | <xref:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem> |
+|             t             |             <xref:DocumentFormat.OpenXml.Spreadsheet.Text>             |
 
 --------------------------------------------------------------------------------
 ## Open XML SDK SharedStringTable Class 

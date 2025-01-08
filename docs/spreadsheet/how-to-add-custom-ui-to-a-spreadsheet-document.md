@@ -85,7 +85,7 @@ Next, as shown in the following code, the sample method attempts to retrieve a r
 
 ## Add the Customization
 
-Given a reference to the ribbon extensibility part, the following code finishes by setting the part's **CustomUI** property to a new [CustomUI](/dotnet/api/documentformat.openxml.office.customui.customui) object that contains the supplied customization. Once the customization is in place, the code saves the custom UI.
+Given a reference to the ribbon extensibility part, the following code finishes by setting the part's **CustomUI** property to a new <xref:DocumentFormat.OpenXml.Office.CustomUI.CustomUI> object that contains the supplied customization. Once the customization is in place, the code saves the custom UI.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/spreadsheet/add_custom_ui/cs/Program.cs#snippet3)]

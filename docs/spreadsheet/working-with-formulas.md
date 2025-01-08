@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with formulas
 
-This topic discusses the Open XML SDK [CellFormula](/dotnet/api/documentformat.openxml.spreadsheet.cellformula) class and how it relates to the
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.CellFormula> class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a
@@ -42,7 +42,7 @@ to postpone calculation of the formula values when the spreadsheet is
 opened, which saves time when opening a worksheet. You do not have to
 specify the value, and if you omit it, it is the responsibility of the
 Open XML reader to compute the value based on the formula definition
-when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue).
+when the worksheet is opened. For more information about the **CellValue** class, see <xref:DocumentFormat.OpenXml.Spreadsheet.CellValue>.
 
 The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification introduces the **cellFormula**

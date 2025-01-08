@@ -100,4 +100,4 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
-[Regular Expressions](/dotnet/standard/base-types/regular-expressions)
+- [Regular Expressions](/dotnet/standard/base-types/regular-expressions)

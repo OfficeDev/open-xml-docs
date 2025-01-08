@@ -39,7 +39,7 @@ Open XML SDK.
 ## The SpreadsheetDocument Object 
 
 The basic document structure of a SpreadsheetML document consists of the
-[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets) and [Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet) elements, which reference the
+<xref:DocumentFormat.OpenXml.Spreadsheet.Sheets> and <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet> elements, which reference the
 worksheets in the workbook. A separate XML file is created for each
 worksheet. For example, the SpreadsheetML for a workbook that has two
 worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
@@ -56,8 +56,8 @@ file and is shown in the following code example.
 ```
 
 The worksheet XML files contain one or more block level elements such as
-[SheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata). **sheetData** represents the cell table and contains
-one or more [Row](/dotnet/api/documentformat.openxml.spreadsheet.row) elements. A **row** contains one or more [Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell) elements. Each cell contains a [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) element that represents the value
+<xref:DocumentFormat.OpenXml.Spreadsheet.SheetData>. **sheetData** represents the cell table and contains
+one or more <xref:DocumentFormat.OpenXml.Spreadsheet.Row> elements. A **row** contains one or more <xref:DocumentFormat.OpenXml.Spreadsheet.Cell> elements. Each cell contains a <xref:DocumentFormat.OpenXml.Spreadsheet.CellValue> element that represents the value
 of the cell. For example, the **SpreadsheetML**
 for the first worksheet in a workbook, that only has the value 100 in
 cell A1, is located in the Sheet1.xml file and is shown in the following
@@ -97,8 +97,8 @@ v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
 --------------------------------------------------------------------------------
 ## Generating the SpreadsheetML Markup to Add a Worksheet 
 When you have access to the body of the main document part, you add a
-worksheet by calling [AddNewPart\<T\>(String, String)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.addnewpart) method to
-create a new [WorksheetPart](/dotnet/api/documentformat.openxml.spreadsheet.worksheet.worksheetpart). The following code example
+worksheet by calling <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart*> method to
+create a new <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart*>. The following code example
 adds the new **WorksheetPart**.
 
 ### [C#](#tab/cs-2)

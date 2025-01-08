@@ -79,11 +79,11 @@ method. The first cell contains the heading. Otherwise the specified column does
 ***
 
 
-If the content of the cell is stored in the [SharedStringTablePart](/dotnet/api/documentformat.openxml.packaging.sharedstringtablepart) object, it gets the
+If the content of the cell is stored in the <xref:DocumentFormat.OpenXml.Packaging.SharedStringTablePart> object, it gets the
 shared string items and returns the content of the column heading using
 the
 [M:System.Int32.Parse(System.String)](/dotnet/api/system.int32.parse)
-method. If the content of the cell is not in the [SharedStringTable](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable) object, it returns the
+method. If the content of the cell is not in the <xref:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable> object, it returns the
 content of the cell.
 
 ### [C#](#tab/cs-5)
