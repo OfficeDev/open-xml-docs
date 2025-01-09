@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
@@ -6,9 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+Console.WriteLine("Column heading: {0}", GetColumnHeading(args[0], args[1], args[2]));
 
 // Given a document name, a worksheet name, and a cell name, gets the column of the cell and returns
 // the content of the first cell in that column.
+// <Snippet0>
 static string? GetColumnHeading(string docName, string worksheetName, string cellName)
 {
     // Open the document as read-only.
@@ -103,5 +104,3 @@ static uint? GetRowIndex(string? cellName)
     // </Snippet2>
 }
 // </Snippet0>
-
-Console.WriteLine("Column heading: {0}", GetColumnHeading(args[0], args[1], args[2]));
