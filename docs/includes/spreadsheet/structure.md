@@ -1,6 +1,6 @@
 ## Basic structure of a spreadsheetML document
 
-The basic document structure of a **SpreadsheetML** document consists of the <xref:DocumentFormat.OpenXml.Spreadsheet.Sheets> and <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet> elements, which reference the worksheets in the workbook. A separate XML file is created for each worksheet. For example, the **SpreadsheetML** for a <xref:DocumentFormat.OpenXml.Spreadsheet.Workbook> that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
+The basic document structure of a `SpreadsheetML` document consists of the <xref:DocumentFormat.OpenXml.Spreadsheet.Sheets> and <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet> elements, which reference the worksheets in the workbook. A separate XML file is created for each worksheet. For example, the `SpreadsheetML` for a <xref:DocumentFormat.OpenXml.Spreadsheet.Workbook> that has two worksheets name MySheet1 and MySheet2 is located in the Workbook.xml file and is shown in the following code example.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
@@ -14,8 +14,8 @@ The basic document structure of a **SpreadsheetML** document consists of the <xr
 
 The worksheet XML files contain one or more block level elements such as
 <xref:DocumentFormat.OpenXml.Spreadsheet.SheetData> represents the cell table and contains
-one or more <xref:DocumentFormat.OpenXml.Spreadsheet.Row> elements. A **row** contains one or more <xref:DocumentFormat.OpenXml.Spreadsheet.Cell> elements. Each cell contains a <xref:DocumentFormat.OpenXml.Spreadsheet.CellValue> element that represents the value
-of the cell. For example, the **SpreadsheetML**
+one or more <xref:DocumentFormat.OpenXml.Spreadsheet.Row> elements. A `row` contains one or more <xref:DocumentFormat.OpenXml.Spreadsheet.Cell> elements. Each cell contains a <xref:DocumentFormat.OpenXml.Spreadsheet.CellValue> element that represents the value
+of the cell. For example, the `SpreadsheetML`
 for the first worksheet in a workbook, that only has the value 100 in
 cell A1, is located in the Sheet1.xml file and is shown in the following
 code example.
@@ -34,18 +34,18 @@ code example.
 ```
 
 Using the Open XML SDK, you can create document structure and
-content that uses strongly-typed classes that correspond to **SpreadsheetML** elements. You can find these
-classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
+content that uses strongly-typed classes that correspond to `SpreadsheetML` elements. You can find these
+classes in the `DocumentFormat.OpenXML.Spreadsheet` namespace. The
 following table lists the class names of the classes that correspond to
-the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
+the `workbook`, `sheets`, `sheet`, `worksheet`, and `sheetData` elements.
 
 | **SpreadsheetML Element** | **Open XML SDK Class** | **Description** |
 |:---|:---|:---|
-| workbook | DocumentFormat.OpenXML.Spreadsheet.Workbook | The root element for the main document part. |
-| sheets | DocumentFormat.OpenXML.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification. |
-| sheet | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
-| worksheet | DocumentFormat.OpenXML.Spreadsheet. Worksheet | A sheet definition file that contains the sheet data. |
-| sheetData | DocumentFormat.OpenXML.Spreadsheet.SheetData | The cell table, grouped together by rows. |
-| row | DocumentFormat.OpenXml.Spreadsheet.Row | A row in the cell table. |
-| c | DocumentFormat.OpenXml.Spreadsheet.Cell | A cell in a row. |
-| v | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell. |
+| `<workbook/>` | DocumentFormat.OpenXML.Spreadsheet.Workbook | The root element for the main document part. |
+| `<sheets/>` | DocumentFormat.OpenXML.Spreadsheet.Sheets | The container for the block level structures such as sheet, fileVersion, and others specified in the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification. |
+| `<sheet/>` | DocumentFormat.OpenXml.Spreadsheet.Sheet | A sheet that points to a sheet definition file. |
+| `<worksheet/>` | DocumentFormat.OpenXML.Spreadsheet. Worksheet | A sheet definition file that contains the sheet data. |
+| `<sheetData/>` | DocumentFormat.OpenXML.Spreadsheet.SheetData | The cell table, grouped together by rows. |
+| `<row/>` | DocumentFormat.OpenXml.Spreadsheet.Row | A row in the cell table. |
+| `<c/>` | DocumentFormat.OpenXml.Spreadsheet.Cell | A cell in a row. |
+| `<v/>` | DocumentFormat.OpenXml.Spreadsheet.CellValue | The value of a cell. |

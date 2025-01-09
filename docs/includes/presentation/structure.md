@@ -1,11 +1,11 @@
 ## Basic Presentation Document Structure 
 
-The basic document structure of a **PresentationML** document consists of a number of
+The basic document structure of a `PresentationML` document consists of a number of
 parts, among which is the main part that contains the presentation
 definition. The following text from the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification
-introduces the overall form of a **PresentationML** package.
+introduces the overall form of a `PresentationML` package.
 
-> The main part of a **PresentationML** package
+> The main part of a `PresentationML` package
 > starts with a presentation root element. That element contains a
 > presentation, which, in turn, refers to a *slide* list, a *slide master* list, a *notes
 > master* list, and a *handout master* list. The slide list refers to
@@ -23,11 +23,11 @@ introduces the overall form of a **PresentationML** package.
 > maintaining the presentation slide deck. A note is a reminder or piece
 > of text intended for the presenter or the audience.
 > 
-> Other features that a **PresentationML**
+> Other features that a `PresentationML`
 > document can include the following: *animation*, *audio*, *video*, and
 > *transitions* between slides.
 > 
-> A **PresentationML** document is not stored
+> A `PresentationML` document is not stored
 > as one large body in a single part. Instead, the elements that
 > implement certain groupings of functionality are stored in separate
 > parts. For example, all authors in a document are stored in one
@@ -67,11 +67,11 @@ Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
 elements. You can find these classes in the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" />
 namespace. The following table lists the class names of the classes that
-correspond to the **sld**, **sldLayout**, **sldMaster**, and **notesMaster** elements.
+correspond to the `sld`, `sldLayout`, `sldMaster`, and `notesMaster` elements.
 
-| PresentationML Element | Open XML SDK Class | Description |
+| **PresentationML Element** | **Open XML SDK Class** | **Description** |
 |---|---|---|
-| sld | <xref:DocumentFormat.OpenXml.Presentation.Slide> | Presentation Slide. It is the root element of SlidePart. |
-| sldLayout | <xref:DocumentFormat.OpenXml.Presentation.SlideLayout> | Slide Layout. It is the root element of SlideLayoutPart. |
-| sldMaster | <xref:DocumentFormat.OpenXml.Presentation.SlideMaster> | Slide Master. It is the root element of SlideMasterPart. |
-| notesMaster | <xref:DocumentFormat.OpenXml.Presentation.NotesMaster> | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
+| `<sld/>` | <xref:DocumentFormat.OpenXml.Presentation.Slide> | Presentation Slide. It is the root element of SlidePart. |
+| `<sldLayout/>` | <xref:DocumentFormat.OpenXml.Presentation.SlideLayout> | Slide Layout. It is the root element of SlideLayoutPart. |
+| `<sldMaster/>` | <xref:DocumentFormat.OpenXml.Presentation.SlideMaster> | Slide Master. It is the root element of SlideMasterPart. |
+| `<notesMaster/>` | <xref:DocumentFormat.OpenXml.Presentation.NotesMaster> | Notes Master (or handoutMaster). It is the root element of NotesMasterPart. |
