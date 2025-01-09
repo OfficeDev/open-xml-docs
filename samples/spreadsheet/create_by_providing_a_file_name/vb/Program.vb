@@ -1,17 +1,14 @@
-' <Snippet0>
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
-
-Module MyModule
-
+Module Program
     Sub Main(args As String())
         CreateSpreadsheetWorkbook(args(0))
     End Sub
 
-    Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
-
+    ' <Snippet0>
+    Sub CreateSpreadsheetWorkbook(filepath As String)
         ' <Snippet1>
         ' Create a spreadsheet document by supplying the filepath.
         ' By default, AutoSave = true, Editable = true, and Type = xlsx.
@@ -20,30 +17,29 @@ Module MyModule
 
             ' <Snippet2>
             ' Add a WorkbookPart to the document.
-            Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart
-            workbookpart.Workbook = New Workbook
+            Dim workbookPart As WorkbookPart = spreadsheetDocument.AddWorkbookPart()
+            workbookPart.Workbook = New Workbook()
             ' </Snippet2>
 
             ' <Snippet3>
             ' Add a WorksheetPart to the WorkbookPart.
-            Dim worksheetPart As WorksheetPart = workbookpart.AddNewPart(Of WorksheetPart)()
+            Dim worksheetPart As WorksheetPart = workbookPart.AddNewPart(Of WorksheetPart)()
             worksheetPart.Worksheet = New Worksheet(New SheetData())
 
             ' Add Sheets to the Workbook.
-            Dim sheets As Sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())
+            Dim sheets As Sheets = workbookPart.Workbook.AppendChild(New Sheets())
 
             ' Append a new worksheet and associate it with the workbook.
-            Dim sheet As Sheet = New Sheet
-            sheet.Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart)
-            sheet.SheetId = 1
-            sheet.Name = "mySheet"
-
+            Dim sheet As New Sheet() With {
+                .Id = workbookPart.GetIdOfPart(worksheetPart),
+                .SheetId = 1,
+                .Name = "mySheet"
+            }
             sheets.Append(sheet)
             ' </Snippet3>
 
-            workbookpart.Workbook.Save()
+            workbookPart.Workbook.Save()
         End Using
     End Sub
     ' </Snippet0>
-
 End Module

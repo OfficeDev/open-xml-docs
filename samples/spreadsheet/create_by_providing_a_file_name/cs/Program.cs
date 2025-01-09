@@ -1,17 +1,19 @@
 
-// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 
+CreateSpreadsheetWorkbook(args[0]);
+
+// <Snippet0>
 static void CreateSpreadsheetWorkbook(string filepath)
 {
     // <Snippet1>
     // Create a spreadsheet document by supplying the filepath.
     // By default, AutoSave = true, Editable = true, and Type = xlsx.
     using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook))
+    // </Snippet1>
     {
-        // </Snippet1>
 
         // <Snippet2>
         // Add a WorkbookPart to the document.
@@ -36,5 +38,3 @@ static void CreateSpreadsheetWorkbook(string filepath)
     }
 }
 // </Snippet0>
-
-CreateSpreadsheetWorkbook(args[0]);
