@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/08/2025
 ms.localizationpriority: high
 ---
 # Get the contents of a document part from a package
@@ -28,30 +28,20 @@ document programmatically.
 
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
+
 The code starts with opening a package file by passing a file name to
 one of the overloaded <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open*> methods (Visual Basic .NET Shared
 method or C\# static method) of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class that takes a
 string and a Boolean value that specifies whether the file should be
 opened in read/write mode or not. In this case, the Boolean value is
-**false** specifying that the file should be
+`false` specifying that the file should be
 opened in read-only mode to avoid accidental changes.
 
-### [C#](#tab/cs-0)
-```csharp
-    // Open a Wordprocessing document for editing.
-    using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, false))
-    {
-          // Insert other code here.
-    }
-```
+### [C#](#tab/cs-1)
+[!code-csharp[](../../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs#snippet1)]
 
-### [Visual Basic](#tab/vb-0)
-```vb
-    ' Open a Wordprocessing document for editing.
-    Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, False)
-        ' Insert other code here.
-    End Using
-```
+### [Visual Basic](#tab/vb-1)
+[!code-vb[](../../samples/word/get_the_contents_of_a_part_from_a_package/vb/Program.vb#snippet1)]
 ***
 
 [!include[Using Statement](../includes/word/using-statement.md)]
@@ -63,8 +53,9 @@ opened in read-only mode to avoid accidental changes.
 
 --------------------------------------------------------------------------------
 ## Comments Element
+
 In this how-to, you are going to work with comments. Therefore, it is
-useful to familiarize yourself with the structure of the \<**comments**\> element. The following information
+useful to familiarize yourself with the structure of the `<comments/> element. The following information
 from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification can be useful when working with this element.
 
@@ -99,88 +90,53 @@ The following XML schema fragment defines the contents of this element.
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
-After you have opened the source file for reading, you create a **mainPart** object by instantiating the **MainDocumentPart**. Then you can create a reference
-to the **WordprocessingCommentsPart** part of
+
+After you have opened the source file for reading, you create a `mainPart` object by instantiating the `MainDocumentPart`. Then you can create a reference
+to the `WordprocessingCommentsPart` part of
 the document.
 
-### [C#](#tab/cs-1)
-```csharp
-    // To get the contents of a document part.
-    public static string GetCommentsFromDocument(string document)
-    {
-        string comments = null;
+### [C#](#tab/cs-2)
+[!code-csharp[](../../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs#snippet2)]
 
-        using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
-        {
-            MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-            WordprocessingCommentsPart WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart;
-```
-
-### [Visual Basic](#tab/vb-1)
-```vb
-    ' To get the contents of a document part.
-    Public Shared Function GetCommentsFromDocument(ByVal document As String) As String
-        Dim comments As String = Nothing
-
-        Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
-            Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-            Dim WordprocessingCommentsPart As WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart
-```
+### [Visual Basic](#tab/vb-2)
+[!code-vb[](../../samples/word/get_the_contents_of_a_part_from_a_package/vb/Program.vb#snippet2)]
 ***
 
 
-You can then use a **StreamReader** object to
-read the contents of the **WordprocessingCommentsPart** part of the document
+You can then use a `StreamReader` object to
+read the contents of the `WordprocessingCommentsPart` part of the document
 and return its contents.
 
-### [C#](#tab/cs-2)
-```csharp
-    using (StreamReader streamReader = new StreamReader(WordprocessingCommentsPart.GetStream()))
-            {
-                comments = streamReader.ReadToEnd();
-            }
-        }
-        return comments;
-```
+### [C#](#tab/cs-3)
+[!code-csharp[](../../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs#snippet3)]
 
-### [Visual Basic](#tab/vb-2)
-```vb
-    Using streamReader As New StreamReader(WordprocessingCommentsPart.GetStream())
-    comments = streamReader.ReadToEnd()
-    End Using
-    Return comments
-```
+### [Visual Basic](#tab/vb-3)
+[!code-vb[](../../samples/word/get_the_contents_of_a_part_from_a_package/vb/Program.vb#snippet3)]
 ***
 
 
 --------------------------------------------------------------------------------
 ## Sample Code
-The following code retrieves the contents of a **WordprocessingCommentsPart** part contained in a
-**WordProcessing** document package. You can
-run the program by calling the **GetCommentsFromDocument** method as shown in the
+The following code retrieves the contents of a `WordprocessingCommentsPart` part contained in a
+`WordProcessing` document package. You can
+run the program by calling the `GetCommentsFromDocument` method as shown in the
 following example.
 
-### [C#](#tab/cs-3)
-```csharp
-    string document = @"C:\Users\Public\Documents\MyPkg5.docx";
-    GetCommentsFromDocument(document);
-```
+### [C#](#tab/cs-4)
+[!code-csharp[](../../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs#snippet4)]
 
-### [Visual Basic](#tab/vb-3)
-```vb
-    Dim document As String = "C:\Users\Public\Documents\MyPkg5.docx"
-    GetCommentsFromDocument(document)
-```
+### [Visual Basic](#tab/vb-4)
+[!code-vb[](../../samples/word/get_the_contents_of_a_part_from_a_package/vb/Program.vb#snippet4)]
 ***
-
 
 Following is the complete code example in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs)]
+[!code-csharp[](../../samples/word/get_the_contents_of_a_part_from_a_package/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/get_the_contents_of_a_part_from_a_package/vb/Program.vb)]
+[!code-vb[](../../samples/word/get_the_contents_of_a_part_from_a_package/vb/Program.vb#snippet0)]
+***
 
 --------------------------------------------------------------------------------
 ## See also
