@@ -1,4 +1,3 @@
-' <Snippet0>
 Imports System.Text.RegularExpressions
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
@@ -11,11 +10,12 @@ Module MyModule
         CalculateSumOfCellRange(args(0), args(1), args(2), args(3), args(4))
     End Sub
 
-    ' <Snippet1>
     ' Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
     ' the name of the last cell in the contiguous range, and the name of the results cell, 
     ' calculates the sum of the cells in the contiguous range and inserts the result into the results cell.
-    ' Note: All cells in the contiguous range must contain numbers.Private Sub CalculateSumOfCellRange(ByVal docName As String, ByVal worksheetName As String, ByVal firstCellName As String, _
+    ' Note: All cells in the contiguous range must contain numbers.
+    ' <Snippet0>
+    ' <Snippet1>
     Private Sub CalculateSumOfCellRange(ByVal docName As String, ByVal worksheetName As String, ByVal firstCellName As String,
     ByVal lastCellName As String, ByVal resultCell As String)
         ' Open the document for editing.
@@ -173,6 +173,6 @@ Module MyModule
         End If
     End Function
     ' </Snippet6>
+    ' </Snippet0>
 
 End Module
-' </Snippet0>
