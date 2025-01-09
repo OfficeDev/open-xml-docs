@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Linq;
 // <Snippet1>
 // Given a document, a worksheet name, a column name, and a one-based row index,
 // deletes the text from the cell at the specified column and row on the specified worksheet.
+// <Snippet0>
 static void DeleteTextFromCell(string docName, string sheetName, string colName, uint rowIndex)
 {
     // Open the document for editing.
