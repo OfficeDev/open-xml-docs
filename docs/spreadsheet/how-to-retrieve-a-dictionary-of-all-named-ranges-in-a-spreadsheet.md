@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 12/05/2023
+ms.date: 01/10/2025
 ms.localizationpriority: medium
 ---
 # Retrieve a dictionary of all named ranges in a spreadsheet document
