@@ -1,4 +1,3 @@
-' <Snippet0>
 Imports System.IO
 Imports System.IO.Packaging
 Imports DocumentFormat.OpenXml.Packaging
@@ -9,6 +8,7 @@ Module Program
 
 
 
+    ' <Snippet0>
     Public Sub OpenSpreadsheetDocumentReadOnly(ByVal filePath As String)
         ' <Snippet1>
         ' Open a SpreadsheetDocument based on a file path.
@@ -51,5 +51,5 @@ Module Program
             ' The rest of the code will not be called.
         End Using
     End Sub
+    ' </Snippet0>
 End Module
-' </Snippet0>
