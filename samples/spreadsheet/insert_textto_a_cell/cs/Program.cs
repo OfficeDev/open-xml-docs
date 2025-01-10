@@ -1,12 +1,14 @@
-// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Linq;
 
+InsertText(args[0], args[1]);
+
 // <Snippet1>
 // Given a document name and text, 
 // inserts a new work sheet and writes the text to cell "A1" of the new worksheet.
+// <Snippet0>
 static void InsertText(string docName, string text)
 {
     // Open the document for editing.
@@ -37,9 +39,6 @@ static void InsertText(string docName, string text)
         // Set the value of cell A1.
         cell.CellValue = new CellValue(index.ToString());
         cell.DataType = new EnumValue<CellValues>(CellValues.SharedString);
-
-        // Save the new worksheet.
-        worksheetPart.Worksheet.Save();
     }
 }
 // </Snippet1>
@@ -50,10 +49,7 @@ static void InsertText(string docName, string text)
 static int InsertSharedStringItem(string text, SharedStringTablePart shareStringPart)
 {
     // If the part does not contain a SharedStringTable, create one.
-    if (shareStringPart.SharedStringTable is null)
-    {
-        shareStringPart.SharedStringTable = new SharedStringTable();
-    }
+    shareStringPart.SharedStringTable ??= new SharedStringTable();
 
     int i = 0;
 
@@ -70,7 +66,6 @@ static int InsertSharedStringItem(string text, SharedStringTablePart shareString
 
     // The text does not exist in the part. Create the SharedStringItem and return its index.
     shareStringPart.SharedStringTable.AppendChild(new SharedStringItem(new DocumentFormat.OpenXml.Spreadsheet.Text(text)));
-    shareStringPart.SharedStringTable.Save();
 
     return i;
 }
@@ -83,7 +78,6 @@ static WorksheetPart InsertWorksheet(WorkbookPart workbookPart)
     // Add a new worksheet part to the workbook.
     WorksheetPart newWorksheetPart = workbookPart.AddNewPart<WorksheetPart>();
     newWorksheetPart.Worksheet = new Worksheet(new SheetData());
-    newWorksheetPart.Worksheet.Save();
 
     Sheets sheets = workbookPart.Workbook.GetFirstChild<Sheets>() ?? workbookPart.Workbook.AppendChild(new Sheets());
     string relationshipId = workbookPart.GetIdOfPart(newWorksheetPart);
@@ -108,7 +102,6 @@ static WorksheetPart InsertWorksheet(WorkbookPart workbookPart)
     // Append the new worksheet and associate it with the workbook.
     Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };
     sheets.Append(sheet);
-    workbookPart.Workbook.Save();
 
     return newWorksheetPart;
 }
@@ -159,11 +152,8 @@ static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPar
         Cell newCell = new Cell() { CellReference = cellReference };
         row.InsertBefore(newCell, refCell);
 
-        worksheet.Save();
         return newCell;
     }
 }
 // </Snippet4>
 // </Snippet0>
-
-InsertText(args[0], args[1]);
