@@ -1,10 +1,10 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
+// <Snippet0>
 static List<Sheet> GetHiddenSheets(string fileName)
 {
     List<Sheet> returnVal = new List<Sheet>();
