@@ -2,11 +2,16 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Linq;
 
+InsertWorksheet(args[0]);
+
 // Given a document name, inserts a new worksheet.
+// <Snippet0>
 static void InsertWorksheet(string docName)
 {
+    // <Snippet1>
     // Open the document for editing.
     using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
+        // </Snippet1>
     {
         WorkbookPart workbookPart = spreadSheet.WorkbookPart ?? spreadSheet.AddWorkbookPart();
         // Add a blank WorksheetPart.
@@ -31,5 +36,4 @@ static void InsertWorksheet(string docName)
         sheets.Append(sheet);
     }
 }
-
-InsertWorksheet(args[0]);
+// </Snippet0>
