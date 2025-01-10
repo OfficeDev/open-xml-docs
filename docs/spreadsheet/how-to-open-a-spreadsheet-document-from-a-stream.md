@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 12/05/2023
+ms.date: 01/10/2025
 ms.localizationpriority: high
 ---
 # Open a spreadsheet document from a stream
@@ -22,7 +22,7 @@ Office to open a spreadsheet document from a stream programmatically.
 
 
 ---------------------------------------------------------------------------------
-## When to Open From a Stream 
+## When to Open From a Stream
 If you have an application, such as Microsoft SharePoint Foundation
 2010, that works with documents by using stream input/output, and you
 want to use the Open XML SDK to work with one of the documents, this
@@ -40,11 +40,12 @@ Open XML SDK.
 [!include[Spreadsheet Object](../includes/spreadsheet/spreadsheet-object.md)]
 
 --------------------------------------------------------------------------------
-## Generating the SpreadsheetML Markup to Add a Worksheet 
+## Generating the SpreadsheetML Markup to Add a Worksheet
+
 When you have access to the body of the main document part, you add a
 worksheet by calling <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart*> method to
 create a new <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart*>. The following code example
-adds the new **WorksheetPart**.
+adds the new `WorksheetPart`.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/spreadsheet/open_from_a_stream/cs/Program.cs#snippet1)]
@@ -55,8 +56,9 @@ adds the new **WorksheetPart**.
 
 
 --------------------------------------------------------------------------------
-## Sample Code 
-In this example, the **OpenAndAddToSpreadsheetStream** method can be used
+## Sample Code
+
+In this example, the `OpenAndAddToSpreadsheetStream` method can be used
 to open a spreadsheet document from an already open stream and append
 some text to it. The following is the complete sample code in both C\# and Visual Basic.
 
@@ -68,8 +70,9 @@ some text to it. The following is the complete sample code in both C\# and Visua
 ***
 
 
-Notice that the **OpenAddAndAddToSpreadsheetStream** method does not
-close the stream passed to it. The calling code must do that.
+Notice that the `OpenAddAndAddToSpreadsheetStream` method does not
+close the stream passed to it. The calling code must do that manually
+or with a `using` statement.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
@@ -78,9 +81,10 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ### [Visual Basic](#tab/vb)
 [!code-vb[](../../samples/spreadsheet/open_from_a_stream/vb/Program.vb#snippet0)]
+***
 
 --------------------------------------------------------------------------------
-## See also 
+## See also
 
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

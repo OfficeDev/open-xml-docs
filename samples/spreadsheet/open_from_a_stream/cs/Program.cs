@@ -1,9 +1,15 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.IO;
 using System.Linq;
 
+// <Snippet2>
+using (FileStream fileStream = new FileStream(args[0], FileMode.Open, FileAccess.ReadWrite))
+{
+    OpenAndAddToSpreadsheetStream(fileStream);
+}
+// </Snippet2>
+// <Snippet0>
 static void OpenAndAddToSpreadsheetStream(Stream stream)
 {
     // Open a SpreadsheetDocument based on a stream.
@@ -20,7 +26,6 @@ static void OpenAndAddToSpreadsheetStream(Stream stream)
             // Add a new worksheet.
             WorksheetPart newWorksheetPart = workbookPart.AddNewPart<WorksheetPart>();
             newWorksheetPart.Worksheet = new Worksheet(new SheetData());
-            newWorksheetPart.Worksheet.Save();
 
             // </Snippet1>
 
@@ -48,17 +53,8 @@ static void OpenAndAddToSpreadsheetStream(Stream stream)
             // Append the new worksheet and associate it with the workbook.
             Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };
             sheets.Append(sheet);
-            workbookPart.Workbook.Save();
         }
     }
 }
 
 // </Snippet0>
-
-// <Snippet2>
-//Stream fileStream = File.Open(args[0], FileMode.Open);
-using (FileStream fileStream = new FileStream(args[0], FileMode.Open, FileAccess.ReadWrite))
-{
-    OpenAndAddToSpreadsheetStream(fileStream);
-}
-// </Snippet2>
