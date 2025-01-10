@@ -1,19 +1,17 @@
-// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Linq;
 
+// <Snippet0>
 // The DOM approach.
-// Note that the code below works only for cells that contain numeric values.
-// 
+// Note that the code below works only for cells that contain numeric values
 static void ReadExcelFileDOM(string fileName)
 {
     using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
     {
         // <Snippet1>
-        
         WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart ?? spreadsheetDocument.AddWorkbookPart();
         WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
         SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
@@ -27,7 +25,6 @@ static void ReadExcelFileDOM(string fileName)
                 Console.Write(text + " ");
             }
         }
-        
         // </Snippet1>
 
         Console.WriteLine();
@@ -41,7 +38,6 @@ static void ReadExcelFileSAX(string fileName)
     using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
     {
         // <Snippet2>
-
         WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart ?? spreadsheetDocument.AddWorkbookPart();
         WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
 
