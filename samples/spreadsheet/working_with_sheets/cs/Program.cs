@@ -10,7 +10,6 @@ static void CreateSpreadsheetWorkbook(string filepath)
     // By default, AutoSave = true, Editable = true, and Type = xlsx.
     using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook))
     {
-
         // Add a WorkbookPart to the document.
         WorkbookPart workbookPart = spreadsheetDocument.AddWorkbookPart();
         workbookPart.Workbook = new Workbook();
@@ -53,5 +52,6 @@ static void CreateSpreadsheetWorkbook(string filepath)
         // Set the cell value to be a numeric value of 100.
         newCell.CellValue = new CellValue("100");
         newCell.DataType = new EnumValue<CellValues>(CellValues.Number);
+
     }
 }
