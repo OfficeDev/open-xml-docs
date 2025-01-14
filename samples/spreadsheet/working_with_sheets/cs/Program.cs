@@ -6,11 +6,9 @@ CreateSpreadsheetWorkbook(args[0]);
 
 static void CreateSpreadsheetWorkbook(string filepath)
 {
-    // Create a spreadsheet document by supplying the filepath.
-    // By default, AutoSave = true, Editable = true, and Type = xlsx.
+    // Use 'using' block to ensure proper disposal of the document
     using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook))
     {
-
         // Add a WorkbookPart to the document.
         WorkbookPart workbookPart = spreadsheetDocument.AddWorkbookPart();
         workbookPart.Workbook = new Workbook();
@@ -20,7 +18,7 @@ static void CreateSpreadsheetWorkbook(string filepath)
         worksheetPart.Worksheet = new Worksheet(new SheetData());
 
         // Add Sheets to the Workbook.
-        Sheets sheets = workbookPart.Workbook.AppendChild<Sheets>(new Sheets());
+        Sheets sheets = workbookPart.Workbook.AppendChild(new Sheets());
 
         // Append a new worksheet and associate it with the workbook.
         Sheet sheet = new Sheet() { Id = workbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };
@@ -30,8 +28,7 @@ static void CreateSpreadsheetWorkbook(string filepath)
         SheetData sheetData = worksheetPart.Worksheet.GetFirstChild<SheetData>() ?? worksheetPart.Worksheet.AppendChild(new SheetData());
 
         // Add a row to the cell table.
-        Row row;
-        row = new Row() { RowIndex = 1 };
+        Row row = new Row() { RowIndex = 1 };
         sheetData.Append(row);
 
         // In the new row, find the column location to insert a cell in A1.  

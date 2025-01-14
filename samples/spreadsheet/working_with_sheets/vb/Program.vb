@@ -8,8 +8,7 @@ Module MyModule
     End Sub
 
     Public Sub CreateSpreadsheetWorkbookWithNumValue(ByVal filepath As String)
-        ' Create a spreadsheet document by supplying the filepath.
-        ' By default, AutoSave = true, Editable = true, and Type = xlsx.
+        ' Use 'Using' block to ensure proper disposal of the document
         Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook)
 
             ' Add a WorkbookPart to the document.
@@ -31,8 +30,7 @@ Module MyModule
             Dim sheetData As SheetData = worksheetPart.Worksheet.GetFirstChild(Of SheetData)()
 
             ' Add a row to the cell table.
-            Dim row As Row
-            row = New Row() With {.RowIndex = 1}
+            Dim row As New Row() With {.RowIndex = 1}
             sheetData.Append(row)
 
             ' In the new row, find the column location to insert a cell in A1.  
