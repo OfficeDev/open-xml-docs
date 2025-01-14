@@ -4,6 +4,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 
 CreateSpreadsheetWorkbook(args[0]);
 
+// <Snippet0>
 static void CreateSpreadsheetWorkbook(string filepath)
 {
     // Use 'using' block to ensure proper disposal of the document
@@ -52,3 +53,4 @@ static void CreateSpreadsheetWorkbook(string filepath)
         newCell.DataType = new EnumValue<CellValues>(CellValues.Number);
     }
 }
+// </Snippet0>
