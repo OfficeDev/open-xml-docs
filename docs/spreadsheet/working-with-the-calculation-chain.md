@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/14/2025
 ms.localizationpriority: high
 ---
 # Working with the calculation chain
@@ -25,7 +25,7 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of
 ## CalculationChain in SpreadsheetML
 
 The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
-specification introduces the **CalculationChain** (\<**calcChain**\>) element.
+specification introduces the `CalculationChain` (`<calcChain/>`) element.
 
 An instance of this part type contains an ordered set of references to
 all cells in all worksheets in the workbook whose value is calculated
@@ -67,41 +67,41 @@ expressed in the Calculation Chain part does not force or dictate to the
 implementing application the order in which calculations must be
 performed at runtime.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the common Open XML SDK classes used when
-working with the **CalculationChain** class.
+working with the `CalculationChain` class.
 
 
 | **SpreadsheetML Element** | **Open XML SDK Class** |
 |---------------------------|----------------------------|
-|             c             |      CalculationCell       |
+|             `<c/>`             |      CalculationCell       |
 
 ## Open XML SDK CalculationChain Class
 
-The Open XML SDK**CalculationChain** class
-represents the paragraph (\<**calcChain**\>)
+The Open XML SDK `CalculationChain` class
+represents the paragraph (`<calcChain/>`)
 element defined in the Open XML File Format schema for SpreadsheetML
-documents. Use the **CalculationChain** class
-to manipulate individual \<**calcChain**\>
+documents. Use the `CalculationChain` class
+to manipulate individual `<calcChain/>`
 elements in a SpreadsheetML document.
 
 ### Calculation Cell Class
 
-The **CalculationCell** class represents the
-cell (\<**si**\>) element that represents a
+The `CalculationCell` class represents the
+cell (`<c/>`) element that represents a
 cell that contains a formula.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **CalculationCell** (\<**c**\>) element.
+introduces the `CalculationCell` (`<c/>`) element.
 
 Every c element represents a cell containing a formula. The first cell
-calculated appears first (top-tobottom), and so on. The reference
+calculated appears first (top-to-bottom), and so on. The reference
 attribute r indicates the cell's address in the sheet. The index
 attribute i indicates the index of the sheet with which that cell is
 associated.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SpreadsheetML
 
