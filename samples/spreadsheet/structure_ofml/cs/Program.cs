@@ -3,7 +3,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 
 CreateSpreadsheetWorkbook(args[0]);
-
+// <Snippet0>
 static void CreateSpreadsheetWorkbook(string filepath)
 {
     // Create a spreadsheet document by supplying the filepath.
@@ -24,7 +24,6 @@ static void CreateSpreadsheetWorkbook(string filepath)
         // Append a new worksheet and associate it with the workbook.
         Sheet sheet = new Sheet() { Id = workbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };
         sheets.Append(sheet);
-
-        workbookPart.Workbook.Save();
     }
 }
+// </Snippet0>
