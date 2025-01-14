@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Drawing.Charts;
@@ -8,9 +7,11 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System.Collections.Generic;
 using System.Linq;
 
+InsertChartInSpreadsheet(args[0], args[1], args[2], new Dictionary<string, int>() { { "First", 1 }, { "Second", 2 }, { "Third", 3 } });
 
 // Given a document name, a worksheet name, a chart title, and a Dictionary collection of text keys
 // and corresponding integer data, creates a column chart with the text as the series and the integers as the values.
+// <Snippet0>
 static void InsertChartInSpreadsheet(string docName, string worksheetName, string title, Dictionary<string, int> data)
 {
     // Open the document for editing.
@@ -39,7 +40,6 @@ static void InsertChartInSpreadsheet(string docName, string worksheetName, strin
         DrawingsPart drawingsPart = worksheetPart.AddNewPart<DrawingsPart>();
         worksheetPart.Worksheet.Append(new DocumentFormat.OpenXml.Spreadsheet.Drawing()
         { Id = worksheetPart.GetIdOfPart(drawingsPart) });
-        worksheetPart.Worksheet.Save();
 
         // Add a new chart and set the chart language to English-US.
         ChartPart chartPart = drawingsPart.AddNewPart<ChartPart>();
@@ -129,9 +129,6 @@ static void InsertChartInSpreadsheet(string docName, string worksheetName, strin
             new Layout()));
 
         chart.Append(new PlotVisibleOnly() { Val = new BooleanValue(true) });
-
-        // Save the chart part.
-        chartPart.ChartSpace.Save();
         // </Snippet3>
 
         // <Snippet4>
@@ -162,16 +159,11 @@ Spreadsheet.GraphicFrame());
                                                                 new Extents() { Cx = 0L, Cy = 0L }));
 
         graphicFrame.Append(new Graphic(new GraphicData(new ChartReference() { Id = drawingsPart.GetIdOfPart(chartPart) })
-        { Uri = "https://schemas.openxmlformats.org/drawingml/2006/chart" }));
+        { Uri = "http://schemas.openxmlformats.org/drawingml/2006/chart" }));
 
         twoCellAnchor.Append(new ClientData());
-
-        // Save the WorksheetDrawing object.
-        drawingsPart.WorksheetDrawing.Save();
         // </Snippet4>
     }
 
 }
 // </Snippet0>
-
-InsertChartInSpreadsheet(args[0], args[1], args[2], new Dictionary<string, int>() { { "First", 1 }, { "Second", 2 }, { "Third", 3 } });
