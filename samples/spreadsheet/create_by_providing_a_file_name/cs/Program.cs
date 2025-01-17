@@ -33,8 +33,6 @@ static void CreateSpreadsheetWorkbook(string filepath)
         Sheet sheet = new Sheet() { Id = workbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };
         sheets.Append(sheet);
         // </Snippet3>
-
-        workbookPart.Workbook.Save();
     }
 }
 // </Snippet0>

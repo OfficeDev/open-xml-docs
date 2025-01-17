@@ -93,7 +93,7 @@ example. .
     </w:comment>
 ```
 
-The code then appends the `Comment` to the `Comments` object and saves the changes. This
+The code then appends the `Comment` to the `Comments` object. This
 creates the required XML document object model (DOM) tree structure in
 memory which consists of a `comments` parent element with `comment` child elements under
 it.
@@ -116,29 +116,29 @@ comments part in a WordprocessingML document.
     </w:comments>
 ```
 
-With the **Comment** object instantiated, the code associates the **Comment** with a range in
+With the `Comment` object instantiated, the code associates the `Comment` with a range in
 the Wordprocessing document. <xref:DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart> and
 <xref:DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd> objects correspond to the
-**commentRangeStart** and **commentRangeEnd** elements in the Open XML Wordprocessing schema.
-A **CommentRangeStart** object is given as the argument to the <xref:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertBefore%2A>
-method of the <xref:DocumentFormat.OpenXml.Wordprocessing.Paragraph> object and a **CommentRangeEnd**
+`commentRangeStart` and `commentRangeEnd` elements in the Open XML Wordprocessing schema.
+A `CommentRangeStart` object is given as the argument to the <xref:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertBefore%2A>
+method of the <xref:DocumentFormat.OpenXml.Wordprocessing.Paragraph> object and a `CommentRangeEnd`
 object is passed to the <xref:DocumentFormat.OpenXml.OpenXmlCompositeElement.InsertAfter%2A> method.
 This creates a comment range that extends from immediately before the first character of the first paragraph
 in the Wordprocessing document to immediately after the last character of the first paragraph.
 
 A <xref:DocumentFormat.OpenXml.Wordprocessing.CommentReference> object represents a
-**commentReference** element in the Open XML Wordprocessing schema. A
-commentReference links a specific comment in the **WordprocessingCommentsPart** part (the Comments.xml
+`commentReference` element in the Open XML Wordprocessing schema. A
+commentReference links a specific comment in the `WordprocessingCommentsPart` part (the Comments.xml
 file in the Wordprocessing package) to a specific location in the
-document body (the **MainDocumentPart** part
+document body (the `MainDocumentPart` part
 contained in the Document.xml file in the Wordprocessing package). The
-**id** attribute of the comment,
+`id` attribute of the comment,
 commentRangeStart, commentRangeEnd, and commentReference is the same for
-a given comment, so the commentReference **id**
-attribute must match the comment **id** attribute
-value that it links to. In the sample, the code adds a **commentReference** element by using the API, and
-instantiates a **CommentReference** object,
-specifying the **Id** value, and then adds it to a <xref:DocumentFormat.OpenXml.Wordprocessing.Run> object.
+a given comment, so the commentReference `id`
+attribute must match the comment `id` attribute
+value that it links to. In the sample, the code adds a `commentReference` element by using the API, and
+instantiates a `CommentReference` object,
+specifying the `Id` value, and then adds it to a <xref:DocumentFormat.OpenXml.Wordprocessing.Run> object.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/word/insert_a_comment/cs/Program.cs#snippet5)]
@@ -150,7 +150,7 @@ specifying the **Id** value, and then adds it to a <xref:DocumentFormat.OpenXml.
 --------------------------------------------------------------------------------
 ## Sample Code
 The following code example shows how to create a comment and associate
-it with a range in a word processing document. To call the method **AddCommentOnFirstParagraph** pass in the path of
+it with a range in a word processing document. To call the method `AddCommentOnFirstParagraph` pass in the path of
 the document, your name, your initials, and the comment text.
 
 ### [C#](#tab/cs-5)
@@ -174,8 +174,8 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)
 
-[Language-Integrated Query (LINQ)](/previous-versions/bb397926(v=vs.140))
+- [Language-Integrated Query (LINQ)](/previous-versions/bb397926(v=vs.140))
 
-[Extension Methods (C\# Programming Guide)](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
+- [Extension Methods (C\# Programming Guide)](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
 
-[Extension Methods (Visual Basic)](/dotnet/visual-basic/programming-guide/language-features/procedures/extension-methods)
+- [Extension Methods (Visual Basic)](/dotnet/visual-basic/programming-guide/language-features/procedures/extension-methods)

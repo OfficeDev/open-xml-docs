@@ -35,7 +35,6 @@ static void AddCustomUI(string fileName, string customUIContent)
 
         // <Snippet3>
         part.CustomUI = new CustomUI(customUIContent);
-        part.CustomUI.Save();
         // </Snippet3>
     }
 }

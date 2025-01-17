@@ -68,7 +68,6 @@ Module MyModule
             ' Set the value of the cell.
             result.CellValue = New CellValue(index.ToString())
             result.DataType = New EnumValue(Of CellValues)(CellValues.SharedString)
-            worksheetPart.Worksheet.Save()
         End Using
     End Sub
     ' </Snippet1>
@@ -126,7 +125,6 @@ Module MyModule
 
         ' The text does not exist in the part. Create the SharedStringItem.
         shareStringPart.SharedStringTable.AppendChild(New SharedStringItem(New DocumentFormat.OpenXml.Spreadsheet.Text(text)))
-        shareStringPart.SharedStringTable.Save()
 
         Return i
     End Function
@@ -167,7 +165,6 @@ Module MyModule
             newCell.CellReference = cellReference
 
             row.InsertBefore(newCell, refCell)
-            worksheet.Save()
 
             Return newCell
         End If

@@ -46,12 +46,6 @@ Module Program
 
                 ' Replace the removed paragraph with a placeholder.
                 textBody1.AppendChild(New Drawing.Paragraph())
-
-                ' Save the slide in the source file.
-                slide1.Slide.Save()
-
-                ' Save the slide in the target file.
-                slide2.Slide.Save()
             End Using
         End Using
     End Sub

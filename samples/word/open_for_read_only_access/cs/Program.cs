@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
@@ -6,6 +5,7 @@ using System.IO.Packaging;
 using System.IO;
 
 
+// <Snippet0>
 static void OpenWordprocessingDocumentReadonly(string filepath)
 {
     // <Snippet1>
@@ -42,8 +42,7 @@ static void OpenWordprocessingPackageReadonly(string filepath)
 {
     // <Snippet2>
     // Open System.IO.Packaging.Package.
-    Package wordPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read);
-
+    using (Package wordPackage = Package.Open(filepath, FileMode.Open, FileAccess.Read))
     // Open a WordprocessingDocument based on a package.
     using (WordprocessingDocument wordDocument = WordprocessingDocument.Open(wordPackage))
     // </Snippet2>
@@ -62,9 +61,6 @@ static void OpenWordprocessingPackageReadonly(string filepath)
         // Call Save to generate an exception and show that access is read-only.
         // mainDocumentPart.Document.Save();
     }
-
-    // Close the package.
-    wordPackage.Close();
 }
 
 

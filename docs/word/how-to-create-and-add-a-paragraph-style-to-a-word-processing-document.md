@@ -152,7 +152,7 @@ type attribute:
 The type attribute has a value of paragraph, which indicates that the
 following style definition is a paragraph style.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 You can set the paragraph, character, table and numbering styles types
 by specifying the corresponding value in the type attribute of the style
@@ -200,7 +200,7 @@ The paragraph style is then applied to paragraphs by referencing the
 styleId attribute value for this style in the paragraph properties'
 **pStyle** element.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ---------------------------------------------------------------------------------
 
@@ -210,7 +210,7 @@ The `CreateAndAddParagraphStyle` method
 begins by retrieving a reference to the styles element in the styles
 part. The styles element is the root element of the part and contains
 all of the individual style elements. If the reference is null, the
-styles element is created and saved to the part.
+styles element is created.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet3)]

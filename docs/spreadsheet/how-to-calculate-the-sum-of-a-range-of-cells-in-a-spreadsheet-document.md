@@ -28,7 +28,7 @@ The code then opens the file for editing as a `SpreadsheetDocument` document pac
 For each `Row` object within the contiguous range, the code iterates through each `Cell` object and determines if the column of the cell is within the contiguous
 range by calling the `CompareColumn` method. If the cell is within the contiguous range, the code adds the value of the cell to the sum. Then it gets the `SharedStringTablePart` object if it exists. If it does not exist, it creates one using the <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.AddNewPart*> method. It inserts the result into the `SharedStringTablePart` object by calling the `InsertSharedStringItem` method.
 
-The code inserts a new cell for the result into the worksheet by calling the `InsertCellInWorksheet` method and set the value of the cell. For more information, see [how to insert a cell in a spreadsheet](how-to-insert-text-into-a-cell-in-a-spreadsheet.md#how-the-sample-code-works), and then save the worksheet.
+The code inserts a new cell for the result into the worksheet by calling the `InsertCellInWorksheet` method and sets the value of the cell. For more information, see [how to insert a cell in a spreadsheet](how-to-insert-text-into-a-cell-in-a-spreadsheet.md#how-the-sample-code-works).
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/spreadsheet/calculate_the_sum_of_a_range_of_cells/cs/Program.cs#snippet1)]

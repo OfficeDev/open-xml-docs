@@ -63,9 +63,6 @@ Module Program
                     c.Remove()
                 End If
             Next
-
-            ' Save the comment part change.
-            commentPart.Comments.Save()
             ' </Snippet7>
 
             ' <Snippet8>
@@ -100,9 +97,6 @@ Module Program
             For Each c As CommentReference In commentRangeReferenceToDelete
                 c.Remove()
             Next
-
-            ' Save changes back to the MainDocumentPart part.
-            doc.Save()
             ' </Snippet9>
         End Using
     End Sub

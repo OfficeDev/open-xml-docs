@@ -37,7 +37,6 @@ static void DeleteTextFromCell(string docName, string sheetName, string colName,
         }
 
         cell.Remove();
-        worksheetPart.Worksheet.Save();
     }
 }
 // </Snippet1>
@@ -140,10 +139,7 @@ static void RemoveSharedStringItem(int shareStringId, SpreadsheetDocument docume
                         }
                     }
                 }
-                part.Worksheet.Save();
             }
-
-            document.WorkbookPart.SharedStringTablePart?.SharedStringTable.Save();
         }
     }
 }

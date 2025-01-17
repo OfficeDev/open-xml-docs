@@ -149,7 +149,7 @@ Module MyModule
         Dim part As StyleDefinitionsPart
         part = doc.MainDocumentPart.AddNewPart(Of StyleDefinitionsPart)()
         Dim root As New Styles
-        root.Save(part)
+
         Return part
     End Function
     ' </Snippet6>

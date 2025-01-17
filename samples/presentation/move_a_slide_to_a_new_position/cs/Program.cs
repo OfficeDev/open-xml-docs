@@ -136,9 +136,6 @@ public class SlideMover
 
         // Insert the source slide at its new position after the target slide.
         slideIdList.InsertAfter(sourceSlide, targetSlide);
-
-        // Save the modified presentation.
-        presentation.Save();
         // </Snippet7>
     }
     // </Snippet0>

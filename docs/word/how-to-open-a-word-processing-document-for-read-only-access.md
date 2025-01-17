@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 02/06/2024
+ms.date: 01/16/2025
 ms.localizationpriority: high
 ---
 # Open a word processing document for read-only access
@@ -23,7 +23,7 @@ access.
 
 
 ---------------------------------------------------------------------------------
-## When to Open a Document for Read-only Access 
+## When to Open a Document for Read-only Access
 
 Sometimes you want to open a document to inspect or retrieve some
 information, and you want to do so in a way that ensures the document
@@ -34,7 +34,7 @@ programmatically open a read-only word processing document.
 
 --------------------------------------------------------------------------------
 ## Create a WordprocessingDocument Object
- 
+
 In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class represents a
 Word document package. To work with a Word document, first create an
 instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
@@ -53,10 +53,10 @@ editable are listed in the following table.
 
 Open Method|Class Library Reference Topic|Description
 --|--|--
-Open(String, Boolean)|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified file.
-Open(Stream, Boolean)|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.IO.Stream,System.Boolean)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified IO stream.
-Open(String, Boolean, OpenSettings)|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified file.
-Open(Stream, Boolean, OpenSettings)|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.IO.Stream,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified I/O stream.
+`Open(String, Boolean)`|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified file.
+`Open(Stream, Boolean)`|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.IO.Stream,System.Boolean)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified IO stream.
+`Open(String, Boolean, OpenSettings)`|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.String,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified file.
+`Open(Stream, Boolean, OpenSettings)`|<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.IO.Stream,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)> |Create an instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class from the specified I/O stream.
 
 The table above lists only those `Open`
 methods that accept a Boolean value as the second parameter to specify
@@ -135,7 +135,7 @@ code example.
 [!include[Structure](../includes/word/structure.md)]
 
 --------------------------------------------------------------------------------
-## Generate the WordprocessingML Markup to Add Text and Attempt to Save 
+## Generate the WordprocessingML Markup to Add Text and Attempt to Save
 The sample code shows how you can add some text and attempt to save the
 changes to show that access is read-only. Once you have access to the
 body of the main document part, you add text by adding instances of the
@@ -152,7 +152,7 @@ following code example adds the paragraph, run, and text.
 
 
 --------------------------------------------------------------------------------
-## Sample Code 
+## Sample Code
 The first example method shown here, `OpenWordprocessingDocumentReadOnly`, opens a Word
 document for read-only access. Call it by passing a full path to the
 file that you want to open. For example, the following code example
@@ -201,7 +201,7 @@ The following is the complete sample code in C\# and VB.
 [!code-vb[](../../samples/word/open_for_read_only_access/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
-## See also 
+## See also
 
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

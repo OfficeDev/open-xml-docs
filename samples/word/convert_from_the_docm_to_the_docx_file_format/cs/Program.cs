@@ -28,9 +28,8 @@ static void ConvertDOCMtoDOCX(string fileName)
         var vbaPart = docPart.VbaProjectPart;
         if (vbaPart is not null)
         {
-            // Delete the vbaProject part and then save the document.
+            // Delete the vbaProject part.
             docPart.DeletePart(vbaPart);
-            docPart.Document.Save();
             // </Snippet4>
 
             // <Snippet5>

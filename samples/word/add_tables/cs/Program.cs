@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -8,15 +7,16 @@ using System;
 string fileName = args[0];
 
 AddTable(fileName, new string[,] {
-    { "Texas", "TX" },
-        { "California", "CA" },
-        { "New York", "NY" },
-        { "Massachusetts", "MA" }
+    { "Hawaii", "HI" },
+    { "California", "CA" },
+    { "New York", "NY" },
+    { "Massachusetts", "MA" }
 });
 // </Snippet2>
 
 // Take the data from a two-dimensional array and build a table at the 
 // end of the supplied document.
+// <Snippet0>
 // <Snippet1>
 static void AddTable(string fileName, string[,] data)
 // </Snippet1>
@@ -91,7 +91,6 @@ static void AddTable(string fileName, string[,] data)
             // </Snippet5>
             // <Snippet6>
             doc.Body.Append(table);
-            doc.Save();
             // </Snippet6>
         }
     }

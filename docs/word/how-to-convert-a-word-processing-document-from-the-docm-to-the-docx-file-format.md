@@ -97,7 +97,7 @@ The code starts by opening the document by using the `Open` method and indicatin
 `*
 
 
-The sample code next verifies that the vbaProject part exists, deletes the part and saves the document. The code has no effect if the file to convert does not contain a vbaProject part. To find the part, the sample code retrieves the `VbaProjectPart` property of the document. It calls the `DeletePart` method to delete the part, and then calls the `Save` method of the document to save the changes.
+The sample code next verifies that the vbaProject part exists and deletes the part. The code has no effect if the file to convert does not contain a vbaProject part. To find the part, the sample code retrieves the `VbaProjectPart` property of the document and calls the `DeletePart` method to delete the part.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/word/convert_from_the_docm_to_the_docx_file_format/cs/Program.cs#snippet4)]

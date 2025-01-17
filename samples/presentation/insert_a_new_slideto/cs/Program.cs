@@ -10,17 +10,18 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        InsertNewSlide.InsertNew(args[0], int.Parse(args[1]), args[2]);
+        InsertNewSlideNS.InsertNewSlide(args[0], int.Parse(args[1]), args[2]);
     }
 }
 
 namespace SlideHelpers
 {
-    public class InsertNewSlide
+    public class InsertNewSlideNS
     {
-        // <Snippet>
+        // <Snippet0>
+        // <Snippet10>
         // Insert a slide into the specified presentation.
-        public static void InsertNew(string presentationFile, int position, string slideTitle)
+        public static void InsertNewSlide(string presentationFile, int position, string slideTitle)
         {
             // <Snippet1>
             // Open the source document as read/write. 
@@ -28,12 +29,13 @@ namespace SlideHelpers
             // </Snippet1>
             {
                 // Pass the source document and the position and title of the slide to be inserted to the next method.
-                InsertNewSlideIntoPresentation(presentationDocument, position, slideTitle);
+                InsertNewSlide(presentationDocument, position, slideTitle);
             }
         }
-
+        // </Snippet10>
+        // <Snippet11>
         // Insert the specified slide into the presentation at the specified position.
-        public static SlidePart InsertNewSlideIntoPresentation(PresentationDocument presentationDocument, int position, string slideTitle)
+        public static SlidePart InsertNewSlide(PresentationDocument presentationDocument, int position, string slideTitle)
         {
             PresentationPart? presentationPart = presentationDocument.PresentationPart;
 
@@ -58,7 +60,8 @@ namespace SlideHelpers
 
             // Specify the group shape properties of the new slide.
             shapeTree.AppendChild(new GroupShapeProperties());
-
+            // </Snippet11>
+            // <Snippet12>
             // Declare and instantiate the title shape of the new slide.
             Shape titleShape = shapeTree.AppendChild(new Shape());
 
@@ -75,7 +78,8 @@ namespace SlideHelpers
             titleShape.TextBody = new TextBody(new Drawing.BodyProperties(),
                     new Drawing.ListStyle(),
                     new Drawing.Paragraph(new Drawing.Run(new Drawing.Text() { Text = slideTitle })));
-
+            // </Snippet12>
+            // <Snippet13>
             // Declare and instantiate the body shape of the new slide.
             Shape bodyShape = shapeTree.AppendChild(new Shape());
             drawingObjectId++;
@@ -90,12 +94,13 @@ namespace SlideHelpers
             bodyShape.TextBody = new TextBody(new Drawing.BodyProperties(),
                     new Drawing.ListStyle(),
                     new Drawing.Paragraph());
-
+            // </Snippet13>
+            // <Snippet14>
             // Create the slide part for the new slide.
             SlidePart slidePart = presentationPart.AddNewPart<SlidePart>();
-
-            // Save the new slide part.
-            slide.Save(slidePart);
+            
+            // Assign the new slide to the new slide part
+            slidePart.Slide = slide;
 
             // Modify the slide ID list in the presentation part.
             // The slide ID list should not be null.
@@ -153,11 +158,10 @@ namespace SlideHelpers
             SlideId newSlideId = slideIdList!.InsertAfter(new SlideId(), prevSlideId);
             newSlideId.Id = maxSlideId;
             newSlideId.RelationshipId = presentationPart.GetIdOfPart(slidePart);
-
-            // Save the modified presentation.
-            presentationPart.Presentation.Save();
+            // </Snippet14>
 
             return slidePart;
         }
+        // </Snippet0>
     }
 }

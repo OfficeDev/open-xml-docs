@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 02/02/2024
+ms.date: 01/17/2025
 ms.localizationpriority: medium
 ---
 # Remove the headers and footers from a word processing document
@@ -77,8 +77,8 @@ the main document, storing the reference in a variable named `docPart`.
 ## Confirm Header/Footer Existence
 
 Given a reference to the document part, the code next determines if it
-has any work to do─that is, if the document contains any headers or
-footers. To decide, the code calls the `Count` method of both the <xref:DocumentFormat.OpenXml.Packaging.MainDocumentPart.HeaderParts> and 
+has any work to do, i.e. if the document contains any headers or
+footers. To decide, the code calls the `Count` method of both the <xref:DocumentFormat.OpenXml.Packaging.MainDocumentPart.HeaderParts> and
 <xref:DocumentFormat.OpenXml.Packaging.MainDocumentPart.FooterParts> properties of the document
 part, and if either returns a value greater than 0, the code continues.
 Be aware that the `HeaderParts` and `FooterParts` properties each return an
@@ -115,9 +115,7 @@ At this point, the code has deleted the header and footer parts, but the
 document still contains orphaned references to those parts. Before the
 orphaned references can be removed, the code must retrieve a reference
 to the content of the document (that is, to the XML content contained
-within the main document part). Later, after the changes are made, the
-code must ensure that they persist by explicitly saving them. Between
-these two operations, the code must delete the orphaned references.
+within the main document part).
 
 To remove the stranded references, the code first retrieves a collection
 of HeaderReference elements, converts the collection to a `List`, and then

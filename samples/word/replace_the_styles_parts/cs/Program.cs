@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using System;
 using System.IO;
@@ -6,6 +5,7 @@ using System.Xml;
 using System.Xml.Linq;
 
 
+// <Snippet0>
 // Replace the styles in the "to" document with the styles in
 // the "from" document.
 // <Snippet1>
@@ -15,7 +15,7 @@ static void ReplaceStyles(string fromDoc, string toDoc)
 
     // <Snippet3>
     // Extract and replace the styles part.
-    var node = ExtractStylesPart(fromDoc, false);
+    XDocument? node = ExtractStylesPart(fromDoc, false);
 
     if (node is not null)
     {

@@ -55,7 +55,7 @@ object. If other cells within the spreadsheet document no longer
 reference the `SharedStringItem` object, you
 remove the item from the `SharedStringTablePart` object. Then you iterate
 through each `Worksheet` object and `Cell` object and refresh the shared string
-references. Finally, you save the worksheet and the <xref:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable> object.
+references.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/delete_text_from_a_cell/cs/Program.cs#snippet3)]

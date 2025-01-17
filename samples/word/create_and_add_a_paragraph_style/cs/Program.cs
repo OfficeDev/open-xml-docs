@@ -1,10 +1,10 @@
-// <Snippet>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Linq;
 
 
+// <Snippet>
 // Create a new paragraph style with the specified style ID, primary style name, and aliases and 
 // add it to the specified style definitions part.
 // <Snippet1>
@@ -19,8 +19,6 @@ static void CreateAndAddParagraphStyle(StyleDefinitionsPart styleDefinitionsPart
     {
         styleDefinitionsPart.Styles = new Styles();
         styles = styleDefinitionsPart.Styles;
-
-        styleDefinitionsPart.Styles.Save();
     }
     // </Snippet3>
 
@@ -103,8 +101,8 @@ static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument? doc)
     }
 
     part = doc.MainDocumentPart.AddNewPart<StyleDefinitionsPart>();
-    Styles root = new Styles();
-    root.Save(part);
+    part.Styles = new Styles();
+
     return part;
 }
 

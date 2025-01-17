@@ -1,9 +1,7 @@
-' <Snippet0>
 Imports System.IO
 Imports System.IO.Packaging
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
-
 
 Module MyModule
 
@@ -21,8 +19,8 @@ Module MyModule
         ' </Snippet8>
     End Sub
 
+    ' <Snippet0>
     Public Sub OpenWordprocessingDocumentReadonly(ByVal filepath As String)
-
         ' <Snippet1>
         ' Open a WordprocessingDocument based on a filepath.
         Using wordProcessingDocument As WordprocessingDocument = WordprocessingDocument.Open(filepath, False)
@@ -101,5 +99,5 @@ Module MyModule
             End Using
         End Using
     End Sub
+    ' </Snippet0>
 End Module
-' </Snippet0>

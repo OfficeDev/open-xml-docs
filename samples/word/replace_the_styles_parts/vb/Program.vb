@@ -1,30 +1,21 @@
-' <Snippet0>
+Imports DocumentFormat.OpenXml.Packaging
+Imports System
 Imports System.IO
 Imports System.Xml
-Imports DocumentFormat.OpenXml.Packaging
+Imports System.Xml.Linq
 
-Module Program
-    Sub Main(args As String())
-        ' <Snippet2>
-        Dim fromDoc As String = args(0)
-        Dim toDoc As String = args(1)
+Module MyModule
 
-        ReplaceStyles(fromDoc, toDoc)
-        ' </Snippet2>
-    End Sub
-
-
-
-    ' Replace the styles in the "to" document with the styles
-    ' in the "from" document.
-
+    ' <Snippet0>
+    ' Replace the styles in the "to" document with the styles in
+    ' the "from" document.
     ' <Snippet1>
-    Public Sub ReplaceStyles(fromDoc As String, toDoc As String)
+    Sub ReplaceStyles(fromDoc As String, toDoc As String)
         ' </Snippet1>
 
         ' <Snippet3>
-        ' Extract and copy the styles part.
-        Dim node = ExtractStylesPart(fromDoc, False)
+        ' Extract and replace the styles part.
+        Dim node As XDocument = ExtractStylesPart(fromDoc, False)
 
         If node IsNot Nothing Then
             ReplaceStylesPart(toDoc, node, False)
@@ -32,13 +23,13 @@ Module Program
         ' </Snippet3>
 
         ' <Snippet4>
-        ' Extract and copy the stylesWithEffects part. To fully support 
-        ' round-tripping from Word 2013+ to Word 2010, you should 
+        ' Extract and replace the stylesWithEffects part. To fully support 
+        ' round-tripping from Word 2010 to Word 2007, you should 
         ' replace this part, as well.
-        node = ExtractStylesPart(fromDoc, True)
+        node = ExtractStylesPart(fromDoc)
 
         If node IsNot Nothing Then
-            ReplaceStylesPart(toDoc, node, True)
+            ReplaceStylesPart(toDoc, node)
         End If
 
         Return
@@ -50,15 +41,14 @@ Module Program
     ' with the styles in the XDocument.
 
     ' <Snippet5>
-    Public Sub ReplaceStylesPart(ByVal fileName As String, ByVal newStyles As XDocument, Optional ByVal setStylesWithEffectsPart As Boolean = True)
+    Sub ReplaceStylesPart(fileName As String, newStyles As XDocument, Optional setStylesWithEffectsPart As Boolean = True)
         ' </Snippet5>
 
         ' <Snippet6>
         ' Open the document for write access and get a reference.
-        Using document = WordprocessingDocument.Open(fileName, True)
-
-            If document.MainDocumentPart Is Nothing Or (document.MainDocumentPart.StyleDefinitionsPart Is Nothing And document.MainDocumentPart.StylesWithEffectsPart Is Nothing) Then
-                Throw New ArgumentNullException("MainDocumentPart and/or one or both of the Styles parts is nothing.")
+        Using document As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
+            If document.MainDocumentPart Is Nothing OrElse (document.MainDocumentPart.StyleDefinitionsPart Is Nothing AndAlso document.MainDocumentPart.StylesWithEffectsPart Is Nothing) Then
+                Throw New ArgumentNullException("MainDocumentPart and/or one or both of the Styles parts is null.")
             End If
 
             ' Get a reference to the main document part.
@@ -66,6 +56,7 @@ Module Program
 
             ' Assign a reference to the appropriate part to the
             ' stylesPart variable.
+
             Dim stylesPart As StylesPart = Nothing
             ' </Snippet6>
 
@@ -88,42 +79,48 @@ Module Program
 
     ' Extract the styles or stylesWithEffects part from a 
     ' word processing document as an XDocument instance.
-    Public Function ExtractStylesPart(
-      ByVal fileName As String,
-      Optional ByVal getStylesWithEffectsPart As Boolean = True) As XDocument
-
+    Function ExtractStylesPart(fileName As String, Optional getStylesWithEffectsPart As Boolean = True) As XDocument
         ' Declare a variable to hold the XDocument.
         Dim styles As XDocument = Nothing
 
         ' Open the document for read access and get a reference.
-        Using document = WordprocessingDocument.Open(fileName, False)
-
+        Using document As WordprocessingDocument = WordprocessingDocument.Open(fileName, False)
             ' Get a reference to the main document part.
             Dim docPart = document.MainDocumentPart
 
             If docPart Is Nothing Then
-                Throw New ArgumentException("MainDocumentPart is Nothing")
+                Throw New ArgumentNullException("MainDocumentPart is null.")
             End If
 
-            ' Assign a reference to the appropriate part to the 
+            ' Assign a reference to the appropriate part to the
             ' stylesPart variable.
-            Dim stylesPart As StylesPart = Nothing
+            Dim stylesPart As StylesPart
 
-            If getStylesWithEffectsPart And docPart.StylesWithEffectsPart IsNot Nothing Then
+            If getStylesWithEffectsPart AndAlso docPart.StylesWithEffectsPart IsNot Nothing Then
                 stylesPart = docPart.StylesWithEffectsPart
             ElseIf docPart.StyleDefinitionsPart IsNot Nothing Then
                 stylesPart = docPart.StyleDefinitionsPart
             Else
-                Throw New ArgumentException("StyleWithEffectsPart and StyleDefinitionsPart are Nothing")
+                Throw New ArgumentNullException("StyleWithEffectsPart and StyleDefinitionsPart are undefined")
             End If
 
             Using reader = XmlNodeReader.Create(stylesPart.GetStream(FileMode.Open, FileAccess.Read))
-                ' Create the XDocument:  
+                ' Create the XDocument.
                 styles = XDocument.Load(reader)
             End Using
         End Using
         ' Return the XDocument instance.
         Return styles
     End Function
+    ' </Snippet0>
+
+    Sub Main(args As String())
+        ' <Snippet2>
+        Dim fromDoc As String = args(0)
+        Dim toDoc As String = args(1)
+
+        ReplaceStyles(fromDoc, toDoc)
+        ' </Snippet2>
+    End Sub
+
 End Module
-' </Snippet0>

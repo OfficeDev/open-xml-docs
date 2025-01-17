@@ -61,9 +61,6 @@ static void DeleteComments(string fileName, string author = "")
                 c.Remove();
             }
         }
-
-        // Save the comment part change.
-        commentPart.Comments.Save();
         // </Snippet7>
 
         // <Snippet8>
@@ -101,9 +98,6 @@ static void DeleteComments(string fileName, string author = "")
         {
             c.Remove();
         }
-
-        // Save changes back to the MainDocumentPart part.
-        doc.Save();
         // </Snippet9>
     }
 }

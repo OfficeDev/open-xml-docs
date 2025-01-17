@@ -39,7 +39,6 @@ static int InsertSharedStringItem(string text, SharedStringTablePart shareString
 
     // The text does not exist in the part. Create the SharedStringItem and return its index.
     shareStringPart.SharedStringTable.AppendChild(new SharedStringItem(new DocumentFormat.OpenXml.Spreadsheet.Text(text)));
-    shareStringPart.SharedStringTable.Save();
 
     return i;
 }

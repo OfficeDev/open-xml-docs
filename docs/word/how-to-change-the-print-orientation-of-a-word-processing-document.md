@@ -70,9 +70,7 @@ The following code first determines which orientation to apply and
 then opens the document by using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A>
 method and sets the `isEditable` parameter to
 `true` to indicate that the document should
-be read/write. The code maintains a Boolean variable that tracks whether
-the document has changed (so that it can save the document later, if the
-document has changed). The code retrieves a reference to the main
+be read/write. The code retrieves a reference to the main
 document part, and then uses that reference to retrieve a collection of
 all of the descendants of type <xref:DocumentFormat.OpenXml.Wordprocessing.SectionProperties> within the content of the
 document. Later code will use this collection to set the orientation for
@@ -110,10 +108,9 @@ if the property does not exist, and the new orientation is Portrait, the
 code will not update the page. If the `Orient` property already exists, and its value
 differs from the new orientation value supplied as a parameter to the
 method, the code sets the `Value` property of
-the `Orient` property, and sets both the
-`pageOrientationChanged` and the `documentChanged` flags. (The code uses the `pageOrientationChanged` flag to determine whether it
-must update the page size and margins. It uses the `documentChanged` flag to determine whether it must
-save the document at the end.)
+the `Orient` property, and sets the
+`pageOrientationChanged` flag. (The code uses the `pageOrientationChanged` flag to determine whether it
+must update the page size and margins.)
 
 > [!NOTE]
 > If the code must create the `Orient` property, it must also create the value to store in the property, as a new <xref:DocumentFormat.OpenXml.EnumValue%601> instance, supplying the new orientation in the `EnumValue` constructor.
@@ -159,20 +156,6 @@ margin settings, as shown in the following code.
 [!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet7)]
 ### [Visual Basic](#tab/vb-6)
 [!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet7)]
-***
-
-
------------------------------------------------------------------------------
-
-## Saving the Document
-
-After all the modifications, the code determines whether the document
-has changed. If the document has changed, the code saves it.
-
-### [C#](#tab/cs-7)
-[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet8)]
-### [Visual Basic](#tab/vb-7)
-[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet8)]
 ***
 
 

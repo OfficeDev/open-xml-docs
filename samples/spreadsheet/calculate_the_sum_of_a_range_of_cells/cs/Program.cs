@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-// Given a document name, a worksheet name, the name of the first cell in the contiguous range, 
-// the name of the last cell in the contiguous range, and the name of the results cell, 
+// Given a document name, a worksheet name, the name of the first cell in the contiguous range,
+// the name of the last cell in the contiguous range, and the name of the results cell,
 // calculates the sum of the cells in the contiguous range and inserts the result into the results cell.
 // Note: All cells in the contiguous range must contain numbers.
 // <Snippet0>
@@ -72,8 +72,6 @@ static void CalculateSumOfCellRange(string docName, string worksheetName, string
         // Set the value of the cell.
         result.CellValue = new CellValue(index.ToString());
         result.DataType = new EnumValue<CellValues>(CellValues.SharedString);
-
-        worksheetPart.Worksheet.Save();
     }
 }
 // </Snippet1>
@@ -122,7 +120,7 @@ static int CompareColumn(string column1, string column2)
 // </Snippet4>
 
 // <Snippet5>
-// Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
+// Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text
 // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
 static int InsertSharedStringItem(string text, SharedStringTablePart shareStringPart)
 {
@@ -146,15 +144,14 @@ static int InsertSharedStringItem(string text, SharedStringTablePart shareString
 
     // The text does not exist in the part. Create the SharedStringItem.
     shareStringPart.SharedStringTable.AppendChild(new SharedStringItem(new DocumentFormat.OpenXml.Spreadsheet.Text(text)));
-    shareStringPart.SharedStringTable.Save();
 
     return i;
 }
 // </Snippet5>
 
 // <Snippet6>
-// Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet. 
-// If the cell already exists, returns it. 
+// Given a column name, a row index, and a WorksheetPart, inserts a cell into the worksheet.
+// If the cell already exists, returns it.
 static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPart worksheetPart)
 {
     Worksheet worksheet = worksheetPart.Worksheet;
@@ -173,7 +170,7 @@ static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPar
         sheetData.Append(row);
     }
 
-    // If there is not a cell with the specified column name, insert one.  
+    // If there is not a cell with the specified column name, insert one.
     if (row.Elements<Cell>().Where(c => c.CellReference is not null && c.CellReference.Value == columnName + rowIndex).Count() > 0)
     {
         return row.Elements<Cell>().Where(c => c.CellReference is not null && c.CellReference.Value == cellReference).First();
@@ -195,7 +192,6 @@ static Cell InsertCellInWorksheet(string columnName, uint rowIndex, WorksheetPar
         Cell newCell = new Cell() { CellReference = cellReference };
         row.InsertBefore(newCell, refCell);
 
-        worksheet.Save();
         return newCell;
     }
 }

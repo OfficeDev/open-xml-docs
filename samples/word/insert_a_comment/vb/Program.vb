@@ -1,4 +1,3 @@
-' <Snippet>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
@@ -16,6 +15,7 @@ Module Program
 
 
 
+    ' <Snippet>
     ' Insert a comment on the first paragraph.
     Public Sub AddCommentOnFirstParagraph(ByVal fileName As String, ByVal author As String, ByVal initials As String, ByVal comment As String)
         ' Use the file name and path passed in as an 
@@ -29,7 +29,7 @@ Module Program
             Dim firstParagraph As Paragraph = document.MainDocumentPart.Document.Descendants(Of Paragraph)().First()
             Dim comments As Comments = Nothing
             Dim id As String = "0"
-            ' </Snippet0>
+            ' </Snippet2>
 
             ' Verify that the document contains a 
             ' WordProcessingCommentsPart part; if not, add a new one.
@@ -54,7 +54,6 @@ Module Program
             Dim cmt As New Comment() With {.Id = id, .Author = author, .Initials = initials, .Date = DateTime.Now}
             cmt.AppendChild(p)
             comments.AppendChild(cmt)
-            comments.Save()
             ' </Snippet4>
 
             ' Specify the text range for the Comment. 

@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/20/2024
+ms.date: 01/16/2025
 ms.localizationpriority: medium
 ---
 # Working with notes slides
@@ -36,11 +36,11 @@ notes element.
 **Example**: Consider the following PresentationML notes slide:
 
 ```xml
-<p:notes>  
-    <p:cSld>  
-        …  
-    </p:cSld>  
-    …  
+<p:notes>
+    <p:cSld>
+        …
+    </p:cSld>
+    …
 </p:notes>
 ```
 
@@ -73,8 +73,8 @@ specification describes the attributes of the `<notes/>` element.
 
 |                    **Attributes**                     | **Description**    |
 |-------------------------------------------------------|---------------------|
-| showMasterPhAnim (Show Master Placeholder Animations) | Specifies whether or not to display animations on placeholders from the master slide.<br/><br/>The possible values for this attribute are defined by the W3C XML Schema `boolean` datatype. |
-|           showMasterSp (Show Master Shapes)           |       Specifies if shapes on the master slide should be shown on slides or not.<br/><br/>The possible values for this attribute are defined by the W3C XML Schema `boolean` datatype.       |
+| `showMasterPhAnim` (Show Master Placeholder Animations) | Specifies whether or not to display animations on placeholders from the master slide.<br/><br/>The possible values for this attribute are defined by the W3C XML Schema `boolean` datatype. |
+|           `showMasterSp` (Show Master Shapes)           |       Specifies if shapes on the master slide should be shown on slides or not.<br/><br/>The possible values for this attribute are defined by the W3C XML Schema `boolean` datatype.       |
 
 &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
@@ -96,7 +96,7 @@ are therefore commonly associated with the `NotesSlide` class are shown in the f
   The `ColorMapOverride` class corresponds to
   the `<clrMapOvr/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
   specification introduces the `<clrMapOvr/>` element:
-  
+
   This element provides a mechanism with which to override the color
   schemes listed within the `<ClrMap/>` element. If the
   `<masterClrMapping/>` child element is present, the color scheme defined
@@ -111,18 +111,18 @@ are therefore commonly associated with the `NotesSlide` class are shown in the f
   The `CommonSlideData` class corresponds to
   the `<cSld/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
   specification introduces the `<cSld/>` element:
-  
+
   This element specifies a container for the type of slide information
   that is relevant to all of the slide types. All slides share a common
   set of properties that is independent of the slide type; the description
   of these properties for any particular slide is stored within the
   slide's `<cSld/>` container. Slide data specific to the slide type
   indicated by the parent element is stored elsewhere.
-  
+
   The actual data in `<cSld/>` describe only the particular parent slide;
   it is only the type of information stored that is common across all
   slides.
-  
+
   &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 - ### ExtensionListWithModification Class
@@ -130,17 +130,17 @@ are therefore commonly associated with the `NotesSlide` class are shown in the f
   The `ExtensionListWithModification` class
   corresponds to the `<extLst/>`element. The following information from the
   [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<extLst/>` element:
-  
+
   This element specifies the extension list with modification ability
   within which all future extensions of element type `<ext/>` are defined.
   The extension list along with corresponding future extensions is used to
   extend the storage capabilities of the PresentationML framework. This
   allows for various new kinds of data to be stored natively within the
   framework.
-  
+
   [Note: Using this extLst element allows the generating application to
   store whether this extension property has been modified. end note]
-  
+
   &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
@@ -180,8 +180,8 @@ is retrieved or added if the presentation does not already have a `SlidePart`.
 ***
 
 
-In this snippet the a `NoteSlide` is added to the `NoteSlidePart` if one does not already exist. 
-The `NotesSlide` class constructor creates instances of the `CommonSlideData` class. 
+In this snippet the a `NoteSlide` is added to the `NoteSlidePart` if one does not already exist.
+The `NotesSlide` class constructor creates instances of the `CommonSlideData` class.
 The `CommonSlideData` class constructor creates an instance of the <xref:DocumentFormat.OpenXml.Presentation.ShapeTree> class, whose constructor in turn
 creates additional class instances: an instance of the <xref:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties> class, an
 instance of the <xref:DocumentFormat.OpenXml.Presentation.GroupShapeProperties> class, and an instance
@@ -267,12 +267,12 @@ The following is the complete code sample in both C\# and Visual Basic.
 ## See also
 
 
-[About the Open XML SDK for Office](../about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
 
-[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
+[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 
-[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)  
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)
 
-[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)
 
-[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)

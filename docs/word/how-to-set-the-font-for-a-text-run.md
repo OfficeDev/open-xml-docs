@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 01/16/2024
+ms.date: 01/17/2025
 ms.localizationpriority: high
 ---
 # Set the font for a text run
@@ -31,7 +31,7 @@ document programmatically.
 ## Structure of the Run Fonts Element
 
 The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification can
-be useful when working with **rFonts** element.
+be useful when working with `rFonts` element.
 
 This element specifies the fonts which shall be used to display the text
 contents of this run. Within a single run, there may be up to four types
@@ -89,12 +89,12 @@ for all characters in the Complex Script range.
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
 
-After opening the package file for read/write, the code creates a **RunProperties** object that contains a **RunFonts** object that has its **Ascii** property set to "Arial". **RunProperties** and **RunFonts** objects represent run properties
+After opening the package file for read/write, the code creates a `RunProperties` object that contains a `RunFonts` object that has its `Ascii` property set to "Arial". `RunProperties` and `RunFonts` objects represent run properties
 `rPr` elements and run fonts elements
 `rFont`, respectively, in the Open XML
-Wordprocessing schema. Use a **RunProperties**
+Wordprocessing schema. Use a `RunProperties`
 object to specify the properties of a given text run. In this case, to
-set the font of the run to Arial, the code creates a **RunFonts** object and then sets the **Ascii** value to "Arial".
+set the font of the run to Arial, the code creates a `RunFonts` object and then sets the `Ascii` value to "Arial".
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/word/set_the_font_for_a_text_run/cs/Program.cs#snippet1)]
@@ -104,17 +104,13 @@ set the font of the run to Arial, the code creates a **RunFonts** object and the
 
 
 The code then creates a <xref:DocumentFormat.OpenXml.Wordprocessing.Run> object that represents the first text
-run of the document. The code instantiates a **Run** and sets it to the first text run of the
-document. The code then adds the **RunProperties** object to the **Run** object using the <xref:DocumentFormat.OpenXml.OpenXmlElement.PrependChild*> method. The **PrependChild** method adds an element as the first
+run of the document. The code instantiates a `Run` and sets it to the first text run of the
+document. The code then adds the `RunProperties` object to the `Run` object using the <xref:DocumentFormat.OpenXml.OpenXmlElement.PrependChild*> method. The `PrependChild` method adds an element as the first
 child element to the specified element in the in-memory XML structure.
 In this case, running the code sample produces an in-memory XML
-structure where the **RunProperties** element
-is added as the first child element of the **Run** element. It then saves the changes back to
-the <xref:DocumentFormat.OpenXml.Wordprocessing.Document.Save*> object. Calling the
-**Save** method of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object commits
-changes made to the in-memory representation of the **MainDocumentPart** part back into the XML file for
-the **MainDocumentPart** (the document.xml file
-in the Wordprocessing package).
+structure where the `RunProperties` element
+is added as the first child element of the `Run` element. There is no need to call `Save` directly, because
+we are inside of a using statement.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/word/set_the_font_for_a_text_run/cs/Program.cs#snippet2)]

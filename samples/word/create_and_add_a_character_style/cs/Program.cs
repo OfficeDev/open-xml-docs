@@ -84,7 +84,7 @@ static StyleDefinitionsPart AddStylesPartToPackage(WordprocessingDocument? doc)
 
     part = doc.MainDocumentPart.AddNewPart<StyleDefinitionsPart>();
     Styles root = new Styles();
-    root.Save(part);
+
     return part;
 }
 // </Snippet0>

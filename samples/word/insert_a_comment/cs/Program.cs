@@ -1,10 +1,10 @@
-// <Snippet>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Linq;
 
 
+// <Snippet>
 // Insert a comment on the first paragraph.
 static void AddCommentOnFirstParagraph(string fileName, string author, string initials, string comment)
 {
@@ -14,7 +14,7 @@ static void AddCommentOnFirstParagraph(string fileName, string author, string in
     using (WordprocessingDocument document = WordprocessingDocument.Open(fileName, true))
     // </Snippet1>
     {
-        if (document.MainDocumentPart is null/* || document.MainDocumentPart.WordprocessingCommentsPart is null*/)
+        if (document.MainDocumentPart is null)
         {
             throw new ArgumentNullException("MainDocumentPart and/or Body is null.");
         }
@@ -65,7 +65,6 @@ static void AddCommentOnFirstParagraph(string fileName, string author, string in
             };
         cmt.AppendChild(p);
         wordprocessingCommentsPart.Comments.AppendChild(cmt);
-        wordprocessingCommentsPart.Comments.Save();
         // </Snippet4>
 
         // Specify the text range for the Comment. 

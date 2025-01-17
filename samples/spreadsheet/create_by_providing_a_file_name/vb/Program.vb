@@ -37,8 +37,6 @@ Module Program
             }
             sheets.Append(sheet)
             ' </Snippet3>
-
-            workbookPart.Workbook.Save()
         End Using
     End Sub
     ' </Snippet0>

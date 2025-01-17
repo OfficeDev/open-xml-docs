@@ -5,26 +5,28 @@ Imports Drawing = DocumentFormat.OpenXml.Drawing
 
 Public Module Program
     Public Sub Main(args As String())
-        SlideHelpers.InsertNewSlide.InsertNew(args(0), Integer.Parse(args(1)), args(2))
+        SlideHelpers.InsertNewSlide.InsertNewSlide(args(0), Integer.Parse(args(1)), args(2))
     End Sub
 End Module
 
 Namespace SlideHelpers
     Public Class InsertNewSlide
-        ' <Snippet>
+        ' <Snippet0>
+        ' <Snippet10>
         ' Insert a slide into the specified presentation.
-        Public Shared Sub InsertNew(presentationFile As String, position As Integer, slideTitle As String)
+        Public Shared Sub InsertNewSlide(presentationFile As String, position As Integer, slideTitle As String)
             ' <Snippet1>
             ' Open the source document as read/write. 
             Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, True)
                 ' </Snippet1>
                 ' Pass the source document and the position and title of the slide to be inserted to the next method.
-                InsertNewSlideIntoPresentation(presentationDocument, position, slideTitle)
+                InsertNewSlide(presentationDocument, position, slideTitle)
             End Using
         End Sub
-
+        ' </Snippet10>
+        ' <Snippet11>
         ' Insert the specified slide into the presentation at the specified position.
-        Public Shared Function InsertNewSlideIntoPresentation(presentationDocument As PresentationDocument, position As Integer, slideTitle As String) As SlidePart
+        Public Shared Function InsertNewSlide(presentationDocument As PresentationDocument, position As Integer, slideTitle As String) As SlidePart
             Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
 
             ' Verify that the presentation is not empty.
@@ -47,7 +49,8 @@ Namespace SlideHelpers
 
             ' Specify the group shape properties of the new slide.
             shapeTree.AppendChild(New GroupShapeProperties())
-
+            ' </Snippet11>
+            ' <Snippet12>
             ' Declare and instantiate the title shape of the new slide.
             Dim titleShape As Shape = shapeTree.AppendChild(New Shape())
 
@@ -64,28 +67,29 @@ Namespace SlideHelpers
             titleShape.TextBody = New TextBody(New Drawing.BodyProperties(),
                     New Drawing.ListStyle(),
                     New Drawing.Paragraph(New Drawing.Run(New Drawing.Text() With {.Text = slideTitle})))
-
+            ' </Snippet12>
+            ' <Snippet13>
             ' Declare and instantiate the body shape of the new slide.
             Dim bodyShape As Shape = shapeTree.AppendChild(New Shape())
             drawingObjectId += 1
 
             ' Specify the required shape properties for the body shape.
-            bodyShape.NonVisualShapeProperties = New NonVisualShapeProperties(
-                New NonVisualDrawingProperties() With {.Id = drawingObjectId, .Name = "Content Placeholder"},
-                New NonVisualShapeDrawingProperties(New Drawing.ShapeLocks() With {.NoGrouping = True}),
-                New ApplicationNonVisualDrawingProperties(New PlaceholderShape() With {.Index = 1}))
+            bodyShape.NonVisualShapeProperties = New NonVisualShapeProperties(New NonVisualDrawingProperties() With {.Id = drawingObjectId, .Name = "Content Placeholder"},
+                    New NonVisualShapeDrawingProperties(New Drawing.ShapeLocks() With {.NoGrouping = True}),
+                    New ApplicationNonVisualDrawingProperties(New PlaceholderShape() With {.Index = 1}))
             bodyShape.ShapeProperties = New ShapeProperties()
 
             ' Specify the text of the body shape.
             bodyShape.TextBody = New TextBody(New Drawing.BodyProperties(),
                     New Drawing.ListStyle(),
                     New Drawing.Paragraph())
-
+            ' </Snippet13>
+            ' <Snippet14>
             ' Create the slide part for the new slide.
             Dim slidePart As SlidePart = presentationPart.AddNewPart(Of SlidePart)()
 
-            ' Save the new slide part.
-            slide.Save(slidePart)
+            ' Assign the new slide to the new slide part
+            slidePart.Slide = slide
 
             ' Modify the slide ID list in the presentation part.
             ' The slide ID list should not be null.
@@ -95,10 +99,10 @@ Namespace SlideHelpers
             Dim maxSlideId As UInteger = 1
             Dim prevSlideId As SlideId = Nothing
 
-            Dim slideIds As OpenXmlElementList = If(slideIdList?.ChildElements, Nothing)
+            Dim slideIds As OpenXmlElementList = slideIdList?.ChildElements
 
             For Each slideId As SlideId In slideIds
-                If slideId.Id IsNot Nothing AndAlso CUInt(slideId.Id) > maxSlideId Then
+                If slideId.Id IsNot Nothing AndAlso slideId.Id.Value > maxSlideId Then
                     maxSlideId = slideId.Id
                 End If
 
@@ -134,11 +138,10 @@ Namespace SlideHelpers
             Dim newSlideId As SlideId = slideIdList.InsertAfter(New SlideId(), prevSlideId)
             newSlideId.Id = maxSlideId
             newSlideId.RelationshipId = presentationPart.GetIdOfPart(slidePart)
-
-            ' Save the modified presentation.
-            presentationPart.Presentation.Save()
+            ' </Snippet14>
 
             Return slidePart
         End Function
+        ' </Snippet0>
     End Class
 End Namespace

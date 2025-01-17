@@ -14,7 +14,7 @@ string pptxPath = args[0];
 using (PresentationDocument presentationDocument = PresentationDocument.Open(pptxPath, true) ?? throw new Exception("Presentation Document does not exist"))
 {
     // Get the first slide in the presentation or use the InsertNewSlide.InsertNewSlideIntoPresentation helper method to insert a new slide.
-    SlidePart slidePart = presentationDocument.PresentationPart?.SlideParts.FirstOrDefault() ?? InsertNewSlide.InsertNewSlideIntoPresentation(presentationDocument, 1, "my new slide");
+    SlidePart slidePart = presentationDocument.PresentationPart?.SlideParts.FirstOrDefault() ?? InsertNewSlideNS.InsertNewSlide(presentationDocument, 1, "my new slide");
 
     // Add a new NoteSlidePart if one does not already exist
     NotesSlidePart notesSlidePart = slidePart.NotesSlidePart ?? slidePart.AddNewPart<NotesSlidePart>();
@@ -35,13 +35,14 @@ using (PresentationDocument presentationDocument = PresentationDocument.Open(ppt
                         new D.Extents() { Cx = 0, Cy = 0 },
                         new D.ChildOffset() { X = 0, Y = 0 },
                         new D.ChildExtents() { Cx = 0, Cy = 0 })),
+                // </Snippet2>
                 // <Snippet3>
                 new P.Shape(
-                    // </Snippet2>
                     new P.NonVisualShapeProperties(
                         new P.NonVisualDrawingProperties() { Id = 3, Name = "test Placeholder 3" },
                         new P.NonVisualShapeDrawingProperties(),
-                        new P.ApplicationNonVisualDrawingProperties()),
+                        new P.ApplicationNonVisualDrawingProperties(
+                            new P.PlaceholderShape() { Type = PlaceholderValues.Body, Index = 1 })),
                     new P.ShapeProperties(),
                     new P.TextBody(
                         new D.BodyProperties(),
@@ -61,10 +62,9 @@ using (PresentationDocument presentationDocument = PresentationDocument.Open(ppt
     new P.CommonSlideData(
         new P.ShapeTree(
             new P.NonVisualGroupShapeProperties(
-                new P.NonVisualDrawingProperties() { Id = 1, Name = "tacocat" },
+                new P.NonVisualDrawingProperties() { Id = 1, Name = "New Placeholder" },
                 new P.NonVisualGroupShapeDrawingProperties(),
-                new P.ApplicationNonVisualDrawingProperties(
-                    new P.PlaceholderShape() { Type = PlaceholderValues.Body, Index = 1 })),
+                new P.ApplicationNonVisualDrawingProperties()),
             new P.GroupShapeProperties())),
     new P.ColorMap()
     {

@@ -121,10 +121,7 @@ Module Program
                             End If
                         End If
                     Next
-                    part.Worksheet.Save()
                 Next
-
-                document.WorkbookPart.SharedStringTablePart?.SharedStringTable.Save()
             End If
         End If
     End Sub

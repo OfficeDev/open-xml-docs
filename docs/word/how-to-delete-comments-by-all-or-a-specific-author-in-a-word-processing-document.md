@@ -130,7 +130,7 @@ contain all the comment ID values.
 
 Given the `commentsToDelete` collection, to
 the following code loops through all the comments that require deleting
-and performs the deletion. The code then saves the comments part.
+and performs the deletion.
 
 ### [C#](#tab/cs-6)
 [!code-csharp[](../../samples/word/delete_comments_by_all_or_a_specific_author/cs/Program.cs#snippet7)]

@@ -45,12 +45,6 @@ static void MoveParagraphToPresentation(string sourceFile, string targetFile)
 
         // Replace the removed paragraph with a placeholder.
         textBody1.AppendChild(new Drawing.Paragraph());
-
-        // Save the slide in the source file.
-        slide1.Slide.Save();
-
-        // Save the slide in the target file.
-        slide2.Slide.Save();
     }
 }
 // </Snippet2>

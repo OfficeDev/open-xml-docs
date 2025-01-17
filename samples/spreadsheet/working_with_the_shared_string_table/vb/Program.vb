@@ -35,7 +35,6 @@ Module Program
 
         ' The text does not exist in the part. Create the SharedStringItem and return its index.
         shareStringPart.SharedStringTable.AppendChild(New SharedStringItem(New DocumentFormat.OpenXml.Spreadsheet.Text(text)))
-        shareStringPart.SharedStringTable.Save()
 
         Return i
     End Function

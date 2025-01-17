@@ -36,7 +36,6 @@ Module Program
 
             ' <Snippet3>
             part.CustomUI = New CustomUI(customUIContent)
-            part.CustomUI.Save()
             ' </Snippet3>
         End Using
     End Sub
