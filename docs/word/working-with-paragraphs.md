@@ -16,7 +16,7 @@ ms.localizationpriority: high
 ---
 # Working with paragraphs
 
-This topic discusses the Open XML SDK [Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph) class and how it relates to the
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Wordprocessing.Paragraph> class and how it relates to the
 Open XML File Format WordprocessingML schema.
 
 
@@ -38,7 +38,7 @@ examples of paragraph properties are alignment, border, hyphenation
 override, indentation, line spacing, shading, text direction, and
 widow/orphan control.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the most common Open XML SDK classes used when
 working with paragraphs.
@@ -53,7 +53,7 @@ working with paragraphs.
 
 ---------------------------------------------------------------------------------
 ## Paragraph Class
-The Open XML SDK [Paragraph](/dotnet/api/documentformat.openxml.wordprocessing.paragraph) class represents the paragraph
+The Open XML SDK <xref:DocumentFormat.OpenXml.Wordprocessing.Paragraph> class represents the paragraph
 `<p>` element defined in the Open XML
 File Format schema for WordprocessingML documents as discussed above.
 Use the **Paragraph** object to manipulate
@@ -66,19 +66,19 @@ In WordprocessingML, a paragraph's properties are specified via the
 paragraph properties `<pPr>` element.
 Some examples of paragraph properties are alignment, border, hyphenation
 override, indentation, line spacing, shading, text direction, and
-widow/orphan control. The OXML SDK [ParagraphProperties](/dotnet/api/documentformat.openxml.wordprocessing.paragraphproperties) class represents the
+widow/orphan control. The OXML SDK <xref:DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties> class represents the
 `<pPr>` element.
 
 ### Run Class
 
 Paragraphs in a word-processing document most often contain text. In the
 OXML File Format schema for WordprocessingML documents, the run `<r>` element is provided to demarcate a region of
-text. The OXML SDK [Run](/dotnet/api/documentformat.openxml.wordprocessing.run) class represents the `<r>` element.
+text. The OXML SDK <xref:DocumentFormat.OpenXml.Wordprocessing.Run> class represents the `<r>` element.
 
 ### Text Object
 
 With the `<r>` element, the text `<t>` element is the container for the text that
-makes up the document content. The OXML SDK [Text](/dotnet/api/documentformat.openxml.wordprocessing.text) class represents the `<t>` element.
+makes up the document content. The OXML SDK <xref:DocumentFormat.OpenXml.Wordprocessing.Text> class represents the `<t>` element.
 
 
 --------------------------------------------------------------------------------

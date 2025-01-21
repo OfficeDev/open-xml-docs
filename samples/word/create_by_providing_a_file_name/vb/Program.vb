@@ -6,12 +6,17 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 Module MyModule
 
     Sub Main(args As String())
+        ' <Snippet2>
+        CreateWordprocessingDocument(args(0))
+        ' </Snippet2>
     End Sub
 
+    ' <Snippet0>
     Public Sub CreateWordprocessingDocument(ByVal filepath As String)
         ' Create a document by supplying the filepath.
-        Using wordDocument As WordprocessingDocument =
-            WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document)
+        ' <Snippet1>
+        Using wordDocument As WordprocessingDocument = WordprocessingDocument.Create(filepath, WordprocessingDocumentType.Document)
+            ' </Snippet1>
 
             ' Add a main document part. 
             Dim mainPart As MainDocumentPart = wordDocument.AddMainDocumentPart()
@@ -24,4 +29,5 @@ Module MyModule
             run.AppendChild(New Text("Create text in body - CreateWordprocessingDocument"))
         End Using
     End Sub
+    ' </Snippet0>
 End Module

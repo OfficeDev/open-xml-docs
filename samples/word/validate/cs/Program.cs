@@ -39,8 +39,6 @@ static void ValidateWordDocument(string filepath)
         {
             Console.WriteLine(ex.Message);
         }
-
-        wordprocessingDocument.Dispose();
     }
 }
 

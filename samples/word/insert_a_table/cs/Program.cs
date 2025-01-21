@@ -1,19 +1,21 @@
+// <Snippet>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 
-CreateTable(args[0]);
 
 // Insert a table into a word processing document.
 static void CreateTable(string fileName)
 {
     // Use the file name and path passed in as an argument 
-    // to open an existing Word 2007 document.
+    // to open an existing Word document.
 
-    using (WordprocessingDocument doc
-        = WordprocessingDocument.Open(fileName, true))
+    // <Snippet1>
+    using (WordprocessingDocument doc = WordprocessingDocument.Open(fileName, true))
+    // </Snippet1>
     {
+        // <Snippet2>
         // Create an empty table.
         Table table = new Table();
 
@@ -61,7 +63,9 @@ static void CreateTable(string fileName)
 
         // Append the TableProperties object to the empty table.
         table.AppendChild<TableProperties>(tblProp);
+        // </Snippet2>
 
+        // <Snippet3>
         // Create a row.
         TableRow tr = new TableRow();
 
@@ -77,7 +81,9 @@ static void CreateTable(string fileName)
 
         // Append the table cell to the table row.
         tr.Append(tc1);
+        // </Snippet3>
 
+        // <Snippet4>
         // Create a second table cell by copying the OuterXml value of the first table cell.
         TableCell tc2 = new TableCell(tc1.OuterXml);
 
@@ -94,5 +100,13 @@ static void CreateTable(string fileName)
 
         // Append the table to the document.
         doc.MainDocumentPart.Document.Body.Append(table);
+        // </Snippet4>
     }
 }
+// </Snippet>
+
+// <Snippet5>
+string filePath = args[0];
+
+CreateTable(filePath);
+// </Snippet5>

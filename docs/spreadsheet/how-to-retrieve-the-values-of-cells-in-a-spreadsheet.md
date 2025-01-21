@@ -10,7 +10,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/20/2023
+ms.date: 01/10/2025
 ms.localizationpriority: high
 ---
 
@@ -18,14 +18,14 @@ ms.localizationpriority: high
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically retrieve the values of cells in a spreadsheet
-document. It contains an example **GetCellValue** method to illustrate
+document. It contains an example `GetCellValue` method to illustrate
 this task.
 
 
 
 ## GetCellValue Method
 
-You can use the **GetCellValue** method to
+You can use the `GetCellValue` method to
 retrieve the value of a cell in a workbook. The method requires the
 following three parameters:
 
@@ -61,9 +61,9 @@ initializes it to null.
 
 ## Accessing the Cell
 
-Next, the code opens the document by using the **[Open](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open)** method, indicating that the document
-should be open for read-only access (the final **false** parameter). Next, the code retrieves a
-reference to the workbook part by using the **[WorkbookPart](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.workbookpart)** property of the document.
+Next, the code opens the document by using the <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open*> method, indicating that the document
+should be open for read-only access (the final `false` parameter). Next, the code retrieves a
+reference to the workbook part by using the <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart*> property of the document.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet3)]
@@ -75,11 +75,11 @@ reference to the workbook part by using the **[WorkbookPart](/dotnet/api/documen
 
 To find the requested cell, the code must first retrieve a reference to
 the sheet, given its name. The code must search all the sheet-type
-descendants of the workbook part workbook element and examine the **[Name](/dotnet/api/documentformat.openxml.spreadsheet.sheet.name)** property of each sheet that it finds.
+descendants of the workbook part workbook element and examine the <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet.Name*> property of each sheet that it finds.
 Be aware that this search looks through the relations of the workbook,
 and does not actually find a worksheet part. It finds a reference to a
-**[Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet)**, which contains information such as
-the name and **[Id](/dotnet/api/documentformat.openxml.spreadsheet.sheet.id)** of the sheet. The simplest way to do
+<xref:DocumentFormat.OpenXml.Spreadsheet.Sheet>, which contains information such as
+the name and <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet.Id*> of the sheet. The simplest way to do
 this is to use a LINQ query, as shown in the following code example.
 
 ### [C#](#tab/cs-4)
@@ -90,15 +90,15 @@ this is to use a LINQ query, as shown in the following code example.
 ***
 
 
-Be aware that the [FirstOrDefault](/dotnet/api/system.linq.enumerable.firstordefault)
+Be aware that the <xref:System.Linq.Enumerable.FirstOrDefault*>
 method returns either the first matching reference (a sheet, in this
 case) or a null reference if no match was found. The code checks for the
 null reference, and throws an exception if you passed in an invalid
 sheet name.Now that you have information about the sheet, the code must
 retrieve a reference to the corresponding worksheet part. The sheet
-information that you already retrieved provides an **[Id](/dotnet/api/documentformat.openxml.spreadsheet.sheet.id)** property, and given that **Id** property, the code can retrieve a reference to
-the corresponding **[WorksheetPart](/dotnet/api/documentformat.openxml.spreadsheet.worksheet.worksheetpart)** by calling the workbook part
-**[GetPartById](/dotnet/api/documentformat.openxml.packaging.openxmlpartcontainer.getpartbyid)** method.
+information that you already retrieved provides an <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet.Id*> property, and given that **Id** property, the code can retrieve a reference to
+the corresponding <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart*> by calling the workbook part
+<xref:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.GetPartById*> method.
 
 ### [C#](#tab/cs-5)
 [!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs?name=snippet5)]
@@ -109,10 +109,10 @@ the corresponding **[WorksheetPart](/dotnet/api/documentformat.openxml.spreadshe
 
 
 Just as when locating the named sheet, when locating the named cell, the
-code uses the **[Descendants](/dotnet/api/documentformat.openxml.openxmlelement.descendants)** method, searching for the first
-match in which the **[CellReference](/dotnet/api/documentformat.openxml.spreadsheet.celltype.cellreference)** property equals the specified
-**addressName**
-parameter. After this method call, the variable named **theCell** will either contain a reference to the cell,
+code uses the <xref:DocumentFormat.OpenXml.OpenXmlElement.Descendants*> method, searching for the first
+match in which the <xref:DocumentFormat.OpenXml.Spreadsheet.CellType.CellReference*> property equals the specified
+`addressName`
+parameter. After this method call, the variable named `theCell` will either contain a reference to the cell,
 or will contain a null reference.
 
 ### [C#](#tab/cs-6)
@@ -125,9 +125,9 @@ or will contain a null reference.
 
 ## Retrieving the Value
 
-At this point, the variable named **theCell**
+At this point, the variable named `theCell`
 contains either a null reference, or a reference to the cell that you
-requested. If you examine the Open XML content (that is, **theCell.OuterXml**) for the cell, you will find XML
+requested. If you examine the Open XML content (that is, `theCell.OuterXml`) for the cell, you will find XML
 such as the following.
 
 ```xml
@@ -136,7 +136,7 @@ such as the following.
     </x:c>
 ```
 
-The **[InnerText](/dotnet/api/documentformat.openxml.openxmlelement.innertext)** property contains the content for
+The <xref:DocumentFormat.OpenXml.OpenXmlElement.InnerText*> property contains the content for
 the cell, and so the next block of code retrieves this value.
 
 ### [C#](#tab/cs-7)
@@ -149,10 +149,11 @@ the cell, and so the next block of code retrieves this value.
 
 Now, the sample method must interpret the value. As it is, the code
 handles numeric and date, string, and Boolean values. You can extend the
-sample as necessary. The **[Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell)** type provides a **[DataType](/dotnet/api/documentformat.openxml.spreadsheet.celltype.datatype)** property that indicates the type
-of the data within the cell. The value of the **DataType** property is null for numeric and date
-types. It contains the value **CellValues.SharedString** for strings, and **CellValues.Boolean** for Boolean values. If the
-**DataType** property is null, the code returns
+sample as necessary. The <xref:DocumentFormat.OpenXml.Spreadsheet.Cell> type provides a
+<xref:DocumentFormat.OpenXml.Spreadsheet.CellType.DataType*> property that indicates the type
+of the data within the cell. The value of the `DataType` property is null for numeric and date
+types. It contains the value `CellValues.SharedString` for strings, and `CellValues.Boolean` for Boolean values. If the
+`DataType` property is null, the code returns
 the value of the cell (it is a numeric value). Otherwise, the code
 continues by branching based on the data type.
 
@@ -164,8 +165,8 @@ continues by branching based on the data type.
 ***
 
 
-If the **DataType** property contains **CellValues.SharedString**, the code must retrieve a
-reference to the single **[SharedStringTablePart](/dotnet/api/documentformat.openxml.packaging.workbookpart.sharedstringtablepart)**.
+If the `DataType` property contains `CellValues.SharedString`, the code must retrieve a
+reference to the single <xref:DocumentFormat.OpenXml.Packaging.WorkbookPart.SharedStringTablePart*>.
 
 ### [C#](#tab/cs-9)
 [!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet9)]
@@ -177,7 +178,7 @@ reference to the single **[SharedStringTablePart](/dotnet/api/documentformat.ope
 
 Next, if the string table exists (and if it does not, the workbook is
 damaged and the sample code returns the index into the string table
-instead of the string itself) the code returns the **InnerText** property of the element it finds at the
+instead of the string itself) the code returns the `InnerText` property of the element it finds at the
 specified index (first converting the value property to an integer).
 
 ### [C#](#tab/cs-10)
@@ -188,7 +189,7 @@ specified index (first converting the value property to an integer).
 ***
 
 
-If the **DataType** property contains **CellValues.Boolean**, the code converts the 0 or 1
+If the `DataType` property contains `CellValues.Boolean`, the code converts the 0 or 1
 it finds in the cell value into the appropriate text string.
 
 ### [C#](#tab/cs-11)
@@ -199,17 +200,18 @@ it finds in the cell value into the appropriate text string.
 ***
 
 
-Finally, the procedure returns the variable **value**, which contains the requested information.
+Finally, the procedure returns the variable `value`, which contains the requested information.
 
 ## Sample Code
 
-The following is the complete **GetCellValue** code sample in C\# and Visual Basic.
+The following is the complete `GetCellValue` code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
 [!code-csharp[](../../samples/spreadsheet/retrieve_the_values_of_cells/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
 [!code-vb[](../../samples/spreadsheet/retrieve_the_values_of_cells/vb/Program.vb#snippet0)]
+***
 
 ## See also
 

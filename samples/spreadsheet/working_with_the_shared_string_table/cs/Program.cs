@@ -1,8 +1,21 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System;
+
+using (var spreadsheetDoc = SpreadsheetDocument.Open(args[0], true))
+{
+    if (spreadsheetDoc is null) throw new ArgumentException("SpreadsheetDocument does not exist");
+
+    WorkbookPart workbookPart = spreadsheetDoc.WorkbookPart ?? spreadsheetDoc.AddWorkbookPart();
+    SharedStringTablePart sharedStringTablePart = workbookPart.SharedStringTablePart ?? 
+        workbookPart.AddNewPart<SharedStringTablePart>();
+
+    InsertSharedStringItem("test text", sharedStringTablePart);
+}
 
 // Given text and a SharedStringTablePart, creates a SharedStringItem with the specified text 
 // and inserts it into the SharedStringTablePart. If the item already exists, returns its index.
+// <Snippet0>
 static int InsertSharedStringItem(string text, SharedStringTablePart shareStringPart)
 {
     // If the part does not contain a SharedStringTable, create one.
@@ -26,7 +39,7 @@ static int InsertSharedStringItem(string text, SharedStringTablePart shareString
 
     // The text does not exist in the part. Create the SharedStringItem and return its index.
     shareStringPart.SharedStringTable.AppendChild(new SharedStringItem(new DocumentFormat.OpenXml.Spreadsheet.Text(text)));
-    shareStringPart.SharedStringTable.Save();
 
     return i;
 }
+// </Snippet0>

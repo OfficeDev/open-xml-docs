@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/02/2025
 ms.localizationpriority: medium
 ---
 
@@ -21,77 +21,91 @@ This topic shows how to use the classes in the Open XML SDK for
 Office to add a comment to the first slide in a presentation
 programmatically.
 
+> [!NOTE]
+> This sample is for PowerPoint modern comments. For classic comments view
+> the [archived sample on GitHub](https://github.com/OfficeDev/open-xml-docs/blob/7002d692ab4abc629d617ef6a0214fc2bf2910c8/docs/how-to-add-a-comment-to-a-slide-in-a-presentation.md).
+
 
 [!include[Structure](../includes/presentation/structure.md)]
 
-## The Structure of the Comment Element
+[!include[description of a comment](../includes/presentation/modern-comment-description.md)]
 
-A comment is a text note attached to a slide, with the primary purpose
-of enabling readers of a presentation to provide feedback to the
-presentation author. Each comment contains an unformatted text string
-and information about its author, and is attached to a particular
-location on a slide. Comments can be visible while editing the
-presentation, but do not appear when a slide show is given. The
-displaying application decides when to display comments and determines
-their visual appearance.
+## How the Sample Code Works
 
-The following XML element specifies a single comment attached to a
-slide. It contains the text of the comment (**text**), its position on the slide (**pos**), and attributes referring to its author
-(**authorId**), date and time (**dt**), and comment index (**idx**).
+The sample code opens the presentation document in the using statement. Then it instantiates the CommentAuthorsPart, and verifies that there is an existing comment authors part. If there is not, it adds one.
 
-```xml
-    <p:cm authorId="0" dt="2006-08-28T17:26:44.129" idx="1">
-        <p:pos x="10" y="10"/>
-        <p:text>Add diagram to clarify.</p:text>
-    </p:cm>
-```
+### [C#](#tab/cs-1)
+[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs#snippet1)]
 
-The following table contains the definitions of the members and
-attributes of the **cm** (comment) element.
+### [Visual Basic](#tab/vb-1)
+[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb#snippet1)]
+***
 
-| Member/Attribute | Definition |
-|---|---|
-| authorId | Refers to the ID of an author in the comment author list for the document. |
-| dt | The date and time this comment was last modified. |
-| idx | An identifier for this comment that is unique within a list of all comments by this author in this document. An author's first comment in a document has index 1. |
-| pos | The positioning information for the placement of a comment on a slide surface. |
-| text | Comment text. |
-| extLst | Specifies the extension list with modification ability within which all future extensions of element type ext are defined. The extension list along with corresponding future extensions is used to extend the storage capabilities of the PresentationML framework. This allows for various new kinds of data to be stored natively within the framework. |
+The code determines whether there is an existing PowerPoint author part in the presentation part; if not, it adds one, then checks if there is an authors list 
+and adds one if it is missing. It also verifies that the author that is passed in is on the list of existing authors; if so, it assigns the existing author ID. If not, it adds a new author to the list of authors and assigns an author ID and the parameter values.
 
+### [C#](#tab/cs-2)
+[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs#snippet2)]
 
-The following XML schema code example defines the members of the **cm** element in addition to the required and
-optional attributes.
+### [Visual Basic](#tab/vb-2)
+[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb#snippet2)]
+***
 
-```xml
-    <complexType name="CT_Comment">
-       <sequence>
-           <element name="pos" type="a:CT_Point2D" minOccurs="1" maxOccurs="1"/>
-           <element name="text" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-           <element name="extLst" type="CT_ExtensionListModify" minOccurs="0" maxOccurs="1"/>
-       </sequence>
-       <attribute name="authorId" type="xsd:unsignedInt" use="required"/>
-       <attribute name="dt" type="xsd:dateTime" use="optional"/>
-       <attribute name="idx" type="ST_Index" use="required"/>
-    </complexType>
-```
+Next the code determines if there is a slide id and returns if one does not exist
+
+### [C#](#tab/cs-3)
+[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs#snippet3)]
+
+### [Visual Basic](#tab/vb-3)
+[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb#snippet3)]
+***
+
+In the segment below, the code gets the relationship ID. If it exists, it is used to find the slide part
+otherwise the first slide in the slide parts enumerable is taken. Then it verifies that there is 
+a PowerPoint comments part for the slide and if not adds one.
+
+### [C#](#tab/cs-4)
+[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs#snippet4)]
+
+### [Visual Basic](#tab/vb-4)
+[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb#snippet4)]
+***
+
+Below the code creates a new modern comment then adds a comment list to the PowerPoint comment part
+if one does not exist and adds the comment to that comment list.
+
+### [C#](#tab/cs-5)
+[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs#snippet5)]
+
+### [Visual Basic](#tab/vb-5)
+[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb#snippet5)]
+***
+
+With modern comments the slide needs to have the correct extension list and extension.
+The following code determines if the slide already has a SlideExtensionList and
+SlideExtension and adds them to the slide if they are not present.
+
+### [C#](#tab/cs-6)
+[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs#snippet6)]
+
+### [Visual Basic](#tab/vb-6)
+[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb#snippet6)]
+***
 
 ## Sample Code
 
-The following code example shows how to add comments to a
-presentation document. To run the program, you can pass in the arguments:
-
-```dotnetcli
-dotnet run -- [filePath] [initials] [name] [test ...]
-```
+Following is the complete code sample showing how to add a new comment with
+a new or existing author to a slide with or without existing comments.
 
 > [!NOTE]
 > To get the exact author name and initials, open the presentation file and click the **File** menu item, and then click **Options**. The **PowerPointOptions** window opens and the content of the **General** tab is displayed. The author name and initials must match the **User name** and **Initials** in this tab.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/add_comment/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/add_comment/vb/Program.vb#snippet0)]
+***
 
 ## See also
 

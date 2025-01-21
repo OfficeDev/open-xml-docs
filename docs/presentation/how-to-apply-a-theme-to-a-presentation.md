@@ -25,11 +25,11 @@ programmatically.
 
 -----------------------------------------------------------------------------
 ## Getting a PresentationDocument Object
-In the Open XML SDK, the [PresentationDocument](/dotnet/api/documentformat.openxml.packaging.presentationdocument) class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument> class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument** class, and then work with
 that instance. To create the class instance from the document call the
-[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.presentationdocument.open) method that uses a
+<xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open*#documentformat-openxml-packaging-presentationdocument-open(system-string-system-boolean)> method that uses a
 file path, and a Boolean value as the second parameter to specify
 whether a document is editable. To open a document for read-only access,
 specify the value **false** for this parameter.
@@ -51,12 +51,7 @@ represents the path for the target presentation document.
 ***
 
 
-The **using** statement provides a recommended
-alternative to the typical .Open, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **themeDocument** and **presentationDocument**.
+ [!include[Using Statement](../includes/presentation/using-statement.md)] `themeDocument` and `presentationDocument`.
 
 
 -----------------------------------------------------------------------------
@@ -83,7 +78,7 @@ be useful when working with this element.
 > backgrounds, fills, and effects for different objects in a
 > presentation. *end example*]
 > 
-> © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the possible child types of the Theme class.
 

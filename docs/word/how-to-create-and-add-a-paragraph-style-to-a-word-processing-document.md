@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 02/13/2024
 ms.localizationpriority: high
 ---
 # Create and add a paragraph style to a word processing document
@@ -20,7 +20,7 @@ ms.localizationpriority: high
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically create and add a paragraph style to a word
 processing document. It contains an example
-**CreateAndAddParagraphStyle** method to illustrate this task, plus a
+`CreateAndAddParagraphStyle` method to illustrate this task, plus a
 supplemental example method to add the styles part when necessary.
 
 
@@ -29,7 +29,7 @@ supplemental example method to add the styles part when necessary.
 
 ## CreateAndAddParagraphStyle Method
 
-The **CreateAndAddParagraphStyle** sample method can be used to add a
+The `CreateAndAddParagraphStyle` sample method can be used to add a
 style to a word processing document. You must first obtain a reference
 to the style definitions part in the document to which you want to add
 the style. For more information and an example of how to do this, see
@@ -43,16 +43,9 @@ interface), and optionally, any style aliases (alternate names for use
 in the user interface).
 
 ### [C#](#tab/cs-0)
-```csharp
-    public static void CreateAndAddParagraphStyle(StyleDefinitionsPart styleDefinitionsPart,
-        string styleid, string stylename, string aliases="")
-```
-
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Public Sub CreateAndAddParagraphStyle(ByVal styleDefinitionsPart As StyleDefinitionsPart, 
-    ByVal styleid As String, ByVal stylename As String, Optional ByVal aliases As String = "")
-```
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet1)]
 ***
 
 
@@ -75,7 +68,7 @@ For example, consider the following XML code example taken from a style
 definition.
 
 ```xml
-    <w:style w:type="paragraph" w:styleId="OverdueAmountPara" . . .
+    <w:style w:type="paragraph" w:styleId="OverdueAmountPara" . . .>
       <w:aliases w:val="Late Due, Late Amount" />
       <w:name w:val="Overdue Amount Para" />
     . . .
@@ -94,125 +87,23 @@ application.
 
 ## Calling the Sample Method
 
-Use the **CreateAndAddParagraphStyle** example
+Use the `CreateAndAddParagraphStyle` example
 method to create and add a named style to a word processing document
 using the Open XML SDK. The following code example shows how to open and
 obtain a reference to a word processing document, retrieve a reference
-to the style definitions part of the document, and then call the **CreateAndAddParagraphStyle** method.
+to the style definitions part of the document, and then call the `CreateAndAddParagraphStyle` method.
 
 To call the method, pass a reference to the style definitions part as
 the first parameter, the style ID of the style as the second parameter,
 the name of the style as the third parameter, and optionally, any style
 aliases as the fourth parameter. For example, the following code creates
-the "Overdue Amount Para" paragraph style in a sample file that is named
-CreateAndAddParagraphStyle.docx. It also adds a paragraph of text, and
+the "Overdue Amount Para" paragraph style. It also adds a paragraph of text, and
 applies the style to the paragraph.
 
 ### [C#](#tab/cs-1)
-```csharp
-    string strDoc = @"C:\Users\Public\Documents\CreateAndAddParagraphStyle.docx";
-
-    using (WordprocessingDocument doc = 
-        WordprocessingDocument.Open(strDoc, true))
-    {
-        // Get the Styles part for this document.
-        StyleDefinitionsPart part =
-            doc.MainDocumentPart.StyleDefinitionsPart;
-
-        // If the Styles part does not exist, add it and then add the style.
-        if (part == null)
-        {
-            part = AddStylesPartToPackage(doc);
-        }
-
-        // Set up a variable to hold the style ID.
-        string parastyleid = "OverdueAmountPara";
-
-        // Create and add a paragraph style to the specified styles part 
-        // with the specified style ID, style name and aliases.
-        CreateAndAddParagraphStyle(part,
-            parastyleid,
-            "Overdue Amount Para",
-            "Late Due, Late Amount");
-        
-        // Add a paragraph with a run and some text.
-        Paragraph p = 
-            new Paragraph(
-                new Run(
-                    new Text("This is some text in a run in a paragraph.")));
-        
-        // Add the paragraph as a child element of the w:body element.
-        doc.MainDocumentPart.Document.Body.AppendChild(p);
-
-        // If the paragraph has no ParagraphProperties object, create one.
-        if (p.Elements<ParagraphProperties>().Count() == 0)
-        {
-            p.PrependChild<ParagraphProperties>(new ParagraphProperties());
-        }
-
-        // Get a reference to the ParagraphProperties object.
-        ParagraphProperties pPr = p.ParagraphProperties;
-        
-        // If a ParagraphStyleId object doesn't exist, create one.
-        if (pPr.ParagraphStyleId == null)
-            pPr.ParagraphStyleId = new ParagraphStyleId();
-
-        // Set the style of the paragraph.
-        pPr.ParagraphStyleId.Val = parastyleid;
-    }
-```
-
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    Dim strDoc As String = "C:\Users\Public\Documents\CreateAndAddParagraphStyle.docx"
-
-    Using doc As WordprocessingDocument =
-        WordprocessingDocument.Open(strDoc, True)
-
-        ' Get the Styles part for this document.
-        Dim part As StyleDefinitionsPart =
-            doc.MainDocumentPart.StyleDefinitionsPart
-
-        ' If the Styles part does not exist, add it.
-        If part Is Nothing Then
-            part = AddStylesPartToPackage(doc)
-        End If
-
-        ' Set up a variable to hold the style ID.
-        Dim parastyleid As String = "OverdueAmountPara"
-
-        ' Create and add a paragraph style to the specified styles part 
-        ' with the specified style ID, style name and aliases.
-        CreateAndAddParagraphStyle(part,
-            parastyleid,
-            "Overdue Amount Para",
-            "Late Due, Late Amount")
-
-        ' Add a paragraph with a run and some text.
-        Dim p As New Paragraph(
-            New Run(
-                New Text("This is some text in a run in a paragraph.")))
-
-        ' Add the paragraph as a child element of the w:body element.
-        doc.MainDocumentPart.Document.Body.AppendChild(p)
-
-        ' If the paragraph has no ParagraphProperties object, create one.
-        If p.Elements(Of ParagraphProperties)().Count() = 0 Then
-            p.PrependChild(Of ParagraphProperties)(New ParagraphProperties())
-        End If
-
-        ' Get a reference to the ParagraphProperties object.
-        Dim pPr As ParagraphProperties = p.ParagraphProperties
-
-        ' If a ParagraphStyleId object doesn't exist, create one.
-        If pPr.ParagraphStyleId Is Nothing Then
-            pPr.ParagraphStyleId = New ParagraphStyleId()
-        End If
-
-        ' Set the style of the paragraph.
-        pPr.ParagraphStyleId.Val = parastyleid
-    End Using
-```
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet2)]
 ***
 
 
@@ -261,7 +152,7 @@ type attribute:
 The type attribute has a value of paragraph, which indicates that the
 following style definition is a paragraph style.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 You can set the paragraph, character, table and numbering styles types
 by specifying the corresponding value in the type attribute of the style
@@ -309,38 +200,22 @@ The paragraph style is then applied to paragraphs by referencing the
 styleId attribute value for this style in the paragraph properties'
 **pStyle** element.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ---------------------------------------------------------------------------------
 
 ## How the Code Works
 
-The **CreateAndAddParagraphStyle** method
+The `CreateAndAddParagraphStyle` method
 begins by retrieving a reference to the styles element in the styles
 part. The styles element is the root element of the part and contains
 all of the individual style elements. If the reference is null, the
-styles element is created and saved to the part.
+styles element is created.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Access the root element of the styles part.
-        Styles styles = styleDefinitionsPart.Styles;
-        if (styles == null)
-        {
-            styleDefinitionsPart.Styles = new Styles();
-            styleDefinitionsPart.Styles.Save();
-        }
-```
-
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet3)]
 ### [Visual Basic](#tab/vb-2)
-```vb
-    ' Access the root element of the styles part.
-        Dim styles As Styles = styleDefinitionsPart.Styles
-        If styles Is Nothing Then
-            styleDefinitionsPart.Styles = New Styles()
-            styleDefinitionsPart.Styles.Save()
-        End If
-```
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet3)]
 ***
 
 
@@ -348,28 +223,16 @@ styles element is created and saved to the part.
 
 ## Creating the Style
 
-To create the style, the code instantiates the **[Style](/dotnet/api/documentformat.openxml.wordprocessing.style)** class and sets certain properties,
-such as the **[Type](/dotnet/api/documentformat.openxml.wordprocessing.style.type)** of style (paragraph), the **[StyleId](/dotnet/api/documentformat.openxml.wordprocessing.style.styleid)**, whether the style is a **[CustomStyle](/dotnet/api/documentformat.openxml.wordprocessing.style.customstyle)**, and whether the style is the
-**[Default](/dotnet/api/documentformat.openxml.wordprocessing.style.default)** style for its type.
+To create the style, the code instantiates the <xref:DocumentFormat.OpenXml.Wordprocessing.Style>
+class and sets certain properties, such as the <xref:DocumentFormat.OpenXml.Wordprocessing.Style.Type>
+of style (paragraph), the <xref:DocumentFormat.OpenXml.Wordprocessing.Style.StyleId>, whether the
+style is a <xref:DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle>, and whether the style is the
+<xref:DocumentFormat.OpenXml.Wordprocessing.Style.Default> style for its type.
 
 ### [C#](#tab/cs-3)
-```csharp
-    // Create a new paragraph style element and specify some of the attributes.
-    Style style = new Style() { Type = StyleValues.Paragraph,
-        StyleId = styleid,
-        CustomStyle = true,
-        Default = false
-    };
-```
-
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-3)
-```vb
-    ' Create a new paragraph style element and specify some of the attributes.
-    Dim style As New Style() With { .Type = StyleValues.Paragraph, _
-     .StyleId = styleid, _
-     .CustomStyle = True, _
-     .[Default] = False}
-```
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet4)]
 ***
 
 
@@ -384,128 +247,29 @@ The code results in the following XML.
 
 The code next creates the child elements of the style, which define the
 properties of the style. To create an element, you instantiate its
-corresponding class, and then call the **[Append([])](/dotnet/api/documentformat.openxml.openxmlelement.append)** method add the child element to
-the style. For more information about these properties, see section 17.7
-of the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+corresponding class, and then call the <xref:DocumentFormat.OpenXml.OpenXmlElement.Append%2A>
+method add the child element to the style. For more information about these properties,
+see section 17.7 of the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification.
 
 ### [C#](#tab/cs-4)
-```csharp
-    // Create and add the child elements (properties of the style).
-    Aliases aliases1 = new Aliases() { Val = aliases };
-    AutoRedefine autoredefine1 = new AutoRedefine() { Val = OnOffOnlyValues.Off };
-    BasedOn basedon1 = new BasedOn() { Val = "Normal" };
-    LinkedStyle linkedStyle1 = new LinkedStyle() { Val = "OverdueAmountChar" };
-    Locked locked1 = new Locked() { Val = OnOffOnlyValues.Off };
-    PrimaryStyle primarystyle1 = new PrimaryStyle() { Val = OnOffOnlyValues.On };
-    StyleHidden stylehidden1 = new StyleHidden() { Val = OnOffOnlyValues.Off };
-    SemiHidden semihidden1 = new SemiHidden() { Val = OnOffOnlyValues.Off };
-    StyleName styleName1 = new StyleName() { Val = stylename };
-    NextParagraphStyle nextParagraphStyle1 = new NextParagraphStyle() { Val = "Normal" };
-    UIPriority uipriority1 = new UIPriority() { Val = 1 };
-    UnhideWhenUsed unhidewhenused1 = new UnhideWhenUsed() { Val = OnOffOnlyValues.On };
-    if (aliases != "")
-        style.Append(aliases1);
-    style.Append(autoredefine1);
-    style.Append(basedon1);
-    style.Append(linkedStyle1);
-    style.Append(locked1);
-    style.Append(primarystyle1);
-    style.Append(stylehidden1);
-    style.Append(semihidden1);
-    style.Append(styleName1);
-    style.Append(nextParagraphStyle1);
-    style.Append(uipriority1);
-    style.Append(unhidewhenused1);
-```
-
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet5)]
 ### [Visual Basic](#tab/vb-4)
-```vb
-    ' Create and add the child elements (properties of the style)
-    Dim aliases1 As New Aliases() With {.Val = aliases}
-    Dim autoredefine1 As New AutoRedefine() With {.Val = OnOffOnlyValues.Off}
-    Dim basedon1 As New BasedOn() With {.Val = "Normal"}
-    Dim linkedStyle1 As New LinkedStyle() With {.Val = "OverdueAmountChar"}
-    Dim locked1 As New Locked() With {.Val = OnOffOnlyValues.Off}
-    Dim primarystyle1 As New PrimaryStyle() With {.Val = OnOffOnlyValues.[On]}
-    Dim stylehidden1 As New StyleHidden() With {.Val = OnOffOnlyValues.Off}
-    Dim semihidden1 As New SemiHidden() With {.Val = OnOffOnlyValues.Off}
-    Dim styleName1 As New StyleName() With {.Val = stylename}
-    Dim nextParagraphStyle1 As New NextParagraphStyle() With { _
-     .Val = "Normal"}
-    Dim uipriority1 As New UIPriority() With {.Val = 1}
-    Dim unhidewhenused1 As New UnhideWhenUsed() With { _
-     .Val = OnOffOnlyValues.[On]}
-    If aliases <> "" Then
-        style.Append(aliases1)
-    End If
-    style.Append(autoredefine1)
-    style.Append(basedon1)
-    style.Append(linkedStyle1)
-    style.Append(locked1)
-    style.Append(primarystyle1)
-    style.Append(stylehidden1)
-    style.Append(semihidden1)
-    style.Append(styleName1)
-    style.Append(nextParagraphStyle1)
-    style.Append(uipriority1)
-    style.Append(unhidewhenused1)
-```
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet5)]
 ***
 
 
-Next, the code instantiates a **[StyleRunProperties](/dotnet/api/documentformat.openxml.wordprocessing.stylerunproperties)** object to create a **rPr** (Run Properties) element. You specify the character properties that apply to the style, such as font and color, in this element. The properties are then appended as children of the **rPr** element.
+Next, the code instantiates a <xref:DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties>
+object to create a `rPr` (Run Properties) element. You specify the character properties that 
+apply to the style, such as font and color, in this element. The properties are then appended
+as children of the `rPr` element.
 
-When the run properties are created, the code appends the **rPr** element to the style, and the style element to the styles root element in the styles part.
+When the run properties are created, the code appends the `rPr` element to the style, and the style element to the styles root element in the styles part.
 
 ### [C#](#tab/cs-5)
-```csharp
-    // Create the StyleRunProperties object and specify some of the run properties.
-    StyleRunProperties styleRunProperties1 = new StyleRunProperties();
-    Bold bold1 = new Bold();
-    Color color1 = new Color() { ThemeColor = ThemeColorValues.Accent2 };
-    RunFonts font1 = new RunFonts() { Ascii = "Lucida Console" };
-    Italic italic1 = new Italic();
-    // Specify a 12 point size.
-    FontSize fontSize1 = new FontSize() { Val = "24" };
-    styleRunProperties1.Append(bold1);
-    styleRunProperties1.Append(color1);
-    styleRunProperties1.Append(font1);
-    styleRunProperties1.Append(fontSize1);
-    styleRunProperties1.Append(italic1);
-
-    // Add the run properties to the style.
-    style.Append(styleRunProperties1);
-
-    // Add the style to the styles part.
-    styles.Append(style);
-```
-
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet6)]
 ### [Visual Basic](#tab/vb-5)
-```vb
-    ' Create the StyleRunProperties object and specify some of the run properties.
-    Dim styleRunProperties1 As New StyleRunProperties()
-    Dim bold1 As New Bold()
-    Dim color1 As New Color() With { _
-     .ThemeColor = ThemeColorValues.Accent2}
-    Dim font1 As New RunFonts() With { _
-     .Ascii = "Lucida Console"}
-    Dim italic1 As New Italic()
-    ' Specify a 12 point size.
-    Dim fontSize1 As New FontSize() With { _
-     .Val = "24"}
-    styleRunProperties1.Append(bold1)
-    styleRunProperties1.Append(color1)
-    styleRunProperties1.Append(font1)
-    styleRunProperties1.Append(fontSize1)
-    styleRunProperties1.Append(italic1)
-
-    ' Add the run properties to the style.
-    style.Append(styleRunProperties1)
-
-    ' Add the style to the styles part.
-    styles.Append(style)
-```
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet6)]
 ***
 
 
@@ -518,45 +282,12 @@ referencing the styleId attribute value for this style in the paragraph
 properties' pStyle element. The following code example shows how to
 apply a style to a paragraph referenced by the variable p. The style ID
 of the style to apply is stored in the parastyleid variable, and the
-ParagraphStyleId property represents the paragraph properties' **pStyle** element.
+ParagraphStyleId property represents the paragraph properties' `pStyle` element.
 
 ### [C#](#tab/cs-6)
-```csharp
-    // If the paragraph has no ParagraphProperties object, create one.
-    if (p.Elements<ParagraphProperties>().Count() == 0)
-    {
-        p.PrependChild<ParagraphProperties>(new ParagraphProperties());
-    }
-
-    // Get a reference to the ParagraphProperties object.
-    ParagraphProperties pPr = p.ParagraphProperties;
-
-    // If a ParagraphStyleId object does not exist, create one.
-    if (pPr.ParagraphStyleId == null)
-        pPr.ParagraphStyleId = new ParagraphStyleId();
-
-    // Set the style of the paragraph.
-    pPr.ParagraphStyleId.Val = parastyleid;
-```
-
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet7)]
 ### [Visual Basic](#tab/vb-6)
-```vb
-    ' If the paragraph has no ParagraphProperties object, create one.
-    If p.Elements(Of ParagraphProperties)().Count() = 0 Then
-        p.PrependChild(Of ParagraphProperties)(New ParagraphProperties())
-    End If
-
-    ' Get a reference to the ParagraphProperties object.
-    Dim pPr As ParagraphProperties = p.ParagraphProperties
-
-    ' If a ParagraphStyleId object does not exist, create one.
-    If pPr.ParagraphStyleId Is Nothing Then
-        pPr.ParagraphStyleId = New ParagraphStyleId()
-    End If
-
-    ' Set the style of the paragraph.
-    pPr.ParagraphStyleId.Val = parastyleid
-```
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet7)]
 ***
 
 
@@ -564,14 +295,14 @@ ParagraphStyleId property represents the paragraph properties' **pStyle** elemen
 
 ## Sample Code
 
-The following is the complete **CreateAndAddParagraphStyle** code sample in both
+The following is the complete `CreateAndAddParagraphStyle` code sample in both
 C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs)]
+[!code-csharp[](../../samples/word/create_and_add_a_paragraph_style/cs/Program.cs#snippet)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb)]
+[!code-vb[](../../samples/word/create_and_add_a_paragraph_style/vb/Program.vb#snippet)]
 
 ---------------------------------------------------------------------------------
 

@@ -1,1 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk" />
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\insert_a_new_slideto\cs\insert_a_new_slideto_cs.csproj" />
+  </ItemGroup>
+</Project>

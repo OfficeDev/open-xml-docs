@@ -1,44 +1,43 @@
-' <Snippet0>
-Imports DocumentFormat.OpenXml.Spreadsheet
 Imports DocumentFormat.OpenXml.Packaging
+Imports DocumentFormat.OpenXml.Spreadsheet
 
 Module Program
     Sub Main(args As String())
-        Dim fileName As String = args(0)
-        Dim hiddenSheets As List(Of Sheet) = GetHiddenSheets(fileName)
+        Dim sheets = GetHiddenSheets(args(0))
 
-        For Each sheet As Sheet In hiddenSheets
-            Console.WriteLine("Sheet ID: {0}  Name: {1}", sheet.Id, sheet.Name)
+        For Each sheet In sheets
+            Console.WriteLine(sheet.Name)
         Next
     End Sub
 
+    ' <Snippet0>
+    Function GetHiddenSheets(fileName As String) As List(Of Sheet)
+        Dim returnVal As New List(Of Sheet)()
 
-
-    Public Function GetHiddenSheets(ByVal fileName As String) As List(Of Sheet)
-        Dim returnVal As New List(Of Sheet)
-
-        Using document As SpreadsheetDocument =
-            SpreadsheetDocument.Open(fileName, False)
-
+        Using document As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
             ' <Snippet1>
             Dim wbPart As WorkbookPart = document.WorkbookPart
-            Dim sheets = wbPart.Workbook.Descendants(Of Sheet)()
-            ' </Snippet1>
 
-            ' Look for sheets where there is a State attribute defined, 
-            ' where the State has a value,
-            ' and where the value is either Hidden or VeryHidden:
+            If wbPart IsNot Nothing Then
+                Dim sheets = wbPart.Workbook.Descendants(Of Sheet)()
+                ' </Snippet1>
 
-            ' <Snippet2>
-            Dim hiddenSheets = sheets.Where(Function(item) item.State IsNot
-                Nothing AndAlso item.State.HasValue _
-                AndAlso (item.State.Value = SheetStateValues.Hidden Or
+                ' Look for sheets where there is a State attribute defined, 
+                ' where the State has a value,
+                ' and where the value is either Hidden or VeryHidden.
+
+                ' <Snippet2>
+                Dim hiddenSheets = sheets.Where(Function(item) item.State IsNot Nothing AndAlso
+                    item.State.HasValue AndAlso
+                    (item.State.Value = SheetStateValues.Hidden OrElse
                     item.State.Value = SheetStateValues.VeryHidden))
-            ' </Snippet2>
+                ' </Snippet2>
 
-            returnVal = hiddenSheets.ToList()
+                returnVal = hiddenSheets.ToList()
+            End If
         End Using
+
         Return returnVal
     End Function
+    ' </Snippet0>
 End Module
-' </Snippet0>

@@ -7,19 +7,21 @@ using P = DocumentFormat.OpenXml.Presentation;
 
 
 CreatePresentation(args[0]);
-
+// <Snippet0>
+// <Snippet101>
+// <Snippet1>
 static void CreatePresentation(string filepath)
 {
     // Create a presentation at a specified file path. The presentation document type is pptx, by default.
-    PresentationDocument presentationDoc = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation);
-    PresentationPart presentationPart = presentationDoc.AddPresentationPart();
-    presentationPart.Presentation = new Presentation();
+    using (PresentationDocument presentationDoc = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation))
+    {
+        PresentationPart presentationPart = presentationDoc.AddPresentationPart();
+        presentationPart.Presentation = new Presentation();
 
-    CreatePresentationParts(presentationPart);
-
-    //Dispose the presentation handle
-    presentationDoc.Dispose();
+        CreatePresentationParts(presentationPart);
+    }
 }
+// </Snippet1>
 
 static void CreatePresentationParts(PresentationPart presentationPart)
 {
@@ -46,7 +48,8 @@ static void CreatePresentationParts(PresentationPart presentationPart)
     presentationPart.AddPart(slideMasterPart1, "rId1");
     presentationPart.AddPart(themePart1, "rId5");
 }
-
+// </Snippet101>
+// <Snippet102>
 static SlidePart CreateSlidePart(PresentationPart presentationPart)
 {
     SlidePart slidePart1 = presentationPart.AddNewPart<SlidePart>("rId2");
@@ -58,6 +61,7 @@ static SlidePart CreateSlidePart(PresentationPart presentationPart)
                         new P.NonVisualGroupShapeDrawingProperties(),
                         new ApplicationNonVisualDrawingProperties()),
                     new GroupShapeProperties(new TransformGroup()),
+                    // <Snippet103>
                     new P.Shape(
                         new P.NonVisualShapeProperties(
                             new P.NonVisualDrawingProperties() { Id = (UInt32Value)2U, Name = "Title 1" },
@@ -68,10 +72,13 @@ static SlidePart CreateSlidePart(PresentationPart presentationPart)
                             new BodyProperties(),
                             new ListStyle(),
                             new Paragraph(new EndParagraphRunProperties() { Language = "en-US" }))))),
+                            // </Snippet103>
             new ColorMapOverride(new MasterColorMapping()));
     return slidePart1;
 }
+// </Snippet102>
 
+// <Snippet100>
 static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
 {
     SlideLayoutPart slideLayoutPart1 = slidePart1.AddNewPart<SlideLayoutPart>("rId1");
@@ -96,7 +103,9 @@ static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
     slideLayoutPart1.SlideLayout = slideLayout;
     return slideLayoutPart1;
 }
+// </Snippet100>
 
+// <Snippet99>
 static SlideMasterPart CreateSlideMasterPart(SlideLayoutPart slideLayoutPart1)
 {
     SlideMasterPart slideMasterPart1 = slideLayoutPart1.AddNewPart<SlideMasterPart>("rId1");
@@ -124,6 +133,7 @@ static SlideMasterPart CreateSlideMasterPart(SlideLayoutPart slideLayoutPart1)
 
     return slideMasterPart1;
 }
+// </Snippet99>
 
 static ThemePart CreateTheme(SlideMasterPart slideMasterPart1)
 {
@@ -282,3 +292,4 @@ static ThemePart CreateTheme(SlideMasterPart slideMasterPart1)
     return themePart1;
 
 }
+// </Snippet0>

@@ -1,10 +1,10 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Linq;
 
 
+// <Snippet0>
 // Remove all of the headers and footers from a document.
 // <Snippet1>
 static void RemoveHeadersAndFooters(string filename)
@@ -14,9 +14,7 @@ static void RemoveHeadersAndFooters(string filename)
     // Given a document name, remove all of the headers and footers
     // from the document.
     using (WordprocessingDocument doc = WordprocessingDocument.Open(filename, true))
-    // </Snippet3>
     {
-        // <Snippet4>
         if (doc.MainDocumentPart is null)
         {
             throw new ArgumentNullException("MainDocumentPart is null.");
@@ -24,7 +22,9 @@ static void RemoveHeadersAndFooters(string filename)
 
         // Get a reference to the main document part.
         var docPart = doc.MainDocumentPart;
+        // </Snippet3>
 
+        // <Snippet4>
         // Count the header and footer parts and continue if there 
         // are any.
         if (docPart.HeaderParts.Count() > 0 || docPart.FooterParts.Count() > 0)
@@ -63,9 +63,6 @@ static void RemoveHeadersAndFooters(string filename)
             {
                 footer.Remove();
             }
-
-            // Save the changes.
-            document.Save();
             // </Snippet6>
         }
     }

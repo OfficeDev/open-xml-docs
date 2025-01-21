@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 12/05/2023
+ms.date: 01/10/2025
 ms.localizationpriority: medium
 ---
 # Retrieve a dictionary of all named ranges in a spreadsheet document
@@ -27,7 +27,7 @@ to illustrate this task.
 The **GetDefinedNames** method accepts a
 single parameter that indicates the name of the document from which to
 retrieve the defined names. The method returns an
-[Dictionary](/dotnet/api/system.collections.generic.dictionary-2)
+<xref:System.Collections.Generic.Dictionary`2>
 instance that contains information about the defined names within the
 specified workbook, which may be empty if there are no defined names.
 

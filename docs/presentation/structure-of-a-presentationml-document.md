@@ -9,15 +9,15 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 09/16/2021
+ms.date: 11/26/2024
 ms.localizationpriority: high
 ---
 
 # Structure of a PresentationML document
 
-The document structure of a PresentationML document consists of the \<presentation\> (Presentation) element that contains \<sldMaster\> (Slide Master), \<sldLayout\> (Slide Layout), \<sld \> (Slide), and \<theme\> (Theme) elements that reference the slides in the presentation. (The Theme element is the root element of the DrawingMLTheme part.) These elements are the minimum elements required for a valid presentation document.
+The document structure of a PresentationML document consists of the `<presentation/>` (Presentation) element that contains `<sldMaster/>` (Slide Master), `<sldLayout/>` (Slide Layout), `<sld/>` (Slide), and `<theme/>` (Theme) elements that reference the slides in the presentation. (The Theme element is the root element of the DrawingMLTheme part.) These elements are the minimum elements required for a valid presentation document.
 
-In addition, a presentation document might contain \<notes\> (Notes Slide), \<handoutMaster\> (Handout Master), \<sp\> (Shape), \<pic\> (Picture), \<tbl\> (Table), and other slide-related elements. (Table elements are defined in the DrawingML schema.)
+In addition, a presentation document might contain `<notes/>` (Notes Slide), `<handoutMaster/>` (Handout Master), `<sp/>` (Shape), `<pic/>` (Picture), `<tbl/>` (Table), and other slide-related elements. (Table elements are defined in the DrawingML schema.)
 
 Other features that a PresentationML document can contain include the following: animation, audio, video, and transitions between slides.
 
@@ -25,31 +25,31 @@ A PresentationML document is not stored as one large body in a single part. Inst
 
 ## Important Presentation Parts
 
-Using the Open XML SDK, you can create document structure and content that uses strongly-typed classes that correspond to PresentationML elements. You can find these classes in the **[DocumentFormat.OpenXml.Presentation](/dotnet/api/documentformat.openxml.presentation)** namespace. The following table lists the class names of the classes that correspond to some of the important presentation elements.
+Using the Open XML SDK, you can create document structure and content that uses strongly-typed classes that correspond to PresentationML elements. You can find these classes in the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" /> namespace. The following table lists the class names of the classes that correspond to some of the important presentation elements.
 
 |    **Package Part**     | **Top Level PresentationML Element** |                                                        **Open XML SDK Class**                                                         |                                                                                                                                                                               **Description**\*                                                                                                                                                                                |
 |-------------------------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      Presentation       |           \<presentation\>           |           [Presentation](/dotnet/api/documentformat.openxml.presentation.presentation)           |                                                                                                                             The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.                                                                                                                             |
-| Presentation Properties |          \<presentationPr\>          | [PresentationProperties](/dotnet/api/documentformat.openxml.presentation.presentationproperties) |                                                                                                 The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.                                                                                                 |
-|      Slide Master       |            \<sldMaster\>             |            [SlideMaster](/dotnet/api/documentformat.openxml.presentation.slidemaster)            |                                     The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see [Working with slide masters](working-with-slide-masters.md).                                     |
-|      Slide Layout       |            \<sldLayout\>             |            [SlideLayout](/dotnet/api/documentformat.openxml.presentation.slidelayout)            |                                                       The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see [Working with slide layouts](working-with-slide-layouts.md).                                                        |
-|          Theme          |         \<officeStyleSheet\>         |                    [Theme](/dotnet/api/documentformat.openxml.drawing.theme)                     |                                                                  The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.                                                                  |
-|          Slide          |               \<sld\>                |                  [Slide](/dotnet/api/documentformat.openxml.presentation.slide)                  |                                                                                   The root element for the Slide part. This element specifies a slide within a slide list. For more information, see [Working with presentation slides](working-with-presentation-slides.md).                                                                                   |
-|      Notes Master       |           \<notesMaster\>            |            [NotesMaster](/dotnet/api/documentformat.openxml.presentation.notesmaster)            |                                                                                           The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.                                                                                            |
-|       Notes Slide       |              \<notes\>               |             [NotesSlide](/dotnet/api/documentformat.openxml.presentation.notesslide)             | The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see [Working with notes slides](working-with-notes-slides.md). |
-|     Handout Master      |          \<handoutMaster\>           |          [HandoutMaster](/dotnet/api/documentformat.openxml.presentation.handoutmaster)          |                              The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see [Working with handout master slides](working-with-handout-master-slides.md).                              |
-|        Comments         |              \<cmLst\>               |            [CommentList](/dotnet/api/documentformat.openxml.presentation.commentlist)            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments](working-with-comments.md).                                                                                      |
-|     Comments Author     |           \<cmAuthorLst\>            |      [CommentAuthorList](/dotnet/api/documentformat.openxml.presentation.commentauthorlist)      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments](working-with-comments.md).                                                                            |
+|      Presentation       |           `<presentation/>`           |           <xref:DocumentFormat.OpenXml.Presentation.Presentation>           |                                                                                                                             The root element for the Presentation part. This element specifies within it fundamental presentation-wide properties.                                                                                                                             |
+| Presentation Properties |          `<presentationPr/>`          | <xref:DocumentFormat.OpenXml.Presentation.PresentationProperties> |                                                                                                 The root element for the Presentation Properties part. This element functions as a parent element within which additional presentation-wide document properties are contained.                                                                                                 |
+|      Slide Master       |            `<sldMaster/>`             |            <xref:DocumentFormat.OpenXml.Presentation.SlideMaster>            |                                     The root element for the Slide Master part. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. For more information, see [Working with slide masters](working-with-slide-masters.md).                                     |
+|      Slide Layout       |            `<sldLayout/>`             |            <xref:DocumentFormat.OpenXml.Presentation.SlideLayout>            |                                                       The root element for the Slide Layout part. This element specifies the relationship information for each slide layout that is used within the slide master. For more information, see [Working with slide layouts](working-with-slide-layouts.md).                                                        |
+|          Theme          |         `<officeStyleSheet/>`         |                    <xref:DocumentFormat.OpenXml.Drawing.Theme>                     |                                                                  The root element for the Theme part. This element holds all the different formatting options available to a document through a theme and defines the overall look and feel of the document when themed objects are used within the document.                                                                  |
+|          Slide          |               `<sld/>`                |                  <xref:DocumentFormat.OpenXml.Presentation.Slide>                  |                                                                                   The root element for the Slide part. This element specifies a slide within a slide list. For more information, see [Working with presentation slides](working-with-presentation-slides.md).                                                                                   |
+|      Notes Master       |           `<notesMaster/>`            |            <xref:DocumentFormat.OpenXml.Presentation.NotesMaster>            |                                                                                           The root element for the Notes Master part. Within a notes master slide are contained all elements that describe the objects and their corresponding formatting for within a notes slide.                                                                                            |
+|       Notes Slide       |              `<notes/>`               |             <xref:DocumentFormat.OpenXml.Presentation.NotesSlide>             | The root element of the Notes Slide part. This element specifies the existence of a notes slide along with its corresponding data. Contained within a notes slide are all the common slide elements along with addition properties that are specific to the notes element. For more information, see [Working with notes slides](working-with-notes-slides.md). |
+|     Handout Master      |          `<handoutMaster/>`           |          <xref:DocumentFormat.OpenXml.Presentation.HandoutMaster>          |                              The root element of the Handout Master part. Within a handout master slide are contained all elements that describe the objects and their corresponding formatting for within a handout slide. For more information, see [Working with handout master slides](working-with-handout-master-slides.md).                              |
+|        Comments         |              `<cmLst/>`               |            <xref:DocumentFormat.OpenXml.Presentation.CommentList>            |                                                                                      The root element of the Comments part. This element specifies a list of comments for a particular slide. For more information, see [Working with comments](working-with-comments.md).                                                                                      |
+|     Comments Author     |           `<cmAuthorLst/>`            |      <xref:DocumentFormat.OpenXml.Presentation.CommentAuthorList>      |                                                                           The root element of the Comments Author part. This element specifies a list of authors with comments in the current document. For more information, see [Working with comments](working-with-comments.md).                                                                            |
 
-*Descriptions adapted from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification, © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+*Descriptions adapted from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification, &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Presentation Part
 
-A PresentationML package's main part starts with a \<presentation\> root element. That element contains a presentation, which, in turn, refers to a slide list, a slide master list, a notes master list, and a handout master list. The slide list refers to all of the slides in the presentation. The slide master list refers to the entire set of slide masters used in the presentation. The notes master contains information about the formatting of notes pages. The handout master describes how a handout looks. (A handout is a printed set of slides that can be handed out to an audience for future reference.)
+A PresentationML package's main part starts with a `<presentation/>` root element. That element contains a presentation, which, in turn, refers to a slide list, a slide master list, a notes master list, and a handout master list. The slide list refers to all of the slides in the presentation. The slide master list refers to the entire set of slide masters used in the presentation. The notes master contains information about the formatting of notes pages. The handout master describes how a handout looks. (A handout is a printed set of slides that can be handed out to an audience for future reference.)
 
 ### Presentation Properties Part
 
-The root element of the Presentation Properties part is the \<presentationPr\> element.
+The root element of the Presentation Properties part is the `<presentationPr/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Presentation Properties part as follows:
 
@@ -81,11 +81,11 @@ A Presentation Properties part shall be located within the package containing th
 
 A Presentation Properties part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Slide Master Part
 
-The root element of the Slide Master part is the \<sldMaster\> element.
+The root element of the Slide Master part is the `<sldMaster/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Slide Master part as follows:
 
@@ -141,11 +141,11 @@ following parts defined by ISO/IEC 29500:
 
 A Slide Master part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Slide Layout Part
 
-The root element of the Slide Layout part is the \<sldLayout\> element.
+The root element of the Slide Layout part is the `<sldLayout/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Slide Layout part as follows:
 
@@ -153,7 +153,7 @@ An instance of this part type contains the definition for a slide layout templat
 
 A package shall contain one or more Slide Layout parts, and each of those parts shall be the target of an explicit relationship in the Slide Master (§13.3.10) part, as well as an implicit relationship from each of the Slide (§13.3.8) parts associated with this slide layout.
 
-Example: The following Slide Master part-relationship item contains relationships to several Slide Layout parts, which are stored in the ZIP items ../slideLayouts/slideLayoutN.xml:
+Example: The following Slide Master part-relationship item contains relationships to several Slide Layout parts, which are stored in the ZIP items `../slideLayouts/slideLayoutN.xml`:
 
 ```xml
 <Relationships xmlns="…">  
@@ -207,11 +207,11 @@ A Slide Layout part is permitted to have explicit relationships to the following
 
 A Slide Layout part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Slide Part
 
-The root element of the Slide part is the \<sld\> element.
+The root element of the Slide part is the `<sld/>` element.
 
 As well as text and graphics, each slide can contain comments and notes, can have a layout, and can be part of one or more custom presentations. A comment is an annotation intended for the person maintaining the presentation slide deck. A note is a reminder or piece of text intended for the presenter or the audience.
 
@@ -221,7 +221,7 @@ A Slide part contains the contents of a single slide.
 
 A package shall contain one Slide part per slide, and each of those parts shall be the target of an explicit relationship from the Presentation (§13.3.6) part.
 
-Example: Consider a PresentationML document having two slides. The corresponding Presentation part relationship item contains two relationships to Slide parts, which are stored in the ZIP items slides/slide1.xml and slides/slide2.xml:
+Example: Consider a PresentationML document having two slides. The corresponding Presentation part relationship item contains two relationships to Slide parts, which are stored in the ZIP items `slides/slide1.xml and slides/slide2.xml`:
 
 ```xml
 <Relationships xmlns="…">  
@@ -232,9 +232,9 @@ Example: Consider a PresentationML document having two slides. The corresponding
 </Relationships>
 ```
 
-The root element for a part of this content type shall be sld.
+The root element for a part of this content type shall be `<sld/>`.
 
-Example: slides/slide1.xml contains:
+Example: `slides/slide1.xml` contains:
 
 ```xml
 <p:sld xmlns:p="…">  
@@ -285,19 +285,19 @@ A Slide part is permitted to have explicit relationships to the following parts 
 
 A Slide part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Theme Part
 
-The root element of the Theme part is the \<officeStyleSheet\> element.
+The root element of the Theme part is the `<officeStyleSheet/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML DrawingML Theme part as follows:
 
-An instance of this part type contains information about a document's theme, which is a combination of color scheme, font scheme, and format scheme (the latter also being referred to as effects). For a WordprocessingML document, the choice of theme affects the color and style of headings, among other things. For a SpreadsheetML document, the choice of theme affects the color and style of cell contents and charts, among other things. For a PresentationML document, the choice of theme affects the formatting of slides, handouts, and notes via the associated master, among other things.
+An instance of this part type contains information about a document's theme, which is a combination of color scheme, font scheme, and format scheme (the latter also being referred to as effects). For a WordprocessingML document, the choice of theme affects the color and style of headings, among other things. For a SpreadsheetML document, the choice of theme affects the color and style of cell contents and charts, among other things. For a PresentationML document, the choice of theme affects the formatting of slides, handouts, and notes via the associated master, in addition to other things.
 
 A WordprocessingML or SpreadsheetML package shall contain zero or one Theme part, which shall be the target of an implicit relationship in a Main Document (§11.3.10) or Workbook (§12.3.23) part. A PresentationML package shall contain zero or one Theme part per Handout Master (§13.3.3), Notes Master (§13.3.4), Slide Master (§13.3.10) or Presentation (§13.3.6) part via an implicit relationship.
 
-Example: The following WordprocessingML Main Document part-relationship item contains a relationship to the Theme part, which is stored in the ZIP item theme/theme1.xml:
+Example: The following WordprocessingML Main Document part-relationship item contains a relationship to the Theme part, which is stored in the ZIP item `theme/theme1.xml`:
 
 ```xml
 <Relationships xmlns="…">  
@@ -335,11 +335,11 @@ A Theme part is permitted to contain explicit relationships to the following par
 
 A Theme part shall not have any implicit or explicit relationships to other parts defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Notes Master Part
 
-The root element of the Notes Master part is the \<notesMaster\> element.
+The root element of the Notes Master part is the `<notesMaster/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Notes Master part as follows:
 
@@ -393,11 +393,11 @@ A Notes Master part is permitted to have explicit relationships to the following
 
 The Notes Master part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Notes Slide Part
 
-The root element of the Notes Slide part is the \<notes\> element.
+The root element of the Notes Slide part is the `<notes/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Notes Slide part as follows:
 
@@ -405,7 +405,7 @@ An instance of this part type contains the notes for a single slide.
 
 A package shall contain one Notes Slide part for each slide that contains notes. If they exist, those parts shall each be the target of an implicit relationship from the Slide (§13.3.8) part.
 
-Example: The following Slide part-relationship item contains a relationship to a Notes Slide part, which is stored in the ZIP item ../notesSlides/notesSlide1.xml:
+Example: The following Slide part-relationship item contains a relationship to a Notes Slide part, which is stored in the ZIP item `../notesSlides/notesSlide1.xml`:
 
 ```xml
 <Relationships xmlns="…">  
@@ -454,11 +454,11 @@ A Notes Slide part is permitted to have explicit relationships to the following 
 
 The Notes Slide part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Handout Master Part
 
-The root element of the Handout Master part is the \<handoutMaster\> element.
+The root element of the Handout Master part is the `<handoutMaster/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Handout Master part as follows:
 
@@ -467,7 +467,7 @@ An instance of this part type contains the look, position, and size of the slide
 A package shall contain at most one Handout Master part, and it shall be the target of an explicit relationship from the Presentation (§13.3.6) part.
 
 Example: The following Presentation part-relationship item contains a relationship to the Handout Master part, which is stored in the ZIP item
-handoutMasters/handoutMaster1.xml:
+`handoutMasters/handoutMaster1.xml`:
 
 ```xml
 <Relationships xmlns="…">  
@@ -513,11 +513,11 @@ A Handout Master part is permitted to have explicit relationships to the followi
 
 A Handout Master part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Comments Part
 
-The root element of the Comments part is the \<cmLst\> element.
+The root element of the Comments part is the `<cmLst/>` element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Comments part as
 follows:
@@ -526,7 +526,7 @@ An instance of this part type contains the comments for a single slide. Each com
 
 A package shall contain one Comments part for each slide containing one or more comments, and each of those parts shall be the target of an implicit relationship from its corresponding Slide (§13.3.8) part.
 
-Example: The following Slide part-relationship item contains a relationship to a Comments part, which is stored in the ZIP item ../comments/comment2.xml:
+Example: The following Slide part-relationship item contains a relationship to a Comments part, which is stored in the ZIP item `../comments/comment2.xml`:
 
 ```xml
 <Relationships xmlns="…">  
@@ -536,7 +536,7 @@ Example: The following Slide part-relationship item contains a relationship to a
 </Relationships>
 ```
 
-The root element for a part of this content type shall be cmLst.
+The root element for a part of this content type shall be `<cmLst/>`.
 
 Example: The Comments part contains three comments, two created by one author, and one created by another, all at the dates and times shown. The index numbers are assigned on a per-author basis, starting at 1 for an author's first comment:
 
@@ -561,11 +561,11 @@ A Comments part shall be located within the package containing the relationships
 
 A Comments part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Comments Author Part
 
-The root element of the Comments Author part is the \<cmAuthorLst\>
+The root element of the Comments Author part is the `<cmAuthorLst/>`
 element.
 
 The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML Comments Author part as follows:
@@ -574,7 +574,7 @@ An instance of this part type contains information about each author who has add
 
 A package shall contain at most one Comment Authors part. If it exists, that part shall be the target of an implicit relationship from the Presentation (§13.3.6) part.
 
-Example: The following Presentation part relationship item contains a relationship to the Comment Authors part, which is stored in the ZIP item commentAuthors.xml:
+Example: The following Presentation part relationship item contains a relationship to the Comment Authors part, which is stored in the ZIP item `commentAuthors.xml`:
 
 ```xml
 <Relationships xmlns="…">  
@@ -583,7 +583,7 @@ Example: The following Presentation part relationship item contains a relationsh
 </Relationships>
 ```
 
-The root element for a part of this content type shall be cmAuthorLst.
+The root element for a part of this content type shall be `<cmAuthorLst/>`.
 
 Example: Two people have authored comments in this document: Mary Smith and Peter Jones. Her initials are "mas", her author-ID is 0, and her comments' display color index is 0. Since Mary's last-comment-index-used value is 3, the next comment-index to be used for her is 4. His initials are "pjj", his author-ID is 1, and his comments' display color index is 1. Since Peter's last-comment-index-used value is 1, the next comment-index to be used for him is 2:
 
@@ -600,7 +600,7 @@ A Comment Authors part shall be located within the package containing the relati
 
 A Comment Authors part shall not have implicit or explicit relationships to any other part defined by ISO/IEC 29500.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ## The Structure of a Minimum Presentation File
 
@@ -612,15 +612,15 @@ The packaging structure of a presentation document contains several references b
 
 ## Generated PresentationML XML Code
 
-After you run the Open XML SDK code to generate a presentation, you can explore the contents of the .zip package to view the PresentationML XML code. To view the .zip package, rename the extension on the minimum presentation from **.pptx** to **.zip**. Inside the .zip package, there are several parts that make up the minimum presentation.
+After you run the Open XML SDK code to generate a presentation, you can explore the contents of the .zip package to view the PresentationML XML code. To view the .zip package, rename the extension on the minimum presentation from `.pptx` to `.zip`. Inside the .zip package, there are several parts that make up the minimum presentation.
 
-Figure 1 shows the structure under the **ppt** folder of the .zip package for a minimum presentation that contains a single slide.
+Figure 1 shows the structure under the `ppt` folder of the zip package for a minimum presentation that contains a single slide.
 
 Figure 1. Minimum presentation folder structure
 
  ![Minimum presentation folder structure](../media/odc_oxml_ppt_documentstructure_fig01.jpg)
 
-The presentation.xml file contains \<sld\> (Slide) elements that reference the slides in the presentation. Each slide is associated to the presentation by means of a slide ID and a relationship ID. The **slideID** is the identifier (ID) used within the package to identify a slide and must be unique within the presentation. The **id** attribute is the relationship ID that identifies the slide part definition associated with a slide. For more information about the slide part, see [Working with presentation slides](working-with-presentation-slides.md).
+The presentation.xml file contains `<sld/>` (Slide) elements that reference the slides in the presentation. Each slide is associated to the presentation by means of a slide ID and a relationship ID. The `slideID` is the identifier (ID) used within the package to identify a slide and must be unique within the presentation. The `id` attribute is the relationship ID that identifies the slide part definition associated with a slide. For more information about the slide part, see [Working with presentation slides](working-with-presentation-slides.md).
 
 The following XML code is the PresentationML that represents the presentation part of a presentation document that contains a single slide. This code is generated when you run the Open XML SDK code to create a minimum presentation.
 
@@ -710,7 +710,7 @@ The following XML code is the PresentationML that represents the slide part of t
 
 ## Typical Presentation Scenario
 
-A typical presentation does not have a minimum configuration. A typical presentation might contain several slides, each of which references slide layouts and slide masters, and which might contain comments. In addition, a presentation might contain handouts and notes slides, each of which is represented by separate parts. These additional parts are contained within the .zip package of the presentation document.
+A typical presentation does not have a minimum configuration. A typical presentation might contain several slides, each of which references slide layouts and slide masters, and which might contain comments. In addition, a presentation might contain handouts and notes slides, each of which is represented by separate parts. These additional parts are contained within the zip package of the presentation document.
 
 Figure 2 shows most of the elements that you would find in a typical presentation.
 

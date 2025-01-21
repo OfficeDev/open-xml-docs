@@ -7,15 +7,25 @@ using System.Linq;
 using System.Text;
 using D = DocumentFormat.OpenXml.Drawing;
 
-GetSlideTitles(args[0]);
-
-// Get a list of the titles of all the slides in the presentation.
-static IList<string>? GetSlideTitles(string presentationFile)
+// <Snippet2>
+foreach(string title in GetSlideTitles(args[0]))
 {
+    Console.WriteLine(title);
+}
+// </Snippet2>
+
+// <Snippet>
+// Get a list of the titles of all the slides in the presentation.
+static IList<string> GetSlideTitles(string presentationFile)
+{
+    // <Snippet1>
     // Open the presentation as read-only.
     using (PresentationDocument presentationDocument = PresentationDocument.Open(presentationFile, false))
+    // </Snippet1>
     {
-        return GetSlideTitlesFromPresentation(presentationDocument);
+        IList<string>? titles = GetSlideTitlesFromPresentation(presentationDocument);
+
+        return (IList<string>)(titles ?? Enumerable.Empty<string>());
     }
 }
 
@@ -120,3 +130,4 @@ static bool IsTitleShape(Shape shape)
 
     return false;
 }
+// </Snippet>

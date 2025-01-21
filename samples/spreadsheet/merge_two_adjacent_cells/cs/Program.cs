@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -7,10 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+MergeTwoCells(args[0], args[1], args[2], args[3]);
 
 // Given a document name, a worksheet name, and the names of two adjacent cells, merges the two cells.
 // When two cells are merged, only the content from one cell is preserved:
 // the upper-left cell for left-to-right languages or the upper-right cell for right-to-left languages.
+// <Snippet0>
 static void MergeTwoCells(string docName, string sheetName, string cell1Name, string cell2Name)
 {
     // Open the document for editing.
@@ -77,10 +78,10 @@ static void MergeTwoCells(string docName, string sheetName, string cell1Name, st
         // Create the merged cell and append it to the MergeCells collection.
         MergeCell mergeCell = new MergeCell() { Reference = new StringValue(cell1Name + ":" + cell2Name) };
         mergeCells.Append(mergeCell);
-
-        worksheet.Save();
     }
 }
+
+// <Snippet1>
 // Given a Worksheet and a cell name, verifies that the specified cell exists.
 // If it does not exist, creates a new cell. 
 static void CreateSpreadsheetCellIfNotExist(Worksheet worksheet, string cellName)
@@ -98,8 +99,6 @@ static void CreateSpreadsheetCellIfNotExist(Worksheet worksheet, string cellName
         Cell cell = new Cell() { CellReference = new StringValue(cellName) };
         row.Append(cell);
         worksheet.Descendants<SheetData>().First().Append(row);
-
-        worksheet.Save();
     }
     else
     {
@@ -112,11 +111,10 @@ static void CreateSpreadsheetCellIfNotExist(Worksheet worksheet, string cellName
         {
             Cell cell = new Cell() { CellReference = new StringValue(cellName) };
             row.Append(cell);
-
-            worksheet.Save();
         }
     }
 }
+// </Snippet1>
 
 // Given a SpreadsheetDocument and a worksheet name, get the specified worksheet.
 static Worksheet? GetWorksheet(SpreadsheetDocument document, string worksheetName)
@@ -130,6 +128,7 @@ static Worksheet? GetWorksheet(SpreadsheetDocument document, string worksheetNam
     return worksheetPart?.Worksheet;
 }
 
+// <Snippet2>
 // Given a cell name, parses the specified cell to get the column name.
 static string GetColumnName(string cellName)
 {
@@ -139,6 +138,9 @@ static string GetColumnName(string cellName)
 
     return match.Value;
 }
+// </Snippet2>
+
+// <Snippet3>
 // Given a cell name, parses the specified cell to get the row index.
 static uint GetRowIndex(string cellName)
 {
@@ -148,6 +150,5 @@ static uint GetRowIndex(string cellName)
 
     return uint.Parse(match.Value);
 }
+// </Snippet3>
 // </Snippet0>
-
-MergeTwoCells(args[0], args[1], args[2], args[3]);

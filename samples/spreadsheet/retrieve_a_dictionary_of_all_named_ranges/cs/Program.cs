@@ -1,9 +1,17 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 
+
+var definedNames = GetDefinedNames(args[0]);
+
+foreach (var pair in definedNames)
+{
+    Console.WriteLine("Name: {0}  Value: {1}", pair.Key, pair.Value);
+}
+
+// <Snippet0>
 static Dictionary<String, String>GetDefinedNames(String fileName)
 {
     // Given a workbook name, return a dictionary of defined names.
@@ -40,12 +48,4 @@ static Dictionary<String, String>GetDefinedNames(String fileName)
 
     return returnValue;
 }
-
 // </Snippet0>
-
-var definedNames = GetDefinedNames(args[0]);
-
-foreach (var pair in definedNames)
-{
-    Console.WriteLine("Name: {0}  Value: {1}", pair.Key, pair.Value);
-}

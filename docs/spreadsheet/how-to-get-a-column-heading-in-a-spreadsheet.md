@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 01/09/2025
 ms.localizationpriority: high
 ---
 # Get a column heading in a spreadsheet document
@@ -25,10 +25,10 @@ programmatically.
 ## How the Sample Code Works
 
 The code in this how-to consists of three methods (functions in Visual
-Basic): **GetColumnHeading**, **GetColumnName**, and **GetRowIndex**. The last two methods are called from
-within the **GetColumnHeading** method.
+Basic): `GetColumnHeading`, `GetColumnName`, and `GetRowIndex`. The last two methods are called from
+within the `GetColumnHeading` method.
 
-The **GetColumnName** method takes the cell
+The `GetColumnName` method takes the cell
 name as a parameter. It parses the cell name to get the column name by
 creating a regular expression to match the column name portion of the
 cell name. For more information about regular expressions, see [Regular Expression Language Elements](/dotnet/standard/base-types/regular-expression-language-quick-reference).
@@ -40,7 +40,7 @@ cell name. For more information about regular expressions, see [Regular Expressi
 ***
 
 
-The **GetRowIndex** method takes the cell name
+The `GetRowIndex` method takes the cell name
 as a parameter. It parses the cell name to get the row index by creating
 a regular expression to match the row index portion of the cell name.
 
@@ -51,14 +51,14 @@ a regular expression to match the row index portion of the cell name.
 ***
 
 
-The **GetColumnHeading** method uses three
+The `GetColumnHeading` method uses three
 parameters, the full path to the source spreadsheet file, the name of
 the worksheet that contains the specified column, and the name of a cell
 in the column for which to get the heading.
 
 The code gets the name of the column of the specified cell by calling
-the **GetColumnName** method. The code also
-gets the cells in the column and orders them by row using the **GetRowIndex** method.
+the `GetColumnName` method. The code also
+gets the cells in the column and orders them by row using the `GetRowIndex` method.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/get_a_column_heading/cs/Program.cs#snippet3)]
@@ -69,7 +69,7 @@ gets the cells in the column and orders them by row using the **GetRowIndex** me
 
 If the specified column exists, it gets the first cell in the column
 using the
-[IEnumerable(T).First](/dotnet/api/system.linq.enumerable.first)
+<xref:System.Linq.Enumerable.First*>
 method. The first cell contains the heading. Otherwise the specified column does not exist and the method returns `null` / `Nothing`
 
 ### [C#](#tab/cs-4)
@@ -79,11 +79,11 @@ method. The first cell contains the heading. Otherwise the specified column does
 ***
 
 
-If the content of the cell is stored in the [SharedStringTablePart](/dotnet/api/documentformat.openxml.packaging.sharedstringtablepart) object, it gets the
+If the content of the cell is stored in the <xref:DocumentFormat.OpenXml.Packaging.SharedStringTablePart> object, it gets the
 shared string items and returns the content of the column heading using
 the
-[M:System.Int32.Parse(System.String)](/dotnet/api/system.int32.parse)
-method. If the content of the cell is not in the [SharedStringTable](/dotnet/api/documentformat.openxml.spreadsheet.sharedstringtable) object, it returns the
+<xref:System.Int32.Parse*>
+method. If the content of the cell is not in the <xref:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable> object, it returns the
 content of the cell.
 
 ### [C#](#tab/cs-5)
@@ -102,6 +102,7 @@ Following is the complete sample code in both C\# and Visual Basic.
 
 ### [Visual Basic](#tab/vb)
 [!code-vb[](../../samples/spreadsheet/get_a_column_heading/vb/Program.vb#snippet0)]
+***
 
 ## See also
 

@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 01/26/2024
+ms.date: 01/17/2025
 ms.localizationpriority: high
 ---
 # Set a custom property in a word processing document
@@ -60,9 +60,9 @@ The relevant XML is also extracted and shown here for ease of reading.
 If you examine the XML content, you will find the following:
 
 - Each property in the XML content consists of an XML element that includes the name and the value of the property.
-- For each property, the XML content includes an **fmtid** attribute, which is always set to the same string value: `{D5CDD505-2E9C-101B-9397-08002B2CF9AE}`.
-- Each property in the XML content includes a **pid** attribute, which must include an integer starting at 2 for the first property and incrementing for each successive property.
-- Each property tracks its type (in the figure, the **vt:lpwstr** and **vt:filetime** element names define the types for each property).
+- For each property, the XML content includes an `fmtid` attribute, which is always set to the same string value: `{D5CDD505-2E9C-101B-9397-08002B2CF9AE}`.
+- Each property in the XML content includes a `pid` attribute, which must include an integer starting at 2 for the first property and incrementing for each successive property.
+- Each property tracks its type (in the figure, the `vt:lpwstr` and `vt:filetime` element names define the types for each property).
 
 The sample method that is provided here includes the code that is required to create or modify a custom document property in a Microsoft Word document. You can find the complete code listing for the method in the [Sample Code](#sample-code) section.
 
@@ -76,7 +76,7 @@ Use the `SetCustomProperty` method to set a custom property in a word processing
 
 - The value of the property (object).
 
-- The kind of property (one of the values in the **PropertyTypes** enumeration).
+- The kind of property (one of the values in the `PropertyTypes` enumeration).
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/word/set_a_custom_property/cs/Program.cs#snippet2)]
@@ -107,7 +107,7 @@ The custom properties will display in the dialog box that appears, as shown in F
 
 Figure 2. Custom Properties in the Advanced Properties dialog box
 
- ![Advanced Properties dialog with custom properties](../media/OpenXmlCon_HowToSetCustomPropertyFig2.gif)
+ ![Advanced Properties dialog with custom properties](../media/custom-property-menu.png)
 
 ## How the Code Works
 
@@ -188,7 +188,7 @@ Now, you will know for sure that the custom property part exists, a property tha
 
 1. Appends the new property as a child of the properties collection.
 
-2. Loops through all the existing properties, and sets the <span class="keyword">**pid**</span> attribute to increasing values, starting at 2.
+2. Loops through all the existing properties, and sets the <span class="keyword">`pid`</span> attribute to increasing values, starting at 2.
 
 3. Saves the part.
 

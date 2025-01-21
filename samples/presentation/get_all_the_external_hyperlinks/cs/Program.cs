@@ -3,17 +3,27 @@ using DocumentFormat.OpenXml.Packaging;
 using System;
 using System.Collections.Generic;
 using Drawing = DocumentFormat.OpenXml.Drawing;
+// <Snippet3>
+if (args is [{ } fileName])
+{
+    foreach (string link in GetAllExternalHyperlinksInPresentation(fileName))
+    {
+        Console.WriteLine(link);
+    }
+}
+// </Snippet3>
 
-GetAllExternalHyperlinksInPresentation(args[0]);
-
+// <Snippet>
 // Returns all the external hyperlinks in the slides of a presentation.
 static IEnumerable<String> GetAllExternalHyperlinksInPresentation(string fileName)
 {
     // Declare a list of strings.
     List<string> ret = new List<string>();
 
+    // <Snippet1>
     // Open the presentation file as read-only.
     using (PresentationDocument document = PresentationDocument.Open(fileName, false))
+    // </Snippet1>
     {
         // If there is no PresentationPart then there are no hyperlinks
         if (document.PresentationPart is null)
@@ -21,6 +31,7 @@ static IEnumerable<String> GetAllExternalHyperlinksInPresentation(string fileNam
             return ret;
         }
 
+        // <Snippet2>
         // Iterate through all the slide parts in the presentation part.
         foreach (SlidePart slidePart in document.PresentationPart.SlideParts)
         {
@@ -41,8 +52,10 @@ static IEnumerable<String> GetAllExternalHyperlinksInPresentation(string fileNam
                 }
             }
         }
+        // </Snippet2>
     }
 
     // Return the list of strings.
     return ret;
 }
+// </Snippet>

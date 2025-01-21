@@ -4,6 +4,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 
 CreateSpreadsheetWorkbook(args[0]);
 
+// <Snippet0>
 static void CreateSpreadsheetWorkbook(string filepath)
 {
     // Use 'using' block to ensure proper disposal of the document
@@ -50,9 +51,6 @@ static void CreateSpreadsheetWorkbook(string filepath)
         // Set the cell value to be a numeric value of 100.
         newCell.CellValue = new CellValue("100");
         newCell.DataType = new EnumValue<CellValues>(CellValues.Number);
-
-        // Explicitly save the worksheet part and workbook part
-        worksheetPart.Worksheet.Save();
-        workbookPart.Workbook.Save();
     }
 }
+// </Snippet0>

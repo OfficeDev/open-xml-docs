@@ -1,45 +1,52 @@
-Imports System.Text
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
+Imports System
+Imports System.Collections.Generic
+Imports System.Linq
+Imports System.Text
 Imports D = DocumentFormat.OpenXml.Drawing
 
-
-Module MyModule
-
+Module Program
     Sub Main(args As String())
+        ' <Snippet2>
+        For Each title As String In GetSlideTitles(args(0))
+            Console.WriteLine(title)
+        Next
+        ' </Snippet2>
     End Sub
 
+    ' <Snippet>
     ' Get a list of the titles of all the slides in the presentation.
-    Public Function GetSlideTitles(ByVal presentationFile As String) As IList(Of String)
-
+    Function GetSlideTitles(presentationFile As String) As IList(Of String)
+        ' <Snippet1>
         ' Open the presentation as read-only.
-        Dim presentationDocument As PresentationDocument = presentationDocument.Open(presentationFile, False)
-        Using (presentationDocument)
-            Return GetSlideTitles(presentationDocument)
+        Using presentationDocument As PresentationDocument = PresentationDocument.Open(presentationFile, False)
+            ' </Snippet1>
+            Dim titles As IList(Of String) = GetSlideTitlesFromPresentation(presentationDocument)
+
+            Return If(titles, Enumerable.Empty(Of String)().ToList())
         End Using
-
     End Function
-    ' Get a list of the titles of all the slides in the presentation.
-    Public Function GetSlideTitles(ByVal presentationDocument As PresentationDocument) As IList(Of String)
-        If (presentationDocument Is Nothing) Then
-            Throw New ArgumentNullException("presentationDocument")
-        End If
 
+    ' Get a list of the titles of all the slides in the presentation.
+    Function GetSlideTitlesFromPresentation(presentationDocument As PresentationDocument) As IList(Of String)
         ' Get a PresentationPart object from the PresentationDocument object.
         Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
-        If (((presentationPart) IsNot Nothing) _
-           AndAlso ((presentationPart.Presentation) IsNot Nothing)) Then
 
+        If presentationPart IsNot Nothing AndAlso presentationPart.Presentation IsNot Nothing Then
             ' Get a Presentation object from the PresentationPart object.
             Dim presentation As Presentation = presentationPart.Presentation
-            If ((presentation.SlideIdList) IsNot Nothing) Then
 
-                Dim titlesList As List(Of String) = New List(Of String)
+            If presentation.SlideIdList IsNot Nothing Then
+                Dim titlesList As New List(Of String)()
 
                 ' Get the title of each slide in the slide order.
-                For Each slideId As Object In presentation.SlideIdList.Elements(Of SlideId)()
+                For Each slideId As SlideId In presentation.SlideIdList.Elements(Of SlideId)()
+                    If slideId.RelationshipId Is Nothing Then
+                        Continue For
+                    End If
 
-                    Dim slidePart As SlidePart = CType(presentationPart.GetPartById(slideId.RelationshipId.ToString()), SlidePart)
+                    Dim slidePart As SlidePart = CType(presentationPart.GetPartById(slideId.RelationshipId), SlidePart)
 
                     ' Get the slide title.
                     Dim title As String = GetSlideTitle(slidePart)
@@ -47,67 +54,66 @@ Module MyModule
                     ' An empty title can also be added.
                     titlesList.Add(title)
                 Next
+
                 Return titlesList
             End If
         End If
+
         Return Nothing
     End Function
+
     ' Get the title string of the slide.
-    Public Function GetSlideTitle(ByVal slidePart As SlidePart) As String
-        If (slidePart Is Nothing) Then
-            Throw New ArgumentNullException("presentationDocument")
+    Function GetSlideTitle(slidePart As SlidePart) As String
+        If slidePart Is Nothing Then
+            Throw New ArgumentNullException(NameOf(slidePart))
         End If
 
         ' Declare a paragraph separator.
         Dim paragraphSeparator As String = Nothing
-        If ((slidePart.Slide) IsNot Nothing) Then
 
+        If slidePart.Slide IsNot Nothing Then
             ' Find all the title shapes.
-            Dim shapes = From shape In slidePart.Slide.Descendants(Of Shape)() _
-                         Where (IsTitleShape(shape)) _
+            Dim shapes = From shape In slidePart.Slide.Descendants(Of Shape)()
+                         Where IsTitleShape(shape)
                          Select shape
 
-            Dim paragraphText As StringBuilder = New StringBuilder
+            Dim paragraphText As New StringBuilder()
 
-            For Each shape As Object In shapes
+            For Each shape In shapes
+                Dim paragraphs = shape.TextBody?.Descendants(Of D.Paragraph)()
+                If paragraphs Is Nothing Then
+                    Continue For
+                End If
 
                 ' Get the text in each paragraph in this shape.
-                For Each paragraph As Object In shape.TextBody.Descendants(Of D.Paragraph)()
-
+                For Each paragraph In paragraphs
                     ' Add a line break.
                     paragraphText.Append(paragraphSeparator)
 
-                    For Each text As Object In paragraph.Descendants(Of D.Text)()
+                    For Each text In paragraph.Descendants(Of D.Text)()
                         paragraphText.Append(text.Text)
                     Next
 
-                    paragraphSeparator = "" & vbLf
+                    paragraphSeparator = vbLf
                 Next
             Next
-            Return paragraphText.ToString
+
+            Return paragraphText.ToString()
         End If
+
         Return String.Empty
     End Function
+
     ' Determines whether the shape is a title shape.
-    Private Function IsTitleShape(ByVal shape As Shape) As Boolean
-        Dim placeholderShape As Object = _
-         shape.NonVisualShapeProperties.ApplicationNonVisualDrawingProperties.GetFirstChild(Of PlaceholderShape)()
-        If (((placeholderShape) IsNot Nothing) _
-           AndAlso (((placeholderShape.Type) IsNot Nothing) _
-           AndAlso placeholderShape.Type.HasValue)) Then
-            Select Case placeholderShape.Type.Value
+    Function IsTitleShape(shape As Shape) As Boolean
+        Dim placeholderShape As PlaceholderShape = shape.NonVisualShapeProperties?.ApplicationNonVisualDrawingProperties?.GetFirstChild(Of PlaceholderShape)()
 
-                ' Any title shape
-                Case PlaceholderValues.Title
-                    Return True
-
-                    ' A centered title.
-                Case PlaceholderValues.CenteredTitle
-                    Return True
-                Case Else
-                    Return False
-            End Select
+        If placeholderShape IsNot Nothing AndAlso placeholderShape.Type IsNot Nothing AndAlso placeholderShape.Type.HasValue Then
+            Return placeholderShape.Type = PlaceholderValues.Title OrElse placeholderShape.Type = PlaceholderValues.CenteredTitle
         End If
+
         Return False
     End Function
+    ' </Snippet>
 End Module
+

@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
@@ -7,6 +6,7 @@ using System.Linq;
 Console.WriteLine(GetCellValue(args[0], args[1], args[2]));
 // Retrieve the value of a cell, given a file name, sheet name, 
 // and address name.
+// <Snippet0>
 // <Snippet1>
 static string GetCellValue(string fileName, string sheetName, string addressName)
 // </Snippet1>
@@ -88,9 +88,9 @@ static string GetCellValue(string fileName, string sheetName, string addressName
                         break;
                     default:
                         value = "TRUE";
-                        // </Snippet11>
                         break;
                 }
+                // </Snippet11>
             }
         }
     }

@@ -12,7 +12,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 05/13/2024
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically set the print orientation of a Microsoft Word document. It contains an example
-**SetPrintOrientation** method to illustrate this task.
+`SetPrintOrientation` method to illustrate this task.
 
 
 
@@ -28,25 +28,17 @@ Office to programmatically set the print orientation of a Microsoft Word documen
 
 ## SetPrintOrientation Method
 
-You can use the **SetPrintOrientation** method
+You can use the `SetPrintOrientation` method
 to change the print orientation of a word processing document. The
 method accepts two parameters that indicate the name of the document to
-modify (string) and the new print orientation ([PageOrientationValues](/dotnet/api/documentformat.openxml.wordprocessing.pageorientationvalues)).
+modify (string) and the new print orientation (<xref:DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues>).
 
-The following code shows the **SetPrintOrientation** method.
+The following code shows the `SetPrintOrientation` method.
 
 ### [C#](#tab/cs-0)
-```csharp
-    public static void SetPrintOrientation(
-      string fileName, PageOrientationValues newOrientation)
-```
-
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Public Sub SetPrintOrientation(
-      ByVal fileName As String, 
-      ByVal newOrientation As PageOrientationValues)
-```
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet1)]
 ***
 
 
@@ -59,21 +51,14 @@ the width, height, and margins for each section.
 
 ## Calling the Sample SetPrintOrientation Method
 
-To call the sample **SetPrintOrientation**
-method, pass a string that contains the name of the file to convert. The
-following code shows an example method call.
+To call the sample `SetPrintOrientation`
+method, pass a string that contains the name of the file to convert and the string "landscape" or "portrait"
+depending on which orientation you want. The following code shows an example method call.
 
 ### [C#](#tab/cs-1)
-```csharp
-    SetPrintOrientation(@"C:\Users\Public\Documents\ChangePrintOrientation.docx", 
-        PageOrientationValues.Landscape);
-```
-
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    SetPrintOrientation("C:\Users\Public\Documents\ChangePrintOrientation.docx",
-        PageOrientationValues.Landscape)
-```
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet2)]
 ***
 
 
@@ -81,40 +66,20 @@ following code shows an example method call.
 
 ## How the Code Works
 
-The following code first opens the document by using the [Open](/dotnet/api/documentformat.openxml.packaging.wordprocessingdocument.open) method and sets the **isEditable** parameter to
-**true** to indicate that the document should
-be read/write. The code maintains a Boolean variable that tracks whether
-the document has changed (so that it can save the document later, if the
-document has changed). The code retrieves a reference to the main
+The following code first determines which orientation to apply and
+then opens the document by using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A>
+method and sets the `isEditable` parameter to
+`true` to indicate that the document should
+be read/write. The code retrieves a reference to the main
 document part, and then uses that reference to retrieve a collection of
-all of the descendants of type [SectionProperties](/dotnet/api/documentformat.openxml.wordprocessing.sectionproperties) within the content of the
+all of the descendants of type <xref:DocumentFormat.OpenXml.Wordprocessing.SectionProperties> within the content of the
 document. Later code will use this collection to set the orientation for
 each section in turn.
 
 ### [C#](#tab/cs-2)
-```csharp
-    using (var document = 
-        WordprocessingDocument.Open(fileName, true))
-    {
-        bool documentChanged = false;
-
-        var docPart = document.MainDocumentPart;
-        var sections = docPart.Document.Descendants<SectionProperties>();
-        // Code removed here...
-    }
-```
-
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet3)]
 ### [Visual Basic](#tab/vb-2)
-```vb
-    Using document =
-        WordprocessingDocument.Open(fileName, True)
-        Dim documentChanged As Boolean = False
-
-        Dim docPart = document.MainDocumentPart
-        Dim sections = docPart.Document.Descendants(Of SectionProperties)()
-        ' Code removed here...
-    End Using
-```
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet3)]
 ***
 
 
@@ -122,35 +87,12 @@ each section in turn.
 
 ## Iterating Through All the Sections
 
-The next block of code iterates through all the sections in the collection of **SectionProperties** elements. For each section, the code initializes a variable that tracks whether the page orientation for the section was changed so the code can update the page size and margins. (If the new orientation matches the original orientation, the code will not update the page.) The code continues by retrieving a reference to the first [PageSize](/dotnet/api/documentformat.openxml.wordprocessing.pagesize) descendant of the **SectionProperties** element. If the reference is not null, the code updates the orientation as required.
+The next block of code iterates through all the sections in the collection of `SectionProperties` elements. For each section, the code initializes a variable that tracks whether the page orientation for the section was changed so the code can update the page size and margins. (If the new orientation matches the original orientation, the code will not update the page.) The code continues by retrieving a reference to the first <xref:DocumentFormat.OpenXml.Wordprocessing.PageSize> descendant of the `SectionProperties` element. If the reference is not null, the code updates the orientation as required.
 
 ### [C#](#tab/cs-3)
-```csharp
-    foreach (SectionProperties sectPr in sections)
-    {
-        bool pageOrientationChanged = false;
-
-        PageSize pgSz = sectPr.Descendants<PageSize>().FirstOrDefault();
-        if (pgSz != null)
-        {
-            // Code removed here...
-        }
-    }
-```
-
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-3)
-```vb
-    For Each sectPr As SectionProperties In sections
-
-        Dim pageOrientationChanged As Boolean = False
-
-        Dim pgSz As PageSize =
-            sectPr.Descendants(Of PageSize).FirstOrDefault
-        If pgSz IsNot Nothing Then
-            ' Code removed here...
-        End If
-    Next
-```
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet4)]
 ***
 
 
@@ -158,61 +100,25 @@ The next block of code iterates through all the sections in the collection of **
 
 ## Setting the Orientation for the Section
 
-The next block of code first checks whether the [Orient](/dotnet/api/documentformat.openxml.wordprocessing.pagesize.orient) property of the **PageSize** element exists. As with many properties
+The next block of code first checks whether the <xref:DocumentFormat.OpenXml.Wordprocessing.PageSize.Orient>
+property of the `PageSize` element exists. As with many properties
 of Open XML elements, the property or attribute might not exist yet. In
 that case, retrieving the property returns a null reference. By default,
 if the property does not exist, and the new orientation is Portrait, the
-code will not update the page. If the **Orient** property already exists, and its value
+code will not update the page. If the `Orient` property already exists, and its value
 differs from the new orientation value supplied as a parameter to the
-method, the code sets the **Value** property of
-the **Orient** property, and sets both the
-**pageOrientationChanged** and the **documentChanged** flags. (The code uses the **pageOrientationChanged** flag to determine whether it
-must update the page size and margins. It uses the **documentChanged** flag to determine whether it must
-save the document at the end.)
+method, the code sets the `Value` property of
+the `Orient` property, and sets the
+`pageOrientationChanged` flag. (The code uses the `pageOrientationChanged` flag to determine whether it
+must update the page size and margins.)
 
 > [!NOTE]
-> If the code must create the **Orient** property, it must also create the value to store in the property, as a new [EnumValue\<T\>](/dotnet/api/documentformat.openxml.enumvalue-1) instance, supplying the new orientation in the **EnumValue** constructor.
+> If the code must create the `Orient` property, it must also create the value to store in the property, as a new <xref:DocumentFormat.OpenXml.EnumValue%601> instance, supplying the new orientation in the `EnumValue` constructor.
 
 ### [C#](#tab/cs-4)
-```csharp
-    if (pgSz.Orient == null)
-    {
-        if (newOrientation != PageOrientationValues.Portrait)
-        {
-            pageOrientationChanged = true;
-            documentChanged = true;
-            pgSz.Orient = 
-                new EnumValue<PageOrientationValues>(newOrientation);
-        }
-    }
-    else
-    {
-        if (pgSz.Orient.Value != newOrientation)
-        {
-            pgSz.Orient.Value = newOrientation;
-            pageOrientationChanged = true;
-            documentChanged = true;
-        }
-    }
-```
-
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet5)]
 ### [Visual Basic](#tab/vb-4)
-```vb
-    If pgSz.Orient Is Nothing Then
-        If newOrientation <> PageOrientationValues.Portrait Then
-            pageOrientationChanged = True
-            documentChanged = True
-            pgSz.Orient =
-                New EnumValue(Of PageOrientationValues)(newOrientation)
-        End If
-    Else
-        If pgSz.Orient.Value <> newOrientation Then
-            pgSz.Orient.Value = newOrientation
-            pageOrientationChanged = True
-            documentChanged = True
-        End If
-    End If
-```
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet5)]
 ***
 
 
@@ -224,34 +130,12 @@ At this point in the code, the page orientation may have changed. If so,
 the code must complete two more tasks. It must update the page size, and
 update the page margins for the section. The first task is easy—the
 following code just swaps the page height and width, storing the values
-in the **PageSize** element.
+in the `PageSize` element.
 
 ### [C#](#tab/cs-5)
-```csharp
-    if (pageOrientationChanged)
-    {
-        // Changing the orientation is not enough. You must also 
-        // change the page size.
-        var width = pgSz.Width;
-        var height = pgSz.Height;
-        pgSz.Width = height;
-        pgSz.Height = width;
-        // Code removed here...
-    }
-```
-
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet6)]
 ### [Visual Basic](#tab/vb-5)
-```vb
-    If pageOrientationChanged Then
-        ' Changing the orientation is not enough. You must also 
-        ' change the page size.
-        Dim width = pgSz.Width
-        Dim height = pgSz.Height
-        pgSz.Width = height
-        pgSz.Height = width
-        ' Code removed here...
-    End If
-```
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet6)]
 ***
 
 
@@ -261,77 +145,17 @@ in the **PageSize** element.
 
 The next step in the sample procedure handles margins for the section.
 If the page orientation has changed, the code must rotate the margins to
-match. To do so, the code retrieves a reference to the [PageMargin](/dotnet/api/documentformat.openxml.wordprocessing.pagemargin) element for the section. If the
-element exists, the code rotates the margins. Note that the code rotates
+match. To do so, the code retrieves a reference to the <xref:DocumentFormat.OpenXml.Wordprocessing.PageMargin> element for the section. If the element exists, the code rotates the margins. Note that the code rotates
 the margins by 90 degrees—some printers rotate the margins by 270
 degrees instead and you could modify the code to take that into account.
-Also be aware that the [Top](/dotnet/api/documentformat.openxml.wordprocessing.pagemargin.top) and [Bottom](/dotnet/api/documentformat.openxml.wordprocessing.pagemargin.bottom) properties of the **PageMargin** object are signed values, and the
-[Left](/dotnet/api/documentformat.openxml.wordprocessing.pagemargin.left) and [Right](/dotnet/api/documentformat.openxml.wordprocessing.pagemargin.right) properties are unsigned values. The
-code must convert between the two types of values as it rotates the
+Also be aware that the <xref:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Top> and <xref:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Bottom> properties of the `PageMargin` object are signed values, and the
+<xref:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Left> and <xref:DocumentFormat.OpenXml.Wordprocessing.PageMargin.Right> properties are unsigned values. The code must convert between the two types of values as it rotates the
 margin settings, as shown in the following code.
 
 ### [C#](#tab/cs-6)
-```csharp
-    PageMargin pgMar = 
-        sectPr.Descendants<PageMargin>().FirstOrDefault();
-    if (pgMar != null)
-    {
-        var top = pgMar.Top.Value;
-        var bottom = pgMar.Bottom.Value;
-        var left = pgMar.Left.Value;
-        var right = pgMar.Right.Value;
-
-        pgMar.Top = new Int32Value((int)left);
-        pgMar.Bottom = new Int32Value((int)right);
-        pgMar.Left = 
-            new UInt32Value((uint)System.Math.Max(0, bottom));
-        pgMar.Right = 
-            new UInt32Value((uint)System.Math.Max(0, top));
-    }
-```
-
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet7)]
 ### [Visual Basic](#tab/vb-6)
-```vb
-    Dim pgMar As PageMargin =
-      sectPr.Descendants(Of PageMargin).FirstOrDefault()
-    If pgMar IsNot Nothing Then
-        Dim top = pgMar.Top.Value
-        Dim bottom = pgMar.Bottom.Value
-        Dim left = pgMar.Left.Value
-        Dim right = pgMar.Right.Value
-
-        pgMar.Top = CType(left, Int32Value)
-        pgMar.Bottom = CType(right, Int32Value)
-        pgMar.Left = CType(System.Math.Max(0,
-            CType(bottom, Int32Value)), UInt32Value)
-        pgMar.Right = CType(System.Math.Max(0,
-            CType(top, Int32Value)), UInt32Value)
-    End If
-```
-***
-
-
------------------------------------------------------------------------------
-
-## Saving the Document
-
-After all the modifications, the code determines whether the document
-has changed. If the document has changed, the code saves it.
-
-### [C#](#tab/cs-7)
-```csharp
-    if (documentChanged)
-    {
-        docPart.Document.Save();
-    }
-```
-
-### [Visual Basic](#tab/vb-7)
-```vb
-    If documentChanged Then
-        docPart.Document.Save()
-    End If
-```
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet7)]
 ***
 
 
@@ -339,14 +163,15 @@ has changed. If the document has changed, the code saves it.
 
 ## Sample Code
 
-The following is the complete **SetPrintOrientation** code sample in C\# and Visual
+The following is the complete `SetPrintOrientation` code sample in C\# and Visual
 Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs)]
+[!code-csharp[](../../samples/word/change_the_print_orientation/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb)]
+[!code-vb[](../../samples/word/change_the_print_orientation/vb/Program.vb#snippet0)]
+***
 
 -----------------------------------------------------------------------------
 

@@ -38,15 +38,15 @@ represents the element in the Open XML SDK API.
 
 | **Package Part** | **WordprocessingML Element** | **Open XML SDK Class** | **Description** |
 |---|---|---|---|
-| Main Document|document | [Document](/dotnet/api/documentformat.openxml.wordprocessing.document) | The root element for the main document part. |
-| Comments | comments | [Comments](/dotnet/api/documentformat.openxml.wordprocessing.comments) | The root element for the comments part. |
-| Document Settings | settings | [Settings](/dotnet/api/documentformat.openxml.wordprocessing.settings) | The root element for the document settings part. |
-| Endnotes | endnotes | [Endnotes](/dotnet/api/documentformat.openxml.wordprocessing.endnotes) | The root element for the endnotes part. |
-| Footer | ftr | [Footer](/dotnet/api/documentformat.openxml.wordprocessing.footer) | The root element for the footer part. |
-| Footnotes | footnotes | [Footnotes](/dotnet/api/documentformat.openxml.wordprocessing.footnotes) | The root element for the footnotes part. |
-| Glossary Document | glossaryDocument | [GlossaryDocument](/dotnet/api/documentformat.openxml.wordprocessing.glossarydocument) | The root element for the glossary document part. |
-| Header | hdr | [Header](/dotnet/api/documentformat.openxml.wordprocessing.header) | The root element for the header part. |
-| Style Definitions | styles | [Styles](/dotnet/api/documentformat.openxml.wordprocessing.styles) | The root element for a Style Definitions part. |
+| Main Document|document | <xref:DocumentFormat.OpenXml.Wordprocessing.Document> | The root element for the main document part. |
+| Comments | comments | <xref:DocumentFormat.OpenXml.Wordprocessing.Comments> | The root element for the comments part. |
+| Document Settings | settings | <xref:DocumentFormat.OpenXml.Wordprocessing.Settings> | The root element for the document settings part. |
+| Endnotes | endnotes | <xref:DocumentFormat.OpenXml.Wordprocessing.Endnotes> | The root element for the endnotes part. |
+| Footer | ftr | <xref:DocumentFormat.OpenXml.Wordprocessing.Footer> | The root element for the footer part. |
+| Footnotes | footnotes | <xref:DocumentFormat.OpenXml.Wordprocessing.Footnotes> | The root element for the footnotes part. |
+| Glossary Document | glossaryDocument | <xref:DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument> | The root element for the glossary document part. |
+| Header | hdr | <xref:DocumentFormat.OpenXml.Wordprocessing.Header> | The root element for the header part. |
+| Style Definitions | styles | <xref:DocumentFormat.OpenXml.Wordprocessing.Styles> | The root element for a Style Definitions part. |
 
 
 ## Minimum Document Scenario
@@ -98,7 +98,7 @@ comprise the main story.
 
 - `t` — A range of text.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Open XML SDK Code Example
 

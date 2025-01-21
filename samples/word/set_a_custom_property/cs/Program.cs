@@ -1,4 +1,3 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.CustomProperties;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.VariantTypes;
@@ -6,6 +5,7 @@ using System;
 using System.IO;
 using System.Linq;
 
+// <Snippet0>
 // <Snippet2>
 static string SetCustomProperty(
     string fileName,
@@ -146,7 +146,6 @@ static string SetCustomProperty(
             {
                 item.PropertyId = pid++;
             }
-            props.Save();
             // </Snippet10>
         }
     }
@@ -162,7 +161,7 @@ string fileName = args[0];
 
 Console.WriteLine(string.Join("Manager = ", SetCustomProperty(fileName, "Manager", "Pedro", PropertyTypes.Text)));
 
-Console.WriteLine(string.Join("Manager = ", SetCustomProperty(fileName, "Manager", "Shweta", PropertyTypes.Text)));
+Console.WriteLine(string.Join("Manager = ", SetCustomProperty(fileName, "Manager", "Bonnie", PropertyTypes.Text)));
 
 Console.WriteLine(string.Join("ReviewDate = ", SetCustomProperty(fileName, "ReviewDate", DateTime.Parse("01/26/2024"), PropertyTypes.DateTime)));
 // </Snippet3>

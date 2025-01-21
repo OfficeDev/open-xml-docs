@@ -1,11 +1,12 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using System;
 using OpenXmlAttribute = DocumentFormat.OpenXml.OpenXmlAttribute;
 using OpenXmlElement = DocumentFormat.OpenXml.OpenXmlElement;
 using Sheets = DocumentFormat.OpenXml.Spreadsheet.Sheets;
 
+GetSheetInfo(args[0]);
 
+// <Snippet0>
 static void GetSheetInfo(string fileName)
 {
     // Open file as read-only.
@@ -32,4 +33,3 @@ static void GetSheetInfo(string fileName)
 }
 // </Snippet0>
 
-GetSheetInfo(args[0]);

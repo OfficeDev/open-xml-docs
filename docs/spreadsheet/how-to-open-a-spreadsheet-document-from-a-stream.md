@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 12/05/2023
+ms.date: 01/10/2025
 ms.localizationpriority: high
 ---
 # Open a spreadsheet document from a stream
@@ -22,7 +22,7 @@ Office to open a spreadsheet document from a stream programmatically.
 
 
 ---------------------------------------------------------------------------------
-## When to Open From a Stream 
+## When to Open From a Stream
 If you have an application, such as Microsoft SharePoint Foundation
 2010, that works with documents by using stream input/output, and you
 want to use the Open XML SDK to work with one of the documents, this
@@ -36,70 +36,16 @@ Open XML SDK.
 
 
 --------------------------------------------------------------------------------
-## The SpreadsheetDocument Object 
 
-The basic document structure of a SpreadsheetML document consists of the
-[Sheets](/dotnet/api/documentformat.openxml.spreadsheet.sheets) and [Sheet](/dotnet/api/documentformat.openxml.spreadsheet.sheet) elements, which reference the
-worksheets in the workbook. A separate XML file is created for each
-worksheet. For example, the SpreadsheetML for a workbook that has two
-worksheets name MySheet1 and MySheet2 is located in the Workbook.xml
-file and is shown in the following code example.
-
-```xml
-    <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
-    <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
-        <sheets>
-            <sheet name="MySheet1" sheetId="1" r:id="rId1" /> 
-            <sheet name="MySheet2" sheetId="2" r:id="rId2" /> 
-        </sheets>
-    </workbook>
-```
-
-The worksheet XML files contain one or more block level elements such as
-[SheetData](/dotnet/api/documentformat.openxml.spreadsheet.sheetdata). **sheetData** represents the cell table and contains
-one or more [Row](/dotnet/api/documentformat.openxml.spreadsheet.row) elements. A **row** contains one or more [Cell](/dotnet/api/documentformat.openxml.spreadsheet.cell) elements. Each cell contains a [CellValue](/dotnet/api/documentformat.openxml.spreadsheet.cellvalue) element that represents the value
-of the cell. For example, the **SpreadsheetML**
-for the first worksheet in a workbook, that only has the value 100 in
-cell A1, is located in the Sheet1.xml file and is shown in the following
-code example.
-
-```xml
-    <?xml version="1.0" encoding="UTF-8" ?> 
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
-        <sheetData>
-            <row r="1">
-                <c r="A1">
-                    <v>100</v> 
-                </c>
-            </row>
-        </sheetData>
-    </worksheet>
-```
-
-Using the Open XML SDK, you can create document structure and
-content that uses strongly-typed classes that correspond to
-SpreadsheetML elements. You can find these classes in the **DocumentFormat.OpenXML.Spreadsheet** namespace. The
-following table lists the class names of the classes that correspond to
-the **workbook**, **sheets**, **sheet**, **worksheet**, and **sheetData** elements.
-
-SpreadsheetML Element|Open XML SDK Class|Description
---|--|--
-workbook|DocumentFormat.OpenXml.Spreadsheet.Workbook|The root element for the main document part.
-sheets|DocumentFormat.OpenXml.Spreadsheet.Sheets|The container for the block level structures such as sheet, fileVersion, and others specified in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification.
-sheet|DocumentFormat.OpenXml.Spreadsheet.Sheet|A sheet that points to a sheet definition file.
-worksheet|DocumentFormat.OpenXml.Spreadsheet.Worksheet|A sheet definition file that contains the sheet data.
-sheetData|DocumentFormat.OpenXml.Spreadsheet.SheetData|The cell table, grouped together by rows.
-row|DocumentFormat.OpenXml.Spreadsheet.Row|A row in the cell table.
-c|DocumentFormat.OpenXml.Spreadsheet.Cell|A cell in a row.
-v|DocumentFormat.OpenXml.Spreadsheet.CellValue|The value of a cell.
-
+[!include[Spreadsheet Object](../includes/spreadsheet/spreadsheet-object.md)]
 
 --------------------------------------------------------------------------------
-## Generating the SpreadsheetML Markup to Add a Worksheet 
+## Generating the SpreadsheetML Markup to Add a Worksheet
+
 When you have access to the body of the main document part, you add a
-worksheet by calling [AddNewPart\<T\>(String, String)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.addnewpart) method to
-create a new [WorksheetPart](/dotnet/api/documentformat.openxml.spreadsheet.worksheet.worksheetpart). The following code example
-adds the new **WorksheetPart**.
+worksheet by calling <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart*> method to
+create a new <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet.WorksheetPart*>. The following code example
+adds the new `WorksheetPart`.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/spreadsheet/open_from_a_stream/cs/Program.cs#snippet1)]
@@ -110,8 +56,9 @@ adds the new **WorksheetPart**.
 
 
 --------------------------------------------------------------------------------
-## Sample Code 
-In this example, the **OpenAndAddToSpreadsheetStream** method can be used
+## Sample Code
+
+In this example, the `OpenAndAddToSpreadsheetStream` method can be used
 to open a spreadsheet document from an already open stream and append
 some text to it. The following is the complete sample code in both C\# and Visual Basic.
 
@@ -123,8 +70,9 @@ some text to it. The following is the complete sample code in both C\# and Visua
 ***
 
 
-Notice that the **OpenAddAndAddToSpreadsheetStream** method does not
-close the stream passed to it. The calling code must do that.
+Notice that the `OpenAddAndAddToSpreadsheetStream` method does not
+close the stream passed to it. The calling code must do that manually
+or with a `using` statement.
 
 The following is the complete sample code in both C\# and Visual Basic.
 
@@ -133,9 +81,10 @@ The following is the complete sample code in both C\# and Visual Basic.
 
 ### [Visual Basic](#tab/vb)
 [!code-vb[](../../samples/spreadsheet/open_from_a_stream/vb/Program.vb#snippet0)]
+***
 
 --------------------------------------------------------------------------------
-## See also 
+## See also
 
 
 - [Open XML SDK class library reference](/office/open-xml/open-xml-sdk)

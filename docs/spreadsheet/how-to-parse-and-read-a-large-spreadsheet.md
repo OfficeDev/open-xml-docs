@@ -11,25 +11,26 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 12/05/2023
+ms.date: 01/10/2025
 ms.localizationpriority: high
 ---
 # Parse and read a large spreadsheet document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically read a large Excel file. For more information
-about the basic structure of a **SpreadsheetML** document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
+about the basic structure of a `SpreadsheetML` document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 [!include[Add-ins note](../includes/addinsnote.md)]
 
 --------------------------------------------------------------------------------
-## Approaches to Parsing Open XML Files 
+## Approaches to Parsing Open XML Files
+
 The Open XML SDK provides two approaches to parsing Open XML files. You
 can use the SDK Document Object Model (DOM), or the Simple API for XML
 (SAX) reading and writing features. The SDK DOM is designed to make it
 easy to query and parse Open XML files by using strongly-typed classes.
 However, the DOM approach requires loading entire Open XML parts into
-memory, which can cause an **Out of Memory**
+memory, which can cause an `Out of Memory`
 exception when you are working with really large files. Using the SAX
 approach, you can employ an OpenXMLReader to read the XML in the file
 one element at a time, without having to load the entire file into
@@ -59,7 +60,8 @@ This is the recommended approach for reading very large files.
 
 
 --------------------------------------------------------------------------------
-## Sample Code 
+## Sample Code
+
 You can imagine a scenario where you work for a financial company that
 handles very large Excel spreadsheets. Those spreadsheets are updated
 daily by analysts and can easily grow to sizes exceeding hundreds of
@@ -88,10 +90,10 @@ The following is the complete code sample in both C\# and Visual Basic.
 [!code-vb[](../../samples/spreadsheet/parse_and_read_a_large_spreadsheet/vb/Program.vb#snippet0)]
 
 --------------------------------------------------------------------------------
-## See also 
+## See also
 
 
-[Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)  
+[Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)
 
 
 
