@@ -1,25 +1,36 @@
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
-Module Program
-    Sub Main(args As String())
-    End Sub
-
-
+Module MyModule
 
     ' Set the font for a text run.
-    Public Sub SetRunFont(ByVal fileName As String)
+    ' <Snippet0>
+    Sub SetRunFont(fileName As String)
         ' Open a Wordprocessing document for editing.
-        Dim package As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
-        Using (package)
+        Using package As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)
+            ' <Snippet1>
             ' Set the font to Arial to the first Run.
-            Dim rPr As RunProperties = New RunProperties(New RunFonts With {.Ascii = "Arial"})
-            Dim r As Run = package.MainDocumentPart.Document.Descendants(Of Run).First
+            ' Use an object initializer for RunProperties and rPr.
+            Dim rPr As New RunProperties(New RunFonts() With {
+                .Ascii = "Arial"
+            })
+            ' </Snippet1>
 
+            ' <Snippet2>
+            If package.MainDocumentPart Is Nothing Then
+                Throw New ArgumentNullException("MainDocumentPart is null.")
+            End If
+
+            Dim r As Run = package.MainDocumentPart.Document.Descendants(Of Run)().First()
             r.PrependChild(Of RunProperties)(rPr)
-
-            ' Save changes to the main document part.
-            package.MainDocumentPart.Document.Save()
+            ' </Snippet2>
         End Using
     End Sub
+    ' </Snippet0>
+
+    Sub Main(args As String())
+        SetRunFont(args(0))
+    End Sub
+
 End Module
+

@@ -1,32 +1,41 @@
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Office2021.PowerPoint.Comment;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Comment = DocumentFormat.OpenXml.Office2021.PowerPoint.Comment.Comment;
+using CommentList = DocumentFormat.OpenXml.Office2021.PowerPoint.Comment.CommentList;
 
 DeleteCommentsByAuthorInPresentation(args[0], args[1]);
-
-// Remove all the comments in the slides by a certain author.
+// <Snippet0>
+// Remove all the comments in the slides by a certain x.
 static void DeleteCommentsByAuthorInPresentation(string fileName, string author)
 {
+    // <Snippet1>
     using (PresentationDocument doc = PresentationDocument.Open(fileName, true))
+    // </Snippet1>
     {
-        // Get the specified comment author.
-        IEnumerable<CommentAuthor>? commentAuthors = doc.PresentationPart?.CommentAuthorsPart?.CommentAuthorList?.Elements<CommentAuthor>()
-            .Where(e => e.Name is not null && e.Name.Value is not null && e.Name.Value.Equals(author));
+        // <Snippet2>
+        // Get the modern comments.
+        IEnumerable<Author>? commentAuthors = doc.PresentationPart?.authorsPart?.AuthorList.Elements<Author>()
+            .Where(x => x.Name is not null && x.Name.HasValue && x.Name.Value!.Equals(author));
+        // </Snippet2>
 
         if (commentAuthors is null)
         {
             return;
         }
 
+        // <Snippet3>
         // Iterate through all the matching authors.
-        foreach (CommentAuthor commentAuthor in commentAuthors)
+        foreach (Author commentAuthor in commentAuthors)
         {
-            UInt32Value? authorId = commentAuthor.Id;
+            string? authorId = commentAuthor.Id;
             IEnumerable<SlidePart>? slideParts = doc.PresentationPart?.SlideParts;
 
-            // If there's no author ID or slide parts, return.
+            // If there's no author ID or slide parts or slide parts, return.
             if (authorId is null || slideParts is null)
             {
                 return;
@@ -35,30 +44,36 @@ static void DeleteCommentsByAuthorInPresentation(string fileName, string author)
             // Iterate through all the slides and get the slide parts.
             foreach (SlidePart slide in slideParts)
             {
-                SlideCommentsPart? slideCommentsPart = slide.SlideCommentsPart;
+                IEnumerable<PowerPointCommentPart>? slideCommentsParts = slide.commentParts;
 
                 // Get the list of comments.
-                if (slideCommentsPart is not null && slide.SlideCommentsPart?.CommentList is not null)
+                if (slideCommentsParts is not null)
                 {
-                    IEnumerable<Comment> commentList = slideCommentsPart.CommentList.Elements<Comment>().Where(e => e.AuthorId is not null && e.AuthorId == authorId.Value);
-                    List<Comment> comments = new List<Comment>();
-                    comments = commentList.ToList<Comment>();
+                    IEnumerable<Tuple<PowerPointCommentPart, Comment>> commentsTup = slideCommentsParts
+                        .SelectMany(scp => scp.CommentList.Elements<Comment>()
+                        .Where(comment => comment.AuthorId is not null && comment.AuthorId == authorId)
+                        .Select(c => new Tuple<PowerPointCommentPart, Comment>(scp, c)));
 
-                    foreach (Comment comm in comments)
+                    foreach (Tuple<PowerPointCommentPart, Comment> comment in commentsTup)
                     {
                         // Delete all the comments by the specified author.
+                        comment.Item1.CommentList.RemoveChild(comment.Item2);
 
-                        slideCommentsPart.CommentList.RemoveChild<Comment>(comm);
+                        // If the commentPart has no existing comment.
+                        if (comment.Item1.CommentList.ChildElements.Count == 0)
+                        {
+                            // Delete this part.
+                            slide.DeletePart(comment.Item1);
+                        }
                     }
 
-                    // If the commentPart has no existing comment.
-                    if (slideCommentsPart.CommentList.ChildElements.Count == 0)
-                        // Delete this part.
-                        slide.DeletePart(slideCommentsPart);
                 }
             }
-            // Delete the comment author from the comment authors part.
-            doc.PresentationPart?.CommentAuthorsPart?.CommentAuthorList.RemoveChild(commentAuthor);
+
+            // Delete the comment author from the authors part.
+            doc.PresentationPart?.authorsPart?.AuthorList.RemoveChild(commentAuthor);
         }
+        // </Snippet3>
     }
 }
+// </Snippet0>

@@ -5,16 +5,21 @@ using System;
 using System.IO;
 using System.Linq;
 
+// <Snippet0>
+// <Snippet2>
 static string SetCustomProperty(
     string fileName,
     string propertyName,
     object propertyValue,
     PropertyTypes propertyType)
+    // </Snippet2>
 {
     // Given a document name, a property name/value, and the property type, 
     // add a custom property to a document. The method returns the original
     // value, if it existed.
 
+
+    // <Snippet4>
     string? returnValue = string.Empty;
 
     var newProp = new CustomDocumentProperty();
@@ -83,15 +88,22 @@ static string SetCustomProperty(
         // property to a valid value, throw an exception.
         throw new InvalidDataException("propertyValue");
     }
+    // </Snippet4>
 
+    // <Snippet5>
     // Now that you have handled the parameters, start
     // working on the document.
     newProp.FormatId = "{D5CDD505-2E9C-101B-9397-08002B2CF9AE}";
     newProp.Name = propertyName;
+    // </Snippet5>
 
+    // <Snippet6>
     using (var document = WordprocessingDocument.Open(fileName, true))
     {
         var customProps = document.CustomFilePropertiesPart;
+        // </Snippet6>
+
+        // <Snippet7>
         if (customProps is null)
         {
             // No custom properties? Add the part, and the
@@ -99,13 +111,20 @@ static string SetCustomProperty(
             customProps = document.AddCustomFilePropertiesPart();
             customProps.Properties = new Properties();
         }
+        // </Snippet7>
 
+        // <Snippet8>
         var props = customProps.Properties;
+
         if (props is not null)
         {
+            // </Snippet8>
+
             // This will trigger an exception if the property's Name 
             // property is null, but if that happens, the property is damaged, 
             // and probably should raise an exception.
+
+            // <Snippet9>
             var prop = props.FirstOrDefault(p => ((CustomDocumentProperty)p).Name!.Value == propertyName);
 
             // Does the property exist? If so, get the return value, 
@@ -115,11 +134,9 @@ static string SetCustomProperty(
                 returnValue = prop.InnerText;
                 prop.Remove();
             }
-            else
-            {
-                throw new System.ArgumentException("propertyName property was not found or damaged.");
-            }
+            // </Snippet9>
 
+            // <Snippet10>
             // Append the new property, and 
             // fix up all the property ID values. 
             // The PropertyId value must start at 2.
@@ -129,12 +146,27 @@ static string SetCustomProperty(
             {
                 item.PropertyId = pid++;
             }
-            props.Save();
+            // </Snippet10>
         }
     }
-    return returnValue;
-}
 
+    // <Snippet11>
+    return returnValue;
+    // </Snippet11>
+}
+// </Snippet0>
+
+// <Snippet3>
+string fileName = args[0];
+
+Console.WriteLine(string.Join("Manager = ", SetCustomProperty(fileName, "Manager", "Pedro", PropertyTypes.Text)));
+
+Console.WriteLine(string.Join("Manager = ", SetCustomProperty(fileName, "Manager", "Bonnie", PropertyTypes.Text)));
+
+Console.WriteLine(string.Join("ReviewDate = ", SetCustomProperty(fileName, "ReviewDate", DateTime.Parse("01/26/2024"), PropertyTypes.DateTime)));
+// </Snippet3>
+
+// <Snippet1>
 enum PropertyTypes : int
 {
     YesNo,
@@ -143,3 +175,5 @@ enum PropertyTypes : int
     NumberInteger,
     NumberDouble
 }
+// </Snippet1>
+

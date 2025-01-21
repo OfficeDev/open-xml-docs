@@ -9,7 +9,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 03/22/2022
+ms.date: 01/08/2025
 ms.localizationpriority: medium
 ---
 
@@ -21,79 +21,45 @@ This topic shows how to use the classes in the Open XML SDK for Office to add a 
 
 ## Get a WordprocessingDocument object
 
-The code starts with opening a package file by passing a file name to one of the overloaded **[Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx)** methods of the **[DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)** that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is **true** specifying that the file should be opened in read/write mode.
+The code starts with opening a package file by passing a file name to one of the overloaded <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> methods of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> that takes a string and a Boolean value that specifies whether the file should be opened for editing or for read-only access. In this case, the Boolean value is `true` specifying that the file should be opened in read/write mode.
 
-### [C#](#tab/cs-0)
-```csharp
-    using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
-    {
-        // Insert other code here.
-    }
-```
+### [C#](#tab/cs-1)
+[!code-csharp[](../../samples/word/add_a_new_part_to_a_package/cs/Program.cs#snippet1)]
 
-### [Visual Basic](#tab/vb-0)
-```vb
-    Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
-        ' Insert other code here.
-    End Using
-```
+### [Visual Basic](#tab/vb-1)
+[!code-vb[](../../samples/word/add_a_new_part_to_a_package/vb/Program.vb#snippet1)]
 ***
 
 
-The **using** statement provides a recommended alternative to the typical .Create, .Save, .Close sequence. It ensures that the **Dispose** method (internal method used by the Open XML SDK to clean up resources) is automatically called when the closing brace is reached. The block that follows the **using** statement establishes a scope for the object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because the **Dispose** method is automatically called when you exit the block; you do not have to explicitly call **Save** and **Close**, as long as you use **using**.
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 [!include[Structure](../includes/word/structure.md)]
 
 ## How the sample code works
 
-After opening the document for editing, in the **using** statement, as a **WordprocessingDocument** object, the code creates a reference to the **MainDocumentPart** part and adds a new custom XML part. It then reads the contents of the external
-file that contains the custom XML and writes it to the **CustomXmlPart** part.
+After opening the document for editing, in the `using` statement, as a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object, the code creates a reference to the `MainDocumentPart` part and adds a new custom XML part. It then reads the contents of the external
+file that contains the custom XML and writes it to the `CustomXmlPart` part.
 
 > [!NOTE]
 > To use the new document part in the document, add a link to the document part in the relationship part for the new part.
 
-### [C#](#tab/cs-1)
-```csharp
-    MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-    CustomXmlPart myXmlPart = mainPart.AddCustomXmlPart(CustomXmlPartType.CustomXml);
+### [C#](#tab/cs-2)
+[!code-csharp[](../../samples/word/add_a_new_part_to_a_package/cs/Program.cs#snippet2)]
 
-    using (FileStream stream = new FileStream(fileName, FileMode.Open))
-    {
-        myXmlPart.FeedData(stream);
-    }
-```
-
-### [Visual Basic](#tab/vb-1)
-```vb
-    Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-
-    Dim myXmlPart As CustomXmlPart = mainPart.AddCustomXmlPart(CustomXmlPartType.CustomXml)
-
-    Using stream As New FileStream(fileName, FileMode.Open)
-        myXmlPart.FeedData(stream)
-    End Using
-```
+### [Visual Basic](#tab/vb-2)
+[!code-vb[](../../samples/word/add_a_new_part_to_a_package/vb/Program.vb#snippet2)]
 ***
 
 
 ## Sample code
 
-The following code adds a new document part that contains custom XML from an external file and then populates the part. To call the AddCustomXmlPart method in your program, use the following example that modifies the file "myPkg2.docx" by adding a new document part to it.
+The following code adds a new document part that contains custom XML from an external file and then populates the part. To call the `AddCustomXmlPart` method in your program, use the following example that modifies a file by adding a new document part to it.
 
-### [C#](#tab/cs-2)
-```csharp
-    string document = @"C:\Users\Public\Documents\myPkg2.docx";
-    string fileName = @"C:\Users\Public\Documents\myXML.xml";
-    AddNewPart(document, fileName);
-```
+### [C#](#tab/cs-3)
+[!code-csharp[](../../samples/word/add_a_new_part_to_a_package/cs/Program.cs#snippet3)]
 
-### [Visual Basic](#tab/vb-2)
-```vb
-    Dim document As String = "C:\Users\Public\Documents\myPkg2.docx"
-    Dim fileName As String = "C:\Users\Public\Documents\myXML.xml"
-    AddNewPart(document, fileName)
-```
+### [Visual Basic](#tab/vb-3)
+[!code-vb[](../../samples/word/add_a_new_part_to_a_package/vb/Program.vb#snippet3)]
 ***
 
 
@@ -103,10 +69,11 @@ The following code adds a new document part that contains custom XML from an ext
 Following is the complete code example in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/add_a_new_part_to_a_package/cs/Program.cs)]
+[!code-csharp[](../../samples/word/add_a_new_part_to_a_package/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/add_a_new_part_to_a_package/vb/Program.vb)]
+[!code-vb[](../../samples/word/add_a_new_part_to_a_package/vb/Program.vb#snippet0)]
+***
 
 ## See also
 

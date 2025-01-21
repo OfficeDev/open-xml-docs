@@ -11,21 +11,22 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/14/2025
 ms.localizationpriority: high
 ---
 # Working with the shared string table
 
-This topic discusses the Open XML SDK [SharedStringTable](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringtable.aspx) class and how it relates
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.SharedStringTable> class and how it relates
 to the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
 
 
 --------------------------------------------------------------------------------
-## SharedStringTable in SpreadsheetML 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the **SharedStringTable** (\<**sst**\>) element.
+## SharedStringTable in SpreadsheetML
+
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+specification introduces the `SharedStringTable` (`<sst/>`) element.
 
 An instance of this part type contains one occurrence of each unique
 string that occurs on all worksheets in a workbook.
@@ -41,7 +42,7 @@ table that is shared across the workbook is to improve performance in
 opening and saving the file by only reading and writing the repetitive
 information once.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 Shared strings optimize space requirements when the spreadsheet contains
 multiple instances of the same string. Spreadsheets that contain
@@ -69,27 +70,28 @@ strings that can appear multiple times in one sheet or in multiple
 sheets.
 
 The following table lists the common Open XML SDK classes used when
-working with the **SharedStringTable** class.
+working with the SharedStringTable class.
 
 
 | **SpreadsheetML Element** |                                                  **Open XML SDK Class**                                                  |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------|
-|            si             | [SharedStringItem](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sharedstringitem.aspx) |
-|             t             |             [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.text.aspx)             |
+|            `<si/>`             | <xref:DocumentFormat.OpenXml.Spreadsheet.SharedStringItem> |
+|             `<t/>`             |             <xref:DocumentFormat.OpenXml.Spreadsheet.Text>             |
 
 --------------------------------------------------------------------------------
-## Open XML SDK SharedStringTable Class 
-The Open XML SDK**SharedStringTable** class
-represents the paragraph (\<**sst**\>) element
+## Open XML SDK SharedStringTable Class
+
+The Open XML SDK `SharedStringTable` class
+represents the paragraph (`<sst/>`) element
 defined in the Open XML File Format schema for SpreadsheetML documents.
-Use the **SharedStringTable** class to
-manipulate individual \<**sst**\> elements in a
+Use the `SharedStringTable` class to
+manipulate individual `<sst/>` elements in a
 SpreadsheetML document.
 
 ### Shared String Item Class
 
-The **SharedStringItem** class represents the
-shared string item (\<**si**\>) element which
+The `SharedStringItem` class represents the
+shared string item (`<si/>`) element which
 represents an individual string in the shared string table.
 
 If the string is a simple string with formatting applied at the cell
@@ -107,9 +109,9 @@ text is stored in the shared string table. The next two strings ("Cell
 A2" and "Cell B2") contain character level formatting. The word "Cell"
 is formatted differently from "A2" and "B2", therefore the formatting
 for the cells is stored along with the text within the shared string
-item using the **RichTextRun** (\<**r**\>) and **RunProperties** (\<**rPr**\>) elements. To preserve the white space in
-between the text that is formatted differently, the **space** attribute of the **text** (\<**t**\>) element
-is set equal to **preserve**. For more
+item using the `RichTextRun` (`<r/>`) and `RunProperties` (`<rPr/>`) elements. To preserve the white space in
+between the text that is formatted differently, the `space` attribute of the `text` (`<t/>`) element
+is set equal to `preserve`. For more
 information about the rich text run and run properties elements, see the
 ISO/IEC 29500 specification.
 
@@ -195,24 +197,24 @@ ISO/IEC 29500 specification.
 ```
 ### Text Class
 
-The **Text** class represents the text (\<**t**\>) element which represents the text content
+The `Text` class represents the text (`<t/>`) element which represents the text content
 shown as part of a string.
 
 ### Open XML SDK Code Example
 
-The following code takes a **String** and a
-**SharedStringTablePart** and verifies if the
+The following code takes a `String` and a
+`SharedStringTablePart` and verifies if the
 specified text exists in the shared string table. If the text does not
 exist, it is added as a shared string item to the shared string table.
 
-For more information about how to use the **SharedStringTable** class to programmatically
+For more information about how to use the `SharedStringTable` class to programmatically
 insert text into a cell, see [How to: Insert text into a cell in a spreadsheet document](how-to-insert-text-into-a-cell-in-a-spreadsheet.md).
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/spreadsheet/working_with_the_shared_string_table/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/working_with_the_shared_string_table/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/spreadsheet/working_with_the_shared_string_table/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/working_with_the_shared_string_table/vb/Program.vb#snippet0)]
 ### Generated SpreadsheetML
 
 If you run the Open XML SDK in the [How to: Insert text into a cell in a spreadsheet document](how-to-insert-text-into-a-cell-in-a-spreadsheet.md) topic and insert
@@ -222,7 +224,7 @@ referenced in the code.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:sst xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:sst xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:si>
         <x:t>hello</x:t>
       </x:si>
@@ -232,7 +234,7 @@ In addition, the following XML is written to the new worksheet XML file.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
       <x:sheetData>
         <x:row r="1">
           <x:c r="A1" t="s">

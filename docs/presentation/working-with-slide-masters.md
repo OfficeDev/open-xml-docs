@@ -10,72 +10,72 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 09/17/2024
 ms.localizationpriority: medium
 ---
 
 # Working with slide masters
 
-This topic discusses the Open XML SDK for Office **[SlideMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidemaster.aspx)** class and how it relates to the Open XML File Format PresentationML schema.
+This topic discusses the Open XML SDK for Office <xref:DocumentFormat.OpenXml.Presentation.SlideMaster> class and how it relates to the Open XML File Format PresentationML schema.
 
 ## Slide Masters in PresentationML
 
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification describes the Open XML PresentationML \<sldMaster\> element used to represent slide layouts in a PresentationML document as follows.
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification describes the Open XML PresentationML `<sldMaster/>` element used to represent slide layouts in a PresentationML document as follows.
 
 This element specifies an instance of a slide master slide. Within a slide master slide are contained all elements that describe the objects and their corresponding formatting for within a presentation slide. Within a slide master slide are two main elements. The cSld element specifies the common slide elements such as shapes and their attached text bodies. Then the txStyles element specifies the formatting for the text within each of these shapes. The other properties within a slide master slide specify other properties for within a presentation slide such as color information, headers and footers, as well as timing and transition information for all corresponding presentation slides.
 
-The \<sldMaster\> element is the root element of the PresentationML Slide Master part. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
+The `<sldMaster/>` element is the root element of the PresentationML Slide Master part. For more information about the overall structure of the parts and elements that make up a PresentationML document, see [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
-The following table lists the child elements of the \<sldMaster\> element used when working with slide masters and the Open XML SDK classes that correspond to them.
+The following table lists the child elements of the `<sldMaster/>` element used when working with slide masters and the Open XML SDK classes that correspond to them.
 
 | **PresentationML Element** | **Open XML SDK Class**                                                                                                 |
 |:---------------------------|:---------------------------------------------------------------------------------------------------------------------------|
-| \<clrMap\>                 | [ColorMap](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormap.aspx)                    |
-| \<cSld\>                   | [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)      |
-| \<extLst\>                 | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
-| \<hf\>                     | [HeaderFooter](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.headerfooter.aspx)            |
-| \<sldLayoutIdLst\>         | [SlideLayoutIdList](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayoutidlist.aspx)  |
-| \<timing\>                 | [Timing](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.timing.aspx)                        |
-| \<transition\>             | [Transition](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.transition.aspx)                |
-| \<txStyles\>               | [TextStyles](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.textstyles.aspx)                |
+| `<clrMap/>`                 | <xref:DocumentFormat.OpenXml.Presentation.ColorMap>                    |
+| `<cSld/>`                   | <xref:DocumentFormat.OpenXml.Presentation.CommonSlideData>      |
+| `<extLst/>`                 | <xref:DocumentFormat.OpenXml.Presentation.ExtensionListWithModification> |
+| `<hf/>`                     | <xref:DocumentFormat.OpenXml.Presentation.HeaderFooter>            |
+| `<sldLayoutIdLst/>`         | <xref:DocumentFormat.OpenXml.Presentation.SlideLayoutIdList>  |
+| `<timing/>`                 | <xref:DocumentFormat.OpenXml.Presentation.Timing>                       |
+| `<transition/>`             | <xref:DocumentFormat.OpenXml.Presentation.Transition>                |
+| `<txStyles/>`               | <xref:DocumentFormat.OpenXml.Presentation.TextStyles>                |
 
-The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification describes the attributes of the \<sldMaster\> element.
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+specification describes the attributes of the `<sldMaster/>` element.
 
 | **Attributes**             | **Description** |
 |----------------------------|----------------------------------------------------|
-| preserve (Preserve Slide Master) | Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of **false** should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br/>The possible values for this attribute are defined by the W3C XML Schema **Boolean** data type. |
+| preserve (Preserve Slide Master) | Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of `false` should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br/>The possible values for this attribute are defined by the W3C XML Schema `Boolean` data type. |
 
 ## Open XML SDK SlideMaster Class
 
-The Open XML SDK**SlideMaster** class
-represents the \<sldMaster\> element defined in the Open XML File Format
-schema for PresentationML documents. Use the **SlideMaster** class to manipulate individual
-\<sldMaster\> elements in a PresentationML document.
+The Open XML SDK`SlideMaster` class
+represents the `<sldMaster/>` element defined in the Open XML File Format
+schema for PresentationML documents. Use the `SlideMaster` class to manipulate individual
+`<sldMaster/>` elements in a PresentationML document.
 
-Classes that represent child elements of the \<sldMaster\> element and
-that are therefore commonly associated with the **SlideMaster** class are shown in the following
+Classes that represent child elements of the `<sldMaster/>` element and
+that are therefore commonly associated with the `SlideMaster` class are shown in the following
 list.
 
 ### ColorMapOverride Class
 
-The **ColorMapOverride** class corresponds to the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<clrMapOvr\> element:
+The `ColorMapOverride` class corresponds to the `<clrMapOvr/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<clrMapOvr/>` element:
 
-This element provides a mechanism with which to override the color schemes listed within the \<ClrMap\> element. If the \<masterClrMapping\> child element is present, the color scheme defined by the master is used. If the \<overrideClrMapping\> child element is present, it defines a new color scheme specific to the parent notes slide, presentation slide, or slide  layout.
+This element provides a mechanism with which to override the color schemes listed within the `<ClrMap/>` element. If the `<masterClrMapping/>` child element is present, the color scheme defined by the master is used. If the `<overrideClrMapping/>` child element is present, it defines a new color scheme specific to the parent notes slide, presentation slide, or slide layout.
 
 ### CommonSlideData Class
 
-The **CommonSlideData** class corresponds to the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<cSld\> element:
+The `CommonSlideData` class corresponds to the `<cSld/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<cSld/>` element:
 
-This element specifies a container for the type of slide information that is relevant to all of the slide types. All slides share a common set of properties that is independent of the slide type; the description of these properties for any particular slide is stored within the slide's \<cSld\> container. Slide data specific to the slide type indicated by the parent element is stored elsewhere.
+This element specifies a container for the type of slide information that is relevant to all of the slide types. All slides share a common set of properties that is independent of the slide type; the description of these properties for any particular slide is stored within the slide's `<cSld/>` container. Slide data specific to the slide type indicated by the parent element is stored elsewhere.
 
-The actual data in \<cSld\> describe only the particular parent slide; it is only the type of information stored that is common across all slides.
+The actual data in `<cSld/>` describe only the particular parent slide; it is only the type of information stored that is common across all slides.
 
 ### ExtensionListWithModification Class
 
-The **ExtensionListWithModification** class corresponds to the \<extLst\>element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<extLst\> element:
+The `ExtensionListWithModification` class corresponds to the `<extLst/>`element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<extLst/>` element:
 
-This element specifies the extension list with modification ability within which all future extensions of element type \<ext\> are defined. The extension list along with corresponding future extensions is used to extend the storage capabilities of the PresentationML framework. This allows for various new kinds of data to be stored natively within the
+This element specifies the extension list with modification ability within which all future extensions of element type `<ext/>` are defined. The extension list along with corresponding future extensions is used to extend the storage capabilities of the PresentationML framework. This allows for various new kinds of data to be stored natively within the
 framework.
 
 > [!NOTE]
@@ -83,31 +83,31 @@ framework.
 
 ### HeaderFooter Class
 
-The **HeaderFooter** class corresponds to the \<hf\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<hf\> element:
+The `HeaderFooter` class corresponds to the `<hf/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<hf/>` element:
 
 This element specifies the header and footer information for a slide. Headers and footers consist of placeholders for text that should be consistent across all slides and slide types, such as a date and time, slide numbering, and custom header and footer text.
 
 ### SlideLayoutIdList Class
 
-The **SlideLayoutIdList** class corresponds to the \<sldLayoutIdLst\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<sldLayoutIdLst\> element:
+The `SlideLayoutIdList` class corresponds to the `<sldLayoutIdLst/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<sldLayoutIdLst/>` element:
 
 This element specifies the existence of the slide layout identification list. This list is contained within the slide master and is used to determine which layouts are being used within the slide master file. Each layout within the list of slide layouts has its own identification number and relationship identifier that uniquely identifies it within both the presentation document and the particular master slide within which it is used.
 
 ### Timing Class
 
-The **Timing** class corresponds to the \<timing\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<timing\> element:
+The `Timing` class corresponds to the `<timing/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<timing/>` element:
 
-This element specifies the timing information for handling all animations and timed events within the corresponding slide. This information is tracked via time nodes within the \<timing\> element. More information on the specifics of these time nodes and how they are to be defined can be found within the Animation section of the PresentationML framework.
+This element specifies the timing information for handling all animations and timed events within the corresponding slide. This information is tracked via time nodes within the `<timing/>` element. More information on the specifics of these time nodes and how they are to be defined can be found within the Animation section of the PresentationML framework.
 
 ### Transition Class
 
-The **Transition** class corresponds to the \<transition\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<transition\> element:
+The `Transition` class corresponds to the `<transition/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<transition/>` element:
 
 This element specifies the kind of slide transition that should be used to transition to the current slide from the previous slide. That is, the transition information is stored on the slide that appears after the transition is complete.
 
 ### TextStyles Class
 
-The **TextStyles** class corresponds to the \<txStyles\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the \<txStyles\> element:
+The `TextStyles` class corresponds to the `<txStyles/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<txStyles/>` element:
 
 This element specifies the text styles within a slide master. Within this element is the styling information for title text, the body text and other slide text as well. This element is only for use within the Slide Master and thus sets the text styles for the corresponding presentation slides.
 
@@ -122,9 +122,9 @@ Consider the case where we would like to specify the title text for a master sli
             </a:spcBef>  
             <a:buNone/>  
             <a:defRPr sz="4400" kern="1200">  
-                <a:solidFill>vv  
+                <a:solidFill>
                     <a:schemeClr val="tx1"/>  
-                </a:solidFill\>  
+                </a:solidFill>  
                 <a:latin typeface="+mj-lt"/>  
                 <a:ea typeface="+mj-ea"/>  
                 <a:cs typeface="+mj-cs"/>  
@@ -138,22 +138,22 @@ In the previous example the title text is set according to the above formatting 
 
 ## Working with the SlideMaster Class
 
-As shown in the Open XML SDK code sample that follows, every instance of the **SlideMaster** class is associated with an instance of the **[SlideMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidemasterpart.aspx)** class, which represents a slide master part, one of the required parts of a PresentationML presentation file package. Each **SlideMaster** class instance must also be associated with instances of the **[SlideLayout](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slidelayout.aspx)** and <**[Slide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.slide.aspx)** classes, which are in turn associated with similarly named required presentation parts, represented by the **[SlideLayoutPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidelayoutpart.aspx)** and **[SlidePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.slidepart.aspx)** classes.
+As shown in the Open XML SDK code sample that follows, every instance of the `SlideMaster` class is associated with an instance of the <xref:DocumentFormat.OpenXml.Packaging.SlideMasterPart> class, which represents a slide master part, one of the required parts of a PresentationML presentation file package. Each `SlideMaster` class instance must also be associated with instances of the <xref:DocumentFormat.OpenXml.Presentation.SlideLayout> and <xref:DocumentFormat.OpenXml.Presentation.Slide> classes, which are in turn associated with similarly named required presentation parts, represented by the <xref:DocumentFormat.OpenXml.Packaging.SlideLayoutPart> and <xref:DocumentFormat.OpenXml.Packaging.SlidePart> classes.
 
-The **SlideMaster** class, which represents the \<sldMaster\> element, is therefore also associated with a series of other classes that represent the child elements of the \<sldMaster\>
-element. Among these classes, as shown in the following code sample, are the **CommonSlideData** class, the **ColorMap** class, the **[ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, and the **[Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx)** class.
+The `SlideMaster` class, which represents the `<sldMaster/>` element, is therefore also associated with a series of other classes that represent the child elements of the `<sldMaster/>`
+element. Among these classes, as shown in the following code sample, are the `CommonSlideData` class, the `ColorMap` class, the <xref:DocumentFormat.OpenXml.Presentation.ShapeTree> class, and the <xref:DocumentFormat.OpenXml.Presentation.Shape> class.
 
 ## Open XML SDK Code Example
 
-The following method from the article [How to: Create a presentation document by providing a file name](/office/open-xml/how-to-create-a-presentation-document-by-providing-a-file-name) adds a new slidemaster part to an existing presentation and creates an instance of an Open XML SDK**SlideMaster** class in the new slide master part. The **SlideMaster** class constructor creates instances of the **CommonSlideData** class and the **ColorMap**, **SlideLayoutIdList**, and **TextStyles** classes. The **CommonSlideData** class constructor creates an instance of the **[ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx)** class, whose constructor in turn creates additional class instances: an instance of the **[NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx)** class, an instance of the **[GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx)** class, and an instance of the **[Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx)** class, among others.
+The following method from the article [How to: Create a presentation document by providing a file name](./how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slidemaster part to an existing presentation and creates an instance of an Open XML SDK `SlideMaster` class in the new slide master part. The `SlideMaster` class constructor creates instances of the `CommonSlideData` class and the `ColorMap`, `SlideLayoutIdList`, and `TextStyles` classes. The `CommonSlideData` class constructor creates an instance of the <xref:DocumentFormat.OpenXml.Presentation.ShapeTree> class, whose constructor in turn creates additional class instances: an instance of the <xref:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties> class, an instance of the <xref:DocumentFormat.OpenXml.Presentation.GroupShapeProperties> class, and an instance of the <xref:DocumentFormat.OpenXml.Presentation.Shape> class, among others.
 
-The namespace represented by the letter *P* in the code is the **[DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)** namespace.
+The namespace represented by the letter *P* in the code is the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" /> namespace.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/presentation/working_with_slide_masters/cs/Program.cs)]
+[!code-csharp[](../../samples/presentation/create_by_providing_a_file_name/cs/Program.cs#snippet99)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/presentation/working_with_slide_masters/vb/Program.vb)]
+[!code-vb[](../../samples/presentation/create_by_providing_a_file_name/vb/Program.vb#snippet99)]
 
 ## Generated PresentationML
 
@@ -161,7 +161,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <p:sldMaster xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
+    <p:sldMaster xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
       <p:cSld>
         <p:spTree>
           <p:nvGrpSpPr>
@@ -171,7 +171,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
             <p:nvPr />
           </p:nvGrpSpPr>
           <p:grpSpPr>
-            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
           </p:grpSpPr>
           <p:sp>
             <p:nvSpPr>
@@ -179,7 +179,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
                        name="Title Placeholder 1" />
               <p:cNvSpPr>
                 <a:spLocks noGrp="1"
-                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
               </p:cNvSpPr>
               <p:nvPr>
                 <p:ph type="title" />
@@ -187,9 +187,9 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
             </p:nvSpPr>
             <p:spPr />
             <p:txBody>
-              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
             </p:txBody>
           </p:sp>
         </p:spTree>
@@ -209,7 +209,7 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
       <p:sldLayoutIdLst>
         <p:sldLayoutId id="2147483649"
                        r:id="rId1"
-                       xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+                       xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
       </p:sldLayoutIdLst>
       <p:txStyles>
         <p:titleStyle />
@@ -222,6 +222,9 @@ When the Open XML SDK code is run, the following XML is written to the Presentat
 ## See also
 
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
+
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
+
 [How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)
+
 [How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  

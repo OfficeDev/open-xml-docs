@@ -1,9 +1,8 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
-// <Snippet2>
 
+// <Snippet2>
 // <Snippet1>
 Sheets? sheets = GetAllWorksheets(args[0]);
 // </Snippet1>
@@ -21,6 +20,7 @@ if (sheets is not null)
 // The Sheets class contains a collection of 
 // OpenXmlElement objects, each representing one of 
 // the sheets.
+// <Snippet0>
 static Sheets? GetAllWorksheets(string fileName)
 {
     // <Snippet3>

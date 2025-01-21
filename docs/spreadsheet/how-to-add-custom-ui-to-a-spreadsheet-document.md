@@ -11,28 +11,27 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 01/10/2024
+ms.date: 01/09/2025
 ms.localizationpriority: high
 ---
 
 # Add custom UI to a spreadsheet document
 
-This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to an Microsoft Excel 2010 or Microsoft Excel 2013 worksheet. It contains an example **AddCustomUI** method to illustrate
+This topic shows how to use the classes in the Open XML SDK for Office to programmatically add custom UI, modifying the ribbon, to a Microsoft Excel worksheet. It contains an example `AddCustomUI` method to illustrate
 this task.
 
 
 
 ## Creating Custom UI
 
-Before using the Open XML SDK to create a ribbon customization in an Excel workbook, you must first create the customization content. Describing the XML required to create a ribbon customization is beyond the scope of this topic. In addition, you will find it far easier to use the Ribbon Designer in Visual Studio to create the customization for you. For more information about customizing the ribbon by using the Visual Studio Ribbon Designer, see [Ribbon Designer](https://msdn.microsoft.com/library/26617206-f4da-416f-a18a-d817b2d4872d(Office.15).aspx) and [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](https://msdn.microsoft.com/library/312865e6-950f-46ab-88de-fe7eb8036bfe(Office.15).aspx).
-For the purposes of this demonstration, you will need an XML file that contains a customization, and the following code provides a simple customization (or you can create your own by using the Visual Studio Ribbon Designer, and then right-click to export the customization to an XML file). The samples below are the xml strings used in this example. This XML content describes a ribbon customization that includes a button labeled "Click Me!" in a group named Group1 on the **Add-Ins** tab in Excel. When you click the button, it attempts to run a macro named **SampleMacro** in the host workbook.
+Before using the Open XML SDK to create a ribbon customization in an Excel workbook, you must first create the customization content. Describing the XML required to create a ribbon customization is beyond the scope of this topic. In addition, you will find it far easier to use the Ribbon Designer in Visual Studio to create the customization for you. For more information about customizing the ribbon by using the Visual Studio Ribbon Designer, see [Ribbon Designer](/visualstudio/vsto/ribbon-designer) and [Walkthrough: Creating a Custom Tab by Using the Ribbon Designer](/visualstudio/vsto/walkthrough-creating-a-custom-tab-by-using-the-ribbon-designer).
+For the purposes of this demonstration, you will need an XML file that contains a customization, and the following code provides a simple customization (or you can create your own by using the Visual Studio Ribbon Designer, and then right-click to export the customization to an XML file). The samples below are the xml strings used in this example. This XML content describes a ribbon customization that includes a button labeled "Click Me!" in a group named **Group1** on the `Add-Ins` tab in Excel. When you click the button, it attempts to run a macro named `SampleMacro` in the host workbook.
 
 ### [C#](#tab/cs-xml)
 [!code-csharp[](../../samples/spreadsheet/add_custom_ui/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-xml)
 [!code-vb[](../../samples/spreadsheet/add_custom_ui/vb/Program.vb#snippet4)]
 ***
-
 
 ## Create the Macro
 
@@ -56,15 +55,15 @@ For this demonstration, the ribbon customization includes a button that attempts
 
 ## AddCustomUI Method
 
-The **AddCustomUI** method accepts two parameters:
+The `AddCustomUI` method accepts two parameters:
 
 - *filename* — A string that contains a file name that specifies the workbook to modify.
 
-- customUIContent*—A string that contains the custom content (that is, the XML markup that describes the customization).
+- *customUIContent* — A string that contains the custom content (that is, the XML markup that describes the customization).
 
 ## Interact with the Workbook
 
-The sample method, **AddCustomUI**, starts by opening the requested workbook in read/write mode, as shown in the following code.
+The sample method, `AddCustomUI`, starts by opening the requested workbook in read/write mode, as shown in the following code.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/spreadsheet/add_custom_ui/cs/Program.cs#snippet1)]
@@ -86,7 +85,7 @@ Next, as shown in the following code, the sample method attempts to retrieve a r
 
 ## Add the Customization
 
-Given a reference to the ribbon extensibility part, the following code finishes by setting the part's **CustomUI** property to a new [CustomUI](https://msdn.microsoft.com/library/office/documentformat.openxml.office.customui.customui.aspx) object that contains the supplied customization. Once the customization is in place, the code saves the custom UI.
+Given a reference to the ribbon extensibility part, the following code finishes by setting the part's `CustomUI` property to a new <xref:DocumentFormat.OpenXml.Office.CustomUI.CustomUI> object that contains the supplied customization. Once the customization is in place, the code saves the custom UI.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/spreadsheet/add_custom_ui/cs/Program.cs#snippet3)]
@@ -97,7 +96,7 @@ Given a reference to the ribbon extensibility part, the following code finishes 
 
 ## Sample Code
 
-The following is the complete **AddCustomUI** code sample in C\# and Visual Basic. The first argument passed to the **AddCustomUI** should be the absolute
+The following is the complete `AddCustomUI` code sample in C\# and Visual Basic. The first argument passed to the `AddCustomUI` should be the absolute
 path to the AddCustomUI.xlsm file created from the instructions above.
 
 ### [C#](#tab/cs)
@@ -105,6 +104,7 @@ path to the AddCustomUI.xlsm file created from the instructions above.
 
 ### [Visual Basic](#tab/vb)
 [!code-vb[](../../samples/spreadsheet/add_custom_ui/vb/Program.vb#snippet0)]
+***
 
 ## See also
 

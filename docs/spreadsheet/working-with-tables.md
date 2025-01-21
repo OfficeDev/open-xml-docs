@@ -11,21 +11,20 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/14/2025
 ms.localizationpriority: high
 ---
 
 # Working with SpreadsheetML tables
 
-This topic discusses the Open XML SDK **[Table](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.aspx)** class and how it relates to the Open
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.Table> class and how it relates to the Open
 XML File Format SpreadsheetML schema. For more information about the
 overall structure of the parts and elements that make up a SpreadsheetML
-document, see [Structure of a SpreadsheetML document
-(Open XML SDK)](structure-of-a-spreadsheetml-document.md).
+document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 ## Tables in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463) specification introduces the **table** (\<**table**\>) element.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `table` (`<table/>`) element.
 
 A table helps organize and provide structure to lists of information in
 a worksheet. Tables have clearly labeled columns, rows, and data
@@ -54,7 +53,7 @@ the various attributes for the particular table object.
 A SpreadsheetML table is a logical construct that specifies that a range
 of data belongs to a single dataset. SpreadsheetML already uses a
 table-like model for specifying values in rows and columns, but you can
-also label a subset of the sheet as a **table**
+also label a subset of the sheet as a `table`
 and give it certain properties that are useful for analysis. A table in
 SpreadsheetML allows you to analyze data in new ways, such as by using
 filtering, formatting and binding of data.
@@ -64,23 +63,23 @@ in a separate part inside the package. The table part does not contain
 any table data. The data is maintained in the worksheet cells. For more
 information about data is stored in the worksheet, see [Working with sheets](working-with-sheets.md).
 
-The following table lists the common Open XML SDK classes used when working with the **Table** class.
+The following table lists the common Open XML SDK classes used when working with the `Table` class.
 
 | **SpreadsheetML Element** | **Open XML SDK Class**                                               |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------|
-|        tableColumn        | [TableColumn](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.tablecolumn.aspx)   |
-|        autoFilter         | [AutoFilter](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.table.autofilter.aspx) |
+|        `<tableColumn/>`        | <xref:DocumentFormat.OpenXml.Spreadsheet.TableColumn>   |
+|        `<autoFilter/>`         | <xref:DocumentFormat.OpenXml.Spreadsheet.Table.AutoFilter*> |
 
 ## Open XML SDK Table Class
 
-The Open XML SDK**Table** class represents
-the table (\<**table**\>) element defined in
+The Open XML SDK `Table` class represents
+the table (`<table/>`) element defined in
 the Open XML File Format schema for SpreadsheetML documents. Use the
-**Table** class to manipulate individual
-\<**table**\> elements in a SpreadsheetML
+`Table` class to manipulate individual
+`<table/>` elements in a SpreadsheetML
 document.
 
-The following information from the ISO/IEC 29500 specification introduces the **table** (\<**table**\>) element.
+The following information from the ISO/IEC 29500 specification introduces the `table` (`<table/>`) element.
 
 An instance of this part type contains a description of a single table
 and its autofilter information. (The data for the table is stored in the
@@ -96,13 +95,13 @@ enable autofiltering you must define at least one autofilter, which can
 be empty. If you do not define any autofilter, autofiltering will be
 disabled when the document is opened in Excel.
 
-The **table** element has several attributes
-used to identify the table and the data range it covers. The **id** and **name**
-attributes must be unique across all table parts. The **displayName** attribute must be unique across all
+The `table` element has several attributes
+used to identify the table and the data range it covers. The `id` and `name`
+attributes must be unique across all table parts. The `displayName` attribute must be unique across all
 table parts and unique across all defined names in the workbook. The
-**name** attribute is used by the object model
-in Excel. The **displayName** attribute is used
-by references in formulas. The **ref**
+`name` attribute is used by the object model
+in Excel. The `displayName` attribute is used
+by references in formulas. The `ref`
 attribute is used to identify the cell range that the table covers. This
 includes not only the table data, but also the table header containing
 column names. For more information about table attributes, see the
@@ -110,18 +109,18 @@ ISO/IEC 29500 specification.
 
 ### Table Column Class
 
-To add columns to your table you add new **tableColumn** elements to the **tableColumns** collection. The collection has a
+To add columns to your table you add new `tableColumn` elements to the `tableColumns` collection. The collection has a
 count attribute that tracks the number of columns.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **TableColumn** (\<**tableColumn**\>) element.
+introduces the `TableColumn` (`<tableColumn/>`) element.
 
 An element representing a single column for this table.
 
 ### Auto Filter Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **AutoFilter** (\<**autoFilter**\>) element.
+introduces the `AutoFilter` (`<autoFilter/>`) element.
 
 AutoFilter temporarily hides rows based on filter criteria, which is
 applied column by column to a table of data in the worksheet. This
@@ -151,12 +150,12 @@ The table contains three columns and three rows, plus a column header.
 
 The following XML defines the worksheet and is contained in the
 "sheet1.xml" file. The worksheet XML file contains the actual data
-displayed in the table, and contains the **tablePart** element that references the
+displayed in the table, and contains the `tablePart` element that references the
 "table1.xml" file, which contains the table definition.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
+    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
         <dimension ref="A1:C4"/>
         <sheetViews>
             <sheetView tabSelected="1" workbookViewId="0">

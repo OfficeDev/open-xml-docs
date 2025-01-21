@@ -10,7 +10,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/30/2021
+ms.date: 09/12/2024
 ms.localizationpriority: high
 ---
 
@@ -20,10 +20,10 @@ This topic shows how to use the Open XML SDK for Office to accept all revisions 
 
 [!include[Structure](../includes/word/structure.md)]
 
-The basic document structure of a **WordProcessingML** document consists of the **document** and **body** elements, followed by one or more block level elements such as **p**, which represents a paragraph. A paragraph contains one or more **r** elements. The **r** stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more **t** elements. The **t** element contains a range of text. The following code example shows the **WordprocessingML** markup for a document that contains the text "Example text."
+The basic document structure of a `WordProcessingML` document consists of the `document` and `body` elements, followed by one or more block level elements such as `p`, which represents a paragraph. A paragraph contains one or more `r` elements. The `r` stands for run, which is a region of text with a common set of properties, such as formatting. A run contains one or more `t` elements. The `t` element contains a range of text. The following code example shows the `WordprocessingML` markup for a document that contains the text "Example text."
 
 ```xml
-    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
       <w:body>
         <w:p>
           <w:r>
@@ -34,21 +34,21 @@ The basic document structure of a **WordProcessingML** document consists of the 
     </w:document>
 ```
 
-Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to **WordprocessingML** elements. You will find these classes in the [DocumentFormat.OpenXml.Wordprocessing](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.aspx) namespace. The following table lists the class names of the classes that correspond to the **document**, **body**, **p**, **r**, and **t** elements.
+Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to `WordprocessingML` elements. You will find these classes in the <xref:DocumentFormat.OpenXml.Wordprocessing?displayProperty=fullName> namespace. The following table lists the class names of the classes that correspond to the `document`, `body`, `p`, `r`, and `t` elements.
 
 | WordprocessingML Element | Open XML SDK Class | Description |
 |---|---|---|
-| document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
-| body | [Body](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.body.aspx) | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification. |
-| p | [Paragraph](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.paragraph.aspx) | A paragraph. |
-| r | [Run](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.run.aspx) | A run. |
-| t | [Text](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.text.aspx) | A range of text. |
+| document | <xref:DocumentFormat.OpenXml.Wordprocessing.Document> | The root element for the main document part. |
+| body | <xref:DocumentFormat.OpenXml.Wordprocessing.Body> | The container for the block level structures such as paragraphs, tables, annotations and others specified in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification. |
+| p | <xref:DocumentFormat.OpenXml.Wordprocessing.Paragraph> | A paragraph. |
+| r | <xref:DocumentFormat.OpenXml.Wordprocessing.Run> | A run. |
+| t | <xref:DocumentFormat.OpenXml.Wordprocessing.Text> | A range of text. |
 
 ## ParagraphPropertiesChange Element
 
-When you accept a revision mark, you change the properties of a paragraph either by deleting an existing text or inserting a new text. In the following sections, you read about three elements that are used in the code to change the paragraph contents, mainly, `<w: pPrChange\>` (Revision Information for Paragraph Properties), **`<w:del>`** (Deleted Paragraph), and **`<w:ins>`** (Inserted Table Row) elements.
+When you accept a revision mark, you change the properties of a paragraph either by deleting an existing text or inserting a new text. In the following sections, you read about three elements that are used in the code to change the paragraph contents, mainly, `<w: pPrChange>` (Revision Information for Paragraph Properties), `<w:del>` (Deleted Paragraph), and `<w:ins>` (Inserted Table Row) elements.
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification introduces the **ParagraphPropertiesChange** element (**pPrChange**).
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `ParagraphPropertiesChange` element (`pPrChange`).
 
 ### *pPrChange (Revision Information for Paragraph Properties)
 
@@ -71,18 +71,18 @@ Consider a paragraph in a WordprocessingML document which is centered, and this 
     </w:pPr>
 ```
 
-The element specifies that there was a revision to the paragraph properties at 01-01-2006 by Samantha Smith, and the previous set of paragraph properties on the paragraph was the null set (in other words, no paragraph properties explicitly present under the element). **pPr** **pPrChange**
+The element specifies that there was a revision to the paragraph properties at 01-01-2006 by Samantha Smith, and the previous set of paragraph properties on the paragraph was the null set (in other words, no paragraph properties explicitly present under the element). `pPr` `pPrChange`
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ## Deleted Element
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
-introduces the Deleted element (**del**).
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the Deleted element (`del`).
 
 ### del (Deleted Paragraph)
 
-This element specifies that the paragraph mark delimiting the end of a paragraph within a WordprocessingML document shall be treated as deleted (in other words, the contents of this paragraph are no longer delimited by this paragraph mark, and are combined with the following paragraph—but those contents shall not automatically be marked as deleted) as part of a tracked revision.
+This element specifies that the paragraph mark delimiting the end of a paragraph within a WordprocessingML document shall be treated as deleted (in other words, the contents of this paragraph are no longer delimited by this paragraph mark, and are combined with the following paragraph, but those contents shall not automatically be marked as deleted) as part of a tracked revision.
 
 Consider a document consisting of two paragraphs (with each paragraph delimited by a pilcrow ¶):
 
@@ -109,16 +109,16 @@ This revision is represented using the following WordprocessingML:
     </w:p>
 ```
 
-The **del** element on the run properties for
+The `del` element on the run properties for
 the first paragraph mark specifies that this paragraph mark was deleted,
 and this deletion was tracked as a revision.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ## The Inserted Element
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/standard/71691.html) specification
-introduces the Inserted element (**ins**).
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the Inserted element (`ins`).
 
 ### ins (Inserted Table Row)
 
@@ -156,21 +156,16 @@ using the following WordprocessingML:
     </w:tbl>
 ```
 
-The **ins** element on the table row properties for the second table row
+The `ins` element on the table row properties for the second table row
 specifies that this row was inserted, and this insertion was tracked as
 a revision.
 
-© ISO/IEC29500: 2008.
+© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ## Sample Code
 
 The following code example shows how to accept the entire revisions in a
-word processing document. To run the program, you can pass in the file path
-and the author name:
-
-```dotnetcli
-dotnet run -- [filePath] [authorName]
-```
+word processing document.
 
 After you have run the program, open the word processing file to make
 sure that all revision marks have been accepted.

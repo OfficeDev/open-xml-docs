@@ -1,56 +1,64 @@
+Imports DocumentFormat.OpenXml.Office2021.PowerPoint.Comment
 Imports DocumentFormat.OpenXml.Packaging
-Imports DocumentFormat.OpenXml.Presentation
+Imports Comment = DocumentFormat.OpenXml.Office2021.PowerPoint.Comment.Comment
 
-
-Module MyModule
-
+Module Program
     Sub Main(args As String())
+        DeleteCommentsByAuthorInPresentation(args(0), args(1))
     End Sub
 
+    ' <Snippet0>
     ' Remove all the comments in the slides by a certain author.
-    Public Sub DeleteCommentsByAuthorInPresentation(ByVal fileName As String, ByVal author As String)
+    Sub DeleteCommentsByAuthorInPresentation(fileName As String, author As String)
+        ' <Snippet1>
+        Using doc As PresentationDocument = PresentationDocument.Open(fileName, True)
+            ' </Snippet1>
+            ' <Snippet2>
+            ' Get the modern comments.
+            Dim commentAuthors As IEnumerable(Of Author) = doc.PresentationPart?.authorsPart?.AuthorList.Elements(Of Author)().Where(Function(x) x.Name IsNot Nothing AndAlso x.Name.HasValue AndAlso x.Name.Value.Equals(author))
+            ' </Snippet2>
 
-        Dim doc As PresentationDocument = PresentationDocument.Open(fileName, True)
+            If commentAuthors Is Nothing Then
+                Return
+            End If
 
-        If (String.IsNullOrEmpty(fileName) Or String.IsNullOrEmpty(author)) Then
-            Throw New ArgumentNullException("File name or author name is NULL!")
-        End If
+            ' <Snippet3>
+            ' Iterate through all the matching authors.
+            For Each commentAuthor As Author In commentAuthors
+                Dim authorId As String = commentAuthor.Id
+                Dim slideParts As IEnumerable(Of SlidePart) = doc.PresentationPart?.SlideParts
 
-        Using (doc)
-
-            ' Get the specified comment author.
-            Dim commentAuthors = doc.PresentationPart.CommentAuthorsPart. _
-                CommentAuthorList.Elements(Of CommentAuthor)().Where(Function(e) _
-                   e.Name.Value.Equals(author))
-
-            ' Dim changed As Boolean = False
-            For Each commentAuthor In commentAuthors
-
-                Dim authorId = commentAuthor.Id
+                ' If there's no author ID or slide parts, return.
+                If authorId Is Nothing OrElse slideParts Is Nothing Then
+                    Return
+                End If
 
                 ' Iterate through all the slides and get the slide parts.
-                For Each slide In doc.PresentationPart.GetPartsOfType(Of SlidePart)()
+                For Each slide As SlidePart In slideParts
+                    Dim slideCommentsParts As IEnumerable(Of PowerPointCommentPart) = slide.commentParts
 
-                    ' Get the slide comments part of each slide.
-                    For Each slideCommentsPart In slide.GetPartsOfType(Of SlideCommentsPart)()
+                    ' Get the list of comments.
+                    If slideCommentsParts IsNot Nothing Then
+                        Dim commentsTup = slideCommentsParts.SelectMany(Function(scp) scp.CommentList.Elements(Of Comment)().Where(Function(comment) comment.AuthorId IsNot Nothing AndAlso comment.AuthorId = authorId).Select(Function(c) New Tuple(Of PowerPointCommentPart, Comment)(scp, c)))
 
-                        ' Delete all the comments by the specified author.
-                        Dim commentList = slideCommentsPart.CommentList.Elements(Of Comment)(). _
-                            Where(Function(e) e.AuthorId.Value.Equals(authorId.Value))
+                        For Each comment As Tuple(Of PowerPointCommentPart, Comment) In commentsTup
+                            ' Delete all the comments by the specified author.
+                            comment.Item1.CommentList.RemoveChild(comment.Item2)
 
-                        Dim comments As List(Of Comment) = commentList.ToList()
-
-                        For Each comm As Comment In comments
-                            slideCommentsPart.CommentList.RemoveChild(Of Comment)(comm)
+                            ' If the commentPart has no existing comment.
+                            If comment.Item1.CommentList.ChildElements.Count = 0 Then
+                                ' Delete this part.
+                                slide.DeletePart(comment.Item1)
+                            End If
                         Next
-                    Next
+                    End If
                 Next
 
-                ' Delete the comment author from the comment authors part.
-                doc.PresentationPart.CommentAuthorsPart.CommentAuthorList.RemoveChild(Of CommentAuthor)(commentAuthor)
-
+                ' Delete the comment author from the authors part.
+                doc.PresentationPart?.authorsPart?.AuthorList.RemoveChild(commentAuthor)
             Next
-
+            ' </Snippet3>
         End Using
     End Sub
+    ' </Snippet0>
 End Module

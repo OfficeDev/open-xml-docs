@@ -1,58 +1,61 @@
-' <Snippet0>
 Imports System.IO
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
 Module Program
     Sub Main(args As String())
-
         ' <Snippet2>
-        Dim fileStream As FileStream = New FileStream(args(0), FileMode.OpenOrCreate, FileAccess.ReadWrite)
-        OpenAndAddToSpreadsheetStream(fileStream)
+        Using fileStream As New FileStream(args(0), FileMode.Open, FileAccess.ReadWrite)
+            OpenAndAddToSpreadsheetStream(fileStream)
+        End Using
         ' </Snippet2>
-
     End Sub
 
-
-
-    Public Sub OpenAndAddToSpreadsheetStream(ByVal stream As Stream)
+    ' <Snippet0>
+    Sub OpenAndAddToSpreadsheetStream(stream As Stream)
         ' Open a SpreadsheetDocument based on a stream.
-        Dim mySpreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(stream, True)
+        Using spreadsheetDocument As SpreadsheetDocument = SpreadsheetDocument.Open(stream, True)
 
-        ' <Snippet1>
+            If spreadsheetDocument IsNot Nothing Then
+                ' Get or create the WorkbookPart
+                Dim workbookPart As WorkbookPart = If(spreadsheetDocument.WorkbookPart, spreadsheetDocument.AddWorkbookPart())
 
-        ' Add a new worksheet.
-        Dim newWorksheetPart As WorksheetPart = mySpreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()
-        newWorksheetPart.Worksheet = New Worksheet(New SheetData())
-        newWorksheetPart.Worksheet.Save()
+                ' <Snippet1>
 
-        ' </Snippet1>
+                ' Add a new worksheet.
+                Dim newWorksheetPart As WorksheetPart = workbookPart.AddNewPart(Of WorksheetPart)()
+                newWorksheetPart.Worksheet = New Worksheet(New SheetData())
 
-        Dim sheets As Sheets = mySpreadsheetDocument.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()
-        Dim relationshipId As String = mySpreadsheetDocument.WorkbookPart.GetIdOfPart(newWorksheetPart)
+                ' </Snippet1>
 
-        ' Get a unique ID for the new worksheet.
-        Dim sheetId As UInteger = 1
-        If (sheets.Elements(Of Sheet).Count > 0) Then
-            sheetId = sheets.Elements(Of Sheet).Select(Function(s) s.SheetId.Value).Max + 1
-        End If
+                Dim workbook As Workbook = If(workbookPart.Workbook, New Workbook())
 
-        ' Give the new worksheet a name.
-        Dim sheetName As String = ("Sheet" + sheetId.ToString())
+                If workbookPart.Workbook Is Nothing Then
+                    workbookPart.Workbook = workbook
+                End If
 
-        ' Append the new worksheet and associate it with the workbook.
-        Dim sheet As Sheet = New Sheet
-        sheet.Id = relationshipId
-        sheet.SheetId = sheetId
-        sheet.Name = sheetName
-        sheets.Append(sheet)
-        mySpreadsheetDocument.WorkbookPart.Workbook.Save()
+                Dim sheets As Sheets = If(workbook.GetFirstChild(Of Sheets)(), workbook.AppendChild(New Sheets()))
+                Dim relationshipId As String = workbookPart.GetIdOfPart(newWorksheetPart)
 
-        'Dispose the document handle.
-        mySpreadsheetDocument.Dispose()
+                ' Get a unique ID for the new worksheet.
+                Dim sheetId As UInteger = 1
 
-        'Caller must close the stream.
+                If sheets.Elements(Of Sheet)().Count() > 0 Then
+                    sheetId = sheets.Elements(Of Sheet)().Select(Function(s) s.SheetId?.Value).Max() + 1
+                End If
+
+                ' Give the new worksheet a name.
+                Dim sheetName As String = "Sheet" & sheetId
+
+                ' Append the new worksheet and associate it with the workbook.
+                Dim sheet As New Sheet() With {
+                    .Id = relationshipId,
+                    .SheetId = sheetId,
+                    .Name = sheetName
+                }
+                sheets.Append(sheet)
+            End If
+        End Using
     End Sub
+    ' </Snippet0>
 End Module
-
-' </Snippet0>

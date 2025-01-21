@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 02/05/2024
 ms.localizationpriority: high
 ---
 # Open a word processing document from a stream
@@ -37,41 +37,32 @@ adds text to the document behind the stream using the Open XML SDK.
 
 ## Creating a WordprocessingDocument Object
 
-In the Open XML SDK, the [WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) class represents a
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> class represents a
 Word document package. To work with a Word document, first create an
-instance of the **WordprocessingDocument**
+instance of the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
 class from the document, and then work with that instance. When you
 create the instance from the document, you can then obtain access to the
 main document part that contains the text of the document. Every Open
-XML package contains some number of parts. At a minimum, a **WordProcessingDocument** must contain a main
+XML package contains some number of parts. At a minimum, a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> must contain a main
 document part that acts as a container for the main text of the
 document. The package can also contain additional parts. Notice that in
 a Word document, the text in the main document part is represented in
-the package as XML using **WordprocessingML**
+the package as XML using `WordprocessingML`
 markup.
 
-To create the class instance from the document call the [Open(Stream, Boolean)](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx) method. Several **Open** methods are provided, each with a different
-signature. The sample code in this topic uses the **Open** method with a signature that requires two
+To create the class instance from the document call the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(System.IO.Stream,System.Boolean)> method.Several `Open` methods are provided, each with a different
+signature. The sample code in this topic uses the `Open` method with a signature that requires two
 parameters. The first parameter takes a handle to the stream from which
-you want to open the document. The second parameter is either **true** or **false** and
+you want to open the document. The second parameter is either `true` or `false` and
 represents whether the stream is opened for editing.
 
-The following code example calls the **Open**
+The following code example calls the `Open`
 method.
 
 ### [C#](#tab/cs-0)
-```csharp
-    // Open a WordProcessingDocument based on a stream.
-    WordprocessingDocument wordprocessingDocument = 
-        WordprocessingDocument.Open(stream, true);
-```
-
+[!code-csharp[](../../samples/word/open_from_a_stream/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    ' Open a WordProcessingDocument based on a stream.
-    Dim wordprocessingDocument As WordprocessingDocument = _
-    WordprocessingDocument.Open(stream, True)
-```
+[!code-vb[](../../samples/word/open_from_a_stream/vb/Program.vb#snippet1)]
 ***
 
 
@@ -81,85 +72,55 @@ method.
 
 When you open the Word document package, you can add text to the main
 document part. To access the body of the main document part you assign a
-reference to the existing document body, as shown in the following code
-segment.
+reference to the document body, as shown in the following code segment.
 
 ### [C#](#tab/cs-1)
-```csharp
-    // Assign a reference to the existing document body.
-    Body body = wordprocessingDocument.MainDocumentPart.Document.Body;
-```
-
+[!code-csharp[](../../samples/word/open_from_a_stream/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    ' Assign a reference to the existing document body.
-    Dim body As Body = wordprocessingDocument.MainDocumentPart.Document.Body
-```
+[!code-vb[](../../samples/word/open_from_a_stream/vb/Program.vb#snippet2)]
 ***
 
 
 When you access to the body of the main document part, add text by
-adding instances of the **Paragraph**, **Run**, and **Text**
-classes. This generates the required **WordprocessingML** markup. The following lines from
+adding instances of the <xref:DocumentFormat.OpenXml.Wordprocessing.Paragraph>,
+<xref:DocumentFormat.OpenXml.Wordprocessing.Run>, and <xref:DocumentFormat.OpenXml.Wordprocessing.Text>
+classes. This generates the required `WordprocessingML` markup. The following lines from
 the sample code add the paragraph, run, and text.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Add new text.
-    Paragraph para = body.AppendChild(new Paragraph());
-    Run run = para.AppendChild(new Run());
-    run.AppendChild(new Text(txt));
-```
-
+[!code-csharp[](../../samples/word/open_from_a_stream/cs/Program.cs#snippet3)]
 ### [Visual Basic](#tab/vb-2)
-```vb
-    ' Add new text.
-    Dim para As Paragraph = body.AppendChild(New Paragraph())
-    Dim run As Run = para.AppendChild(New Run())
-    run.AppendChild(New Text(txt))
-```
+[!code-vb[](../../samples/word/open_from_a_stream/vb/Program.vb#snippet3)]
 ***
 
 
 ## Sample Code
 
-The example **OpenAndAddToWordprocessingStream** method shown
+The example `OpenAndAddToWordprocessingStream` method shown
 here can be used to open a Word document from an already open stream and
 append some text using the Open XML SDK. You can call it by passing a
 handle to an open stream as the first parameter and the text to add as
 the second. For example, the following code example opens the
-Word13.docx file in the Public Documents folder and adds text to it.
+file specified in the first argument and adds text from the second argument to it.
 
 ### [C#](#tab/cs-3)
-```csharp
-    string strDoc = @"C:\Users\Public\Public Documents\Word13.docx";
-    string txt = "Append text in body - OpenAndAddToWordprocessingStream";
-    Stream stream = File.Open(strDoc, FileMode.Open);
-    OpenAndAddToWordprocessingStream(stream, txt);
-    stream.Close();
-```
-
+[!code-csharp[](../../samples/word/open_from_a_stream/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-3)
-```vb
-    Dim strDoc As String = "C:\Users\Public\Documents\Word13.docx"
-    Dim txt As String = "Append text in body - OpenAndAddToWordprocessingStream"
-    Dim stream As Stream = File.Open(strDoc, FileMode.Open)
-    OpenAndAddToWordprocessingStream(stream, txt)
-    stream.Close()
-```
+[!code-vb[](../../samples/word/open_from_a_stream/vb/Program.vb#snippet4)]
 ***
 
 
 > [!NOTE]
-> Notice that the **OpenAddAddToWordprocessingStream** method does not close the stream passed to it. The calling code must do that.
+> Notice that the `OpenAddAddToWordprocessingStream` method does not close the stream passed to it. The calling code must do that
+> by wrapping the method call in a `using` statement or explicitly calling Dispose.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/open_from_a_stream/cs/Program.cs)]
+[!code-csharp[](../../samples/word/open_from_a_stream/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/open_from_a_stream/vb/Program.vb)]
+[!code-vb[](../../samples/word/open_from_a_stream/vb/Program.vb#snippet0)]
 
 ## See also
 

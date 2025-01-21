@@ -5,13 +5,13 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/08/2025
 ms.localizationpriority: high
 ---
 
 # Diagnostic IDs
 
-Diagnostic IDs are used to identify APIs or patterns that can raise compiler warnings or errors. This can be done via [ObsoleteAttribute](/dotnet/api/system.obsoleteattribute.diagnosticid) or [ExperimentalAttribute](/dotnet/api/system.diagnostics.codeanalysis.experimentalattribute). These can be suppressed at the consumer level for each diagnostic id.
+Diagnostic IDs are used to identify APIs or patterns that can raise compiler warnings or errors. This can be done via <xref:System.ObsoleteAttribute.DiagnosticId*> or <xref:System.Diagnostics.CodeAnalysis.ExperimentalAttribute>. These can be suppressed at the consumer level for each diagnostic id.
 
 ## Experimental APIs
 
@@ -19,7 +19,7 @@ Diagnostic IDs are used to identify APIs or patterns that can raise compiler war
 
 **Title**: IPackage related APIs are currently experimental
 
-As of v3.0, a new abstraction layer was added in between `System.IO.Packaging` and `DocumentFormat.OpenXml.Packaging.OpenXmlPackage`. This is currently experimental, but can be used if needed. This will be stabalized in a future release, and may or may not require code changes.
+As of v3.0, a new abstraction layer was added in between `System.IO.Packaging` and `DocumentFormat.OpenXml.Packaging.OpenXmlPackage`. This is currently experimental, but can be used if needed. This will be stabilized in a future release, and may or may not require code changes.
 
 ## Suppress warnings
 

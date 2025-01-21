@@ -5,11 +5,13 @@ using System.IO;
 using System.Text;
 
 CreateNewWordDocument(args[0]);
-
+// <Snippet0>
 // To create a new package as a Word document.
 static void CreateNewWordDocument(string document)
 {
+    // <Snippet1>
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Create(document, WordprocessingDocumentType.Document))
+        // </Snippet1>
     {
         // Set the content of the document so that Word can open it.
         MainDocumentPart mainPart = wordDoc.AddMainDocumentPart();
@@ -38,3 +40,4 @@ static void SetMainDocumentContent(MainDocumentPart part)
         stream.Write(buf, 0, buf.Length);
     }
 }
+// </Snippet0>

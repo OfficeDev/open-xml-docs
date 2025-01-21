@@ -93,7 +93,7 @@ if (theCell.DataType.Value == CellValues.SharedString)
 
 ### OpenXmlElementList is now a struct
 
-[OpenXmlElementList](/dotnet/api/documentformat.openxml.openxmlelementlist) is now a struct. It still implements `IEnumerable<OpenXmlElement>` in addition to `IReadOnlyList<OpenXmlElement>` where available.
+<xref:DocumentFormat.OpenXml.OpenXmlElementList> is now a struct. It still implements `IEnumerable<OpenXmlElement>` in addition to `IReadOnlyList<OpenXmlElement>` where available.
 
 **Action needed**: Because this is a struct, code patterns that may have a `null` result will now be a `OpenXmlElementList?` instead. Null checks will be flagged by the compiler and the value itself will need to be unwrapped, such as:
 
@@ -117,7 +117,7 @@ This type is used to enumerate pairs within a part and caused many unnecessary a
 
 ### OpenXmlPartReader no longer knows about all parts
 
-In previous versions, [OpenXmlPartReader](/dotnet/api/documentformat.openxml.openxmlpartreader) knew about about all strongly typed part. In order to reduce coupling required for better AOT scenarios, we now have typed readers for known packages: `WordprocessingDocumentPartReader`, `SpreadsheetDocumentPartReader`, and `PresentationDocumentPartReader`.
+In previous versions, <xref:DocumentFormat.OpenXml.OpenXmlPartReader> knew about about all strongly typed part. In order to reduce coupling required for better AOT scenarios, we now have typed readers for known packages: `WordprocessingDocumentPartReader`, `SpreadsheetDocumentPartReader`, and `PresentationDocumentPartReader`.
 
 **Action needed**: Replace usage of `OpenXmlPartReader` with document specific readers if needed. If creating a part reader from a known package, please use the constructors that take an existing `OpenXmlPart` which will then create the expected strongly typed parts.
 

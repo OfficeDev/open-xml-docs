@@ -1,38 +1,40 @@
-' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Spreadsheet
 
-Module Module1
-    ' <Snippet2>
+Module Program
     Sub Main(args As String())
+        ' <Snippet2>
         ' <Snippet1>
-        Dim results = GetAllWorksheets(args(0))
+        Dim sheets As Sheets = GetAllWorksheets(args(0))
         ' </Snippet1>
-        ' Because Sheet inherits from OpenXmlElement, you can cast
-        ' each item in the collection to be a Sheet instance.
-        For Each item As Sheet In results
-            Console.WriteLine(item.Name)
-        Next
+
+        If sheets IsNot Nothing Then
+            For Each sheet As Sheet In sheets
+                Console.WriteLine(sheet.Name)
+            Next
+        End If
+        ' </Snippet2>
     End Sub
-    ' </Snippet2>
-    ' Retrieve a list of all the sheets in a Workbook.
+
+    ' Retrieve a List of all the sheets in a workbook.
     ' The Sheets class contains a collection of 
-    ' OpenXmlElement objects, each representing 
-    ' one of the sheets.
-    Public Function GetAllWorksheets(ByVal fileName As String) As Sheets
+    ' OpenXmlElement objects, each representing one of 
+    ' the sheets.
+    ' <Snippet0>
+    Function GetAllWorksheets(fileName As String) As Sheets
         ' <Snippet3>
-        Dim theSheets As Sheets
+        Dim theSheets As Sheets = Nothing
         ' </Snippet3>
+
         ' <Snippet4>
-        Using document As SpreadsheetDocument =
-            SpreadsheetDocument.Open(fileName, False)
-            Dim wbPart As WorkbookPart = document.WorkbookPart
-            ' </Snippet4>
+        Using document As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, False)
             ' <Snippet5>
-            theSheets = wbPart.Workbook.Sheets()
+            theSheets = document?.WorkbookPart?.Workbook.Sheets
             ' </Snippet5>
+            ' </Snippet4>
         End Using
+
         Return theSheets
     End Function
+    ' </Snippet0>
 End Module
-' </Snippet0>

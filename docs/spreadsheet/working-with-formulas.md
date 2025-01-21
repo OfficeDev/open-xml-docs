@@ -11,42 +11,41 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/14/2025
 ms.localizationpriority: high
 ---
 # Working with formulas
 
-This topic discusses the Open XML SDK [CellFormula](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellformula.aspx) class and how it relates to the
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.CellFormula> class and how it relates to the
 Open XML File Format SpreadsheetML schema. For more information about
 the overall structure of the parts and elements that make up a
-SpreadsheetML document, see [Structure of a
-SpreadsheetML document (Open XML
-SDK)](structure-of-a-spreadsheetml-document.md).
+SpreadsheetML document, see [Structure of a SpreadsheetML document (Open XML SDK)](structure-of-a-spreadsheetml-document.md).
 
 
 --------------------------------------------------------------------------------
 ## Formulas in SpreadsheetML
+
 You can use formulas to create computational models. Formulas allow for
 automatic calculation of values based on data inside and outside the
 spreadsheet or the output of other computed cells in the spreadsheet.
 
 Formulas are stored inside each cell that uses a formula, in the
-worksheet XML file. Use the **CellFormula**
-(\<**f**\>) element to define the formula text.
+worksheet XML file. Use the `CellFormula`
+(`<f/>`>) element to define the formula text.
 Formulas can contain mathematical expressions that include a wide range
 of predefined functions.
 
-The **CellValue** (\<**v**\>) element, stores the cached formula value
+The `CellValue` (`<v/>`>) element, stores the cached formula value
 based on the last time the formula was calculated. This allows the user
 to postpone calculation of the formula values when the spreadsheet is
 opened, which saves time when opening a worksheet. You do not have to
 specify the value, and if you omit it, it is the responsibility of the
 Open XML reader to compute the value based on the formula definition
-when the worksheet is opened. For more information about the **CellValue** class, see [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx).
+when the worksheet is opened. For more information about the `CellValue` class, see <xref:DocumentFormat.OpenXml.Spreadsheet.CellValue>.
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the **cellFormula**
-(\<**f**\>) element.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+specification introduces the `cellFormula`
+(`<f/>`>) element.
 
 A SpreadsheetML formula is the syntactic representation of a series of
 calculations that is parsed or interpreted by the spreadsheet
@@ -56,7 +55,7 @@ based upon zero-to-many inputs.
 A formula is an expression that can contain the following: constants,
 operators, cell references, calls to functions, and names.
 
-**Example**: Consider the formula PI()\*(A2^2). In this case,
+`Example`: Consider the formula PI()\*(A2^2). In this case,
 - PI() results in a call to the function PI, which returns the value
 of π.
 - The cell reference A2 returns the value in that cell.
@@ -103,7 +102,7 @@ An array value or constant represents a collection of one or more
 elements, whose values can have any type (i.e., the elements of an array
 need not all have the same type).
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 For more information about formula syntax see the ISO/IEC 29500
 specification.
@@ -116,7 +115,7 @@ and is contained in the "sheet1.xml" file.
 
 ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
+    <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">
         <dimension ref="A1:A6"/>
         <sheetViews>
             <sheetView tabSelected="1" workbookViewId="0">

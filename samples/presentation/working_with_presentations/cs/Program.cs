@@ -2,17 +2,18 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Presentation;
 
+CreatePresentation(args[0]);
+
 static void CreatePresentation(string filepath)
 {
     // Create a presentation at a specified file path. The presentation document type is pptx, by default.
-    PresentationDocument presentationDoc = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation);
-    PresentationPart presentationPart = presentationDoc.AddPresentationPart();
-    presentationPart.Presentation = new Presentation();
+    using (PresentationDocument presentationDoc = PresentationDocument.Create(filepath, PresentationDocumentType.Presentation))
+    {
+        PresentationPart presentationPart = presentationDoc.AddPresentationPart();
+        presentationPart.Presentation = new Presentation();
 
-    CreatePresentationParts(presentationPart);
-
-    // Dispose the presentation handle.
-    presentationDoc.Dispose();
+        CreatePresentationParts(presentationPart);
+    }
 }
 static void CreatePresentationParts(PresentationPart presentationPart)
 {

@@ -1,12 +1,13 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Validation
 Imports DocumentFormat.OpenXml.Wordprocessing
 
 Module Program
     Sub Main(args As String())
+        ValidateWordDocument(args(0))
+        ValidateCorruptedWordDocument(args(0))
     End Sub
-
-
 
     Public Sub ValidateWordDocument(ByVal filepath As String)
         Using wordprocessingDocument__1 As WordprocessingDocument = WordprocessingDocument.Open(filepath, True)
@@ -29,8 +30,6 @@ Module Program
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
             End Try
-
-            wordprocessingDocument__1.Dispose()
         End Using
     End Sub
 
@@ -64,3 +63,4 @@ Module Program
         End Using
     End Sub
 End Module
+' </Snippet0>

@@ -11,19 +11,21 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/16/2025
 ms.localizationpriority: medium
 ---
 # Working with notes slides
 
-This topic discusses the Open XML SDK for Office [NotesSlide](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesslide.aspx) class and how it relates to the
+This topic discusses the Open XML SDK for Office <xref:DocumentFormat.OpenXml.Presentation.NotesSlide> class and how it relates to the
 Open XML File Format PresentationML schema.
 
 
 --------------------------------------------------------------------------------
+
 ## Notes Slides in PresentationML
-The [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification describes the Open XML PresentationML \<notes\> element
+
+The [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+specification describes the Open XML PresentationML `<notes/>` element
 used to represent notes slides in a PresentationML document as follows:
 
 This element specifies the existence of a notes slide along with its
@@ -34,11 +36,11 @@ notes element.
 **Example**: Consider the following PresentationML notes slide:
 
 ```xml
-<p:notes>  
-    <p:cSld>  
-        …  
-    </p:cSld>  
-    …  
+<p:notes>
+    <p:cSld>
+        …
+    </p:cSld>
+    …
 </p:notes>
 ```
 
@@ -47,199 +49,230 @@ slide with all of its parts. Notice the cSld element, which specifies
 the common elements that can appear on any slide type and then any
 elements specify additional non-common properties for this notes slide.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
-The \<notes\> element is the root element of the PresentationML Notes
+The `<notes/>` element is the root element of the PresentationML Notes
 Slide part. For more information about the overall structure of the
 parts and elements that make up a PresentationML document, see
 [Structure of a PresentationML Document](structure-of-a-presentationml-document.md).
 
-The following table lists the child elements of the \<notes\> element
+The following table lists the child elements of the `<notes/>` element
 used when working with notes slides and the Open XML SDK classes
 that correspond to them.
 
 
-| **PresentationML Element** |                                                               **Open XML SDK Class**                                                                |
-|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       \<clrMapOvr\>        |              [ColorMapOverride](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.colormapoverride.aspx)              |
-|          \<cSld\>          |               [CommonSlideData](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.commonslidedata.aspx)               |
-|         \<extLst\>         | [ExtensionListWithModification](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.extensionlistwithmodification.aspx) |
+| **PresentationML Element** |    **Open XML SDK Class**    |
+|----------------------------|-------------------------------------|
+|       `<clrMapOvr/>`        |              <xref:DocumentFormat.OpenXml.Presentation.ColorMapOverride>              |
+|          `<cSld/>`          |               <xref:DocumentFormat.OpenXml.Presentation.CommonSlideData>               |
+|         `<extLst/>`         | <xref:DocumentFormat.OpenXml.Presentation.ExtensionListWithModification> |
 
-The following table from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification describes the attributes of the \<notes\> element.
+The following table from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+specification describes the attributes of the `<notes/>` element.
 
 
-|                    **Attributes**                     |                                                                                     **Description**                                                                                      |
-|-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| showMasterPhAnim (Show Master Placeholder Animations) | Specifies whether or not to display animations on placeholders from the master slide.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype. |
-|           showMasterSp (Show Master Shapes)           |       Specifies if shapes on the master slide should be shown on slides or not.<br/>The possible values for this attribute are defined by the W3C XML Schema **boolean** datatype.       |
+|                    **Attributes**                     | **Description**    |
+|-------------------------------------------------------|---------------------|
+| `showMasterPhAnim` (Show Master Placeholder Animations) | Specifies whether or not to display animations on placeholders from the master slide.<br/><br/>The possible values for this attribute are defined by the W3C XML Schema `boolean` datatype. |
+|           `showMasterSp` (Show Master Shapes)           |       Specifies if shapes on the master slide should be shown on slides or not.<br/><br/>The possible values for this attribute are defined by the W3C XML Schema `boolean` datatype.       |
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ---------------------------------------------------------------------------------
+
 ## Open XML SDK NotesSlide Class
-The OXML SDK **NotesSlide** class represents
-the \<notes\> element defined in the Open XML File Format schema for
-PresentationML documents. Use the **NotesSlide** class to manipulate individual
-\<notes\> elements in a PresentationML document.
 
-Classes that represent child elements of the \<notes\> element and that
-are therefore commonly associated with the **NotesSlide** class are shown in the following list.
+The OXML SDK `NotesSlide` class represents
+the `<notes/>` element defined in the Open XML File Format schema for
+PresentationML documents. Use the `NotesSlide` class to manipulate individual
+`<notes/>` elements in a PresentationML document.
 
-### ColorMapOverride Class
+Classes that represent child elements of the `<notes/>` element and that
+are therefore commonly associated with the `NotesSlide` class are shown in the following list.
 
-The **ColorMapOverride** class corresponds to
-the \<clrMapOvr\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the \<clrMapOvr\> element:
+- ### ColorMapOverride Class
 
-This element provides a mechanism with which to override the color
-schemes listed within the \<ClrMap\> element. If the
-\<masterClrMapping\> child element is present, the color scheme defined
-by the master is used. If the \<overrideClrMapping\> child element is
-present, it defines a new color scheme specific to the parent notes
-slide, presentation slide, or slide layout.
+  The `ColorMapOverride` class corresponds to
+  the `<clrMapOvr/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+  specification introduces the `<clrMapOvr/>` element:
 
-© ISO/IEC29500: 2008.
+  This element provides a mechanism with which to override the color
+  schemes listed within the `<ClrMap/>` element. If the
+  `<masterClrMapping/>` child element is present, the color scheme defined
+  by the master is used. If the `<overrideClrMapping/>` child element is
+  present, it defines a new color scheme specific to the parent notes
+  slide, presentation slide, or slide layout.
 
-### CommonSlideData Class
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
-The **CommonSlideData** class corresponds to
-the \<cSld\> element. The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the \<cSld\> element:
+- ### CommonSlideData Class
 
-This element specifies a container for the type of slide information
-that is relevant to all of the slide types. All slides share a common
-set of properties that is independent of the slide type; the description
-of these properties for any particular slide is stored within the
-slide's \<cSld\> container. Slide data specific to the slide type
-indicated by the parent element is stored elsewhere.
+  The `CommonSlideData` class corresponds to
+  the `<cSld/>` element. The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+  specification introduces the `<cSld/>` element:
 
-The actual data in \<cSld\> describe only the particular parent slide;
-it is only the type of information stored that is common across all
-slides.
+  This element specifies a container for the type of slide information
+  that is relevant to all of the slide types. All slides share a common
+  set of properties that is independent of the slide type; the description
+  of these properties for any particular slide is stored within the
+  slide's `<cSld/>` container. Slide data specific to the slide type
+  indicated by the parent element is stored elsewhere.
 
-© ISO/IEC29500: 2008.
+  The actual data in `<cSld/>` describe only the particular parent slide;
+  it is only the type of information stored that is common across all
+  slides.
 
-### ExtensionListWithModification Class
+  &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
-The **ExtensionListWithModification** class
-corresponds to the \<extLst\>element. The following information from the
-[ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the \<extLst\> element:
+- ### ExtensionListWithModification Class
 
-This element specifies the extension list with modification ability
-within which all future extensions of element type \<ext\> are defined.
-The extension list along with corresponding future extensions is used to
-extend the storage capabilities of the PresentationML framework. This
-allows for various new kinds of data to be stored natively within the
-framework.
+  The `ExtensionListWithModification` class
+  corresponds to the `<extLst/>`element. The following information from the
+  [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the `<extLst/>` element:
 
-[Note: Using this extLst element allows the generating application to
-store whether this extension property has been modified. end note]
+  This element specifies the extension list with modification ability
+  within which all future extensions of element type `<ext/>` are defined.
+  The extension list along with corresponding future extensions is used to
+  extend the storage capabilities of the PresentationML framework. This
+  allows for various new kinds of data to be stored natively within the
+  framework.
 
-© ISO/IEC29500: 2008.
+  [Note: Using this extLst element allows the generating application to
+  store whether this extension property has been modified. end note]
+
+  &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ---------------------------------------------------------------------------------
 ## Working with the NotesSlide Class
+
 As shown in the Open XML SDK code sample that follows, every instance of
-the **NotesSlide** class is associated with an
-instance of the [NotesSlidePart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.notesslidepart.aspx) class, which represents a
+the `NotesSlide` class is associated with an
+instance of the <xref:DocumentFormat.OpenXml.Packaging.NotesSlidePart> class, which represents a
 notes slide part, one of the parts of a PresentationML presentation file
 package, and a part that is required for each notes slide in a
-presentation file. Each **NotesSlide** class
-instance may also be associated with an instance of the [NotesMaster](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.notesmaster.aspx) class, which in turn is
+presentation file. Each `NotesSlide` class
+instance may also be associated with an instance of the <xref:DocumentFormat.OpenXml.Presentation.NotesMaster> class, which in turn is
 associated with a similarly named presentation part, represented by the
-[NotesMasterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.notesmasterpart.aspx) class.
+<xref:DocumentFormat.OpenXml.Packaging.NotesMasterPart> class.
 
-The **NotesSlide** class, which represents the
-\<notes\> element, is therefore also associated with a series of other
-classes that represent the child elements of the \<notes\> element.
+The `NotesSlide` class, which represents the
+`<notes/>` element, is therefore also associated with a series of other
+classes that represent the child elements of the `<notes/>` element.
 Among these classes, as shown in the following code sample, are the
-**CommonSlideData** class and the **ColorMapOverride** class. The [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class and the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) classes are in turn associated with
-the **CommonSlideData** class.
+`CommonSlideData` class and the `ColorMapOverride` class. The <xref:DocumentFormat.OpenXml.Presentation.ShapeTree> class and the <xref:DocumentFormat.OpenXml.Presentation.Shape> classes are in turn associated with
+the `CommonSlideData` class.
 
 
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
-The following method adds a new notes slide part to an existing
-presentation and creates an instance of an Open XML SDK**NotesSlide** class in the new notes slide part. The
-**NotesSlide** class constructor creates
-instances of the **CommonSlideData** class and
-the **ColorMap** class. The **CommonSlideData** class constructor creates an
-instance of the [ShapeTree](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shapetree.aspx) class, whose constructor in turn
-creates additional class instances: an instance of the [NonVisualGroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.nonvisualgroupshapeproperties.aspx) class, an
-instance of the [GroupShapeProperties](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.groupshapeproperties.aspx) class, and an instance
-of the [Shape](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.shape.aspx) class.
 
-The namespace represented by the letter *P* in the code is the [DocumentFormat.OpenXml.Presentation](https://msdn.microsoft.com/library/office/documentformat.openxml.presentation.aspx)
-namespace.
+> In the following code snippets `P` represents the <a href="xref:DocumentFormat.OpenXml.Presentation?displayProperty=fullName"/> namespace and `D` represents the <a href="xref:DocumentFormat.OpenXml.Drawing?displayProperty=fullName"/> namespace.
 
-### [C#](#tab/cs)
-[!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs)]
+In the snippet below, a presentation is opened with `Presentation.Open` and the first <xref:DocumentFormat.OpenXml.Packaging.SlidePart>
+is retrieved or added if the presentation does not already have a `SlidePart`.
 
-### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb)]
+### [C#](#tab/cs-0)
+[!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet1)]
+### [Visual Basic](#tab/vb-0)
+[!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet1)]
+***
 
----------------------------------------------------------------------------------
-## Generated PresentationML
-When the Open XML SDK code is run, the following XML is written to
-the PresentationML document referenced in the code.
+
+In this snippet the a `NoteSlide` is added to the `NoteSlidePart` if one does not already exist.
+The `NotesSlide` class constructor creates instances of the `CommonSlideData` class.
+The `CommonSlideData` class constructor creates an instance of the <xref:DocumentFormat.OpenXml.Presentation.ShapeTree> class, whose constructor in turn
+creates additional class instances: an instance of the <xref:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties> class, an
+instance of the <xref:DocumentFormat.OpenXml.Presentation.GroupShapeProperties> class, and an instance
+of the <xref:DocumentFormat.OpenXml.Presentation.Shape> class.
+
+
+### [C#](#tab/cs-1)
+[!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet2)]
+### [Visual Basic](#tab/vb-1)
+[!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet2)]
+***
+
+The `Shape` constructor creates an instance of <xref:DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties>, <xref:DocumentFormat.OpenXml.Presentation.ShapeProperties>, and <xref:DocumentFormat.OpenXml.Presentation.TextBody> classes along with their required child elements. The `TextBody`
+contains the <xref:DocumentFormat.OpenXml.Drawing.Paragraph>, that has a <xref:DocumentFormat.OpenXml.Drawing.Run>, which contains the text of the note. The slide part is then added to the notes slide part.
+
+### [C#](#tab/cs-2)
+[!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet3)]
+### [Visual Basic](#tab/vb-2)
+[!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet3)]
+***
+
+The notes slide part created with the code above contains the following XML
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <p:notes xmlns:p="https://schemas.openxmlformats.org/presentationml/2006/main">
-      <p:cSld>
-        <p:spTree>
-          <p:nvGrpSpPr>
-            <p:cNvPr id="1"
-                     name="" />
-            <p:cNvGrpSpPr />
-            <p:nvPr />
-          </p:nvGrpSpPr>
-          <p:grpSpPr>
-            <a:xfrm xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-          </p:grpSpPr>
-          <p:sp>
-            <p:nvSpPr>
-              <p:cNvPr id="2"
-                       name="" />
-              <p:cNvSpPr>
-                <a:spLocks noGrp="1"
-                           xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              </p:cNvSpPr>
-              <p:nvPr>
-                <p:ph />
-              </p:nvPr>
-            </p:nvSpPr>
-            <p:spPr />
-            <p:txBody>
-              <a:bodyPr xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:lstStyle xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-              <a:p xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main">
-                <a:endParaRPr />
-              </a:p>
-            </p:txBody>
-          </p:sp>
-        </p:spTree>
-      </p:cSld>
-      <p:clrMapOvr>
-        <a:masterClrMapping xmlns:a="https://schemas.openxmlformats.org/drawingml/2006/main" />
-      </p:clrMapOvr>
-    </p:notes>
+<?xml version="1.0" encoding="utf-8"?>
+<p:notes xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="test Placeholder 3"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr/>
+        <p:txBody>
+          <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"/>
+          <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+            <a:r>
+              <a:t>This is a test note!</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:notes>
 ```
+
+
+The following snippets add the required <xref:DocumentFormat.OpenXml.Packaging.NotesMasterPart> and <xref:DocumentFormat.OpenXml.Packaging.ThemePart> if they are missing.
+
+### [C#](#tab/cs-3)
+[!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet4)]
+### [Visual Basic](#tab/vb-3)
+[!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet4)]
+***
+
+## Sample code
+
+The following is the complete code sample in both C\# and Visual Basic.
+
+### [C#](#tab/cs-4)
+[!code-csharp[](../../samples/presentation/working_with_notes_slides/cs/Program.cs#snippet0)]
+### [Visual Basic](#tab/vb-4)
+[!code-vb[](../../samples/presentation/working_with_notes_slides/vb/Program.vb#snippet0)]
+***
 
 --------------------------------------------------------------------------------
 ## See also
 
 
-[About the Open XML SDK for Office](../about-the-open-xml-sdk.md)  
+[About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
 
-[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
+[How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 
-[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)  
+[How to: Insert a new slide into a presentation](how-to-insert-a-new-slide-into-a-presentation.md)
 
-[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  
+[How to: Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)
 
-[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  
+[How to: Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)

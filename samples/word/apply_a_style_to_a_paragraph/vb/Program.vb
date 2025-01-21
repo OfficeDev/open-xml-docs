@@ -1,3 +1,4 @@
+' <Snippet0>
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
 
@@ -5,12 +6,26 @@ Imports DocumentFormat.OpenXml.Wordprocessing
 Module MyModule
 
     Sub Main(args As String())
+        ' <Snippet2>
+        Using doc As WordprocessingDocument = WordprocessingDocument.Open(args(0), True)
+            ' </Snippet2>
+            ' <Snippet3>
+            ' Get the first paragraph in the document.
+            Dim paragraph As Paragraph = doc.MainDocumentPart.Document.Body.Descendants(Of Paragraph)().ElementAtOrDefault(0)
+            ' </Snippet3>
+
+            ' Apply a style to the paragraph.
+            ApplyStyleToParagraph(doc, "MyStyleId", "MyStyleName", paragraph)
+        End Using
+
     End Sub
 
+    ' <Snippet1>
     ' Apply a style to a paragraph.
-    Public Sub ApplyStyleToParagraph(ByVal doc As WordprocessingDocument,
-        ByVal styleid As String, ByVal stylename As String, ByVal p As Paragraph)
+    Public Sub ApplyStyleToParagraph(ByVal doc As WordprocessingDocument, ByVal styleid As String, ByVal stylename As String, ByVal p As Paragraph)
+        ' </Snippet1>
 
+        ' <Snippet4>
         ' If the paragraph has no ParagraphProperties object, create one.
         If p.Elements(Of ParagraphProperties)().Count() = 0 Then
             p.PrependChild(Of ParagraphProperties)(New ParagraphProperties)
@@ -18,13 +33,17 @@ Module MyModule
 
         ' Get the paragraph properties element of the paragraph.
         Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties)().First()
+        ' </Snippet4>
 
+        ' <Snippet7>
+        ' <Snippet5>
         ' Get the Styles part for this document.
         Dim part As StyleDefinitionsPart = doc.MainDocumentPart.StyleDefinitionsPart
 
         ' If the Styles part does not exist, add it and then add the style.
         If part Is Nothing Then
             part = AddStylesPartToPackage(doc)
+            ' </Snippet5>
             AddNewStyle(part, styleid, stylename)
         Else
             ' If the style is not in the document, add it.
@@ -39,11 +58,13 @@ Module MyModule
                 End If
             End If
         End If
+        ' </Snippet7>
 
         ' Set the style of the paragraph.
         pPr.ParagraphStyleId = New ParagraphStyleId With {.Val = styleid}
     End Sub
 
+    ' <Snippet8>
     ' Return true if the style id is in the document, false otherwise.
     Public Function IsStyleIdInDocument(ByVal doc As WordprocessingDocument,
                                         ByVal styleid As String) As Boolean
@@ -67,6 +88,7 @@ Module MyModule
 
         Return True
     End Function
+    ' </Snippet8>
 
     ' Return styleid that matches the styleName, or null when there's no match.
     Public Function GetStyleIdFromStyleName(ByVal doc As WordprocessingDocument,
@@ -80,10 +102,10 @@ Module MyModule
         Return styleId
     End Function
 
+    ' <Snippet9>
     ' Create a new style with the specified styleid and stylename and add it to the specified
     ' style definitions part.
-    Public Sub AddNewStyle(ByVal styleDefinitionsPart As StyleDefinitionsPart,
-                            ByVal styleid As String, ByVal stylename As String)
+    Public Sub AddNewStyle(ByVal styleDefinitionsPart As StyleDefinitionsPart, ByVal styleid As String, ByVal stylename As String)
         ' Get access to the root element of the styles part.
         Dim styles As Styles = styleDefinitionsPart.Styles
 
@@ -118,14 +140,18 @@ Module MyModule
         ' Add the style to the styles part.
         styles.Append(style)
     End Sub
+    ' </Snippet9>
 
+    ' <Snippet6>
     ' Add a StylesDefinitionsPart to the document.  Returns a reference to it.
     Public Function AddStylesPartToPackage(ByVal doc As WordprocessingDocument) _
         As StyleDefinitionsPart
         Dim part As StyleDefinitionsPart
         part = doc.MainDocumentPart.AddNewPart(Of StyleDefinitionsPart)()
         Dim root As New Styles
-        root.Save(part)
+
         Return part
     End Function
+    ' </Snippet6>
 End Module
+' </Snippet0>

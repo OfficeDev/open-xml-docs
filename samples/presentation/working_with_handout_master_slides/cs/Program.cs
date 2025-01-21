@@ -5,9 +5,19 @@ using DocumentFormat.OpenXml.Presentation;
 using D = DocumentFormat.OpenXml.Drawing;
 using P = DocumentFormat.OpenXml.Presentation;
 
+using (var presentationDocument = PresentationDocument.Open(args[0], true))
+{
+    PresentationPart? presentationPart = presentationDocument.PresentationPart;
+
+    if (presentationPart is not null)
+    {
+        CreateHandoutMasterPart(presentationPart);
+    }
+}
+// <Snippet0>
 static HandoutMasterPart CreateHandoutMasterPart(PresentationPart presentationPart)
 {
-    HandoutMasterPart handoutMasterPart1 = presentationPart.AddNewPart<HandoutMasterPart>("rId3");
+    HandoutMasterPart handoutMasterPart1 = presentationPart.AddNewPart<HandoutMasterPart>();
     handoutMasterPart1.HandoutMaster = new HandoutMaster(
                     new CommonSlideData(
                         new ShapeTree(
@@ -44,3 +54,4 @@ static HandoutMasterPart CreateHandoutMasterPart(PresentationPart presentationPa
 
     return handoutMasterPart1;
 }
+// </Snippet0>

@@ -1,8 +1,8 @@
-// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using System.IO;
 using System.IO.Packaging;
 
+// <Snippet0>
 static void OpenSpreadsheetDocumentReadonly(string filePath)
 {
     // <Snippet1>

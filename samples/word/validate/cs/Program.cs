@@ -1,9 +1,9 @@
+// <Snippet0>
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Validation;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 
-ValidateCorruptedWordDocument(args[0]);
 
 static void ValidateWordDocument(string filepath)
 {
@@ -39,8 +39,6 @@ static void ValidateWordDocument(string filepath)
         {
             Console.WriteLine(ex.Message);
         }
-
-        wordprocessingDocument.Dispose();
     }
 }
 
@@ -93,3 +91,6 @@ static void ValidateCorruptedWordDocument(string filepath)
         }
     }
 }
+// </Snippet0>
+
+ValidateCorruptedWordDocument(args[0]);

@@ -11,12 +11,12 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/14/2025
 ms.localizationpriority: high
 ---
 # Working with sheets
 
-This topic discusses the Open XML SDK [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx), [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx), and [DialogSheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.dialogsheet.aspx) classes and how they relate to
+This topic discusses the Open XML SDK <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet>, <xref:DocumentFormat.OpenXml.Spreadsheet.Chartsheet>, and <xref:DocumentFormat.OpenXml.Spreadsheet.DialogSheet> classes and how they relate to
 the Open XML File Format SpreadsheetML schema. For more information
 about the overall structure of the parts and elements that make up a
 SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
@@ -24,8 +24,8 @@ SpreadsheetML document, see [Structure of a SpreadsheetML document](structure-of
 
 ## Sheets in SpreadsheetML
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
-specification introduces the **sheet** (\<**sheet**\>) element.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
+specification introduces the **sheet** (`<sheet/>`) element.
 
 Sheets are the central structures within a workbook, and are where the
 user does most of their spreadsheet work. The most common type of sheet
@@ -40,17 +40,17 @@ these are also included in the sheet definition on disk.
 
 Other types of sheets include chart sheets and dialog sheets.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ## Open XML SDK Worksheet Class
 
-The Open XML SDK**Worksheet** class
-represents the **worksheet** (\<**worksheet**\>) element defined in the Open XML File
-Format schema for SpreadsheetML documents. Use the **Worksheet** class to manipulate individual \<**worksheet**\> elements in a SpreadsheetML document.
+The Open XML SDK `Worksheet` class
+represents the `worksheet` (`<worksheet/>`) element defined in the Open XML File
+Format schema for SpreadsheetML documents. Use the `Worksheet` class to manipulate individual `<worksheet/>` elements in a SpreadsheetML document.
 
 The following information from the ISO/IEC 29500 specification
-introduces the **worksheet** (\<**worksheet**\>) element.
+introduces the `worksheet` (`<worksheet/>`) element.
 
 An instance of this part type contains all the data, formulas, and
 characteristics associated with a given worksheet.
@@ -80,39 +80,39 @@ simplify the logic required to insert a new sheetData collection into an
 existing (but empty) sheet, the sheetData collection is required, even
 when empty.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 A typical spreadsheet has at least one worksheet. The worksheet contains
-a table like structure for defining data, represented by the **sheetData** element. A sheet that contains data
-uses the **worksheet** element as the root
+a table like structure for defining data, represented by the `sheetData` element. A sheet that contains data
+uses the `worksheet` element as the root
 element for defining worksheets. Inside a worksheet the data is split up
 into three distinct sections. The first section contains optional sheet
 properties. The second section contains the data, using the required
-**sheetData** element. The third section contains optional supporting
+`sheetData` element. The third section contains optional supporting
 features such as sheet protection and filter information. To define an
-empty worksheet you only have to use the **worksheet** and **sheetData** elements. The **sheetData** element can be empty.
+empty worksheet you only have to use the `worksheet` and `sheetData` elements. The `sheetData` element can be empty.
 
-To create new values for the worksheet you define rows inside the **sheetData** element. These rows contain cells,
-which contain values. The **row** element
-defines a new row. Normally the first row in the **sheetData** is the first row in the visible sheet.
-Inside the row you create new **cells** using the \<**c**\> element. Values for cells can be provided by
-storing a \<**v**\> element inside the cell.
-Usually the \<**v**\> element contains the
+To create new values for the worksheet you define rows inside the `sheetData` element. These rows contain cells,
+which contain values. The `row` element
+defines a new row. Normally the first row in the `sheetData` is the first row in the visible sheet.
+Inside the row you create new `cells` using the `<c/>` element. Values for cells can be provided by
+storing a `<v/>` element inside the cell.
+Usually the `<v/>` element contains the
 current value of the worksheet cell. If the value is a numeric value, it
-is stored directly in the \<**v**\> element in
+is stored directly in the `<v/>` element in
 the XML file. If the value is a string value, it is stored in a shared
 string table. For more information about using the shared string table
 to store string values, see [Working with the shared string table](working-with-the-shared-string-table.md).
 
 The following table lists the common Open XML SDK classes used when
-working with the [Worksheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.worksheet.aspx) class.
+working with the <xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet> class.
 
 | **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
-| sheetData | [SheetData](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.sheetdata.aspx) |
-| row | [Row](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.row.aspx) |
-| c | [Cell](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cell.aspx) |
-| v | [CellValue](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.cellvalue.aspx) |
+| `<sheetData/>` | <xref:DocumentFormat.OpenXml.Spreadsheet.SheetData> |
+| `<row/>` | <xref:DocumentFormat.OpenXml.Spreadsheet.Row> |
+| `<c/>` | <xref:DocumentFormat.OpenXml.Spreadsheet.Cell> |
+| `<v/>` | <xref:DocumentFormat.OpenXml.Spreadsheet.CellValue> |
 
 For more information about optional spreadsheet elements, such as sheet
 properties and supporting sheet features, see the ISO/IEC 29500
@@ -121,29 +121,29 @@ specification.
 ### SheetData Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **sheet data** (\<**sheetData**\>) element.
+introduces the **sheet data** (`<sheetData/>`) element.
 
 The cell table is the core structure of a worksheet. It consists of all
 the text, numbers, and formulas in the grid.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Row Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **row** (\<**row**\>) element.
+introduces the **row** (`<row/>`) element.
 
 The cells in the cell table are organized by row. Each row has an index
 (attribute r) so that empty rows need not be written out. Each row
 indicates the number of cells defined for it, as well as their relative
 position in the sheet. In this example, the first row of data is row 2.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Cell Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **cell** (\<**c**\>) element.
+introduces the **cell** (`<c/>`) element.
 
 The cell itself is expressed by the c collection. Each cell indicates
 its location in the grid using A1-style reference notation. A cell can
@@ -152,19 +152,19 @@ also indicate a style identifier (attribute s) and a data type
 order to optimize load/save operations, default data values are not
 written out.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CellValue Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **cell value** (\<**v**\>) element.
+introduces the **cell value** (`<v/>`) element.
 
 Cells contain values, whether the values were directly entered (e.g.,
 cell A2 in our example has the value External Link:) or are the result
 of a calculation (e.g., cell B3 in our example has the formula B2+1).
 
 String values in a cell are not stored in the cell table unless they are
-the result of a calculation. Therefore, instead of seeing External Link:
+the result of a calculation. Therefore, instead of seeing External Link
 as the content of the cell's v node, instead you see a zero-based index
 into the shared string table where that string is stored uniquely. This
 is done to optimize load/save performance and to reduce duplication of
@@ -172,20 +172,20 @@ information. To determine whether the 0 in v is a number or an index to
 a string, the cell's data type must be examined. When the data type
 indicates string, then it is an index and not a numeric value.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Open XML SDK Code Example
 
 The following code example creates a spreadsheet document with the
-specified file name and instantiates a **Worksheet** class, and then adds a row and adds a
+specified file name and instantiates a `Worksheet` class, and then adds a row and adds a
 cell to the cell table at position A1. Then the value of the cell in A1
 is set equal to the numeric value 100.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/spreadsheet/working_with_sheets/cs/Program.cs)]
+[!code-csharp[](../../samples/spreadsheet/working_with_sheets/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/spreadsheet/working_with_sheets/vb/Program.vb)]
+[!code-vb[](../../samples/spreadsheet/working_with_sheets/vb/Program.vb#snippet0)]
 
 ### Generated SpreadsheetML
 
@@ -195,7 +195,7 @@ the "sheet.xml" file in the "worksheets" folder of the .zip file.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <x:worksheet xmlns:x="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
+    <x:worksheet xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
         <x:sheetData>
             <x:row r="1">
                 <x:c r="A1" t="n">
@@ -208,7 +208,7 @@ the "sheet.xml" file in the "worksheets" folder of the .zip file.
 ## The Open XML SDK Chartsheet Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **chartsheet** (\<**chartsheet**\>) element.
+introduces the **chartsheet** (`<chartsheet/>`) element.
 
 An instance of this part type represents a chart that is stored in its
 own sheet.
@@ -227,19 +227,19 @@ relationship in the Chartsheet part's relationship item:
 </chartsheet>
 ```
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The following table lists the common Open XML SDK classes used when
-working with the [Chartsheet](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.chartsheet.aspx) class.
+working with the <xref:DocumentFormat.OpenXml.Spreadsheet.Chartsheet> class.
 
 | **SpreadsheetML Element** | **Open XML SDK Class** |
 |---|---|
-| drawing | [Drawing](https://msdn.microsoft.com/library/office/documentformat.openxml.spreadsheet.drawing.aspx) |
+| `<drawing/>` | <xref:DocumentFormat.OpenXml.Spreadsheet.Drawing> |
 
 ### Drawing Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **drawings** (\<**wsDr**\>) element.
+introduces the **drawings** (`<wsDr/>`) element.
 
 An instance of this part type contains the presentation and layout
 information for one or more drawing elements that are present on this
@@ -250,13 +250,13 @@ such part shall be the target of an explicit relationship from a
 Worksheet part (§12.3.24), or a Chartsheet part (§12.3.2). There shall
 be only one Drawings part per worksheet or chartsheet.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 ## Open XML SDK Dialogsheet Class
 
 The following information from the ISO/IEC 29500 specification
-introduces the **dialogsheet** (\<**dialogsheet**\>) element.
+introduces the **dialogsheet** (`<dialogsheet/>`) element.
 
 An instance of this part type contains information about a legacy custom
 dialog box for a user form.
@@ -280,4 +280,4 @@ Example: sheet1.xml contains the following:
 </dialogsheet>
 ```
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]

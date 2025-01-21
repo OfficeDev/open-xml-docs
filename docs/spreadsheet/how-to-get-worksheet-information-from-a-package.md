@@ -9,7 +9,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 01/09/2025
 ms.localizationpriority: high
 ---
 
@@ -21,7 +21,7 @@ This topic shows how to use the classes in the Open XML SDK for Office to progra
 
 ## How the Sample Code Works
 
-After you have opened the file for read-only access, you instantiate the **Sheets** class.
+After you have opened the file for read-only access, you instantiate the `Sheets` class.
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/spreadsheet/get_worksheetformation_from_a_package/cs/Program.cs#snippet1)]
@@ -30,7 +30,8 @@ After you have opened the file for read-only access, you instantiate the **Sheet
 ***
 
 
-You then you iterate through the **Sheets** collection and display **[OpenXmlElement](/dotnet/api/documentformat.openxml.openxmlelement)** and the **[OpenXmlAttribute](/dotnet/api/documentformat.openxml.openxmlattribute)** in each element.
+You then you iterate through the `Sheets` collection and display <xref:DocumentFormat.OpenXml.OpenXmlElement> and the
+<xref:DocumentFormat.OpenXml.OpenXmlAttribute> in each element.
 
 ### [C#](#tab/cs-2)
 [!code-csharp[](../../samples/spreadsheet/get_worksheetformation_from_a_package/cs/Program.cs#snippet2)]

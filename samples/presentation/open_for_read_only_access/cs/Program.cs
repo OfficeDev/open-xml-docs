@@ -8,12 +8,31 @@ using System.Linq;
 using System.Text;
 using A = DocumentFormat.OpenXml.Drawing;
 
-GetSlideIdAndText(out string text, args[0], int.Parse(args[1]));
+// <Snippet4>
+try
+{
+    string file = args[0];
+    bool isInt = int.TryParse(args[1], out int i);
 
+    if (isInt)
+    {
+        GetSlideIdAndText(out string sldText, file, i);
+        Console.WriteLine($"The text in slide #{i + 1} is {sldText}");
+    }
+}
+catch(ArgumentOutOfRangeException exp) {
+    Console.Error.WriteLine(exp.Message);
+}
+// </Snippet4>
+
+// <Snippet0>
 static void GetSlideIdAndText(out string sldText, string docName, int index)
 {
+    // <Snippet1>
     using (PresentationDocument ppt = PresentationDocument.Open(docName, false))
     {
+        // </Snippet1>
+        // <Snippet2>
         // Get the relationship ID of the first slide.
         PresentationPart? part = ppt.PresentationPart;
         OpenXmlElementList slideIds = part?.Presentation?.SlideIdList?.ChildElements ?? default;
@@ -32,7 +51,9 @@ static void GetSlideIdAndText(out string sldText, string docName, int index)
             sldText = "";
             return;
         }
+        // </Snippet2>
 
+        // <Snippet3>
         // Get the slide part from the relationship ID.
         SlidePart slide = (SlidePart)part!.GetPartById(relId);
 
@@ -46,5 +67,7 @@ static void GetSlideIdAndText(out string sldText, string docName, int index)
             paragraphText.Append(text.Text);
         }
         sldText = paragraphText.ToString();
+        // </Snippet3>
     }
 }
+// </Snippet0>

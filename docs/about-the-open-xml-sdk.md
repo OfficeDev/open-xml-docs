@@ -62,11 +62,11 @@ The SDK supports the following common tasks/scenarios:
 
 ## Open XML SDK for Office
 
-The Open XML SDK provides the namespaces and members to support the Microsoft Office 2013. The Open XML SDK can also read ISO/IEC 29500 Strict Format files. The Strict format is a subset of the Transitional format that does not include legacy features - this makes it theoretically easier for a new implementer to support since it has a smaller technical footprint.
+The Open XML SDK provides the namespaces and members to support the Microsoft Office. The Open XML SDK can also read ISO/IEC 29500 Strict Format files. The Strict format is a subset of the Transitional format that does not include legacy features - this makes it theoretically easier for a new implementer to support since it has a smaller technical footprint.
 
 The SDK supports the following common tasks/scenarios:
 
-- **Support of Office 2013 Preview file format**  In addition to the Open XML SDK for Microsoft Office classes, Open XML SDK provides new classes that enable you to write and build applications to manipulate Open XML file extensions of the new Office 2013 features.
+- **Support of Office Preview file format**  In addition to the Open XML SDK for Microsoft Office classes, Open XML SDK provides new classes that enable you to write and build applications to manipulate Open XML file extensions of the new Office features.
 - **Reads ISO Strict Document File**  Open XML SDK can read ISO/IEC 29500 Strict Format files. When the Open XML SDK API opens a Strict Format file, each Open XML part in the file is loaded to an **OpenXmlPart**  class of the Open XML SDK by mapping `https://purl.oclc.org/ooxml/` namespaces to the corresponding `https://schemas.openxmlformats.org/` namespaces.
 - **Fixes to the Open XML SDK for Microsoft Office**  Open XML SDK includes fixes to known issues in the Open XML SDK for Microsoft Office. These include lost whitespaces in PowerPoint presentations and an issue with the Custom UI in Word documents where a specified argument was reported as being out of the range of valid values.
 

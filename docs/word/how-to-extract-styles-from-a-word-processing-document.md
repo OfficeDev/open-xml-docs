@@ -12,16 +12,15 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 02/09/2024
 ms.localizationpriority: medium
 ---
 # Extract styles from a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically extract the styles or stylesWithEffects part
-from a word processing document to an
-[XDocument](https://msdn.microsoft.com/library/Bb345449(v=VS.100).aspx)
-instance. It contains an example **ExtractStylesPart** method to
+from a word processing document to an <xref:System.Xml.Linq.XDocument>
+instance. It contains an example `ExtractStylesPart` method to
 illustrate this task.
 
 
@@ -30,42 +29,32 @@ illustrate this task.
 
 ## ExtractStylesPart Method
 
-You can use the **ExtractStylesPart** sample method to retrieve an **XDocument** instance that contains the styles or
-stylesWithEffects part for a Microsoft Word 2010 or Microsoft Word 2013
-document. Be aware that in a document created in Word 2010, there will
-only be a single styles part; Word 2013 adds a second stylesWithEffects
-part. To provide for "round-tripping" a document from Word 2013 to Word
-2010 and back, Word 2013 maintains both the original styles part and the
+You can use the `ExtractStylesPart` sample method to retrieve an `XDocument` instance that contains the styles or
+stylesWithEffects part for a Microsoft Word document. Be aware that in a document created in Word 2010, there will
+only be a single styles part; Word 2013+ adds a second stylesWithEffects
+part. To provide for "round-tripping" a document from Word 2013+ to Word
+2010 and back, Word 2013+ maintains both the original styles part and the
 new styles part. (The Office Open XML File Formats specification
 requires that Microsoft Word ignore any parts that it does not
 recognize; Word 2010 does not notice the stylesWithEffects part that
-Word 2013 adds to the document.) You (and your application) must
+Word 2013+ adds to the document.) You (and your application) must
 interpret the results of retrieving the styles or stylesWithEffects
 part.
 
-The **ExtractStylesPart** procedure accepts a two parameters: the first
+The `ExtractStylesPart` procedure accepts a two parameters: the first
 parameter contains a string indicating the path of the file from which
 you want to extract styles, and the second indicates whether you want to
 retrieve the styles part, or the newer stylesWithEffects part
-(basically, you must call this procedure two times for Word 2013
-documents, retrieving each the part). The procedure returns an **XDocument** instance that contains the complete
+(basically, you must call this procedure two times for Word 2013+
+documents, retrieving each the part). The procedure returns an `XDocument` instance that contains the complete
 styles or stylesWithEffects part that you requested, with all the style
 information for the document (or a null reference, if the part you
 requested does not exist).
 
 ### [C#](#tab/cs-0)
-```csharp
-    public static XDocument ExtractStylesPart(
-      string fileName,
-      bool getStylesWithEffectsPart = true)
-```
-
+[!code-csharp[](../../samples/word/extract_styles/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Public Function ExtractStylesPart(
-      ByVal fileName As String,
-      Optional ByVal getStylesWithEffectsPart As Boolean = True) As XDocument
-```
+[!code-vb[](../../samples/word/extract_styles/vb/Program.vb#snippet1)]
 ***
 
 
@@ -78,38 +67,16 @@ The complete code listing for the method can be found in the [Sample Code](#samp
 To call the sample method, pass a string for the first parameter that
 contains the file name of the document from which to extract the styles,
 and a Boolean for the second parameter that specifies whether the type
-of part to retrieve is the styleWithEffects part (**true**), or the styles part (**false**). The following sample code shows an example.
-When you have the **XDocument** instance you
+of part to retrieve is the styleWithEffects part (`true`), or the styles part (`false`). The following sample code shows an example.
+When you have the `XDocument` instance you
 can do what you want with it; in the following sample code the content
-of the **XDocument** instance is displayed to
+of the `XDocument` instance is displayed to
 the console.
 
 ### [C#](#tab/cs-1)
-```csharp
-    string filename = @"C:\Users\Public\Documents\StylesFrom.docx";
-
-    // Retrieve the StylesWithEffects part. You could pass false in the 
-    // second parameter to retrieve the Styles part instead.
-    var styles = ExtractStylesPart(filename, true);
-
-    // If the part was retrieved, send the contents to the console.
-    if (styles != null)
-        Console.WriteLine(styles.ToString());
-```
-
+[!code-csharp[](../../samples/word/extract_styles/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    Dim filename As String = "C:\Users\Public\Documents\StylesFrom.docx"
-
-    ' Retrieve the stylesWithEffects part. You could pass False
-    ' in the second parameter to retrieve the styles part instead.
-    Dim styles = ExtractStylesPart(filename, True)
-
-    ' If the part was retrieved, send the contents to the console.
-    If styles IsNot Nothing Then
-        Console.WriteLine(styles.ToString())
-    End If
-```
+[!code-vb[](../../samples/word/extract_styles/vb/Program.vb#snippet2)]
 ***
 
 
@@ -117,92 +84,32 @@ the console.
 
 ## How the Code Works
 
-The code starts by creating a variable named **styles** that the method returns before it exits.
-
-### [C#](#tab/cs-2)
-```csharp
-    // Declare a variable to hold the XDocument.
-    XDocument styles = null;
-    // Code removed here...
-    // Return the XDocument instance.
-    return styles;
-```
-
-### [Visual Basic](#tab/vb-2)
-```vb
-    ' Declare a variable to hold the XDocument.
-    Dim styles As XDocument = Nothing
-    ' Code removed here...
-    ' Return the XDocument instance.
-    Return styles
-```
-***
-
-
-The code continues by opening the document by using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
-document should be open for read-only access (the final false
-parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
-the main document part, and then prepares a variable named **stylesPart** to hold a reference to the styles part.
+The code starts by creating a variable named `styles` to contain the return value for the method.
+The code continues by opening the document by using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A>
+method and indicating that the document should be open for read-only access (the final false
+parameter). Given the open document, the code uses the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart>
+property to navigate to the main document part, and then prepares a variable named `stylesPart` to hold a reference to the styles part.
 
 ### [C#](#tab/cs-3)
-```csharp
-    // Open the document for read access and get a reference.
-    using (var document = 
-        WordprocessingDocument.Open(fileName, false))
-    {
-        // Get a reference to the main document part.
-        var docPart = document.MainDocumentPart;
-
-        // Assign a reference to the appropriate part to the
-        // stylesPart variable.
-        StylesPart stylesPart = null;
-        // Code removed here...
-    }
-```
-
+[!code-csharp[](../../samples/word/extract_styles/cs/Program.cs#snippet3)]
 ### [Visual Basic](#tab/vb-3)
-```vb
-    ' Open the document for read access and get a reference.
-    Using document = WordprocessingDocument.Open(fileName, False)
-
-        ' Get a reference to the main document part.
-        Dim docPart = document.MainDocumentPart
-
-        ' Assign a reference to the appropriate part to the 
-        ' stylesPart variable.
-        Dim stylesPart As StylesPart = Nothing
-        ' Code removed here...
-    End Using
-```
+[!code-vb[](../../samples/word/extract_styles/vb/Program.vb#snippet3)]
 ***
-
 
 ---------------------------------------------------------------------------------
 
 ## Find the Correct Styles Part
 
 The code next retrieves a reference to the requested styles part by
-using the **getStylesWithEffectsPart** Boolean
-parameter. Based on this value, the code retrieves a specific property
-of the **docPart** variable, and stores it in the
-**stylesPart** variable.
+using the `getStylesWithEffectsPart` <xref:System.Boolean> parameter.
+Based on this value, the code retrieves a specific property
+of the `docPart` variable, and stores it in the
+`stylesPart` variable.
 
 ### [C#](#tab/cs-4)
-```csharp
-    if (getStylesWithEffectsPart)
-        stylesPart = docPart.StylesWithEffectsPart;
-    else
-        stylesPart = docPart.StyleDefinitionsPart;
-```
-
+[!code-csharp[](../../samples/word/extract_styles/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-4)
-```vb
-    If getStylesWithEffectsPart Then
-        stylesPart = docPart.StylesWithEffectsPart
-    Else
-        stylesPart = docPart.StyleDefinitionsPart
-    End If
-```
+[!code-vb[](../../samples/word/extract_styles/vb/Program.vb#snippet4)]
 ***
 
 
@@ -211,40 +118,16 @@ of the **docPart** variable, and stores it in the
 ## Retrieve the Part Contents
 
 If the requested styles part exists, the code must return the contents
-of the part in an **XDocument** instance. Each
-part provides a [GetStream](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.openxmlpart.getstream.aspx) method, which returns a Stream.
-The code passes the Stream instance to the
-[XmlNodeReader.Create](https://msdn.microsoft.com/library/ay7fxzht(v=VS.100).aspx)
-method, and then calls the
-[XDocument.Load](https://msdn.microsoft.com/library/bb356384.aspx)
-method, passing the **XmlNodeReader** as a
-parameter.
+of the part in an `XDocument` instance. Each part provides a
+<xref:DocumentFormat.OpenXml.Packaging.OpenXmlPart.GetStream> method, which returns a Stream.
+The code passes the Stream instance to the <xref:System.Xml.XmlReader.Create%2A>
+method, and then calls the <xref:System.Xml.Linq.XDocument.Load%2A>
+method, passing the `XmlNodeReader` as a parameter.
 
 ### [C#](#tab/cs-5)
-```csharp
-    // If the part exists, read it into the XDocument.
-    if (stylesPart != null)
-    {
-        using (var reader = XmlNodeReader.Create(
-          stylesPart.GetStream(FileMode.Open, FileAccess.Read)))
-        {
-            // Create the XDocument.
-            styles = XDocument.Load(reader);
-        }
-    }
-```
-
+[!code-csharp[](../../samples/word/extract_styles/cs/Program.cs#snippet5)]
 ### [Visual Basic](#tab/vb-5)
-```vb
-    ' If the part exists, read it into the XDocument.
-    If stylesPart IsNot Nothing Then
-        Using reader = XmlNodeReader.Create(
-          stylesPart.GetStream(FileMode.Open, FileAccess.Read))
-            ' Create the XDocument:  
-            styles = XDocument.Load(reader)
-        End Using
-    End If
-```
+[!code-vb[](../../samples/word/extract_styles/vb/Program.vb#snippet5)]
 ***
 
 
@@ -255,10 +138,10 @@ parameter.
 The following is the complete **ExtractStylesPart** code sample in C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/extract_styles/cs/Program.cs)]
+[!code-csharp[](../../samples/word/extract_styles/cs/Program.cs#snippet)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/extract_styles/vb/Program.vb)]
+[!code-vb[](../../samples/word/extract_styles/vb/Program.vb#snippet)]
 
 ---------------------------------------------------------------------------------
 

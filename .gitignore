@@ -288,3 +288,5 @@ __pycache__/
 *.xsd.cs
 
 docs/open-xml-docs/
+samples/**/Properties/**/*
+samples/**/My\ Project/**/*

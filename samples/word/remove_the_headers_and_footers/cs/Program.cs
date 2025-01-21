@@ -3,11 +3,14 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Linq;
 
-RemoveHeadersAndFooters(args[0]);
 
+// <Snippet0>
 // Remove all of the headers and footers from a document.
+// <Snippet1>
 static void RemoveHeadersAndFooters(string filename)
+// </Snippet1>
 {
+    // <Snippet3>
     // Given a document name, remove all of the headers and footers
     // from the document.
     using (WordprocessingDocument doc = WordprocessingDocument.Open(filename, true))
@@ -19,16 +22,22 @@ static void RemoveHeadersAndFooters(string filename)
 
         // Get a reference to the main document part.
         var docPart = doc.MainDocumentPart;
+        // </Snippet3>
 
+        // <Snippet4>
         // Count the header and footer parts and continue if there 
         // are any.
-        if (docPart.HeaderParts.Count() > 0 ||
-            docPart.FooterParts.Count() > 0)
+        if (docPart.HeaderParts.Count() > 0 || docPart.FooterParts.Count() > 0)
         {
+            // </Snippet4>
+
+            // <Snippet5>
             // Remove the header and footer parts.
             docPart.DeleteParts(docPart.HeaderParts);
             docPart.DeleteParts(docPart.FooterParts);
+            // </Snippet5>
 
+            // <Snippet6>
             // Get a reference to the root element of the main
             // document part.
             Document document = docPart.Document;
@@ -38,8 +47,8 @@ static void RemoveHeadersAndFooters(string filename)
             // First, create a list of all descendants of type
             // HeaderReference. Then, navigate the list and call
             // Remove on each item to delete the reference.
-            var headers =
-              document.Descendants<HeaderReference>().ToList();
+            var headers = document.Descendants<HeaderReference>().ToList();
+
             foreach (var header in headers)
             {
                 header.Remove();
@@ -48,15 +57,21 @@ static void RemoveHeadersAndFooters(string filename)
             // First, create a list of all descendants of type
             // FooterReference. Then, navigate the list and call
             // Remove on each item to delete the reference.
-            var footers =
-              document.Descendants<FooterReference>().ToList();
+            var footers = document.Descendants<FooterReference>().ToList();
+
             foreach (var footer in footers)
             {
                 footer.Remove();
             }
-
-            // Save the changes.
-            document.Save();
+            // </Snippet6>
         }
     }
 }
+// </Snippet0>
+
+// <Snippet2>
+string filename = args[0];
+
+RemoveHeadersAndFooters(filename);
+// </Snippet2>
+

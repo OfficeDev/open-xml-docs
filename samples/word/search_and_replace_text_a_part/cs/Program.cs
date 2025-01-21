@@ -3,12 +3,17 @@ using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
+// <Snippet2>
 SearchAndReplace(args[0]);
+// </Snippet2>
 
 // To search and replace content in a document part.
+// <Snippet0>
 static void SearchAndReplace(string document)
 {
+    // <Snippet1>
     using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
+        // </Snippet1>
     {
         string? docText = null;
 
@@ -23,7 +28,7 @@ static void SearchAndReplace(string document)
             docText = sr.ReadToEnd();
         }
 
-        Regex regexText = new Regex("Hello world!");
+        Regex regexText = new Regex("Hello World!");
         docText = regexText.Replace(docText, "Hi Everyone!");
 
         using (StreamWriter sw = new StreamWriter(wordDoc.MainDocumentPart.GetStream(FileMode.Create)))
@@ -32,3 +37,4 @@ static void SearchAndReplace(string document)
         }
     }
 }
+// </Snippet0>

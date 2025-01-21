@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/03/2025
 ms.localizationpriority: medium
 ---
 # Remove a document part from a package
@@ -28,42 +28,24 @@ programmatically.
 
 ---------------------------------------------------------------------------------
 ## Getting a WordprocessingDocument Object
+
 The code example starts with opening a package file by passing a file
-name as an argument to one of the overloaded [Open()](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) methods of the [DocumentFormat.OpenXml.Packaging.WordprocessingDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.aspx)
+name as an argument to one of the overloaded <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open*> methods of the 
+<xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument>
 that takes a string and a Boolean value that specifies whether the file
 should be opened in read/write mode or not. In this case, the Boolean
-value is **true** specifying that the file
+value is `true` specifying that the file
 should be opened in read/write mode.
 
-### [C#](#tab/cs-0)
-```csharp
-    // Open a Wordprocessing document for editing.
-    using (WordprocessingDocument wordDoc = WordprocessingDocument.Open(document, true))
-    {
-          // Insert other code here.
-    }
-```
+### [C#](#tab/cs-1)
+[!code-csharp[](../../samples/word/remove_a_part_from_a_package/cs/Program.cs#snippet1)]
 
-### [Visual Basic](#tab/vb-0)
-```vb
-    ' Open a Wordprocessing document for editing.
-    Using wordDoc As WordprocessingDocument = WordprocessingDocument.Open(document, True)
-        ' Insert other code here.
-    End Using
-```
+### [Visual Basic](#tab/vb-1)
+[!code-vb[](../../samples/word/remove_a_part_from_a_package/vb/Program.vb#snippet1)]
 ***
 
 
-The **using** statement provides a recommended
-alternative to the typical .Create, .Save, .Close sequence. It ensures
-that the **Dispose** method (internal method
-used by the Open XML SDK to clean up resources) is automatically called
-when the closing brace is reached. The block that follows the **using** statement establishes a scope for the
-object that is created or named in the **using** statement, in this case **wordDoc**. Because the **WordprocessingDocument** class in the Open XML SDK
-automatically saves and closes the object as part of its **System.IDisposable** implementation, and because
-the **Dispose** method is automatically called
-when you exit the block; you do not have to explicitly call **Save** and **Close**─as
-long as you use **using**.
+[!include[Using Statement](../includes/word/using-statement.md)]
 
 
 ---------------------------------------------------------------------------------
@@ -72,9 +54,8 @@ long as you use **using**.
 
 --------------------------------------------------------------------------------
 ## Settings Element
-The following text from the [ISO/IEC
-29500](https://www.iso.org/standard/71691.html) specification
-introduces the settings element in a **PresentationML** package.
+The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the settings element in a `PresentationML` package.
 
 > This element specifies the settings that are applied to a
 > WordprocessingML document. This element is the root element of the
@@ -95,65 +76,37 @@ introduces the settings element in a **PresentationML** package.
 > automatic tab stop increments of 0.5" using the **defaultTabStop** element, and no character level
 > white space compression using the **characterSpacingControl** element. 
 > 
-> © ISO/IEC29500: 2008.
+> &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------
 ## How the Sample Code Works
-After you have opened the document, in the **using** statement, as a **WordprocessingDocument** object, you create a
-reference to the **DocumentSettingsPart** part.
+
+After you have opened the document, in the `using` statement, as a <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument> object, you create a
+reference to the `DocumentSettingsPart` part.
 You can then check if that part exists, if so, delete that part from the
-package. In this instance, the **settings.xml**
+package. In this instance, the `settings.xml`
 part is removed from the package.
 
-### [C#](#tab/cs-1)
-```csharp
-    MainDocumentPart mainPart = wordDoc.MainDocumentPart;
-    if (mainPart.DocumentSettingsPart != null)
-    {
-        mainPart.DeletePart(mainPart.DocumentSettingsPart);
-    }
-```
+### [C#](#tab/cs-2)
+[!code-csharp[](../../samples/word/remove_a_part_from_a_package/cs/Program.cs#snippet2)]
 
-### [Visual Basic](#tab/vb-1)
-```vb
-    Dim mainPart As MainDocumentPart = wordDoc.MainDocumentPart
-    If mainPart.DocumentSettingsPart IsNot Nothing Then
-        mainPart.DeletePart(mainPart.DocumentSettingsPart)
-    End If
-```
+### [Visual Basic](#tab/vb-2)
+[!code-vb[](../../samples/word/remove_a_part_from_a_package/vb/Program.vb#snippet2)]
 ***
 
 
 --------------------------------------------------------------------------------
 ## Sample Code
-The following code removes a document part from a package. To run the
-program, call the method **RemovePart** like
-this example.
-
-### [C#](#tab/cs-2)
-```csharp
-    string document = @"C:\Users\Public\Documents\MyPkg6.docx";
-    RemovePart(document);
-```
-
-### [Visual Basic](#tab/vb-2)
-```vb
-    Dim document As String = "C:\Users\Public\Documents\MyPkg6.docx"
-    RemovePart(document)
-```
-***
-
-> [!NOTE]
-> Before running the program on the test file, &quot;MyPkg6.docs,&quot; for example, open the file by using the Open XML SDK Productivity Tool for Microsoft Office and examine its structure. After running the program, examine the file again, and you will notice that the **DocumentSettingsPart** part was removed.
 
 Following is the complete code example in both C\# and Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/remove_a_part_from_a_package/cs/Program.cs)]
+[!code-csharp[](../../samples/word/remove_a_part_from_a_package/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/remove_a_part_from_a_package/vb/Program.vb)]
+[!code-vb[](../../samples/word/remove_a_part_from_a_package/vb/Program.vb#snippet0)]
+***
 
 --------------------------------------------------------------------------------
 ## See also

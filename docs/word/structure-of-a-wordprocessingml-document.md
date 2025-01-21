@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/12/2024
 ms.localizationpriority: high
 ---
 # Structure of a WordprocessingML document
@@ -19,11 +19,11 @@ ms.localizationpriority: high
 This topic discusses the basic structure of a **WordprocessingML** document and reviews important
 Open XML SDK classes that are used most often to create **WordprocessingML** documents.
 
-The basic document structure of a **WordProcessingML** document consists of the \<**document**\> and \<**body**\> elements, followed by one or more block
-level elements such as \<**p**\>, which
-represents a paragraph. A paragraph contains one or more \<**r**\> elements. The \<**r**\> stands for run, which is a region of text
+The basic document structure of a **WordProcessingML** document consists of the `<document>` and `<body>` elements, followed by one or more block
+level elements such as `<p>`, which
+represents a paragraph. A paragraph contains one or more `<r>` elements. The `<r>` stands for run, which is a region of text
 with a common set of properties, such as formatting. A run contains one
-or more \<**t**\> elements. The \<**t**\> element contains a range of text.
+or more `<t>` elements. The `<t>` element contains a range of text.
 
 
 ## Important WordprocessingML Parts
@@ -38,15 +38,15 @@ represents the element in the Open XML SDK API.
 
 | **Package Part** | **WordprocessingML Element** | **Open XML SDK Class** | **Description** |
 |---|---|---|---|
-| Main Document|document | [Document](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.document.aspx) | The root element for the main document part. |
-| Comments | comments | [Comments](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.comments.aspx) | The root element for the comments part. |
-| Document Settings | settings | [Settings](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.settings.aspx) | The root element for the document settings part. |
-| Endnotes | endnotes | [Endnotes](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.endnotes.aspx) | The root element for the endnotes part. |
-| Footer | ftr | [Footer](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.footer.aspx) | The root element for the footer part. |
-| Footnotes | footnotes | [Footnotes](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.footnotes.aspx) | The root element for the footnotes part. |
-| Glossary Document | glossaryDocument | [GlossaryDocument](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.glossarydocument.aspx) | The root element for the glossary document part. |
-| Header | hdr | [Header](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.header.aspx) | The root element for the header part. |
-| Style Definitions | styles | [Styles](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.styles.aspx) | The root element for a Style Definitions part. |
+| Main Document|document | <xref:DocumentFormat.OpenXml.Wordprocessing.Document> | The root element for the main document part. |
+| Comments | comments | <xref:DocumentFormat.OpenXml.Wordprocessing.Comments> | The root element for the comments part. |
+| Document Settings | settings | <xref:DocumentFormat.OpenXml.Wordprocessing.Settings> | The root element for the document settings part. |
+| Endnotes | endnotes | <xref:DocumentFormat.OpenXml.Wordprocessing.Endnotes> | The root element for the endnotes part. |
+| Footer | ftr | <xref:DocumentFormat.OpenXml.Wordprocessing.Footer> | The root element for the footer part. |
+| Footnotes | footnotes | <xref:DocumentFormat.OpenXml.Wordprocessing.Footnotes> | The root element for the footnotes part. |
+| Glossary Document | glossaryDocument | <xref:DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument> | The root element for the glossary document part. |
+| Header | hdr | <xref:DocumentFormat.OpenXml.Wordprocessing.Header> | The root element for the header part. |
+| Style Definitions | styles | <xref:DocumentFormat.OpenXml.Wordprocessing.Styles> | The root element for a Style Definitions part. |
 
 
 ## Minimum Document Scenario
@@ -79,37 +79,37 @@ represented by the main document part. At a minimum, to create a valid
 **WordprocessingML** document using code, add a
 main document part to the document.
 
-The following information from the [ISO/IEC 29500](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 introduces the WordprocessingML elements required in the main document
 part in order to complete the minimum document scenario.
 
 The main document story of the simplest WordprocessingML document
 consists of the following XML elements:
 
-document — The root element for a WordprocessingML's main document part,
+- `document` — The root element for a WordprocessingML's main document part,
 which defines the main document story.
 
-body — The container for the collection of block-level structures that
+- `body` — The container for the collection of block-level structures that
 comprise the main story.
 
-p — A paragraph.
+- `p` — A paragraph.
 
-r — A run.
+- `r` — A run.
 
-t — A range of text.
+- `t` — A range of text.
 
-© ISO/IEC29500: 2008.
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Open XML SDK Code Example
 
-The following code uses the Open XML SDK to create a simple **WordprocessingML** document that contains the text
-"Hello, Word!"
+The following code uses the Open XML SDK to create a simple **WordprocessingML** document that contains the text passed in as the second parameter
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/structure_of_a_wordprocessingml/cs/Program.cs)]
+[!code-csharp[](../../samples/word/structure_of_a_wordprocessingml/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/structure_of_a_wordprocessingml/vb/Program.vb)]
+[!code-vb[](../../samples/word/structure_of_a_wordprocessingml/vb/Program.vb#snippet0)]
+***
 
 ### Generated WordprocessingML
 
@@ -128,16 +128,16 @@ The following XML code is generated in the document.xml file when you
 run the Open XML SDK code in the previous section.
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <w:document xmlns:w="https://schemas.openxmlformats.org/wordprocessingml/2006/main">
-      <w:body>
-        <w:p>
-          <w:r>
-            <w:t>Hello, Word!</w:t>
-          </w:r>
-        </w:p>
-      </w:body>
-    </w:document
+<?xml version="1.0" encoding="utf-8"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:r>
+        <w:t>The text passed as the second parameter goes here</w:t>
+      </w:r>
+    </w:p>
+  </w:body>
+</w:document>
 ```
 
 ## Typical Document Scenario

@@ -12,38 +12,33 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 06/28/2021
+ms.date: 01/17/2025
 ms.localizationpriority: medium
 ---
 # Remove the headers and footers from a word processing document
 
 This topic shows how to use the classes in the Open XML SDK for
 Office to programmatically remove all headers and footers in a word
-processing document. It contains an example **RemoveHeadersAndFooters** method to illustrate this
+processing document. It contains an example `RemoveHeadersAndFooters` method to illustrate this
 task.
 
 
 
 ## RemoveHeadersAndFooters Method
 
-You can use the **RemoveHeadersAndFooters**
+You can use the `RemoveHeadersAndFooters`
 method to remove all header and footer information from a word
 processing document. Be aware that you must not only delete the header
 and footer parts from the document storage, you must also delete the
 references to those parts from the document too. The sample code
-demonstrates both steps in the operation. The **RemoveHeadersAndFooters** method accepts a single
+demonstrates both steps in the operation. The `RemoveHeadersAndFooters` method accepts a single
 parameter, a string that indicates the path of the file that you want to
 modify.
 
 ### [C#](#tab/cs-0)
-```csharp
-    public static void RemoveHeadersAndFooters(string filename)
-```
-
+[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs#snippet1)]
 ### [Visual Basic](#tab/vb-0)
-```vb
-    Public Sub RemoveHeadersAndFooters(ByVal filename As String)
-```
+[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb#snippet1)]
 ***
 
 
@@ -56,85 +51,44 @@ contains the file name of the document that you want to modify as shown
 in the following code example.
 
 ### [C#](#tab/cs-1)
-```csharp
-    RemoveHeadersAndFooters(@"C:\Users\Public\Documents\Headers.docx");
-```
-
+[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs#snippet2)]
 ### [Visual Basic](#tab/vb-1)
-```vb
-    RemoveHeadersAndFooters("C:\Users\Public\Documents\Headers.docx")
-```
+[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb#snippet2)]
 ***
 
 
 ## How the Code Works
 
-The **RemoveHeadersAndFooters** method works
+The `RemoveHeadersAndFooters` method works
 with the document you specify, deleting all of the header and footer
 parts and references to those parts. The code starts by opening the
-document, using the [Open](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.open.aspx) method and indicating that the
+document, using the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open%2A> method and indicating that the
 document should be opened for read/write access (the final true
-parameter). Given the open document, the code uses the [MainDocumentPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.wordprocessingdocument.maindocumentpart.aspx) property to navigate to
-the main document, storing the reference in a variable named **docPart**.
+parameter). Given the open document, the code uses the <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.MainDocumentPart> property to navigate to
+the main document, storing the reference in a variable named `docPart`.
 
 ### [C#](#tab/cs-2)
-```csharp
-    // Given a document name, remove all of the headers and footers
-    // from the document.
-    using (WordprocessingDocument doc = 
-        WordprocessingDocument.Open(filename, true))
-    {
-        // Code removed here...
-    }
-```
-
+[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs#snippet3)]
 ### [Visual Basic](#tab/vb-2)
-```vb
-    ' Given a document name, remove all of the headers and footers
-    ' from the document.
-    Using doc = WordprocessingDocument.Open(filename, True)
-        ' Code removed here...
-    End Using
-```
+[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb#snippet3)]
 ***
 
 
 ## Confirm Header/Footer Existence
 
 Given a reference to the document part, the code next determines if it
-has any work to do─that is, if the document contains any headers or
-footers. To decide, the code calls the **Count** method of both the [HeaderParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.headerparts.aspx) and [FooterParts](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.maindocumentpart.footerparts.aspx) properties of the document
+has any work to do, i.e. if the document contains any headers or
+footers. To decide, the code calls the `Count` method of both the <xref:DocumentFormat.OpenXml.Packaging.MainDocumentPart.HeaderParts> and
+<xref:DocumentFormat.OpenXml.Packaging.MainDocumentPart.FooterParts> properties of the document
 part, and if either returns a value greater than 0, the code continues.
-Be aware that the **HeaderParts** and **FooterParts** properties each return an
-[IEnumerable](https://msdn.microsoft.com/library/9eekhta0.aspx) of
-[HeaderPart](https://msdn.microsoft.com/library/9eekhta0.aspx) or [FooterPart](https://msdn.microsoft.com/library/office/documentformat.openxml.packaging.footerpart.aspx) objects, respectively.
+Be aware that the `HeaderParts` and `FooterParts` properties each return an
+<xref:System.Collections.Generic.IEnumerable%601> of
+<xref:DocumentFormat.OpenXml.Packaging.HeaderPart> or <xref:DocumentFormat.OpenXml.Packaging.FooterPart> objects, respectively.
 
 ### [C#](#tab/cs-3)
-```csharp
-    // Get a reference to the main document part.
-    var docPart = doc.MainDocumentPart;
-
-    // Count the header and footer parts and continue if there 
-    // are any.
-    if (docPart.HeaderParts.Count() > 0 || 
-        docPart.FooterParts.Count() > 0)
-    {
-        // Code removed here...
-    }
-```
-
+[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs#snippet4)]
 ### [Visual Basic](#tab/vb-3)
-```vb
-    ' Get a reference to the main document part.
-    Dim docPart = doc.MainDocumentPart
-
-    ' Count the header and footer parts and continue if there 
-    ' are any.
-    If (docPart.HeaderParts.Count > 0) Or
-      (docPart.FooterParts.Count > 0) Then
-        ' Code removed here...
-    End If
-```
+[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb#snippet4)]
 ***
 
 
@@ -142,134 +96,55 @@ Be aware that the **HeaderParts** and **FooterParts** properties each return an
 
 Given a collection of references to header and footer parts, you could
 write code to delete each one individually, but that is not necessary
-because of the Open XML SDK. Instead, you can call the [DeleteParts\<T\>](https://msdn.microsoft.com/library/office/cc562335.aspx) method, passing in the
+because of the Open XML SDK. Instead, you can call the <xref:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer.DeleteParts%2A> method, passing in the
 collection of parts to be deleted─this simple method provides a shortcut
 for deleting a collection of parts. Therefore, the following few lines
 of code take the place of the loop that you would otherwise have to
 write yourself.
 
 ### [C#](#tab/cs-4)
-```csharp
-    // Remove the header and footer parts.
-    docPart.DeleteParts(docPart.HeaderParts);
-    docPart.DeleteParts(docPart.FooterParts);
-```
-
+[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs#snippet5)]
 ### [Visual Basic](#tab/vb-4)
-```vb
-    ' Remove the header and footer parts.
-    docPart.DeleteParts(docPart.HeaderParts)
-    docPart.DeleteParts(docPart.FooterParts)
-```
-***
-
-
-## Work with the Document Content
-
-At this point, the code has deleted the header and footer parts, but the
-document still contains orphaned references to those parts. Before the
-orphaned references can be removed, the code must retrieve a reference
-to the content of the document (that is, to the XML content contained
-within the main document part). Later, after the changes are made, the
-code must ensure that they persist by explicitly saving them. Between
-these two operations, the code must delete the orphaned references, as
-shown in the section that follows the following code example.
-
-### [C#](#tab/cs-5)
-```csharp
-    // Get a reference to the root element of the main
-    // document part.
-    Document document = docPart.Document;
-        // Code removed here...
-    // Save the changes.
-    document.Save();
-```
-
-### [Visual Basic](#tab/vb-5)
-```vb
-    ' Get a reference to the root element of the main 
-    ' document part.
-    Dim document As Document = docPart.Document
-        ' Code removed here...
-    ' Save the changes.
-    document.Save()
-```
+[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb#snippet5)]
 ***
 
 
 ## Delete the Header and Footer References
 
+At this point, the code has deleted the header and footer parts, but the
+document still contains orphaned references to those parts. Before the
+orphaned references can be removed, the code must retrieve a reference
+to the content of the document (that is, to the XML content contained
+within the main document part).
+
 To remove the stranded references, the code first retrieves a collection
-of HeaderReference elements, converts the collection to a List, and then
-loops through the collection, calling the [Remove](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.remove.aspx) method for each element found. Note
-that the code converts the **IEnumerable**
-returned by the [Descendants](https://msdn.microsoft.com/library/office/documentformat.openxml.openxmlelement.descendants.aspx) method into a List so that it
-can delete items from the list, and that the [HeaderReference](https://msdn.microsoft.com/library/office/documentformat.openxml.wordprocessing.headerreference.aspx) type that is provided by
-the Open XML SDK makes it easy to refer to elements of type **HeaderReference** in the XML content. (Without that
+of HeaderReference elements, converts the collection to a `List`, and then
+loops through the collection, calling the <xref:DocumentFormat.OpenXml.OpenXmlElement.Remove> method for each element found. Note
+that the code converts the `IEnumerable`
+returned by the <xref:DocumentFormat.OpenXml.OpenXmlElement.Descendants> method into a `List` so that it
+can delete items from the list, and that the <xref:DocumentFormat.OpenXml.Wordprocessing.HeaderReference> type that is provided by
+the Open XML SDK makes it easy to refer to elements of type `HeaderReference` in the XML content. (Without that
 additional help, you would have to work with the details of the XML
 content directly.) Once it has removed all the headers, the code repeats
 the operation with the footer elements.
 
 ### [C#](#tab/cs-6)
-```csharp
-    // Remove all references to the headers and footers.
-
-    // First, create a list of all descendants of type
-    // HeaderReference. Then, navigate the list and call
-    // Remove on each item to delete the reference.
-    var headers =
-      document.Descendants<HeaderReference>().ToList();
-    foreach (var header in headers)
-    {
-        header.Remove();
-    }
-
-    // First, create a list of all descendants of type
-    // FooterReference. Then, navigate the list and call
-    // Remove on each item to delete the reference.
-    var footers =
-      document.Descendants<FooterReference>().ToList();
-    foreach (var footer in footers)
-    {
-        footer.Remove();
-    }
-```
-
+[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs#snippet6)]
 ### [Visual Basic](#tab/vb-6)
-```vb
-    ' Remove all references to the headers and footers.
-        
-    ' First, create a list of all descendants of type
-    ' HeaderReference. Then, navigate the list and call
-    ' Remove on each item to delete the reference.
-    Dim headers = _
-      document.Descendants(Of HeaderReference).ToList()
-    For Each header In headers
-        header.Remove()
-    Next
-
-    ' First, create a list of all descendants of type
-    ' FooterReference. Then, navigate the list and call
-    ' Remove on each item to delete the reference.
-    Dim footers = _
-      document.Descendants(Of FooterReference).ToList()
-    For Each footer In footers
-        footer.Remove()
-    Next
-```
+[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb#snippet6)]
 ***
 
 
 ## Sample Code
 
-The following is the complete **RemoveHeadersAndFooters** code sample in C\# and
+The following is the complete `RemoveHeadersAndFooters` code sample in C\# and
 Visual Basic.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs)]
+[!code-csharp[](../../samples/word/remove_the_headers_and_footers/cs/Program.cs#snippet0)]
 
 ### [Visual Basic](#tab/vb)
-[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb)]
+[!code-vb[](../../samples/word/remove_the_headers_and_footers/vb/Program.vb#snippet0)]
 
 ## See also
 
