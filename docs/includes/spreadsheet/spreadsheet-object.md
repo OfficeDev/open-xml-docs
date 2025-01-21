@@ -43,13 +43,13 @@ SpreadsheetML elements. You can find these classes in the `DocumentFormat.OpenXM
 following table lists the class names of the classes that correspond to
 the `workbook`, `sheets`, `sheet`, `worksheet`, and `sheetData` elements.
 
-**SpreadsheetML Element**|**Open XML SDK Class**|**Description**
---|--|--
-`<workbook/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Workbook>|The root element for the main document part.
-`<sheets/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Sheets>|The container for the block level structures such as sheet, fileVersion, and others specified in the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification.
-`<sheet/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Sheet>|A sheet that points to a sheet definition file.
-`<worksheet/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet>|A sheet definition file that contains the sheet data.
-`<sheetData/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.SheetData>|The cell table, grouped together by rows.
-`<row/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Row>|A row in the cell table.
-`<c/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Cell>|A cell in a row.
-`<v/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.CellValue>|The value of a cell.
+| **SpreadsheetML Element**|**Open XML SDK Class**|**Description** |
+|--|--|--|
+| `<workbook/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Workbook>|The root element for the main document part. |
+| `<sheets/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Sheets>|The container for the block level structures such as sheet, fileVersion, and  |others specified in the [!include[ISO/IEC 29500 URL](../iso-iec-29500-link.md)] specification.
+| `<sheet/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Sheet>|A sheet that points to a sheet definition file. |
+| `<worksheet/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Worksheet>|A sheet definition file that contains the sheet data. |
+| `<sheetData/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.SheetData>|The cell table, grouped together by rows. |
+| `<row/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Row>|A row in the cell table. |
+| `<c/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.Cell>|A cell in a row. |
+| `<v/>`|<xref:DocumentFormat.OpenXml.Spreadsheet.CellValue>|The value of a cell. |

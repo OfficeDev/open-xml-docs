@@ -9,7 +9,7 @@ in the document is represented in the package as XML using `SpreadsheetML` marku
 
 To create the class instance from the document that you call one of the
 <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open*> methods. Several are provided, each
-with a different signature. The sample code in this topic uses the [Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?view=openxml-3.0.1#documentformat-openxml-packaging-spreadsheetdocument-open(system-string-system-boolean)) method with a
+with a different signature. The sample code in this topic uses the @"DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open*?text=Open(String, Boolean)" method with a
 signature that requires two parameters. The first parameter takes a full
 path string that represents the document that you want to open. The
 second parameter is either `true` or `false` and represents whether you want the file to

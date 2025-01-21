@@ -28,7 +28,7 @@ In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocu
 presentation document package. To work with a presentation document,
 first create an instance of the `PresentationDocument` class, and then work with
 that instance. To create the class instance from the document call the
-<xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open#documentformat-openxml-packaging-presentationdocument-open(system-string-system-boolean)>
+<xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open>
 method that uses a file path, and a Boolean value as the second
 parameter to specify whether a document is editable. Set this second
 parameter to `false` to open the file for
@@ -63,13 +63,13 @@ introduces the `id` (Hyperlink Target).
 
 > Specifies the ID of the relationship whose target shall be used as the
 > target for thishyperlink.
-> 
+>
 > If this attribute is omitted, then there shall be no external
 > hyperlink target for the current hyperlink - a location in the current
 > document can still be target via the anchor attribute. If this
 > attribute exists, it shall supersede the value in the anchor
 > attribute.
-> 
+>
 > [*Example*: Consider the following `PresentationML` fragment for a hyperlink:
 
 ```xml
@@ -95,10 +95,10 @@ introduces the `id` (Hyperlink Target).
 > The target of this hyperlink would therefore be the target of
 > relationship `rId9` - in this case,
 > https://www.example.com. *end example*]
-> 
+>
 > The possible values for this attribute are defined by the
 > ST\_RelationshipId simple type(§22.8.2.1).
-> 
+>
 > &copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 

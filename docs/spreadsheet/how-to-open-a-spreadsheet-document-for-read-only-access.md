@@ -52,10 +52,10 @@ editable are listed in the following table.
 
 |Open|Class Library Reference Topic|Description|
 --|--|--
-Open(String, Boolean)|[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?view=openxml-3.0.1#documentformat-openxml-packaging-spreadsheetdocument-open(system-string-system-boolean))|Create an instance of the SpreadsheetDocument class from the specified file.
-Open(Stream, Boolean)|[Open(Stream, Boolean](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?view=openxml-3.0.1#documentformat-openxml-packaging-spreadsheetdocument-open(system-io-stream-system-boolean))|Create an instance of the SpreadsheetDocument class from the specified IO stream.
-Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?view=openxml-3.0.1#documentformat-openxml-packaging-spreadsheetdocument-open(system-string-system-boolean-documentformat-openxml-packaging-opensettings))|Create an instance of the SpreadsheetDocument class from the specified file.
-Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?view=openxml-3.0.1#documentformat-openxml-packaging-spreadsheetdocument-open(system-io-stream-system-boolean-documentformat-openxml-packaging-opensettings))|Create an instance of the SpreadsheetDocument class from the specified I/O stream.
+Open(String, Boolean)|[Open(String, Boolean)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?#documentformat-openxml-packaging-spreadsheetdocument-open(system-string-system-boolean))|Create an instance of the SpreadsheetDocument class from the specified file.
+Open(Stream, Boolean)|[Open(Stream, Boolean](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?#documentformat-openxml-packaging-spreadsheetdocument-open(system-io-stream-system-boolean))|Create an instance of the SpreadsheetDocument class from the specified IO stream.
+Open(String, Boolean, OpenSettings)|[Open(String, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?#documentformat-openxml-packaging-spreadsheetdocument-open(system-string-system-boolean-documentformat-openxml-packaging-opensettings))|Create an instance of the SpreadsheetDocument class from the specified file.
+Open(Stream, Boolean, OpenSettings)|[Open(Stream, Boolean, OpenSettings)](/dotnet/api/documentformat.openxml.packaging.spreadsheetdocument.open?#documentformat-openxml-packaging-spreadsheetdocument-open(system-io-stream-system-boolean-documentformat-openxml-packaging-opensettings))|Create an instance of the SpreadsheetDocument class from the specified I/O stream.
 
 The table earlier in this topic lists only those `Open` methods that accept a Boolean value as the
 second parameter to specify whether a document is editable. To open a

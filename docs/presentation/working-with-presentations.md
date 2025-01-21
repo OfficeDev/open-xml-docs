@@ -54,7 +54,7 @@ size and default text styles.
 </p:presentation>
 ```
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The `<presentation/>` element typically contains child elements that list
 slide masters, slides, and custom slide shows contained within the
@@ -79,7 +79,7 @@ Open XML SDK classes that correspond to them.
 |        `<sldIdLst/>`        |         <xref:DocumentFormat.OpenXml.Presentation.SlideIdList>         |
 |         `<sldId/>`          |             <xref:DocumentFormat.OpenXml.Presentation.SlideId>            |
 |    `<notesMasterIdLst/>`    |   <xref:DocumentFormat.OpenXml.Presentation.NotesMasterIdList>   |
-|   `<handoutMasterIdLst/>`   | <xref:DocumentFormat.OpenXml.PresentationHandoutMasterIdList> |
+|   `<handoutMasterIdLst/>`   | <xref:DocumentFormat.OpenXml.Presentation.SlideMasterIdList> |
 |      `<custShowLst/>`       |      <xref:DocumentFormat.OpenXml.Presentation.CustomShowList>     |
 |         `<sldSz/>`          |           <xref:DocumentFormat.OpenXml.Presentation.SlideSize>       |
 |        `<notesSz/>`         |           <xrefDocumentFormat.OpenXml.Presentation.NotesSize>          |
@@ -109,7 +109,7 @@ slide master slides that are available within the corresponding
 presentation. A slide master is a slide that is specifically designed to
 be a template for all related child layout slides.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideMasterId Class
 
@@ -138,7 +138,7 @@ embedTrueTypeFonts="1">
 </p:presentation>
 ```
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideIdList Class
 
@@ -153,7 +153,7 @@ slides that are available within the corresponding presentation. A slide
 contains the information that is specific to a single slide such as
 slide-specific shape and text information.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideId Class
 
@@ -184,7 +184,7 @@ a presentation
 </p:presentation>
 ```
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### NotesMasterIdList Class
 
@@ -199,7 +199,7 @@ notes master slides that are available within the corresponding
 presentation. A notes master is a slide that is specifically designed
 for the printing of the slide along with any attached notes.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### HandoutMasterIdList Class
 
@@ -214,7 +214,7 @@ handout master slides that are available within the corresponding
 presentation. A handout master is a slide that is specifically designed
 for printing as a handout.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CustomShowList Class
 
@@ -229,7 +229,7 @@ within the corresponding presentation. A custom show is a defined slide
 sequence that allows for the displaying of the slides with the
 presentation in any arbitrary order.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### SlideSize Class
 
@@ -256,7 +256,7 @@ embedTrueTypeFonts="1">
 </p:presentation>  
 ```
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### NotesSize Class
 
@@ -286,7 +286,7 @@ embedTrueTypeFonts="1">
 </p:presentation>
 ```
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### DefaultTextStyle Class
 
@@ -302,7 +302,7 @@ when inserting a new slide if that slide is not associated with a master
 slide or if no styling information has been otherwise specified for the
 text within the presentation slide.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------

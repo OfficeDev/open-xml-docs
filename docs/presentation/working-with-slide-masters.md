@@ -32,7 +32,7 @@ The following table lists the child elements of the `<sldMaster/>` element used 
 |:---------------------------|:---------------------------------------------------------------------------------------------------------------------------|
 | `<clrMap/>`                 | <xref:DocumentFormat.OpenXml.Presentation.ColorMap>                    |
 | `<cSld/>`                   | <xref:DocumentFormat.OpenXml.Presentation.CommonSlideData>      |
-| `<extLst/>`                 | <xref:DocumentFormat.OpenXml.PresentationExtensionListWithModification> |
+| `<extLst/>`                 | <xref:DocumentFormat.OpenXml.Presentation.ExtensionListWithModification> |
 | `<hf/>`                     | <xref:DocumentFormat.OpenXml.Presentation.HeaderFooter>            |
 | `<sldLayoutIdLst/>`         | <xref:DocumentFormat.OpenXml.Presentation.SlideLayoutIdList>  |
 | `<timing/>`                 | <xref:DocumentFormat.OpenXml.Presentation.Timing>                       |

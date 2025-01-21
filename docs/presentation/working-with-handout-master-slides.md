@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 11/01/2017
+ms.date: 01/21/2025
 ms.localizationpriority: medium
 ---
 # Working with handout master slides
@@ -147,7 +147,7 @@ The namespace represented by the letter `P` in the code is the <a href="xref:Doc
 namespace.
 
 ### [C#](#tab/cs)
-[!code-csharp[](../../samples/presentation/working_with_handout_master_slides/cs/Program.#snippet0)]
+[!code-csharp[](../../samples/presentation/working_with_handout_master_slides/cs/Program.cs#snippet0)]
 ### [Visual Basic](#tab/vb)
 [!code-vb[](../../samples/presentation/working_with_handout_master_slides/vb/Program.vb#snippet0)]
 

@@ -55,7 +55,7 @@ opened in read-only mode to avoid accidental changes.
 ## Comments Element
 
 In this how-to, you are going to work with comments. Therefore, it is
-useful to familiarize yourself with the structure of the `<comments/> element. The following information
+useful to familiarize yourself with the structure of the `<comments/>` element. The following information
 from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)]
 specification can be useful when working with this element.
 

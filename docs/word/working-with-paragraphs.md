@@ -66,7 +66,7 @@ In WordprocessingML, a paragraph's properties are specified via the
 paragraph properties `<pPr>` element.
 Some examples of paragraph properties are alignment, border, hyphenation
 override, indentation, line spacing, shading, text direction, and
-widow/orphan control. The OXML SDK <xref:DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertie> class represents the
+widow/orphan control. The OXML SDK <xref:DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties> class represents the
 `<pPr>` element.
 
 ### Run Class
