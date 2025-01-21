@@ -16,7 +16,7 @@ Module Program
             Dim isInt As Boolean = Integer.TryParse(args(1), i)
 
             If isInt Then
-                Dim sldText As String
+                Dim sldText As String = String.Empty
                 GetSlideIdAndText(sldText, file, i)
                 Console.WriteLine($"The text in slide #{i + 1} is {sldText}")
             End If

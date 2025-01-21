@@ -1,10 +1,7 @@
+Imports System.Text
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Presentation
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.Text
 Imports A = DocumentFormat.OpenXml.Drawing
 
 Module Program
@@ -12,7 +9,7 @@ Module Program
         If args.Length = 2 Then
             Dim filePath As String = args(0)
             Dim slideIndex As Integer = Integer.Parse(args(1))
-            Dim text As String
+            Dim text As String = String.Empty
             GetSlideIdAndText(text, filePath, slideIndex)
             Console.WriteLine($"Slide #{slideIndex + 1} contains: {text}")
         End If
@@ -24,7 +21,7 @@ Module Program
             Console.WriteLine($"Number of slides = {numberOfSlides}")
 
             For i As Integer = 0 To numberOfSlides - 1
-                Dim text As String
+                Dim text As String = String.Empty
                 GetSlideIdAndText(text, path, i)
                 Console.WriteLine($"Slide #{i + 1} contains: {text}")
             Next
