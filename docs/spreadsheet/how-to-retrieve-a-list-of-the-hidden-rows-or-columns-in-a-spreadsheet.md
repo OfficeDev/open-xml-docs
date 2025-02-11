@@ -37,7 +37,7 @@ You can use the `GetHiddenRowsOrCols` method to retrieve a list of the hidden ro
 
 ## How the Code Works
 
-The code opens the document, by using the <a href="xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open*?displayProperty=nameWithType"/> method and indicating that the document should be open for read-only access (the final `false` parameter value). Next the code retrieves a reference to the workbook part, by using the <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart*> property of the document.
+The code opens the document, by using the <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open> method and indicating that the document should be open for read-only access (the final `false` parameter value). Next the code retrieves a reference to the workbook part, by using the <xref:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart*> property of the document.
 
 ### [C#](#tab/cs-3)
 [!code-csharp[](../../samples/spreadsheet/retrieve_a_list_of_the_hidden_rows_or_columns/cs/Program.cs#snippet1)]

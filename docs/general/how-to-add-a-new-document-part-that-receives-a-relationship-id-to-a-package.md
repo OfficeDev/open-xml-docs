@@ -57,7 +57,7 @@ It then adds the MainDocumentPart part in the new word processing document, with
 The code then adds the `DigitalSignatureOriginPart` part, the `ExtendedFilePropertiesPart` part, and the `ThumbnailPart` part in the new word processing document with realtionship IDs rId4, rId5, and rId6.
 
 > [!NOTE]
-> The <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.AddNewPart*> method creates a relationship from the current document part to the new document part. This method returns the new document part. Also, you can use the <a href="xref:DocumentFormat.OpenXml.Packaging.DataPart.FeedData*?displayProperty=nameWithType"/> method to fill the document part.
+> The <xref:DocumentFormat.OpenXml.Packaging.WordprocessingDocument.AddNewPart*> method creates a relationship from the current document part to the new document part. This method returns the new document part. Also, you can use the <xref:DocumentFormat.OpenXml.Packaging.DataPart.FeedData> method to fill the document part.
 
 ## Sample Code
 
