@@ -19,62 +19,87 @@ static void AcceptAllRevisions(string fileName, string authorName)
         Body body = wdDoc.MainDocumentPart.Document.Body;
 
         // Handle the formatting changes.
-        List<OpenXmlElement> changes = body.Descendants<ParagraphPropertiesChange>()
-            .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList();
-
-        foreach (OpenXmlElement change in changes)
-        {
-            change.Remove();
-        }
+        RemoveElements(body.Descendants<ParagraphPropertiesChange>().Where(c => c.Author?.Value == authorName));
 
         // Handle the deletions.
-        List<OpenXmlElement> deletions = body
-            .Descendants<Deleted>()
-            .Where(c => c.Author is not null && c.Author.Value == authorName)
-            .Cast<OpenXmlElement>().ToList();
-
-        deletions.AddRange(body.Descendants<DeletedRun>()
-            .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
-
-        deletions.AddRange(body.Descendants<DeletedMathControl>()
-            .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
-
-        foreach (OpenXmlElement deletion in deletions)
-        {
-            deletion.Remove();
-        }
+        RemoveElements(body.Descendants<Deleted>().Where(c => c.Author?.Value == authorName));
+        RemoveElements(body.Descendants<DeletedRun>().Where(c => c.Author?.Value == authorName));
+        RemoveElements(body.Descendants<DeletedMathControl>().Where(c => c.Author?.Value == authorName));
 
         // Handle the insertions.
-        List<OpenXmlElement> insertions =
-            body.Descendants<Inserted>()
-            .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList();
+        HandleInsertions(body, authorName);
 
-        insertions.AddRange(body.Descendants<InsertedRun>()
-            .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
+        // Handle move from elements.
+        RemoveElements(body.Descendants<Paragraph>()
+            .Where(p => p.Descendants<MoveFrom>()
+            .Any(m => m.Author?.Value == authorName)));
+        RemoveElements(body.Descendants<MoveFromRangeEnd>());
 
-        insertions.AddRange(body.Descendants<InsertedMathControl>()
-            .Where(c => c.Author is not null && c.Author.Value == authorName).Cast<OpenXmlElement>().ToList());
 
-        foreach (OpenXmlElement insertion in insertions)
+        // Handle move to elements.
+        HandleMoveToElements(body, authorName);
+    }
+}
+
+// Method to remove elements from the document body
+static void RemoveElements(IEnumerable<OpenXmlElement> elements)
+{
+    foreach (var element in elements.ToList())
+    {
+        element.Remove();
+    }
+}
+
+// Method to handle insertions in the document body
+static void HandleInsertions(Body body, string authorName)
+{
+    // Collect all insertion elements by the specified author
+    var insertions = body.Descendants<Inserted>().Cast<OpenXmlElement>().ToList();
+    insertions.AddRange(body.Descendants<InsertedRun>().Where(c => c.Author?.Value == authorName));
+    insertions.AddRange(body.Descendants<InsertedMathControl>().Where(c => c.Author?.Value == authorName));
+
+    foreach (var insertion in insertions)
+    {
+        // Promote new content to the same level as the node and then delete the node
+        foreach (var run in insertion.Elements<Run>())
         {
-            // Found new content.
-            // Promote them to the same level as node, and then delete the node.
-            foreach (var run in insertion.Elements<Run>())
-            {
-                if (run == insertion.FirstChild)
-                {
-                    insertion.InsertAfterSelf(new Run(run.OuterXml));
-                }
-                else
-                {
-                    OpenXmlElement nextSibling = insertion.NextSibling()!;
-                    nextSibling.InsertAfterSelf(new Run(run.OuterXml));
-                }
-            }
 
-            insertion.RemoveAttribute("rsidR", "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
-            insertion.RemoveAttribute("rsidRPr", "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
-            insertion.Remove();
+            if (run == insertion.FirstChild)
+            {
+                insertion.InsertAfterSelf(new Run(run.OuterXml));
+            }
+            else
+            {
+                OpenXmlElement nextSibling = insertion.NextSibling()!;
+                nextSibling.InsertAfterSelf(new Run(run.OuterXml));
+            }
         }
+
+        // Remove specific attributes and the insertion element itself
+        insertion.RemoveAttribute("rsidR", "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
+        insertion.RemoveAttribute("rsidRPr", "https://schemas.openxmlformats.org/wordprocessingml/2006/main");
+        insertion.Remove();
+    }
+}
+
+// Method to handle move-to elements in the document body
+static void HandleMoveToElements(Body body, string authorName)
+{
+    // Collect all move-to elements by the specified author
+    var moveToElements = body.Descendants<MoveToRun>().Cast<OpenXmlElement>().ToList();
+    moveToElements.AddRange(body.Descendants<Paragraph>()
+        .Where(p => p.Descendants<MoveFrom>()
+        .Any(m => m.Author?.Value == authorName)));
+    moveToElements.AddRange(body.Descendants<MoveToRangeEnd>());
+
+    foreach (var toElement in moveToElements)
+    {
+        // Promote new content to the same level as the node and then delete the node
+        foreach (var run in toElement.Elements<Run>())
+        {
+            toElement.InsertBeforeSelf(new Run(run.OuterXml));
+        }
+        // Remove the move-to element itself
+        toElement.Remove();
     }
 }

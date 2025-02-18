@@ -162,6 +162,81 @@ a revision.
 
 © [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
+## Move From Element
+
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the Move From element (`moveFrom`).
+
+### moveFrom (Move Source Paragraph)
+
+This element indicates that the parent paragraph has been relocated
+from this position and marked as a revision. This does not affect the revision
+status of the paragraph's content and pertains solely to the paragraph's
+existence as a distinct entity.
+
+Consider a WordprocessingML document where a paragraph of text is moved down
+within the document.This relocated paragraph would be represented using the 
+following WordprocessingML markup:
+
+```xml
+<w:moveFromRangeStart w:id="0" w:name="aMove"/>  
+<w:p>  
+  <w:pPr>  
+    <w:rPr>  
+      <w:moveFrom w:id="1" … />  
+    </w:rPr>  
+  </w:pPr>  
+  …</w:p>  
+</w:moveFromRangeEnd w:id="0"/>
+```
+
+### moveFromRangeStart (Move Source Location Container - Start)
+
+This element marks the beginning of a region where the move source contents are part of a single named move.
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the Move From Range Star element (`moveFromRangeStart`).
+
+### moveFromRangeEnd (Move Source Location Container - End)
+
+This element marks the end of a region where the move source contents are part of a single named move. 
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the Move From Range Star element (`moveFromRangeEnd`).
+
+## The Moved To Element
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the MoveTo element (`moveTo`).
+
+### moveTo (Move Destination Paragraph)
+This element specifies that the parent paragraph has been moved to this location and tracked as a revision.
+This does not imply anything about the revision state of the contents of the paragraph, and applies only to the existence of the paragraph as its own unique paragraph.
+
+Consider a WordprocessingML document in which a paragraph of text is moved down in the document.
+This moved paragraph would be represented using the following WordprocessingML markup:
+
+```xml
+<w:moveToRangeStart w:id="0" w:name="aMove"/>  
+<w:p>  
+  <w:pPr>  
+    <w:rPr>  
+      <w:moveTo w:id="1" … />  
+    </w:rPr>  
+  </w:pPr>  
+  …</w:p>  
+</w:moveToRangeEnd w:id="0"/>
+```
+
+### moveToRangeStart (Move Destination Location Container - Start)
+
+This element specifies the start of the region whose move destination contents are part of a single named move. 
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the Move To Range Start element (`moveToRangeStart`).
+
+### moveToRangeEnd (Move Destination Location Container - End)
+
+This element specifies the end of a region whose move destination contents are part of a single named move. 
+The following information from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification
+introduces the Move To Range Start element (`moveToRangeEnd`).
+
 ## Sample Code
 
 The following code example shows how to accept the entire revisions in a
