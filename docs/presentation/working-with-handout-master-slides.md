@@ -143,7 +143,7 @@ turn, creates additional class instances: an instance of the <xref:DocumentForma
 instance of the <xref:DocumentFormat.OpenXml.Presentation.GroupShapeProperties> class, and an instance
 of the <xref:DocumentFormat.OpenXml.Presentation.Shape> class.
 
-The namespace represented by the letter `P` in the code is the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" />
+The namespace represented by the letter `P` in the code is the <xref:DocumentFormat.OpenXml.Presentation>
 namespace.
 
 ### [C#](#tab/cs)

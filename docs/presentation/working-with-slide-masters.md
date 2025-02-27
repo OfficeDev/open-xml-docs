@@ -147,7 +147,7 @@ element. Among these classes, as shown in the following code sample, are the `Co
 
 The following method from the article [How to: Create a presentation document by providing a file name](./how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slidemaster part to an existing presentation and creates an instance of an Open XML SDK `SlideMaster` class in the new slide master part. The `SlideMaster` class constructor creates instances of the `CommonSlideData` class and the `ColorMap`, `SlideLayoutIdList`, and `TextStyles` classes. The `CommonSlideData` class constructor creates an instance of the <xref:DocumentFormat.OpenXml.Presentation.ShapeTree> class, whose constructor in turn creates additional class instances: an instance of the <xref:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties> class, an instance of the <xref:DocumentFormat.OpenXml.Presentation.GroupShapeProperties> class, and an instance of the <xref:DocumentFormat.OpenXml.Presentation.Shape> class, among others.
 
-The namespace represented by the letter *P* in the code is the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" /> namespace.
+The namespace represented by the letter *P* in the code is the <xref:DocumentFormat.OpenXml.Presentation> namespace.
 
 ### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/create_by_providing_a_file_name/cs/Program.cs#snippet99)]

@@ -168,7 +168,7 @@ the `CommonSlideData` class, the `ColorMapOverride` class, the <xref:DocumentFor
 
 The following method from the article [How to: Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md) adds a new slide layout part to an existing presentation and creates an instance of an Open XML SDK `SlideLayout` class in the new slide layout part. The `SlideLayout` class constructor creates instances of the `CommonSlideData` class and the `ColorMapOverride` class. The `CommonSlideData` class constructor creates an instance of the <xref:DocumentFormat.OpenXml.Presentation.ShapeTree> class, whose constructor in turn creates additional class instances: an instance of the <xref:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties> class, an instance of the <xref:DocumentFormat.OpenXml.Presentation.GroupShapeProperties> class, and an instance of the <xref:DocumentFormat.OpenXml.Presentation.Shape> class.
 
-The namespace represented by the letter *P* in the code is the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" /> namespace.
+The namespace represented by the letter *P* in the code is the <xref:DocumentFormat.OpenXml.Presentation> namespace.
 
 ### [C#](#tab/cs)
 [!code-csharp[](../../samples/presentation/create_by_providing_a_file_name/cs/Program.cs#snippet100)]

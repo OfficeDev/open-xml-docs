@@ -69,7 +69,7 @@ slide layout, slide master, and theme parts.
 
 Using the Open XML SDK, you can create presentation structure and
 content by using strongly-typed classes that correspond to
-PresentationML elements. You can find these classes in the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" />
+PresentationML elements. You can find these classes in the <xref:DocumentFormat.OpenXml.Presentation>
 namespace. The following table lists the names of the classes that
 correspond to the presentation, slide, slide master, slide layout, and
 theme elements. The class that corresponds to the theme element is
