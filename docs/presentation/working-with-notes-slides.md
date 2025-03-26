@@ -168,7 +168,7 @@ the `CommonSlideData` class.
 --------------------------------------------------------------------------------
 ## Open XML SDK Code Example
 
-> In the following code snippets `P` represents the <a href="xref:DocumentFormat.OpenXml.Presentation?displayProperty=fullName"/> namespace and `D` represents the <a href="xref:DocumentFormat.OpenXml.Drawing?displayProperty=fullName"/> namespace.
+> In the following code snippets `P` represents the <xref:DocumentFormat.OpenXml.Presentation> namespace and `D` represents the <ref:DocumentFormat.OpenXml.Drawing> namespace.
 
 In the snippet below, a presentation is opened with `Presentation.Open` and the first <xref:DocumentFormat.OpenXml.Packaging.SlidePart>
 is retrieved or added if the presentation does not already have a `SlidePart`.
