@@ -1,1 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk" />
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\get_the_titles_of_all_the_slides\vb\get_the_titles_of_all_the_slides_vb.vbproj" />
+  </ItemGroup>
+</Project>
