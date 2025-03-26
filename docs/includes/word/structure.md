@@ -14,7 +14,7 @@ The basic document structure of a `WordProcessingML` document consists of the `d
     </w:document>
 ```
 
-Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to `WordprocessingML` elements. You will find these classes in the <a href="xref:DocumentFormat.OpenXml.Wordprocessing?displayProperty=fullName" /> namespace. The following table lists the class names of the classes that correspond to the `document`, `body`, `p`, `r`, and `t` elements.
+Using the Open XML SDK, you can create document structure and content using strongly-typed classes that correspond to `WordprocessingML` elements. You will find these classes in the <xref:DocumentFormat.OpenXml.Wordprocessing> namespace. The following table lists the class names of the classes that correspond to the `document`, `body`, `p`, `r`, and `t` elements.
 
 | **WordprocessingML Element** | **Open XML SDK Class** | **Description** |
 |---|---|---|

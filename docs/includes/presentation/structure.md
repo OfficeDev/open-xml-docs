@@ -65,7 +65,7 @@ two slides denoted by the IDs 267 and 256.
 
 Using the Open XML SDK, you can create document structure and
 content using strongly-typed classes that correspond to PresentationML
-elements. You can find these classes in the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" />
+elements. You can find these classes in the <xref:DocumentFormat.OpenXml.Presentation>
 namespace. The following table lists the class names of the classes that
 correspond to the `sld`, `sldLayout`, `sldMaster`, and `notesMaster` elements.
 

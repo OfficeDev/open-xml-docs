@@ -51,7 +51,7 @@ In the above example the order specified to present the slides is slide
 4, then 3, 2, and finally 5.
 
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 The `<sld/>` element is the root element of the PresentationML Slide
 part. For more information about the overall structure of the parts and
@@ -93,7 +93,7 @@ by the master is used. If the `<overrideClrMapping/>` child element is
 present, it defines a new color scheme specific to the parent notes
 slide, presentation slide, or slide layout.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### CommonSlideData Class
 
@@ -112,7 +112,7 @@ The actual data in `<cSld/>` describe only the particular parent slide;
 it is only the type of information stored that is common across all
 slides.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### ExtensionListWithModification Class
 
@@ -131,7 +131,7 @@ framework.
 [Note: Using this `extLst` element allows the generating application to
 store whether this extension property has been modified. end note]
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Timing Class
 
@@ -146,7 +146,7 @@ More information on the specifics of these time nodes and how they are
 to be defined can be found within the Animation section of the
 PresentationML framework.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 ### Transition Class
 
@@ -159,7 +159,7 @@ to transition to the current slide from the previous slide. That is, the
 transition information is stored on the slide that appears after the
 transition is complete.
 
-© [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
+&copy; [!include[ISO/IEC 29500 version](../includes/iso-iec-29500-version.md)]
 
 
 --------------------------------------------------------------------------------
@@ -195,7 +195,7 @@ All of these class instances and instances of the classes that represent
 the child elements of the `<sld/>` element are required to create the
 minimum number of XML elements necessary to represent a new slide.
 
-The namespace represented by the letter *P* in the code is the <a href="xref:DocumentFormat.OpenXml.Presentation?displayName=fullName" />
+The namespace represented by the letter *P* in the code is the <xref:DocumentFormat.OpenXml.Presentation>
 namespace.
 
 ### [C#](#tab/cs-0)
