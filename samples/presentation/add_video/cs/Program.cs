@@ -12,7 +12,7 @@ using BlipFill = DocumentFormat.OpenXml.Presentation.BlipFill;
 using DocumentFormat.OpenXml.Packaging;
 using ApplicationNonVisualDrawingProperties = DocumentFormat.OpenXml.Presentation.ApplicationNonVisualDrawingProperties;
 
-
+// <Snippet0>
 AddVideo(args[0], args[1], args[2]);
 
 static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
@@ -29,7 +29,7 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
         {
             throw new NullReferenceException("Presenation Part is empty or there are no slides in it");
         }
-
+        // <Snippet2>
         //Get presentation part
         PresentationPart presentationPart = presentationDocument.PresentationPart;
 
@@ -38,7 +38,7 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
 
 
         //Get relationsipId of the last slide
-        string? videoSldRelationshipId = ((SlideId) slidesIds[0]).RelationshipId;
+        string? videoSldRelationshipId = ((SlideId) slidesIds[slidesIds.ToArray().Length - 1]).RelationshipId;
 
         if (videoSldRelationshipId == null)
         {
@@ -47,7 +47,9 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
 
         //Get slide part by relationshipID
         SlidePart? slidePart = (SlidePart) presentationPart.GetPartById(videoSldRelationshipId);
+        // </Snippet2>
 
+        // <Snippet3>
         // Create video Media Data Part (content type, extension)
         MediaDataPart mediaDataPart = presentationDocument.CreateMediaDataPart("video/mp4", ".mp4");
 
@@ -68,13 +70,15 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
         ApplicationNonVisualDrawingProperties appNonVisualDrawingProperties = new ApplicationNonVisualDrawingProperties();
         appNonVisualDrawingProperties.Append(videoFromFile);
 
+    
+       
         //adds sample image to the slide with id to be used as reference in blip
         ImagePart imagePart = slidePart.AddImagePart(ImagePartType.Png, imgEmbedId);
         using (Stream data = File.OpenRead(coverPicPath))
         {
             imagePart.FeedData(data);
         }
-
+       
         if (slidePart!.Slide!.CommonSlideData!.ShapeTree == null)
         {
             throw new NullReferenceException("Presenation shape tree is empty");
@@ -97,7 +101,9 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
 
         ApplicationNonVisualDrawingPropertiesExtensionList appNonVisualDrawingPropertiesExtensionList = new ApplicationNonVisualDrawingPropertiesExtensionList();
         ApplicationNonVisualDrawingPropertiesExtension appNonVisualDrawingPropertiesExtension = new ApplicationNonVisualDrawingPropertiesExtension() { Uri = "{DAA4B4D4-6D71-4841-9C94-3DE7FCFB9230}" };
+        // </Snippet3>
 
+        // <Snippet4>
         P14.Media media = new() { Embed = mediaEmbedId };
         media.AddNamespaceDeclaration("p14", "http://schemas.microsoft.com/office/powerpoint/2010/main");
 
@@ -112,6 +118,7 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
         //Prepare shape properties to display picture
         BlipFill blipFill = new BlipFill();
         A.Blip blip = new A.Blip() { Embed = imgEmbedId };
+        // </Snippet4>
 
         A.Stretch stretch = new A.Stretch();
         A.FillRectangle fillRectangle = new A.FillRectangle();
@@ -141,3 +148,4 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
 
     }
 }
+// </Snippet0>

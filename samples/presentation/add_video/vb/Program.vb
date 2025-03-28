@@ -12,7 +12,7 @@ Imports BlipFill = DocumentFormat.OpenXml.Presentation.BlipFill
 Imports DocumentFormat.OpenXml.Packaging
 Imports ApplicationNonVisualDrawingProperties = DocumentFormat.OpenXml.Presentation.ApplicationNonVisualDrawingProperties
 Imports System.IO
-
+' <Snippet0>
 Module Program
     Sub Main(args As String())
         AddVideo(args(0), args(1), args(2))
@@ -29,7 +29,7 @@ Module Program
             If presentationDocument.PresentationPart Is Nothing OrElse presentationDocument.PresentationPart.Presentation.SlideIdList Is Nothing Then
                 Throw New NullReferenceException("Presentation Part is empty or there are no slides in it")
             End If
-
+            ' <Snippet2>
             ' Get presentation part
             Dim presentationPart As PresentationPart = presentationDocument.PresentationPart
 
@@ -37,7 +37,7 @@ Module Program
             Dim slidesIds As OpenXmlElementList = presentationPart.Presentation.SlideIdList.ChildElements
 
             ' Get relationshipId of the last slide
-            Dim videoSldRelationshipId As String = CType(slidesIds(0), SlideId).RelationshipId
+            Dim videoSldRelationshipId As String = CType(slidesIds(slidesIds.ToArray().Length - 1), SlideId).RelationshipId
 
             If videoSldRelationshipId Is Nothing Then
                 Throw New NullReferenceException("Slide id not found")
@@ -45,7 +45,8 @@ Module Program
 
             ' Get slide part by relationshipID
             Dim slidePart As SlidePart = CType(presentationPart.GetPartById(videoSldRelationshipId), SlidePart)
-
+            ' </Snippet2>
+            ' <Snippet3>
             ' Create video Media Data Part (content type, extension)
             Dim mediaDataPart As MediaDataPart = presentationDocument.CreateMediaDataPart("video/mp4", ".mp4")
 
@@ -104,7 +105,8 @@ Module Program
             Dim appNonVisualDrawingPropertiesExtension As New ApplicationNonVisualDrawingPropertiesExtension() With {
                 .Uri = "{DAA4B4D4-6D71-4841-9C94-3DE7FCFB9230}"
             }
-
+            ' </Snippet3>
+            ' <Snippet4>
             Dim media As New P14.Media() With {
                 .Embed = mediaEmbedId
             }
@@ -123,7 +125,7 @@ Module Program
             Dim blip As New A.Blip() With {
                 .Embed = imgEmbedId
             }
-
+            ' </Snippet4>
             Dim stretch As New A.Stretch()
             Dim fillRectangle As New A.FillRectangle()
             Dim transform2D As New A.Transform2D()
@@ -160,3 +162,4 @@ Module Program
         End Using
     End Sub
 End Module
+' </Snippet0>
