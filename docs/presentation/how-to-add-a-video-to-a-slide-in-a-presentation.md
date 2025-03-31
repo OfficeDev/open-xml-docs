@@ -11,7 +11,7 @@ ms.suite: office
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 02/25/2025
+ms.date: 03/31/2025
 ms.localizationpriority: medium
 ---
 
@@ -51,7 +51,7 @@ The PresentationML document consists of a number of parts, among which is the Pi
 
 The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the overall form of a `PresentationML` package.
 
-Video File (`<videoFile/>`) specifies the presence of a video file. It is defined within the non-visual properties of an object. The video is attached to an object, representing it shall be attached to an object as this is how it is represented within the document. The actual playing of the video however is done within the timing node list that is specified under the timing element.
+Video File (`<videoFile/>`) specifies the presence of a video file. It is defined within the non-visual properties of an object. The video shall be attached to an object as this is how it is represented within the document. The actual playing of the video however is done within the timing node list that is specified under the timing element.
 
 Consider the following ``Picture`` object that has a video attached to it.
 
