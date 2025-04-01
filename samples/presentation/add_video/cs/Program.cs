@@ -143,7 +143,6 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
         picture.Append(shapeProperties);
 
         shapeTree.Append(picture);
-
     }
 }
 // </Snippet0>
