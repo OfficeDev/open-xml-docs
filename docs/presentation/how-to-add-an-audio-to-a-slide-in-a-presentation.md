@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 403abe97-7ab2-40ba-92c0-d6312a6d10c8
-title: 'How to: Add a audio to a slide in a presentation'
+title: 'How to: Add an audio file to a slide in a presentation'
 ms.suite: office
 
 ms.author: o365devx
@@ -15,16 +15,15 @@ ms.date: 03/31/2025
 ms.localizationpriority: medium
 ---
 
-# Add a audio to a slide in a presentation
+# Add an audio file to a slide in a presentation
 
 This topic shows how to use the classes in the Open XML SDK for
-Office to add a audio to the first slide in a presentation
+Office to add an audio file to the last slide in a presentation
 programmatically.
 
 ## Getting a Presentation Object 
 
-In the Open XML SDK, the `PresentationDocument` class represents a
-presentation document package. To work with a presentation document,
+In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument>  class represents a presentation document package. To work with a presentation document,
 first create an instance of the `PresentationDocument` class, and then work with
 that instance. To create the class instance from the document call the
 `Open` method that uses a file path, and a
@@ -51,9 +50,9 @@ The PresentationML document consists of a number of parts, among which is the Pi
 
 The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-29500-link.md)] specification introduces the overall form of a `PresentationML` package.
 
-Audio File (`<audioFile/>`) specifies the presence of a audio file. This element is specified within the non-visual properties of an object. The audio shall be attached to an object as this is how it is represented within the document. The actual playing of the audio however is done within the timing node list that is specified under the timing element.
+Audio File (`<audioFile/>`) specifies the presence of an audio file. This element is specified within the non-visual properties of an object. The audio shall be attached to an object as this is how it is represented within the document. The actual playing of the audio however is done within the timing node list that is specified under the timing element.
 
-Consider the following ``Picture`` object that has a audio attached to it.
+Consider the following ``Picture`` object that has an audio file attached to it.
 
 ```xml
 <p:pic>  
@@ -120,7 +119,7 @@ Next Media(CT_Media) element is created with use of previously referenced mediaE
 [!code-vb[](../../samples/presentation/add_audio/vb/Program.vb#snippet4)]
 ***
 
-All other elements such Offset(`<off/>`), Stretch(`<stretch/>`), fillRectangle(`<fillRect/>`), are appended to the ShapeProperties(`<spPr/>`) and ShapeProperties are appended to the Picture element(`<pic/>`). Finally the picture element that incudes audio is added to the ShapeTree(`<sp/>`) of the slide.
+All other elements such Offset(`<off/>`), Stretch(`<stretch/>`), fillRectangle(`<fillRect/>`), are appended to the ShapeProperties(`<spPr/>`) and ShapeProperties are appended to the Picture element(`<pic/>`). Finally the picture element that includes audio is added to the ShapeTree(`<sp/>`) of the slide.
 
 Following is the complete sample code that you can use to add audio to the slide.
 
