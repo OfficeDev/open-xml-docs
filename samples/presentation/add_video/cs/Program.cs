@@ -11,6 +11,9 @@ using Picture = DocumentFormat.OpenXml.Presentation.Picture;
 using BlipFill = DocumentFormat.OpenXml.Presentation.BlipFill;
 using DocumentFormat.OpenXml.Packaging;
 using ApplicationNonVisualDrawingProperties = DocumentFormat.OpenXml.Presentation.ApplicationNonVisualDrawingProperties;
+using System;
+using System.IO;
+using System.Linq;
 
 // <Snippet0>
 AddVideo(args[0], args[1], args[2]);
