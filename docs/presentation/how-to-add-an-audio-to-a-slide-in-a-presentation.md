@@ -110,7 +110,7 @@ An image part is then added with a sample picture to be used as a placeholder fo
 [!code-vb[](../../samples/presentation/add_audio/vb/Program.vb#snippet3)]
 ***
 
-Next Media(CT_Media) element is created with use of previously referenced mediaEmbedId(Embedded Picture Reference). Blip element is also added, this element specifies the existence of an image (binary large image or picture) and contains a reference to the image data. Blip's Embed attribute is used to specify an placeholder image in the Image Part created previously.
+Next the Media(CT_Media) element is created with use of the previously referenced mediaEmbedId(Embedded Picture Reference). The Blip element is also added; this element specifies the existence of an image (binary large image or picture) and contains a reference to the image data. Blip's Embed attribute is used to specify an placeholder image in the Image Part created previously.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/presentation/add_audio/cs/Program.cs#snippet4)]
@@ -119,7 +119,7 @@ Next Media(CT_Media) element is created with use of previously referenced mediaE
 [!code-vb[](../../samples/presentation/add_audio/vb/Program.vb#snippet4)]
 ***
 
-All other elements such Offset(`<off/>`), Stretch(`<stretch/>`), fillRectangle(`<fillRect/>`), are appended to the ShapeProperties(`<spPr/>`) and ShapeProperties are appended to the Picture element(`<pic/>`). Finally the picture element that includes audio is added to the ShapeTree(`<sp/>`) of the slide.
+All other elements such as Offset(`<off/>`), Stretch(`<stretch/>`), fillRectangle(`<fillRect/>`), are appended to the ShapeProperties(`<spPr/>`) and ShapeProperties are appended to the Picture element(`<pic/>`). Finally the picture element that includes audio is added to the ShapeTree(`<sp/>`) of the slide.
 
 Following is the complete sample code that you can use to add audio to the slide.
 
