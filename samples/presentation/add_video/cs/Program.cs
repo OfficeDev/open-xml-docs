@@ -81,7 +81,7 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
        
         if (slidePart!.Slide!.CommonSlideData!.ShapeTree == null)
         {
-            throw new NullReferenceException("Presenation shape tree is empty");
+            throw new NullReferenceException("Presentation shape tree is empty");
         }
 
         //Getting existing shape tree object from PowerPoint
