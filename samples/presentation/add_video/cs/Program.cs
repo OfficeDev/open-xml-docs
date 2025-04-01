@@ -69,8 +69,6 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
 
         ApplicationNonVisualDrawingProperties appNonVisualDrawingProperties = new ApplicationNonVisualDrawingProperties();
         appNonVisualDrawingProperties.Append(videoFromFile);
-
-    
        
         //adds sample image to the slide with id to be used as reference in blip
         ImagePart imagePart = slidePart.AddImagePart(ImagePartType.Png, imgEmbedId);
