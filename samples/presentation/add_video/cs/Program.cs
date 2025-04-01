@@ -27,7 +27,7 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
 
         if (presentationDocument.PresentationPart == null || presentationDocument.PresentationPart.Presentation.SlideIdList == null)
         {
-            throw new NullReferenceException("Presenation Part is empty or there are no slides in it");
+            throw new NullReferenceException("Presentation Part is empty or there are no slides in it");
         }
         // <Snippet2>
         //Get presentation part
