@@ -111,7 +111,7 @@ An image part is then added with a sample picture to be used as a placeholder fo
 [!code-vb[](../../samples/presentation/add_video/vb/Program.vb#snippet3)]
 ***
 
-Next Media(CT_Media) element is created with use of previously referenced mediaEmbedId(Embedded Picture Reference). Blip element is also added, this element specifies the existence of an image (binary large image or picture) and contains a reference to the image data. Blip's Embed attribute is used to specify an placeholder image in the Image Part created previously.
+Next Media(CT_Media) element is created with use of previously referenced mediaEmbedId(Embedded Picture Reference). The Blip element is also added; this element specifies the existence of an image (binary large image or picture) and contains a reference to the image data. Blip's Embed attribute is used to specify a placeholder image in the Image Part created previously.
 
 ### [C#](#tab/cs-4)
 [!code-csharp[](../../samples/presentation/add_video/cs/Program.cs#snippet4)]
