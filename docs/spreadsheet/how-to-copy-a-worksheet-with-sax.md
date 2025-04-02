@@ -56,7 +56,7 @@ Then clone the `WorksheetPart`'s <xref:DocumentFormat.OpenXml.Spreadsheet.Worksh
 At this point, the new `WorksheetPart` has been added, but a new <xref:DocumentFormat.OpenXml.Spreadsheet.Sheet>
 element must be added to the  `WorkbookPart`'s <xref:DocumentFormat.OpenXml.Spreadsheet.Sheets>'s
 child elements for it to display. To do this, first find the new `WorksheetPart`'s Id and
-create a new sheet Id by incrementing the `Sheets`' count by one then append a new `Sheet`
+create a new sheet Id by incrementing the `Sheets` count by one then append a new `Sheet`
 child to the `Sheets` element. With this, the copied Worksheet is added to the file.
 
 ### [C#](#tab/cs-3)
