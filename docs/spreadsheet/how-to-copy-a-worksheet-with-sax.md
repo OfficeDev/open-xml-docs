@@ -3,7 +3,7 @@ api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
 - schema
-ms.assetid: dd28d239-42be-42a9-893e-b65338fe184e
+ms.assetid: 2ad4855c-1c83-4dab-b93f-2bae13fac644
 title: 'How to: Copy a Worksheet Using SAX (Simple API for XML)'
 ms.suite: office
 
