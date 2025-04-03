@@ -4,7 +4,7 @@ api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
 - schema
-ms.assetid: 403abe97-7ab2-40ba-92c0-d6312a6d10c8
+ms.assetid: 0265732e-d81a-4654-b0ba-d9d87e544f7c
 title: 'How to: Add an audio file to a slide in a presentation'
 ms.suite: office
 
@@ -25,13 +25,9 @@ programmatically.
 
 In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument>  class represents a presentation document package. To work with a presentation document,
 first create an instance of the `PresentationDocument` class, and then work with
-that instance. To create the class instance from the document call the
-`Open` method that uses a file path, and a
-Boolean value as the second parameter to specify whether a document is
-editable. To open a document for read/write, specify the value `true` for this parameter as shown in the following
-`using` statement. In this code, the file
-parameter is a string that represents the path for the file from which
-you want to open the document.
+that instance. To create the class instance from the document call the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open*> method that uses a file path, and a
+Boolean value as the second parameter to specify whether a document is editable. To open a document for read/write, specify the value `true` for this parameter as shown in the following
+`using` statement. In this code, the file parameter is a string that represents the path for the file from which you want to open the document.
 
 ### [C#](#tab/cs-1)
 [!code-csharp[](../../samples/presentation/add_audio/cs/Program.cs#snippet1)]

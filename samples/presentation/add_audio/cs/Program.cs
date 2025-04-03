@@ -40,7 +40,6 @@ static void AddAudio(string filePath, string audioFilePath, string coverPicPath)
         //Get slides ids.
         OpenXmlElementList slidesIds = presentationPart.Presentation.SlideIdList.ChildElements;
 
-
         //Get relationsipId of the last slide
         string? audioSlidePartRelationshipId = ((SlideId)slidesIds[slidesIds.ToArray().Length - 1]).RelationshipId;
 
