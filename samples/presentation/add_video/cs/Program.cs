@@ -39,7 +39,6 @@ static void AddVideo(string filePath, string videoFilePath, string coverPicPath)
         //Get slides ids.
         OpenXmlElementList slidesIds = presentationPart.Presentation.SlideIdList.ChildElements;
 
-
         //Get relationsipId of the last slide
         string? videoSldRelationshipId = ((SlideId) slidesIds[slidesIds.ToArray().Length - 1]).RelationshipId;
 

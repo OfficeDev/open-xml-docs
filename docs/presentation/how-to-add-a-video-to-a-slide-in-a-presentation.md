@@ -4,14 +4,14 @@ api_name:
 - Microsoft.Office.DocumentFormat.OpenXML.Packaging
 api_type:
 - schema
-ms.assetid: 403abe97-7ab2-40ba-92c0-d6312a6d10c8
+ms.assetid: 536c94b5-dd25-4173-ad6a-b72b95dd7f31
 title: 'How to: Add a video to a slide in a presentation'
 ms.suite: office
 
 ms.author: o365devx
 author: o365devx
 ms.topic: conceptual
-ms.date: 03/31/2025
+ms.date: 04/03/2025
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,7 @@ In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocu
 presentation document package. To work with a presentation document,
 first create an instance of the **PresentationDocument* class, and then work with
 that instance. To create the class instance from the document call the
-`Open` method that uses a file path, and a
+<xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open*> method that uses a file path, and a
 Boolean value as the second parameter to specify whether a document is
 editable. To open a document for read/write, specify the value `true` for this parameter as shown in the following
 `using` statement. In this code, the file
