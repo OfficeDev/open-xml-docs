@@ -19,7 +19,7 @@ ms.localizationpriority: high
 
 This topic shows how to use the Open XML SDK to search and replace text in a Word document with the
 Open XML SDK using the Simple API for XML (SAX) approach. For more information about the basic structure
-of a `SpreadsheetML` document, see [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md).
+of a `WordprocessingML` document, see [Structure of a WordprocessingML document](./structure-of-a-wordprocessingml-document.md).
 
 ## Why Use the SAX Approach?
 
