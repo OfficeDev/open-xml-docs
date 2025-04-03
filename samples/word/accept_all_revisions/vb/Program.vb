@@ -1,9 +1,6 @@
 Imports DocumentFormat.OpenXml
 Imports DocumentFormat.OpenXml.Packaging
 Imports DocumentFormat.OpenXml.Wordprocessing
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
 
 Module Program
     Sub Main(args As String())

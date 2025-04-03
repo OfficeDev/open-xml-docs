@@ -35,7 +35,6 @@ static void AcceptAllRevisions(string fileName, string authorName)
             .Any(m => m.Author?.Value == authorName)));
         RemoveElements(body.Descendants<MoveFromRangeEnd>());
 
-
         // Handle move to elements.
         HandleMoveToElements(body, authorName);
     }
@@ -86,11 +85,13 @@ static void HandleInsertions(Body body, string authorName)
 static void HandleMoveToElements(Body body, string authorName)
 {
     // Collect all move-to elements by the specified author
-    var moveToElements = body.Descendants<MoveToRun>().Cast<OpenXmlElement>().ToList();
-    moveToElements.AddRange(body.Descendants<Paragraph>()
+    var paragraphs = body.Descendants<Paragraph>()
         .Where(p => p.Descendants<MoveFrom>()
-        .Any(m => m.Author?.Value == authorName)));
-    moveToElements.AddRange(body.Descendants<MoveToRangeEnd>());
+          .Any(m => m.Author?.Value == authorName));
+    var moveToRun = body.Descendants<MoveToRun>();
+    var moveToRangeEnd = body.Descendants<MoveToRangeEnd>();
+
+    List<OpenXmlElement> moveToElements = [.. paragraphs, .. moveToRun, .. moveToRangeEnd];
 
     foreach (var toElement in moveToElements)
     {
