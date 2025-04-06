@@ -21,14 +21,18 @@ This topic shows how to use the classes in the Open XML SDK to
 change the fill color of a shape on the first slide in a presentation
 programmatically.
 
+
+
 ## Getting a Presentation Object 
 
-In the Open XML SDK, the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument> class represents a
+In the Open XML SDK, the `PresentationDocument` class represents a
 presentation document package. To work with a presentation document,
 first create an instance of the `PresentationDocument` class, and then work with
-that instance. To create the class instance from the document call the <xref:DocumentFormat.OpenXml.Packaging.PresentationDocument.Open*> method that uses a file path, and a
-Boolean value as the second parameter to specify whether a document is editable. 
-To open a document for read/write, specify the value `true` for this parameter as shown in the following `using` statement. In this code, the file
+that instance. To create the class instance from the document call the
+`Open` method that uses a file path, and a
+Boolean value as the second parameter to specify whether a document is
+editable. To open a document for read/write, specify the value `true` for this parameter as shown in the following
+`using` statement. In this code, the file
 parameter is a string that represents the path for the file from which
 you want to open the document.
 
@@ -39,7 +43,9 @@ you want to open the document.
 [!code-vb[](../../samples/presentation/change_the_fill_color_of_a_shape/vb/Program.vb#snippet1)]
 ***
 
+
 [!include[Using Statement](../includes/presentation/using-statement.md)] `ppt`.
+
 
 ## The Structure of the Shape Tree 
 
