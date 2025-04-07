@@ -91,7 +91,7 @@ Consider an application that creates a new transition object intended to specify
 
 The Choice element in the above example requires the <xref:DocumentFormat.OpenXml.Linq.P14.dur*> attribute to specify the duration of the transition, and the Fallback element allows clients that do not support this namespace to see an appropriate alternative representation. *end example*]
 
-More details on the P14 class can be found here: <xref:DocumentFormat.OpenXml.Presentation.Linq.P14>
+More details on the P14 class can be found here: <xref:DocumentFormat.OpenXml.Linq.P14>
 
 ## How the Sample Code Works ##
 After opening the presentation file for read/write access in the using statement, the code gets the presentation part from the presentation document. Then, it retrieves the relationship IDs of all slides in the presentation and gets the slides part from the relationship ID. The code then checks if there are no existing transitions set on the slides and replaces them with a new RandomBarTransition.
