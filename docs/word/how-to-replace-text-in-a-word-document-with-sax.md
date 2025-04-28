@@ -5,7 +5,7 @@ api_name:
 api_type:
 - schema
 ms.assetid: 2f6f0f89-0ac0-4d40-9f1a-222caf074cf1
-title: 'How to: Replace text in a word document using SAX (Simple API for XML)'
+title: 'How to: Replace Text in a Word Document Using SAX (Simple API for XML)'
 description: 'Learn how to replace text in a Word document using SAX (Simple API for XML)'
 ms.suite: office
 
@@ -15,7 +15,7 @@ ms.topic: conceptual
 ms.date: 04/03/2025
 ms.localizationpriority: high
 ---
-# Replace Text in a Word Document using SAX (Simple API for XML)
+# Replace Text in a Word Document Using SAX (Simple API for XML)
 
 This topic shows how to use the Open XML SDK to search and replace text in a Word document with the
 Open XML SDK using the Simple API for XML (SAX) approach. For more information about the basic structure
