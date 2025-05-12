@@ -323,6 +323,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "add_transition_cs", "presentation\add_transition\cs\add_transition_cs.csproj", "{F61C7360-EB1B-4AF1-BD0D-257CAF122223}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "add_transition_vb", "presentation\add_transition\vb\add_transition_vb.vbproj", "{58E15219-2772-42DC-8BB3-628811289B0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "copy_worksheet_with_sax_cs", "spreadsheet\copy_worksheet_with_sax\cs\copy_worksheet_with_sax_cs.csproj", "{0AA6B9DD-2A2C-0E96-1052-6F4AC44B3F5D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "copy_worksheet_with_sax_vb", "spreadsheet\copy_worksheet_with_sax\vb\copy_worksheet_with_sax_vb.vbproj", "{2DD90EFB-7F2A-497B-A0F4-EE5F62A49BA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "replace_text_with_sax_cs", "word\replace_text_with_sax\cs\replace_text_with_sax_cs.csproj", "{4C514047-64B5-1383-4564-B827B846A6A7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "replace_text_with_sax_vb", "word\replace_text_with_sax\vb\replace_text_with_sax_vb.vbproj", "{6EB91F44-EC13-5354-0450-9A2687C3B169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -2194,6 +2200,22 @@ Global
 		{58E15219-2772-42DC-8BB3-628811289B0F}.Release|x64.Build.0 = Release|Any CPU
 		{58E15219-2772-42DC-8BB3-628811289B0F}.Release|x86.ActiveCfg = Release|Any CPU
 		{58E15219-2772-42DC-8BB3-628811289B0F}.Release|x86.Build.0 = Release|Any CPU
+		{0AA6B9DD-2A2C-0E96-1052-6F4AC44B3F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA6B9DD-2A2C-0E96-1052-6F4AC44B3F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA6B9DD-2A2C-0E96-1052-6F4AC44B3F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AA6B9DD-2A2C-0E96-1052-6F4AC44B3F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD90EFB-7F2A-497B-A0F4-EE5F62A49BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD90EFB-7F2A-497B-A0F4-EE5F62A49BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD90EFB-7F2A-497B-A0F4-EE5F62A49BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD90EFB-7F2A-497B-A0F4-EE5F62A49BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C514047-64B5-1383-4564-B827B846A6A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C514047-64B5-1383-4564-B827B846A6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C514047-64B5-1383-4564-B827B846A6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C514047-64B5-1383-4564-B827B846A6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB91F44-EC13-5354-0450-9A2687C3B169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB91F44-EC13-5354-0450-9A2687C3B169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB91F44-EC13-5354-0450-9A2687C3B169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB91F44-EC13-5354-0450-9A2687C3B169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2353,6 +2375,10 @@ Global
 		{6170C4E1-A109-435A-BF59-026C85B3BD9C} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}
 		{F61C7360-EB1B-4AF1-BD0D-257CAF122223} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
 		{58E15219-2772-42DC-8BB3-628811289B0F} = {CDB9D4A6-7A7A-4CDF-A7A3-4F17F5F1602D}
+		{0AA6B9DD-2A2C-0E96-1052-6F4AC44B3F5D} = {7ACDC26B-C774-4004-8553-87E862D1E71F}
+		{2DD90EFB-7F2A-497B-A0F4-EE5F62A49BA4} = {7ACDC26B-C774-4004-8553-87E862D1E71F}
+		{4C514047-64B5-1383-4564-B827B846A6A7} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}
+		{6EB91F44-EC13-5354-0450-9A2687C3B169} = {D207D3D7-FD4D-4FD4-A7D0-79A82086FB6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {721B3030-08D7-4412-9087-D1CFBB3F5046}
