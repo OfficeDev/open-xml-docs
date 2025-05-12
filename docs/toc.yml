@@ -197,7 +197,7 @@
       - name: Remove the headers and footers from a word processing document
         href: word/how-to-remove-the-headers-and-footers-from-a-word-processing-document.md
       - name: Replace Text in a Word Document Using SAX (Simple API for XML)'
-        href: word/replace-text-in-a-word-document-using-sax-simple-api-for-xml.md
+        href: word/how-to-replace-text-in-a-word-document-with-sax.md
       - name: Replace the header in a word processing document
         href: word/how-to-replace-the-header-in-a-word-processing-document.md
       - name: Replace the styles parts in a word processing document
