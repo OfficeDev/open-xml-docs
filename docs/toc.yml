@@ -78,7 +78,7 @@
         href: presentation/how-to-retrieve-the-number-of-slides-in-a-presentation-document.md
       - name: Structure of a PresentationML document
         href: presentation/structure-of-a-presentationml-document.md
-      - name: Add a transition to a slides in a presentation
+      - name: Add a transition to a slide in a presentation
         href: presentation/how-to-add-transitions-between-slides-in-a-presentation.md
       - name: Working with animation
         href: presentation/working-with-animation.md
