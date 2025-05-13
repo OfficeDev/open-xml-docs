@@ -51,7 +51,7 @@ This section provides how-to topics for working with presentation documents usin
 - [Open a presentation document for read-only access](how-to-open-a-presentation-document-for-read-only-access.md)  
 
 - [Retrieve the number of slides in a presentation document](how-to-retrieve-the-number-of-slides-in-a-presentation-document.md)  
-- [Add a transition to a slides in a presentation](presentation/how-to-add-transitions-between-slides-in-a-presentation.md)
+- [Add a transition to a slides in a presentation](how-to-add-transitions-between-slides-in-a-presentation.md)
 
 - [Working with animation](working-with-animation.md)  
 
