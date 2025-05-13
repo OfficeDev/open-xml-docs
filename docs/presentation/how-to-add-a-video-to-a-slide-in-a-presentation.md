@@ -53,7 +53,7 @@ The following text from the [!include[ISO/IEC 29500 URL](../includes/iso-iec-295
 
 Video File (`<videoFile/>`) specifies the presence of a video file. It is defined within the non-visual properties of an object. The video shall be attached to an object as this is how it is represented within the document. The actual playing of the video however is done within the timing node list that is specified under the timing element.
 
-Consider the following ``Picture`` object that has a video attached to it.
+Consider the following `Picture` object that has a video attached to it.
 
 ```xml
 <p:pic>  
