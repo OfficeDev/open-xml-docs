@@ -5,10 +5,10 @@
     - name: Getting started
       items:
       - name: Overview
-        href: getting-started.md    
-      - name: About the Open XML SDK 
+        href: getting-started.md
+      - name: About the Open XML SDK
         href: about-the-open-xml-sdk.md
-      - name: What's new in the Open XML SDK 
+      - name: What's new in the Open XML SDK
         href: what-s-new-in-the-open-xml-sdk.md
       - name: Open XML SDK  design considerations
         href: open-xml-sdk-design-considerations.md
@@ -21,7 +21,7 @@
       - name: Custom SDK Features
         href: general/features.md
       - name: Introduction to markup compatibility
-        href: general/introduction-to-markup-compatibility.md  
+        href: general/introduction-to-markup-compatibility.md
       - name: Add a new document part that receives a relationship ID to a package
         href: general/how-to-add-a-new-document-part-that-receives-a-relationship-id-to-a-package.md
       - name: Add a new document part to a package
@@ -43,7 +43,9 @@
     - name: Presentations
       items:
       - name: Overview
-        href: presentation/overview.md 
+        href: presentation/overview.md
+      - name: Add an audio file to a slide in a presentation
+        href: presentation/how-to-add-an-audio-to-a-slide-in-a-presentation.md
       - name: Add a comment to a slide in a presentation
         href: presentation/how-to-add-a-comment-to-a-slide-in-a-presentation.md
       - name: Apply a theme to a presentation
@@ -73,7 +75,7 @@
       - name: Open a presentation document for read-only access
         href: presentation/how-to-open-a-presentation-document-for-read-only-access.md
       - name: Retrieve the number of slides in a presentation document
-        href: presentation/how-to-retrieve-the-number-of-slides-in-a-presentation-document.md 
+        href: presentation/how-to-retrieve-the-number-of-slides-in-a-presentation-document.md
       - name: Structure of a PresentationML document
         href: presentation/structure-of-a-presentationml-document.md
       - name: Add a transition to a slides in a presentation
@@ -104,6 +106,8 @@
         href: spreadsheet/how-to-add-custom-ui-to-a-spreadsheet-document.md
       - name: Calculate the sum of a range of cells in a spreadsheet document
         href: spreadsheet/how-to-calculate-the-sum-of-a-range-of-cells-in-a-spreadsheet-document.md
+      - name: Copy a Worksheet Using SAX (Simple API for XML)
+        href: spreadsheet/how-to-copy-a-worksheet-with-sax.md
       - name: Create a spreadsheet document by providing a file name
         href: spreadsheet/how-to-create-a-spreadsheet-document-by-providing-a-file-name.md
       - name: Delete text from a cell in a spreadsheet
@@ -155,7 +159,7 @@
       - name: Overview
         href: word/overview.md
       - name: Structure of a WordprocessingML document
-        href: word/structure-of-a-wordprocessingml-document.md  
+        href: word/structure-of-a-wordprocessingml-document.md
       - name: Accept all revisions in a word processing document
         href: word/how-to-accept-all-revisions-in-a-word-processing-document.md
       - name: Add tables to word processing documents
@@ -194,6 +198,8 @@
         href: word/how-to-remove-hidden-text-from-a-word-processing-document.md
       - name: Remove the headers and footers from a word processing document
         href: word/how-to-remove-the-headers-and-footers-from-a-word-processing-document.md
+      - name: Replace Text in a Word Document Using SAX (Simple API for XML)'
+        href: word/how-to-replace-text-in-a-word-document-with-sax.md
       - name: Replace the header in a word processing document
         href: word/how-to-replace-the-header-in-a-word-processing-document.md
       - name: Replace the styles parts in a word processing document
