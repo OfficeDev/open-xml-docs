@@ -30,7 +30,7 @@ This section provides how-to topics for working with presentation documents usin
 
 - [Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-- [Delete all the comments by an author from all the slides in a presentation](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md)  
+- [Delete all the comments by an author from all the slides in a presentation](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentation.md)  
 
 - [Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  
 
