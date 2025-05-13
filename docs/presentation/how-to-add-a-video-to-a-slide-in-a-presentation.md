@@ -120,7 +120,7 @@ Next Media(CT_Media) element is created with use of previously referenced mediaE
 [!code-vb[](../../samples/presentation/add_video/vb/Program.vb#snippet4)]
 ***
 
-All other elements such Offset(`<off/>`), Stretch(`<stretch/>`), fillRectangle(`<fillRect/>`), are appended to the ShapeProperties(`<spPr/>`) and ShapeProperties are appended to the Picture element(`<pic/>`). Finally the picture element that incudes video is added to the ShapeTree(`<sp/>`) of the slide.
+All other elements such Offset(`<off/>`), Stretch(`<stretch/>`), FillRectangle(`<fillRect/>`), are appended to the ShapeProperties(`<spPr/>`) and ShapeProperties are appended to the Picture element(`<pic/>`). Finally the picture element that incudes video is added to the ShapeTree(`<sp/>`) of the slide.
 
 Following is the complete sample code that you can use to add video to the slide.
 
