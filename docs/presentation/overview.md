@@ -22,7 +22,9 @@ This section provides how-to topics for working with presentation documents usin
 
 - [Structure of a PresentationML document](structure-of-a-presentationml-document.md)  
  
-- [Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md)  
+- [Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md)
+  
+- [Add a video to a slide in a presentation](how-to-add-a-video-to-a-slide-in-a-presentation.md)
 
 - [Apply a theme to a presentation](how-to-apply-a-theme-to-a-presentation.md)  
 
