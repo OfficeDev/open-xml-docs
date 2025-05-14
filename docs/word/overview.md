@@ -21,6 +21,8 @@ This section provides how-to topics for working with word processing documents u
 
 ## In this section 
 
+- [Structure of a WordprocessingML document](structure-of-a-wordprocessingml-document.md) 
+
 - [Accept all revisions in a word processing document](how-to-accept-all-revisions-in-a-word-processing-document.md)  
 
 - [Add tables to word processing documents](how-to-add-tables-to-word-processing-documents.md)  
@@ -59,13 +61,15 @@ This section provides how-to topics for working with word processing documents u
 
 - [Remove the headers and footers from a word processing document](how-to-remove-the-headers-and-footers-from-a-word-processing-document.md)  
 
+- [How to: Replace Text in a Word Document Using SAX (Simple API for XML)](how-to-replace-text-in-a-word-document-with-sax.md)  
+
 - [Replace the header in a word processing document](how-to-replace-the-header-in-a-word-processing-document.md)  
 
-- [Replace the styles parts in a word processing document](how-to-replace-the-styles-parts-in-a-word-processing-document.md)  
+- [Replace the styles parts in a word processing document](how-to-replace-the-styles-parts-in-a-word-processing-document.md) 
+
+- [Retrieve application property values from a Word document by using the Open XML API](how-to-retrieve-application-property-values-from-a-word-processing-document.md) 
 
 - [Retrieve comments from a word processing document](how-to-retrieve-comments-from-a-word-processing-document.md)  
-
-- [Retrieve property values from a Word document by using the Open XML API](how-to-retrieve-application-property-values-from-a-word-processing-document.md)
 
 - [Set a custom property in a word processing document](how-to-set-a-custom-property-in-a-word-processing-document.md)  
 
@@ -78,8 +82,7 @@ This section provides how-to topics for working with word processing documents u
 - [Working with runs](working-with-runs.md)  
 
 - [Working with WordprocessingML tables](working-with-wordprocessingml-tables.md)  
-
-- [Structure of a WordprocessingML document](structure-of-a-wordprocessingml-document.md)  
+ 
 
 ## Related sections 
 

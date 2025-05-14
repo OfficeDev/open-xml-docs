@@ -10,13 +10,27 @@ To add a sample, run the the following:
 
 This will create an initial scaffold for a sample and add it to the solution file.
 
+## Steps to Complete Before Creating a Pull Request:
+1. **Test Both Code Samples**
+Verify the functionality of both the C# and Visual Basic samples. To accelerate the process, you can use Copilot to translate the C# sample into Visual Basic. When writing code samples, avoid using var; instead, explicitly declare variable types.
+
+2. **Validate Documentation with DocFX**
+Use the https://dotnet.github.io/docfx/ to ensure the generated documentation renders correctly and behaves as expected.
+
+3. **Update the Table of Contents**
+Add a new entry to the toc.yml file so the content appears in the Navigation Pane on the Microsoft Learn website.
+
+4. **Edit the Overview Page**
+Update the overview.md file with the new title and markdown file reference to ensure it appears in the overview section on Microsoft Learn. This file is located in one of the following directories: docs/presentation, docs/spreadsheet, or docs/word.
+
+
 ## Migrate old samples
 
 ```powershell
 ./migrate-sample.ps1 path-to-md-file
 ```
 
-This will do an inital extraction and clean up of the file, as well as add the code to the solution. Additional clean up will be necessary, but should be minimal.
+This will do an initial extraction and clean up of the file, as well as add the code to the solution. Additional clean up will be necessary, but should be minimal.
 
 General changes to move a sample:
 
