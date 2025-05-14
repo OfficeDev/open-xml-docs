@@ -58,15 +58,15 @@ static void AddTransmitionToSlides(string filePath)
             {
                 // Get all AlternateContent elements
                 List<AlternateContent> alternateContents = [.. slidePart.Slide.Descendants<AlternateContent>()];
-                foreach (var alternateContent in alternateContents)
+                foreach (AlternateContent alternateContent in alternateContents)
                 {
                     // Remove transitions in AlternateContentChoice within AlternateContent
-                    var childElements = alternateContent.ChildElements.ToList();
+                    List<OpenXmlElement> childElements = alternateContent.ChildElements.ToList();
 
-                    foreach (var element in childElements)
+                    foreach (OpenXmlElement element in childElements)
                     {
-                        var transitions = element.Descendants<Transition>().ToList();
-                        foreach (var transition in transitions)
+                        List<Transition> transitions = element.Descendants<Transition>().ToList();
+                        foreach (Transition transition in transitions)
                         {
                             transition.Remove();
                         }
