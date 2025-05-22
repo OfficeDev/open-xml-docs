@@ -22,6 +22,7 @@ This section provides how-to topics for working with presentation documents usin
 
 - [Structure of a PresentationML document](structure-of-a-presentationml-document.md)    
  
+
 - [Add an audio file to a slide in a presentation](how-to-add-an-audio-to-a-slide-in-a-presentation.md)
 
 - [Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md)  
@@ -32,7 +33,7 @@ This section provides how-to topics for working with presentation documents usin
 
 - [Create a presentation document by providing a file name](how-to-create-a-presentation-document-by-providing-a-file-name.md)  
 
-- [Delete all the comments by an author from all the slides in a presentation](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md)  
+- [Delete all the comments by an author from all the slides in a presentation](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentation.md)  
 
 - [Delete a slide from a presentation](how-to-delete-a-slide-from-a-presentation.md)  
 

@@ -193,4 +193,4 @@ article.
 [About the Open XML SDK for Office](../about-the-open-xml-sdk.md)
 [How to: Create a Presentation by Providing a File Name](how-to-create-a-presentation-document-by-providing-a-file-name.md)
 [How to: Add a comment to a slide in a presentation](how-to-add-a-comment-to-a-slide-in-a-presentation.md)
-[How to: Delete all the comments by an author from all the slides in a presentation](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md)  
+[How to: Delete all the comments by an author from all the slides in a presentation](how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentation.md)  
