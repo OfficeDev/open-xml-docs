@@ -23,21 +23,11 @@ This section provides how-to topics for working with spreadsheet documents using
 
 - [Structure of a SpreadsheetML document](structure-of-a-spreadsheetml-document.md)
 
-- [Working with the calculation chain](working-with-the-calculation-chain.md)
-
-- [Working with conditional formatting](working-with-conditional-formatting.md)
-
-- [Working with formulas](working-with-formulas.md)
-
-- [Working with PivotTables](working-with-pivottables.md)
-
-- [Working with the shared string table](working-with-the-shared-string-table.md)
-
-- [Working with sheets](working-with-sheets.md)
-
-- [Working with SpreadsheetML tables](working-with-tables.md)
+- [Add custom UI to a spreadsheet document](how-to-add-custom-ui-to-a-spreadsheet-document.md)
 
 - [Calculate the sum of a range of cells in a spreadsheet document](how-to-calculate-the-sum-of-a-range-of-cells-in-a-spreadsheet-document.md)
+
+- [Copy a Worksheet Using SAX (Simple API for XML)](how-to-copy-a-worksheet-with-sax.md) 
 
 - [Create a spreadsheet document by providing a file name](how-to-create-a-spreadsheet-document-by-providing-a-file-name.md)
 
@@ -69,6 +59,21 @@ This section provides how-to topics for working with spreadsheet documents using
 
 - [Retrieve the values of cells in a spreadsheet document](how-to-retrieve-the-values-of-cells-in-a-spreadsheet.md)
 
+- [Retrieve a list of the worksheets in a spreadsheet document](how-to-retrieve-a-list-of-the-worksheets-in-a-spreadsheet.md)
+
+- [Working with the calculation chain](working-with-the-calculation-chain.md)
+
+- [Working with conditional formatting](working-with-conditional-formatting.md)
+
+- [Working with formulas](working-with-formulas.md)
+
+- [Working with PivotTables](working-with-pivottables.md)
+
+- [Working with the shared string table](working-with-the-shared-string-table.md)
+
+- [Working with sheets](working-with-sheets.md)
+
+- [Working with SpreadsheetML tables](working-with-tables.md)
 
 ## Related sections
 

@@ -48,6 +48,8 @@
         href: presentation/how-to-add-an-audio-to-a-slide-in-a-presentation.md
       - name: Add a comment to a slide in a presentation
         href: presentation/how-to-add-a-comment-to-a-slide-in-a-presentation.md
+      - name: Add a video to a slide in a presentation
+        href: presentation/how-to-add-a-video-to-a-slide-in-a-presentation.md
       - name: Apply a theme to a presentation
         href: presentation/how-to-apply-a-theme-to-a-presentation.md
       - name: Change the fill color of a shape in a presentation
@@ -55,7 +57,7 @@
       - name: Create a presentation document by providing a file name
         href: presentation/how-to-create-a-presentation-document-by-providing-a-file-name.md
       - name: Delete all the comments by an author from all the slides in a presentation
-        href: presentation/how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentatio.md
+        href: presentation/how-to-delete-all-the-comments-by-an-author-from-all-the-slides-in-a-presentation.md
       - name: Delete a slide from a presentation
         href: presentation/how-to-delete-a-slide-from-a-presentation.md
       - name: Get all the external hyperlinks in a presentation
