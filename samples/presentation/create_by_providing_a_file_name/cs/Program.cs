@@ -41,6 +41,7 @@ static void CreatePresentationParts(PresentationPart presentationPart)
 
     slidePart1 = CreateSlidePart(presentationPart);
     slideLayoutPart1 = CreateSlideLayoutPart(slidePart1);
+    string slideLayoutPart1RelId = slidePart1.GetIdOfPart(slideLayoutPart1);
     slideMasterPart1 = CreateSlideMasterPart(slideLayoutPart1);
     themePart1 = CreateTheme(slideMasterPart1);
 
@@ -81,7 +82,7 @@ static SlidePart CreateSlidePart(PresentationPart presentationPart)
 // <Snippet100>
 static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
 {
-    SlideLayoutPart slideLayoutPart1 = slidePart1.AddNewPart<SlideLayoutPart>("rId1");
+    SlideLayoutPart slideLayoutPart1 = slidePart1.AddNewPart<SlideLayoutPart>();
     SlideLayout slideLayout = new SlideLayout(
     new CommonSlideData(new ShapeTree(
       new P.NonVisualGroupShapeProperties(
