@@ -4,11 +4,11 @@ Imports DocumentFormat.OpenXml.Presentation
 
 Module Program
     Sub Main(args As String())
-        AddTransmitionToSlides(args(0))
+        AddTransitionToSlides(args(0))
     End Sub
 
     ' <Snippet0>
-    Sub AddTransmitionToSlides(filePath As String)
+    Sub AddTransitionToSlides(filePath As String)
         ' <Snippet1>
         Using presentationDocument As PresentationDocument = PresentationDocument.Open(filePath, True)
             ' </Snippet1>
