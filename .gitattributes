@@ -1,2 +1,2 @@
-*.cs text
-*.vb text
+*.cs -text
+*.vb -text
