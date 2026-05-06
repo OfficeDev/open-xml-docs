@@ -100,6 +100,8 @@ Module Program
                             Else
                                 If reader.IsStartElement Then
                                     writer.WriteStartElement(reader)
+                                    Dim text As String = reader.GetText()
+                                    If text.Length > 0 Then writer.WriteString(text)
                                 ElseIf reader.IsEndElement Then
                                     writer.WriteEndElement()
                                 End If
