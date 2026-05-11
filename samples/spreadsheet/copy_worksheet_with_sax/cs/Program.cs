@@ -111,6 +111,13 @@ void CopySheetSAX(string path)
                         if (reader.IsStartElement)
                         {
                             writer.WriteStartElement(reader);
+
+                            string text = reader.GetText();
+
+                            if (text.Length > 0)
+                            {
+                                writer.WriteString(text);
+                            }
                         }
                         else if (reader.IsEndElement)
                         {
