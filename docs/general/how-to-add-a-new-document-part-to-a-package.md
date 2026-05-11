@@ -8,7 +8,7 @@ title: 'How to: Add a new document part to a package'
 ms.suite: office
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/08/2025
 ms.localizationpriority: medium
 ---

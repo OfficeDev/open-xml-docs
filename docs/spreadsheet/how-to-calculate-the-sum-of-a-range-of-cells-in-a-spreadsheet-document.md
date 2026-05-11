@@ -8,7 +8,7 @@ title: 'How to: Calculate the sum of a range of cells in a spreadsheet document'
 ms.suite: office
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/09/2025
 ms.localizationpriority: high
 ---

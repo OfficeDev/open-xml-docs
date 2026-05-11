@@ -9,7 +9,7 @@ description: 'Learn how to add tables to word processing documents using the Ope
 ms.suite: office
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 09/12/2024
 ms.localizationpriority: high
 ---

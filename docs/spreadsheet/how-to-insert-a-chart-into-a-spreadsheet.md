@@ -8,7 +8,7 @@ title: 'How to: Insert a chart into a spreadsheet document'
 ms.suite: office
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/14/2025
 ms.localizationpriority: high
 ---

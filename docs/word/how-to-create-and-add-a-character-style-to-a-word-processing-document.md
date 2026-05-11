@@ -11,7 +11,7 @@ ms.suite: office
 
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/13/2024
 ms.localizationpriority: medium
 ---

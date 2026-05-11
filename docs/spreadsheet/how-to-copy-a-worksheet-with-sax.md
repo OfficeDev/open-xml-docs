@@ -9,7 +9,7 @@ ms.suite: office
 
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/01/2025
 ms.localizationpriority: high
 ---

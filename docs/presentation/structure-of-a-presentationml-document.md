@@ -8,7 +8,7 @@ title: Structure of a PresentationML document
 ms.suite: office
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 11/26/2024
 ms.localizationpriority: high
 ---
