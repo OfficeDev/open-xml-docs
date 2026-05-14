@@ -46,7 +46,6 @@ void ReplaceTextWithSAX(string path, string textToReplace, string replacementTex
                                 string text = reader.GetText().Replace(textToReplace, replacementText);
 
                                 writer.WriteString(text);
-
                             }
                             else
                             {
@@ -60,6 +59,13 @@ void ReplaceTextWithSAX(string path, string textToReplace, string replacementTex
                             if (reader.IsStartElement)
                             {
                                 writer.WriteStartElement(reader);
+
+                                string text = reader.GetText();
+
+                                if (text.Length > 0)
+                                {
+                                    writer.WriteString(text);
+                                }
                             }
                             else if (reader.IsEndElement)
                             {

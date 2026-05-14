@@ -49,6 +49,8 @@ Module Program
                                     ' Write the other XML elements without editing
                                     If reader.IsStartElement Then
                                         writer.WriteStartElement(reader)
+                                        Dim text As String = reader.GetText()
+                                        If text.Length > 0 Then writer.WriteString(text)
                                     ElseIf reader.IsEndElement Then
                                         writer.WriteEndElement()
                                     End If
