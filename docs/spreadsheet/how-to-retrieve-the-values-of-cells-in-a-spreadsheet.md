@@ -9,7 +9,7 @@ description: 'Learn how to retrieve the values of cells in a spreadsheet documen
 ms.suite: office
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/10/2025
 ms.localizationpriority: high
 ---

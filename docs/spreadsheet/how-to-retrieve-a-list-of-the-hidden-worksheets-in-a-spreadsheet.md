@@ -9,7 +9,7 @@ description: 'Learn how to retrieve a list of the hidden worksheets in a spreads
 ms.suite: office
 ms.author: o365devx
 author: o365devx
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/10/2025
 ms.localizationpriority: medium
 ---
